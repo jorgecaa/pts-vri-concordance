@@ -22,8 +22,9 @@ destructive edits; there is no undo.
 > (`extract_commentary.py`, `generate_tex.py`, `compile_pdfs.py`, `book_meta.py`,
 > `validate_text.py`, `README-COMMY.md`, `rotb_commentary/`, `dpd_check/`, and any
 > `edition='atthakatha'` data) is **out of scope** — kept for reference, not modified, unless the
-> user explicitly asks. Other standing rules: **(1) nothing is CONFIRMADO without Helmer**
-> (PTS↔CST); **(2) any new file-format parser must use `pyparsing`** (docs in `doc/pyparsing/`);
+> user explicitly asks. Other standing rules: **(1) nothing is CONFIRMADO without the validador**
+> (Modelo B: gate local + Gemini concordantes, PTS↔CST; humano arbitra desacuerdos — DeepSeek
+> retirado por no fiable); **(2) any new file-format parser must use `pyparsing`** (docs in `doc/pyparsing/`);
 > **(3) never touch SuttaCentral or the Mahāsaṅgīti edition it hosts** — this includes
 > `src/data/extract_sc_references.py`, `extract_translation_sujato.py`, `extract_translation_legacy.py`
 > and the `pts_xref` / `translation_*` tables derived from SuttaCentral. **NB:** the Helmer's **CST**
@@ -90,23 +91,34 @@ touching any concordance script. Non-negotiable principles baked into this proje
   `parse_sn_grammar.py`, `rebuild_an.py`, `integrate_khuddaka.py`, …).
 - **CST numbering ≠ PTS numbering**, especially in SN and AN (per-saṃyutta/per-vagga resets).
   Match by content/name and global ID, never by assuming sequential numeric correspondence.
-- **"NADA se cierra sin Helmer"** — a nikāya/volume is only marked CERRADO 🔒 after cross-validating
-  PTS↔CST content with the DeepSeek "Helmer" pass (`helmer_*.py`), cached in
-  `helmer_ptscst_cache.json`. DB verification (pages, markers, sequence) is necessary but *not
-  sufficient*.
+- **"NADA se cierra sin el validador"** — a nikāya/volume is only marked CERRADO 🔒 after the
+  **validador** pass (**Modelo B**): the local content gate (título-núcleo + Jaccard de incipit +
+  divergencias CollateX) **and** `gemini-flash-lite-latest` (salida estructurada, `temperature=0`)
+  deben **ambos** dar APPROVE. Desacuerdo → PENDIENTE + **revisión humana** (Jorge arbitra contra
+  el impreso/CST). El antiguo pase DeepSeek "Helmer" (`helmer_ptscst.py`, `helmer_ptscst_cache.json`)
+  está **RETIRADO**: probado no-determinista a `temperature=0` (los veredictos se voltean entre
+  corridas en casos borderline), ya no se confía en él para CONFIRMADO. DB verification (pages,
+  markers, sequence) is necessary but *not sufficient*.
 - **DO NOT MODIFY closed sections** (DN, MN, SN I–IV — see `STATUS.md`) without re-running full
   validation. Pending: SN V, AN, KN.
 - **`fix_mn_pages.py` contains 78 INCORRECT "corrections" — do not use it.**
 
-The Helmer validation persona/workflow is also packaged as a repo skill:
-`.agents/skills/pts-helmer-smith-validator/`.
+The legacy Helmer validation persona/workflow is packaged as a repo skill
+(`.agents/skills/pts-helmer-smith-validator/`) — **histórico**; el pase vigente es el **validador**
+(Modelo B: gate local + `gemini-flash-lite-latest`), no el DeepSeek "Helmer" retirado.
 
 **Status columns in the master Excel** (`PTS_Reference_Complete_Canon.xlsx`, sheet *Complete
 Canon*): `Validation` holds the fine-grained provenance; **`Estado`** is the binary rollup with
-exactly two values — **CONFIRMADO** (`Validation` ∈ HELMER_APPROVED / HELMER_PTS_TRUNCATED /
-HELMER_FIXED / PTS_CROSSREF_SN) and **PENDIENTE** (everything else, including `DB_VERIFIED`).
-**Rule: without Helmer, nothing is CONFIRMADO** (BD/RTE/incipit verification is not sufficient).
-`PTS_CROSSREF_SN` is the one non-Helmer-LLM route to CONFIRMADO: PTS reenvía el sutta al
+exactly two values — **CONFIRMADO** (`Validation` ∈ VALIDADOR / VALIDADOR_HUMANO / HELMER_APPROVED /
+HELMER_PTS_TRUNCATED / HELMER_FIXED / PTS_CROSSREF_SN) and **PENDIENTE** (everything else,
+including `DB_VERIFIED`). **Rule: without the validador, nothing is CONFIRMADO** (BD/RTE/incipit
+verification is not sufficient). **`VALIDADOR`** = CONFIRMADO por acuerdo automático (Modelo B: gate
+local + `gemini-flash-lite-latest` ambos APPROVE); **`VALIDADOR_HUMANO`** = un desacuerdo gate/Gemini
+que Jorge arbitró a mano (misma fuerza, provenance humana). Los valores
+`HELMER_*` son verdictos legados del pase DeepSeek — se mantienen como CONFIRMADO histórico pero
+son **provisionales**: re-validar con el validador al revisitar cada nikāya (DeepSeek resultó no
+fiable).
+`PTS_CROSSREF_SN` is the one non-LLM route to CONFIRMADO: PTS reenvía el sutta al
 Suttanipāta sin reimprimir el texto (no hay texto PTS que cotejar), y la referencia fue
 verificada a mano contra la edición impresa. Únicas dos paradas: MN 92 Sela (M ii 146 → Sn
 p.99 Fausböll) y MN 98 Vāseṭṭha (M ii 196 → Sn nº35).

@@ -1,7 +1,13 @@
 ---
 name: pts-helmer-smith-validator
-description: Validates PTS reference tables against actual page content in tipitaka.sqlite. Uses the persona of Helmer Smith — the legendary PTS editor and Pāli philologist — to perform rigorous content-based verification. Activates when the user asks to validate, verify, or cross-check PTS references against the database corpus, or mentions "Helmer Smith" in the context of PTS validation. Requires the presence of a PTS reference table (Excel/CSV) and the tipitaka.sqlite database.
+description: "[HISTÓRICO — superado por el validador Modelo B] Persona Helmer Smith para verificación de referencias PTS por contenido contra tipitaka.sqlite. El método de CONFIRMADO vigente ya NO es este pase (ni el de DeepSeek, retirado por no fiable): es el validador (gate local ∧ gemini-flash-lite, ver CLAUDE.md y validador.py). Conservado como referencia de metodología/DB, no como pase de confirmación."
 ---
+
+> ⚠️ **HISTÓRICO / SUPERADO.** El pase que otorga CONFIRMADO es ahora el **validador (Modelo B)**:
+> gate local (título-núcleo + Jaccard de incipit + CollateX) **∧** `gemini-flash-lite-latest`, con
+> revisión humana en desacuerdos (ver `CLAUDE.md` y `validador.py`). El antiguo pase DeepSeek
+> "Helmer" está **retirado** (no-determinista a temp=0). Esta skill se conserva por su metodología
+> y su referencia de esquema/DB, no como vía de confirmación.
 
 # Helmer Smith — PTS Content Validator
 
