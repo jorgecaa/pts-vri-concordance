@@ -1,0 +1,1862 @@
+[
+ {
+  "nik": "DN",
+  "num": "3",
+  "ref": "D i 87,3",
+  "name": "Ambaṭṭha",
+  "cst_title": "3. ambaṭṭhasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative, only orthography and minor manuscript glosses differ.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "15",
+  "ref": "D ii 55,3",
+  "name": "Mahānidāna",
+  "cst_title": "2. mahānidānasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are versions of the Mahānidāna Sutta sharing the identical core narrative.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "92",
+  "ref": "M ii 146,23",
+  "name": "Sela",
+  "cst_title": "2. selasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS uses a cross-reference pointing to Sutta Nipata Sela Sutta, matching CST.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "MN",
+  "num": "68",
+  "ref": "M i 462,24",
+  "name": "Naḷakapāna",
+  "cst_title": "8. naḷakapānasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical introductory narrative with minor manuscript variants and text expansions in CST.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "116",
+  "ref": "M iii 68",
+  "name": "Isigili",
+  "cst_title": "6. isigilisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative of the Isigilisutta with minor orthographic differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "3",
+  "ref": "M i 12,13",
+  "name": "Dhammadāyāda",
+  "cst_title": "3. dhammadāyādasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are versions of the Dhammadāyāda Sutta sharing core text.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "142",
+  "ref": "M iii 253",
+  "name": "Dakkhiṇāvibhaṅga",
+  "cst_title": "12. dakkhiṇāvibhaṅgasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Gotami Sutta with identical core narrative and minor orthographic differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "40",
+  "ref": "M i 281",
+  "name": "Cūḷa-Assapura",
+  "cst_title": "10. cūḷāssapurasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical in core narrative and represent the Assapura Sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "149",
+  "ref": "M iii 287,9",
+  "name": "Mahāsaḷāyatanika",
+  "cst_title": "7. mahāsaḷāyatanikasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both editions share the identical core text of the Mahāsaḷāyatanika-sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "14",
+  "ref": "D ii 1,5",
+  "name": "Mahāpadāna",
+  "cst_title": "1. mahāpadānasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative of the Karerimaṇḍalamāḷa sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "123",
+  "ref": "M iii 118,10",
+  "name": "Acchariya-abbhuta",
+  "cst_title": "3. acchariyābbhutasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Same core narrative; CST includes expanded textual details and orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "16",
+  "ref": "D ii 72",
+  "name": "Mahāparinibbāna",
+  "cst_title": "3. mahāparinibbānasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical opening sections of the Mahāparinibbāna Suttanta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "141",
+  "ref": "M iii 248",
+  "name": "Saccavibhaṅga",
+  "cst_title": "11. saccavibhaṅgasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical core narrative and doctrinal content regarding the four noble truths.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "147",
+  "ref": "M iii 277,24",
+  "name": "Cūḷarāhulovāda",
+  "cst_title": "5. cūḷarāhulovādasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS text is an abbreviated fragment of the same Rahula sutta expanded in CST.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "26",
+  "ref": "D iii 58,2",
+  "name": "Cakkavatti-sīhanāda",
+  "cst_title": "3. cakkavattisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narratives match; CST includes additional expanded text.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "MN",
+  "num": "9",
+  "ref": "M i 46,16",
+  "name": "Sammādiṭṭhi",
+  "cst_title": "9. sammādiṭṭhisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are versions of the Sammādiṭṭhi Sutta sharing identical core narrative.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "114",
+  "ref": "M iii 45,10",
+  "name": "Sevitabbasevitabba",
+  "cst_title": "4. sevitabbāsevitabbasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narratives match identically with standard textual expansions in the CST edition.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "71",
+  "ref": "M i 481,14",
+  "name": "Tevijja-vacchagottann",
+  "cst_title": "1. tevijjavacchasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages describe the beginning of the Tevijja Vacchagotta Sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "6",
+  "ref": "D i 150,3",
+  "name": "Mahāli",
+  "cst_title": "6. mahālisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical narrative and dialogue; only minor orthographic and spacing variations between editions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "102",
+  "ref": "M ii 228,9",
+  "name": "Pañcattaya",
+  "cst_title": "2. pañcattayasuttaṃ {pañcāyatanasutta (ka0)}",
+  "gemini": "APPROVE",
+  "reason": "Both passages share the identical core narrative of the Pañcattayasutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "20",
+  "ref": "M i 118,30",
+  "name": "Vitakkasaṇṭhāna",
+  "cst_title": "10. vitakkasaṇṭhānasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS is an abbreviated version containing the initial peyyāla of the CST text.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "33",
+  "ref": "M i 220",
+  "name": "Mahāgopālaka",
+  "cst_title": "3. mahāgopālakasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages contain the identical Gopālaka Sutta with minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "20",
+  "ref": "D ii 253,3",
+  "name": "Mahāsamaya",
+  "cst_title": "7. mahāsamayasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches, CST has expanded text and variant orthography.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "31",
+  "ref": "D iii 180",
+  "name": "Siṅgālovāda",
+  "cst_title": "8. siṅgālasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Siṅgālovāda Sutta with minor orthographic and expansion differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "82",
+  "ref": "M ii 54,24",
+  "name": "Raṭṭhapala",
+  "cst_title": "2. raṭṭhapālasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Same sutta with minor variant readings and standard CST expansion.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "27",
+  "ref": "M i 175,14",
+  "name": "Cūḷahatthipadopama",
+  "cst_title": "7. cūḷahatthipadopamasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches, CST has minor expansions and variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "69",
+  "ref": "M i 469",
+  "name": "Gulissāni",
+  "cst_title": "9. goliyānisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative concerning Gulissāni and Sāriputta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "4",
+  "ref": "M i 16,15",
+  "name": "Bhayabherava",
+  "cst_title": "4. bhayabheravasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages contain the identical dialogue between Jāṇussoṇi and the Buddha with minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "4",
+  "ref": "D i 111,3",
+  "name": "Soṇadaṇḍa",
+  "cst_title": "4. soṇadaṇḍasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are the Soṇadaṇḍasutta with minor orthographic differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "36",
+  "ref": "M i 237,6",
+  "name": "Mahāsaccaka",
+  "cst_title": "6. mahāsaccakasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative and dialogue from the Cūḷasaccaka Sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "67",
+  "ref": "M i 456,14",
+  "name": "Cātuma",
+  "cst_title": "7. cātumasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Editions share identical core Cātuma Sutta narrative with minor orthographic variations.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "31",
+  "ref": "M i 205,16",
+  "name": "Cūḷagosiṅga",
+  "cst_title": "1. cūḷagosiṅgasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Mahāgosiṅgasutta with minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "33",
+  "ref": "D iii 207",
+  "name": "Saṅgīti",
+  "cst_title": "10. saṅgītisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Saṅgīti Suttanta with minor orthographic and manuscript variations.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "107",
+  "ref": "M iii 1",
+  "name": "Gaṇakamoggallāna",
+  "cst_title": "7. gaṇakamoggallānasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are from the Gaṇakamoggallānasutta sharing identical narrative and dialogue.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "83",
+  "ref": "M ii 74,15",
+  "name": "Makhādeva",
+  "cst_title": "3. maghadevasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share the Makhādeva Sutta narrative with minor orthographic and expansion variations.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "100",
+  "ref": "M ii 209,20",
+  "name": "Saṅgārava",
+  "cst_title": "10. saṅgāravasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "CST expands the standard opening passage of the Dhānañjānīsutta with variant readings.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "MN",
+  "num": "46",
+  "ref": "M i 309,22",
+  "name": "Mahādhammasamādāna",
+  "cst_title": "6. mahādhammasamādānasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Editions share the core narrative; CST includes standard expanded formula text.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "148",
+  "ref": "M iii 280,14",
+  "name": "Chachakka",
+  "cst_title": "6. chachakkasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same Chachakkasutta with minor variant readings and expansions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "45",
+  "ref": "M i 305,7",
+  "name": "Cūḷadhammasamādāna",
+  "cst_title": "5. cūḷadhammasamādānasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Orthographic variants and minor textual differences, core narrative matches.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "11",
+  "ref": "M i 63,25",
+  "name": "Cūḷasīhanāda",
+  "cst_title": "1. cūḷasīhanādasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS is an abbreviated version of the same CST text.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "MN",
+  "num": "87",
+  "ref": "M ii 106",
+  "name": "Piyajātika",
+  "cst_title": "7. piyajātikasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same grief-stricken householder sutta with minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "109",
+  "ref": "M iii 15,18",
+  "name": "Mahāpuṇṇama",
+  "cst_title": "9. mahāpuṇṇamasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share the identical narrative setting and core questions on the five upādānakkhandhas.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "61",
+  "ref": "M i 414",
+  "name": "Ambalaṭṭhikārāhulovāda",
+  "cst_title": "1. ambalaṭṭhikarāhulovādasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same Ambalaṭṭhikārāhulovāda Sutta with minor orthographic differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "28",
+  "ref": "M i 184,22",
+  "name": "Mahāhatthipadopama",
+  "cst_title": "8. mahāhatthipadopamasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS text is an abbreviated version of the CST Sāriputta Sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "127",
+  "ref": "M iii 144,26",
+  "name": "Anuruddha",
+  "cst_title": "7. anuruddhasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS is truncated via peyyāla while CST provides the full text.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "1",
+  "ref": "D i 1,7",
+  "name": "Brahmajāla",
+  "cst_title": "1. brahmajālasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same Brahmajāla Sutta introductory narrative.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "90",
+  "ref": "M ii 125,8",
+  "name": "Kaṇṇakatthala",
+  "cst_title": "10. kaṇṇakatthalasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Minor variant readings and slight expansion in CST; core narrative is identical.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "17",
+  "ref": "D ii 169,3",
+  "name": "Mahāsudassana",
+  "cst_title": "4. mahāsudassanasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core Mahāparinibbāna-sutta narrative matches, with standard orthographic and minor expansion variations.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "51",
+  "ref": "M i 339",
+  "name": "Kandaraka",
+  "cst_title": "1. kandarakasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative, characters, and settings match identically across editions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "111",
+  "ref": "M iii 25",
+  "name": "Anupada",
+  "cst_title": "1. anupadasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative and text match closely with minor orthographic and lectal variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "134",
+  "ref": "M iii 199,20",
+  "name": "Lomasakaṅgiyabhaddekaratta",
+  "cst_title": "4. lomasakaṅgiyabhaddekarattasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches; CST text includes standard expansions.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "MN",
+  "num": "19",
+  "ref": "M i 114,21",
+  "name": "Dvedhāvitakka",
+  "cst_title": "9. dvedhāvitakkasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Same core narrative; minor orthographic differences and expansion in CST.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "112",
+  "ref": "M iii 29,20",
+  "name": "Chabbisodhana",
+  "cst_title": "2. chabbisodhanasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative and doctrinal teaching match; CST edition includes standard text expansion.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "57",
+  "ref": "M i 387,9",
+  "name": "Kukkuravatika",
+  "cst_title": "7. kukkuravatikasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are variants of the Kukkuravatika Sutta sharing core narrative.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "5",
+  "ref": "M i 24,12",
+  "name": "Anaṅgaṇa",
+  "cst_title": "5. anaṅgaṇasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative and matching doctrinal content with minor orthographic differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "93",
+  "ref": "M ii 147",
+  "name": "Assalāyana",
+  "cst_title": "3. assalāyanasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Assalāyana Sutta with expected orthographic and peyyāla variations.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "10",
+  "ref": "M i 55,28",
+  "name": "Satipaṭṭhāna",
+  "cst_title": "10. mahāsatipaṭṭhānasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Satipaṭṭhāna Sutta with the CST version providing expanded text.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "47",
+  "ref": "M i 317,21",
+  "name": "Vīmaṁsaka",
+  "cst_title": "7. vīmaṃsakasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative and setting match, CST includes expected textual expansions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "11",
+  "ref": "D i 211,3",
+  "name": "Kevaṭṭa",
+  "cst_title": "11. kevaṭṭasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Kevaddha Sutta with minor orthographic differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "50",
+  "ref": "M i 332",
+  "name": "Maratajjaniya",
+  "cst_title": "10. māratajjanīyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical narrative content with minor orthographic and editorial variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "76",
+  "ref": "M i 513,12",
+  "name": "Sandaka",
+  "cst_title": "6. sandakasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Sandaka Sutta with minor orthographic differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "101",
+  "ref": "M ii 214",
+  "name": "Devadaha",
+  "cst_title": "1. devadahasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative, only minor orthographic and sandhi differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "125",
+  "ref": "M iii 128,8",
+  "name": "Dantabhūmi",
+  "cst_title": "5. dantabhūmisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches, CST has minor expansions and sandhi differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "132",
+  "ref": "M iii 189,27",
+  "name": "Ānandabhaddekaratta",
+  "cst_title": "2. ānandabhaddekarattasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS is truncated via peyyāla, CST provides the full expanded Bhaddekaratta Sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "98",
+  "ref": "M ii 196,10",
+  "name": "Vāseṭṭha",
+  "cst_title": "8. vāseṭṭhasuttaṃ",
+  "gemini": "REJECT",
+  "reason": "Completely distinct suttas: PTS is Subhasutta, CST is Vasetthasutta.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "MN",
+  "num": "65",
+  "ref": "M i 437,15",
+  "name": "Bhaddāli",
+  "cst_title": "5. bhaddālisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both editions share the same core narrative of the Bhaddāli Sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "32",
+  "ref": "M i 212",
+  "name": "Mahāgosiṅga",
+  "cst_title": "2. mahāgosiṅgasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "43",
+  "ref": "M i 292",
+  "name": "Mahāvedalla",
+  "cst_title": "3. mahāvedallasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative on duppañña and paññavā.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "62",
+  "ref": "M i 420,27",
+  "name": "Mahārahulovada",
+  "cst_title": "2. mahārāhulovādasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Same sutta; CST includes expanded text while PTS truncates.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "86",
+  "ref": "M ii 97,23",
+  "name": "Aṅgulimāla",
+  "cst_title": "6. aṅgulimālasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches, CST has expanded text and peyyāla compared to PTS.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "113",
+  "ref": "M iii 37,7",
+  "name": "Sappurisa",
+  "cst_title": "3. sappurisasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Editions match in core narrative despite standard orthographic and peyyāla differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "21",
+  "ref": "M i 122,11",
+  "name": "Kakacūpama",
+  "cst_title": "1. kakacūpamasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are editions of the same sutta concerning Moliyaphagguna.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "133",
+  "ref": "M iii 192",
+  "name": "Mahākaccanabhaddekaratta",
+  "cst_title": "3. mahākaccānabhaddekarattasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical core narrative of Samiddhi and the devatā at Tapoda.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "72",
+  "ref": "M i 483,28",
+  "name": "Aggivacchagotta",
+  "cst_title": "2. aggivacchasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS text is truncated opening; CST provides full expanded dialogue of Vacchagotta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "129",
+  "ref": "M iii 163",
+  "name": "Bālapaṇḍita",
+  "cst_title": "9. bālapaṇḍitasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share the identical narrative and thematic structure of the Bālasutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "70",
+  "ref": "M i 473,6",
+  "name": "Kiṭāgiri",
+  "cst_title": "10. kīṭāgirisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same Kīṭāgirisutta with minor orthographic differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "99",
+  "ref": "M ii 196,15",
+  "name": "Subha",
+  "cst_title": "9. subhasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "CST expands on the same Subhasutta narrative found in PTS.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "34",
+  "ref": "D iii 272",
+  "name": "Dasuttara",
+  "cst_title": "11. dasuttarasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are the Dasuttara Suttanta with minor orthographic and expansion differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "19",
+  "ref": "D ii 220",
+  "name": "Mahāgovinda",
+  "cst_title": "6. mahāgovindasuttaṃ",
+  "gemini": "REJECT",
+  "reason": "Text mismatch: texts diverge into different suttas (Mahāgovinda vs. Sakka-pañha)",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "89",
+  "ref": "M ii 118",
+  "name": "Dhammacetiya",
+  "cst_title": "9. dhammacetiyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical narrative content with minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "152",
+  "ref": "M iii 298",
+  "name": "Indriyabhāvana",
+  "cst_title": "10. indriyabhāvanāsuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages present the same Indriyabhāvanāsutta of the Majjhima Nikāya with minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "30",
+  "ref": "M i 198",
+  "name": "Cūḷasāropama",
+  "cst_title": "10. cūḷasāropamasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical core narrative and differ only in minor orthographical variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "126",
+  "ref": "M iii 138",
+  "name": "Bhūmija",
+  "cst_title": "6. bhūmijasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic differences and slight manuscript glosses.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "79",
+  "ref": "M ii 29,17",
+  "name": "Cūḷasakuludāyi",
+  "cst_title": "9. cūḷasakuludāyisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "CST expands peyyāla passage; core narrative matches.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "39",
+  "ref": "M i 271,7",
+  "name": "Mahā-Assapura",
+  "cst_title": "9. mahāassapurasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical core text of the Assapura Sutta with minor orthographic and expansion differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "28",
+  "ref": "D iii 99",
+  "name": "Sampasādanīya",
+  "cst_title": "5. sampasādanīyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Sampasādanīya Suttanta with expected orthographic and textual expansion differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "139",
+  "ref": "M iii 230",
+  "name": "Araṇavibhaṅga",
+  "cst_title": "9. araṇavibhaṅgasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical editions of the Araṇavibhaṅga Sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "66",
+  "ref": "M i 447,11",
+  "name": "Laṭukikopama",
+  "cst_title": "6. laṭukikopamasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Minor orthographic variants and sandhi differences in identical Udāyi sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "18",
+  "ref": "M i 108,14",
+  "name": "Madhupiṇḍika",
+  "cst_title": "8. madhupiṇḍikasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are Dandaṇi Sutta, CST has expanded ending text.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "122",
+  "ref": "M iii 109,20",
+  "name": "Mahāsuññata",
+  "cst_title": "2. mahāsuññatasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS has an elision while CST expands the full text narrative",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "5",
+  "ref": "D i 127,3",
+  "name": "Kūṭadanta",
+  "cst_title": "5. kūṭadantasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical Kuṭadanta Sutta opening with minor orthographic and expansion differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "30",
+  "ref": "D iii 142",
+  "name": "Lakkhaṇa",
+  "cst_title": "7. lakkhaṇasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same Lakkhaṇa Suttanta despite minor textual variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "138",
+  "ref": "M iii 223",
+  "name": "Uddesavibhaṅga",
+  "cst_title": "8. uddesavibhaṅgasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Uddesavibhaṅgasutta with minor orthographic variations.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "8",
+  "ref": "M i 40,11",
+  "name": "Sallekha",
+  "cst_title": "8. sallekhasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative and dialogue match despite minor textual expansion.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "78",
+  "ref": "M ii 22,26",
+  "name": "Samaṇamaṇḍikā",
+  "cst_title": "8. samaṇamuṇḍikasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches; CST provides expanded prose where PTS uses elision.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "151",
+  "ref": "M iii 293,27",
+  "name": "Piṇḍapātapārisuddha",
+  "cst_title": "9. piṇḍapātapārisuddhisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS text is truncated; CST expands the same identical sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "119",
+  "ref": "M iii 88,16",
+  "name": "Kāyagatāsati",
+  "cst_title": "9. kāyagatāsatisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative of Kāyagatāsati Sutta, with CST containing minor expansions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "131",
+  "ref": "M iii 187,15",
+  "name": "Bhaddekaratta",
+  "cst_title": "1. bhaddekarattasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical Bhaddekaratta suttas; CST includes expected vibhaṅga expansion.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "128",
+  "ref": "M iii 152,25",
+  "name": "Upakkilesa",
+  "cst_title": "8. upakkilesasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS has standard text abbreviated with peyyala while CST expands fully.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "80",
+  "ref": "M ii 40",
+  "name": "Vekhanassa",
+  "cst_title": "10. vekhanasasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative and dialogue match between editions with minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "91",
+  "ref": "M ii 133,10",
+  "name": "Brahmāyu",
+  "cst_title": "1. brahmāyusuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative of Brahmāyu Sutta matches, minor orthographic and expansion differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "94",
+  "ref": "M ii 157,23",
+  "name": "Ghoṭamukha",
+  "cst_title": "4. ghoṭamukhasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Same sutta with minor orthographic differences and editorial expansions.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "MN",
+  "num": "85",
+  "ref": "M ii 91",
+  "name": "Bodhirajakumāra",
+  "cst_title": "5. bodhirājakumārasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical in core narrative, representing the beginning of the Bodhirājakumārasutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "105",
+  "ref": "M ii 252",
+  "name": "Sunakkhatta",
+  "cst_title": "5. sunakkhattasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical in core narrative, representing the Mahali Sutta with minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "60",
+  "ref": "M i 400,27",
+  "name": "Apaṇṇaka",
+  "cst_title": "10. apaṇṇakasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "CST contains standard peyyāla expansions of the Sāleyyaka sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "35",
+  "ref": "M i 227,16",
+  "name": "Cūḷasaccaka",
+  "cst_title": "5. cūḷasaccakasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Same core narrative and Cūḷasaccakasutta opening, CST has expansion.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "DN",
+  "num": "22",
+  "ref": "D ii 290",
+  "name": "Mahāsatipaṭṭhāna",
+  "cst_title": "9. mahāsatipaṭṭhānasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both are Mahasatipatthana Sutta, CST contains expected textual expansion.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "88",
+  "ref": "M ii 112,10",
+  "name": "Bāhitika",
+  "cst_title": "8. bāhitikasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor textual expansion in CST edition.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "44",
+  "ref": "M i 299",
+  "name": "Cūḷavedalla",
+  "cst_title": "4. cūḷavedallasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative and Dhammadinnās dialogue match identically between editions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "10",
+  "ref": "D i 204,3",
+  "name": "Subha",
+  "cst_title": "10. subhasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical Subha Sutta opening passages with minor orthographic differences.",
+  "ds": null
+ },
+ {
+  "nik": "MN",
+  "num": "49",
+  "ref": "M i 326",
+  "name": "Brahmanimantani.",
+  "cst_title": "9. brahmanimantanikasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical narrative and wording, differing only in orthography.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "120",
+  "ref": "M iii 99,15",
+  "name": "Saṅkhārupapatti",
+  "cst_title": "10. saṅkhārupapattisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Editions match; CST includes variant readings and peyyāla expansions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "56",
+  "ref": "M i 371,25",
+  "name": "Upāli",
+  "cst_title": "6. upālisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative of Dīghatapassīsutta; CST contains additional expanded dialogue passages.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "1",
+  "ref": "M i 1,3",
+  "name": "Mūlapariyāya",
+  "cst_title": "1. mūlapariyāyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Mūlapariyāyasutta with minor orthographic and reading variations.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "52",
+  "ref": "M i 349,8",
+  "name": "Aṭṭhakanāgara",
+  "cst_title": "2. aṭṭhakanāgarasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Aṭṭhakanāgara Sutta with minor orthographic differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "115",
+  "ref": "M iii 61,5",
+  "name": "Bahudhātuka",
+  "cst_title": "5. bahudhātukasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches; CST includes minor textual expansion.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "12",
+  "ref": "M i 68,5",
+  "name": "Mahāsīhanāda",
+  "cst_title": "2. mahāsīhanādasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same opening narrative about Sunakkhatta and Sāriputta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "14",
+  "ref": "M i 91",
+  "name": "Cūḷadukkhakkhandha",
+  "cst_title": "4. cūḷadukkhakkhandhasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical narrative and dialogue between the Buddha and Mahānāma.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "95",
+  "ref": "M ii 164",
+  "name": "Caṅkī",
+  "cst_title": "5. caṅkīsuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Caṅkī Sutta with minor orthographic and expansion differences.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "MN",
+  "num": "13",
+  "ref": "M i 83,30",
+  "name": "Mahādukkhakkhandha",
+  "cst_title": "3. mahādukkhakkhandhasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS uses peyyala while CST expands the narrative fully.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "73",
+  "ref": "M i 489,8",
+  "name": "Mahāvacchagotta",
+  "cst_title": "3. mahāvacchasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic differences and editorial expansions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "48",
+  "ref": "M i 320,27",
+  "name": "Kosambiya",
+  "cst_title": "8. kosambiyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Same sutta; CST includes expanded peyyāla passage compared to PTS.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "97",
+  "ref": "M ii 184,26",
+  "name": "Dhānañjāni",
+  "cst_title": "7. dhanañjānisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS has elision while CST expands identical narrative content.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "146",
+  "ref": "M iii 270,10",
+  "name": "Nandakovāda",
+  "cst_title": "4. nandakovādasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same Nandakovāda Sutta with minor orthographic and expansion differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "15",
+  "ref": "M i 95,7",
+  "name": "Anumāna",
+  "cst_title": "5. anumānasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical Moggallāna discourses on bad qualities and admonition.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "13",
+  "ref": "D i 235,3",
+  "name": "Tevijja",
+  "cst_title": "13. tevijjasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share the identical narrative setting and characters of the Vāseṭṭha Sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "77",
+  "ref": "M ii 1",
+  "name": "Mahāsakuludāyi",
+  "cst_title": "7. mahāsakuludāyisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic variants and textual expansion.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "135",
+  "ref": "M iii 202,12",
+  "name": "Cūḷakammavibhaṅga",
+  "cst_title": "5. cūḷakammavibhaṅgasuttaṃ {subhasuttantipi vuccati}",
+  "gemini": "APPROVE",
+  "reason": "Identical Subha Sutta opening passages with minor orthographic variants and standard CST expansion.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "MN",
+  "num": "103",
+  "ref": "M ii 238,8",
+  "name": "Kinti",
+  "cst_title": "3. kintisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor recensional variations and textual expansions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "41",
+  "ref": "M i 285",
+  "name": "Saleyyaka",
+  "cst_title": "1. sāleyyakasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same Saleyyaka Sutta with minor orthographic differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "25",
+  "ref": "M i 151,8",
+  "name": "Nivāpa",
+  "cst_title": "5. nivāpasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative of the Nivāpa Sutta despite minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "108",
+  "ref": "M iii 7,13",
+  "name": "Gopakamoggallāna",
+  "cst_title": "8. gopakamoggallānasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Gopakamoggallāna Sutta with minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "18",
+  "ref": "D ii 200",
+  "name": "Janavasabha",
+  "cst_title": "5. janavasabhasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share the identical narrative concerning Janavasabha and Nātika follower rebirths.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "16",
+  "ref": "M i 101",
+  "name": "Cetokhīla",
+  "cst_title": "6. cetokhilasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative of the Cetokhila Sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "59",
+  "ref": "M i 396,24",
+  "name": "Bahuvedanīya",
+  "cst_title": "9. bahuvedanīyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core dialogue matches; CST is an expanded and fully written out version.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "42",
+  "ref": "M i 290,13",
+  "name": "Verañjaka",
+  "cst_title": "2. verañjakasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with standard editorial expansion in CST text.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "DN",
+  "num": "21",
+  "ref": "D ii 263,3",
+  "name": "Sakkapañha",
+  "cst_title": "8. sakkapañhasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Same sutta with minor orthographic differences and slight expansion in CST.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "63",
+  "ref": "M i 426,7",
+  "name": "Cūḷamaluṅkya",
+  "cst_title": "3. cūḷamālukyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Cūḷamālukyasutta with minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "32",
+  "ref": "D iii 194",
+  "name": "Āṭānāṭiya",
+  "cst_title": "9. āṭānāṭiyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative of the Āṭānāṭiya Sutta with minor orthographic and expansion differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "104",
+  "ref": "M ii 243,17",
+  "name": "Sāmagāma",
+  "cst_title": "4. sāmagāmasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Same core narrative; CST includes textual variants and expansions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "84",
+  "ref": "M ii 83,16",
+  "name": "Madhura",
+  "cst_title": "4. madhurasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical Madhuratthika Sutta text with minor orthographic and expansion variations.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "12",
+  "ref": "D i 224,3",
+  "name": "Lohicca",
+  "cst_title": "12. lohiccasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical in core narrative, representing the Lohicca Sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "34",
+  "ref": "M i 225",
+  "name": "Cūḷagopālaka",
+  "cst_title": "4. cūḷagopālakasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Orthographic variants and minor reading differences; core narrative is identical.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "55",
+  "ref": "M i 368,17",
+  "name": "Jīvaka",
+  "cst_title": "5. jīvakasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Jīvaka Sutta with minor orthographic variants and textual expansion.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "58",
+  "ref": "M i 392,10",
+  "name": "Abhayarājakumāra",
+  "cst_title": "8. abhayarājakumārasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic and expansion differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "25",
+  "ref": "D iii 36",
+  "name": "Udumbarika-sīhanāda",
+  "cst_title": "2. udumbarikasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are the Udumbarika Sīhanāda Sutta sharing identical core narrative.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "64",
+  "ref": "M i 432,7",
+  "name": "Mahāmāluṅkya",
+  "cst_title": "4. mahāmālukyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical sutta sharing core narrative with minor orthographic and expansion differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "137",
+  "ref": "M iii 215,22",
+  "name": "Saḷāyatanavibhaṅga",
+  "cst_title": "7. saḷāyatanavibhaṅgasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS is the introductory fragment of the same Saḷāyatanavibhaṅgasutta fully present in CST.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "145",
+  "ref": "M iii 267",
+  "name": "Puṇṇovāda",
+  "cst_title": "3. puṇṇovādasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages present the Punna Sutta with minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "53",
+  "ref": "M i 353,18",
+  "name": "Sekha",
+  "cst_title": "3. sekhasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches; CST includes editorial expansions and variant readings.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "136",
+  "ref": "M iii 207",
+  "name": "Mahākammavibhaṅga",
+  "cst_title": "6. mahākammavibhaṅgasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same Samiddhi Sutta with minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "6",
+  "ref": "M i 33",
+  "name": "Ākaṅkheyya",
+  "cst_title": "6. ākaṅkheyyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative and doctrinal content match completely between editions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "124",
+  "ref": "M iii 124,26",
+  "name": "Bakkula",
+  "cst_title": "4. bākulasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical narrative content, with CST being expanded.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "54",
+  "ref": "M i 359,5",
+  "name": "Potaliya",
+  "cst_title": "4. potaliyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical core narrative and character dialogue from the Potaliya Sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "144",
+  "ref": "M iii 263,15",
+  "name": "Channovāda",
+  "cst_title": "2. channovādasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches; CST contains standard textual expansion absent in truncated PTS.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "7",
+  "ref": "M i 36,12",
+  "name": "Vatthūpama",
+  "cst_title": "7. vatthasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages contain the Vatthūpama Sutta describing mental defilements with minor orthographic differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "2",
+  "ref": "D i 47,3",
+  "name": "Sāmaññaphala",
+  "cst_title": "2. sāmaññaphalasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages contain the opening scene of the Sāmaññaphala Sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "38",
+  "ref": "M i 256,11",
+  "name": "Mahātaṇhāsaṅkhaya",
+  "cst_title": "8. mahātaṇhāsaṅkhayasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical core narrative representing Mahātaṇhāsaṅkhayasutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "117",
+  "ref": "M iii 71,9",
+  "name": "Mahācattārīsaka",
+  "cst_title": "7. mahācattārīsakasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical editions of the Mahācattālīsaka Sutta with minor orthographic differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "81",
+  "ref": "M ii 45",
+  "name": "Ghaṭikāra",
+  "cst_title": "1. ghaṭikārasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same Vebhaliṅga Sutta with minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "23",
+  "ref": "M i 142,13",
+  "name": "Vammika",
+  "cst_title": "3. vammikasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches; editions differ in orthography and minor textual expansions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "74",
+  "ref": "M i 497,21",
+  "name": "Dīghanakha",
+  "cst_title": "4. dīghanakhasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches; CST edition has expanded passages compared to PTS.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "MN",
+  "num": "143",
+  "ref": "M iii 258",
+  "name": "Anāthapiṇḍikovāda",
+  "cst_title": "1. anāthapiṇḍikovādasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same Anathapindikovada Sutta with minor orthographic differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "17",
+  "ref": "M i 104,18",
+  "name": "Vanapattha",
+  "cst_title": "7. vanapatthasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages belong to the Vanapattha Sutta with minor orthographic and expansion differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "110",
+  "ref": "M iii 20,27",
+  "name": "Cūlapuṇṇma",
+  "cst_title": "10. cūḷapuṇṇamasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "CST expands on PTS opening with standard peyyala text of the same sutta.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "MN",
+  "num": "150",
+  "ref": "M iii 290,26",
+  "name": "Nagaravindeyya",
+  "cst_title": "8. nagaravindeyyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "CST expands standard introductory elisions present in PTS.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "MN",
+  "num": "121",
+  "ref": "M iii 104",
+  "name": "Cūḷasuññata",
+  "cst_title": "1. cūḷasuññatasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with only minor orthographic and variant differences between editions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "96",
+  "ref": "M ii 177,16",
+  "name": "Esukāri",
+  "cst_title": "6. esukārīsuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Orthographic variants and minor elisions with same core narrative.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "26",
+  "ref": "M i 160,17",
+  "name": "Ariyapariyesana",
+  "cst_title": "6. pāsarāsisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical narrative content, with minor orthographic differences and standard textual expansion.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "22",
+  "ref": "M i 130",
+  "name": "Alagaddūpama",
+  "cst_title": "2. alagaddūpamasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative of Alagaddūpama Sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "24",
+  "ref": "D iii 1,4",
+  "name": "Pāṭika",
+  "cst_title": "1. pāthikasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "CST contains an expanded text of the same Bhaggava Sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "8",
+  "ref": "D i 161,2",
+  "name": "Kassapasīhanāda",
+  "cst_title": "8. mahāsīhanādasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical discourse with minor orthographic and reading variations between editions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "9",
+  "ref": "D i 178,3",
+  "name": "Poṭṭhapāda",
+  "cst_title": "9. poṭṭhapādasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are versions of the Poṭṭhapāda Sutta; CST includes minor expansions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "75",
+  "ref": "M i 501,23",
+  "name": "Māgandiya",
+  "cst_title": "5. māgaṇḍiyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "CST expands the opening narrative with Magandhiya introduction while PTS stops early.",
+  "ds": "REJECT"
+ },
+ {
+  "nik": "MN",
+  "num": "118",
+  "ref": "M iii 78,21",
+  "name": "Ānāpānasati",
+  "cst_title": "8. ānāpānassatisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Editions correspond to the same sutta with minor text expansion.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "23",
+  "ref": "D ii 316",
+  "name": "Pāyāsi",
+  "cst_title": "10. pāyāsisuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Pāyāsisutta, with minor orthographic and expansion differences.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "106",
+  "ref": "M ii 261,21",
+  "name": "Āneñjasappāya",
+  "cst_title": "6. āneñjasappāyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "PTS text is a condensed peyyāla version of the CST sutta.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "140",
+  "ref": "M iii 237,22",
+  "name": "Dhātuvibhaṅga",
+  "cst_title": "10. dhātuvibhaṅgasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches; CST edition has expanded textual variants and additions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "27",
+  "ref": "D iii 80",
+  "name": "Aggañña",
+  "cst_title": "4. aggaññasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are from the Aggañña Sutta with minor orthographic variants.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "2",
+  "ref": "M i 6,28",
+  "name": "Sabbāsava",
+  "cst_title": "2. sabbāsavasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Identical discourse; CST provides an expanded text where PTS uses peyyāla.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "24",
+  "ref": "M i 145,13",
+  "name": "Rathavinīta",
+  "cst_title": "4. rathavinītasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches; CST contains standard expanded passages.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "29",
+  "ref": "M i 192",
+  "name": "Mahāsāropama",
+  "cst_title": "9. mahāsāropamasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative and core simile match across both editions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "37",
+  "ref": "M i 251,13",
+  "name": "Cūḷataṇhāsaṅkhaya",
+  "cst_title": "7. cūḷataṇhāsaṅkhayasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages contain the same Sakka sutta; CST includes a natural continuation.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "7",
+  "ref": "D i 159,3",
+  "name": "Jāliya",
+  "cst_title": "7. jāliyasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic differences and standard peyyāla expansions.",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "DN",
+  "num": "29",
+  "ref": "D iii 117",
+  "name": "Pāsādika",
+  "cst_title": "6. pāsādikasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Both passages are versions of the Pāsādikasutta (DN 29).",
+  "ds": "APPROVE"
+ },
+ {
+  "nik": "MN",
+  "num": "130",
+  "ref": "M iii 178,17",
+  "name": "Devadūta",
+  "cst_title": "10. devadūtasuttaṃ",
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic differences and expansion.",
+  "ds": "APPROVE"
+ }
+]

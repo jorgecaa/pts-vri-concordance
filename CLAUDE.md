@@ -103,9 +103,13 @@ The Helmer validation persona/workflow is also packaged as a repo skill:
 
 **Status columns in the master Excel** (`PTS_Reference_Complete_Canon.xlsx`, sheet *Complete
 Canon*): `Validation` holds the fine-grained provenance; **`Estado`** is the binary rollup with
-exactly two values — **CONFIRMADO** (Helmer only: `Validation` ∈ HELMER_APPROVED /
-HELMER_PTS_TRUNCATED / HELMER_FIXED) and **PENDIENTE** (everything else, including `DB_VERIFIED`).
+exactly two values — **CONFIRMADO** (`Validation` ∈ HELMER_APPROVED / HELMER_PTS_TRUNCATED /
+HELMER_FIXED / PTS_CROSSREF_SN) and **PENDIENTE** (everything else, including `DB_VERIFIED`).
 **Rule: without Helmer, nothing is CONFIRMADO** (BD/RTE/incipit verification is not sufficient).
+`PTS_CROSSREF_SN` is the one non-Helmer-LLM route to CONFIRMADO: PTS reenvía el sutta al
+Suttanipāta sin reimprimir el texto (no hay texto PTS que cotejar), y la referencia fue
+verificada a mano contra la edición impresa. Únicas dos paradas: MN 92 Sela (M ii 146 → Sn
+p.99 Fausböll) y MN 98 Vāseṭṭha (M ii 196 → Sn nº35).
 Use these two terms consistently. Per-Nikāya counts live in `STATUS.md` (single source of truth).
 
 ### Commentary extraction (Aṭṭhakathā → JSON/LaTeX/PDF)
