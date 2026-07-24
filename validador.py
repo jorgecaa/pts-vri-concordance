@@ -30,9 +30,22 @@ GEMINI_SCHEMA = {'type': 'OBJECT', 'properties': {
     'verdict': {'type': 'STRING', 'enum': ['APPROVE', 'REJECT']},
     'reason': {'type': 'STRING'}}, 'required': ['verdict', 'reason']}
 
-# Umbral de Jaccard de incipit por grupo de nikāya. KN/SN/AN: el título NO basta
-# (nombres se repiten, numeración resetea) → exigir más solapamiento de contenido.
-JAC_THRESHOLD = {'DN': 0.30, 'MN': 0.30, 'SN': 0.40, 'AN': 0.40, 'KN': 0.40}
+# DN/MN: título-núcleo + Jaccard de incipit sobre tokens crudos (validado en DN/MN).
+JAC_THRESHOLD = {'DN': 0.30, 'MN': 0.30}
+# SN/AN/KN: el título NO basta (regla) y el incipit crudo es frágil (suttas cortos,
+# elididos, con variantes ortográficas). Señal = cobertura de contenido NORMALIZADA
+# (pliega diacríticos + colapsa consonantes dobles), asimétrica |PTS∩CST|/|PTS|.
+COV_THRESHOLD = 0.55
+
+_FOLD = str.maketrans({'ā': 'a', 'ī': 'i', 'ū': 'u', 'ṅ': 'n', 'ñ': 'n', 'ṇ': 'n',
+                       'ṭ': 't', 'ḍ': 'd', 'ḷ': 'l', 'ṃ': 'm', 'ṁ': 'm'})
+def _nfold(t):
+    return re.sub(r'(.)\1+', r'\1', t.translate(_FOLD))
+
+def content_coverage(pts, cst, n=150):
+    A = {_nfold(x) for x in sh.tokens(pts)[:n]}
+    B = {_nfold(x) for x in sh.tokens(cst)[:n]}
+    return len(A & B) / max(1, len(A))
 
 # Reenvío PTS→Suttanipāta: PTS no reimprime el sutta (práctica estándar).
 _CROSSREF = re.compile(r'not printed here|identical with that of.{0,40}sutta\s*nip', re.I)
@@ -44,9 +57,12 @@ def is_crossref(pts_text: str) -> bool:
 
 def gate(pts, cst, name, cst_title, nik):
     """Señal de contenido local. Devuelve ('APPROVE'|'REJECT', detalle)."""
+    if nik in ('SN', 'AN', 'KN'):
+        cov = content_coverage(pts, cst)
+        return ('APPROVE' if cov >= COV_THRESHOLD else 'REJECT'), {'cov': round(cov, 2), 'thr': COV_THRESHOLD}
     tm = titles_match(name, cst_title)
     jac = incipit_jaccard(pts, cst)
-    thr = JAC_THRESHOLD.get(nik, 0.40)
+    thr = JAC_THRESHOLD.get(nik, 0.30)
     ok = (tm is True and jac >= thr)
     return ('APPROVE' if ok else 'REJECT'), {'title': tm, 'jac': round(jac, 2), 'thr': thr}
 
