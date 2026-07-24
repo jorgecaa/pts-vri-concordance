@@ -1,0 +1,33 @@
+# Tipitaka PTS Browser - Requirements
+
+# Core dependencies
+PyQt6>=6.5.0
+PyQt6-Qt6>=6.5.0
+PyQt6-sip>=13.5.0
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Text processing and search
+rapidfuzz>=3.0.0
+python-Levenshtein>=0.21.0
+charset-normalizer>=3.0.0
+
+# Utilities
+setuptools>=65.0.0
+wcwidth>=0.2.0
+
+# Development dependencies (optional)
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.0.0
+pytest>=7.0.0
+pytest-qt>=4.0.0
+
+# Documentation
+sphinx>=7.0.0
+sphinx-rtd-theme>=1.0.0
+
+# Note: Some dependencies like certifi are usually included with Python
+# or installed as system packages

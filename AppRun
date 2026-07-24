@@ -1,0 +1,18 @@
+#!/bin/bash
+# Tipitaka PTS Browser launcher.
+# Runs the maintained source app (src/run.py). The previously bundled binary
+# in usr/ is an obsolete build whose DB schema no longer matches; source is
+# the current, working codebase.
+SELF="$(readlink -f "$0")"
+HERE="${SELF%/*}"
+
+# Prefer a project venv python if present, then python3, then python.
+if [[ -x "$HERE/venv/bin/python" ]]; then
+    PY="$HERE/venv/bin/python"
+elif command -v python3 &>/dev/null; then
+    PY="python3"
+else
+    PY="python"
+fi
+
+exec "$PY" "$HERE/src/run.py" "$@"

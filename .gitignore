@@ -1,0 +1,32 @@
+# ── Binarios grandes / datos fuente (no versionar) ──
+# BD PTS ~686 MB (fuente; ver src/data/DATABASE.md)
+src/data/tipitaka.sqlite
+# StarDict / critical.db (binarios)
+src/data/dictionaries/
+# ~2 GB de PDFs de referencia
+src/docs/
+# binario AppImage obsoleto (~2.7 GB)
+usr/
+# librería pyparsing vendorizada (dependencia externa)
+doc/pyparsing/
+# datos derivados grandes (no código)
+src/data/edition_conversions.json
+src/data/reference_related_my.csv
+
+# ── Fuera de alcance (reglas del proyecto) ──
+# informes de comentario/aṭṭhakathā
+dpd_check/
+# datos derivados de RTE/BUDSIR
+rte_pts_refs.json
+
+# ── Backups y temporales ──
+*.bak-*.xlsx
+*.bak-*
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# ── Symlinks externos / runtime AppImage ──
+# symlink a ~/.wine (externo)
+Tipitaka
