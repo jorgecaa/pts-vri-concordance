@@ -51,6 +51,7 @@ _roman = pp.Regex(r'M{0,4}(?:CM|CD|D?C{0,3})(?:XC|XL|L?X{0,3})(?:IX|IV|V?I{0,3})
 # También hay RANGOS en romanos: «CLXXXII-CLXXXIX.» (A iii 219) cubre los suttas 182-189 de una
 # vez. Sin esto se pierden ocho seguidos y parece que faltan del impreso.
 _roman2 = pp.Regex(r'M{0,4}(?:CM|CD|D?C{0,3})(?:XC|XL|L?X{0,3})(?:IX|IV|V?I{0,3})')('roman2')
+# la llamada de nota puede ir PEGADA («XIV.3») o SEPARADA por un espacio («I 2.», A iv 150)
 _VAGGA = (_roman + pp.Opt(pp.Suppress(pp.Word('-–—')) + _roman2)
           + pp.Opt(pp.Suppress('.')) + pp.Opt(pp.Suppress(_num)) + pp.StringEnd())
 # nº de sutta centrado (Tika): «11.» y nada más
@@ -95,7 +96,10 @@ _NIPATA = re.compile(r'(EKA|DUKA|TIKA|CATUKKA|PA[ÑN]CAKA|CHAKKA|SATTAKA|A[ṬT]
 # centrado, pero el **Pañcaka y el Chakka VUELVEN** al numeral romano de vagga con el sutta a
 # sangría 5, como el Eka y el Duka. Suponer que «del Tika en adelante todo es corrido» es falso.
 REGIMEN = {'EKA': 'vagga_romano', 'DUKA': 'vagga_romano',
-           'PAÑCAKA': 'sutta_romano', 'PANCAKA': 'sutta_romano', 'CHAKKA': 'sutta_romano'}
+           'PAÑCAKA': 'sutta_romano', 'PANCAKA': 'sutta_romano', 'CHAKKA': 'sutta_romano',
+           'SATTAKA': 'sutta_romano', 'AṬṬHAKA': 'sutta_romano', 'ATTHAKA': 'sutta_romano',
+           'NAVAKA': 'sutta_romano', 'DASAKA': 'sutta_romano',
+           'EKĀDASAKA': 'sutta_romano', 'EKADASAKA': 'sutta_romano'}
 
 
 def _parse(expr, s):
@@ -103,6 +107,28 @@ def _parse(expr, s):
         return expr.parse_string(s, parse_all=True)
     except pp.ParseException:
         return None
+
+
+# el guion entra en la clase: los RANGOS también llegan con la llamada pegada
+# («LXXIII-LXXXI6.», A iv 462)
+_SOLO_ROMANO = re.compile(r'^[IVXLCDM\s\-–—]+[\s.]*[*)\d]*[\s.]*$')
+
+
+def _limpia_romano(s):
+    """Repara el numeral romano roto por el OCR.
+
+    Tres daños reales en A iv: `«LI. *)»` arrastra una llamada al pie, `«LX XXVII.»` (A iv 344)
+    lleva **un espacio dentro del numeral** —es LXXXVII partido— y `«I 2.»` (A iv 150) separa la
+    llamada con un espacio. Sólo se aplica si la línea entera son letras romanas, espacios y
+    puntuación, así que no toca ningún nombre.
+
+    La llamada se quita **aquí** y no aflojando la gramática: reordenar `_VAGGA` para admitirla
+    hundía el recuento de A i de 272 a 56.
+    """
+    if not _SOLO_ROMANO.match(s):
+        return s
+    t = re.sub(r'\s+', '', re.sub(r'[*)]+', '', s))
+    return re.sub(r'\d+(?=\.?$)', '', t)          # llamada de nota final: los romanos no llevan dígitos
 
 
 def find_markers_an1(text):
@@ -125,7 +151,9 @@ def find_markers_an1(text):
             out.append((i, 'separador', None, indent))
             continue
         if indent >= MIN_INDENT_CENTRED and len(s) <= MAX_LEN_HEAD:
-            r = _parse(_VAGGA, s)
+            # variable APARTE: reasignar `s` contaminaría las comprobaciones de más abajo
+            sr = _limpia_romano(s)
+            r = _parse(_VAGGA, sr)
             if r is not None and r['roman']:
                 out.append((i, 'vagga', (r['roman'], r['roman2'] if 'roman2' in r else None),
                             indent))
