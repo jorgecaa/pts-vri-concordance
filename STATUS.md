@@ -221,15 +221,21 @@ Use this terminology consistently across the project:
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
-| AN | 1738 | 1453 | 285 | 83.6% |
+| AN | 1738 | 1454 | 284 | 83.7% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6098** | **3453** | **2645** | **56.6%** |
+| **TOTAL** | **6098** | **3454** | **2644** | **56.6%** |
 
-> Desglose de AN (2026-07-25): **A ii 303/303, A iii 457/457 y A iv 298/298 CERRADOS 🔒**,
-> A v 244/245, A i 151/435 (sólo el Tika). **Queda UNA fila** en A v —`11.502-981`— y es decisión
-> editorial, no falta de evidencia: PTS imprime la mitad *bhabbo* del símil del gopālaka (A v 360
-> §§4-6) y **el CST no la numera**. **Todo lo demás que falta en AN es A i: Eka y Duka (284
-> filas), sin abordar a propósito.**
+> Desglose de AN (2026-07-25): **A ii 303/303, A iii 457/457, A iv 298/298 y A v 245/245 —
+> los cuatro CERRADOS 🔒**. **Todo lo que falta en AN es A i**: 151/435, sólo el Tika. Eka y Duka
+> (284 filas) siguen sin abordar a propósito.
+>
+> ⚠️ **`11.502-981` cierra por decisión editorial de Jorge**: PTS imprime el símil del gopālaka
+> dos veces —`abhabbo` (A v 359) y `bhabbo` (A v 360 §§4-6)— y el CST **sólo numera la mitad
+> negativa** (`<p n="22-29">` dice `abhabbo` diez veces y `bhabbo` ninguna; sus paranums del
+> *sāmañña-vagga* son 22-501 = 480, y el Excel cuenta 960 = 480 × 2). La fila apunta a **la misma
+> `VRI Ref` que su mitad gemela**, `s0404m4:22-501`: la clave deja de ser biyectiva en ese punto y
+> pasa a decir la verdad —*ahí* está el texto—, que es preferible a inventarle una clave o a borrar
+> una fila que el impreso tiene delante.
 
 > Cifras al **2026-07-25**. **SN entero pasado por el validador: 1810/1815.** Desglose:
 > **S i 271/271, S ii 257/257, S iii 332/332, S iv 344/344, S v 610/610 — los cinco CERRADOS 🔒**. Ya no queda ningún

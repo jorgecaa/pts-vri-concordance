@@ -256,7 +256,12 @@ def sondas(nombre):
             # `-ādi` («y siguientes») no es parte del nombre sino la marca de serie del Excel:
             # `Dosādi peyyāla` es el peyyāla de *dosa*, y `Bhallikādi` el grupo que abre
             # *Bhallika*. Sin quitarlo, la sonda `dosadi` no existe en ningún impreso.
-            w = re.sub(r'adi$', '', w) if len(w) > 5 else w
+            # `-ādi` otra vez con sandhi: `dosa` + `ādi` se escribe `dosādi`, así que quitar las
+            # tres letras deja `dos` —que ni es palabra ni cubre el 60 % de `dosassa`— cuando el
+            # stem es `dosa`. Se emiten las dos formas, con la vocal restituida y sin ella.
+            if len(w) > 5 and w.endswith('adi'):
+                out.append(w[:-3] + 'a')
+                w = w[:-3]
             # `apara-` («otro, ulterior») es prefijo SERIAL, no parte del nombre: marca la segunda
             # vuelta de una serie que ya se ha impreso (`Aparapaṭhamajjhāna` es el `Paṭhamajjhāna`
             # de la segunda tanda), y el impreso no lo escribe. Se emite también la forma sin él y
@@ -273,6 +278,14 @@ def sondas(nombre):
                 out.append(w)
             if len(r) >= 3 and r != w:
                 out.append(r)
+    # …y los SUFIJOS largos, porque el Excel escribe junto lo que el impreso separa:
+    # `Cakkhudukkhānupassī` es `cakkhusmiṃ dukkhānupassī` en A iv 146, y ningún prefijo de la
+    # forma compuesta lo alcanza. Se exigen ≥7 caracteres —el sufijo es una sonda ciega, no una
+    # raíz— y la cobertura mínima de `_apariciones` impide que casen con cualquier cosa.
+    for w in list(out):
+        for k in range(1, len(w) - 6):
+            if len(w) - k >= 7:
+                out.append(w[k:])
     # Y los PREFIJOS, hasta 5 caracteres. El impreso parte los compuestos que el Excel escribe
     # juntos: `Macchariyapahāna` se lee `macchariyānaṃ pahānāya` en A iii 272, y exigir el
     # compuesto entero no encuentra nada. El prefijo `machariya` sí, y la monotonía lo coloca en

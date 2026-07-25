@@ -59,12 +59,16 @@ De ahí que a partir de ahí vaya +480, y las cuentas cuadran al dígito:
 | `11.502-981` (*Aniccānupassanādi*) | 480 | — *el CST no numera la mitad positiva* | — |
 
 Así que **`11.982-1151` se cierra** con la `VRI Ref` corregida a `s0404m4:502-671` (mismo recuento,
-mismo contenido, misma página). Y **`11.502-981` se queda PENDIENTE**, pero ya no por
-desconocimiento: es una fila que PTS imprime (A v 360 §§4-6) y que **el CST no numera**. Anclarla a
-`22-501` sería darle la clave de su mitad gemela; borrarla sería negar lo que el impreso tiene
-delante. Es decisión editorial de Jorge, del mismo tipo que la de `12.74` en S ii.
+mismo contenido, misma página).
 
-A v queda en **244/245**.
+Y **`11.502-981` también**, por **decisión de Jorge (2026-07-25): que apunte a la misma referencia
+que su mitad gemela**, `s0404m4:22-501`. Es deliberadamente **no inyectivo** y es lo correcto: las
+dos mitades no son dos textos sino **el mismo texto del CST leído en sus dos sentidos** —lo que un
+lado imprime dos veces, el otro lo numera una—, y darle una clave inventada, o borrar una fila que
+el impreso tiene delante, sería peor que compartir la referencia. La `VRI Ref` deja de ser
+biyectiva en este punto y pasa a decir la verdad: *ahí* está el texto.
+
+A v queda **CERRADO 🔒 245/245**.
 
 Uso: python3 reconcile_an5_cierre.py [--dry]
 """
@@ -77,6 +81,11 @@ from openpyxl import load_workbook
 
 XLSX = 'PTS_Reference_Complete_Canon.xlsx'
 STEM = {'10': 's0404m3', '11': 's0404m4'}
+# Las dos filas de la cola del Ekādasaka cuya numeración NO es la del CST (ver la nota de abajo)
+VRI_ESPECIAL = {
+    '11.982-1151': 's0404m4:502-671',   # 170 paranums, los mismos 170 que cuenta la fila
+    '11.502-981': 's0404m4:22-501',     # misma referencia que su mitad gemela: decisión de Jorge
+}
 
 CIERRE = {
     # (1) ruta léxica — Ekādasaka
@@ -87,7 +96,12 @@ CIERRE = {
     # rāgapeyyāla del CST (`502` + `503-511` + `512-671`), exactamente los 170 que cuenta la fila.
     '11.982-1151': 'rāgapeyyāla = `502`+`503-511`+`512-671` del CST: 170 paranums, los mismos 170 '
                    'que cuenta la fila; texto en A v 360-361 tras la raya',
-    # ⚠️ `11.502-981` NO se cierra: el CST no numera la mitad positiva. Ver la nota de abajo.
+    # `11.502-981`: la mitad **positiva** del símil, que PTS imprime (A v 360 §§4-6) y el CST no
+    # numera. **Decisión de Jorge (2026-07-25): que apunte a la misma referencia que su mitad
+    # gemela**, `22-501`. Es deliberadamente NO inyectivo, y es lo correcto: las dos mitades son
+    # el mismo texto del CST leído en sus dos sentidos, y darle una clave inventada sería peor.
+    '11.502-981': 'mitad positiva («bhabbo») del símil del gopālaka, A v 360 §§4-6; el CST no la '
+                  'numera aparte, así que comparte la referencia de su mitad gemela (22-501)',
     # (2) ruta numérica — Sāmañña-vagga del Dasaka
     '10.221': 'ruta numérica: paranum 221 + DPR 10.210 = marcador CCX en A v 303',
     '10.222': 'ruta numérica: paranum 222 + DPR 10.211 = marcador 211 en A v 304',
@@ -139,7 +153,7 @@ def main():
         vri = f'{STEM[nip]}:{lo}' + (f'-{hi}' if hi else '')
         # el rāgapeyyāla del Ekādasaka lleva OTRA numeración en el Excel: 982-1151 son los
         # paranums 502-671 del CST (mismo recuento, 170)
-        ws.cell(r, ci['VRI Ref']).value = ('s0404m4:502-671' if num == '11.982-1151' else vri)
+        ws.cell(r, ci['VRI Ref']).value = VRI_ESPECIAL.get(num, vri)
         ws.cell(r, ci['Validation']).value = 'VALIDADOR_HUMANO'
         ws.cell(r, ci['Estado']).value = 'CONFIRMADO'
         ws.cell(r, ci['Detail']).value = motivo
