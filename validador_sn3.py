@@ -135,6 +135,8 @@ def build_pts_suttas(cur):
 _ORDINAL = {'pathama': 1, 'paṭhama': 1, 'dutiya': 2, 'tatiya': 3, 'catuttha': 4, 'pancama': 5,
             'pañcama': 5}
 _ORD_RE = re.compile(r'^(pa[ṭt]hama|dutiya|tatiya|catuttha|pa[ñn]cama)', re.I)
+# nombre compuesto del Jhāna-saṃyutta: «Gocara-mūlaka-abhinīhāra-suttādi-catukkaṃ»
+_MULAKA = re.compile(r'^(.+?)m[ūu]lak[aā](.+?)(?:sutt|$)', re.I)
 
 
 def _ordinal_prefix(name):
@@ -145,11 +147,14 @@ def _ordinal_prefix(name):
 def _name_score(a, b):
     """Prefijo común de las raíces, con bonus si una contiene a la otra. Feer abrevia y declina
     («Assādo» vs «Assāda») y marca los repetidos con «(2)» donde el Excel escribe «Dutiya-»."""
-    x, y = _stem(a), _stem(b)
-    x = _ORD_RE.sub('', x)
-    x, y = re.sub(r'[aiueom]+$', '', x), re.sub(r'[aiueom]+$', '', y)
+    x0, y0 = _ORD_RE.sub('', _stem(a)), _stem(b)
+    x, y = re.sub(r'[aiueom]+$', '', x0), re.sub(r'[aiueom]+$', '', y0)
     if not x or not y:
         return 0
+    # la contención se mide SIN recortar la terminación de caso: al recortarla «Saññā» queda en
+    # «san», por debajo del mínimo, y se perdía su compuesto «Rūpasaññā» (S iii 25.6)
+    if min(len(x0), len(y0)) >= 4 and (x0 in y0 or y0 in x0) and x0 != y0:
+        return 40 + min(len(x0), len(y0))
     lcp = 0
     for c, d in zip(x, y):
         if c != d:
@@ -265,6 +270,27 @@ def resolve_pts(e, h, pts, by_page, offsets=None):
             return q
     anchor = h[2] if h else None
     base = anchor if anchor is not None else e['page']
+    # VÍA 0 — si el marcador del nº que declara el Excel está en la página que declara el Excel y su
+    # nombre tiene alguna afinidad, ese manda. Va primero porque el Excel usa compuestos al estilo
+    # CST («Rūpasaññā», «Rūpataṇhā») donde Feer imprime solo la cola («Saññā», «Taṇhā»), y buscar
+    # por nombre premia el PREFIJO: «Rūpasaññā» casaba con «Rūpa» de la página vecina en vez de con
+    # «Saññā», que es el sutta correcto (S iii 25.6).
+    # VÍA -1 — nombre COMPUESTO `X-mūlaka-Y` (Jhāna-saṃyutta): el marcador es el compuesto de PTS
+    # («Kallita -- ārammaṇa», «Gocara-Abhinīhāra»), no el simple. Buscar por afinidad suelta elige
+    # «Kallita» o «Ārammaṇa», que son otros suttas.
+    mm = _MULAKA.match(e['name'] or '')
+    if mm:
+        pa, pb = _stem(mm.group(1)), _stem(mm.group(2))
+        for d in (0, 1, -1):
+            for q in by_page.get((e['sam'], (e['page'] or 0) + d), []):
+                st = _stem(q['name'])
+                if len(pa) >= 4 and len(pb) >= 4 and pa[:5] in st and pb[:5] in st:
+                    return q
+
+    q0 = pts.get((e['sam'], e['inner']))
+    if q0 and isinstance(e['page'], int) and abs(q0['page'] - e['page']) <= 1 \
+            and _name_score(e['name'], q0['name']):
+        return q0
     # Feer no escribe «Dutiya-»: imprime dos veces el mismo nombre (o le añade «(2)»). Si el
     # nombre del Excel lleva ordinal, hay que tomar el k-ésimo homónimo en orden de lectura, o se
     # coteja el sutta equivocado — es la causa de la mayoría de los REJECT del primer pase.

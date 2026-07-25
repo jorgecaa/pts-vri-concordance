@@ -2178,24 +2178,6 @@
   "reason": "Identical core narrative on avijja, only minor orthographic and sandhi variants."
  },
  {
-  "num": "22.128",
-  "name": "Tatiyasamudayadhamma",
-  "cst_title": "3. Tatiyasamudayadhammasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "pts_name": "Samudayadhamma",
-  "pts_page": 172,
-  "pts_line": 13,
-  "from_range": false,
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.61,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "One edition presents avijjā and the other vijjā, but they are parallel doctrinal counterparts."
- },
- {
   "num": "22.129",
   "name": "Assāda",
   "cst_title": "4. Assādasuttaṃ",
@@ -4698,24 +4680,6 @@
   "reason": "Core narrative and categorization of the four jhāyīs match perfectly across editions."
  },
  {
-  "num": "34.12",
-  "name": "Samāpattimūlakavuṭṭhāna",
-  "cst_title": "12. Samāpattimūlakavuṭṭhānasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "pts_name": "Samāpatti-ṭhiti",
-  "pts_page": 269,
-  "pts_line": 9,
-  "from_range": false,
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.46,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages describe the four types of meditators with identical core narrative and doctrinal structure."
- },
- {
   "num": "34.13",
   "name": "Samāpattimūlakakallita",
   "cst_title": "13. Samāpattimūlakakallitasuttaṃ",
@@ -4734,42 +4698,6 @@
   "reason": "Both passages describe the four types of meditators with minor orthographic and expansion differences."
  },
  {
-  "num": "34.14",
-  "name": "Samāpattimūlakāarammaṇa",
-  "cst_title": "14. Samāpattimūlakaārammaṇasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "pts_name": "Samāpatti-kallita",
-  "pts_page": 270,
-  "pts_line": 4,
-  "from_range": false,
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.67,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core fourfold meditator typology matches despite minor variant terminology."
- },
- {
-  "num": "34.15",
-  "name": "Samāpattimūlakagocara",
-  "cst_title": "15. Samāpattimūlakagocarasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "pts_name": "Samāpatti-kallita",
-  "pts_page": 270,
-  "pts_line": 4,
-  "from_range": false,
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.67,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages present the four jhāyīs with minor lexical variant in editions."
- },
- {
   "num": "34.16",
   "name": "Samāpattimūlakābhinīhāra",
   "cst_title": "16. Samāpattimūlakaabhinīhārasuttaṃ",
@@ -4786,42 +4714,6 @@
   },
   "gemini": "APPROVE",
   "reason": "PTS uses elision for the four categories fully expanded in CST."
- },
- {
-  "num": "34.17",
-  "name": "Samāpattimūlakasakkacca",
-  "cst_title": "17. Samāpattimūlakasakkaccasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "pts_name": "Samāpatti-abhinīhāra",
-  "pts_page": 271,
-  "pts_line": 5,
-  "from_range": false,
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.56,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages present the four jhāyī catukka with expected textual variation."
- },
- {
-  "num": "34.19",
-  "name": "Samāpattimūlakasappāyakārī",
-  "cst_title": "19. Samāpattimūlakasappāyakārīsuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "pts_name": "Samāpatti-abhinīhāra",
-  "pts_page": 271,
-  "pts_line": 5,
-  "from_range": false,
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.56,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "PTS has peyyala whereas CST fully expands the identical fourfold jhāna text."
  },
  {
   "num": "34.20",
@@ -4860,24 +4752,6 @@
   "reason": "Both passages present the same Khandha-nandikkhaya sutta with minor orthographic variants."
  },
  {
-  "num": "25.6",
-  "name": "Rūpasaññā",
-  "cst_title": "6. Rūpasaññāsuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "pts_name": "Rūpa",
-  "pts_page": 225,
-  "pts_line": 26,
-  "from_range": false,
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.17,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Editions match despite CST using peyyāla for expanded content."
- },
- {
   "num": "29.4",
   "name": "Dutiyauposatha",
   "cst_title": "4. Dutiyauposathasuttaṃ",
@@ -4914,24 +4788,6 @@
   "reason": "Core narrative matches with expected expansion of peyyāla passages."
  },
  {
-  "num": "34.18",
-  "name": "Samāpattimūlakasātacca",
-  "cst_title": "18. Samāpattimūlakasātaccasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "pts_name": "Samāpatti-abhinīhāra",
-  "pts_page": 271,
-  "pts_line": 5,
-  "from_range": false,
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.56,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages present the four jhāyīs with identical structural tetrads."
- },
- {
   "num": "22.11",
   "name": "Kālattayānatta",
   "cst_title": "11. Kālattayaanattasuttaṃ",
@@ -4948,24 +4804,6 @@
   },
   "gemini": "APPROVE",
   "reason": "Core anatta doctrine matches; CST provides expanded elaboration on the aggregates."
- },
- {
-  "num": "22.15",
-  "name": "Yadanicca",
-  "cst_title": "4. Yadaniccasuttaṃ",
-  "legacy": "VALIDADOR",
-  "pts_name": "Aniccam",
-  "pts_page": 21,
-  "pts_line": 5,
-  "from_range": false,
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.32,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages present the standard anicca-sutta teaching on the five aggregates with textual expansion."
  },
  {
   "num": "22.16",
@@ -5110,24 +4948,6 @@
   },
   "gemini": "APPROVE",
   "reason": "Identical core narrative with standard textual elisions and orthographic differences."
- },
- {
-  "num": "30.4",
-  "name": "Dutiyādidvayakārīsuttattikaṃ",
-  "cst_title": "4-6. Dutiyādidvayakārīsuttattikaṃ",
-  "legacy": "VALIDADOR",
-  "pts_name": "Dvayakāri",
-  "pts_page": 247,
-  "pts_line": 15,
-  "from_range": false,
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.57,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Editions match in core narrative despite standard peyyala expansion."
  },
  {
   "num": "30.5",
@@ -5380,42 +5200,6 @@
   },
   "gemini": "APPROVE",
   "reason": "Both passages describe the four types of meditators with identical core narrative."
- },
- {
-  "num": "34.24",
-  "name": "Gocaramūlakābhinīhārasuttādicatukkaṃ",
-  "cst_title": "20-27. Ṭhitimūlakavuṭṭhānasuttādiaṭṭhakaṃ",
-  "legacy": "VALIDADOR",
-  "pts_name": "Gocara",
-  "pts_page": 276,
-  "pts_line": 22,
-  "from_range": true,
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.44,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages represent the same textual unit involving abbreviated jhāna suttas."
- },
- {
-  "num": "22.127",
-  "name": "Dutiyasamudayadhamma",
-  "cst_title": "2. Dutiyasamudayadhammasuttaṃ",
-  "legacy": "VALIDADOR",
-  "pts_name": "Samudayadhammā",
-  "pts_page": 173,
-  "pts_line": 1,
-  "from_range": false,
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.6,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS discusses vijjā while CST discusses avijjā, making them distinct suttas."
  },
  {
   "num": "22.132",
@@ -5904,24 +5688,6 @@
   "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Core jhāna criteria categories differ between editions (kallita vs ṭhiti)."
  },
  {
-  "num": "34.22",
-  "name": "Kallitamūlakāarammaṇasuttādichakkaṃ",
-  "cst_title": "20-27. Ṭhitimūlakavuṭṭhānasuttādiaṭṭhakaṃ",
-  "legacy": "VALIDADOR",
-  "pts_name": "Kallita",
-  "pts_page": 275,
-  "pts_line": 12,
-  "from_range": true,
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.56,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): The passages describe different classifications of jhāyīs using distinct criteria."
- },
- {
   "num": "34.23",
   "name": "Ārammaṇamūlakagocarasuttādipañcakaṃ",
   "cst_title": "20-27. Ṭhitimūlakavuṭṭhānasuttādiaṭṭhakaṃ",
@@ -5992,5 +5758,239 @@
   },
   "gemini": "REJECT",
   "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Different doctrinal variants in the Jhāna Samyutta regarding jhāna qualities."
+ },
+ {
+  "num": "22.15",
+  "name": "Yadanicca",
+  "cst_title": "4. Yadaniccasuttaṃ",
+  "legacy": "VALIDADOR",
+  "pts_name": "Yad anicca",
+  "pts_page": 22,
+  "pts_line": 1,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.62,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the exact same Aniccatā Sutta with minor orthographic and peyyāla differences."
+ },
+ {
+  "num": "22.127",
+  "name": "Dutiyasamudayadhamma",
+  "cst_title": "2. Dutiyasamudayadhammasuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "pts_name": "Samudayadhamma",
+  "pts_page": 172,
+  "pts_line": 13,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.75,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches identical dialogue between Sariputta and Maha Kotthita on avijja."
+ },
+ {
+  "num": "22.128",
+  "name": "Tatiyasamudayadhamma",
+  "cst_title": "3. Tatiyasamudayadhammasuttaṃ",
+  "legacy": "VALIDADOR",
+  "pts_name": "Samudayadhammā",
+  "pts_page": 173,
+  "pts_line": 1,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.74,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core dialogue between Sāriputta and Mahākoṭṭhita on vijjā matches identically."
+ },
+ {
+  "num": "30.4",
+  "name": "Dutiyādidvayakārīsuttattikaṃ",
+  "cst_title": "4-6. Dutiyādidvayakārīsuttattikaṃ",
+  "legacy": "VALIDADOR",
+  "pts_name": "Dvayakārī",
+  "pts_page": 247,
+  "pts_line": 34,
+  "from_range": true,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.77,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative, question, and answer match perfectly with expected orthographic and peyyāla variations."
+ },
+ {
+  "num": "34.12",
+  "name": "Samāpattimūlakavuṭṭhāna",
+  "cst_title": "12. Samāpattimūlakavuṭṭhānasuttaṃ",
+  "legacy": "VALIDADOR",
+  "pts_name": "Samāpatti-vuṭṭhāna",
+  "pts_page": 269,
+  "pts_line": 25,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.67,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages present identical doctrine on the four types of meditators with minor orthographic differences."
+ },
+ {
+  "num": "34.14",
+  "name": "Samāpattimūlakāarammaṇa",
+  "cst_title": "14. Samāpattimūlakaārammaṇasuttaṃ",
+  "legacy": "VALIDADOR",
+  "pts_name": "Samāpatti-ārammaṇa",
+  "pts_page": 270,
+  "pts_line": 16,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.74,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic variants and standard structural abbreviations."
+ },
+ {
+  "num": "34.15",
+  "name": "Samāpattimūlakagocara",
+  "cst_title": "15. Samāpattimūlakagocarasuttaṃ",
+  "legacy": "VALIDADOR",
+  "pts_name": "Samāpatti-gocara",
+  "pts_page": 270,
+  "pts_line": 29,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.62,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "PTS uses peyyāla for the fourfold jhānī types fully expanded in CST."
+ },
+ {
+  "num": "34.17",
+  "name": "Samāpattimūlakasakkacca",
+  "cst_title": "17. Samāpattimūlakasakkaccasuttaṃ",
+  "legacy": "VALIDADOR",
+  "pts_name": "Samāpatti-Sakkacca",
+  "pts_page": 271,
+  "pts_line": 13,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.6,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core fourfold jhāyī framework matches across editions with standard peyyāla expansion."
+ },
+ {
+  "num": "34.18",
+  "name": "Samāpattimūlakasātacca",
+  "cst_title": "18. Samāpattimūlakasātaccasuttaṃ",
+  "legacy": "VALIDADOR",
+  "pts_name": "Samāpatti-Sātaccakārī",
+  "pts_page": 271,
+  "pts_line": 21,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.62,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "PTS uses peyyala abbreviation where CST expands the fourfold jhāna typology fully."
+ },
+ {
+  "num": "34.19",
+  "name": "Samāpattimūlakasappāyakārī",
+  "cst_title": "19. Samāpattimūlakasappāyakārīsuttaṃ",
+  "legacy": "VALIDADOR",
+  "pts_name": "Samāpatti-sappāyakārī",
+  "pts_page": 271,
+  "pts_line": 29,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.62,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative and four types of meditators match across both editions."
+ },
+ {
+  "num": "25.6",
+  "name": "Rūpasaññā",
+  "cst_title": "6. Rūpasaññāsuttaṃ",
+  "legacy": "VALIDADOR",
+  "pts_name": "Saññā",
+  "pts_page": 227,
+  "pts_line": 1,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.62,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches, CST contains expansion via peyyala."
+ },
+ {
+  "num": "34.22",
+  "name": "Kallitamūlakāarammaṇasuttādichakkaṃ",
+  "cst_title": "20-27. Ṭhitimūlakavuṭṭhānasuttādiaṭṭhakaṃ",
+  "legacy": "REVISAR",
+  "pts_name": "Kallita -- ārammaṇa",
+  "pts_page": 275,
+  "pts_line": 1,
+  "from_range": false,
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.6,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Textual variants show different categories of meditation skills."
+ },
+ {
+  "num": "34.24",
+  "name": "Gocaramūlakābhinīhārasuttādicatukkaṃ",
+  "cst_title": "20-27. Ṭhitimūlakavuṭṭhānasuttādiaṭṭhakaṃ",
+  "legacy": "VALIDADOR",
+  "pts_name": "Gocara-Abhinīhāra",
+  "pts_page": 276,
+  "pts_line": 9,
+  "from_range": false,
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.3,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Editions represent completely different suttas with divergent doctrinal categories."
  }
 ]

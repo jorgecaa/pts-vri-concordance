@@ -1,5 +1,5 @@
 # PTS Reference Concordance — Status Report
-## Date: 2026-07-21 (updated 2026-07-25 — SN I/II/V cerrados y SN III 332/333 con el validador)
+## Date: 2026-07-21 (updated 2026-07-25 — SN I/II/V cerrados y SN III 331/333 con el validador)
 
 ---
 
@@ -46,13 +46,13 @@ Use this terminology consistently across the project:
 |--------|--------:|-----------:|----------:|-------:|
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
-| SN | 1815 | 1564 | 251 | 86.2% |
+| SN | 1815 | 1563 | 252 | 86.1% |
 | AN | 1738 | 1 | 1737 | 0.1% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6099** | **1751** | **4348** | **28.7%** |
+| **TOTAL** | **6099** | **1750** | **4349** | **28.7%** |
 
 > Cifras al **2026-07-25**. Desglose de SN por el validador: **S i 271/271, S ii 257/257,
-> S iii 332/333, S v 610/610**; **S iv** sigue con los 94 del Helmer legado (250 PENDIENTE) y es
+> S iii 331/333, S v 610/610**; **S iv** sigue con los 94 del Helmer legado (250 PENDIENTE) y es
 > el único volumen de SN sin pasar por el validador.
 > El total pasó de 6090 a **6099 filas**: −1 (`12.74`, división solo-CST borrada) y +10 (la
 > expansión de `12.75` en los 11 suttas que PTS numera). La columna `#` se renumeró.
@@ -280,8 +280,8 @@ Dos filas venían con la forma del **CST**, no la de PTS. Se resolvió leyendo l
 
 ## PENDING
 
-### SN III — Samyutta Nikaya vol 3 (S iii) — 333 filas ⏳ 332/333
-- **Estado 2026-07-25 (2ª pasada): 332 CONFIRMADO** (316 `VALIDADOR` + 16 `VALIDADOR_HUMANO`) **+ 1 PENDIENTE.** Antes: 326 filas
+### SN III — Samyutta Nikaya vol 3 (S iii) — 333 filas ⏳ 331/333
+- **Estado 2026-07-25 (3ª pasada): 331 CONFIRMADO** (315 `VALIDADOR` + 16 `VALIDADOR_HUMANO`) **+ 2 PENDIENTE.** Antes: 326 filas
   `DB_VERIFIED` (+7 que llegaron de S ii al corregir su volumen) → todo PENDIENTE.
 - **Front matter de Feer (`samyutta-vol-III-info.txt`)**: 13 saṃyuttas **XXII–XXXIV**, y la página
   de arranque de cada uno **cuadra al 100%**. Feer distingue **títulos** de **suttantas** (Nāga son
@@ -342,11 +342,27 @@ Tres causas, ninguna resoluble por el LLM; el cruce de nombres subió de **63% a
 - **16 `VALIDADOR_HUMANO`** — peyyāla donde una edición agrupa lo que la otra numera, con el par ya
   identificado; se firman por **prueba mecánica**, no por LLM: las palabras clave del nombre
   aparecen literalmente en el texto de su contraparte (16/17 verificado).
-- **1 PENDIENTE — `34.22 «Kallitamūlakāarammaṇa…»`**: el concordance la manda al bloque elidido de la
-  serie **ṭhiti-** (CST `681-688`) cuando el sutta es de la serie **kallita-**. El Jhāna-saṃyutta
-  tiene 10 series colapsadas en el CST y `cst_paranum` señala la equivocada; sin locus CST correcto
-  no hay nada que cotejar.
-- **Líneas: 316/316 exactas** tras la 2ª pasada (SN 24 ya entra en la calibración).
+- **2 PENDIENTE — `34.22` y `34.24` del Jhāna-saṃyutta.** El lado PTS está resuelto y es correcto
+  (los marcadores COMPUESTOS «Kallita -- ārammaṇa» y «Gocara-Abhinīhāra»); lo que falla es el dato de
+  origen: `cst_paranum` las manda al bloque elidido de la serie **ṭhiti-** (CST `681-688`) cuando son
+  de las series **kallita-** y **gocara-**. El Jhāna-saṃyutta tiene 10 series colapsadas en el CST y
+  el concordance señala la equivocada. Arreglarlo exige mapear esas 10 series a mano —
+  **`massive.tsv` no se toca**.
+- **Líneas: 317/317 exactas**; ninguna fila queda sin nº de línea.
+
+#### Tres fallos de resolución corregidos en la 3ª pasada
+
+Los detectó revisar «¿está terminado?» fila a fila, no el LLM:
+
+- **Nombres compuestos `X-mūlaka-Y`** (Jhāna-saṃyutta): el marcador correcto es el **compuesto** de
+  PTS («Kallita -- ārammaṇa», «Gocara-Abhinīhāra»), no el simple. Buscar por afinidad suelta elegía
+  «Kallita» o «Gocara», que son otros suttas (`_MULAKA` en `resolve_pts`).
+- **La contención de nombres se medía tras recortar la terminación de caso**, con lo que «Saññā»
+  quedaba en «san» —por debajo del mínimo— y su compuesto «Rūpasaññā» casaba con «Rūpa» de la página
+  vecina (S iii 25.6). Ahora se mide antes del recorte.
+- ⚠️ **Una corrección de página previa era ERRÓNEA**: `22.15 «Yadanicca»` se había pasado de p22 a
+  p21 apoyándose en una resolución equivocada. El sutta arranca en «15 (4) Yad anicca (1)», **S iii
+  22 L1**; revertida. Las otras seis correcciones de página de S iii se re-verificaron y son buenas.
 - Fuentes: `sn3_markers.py`, `validador_sn3.py`, `reid_sn3.py`, `reconcile_sn3.py`,
   `calibrate_sn3_lines.py`, `samyutta-vol-III-info.txt`. `parse_sn_grammar.py` queda SUPERADO.
 
