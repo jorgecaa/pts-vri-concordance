@@ -147,13 +147,31 @@ umbral (0,55) cae en el hueco.
 Y una errata más del OCR reparada por continuidad: `210.` en A i 91,14 va entre el `9.` y el `11.`
 y es el **`10.`** con un dígito de más — misma clase que el `2O` por `20` de S iv.
 
-**Fase C — la cola del Eka (vaggas 13-21) y la del Duka.**
-Aquí no hay nombres ni cuentas que casen, y el emparejamiento por nombre falla. Herramientas, por
-orden: (1) el `subhead` del CST donde lo haya —178 de los 611 paranums del Eka lo tienen—;
-(2) la firma de contenido con bloqueo por vagga, que el piloto de A ii deja en 99,2 % y que aquí
-tiene el trabajo más fácil de lo que parece, porque la serie de Etadagga nombra personas;
-(3) el aparato crítico, que en A iii resolvió lo que el cuerpo elidía.
-*Criterio de salida honesto*: no todas cerrarán. Las que no, con el motivo escrito.
+**Fase C — la cola del Eka.** ✅ **52 de 68** (2026-07-25), `an1_eka_cola.py`. A i → **399/435**.
+
+Lo que la fase descubre es **por qué** la cola era dura, y no es lo que se suponía: en la mitad
+limpia el `Sutta #` **es** el paranum del CST (diferencia 0 en las 91 filas cerradas), y en la cola
+**deriva** — `1.306` es el paranum 298, `1.394` el 382, `1.616-627` el 600. La deriva **crece**
+(−8 en el vagga 17, −12 en el 20, −16 al final) y no es un desfase corregible con una resta: se
+abre y se cierra según qué agrupa cada edición. Así que en la cola el `Sutta #` **no sirve de clave
+del lado CST**, y hay que ir por contenido.
+
+Lo que sí sigue valiendo es el lado PTS: el `DPR Ref` da el marcador y la página lo confirma. El
+contenido sólo decide **cuál de los 611 paranums** es la contraparte — bloquear primero por
+estructura, decidir después por contenido, como en el piloto de A ii.
+
+Se acepta una fila con **cuatro señales**: cobertura ≥ 0,85; página del marcador ≡ la del Excel;
+separación con el segundo candidato (filas individuales); y, en las de rango, **una de dos**:
+o el paranum elegido cae **dentro** del rango que declara el `Sutta #` —las dos coordenadas se
+confirman entre sí, que es lo que pasa en los vaggas 13-16, donde el Etadagga va `188-267` en las
+dos ediciones—, o el **tramo hallado tiene tantos paranums como suttas declara la fila**
+(`1.431-438` son ocho y el contenido da `419-426`, ocho: una coincidencia numérica que el contenido
+no puede fabricar).
+
+Las **16 que no cierran** quedan anotadas en `Detail` con su motivo. Son de dos clases: filas de
+rango cuyo tramo el contenido no puede delimitar porque los suttas no son de fórmula (el
+`1.333-377`, 45 suttas, da un tramo de 7), y un puñado del vagga 20 donde dos filas compiten por el
+mismo paranum (`1.394` y `1.395-401` apuntan las dos al 382: una de las dos sobra).
 
 **Fase D — el Tika.** 151/154 ya cerradas; quedan 3 arbitrajes y las 9 filas de rango redundantes.
 
@@ -385,12 +403,12 @@ Use this terminology consistently across the project:
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
-| AN | 1738 | 1650 | 88 | 94.9% |
+| AN | 1738 | 1702 | 36 | 97.9% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6098** | **3650** | **2448** | **59.9%** |
+| **TOTAL** | **6098** | **3702** | **2396** | **60.7%** |
 
 > Desglose de AN (2026-07-25): **A ii 303/303, A iii 457/457, A iv 298/298 y A v 245/245 —
-> los cuatro CERRADOS 🔒**, y **A i 347/435** tras la fase B (Eka 1-12 y Duka entero). Eka y Duka
+> los cuatro CERRADOS 🔒**, y **A i 399/435** tras las fases B y C. Eka y Duka
 > (284 filas) siguen sin abordar a propósito.
 >
 > ⚠️ **`11.502-981` cierra por decisión editorial de Jorge**: PTS imprime el símil del gopālaka
