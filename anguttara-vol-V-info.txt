@@ -1,0 +1,84 @@
+================================================================================
+AN V — PTS, ed. E. Hardy (1900) — front matter
+Transcrito de PTS-Anguttara-Nikaya-part-V-Hardy1900-001.pdf (11 pp.).
+VERDAD-TERRENO ESTRUCTURAL para el lado PTS. No es texto del canon.
+================================================================================
+
+                            TABLE OF CONTENTS
+                                                                        Page
+    Dasaka-Nipāta ............................................ 1-310
+     1. Ānisaṃsa-Vagga ......................................    1
+     2. Nātha-Vagga .........................................   15
+     3. Mahā-Vagga ..........................................   32
+     4. Upāli-Vagga .........................................   70
+     5. Akkosa-Vagga ........................................   77
+     6. Sacitta-Vagga .......................................   92
+     7. Yamaka-Vagga ........................................ 113
+     8. Ākaṅkha-Vagga ....................................... 131
+     9. Thera-Vagga ......................................... 151
+    10. Upāsaka-Vagga ....................................... 176
+    11. Samaṇasaññā-Vagga ................................... 210
+    12. Paccorohaṇi-Vagga ................................... 222
+    13. Parisuddha-Vagga .................................... 237
+    14. Sādhu-Vagga ......................................... 240
+    15. Ariyamagga-Vagga .................................... 244
+    16. Puggala-Vagga ....................................... 247
+    17. Jāṇussoṇi-Vagga ..................................... 249
+    18. Sādhu-Vagga ......................................... 273
+    19. Ariyamagga-Vagga .................................... 278
+    20. Puggala-Vagga ....................................... 281
+    21. Karajakāya-Vagga .................................... 283
+    22. [sin título] ........................................ 303
+
+    Ekādasaka-Nipāta ....................................... 311-361
+     1. Nissaya-Vagga ....................................... 311
+     2. Anussati-Vagga ...................................... 328
+     3. [sin título] ........................................ 359
+
+    Indices ................................................ 362-368
+    Appendixes ............................................. 369-422
+
+⚠️ **Nombres de vagga REPETIDOS dentro del mismo nipāta**: `Sādhu` (14 y 18),
+`Ariyamagga` (15 y 19), `Puggala` (16 y 20). El nombre **no identifica** el vagga; hace
+falta la página o el nº corrido.
+
+⚠️ **Dos vaggas SIN TÍTULO** (Dasaka 22 y Ekādasaka 3): son los «tags» finales que
+Morris anunciaba para todos los nipātas desde el quinto.
+
+================================================================================
+⚠️ DIVERGENCIA EXPLÍCITA PTS ↔ COMENTARIO (Hardy la declara)
+================================================================================
+
+  > «In the **Dasaka-Nipāta** the commentary divides our **No. XXXI** into two parts,
+  > from §4 down to the end. Our No. XXXII corresponds with No. XXXIII of the
+  > commentary, and our No. XXXIII with its No. XXXIV. Then it counts our No. XXXIV
+  > besides as XXXIV and our No. XXXVIII as XXXIX, but our No. XL again corresponds
+  > with its No. XL. **The divisions of the commentary are apparently wrong.** In the
+  > **Ekādasaka-Nipāta** the commentary **unites our Nos. VII and VIII**, and thus it
+  > counts **ten** Suttas in the first Vagga, **not eleven**.»
+
+O sea: divisiones que se abren y se cierran, con la numeración reencontrándose después.
+**No es un offset**; hay que resolverlo caso por caso.
+
+================================================================================
+EL RECUENTO TOTAL DEL AṄGUTTARA, SEGÚN HARDY
+================================================================================
+
+  > «we learn from a *versus memorialis* that there are **9557 Suttas** in the
+  > Aṅguttara, and, although there are, in fact, **at most about 2344 Suttas** in the
+  > Aṅguttara, as was known to Buddhaghosa in the fifth century A.D.»
+
+Dato capital para el proyecto: **la cifra nominal (9557) y la real (~2344) difieren en
+un factor de cuatro**, y ya Buddhaghosa lo sabía. Explica por qué en AN el «sutta» no
+es una unidad estable y por qué las tres ediciones (PTS, Excel, CST) cuentan distinto.
+Cualquier expectativa de correspondencia 1:1 en AN parte de un error.
+
+Hardy añade el porqué estructural: los grupos numéricos altos **no se forman sumando**
+los bajos («for the navaṅgas the scheme mostly being five *plus* four»), y sus
+componentes «are by no means mere repetitions» de los pañcaṅgas y caturaṅgas — salvo
+excepciones. Y observa que hacia el final de la obra «the more the creative power
+shrinks», hasta el punto de que en el último nipāta «hardly anything original is to be
+found».
+
+Apéndices del volumen (útiles como referencia externa): I. tabla analítica de toda la
+obra; II. lista de suttas que aparecen **dos o más veces** en el Aṅguttara.

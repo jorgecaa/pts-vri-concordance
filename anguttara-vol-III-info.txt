@@ -1,0 +1,69 @@
+================================================================================
+AN III — PTS, ed. E. Hardy (1895/1897) — front matter
+Transcrito de PTS-Anguttara-Nikaya-part-III-Hardy-1895-001.pdf (5 pp.).
+VERDAD-TERRENO ESTRUCTURAL para el lado PTS. No es texto del canon.
+
+⚠️ **Cambia el editor**: Morris murió antes de terminar la edición y Hardy la
+continúa desde este volumen («A premature death has prevented Dr. Richard Morris
+from seeing the completion of his edition»). El prefacio va firmado en Freiburg,
+agosto de 1897. Con el editor cambian las convenciones: conviene no dar por supuesto
+que AN III-V se comportan como AN I-II.
+================================================================================
+
+                            TABLE OF CONTENTS
+                                                                        Page
+    Pañcaka-Nipāta ........................................... 1-278
+     1. Sekhabala-Vagga .....................................    1
+     2. Bala-Vagga ..........................................    9
+     3. Pañcaṅgika-Vagga ....................................   14
+     4. Sumana-Vagga ........................................   32
+     5. Muṇḍarāja-Vagga .....................................   45
+     6. Nīvaraṇa-Vagga ......................................   63
+     7. Saññā-Vagga .........................................   79
+     8. Yodhājīva-Vagga .....................................   84
+     9. Thera-Vagga ......................................... 110
+    10. Kakudha-Vagga ....................................... 118
+    11. Phāsuvihāra-Vagga ................................... 127
+    12. Andhakavinda-Vagga .................................. 136
+    13. Gilāna-Vagga ........................................ 142
+    14. Rāja-Vagga .......................................... 147
+    15. Tikaṇḍakī-Vagga ..................................... 164
+    16. Saddhamma-Vagga ..................................... 174
+    17. Āghāta-Vagga ........................................ 185
+    18. Upāsaka-Vagga ....................................... 203
+    19. Arañña-Vagga ........................................ 219
+    20. Brāhmaṇa-Vagga ...................................... 221
+    21. Kimbila-Vagga ....................................... 247
+    22. Akkosaka-Vagga ...................................... 252
+    23. Dīghacārika-Vagga ................................... 257
+    24. Āvāsika-Vagga ....................................... 261
+    25. Duccarita-Vagga ..................................... 267
+    26. [Upasampadā-Vagga] .................................. 271
+
+    Chakka-Nipāta .......................................... 279-452
+     1. Āhuneyya-Vagga ...................................... 279
+     2. Sāraṇīya-Vagga ...................................... 288
+     3. Anuttariya-Vagga .................................... 309
+     4. Devatā-Vagga ........................................ 329
+     5. Dhammika-Vagga ...................................... 344
+     6. Mahā-Vagga .......................................... 374
+     7. Devatā-Vagga ........................................ 421
+     8. Arahatta-Vagga ...................................... 429
+     9. Sīti-Vagga .......................................... 435
+    10. Ānisaṃsa-Vagga ...................................... 441
+    11. Tika-Vagga .......................................... 445
+    12. [Vaggāsaṅgahitā suttantā] ........................... 449
+
+    Indices ................................................ 453-460
+
+⚠️ **Los títulos entre corchetes son del editor, no de los MSS**: `[Upasampadā-Vagga]`
+(Pañcaka 26) y `[Vaggāsaṅgahitā suttantā]` (Chakka 12). El segundo es el «tag» final
+sin título que Morris anunciaba para todos los nipātas a partir del quinto.
+
+⚠️ **«Devatā-Vagga» aparece DOS VECES** en el Chakka (nº 4, p. 329 y nº 7, p. 421):
+el nombre no identifica el vagga por sí solo.
+
+MSS: M (Mandalay 125/130, birmano), Ph (Phayre), T (Turnour, sinhalés), M6/M7/M8
+(Morris), S (**edición siamesa**, por orden del rey de Siam) y 3 MSS del comentario
+Manoratha-Pūraṇī. Nota: para Pañcaka y Chakka la edición siamesa **no trae variantes**
+salvo en cinco casos.

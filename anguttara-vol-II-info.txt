@@ -1,0 +1,63 @@
+================================================================================
+AN II — PTS, ed. Richard Morris (1888) — front matter
+Transcrito de PTS-Anguttara-Nikaya-part-II-Morris-1888-001.pdf (4 pp., escaneo sin
+capa de texto: transcripción manual).
+VERDAD-TERRENO ESTRUCTURAL para el lado PTS. No es texto del canon.
+================================================================================
+
+                  TABLE OF VAGGAS IN THE CATUKKA NIPĀTA
+                                                                        PAGE
+    1.  Bhaṇḍagāma vagga ...........................................    1
+    2.  Cara vagga .................................................   11
+    3.  Uruvela vagga ..............................................   20
+    4.  Cakka vagga ................................................   32
+    5.  Rohitassa vagga ............................................   44
+    6.  Puññābhisanda vagga ........................................   54
+    7.  Pattakamma vagga ...........................................   65
+    8.  Apaṇṇaka vagga .............................................   76
+    9.  Macala vagga ...............................................   88
+   10.  Asura vagga ................................................   91
+   11.  Valāhaka vagga ............................................. 103
+   12.  Kesi vagga  [1] ............................................ 113
+   13.  Bhaya vagga ................................................ 121
+   14.  Puggala vagga .............................................. 133
+   15.  Ābhā vagga ................................................. 139
+   16.  Indriya vagga .............................................. 143
+   17.  Paṭipadā vagga ............................................. 149
+   18.  Sañcetanika vagga .......................................... 171
+   19.  Yodhājīva vagga  [2] ....................................... 170
+   20.  Mahā vagga ................................................. 185
+   21.  Sappurisa vagga ............................................ 217
+   22.  Sobhana vagga .............................................. 225
+   23.  Sucarita vagga ............................................. 228
+   24.  Kamma vagga ................................................ 230
+   25.  Āpatti vagga ............................................... 239
+   26.  Abhiññā vagga .............................................. 246
+
+   [1] El Comentario lo llama **Kosiya vagga**.
+   [2] El Comentario lo llama **Brāhmaṇa vagga**.
+
+⚠️ **Anomalía del propio índice**: el vagga 18 (Sañcetanika) figura en la p. 171 y el
+19 (Yodhājīva) en la **170**, o sea *antes*. Uno de los dos números está mal en el
+índice impreso. **Verificar contra el texto antes de usarlos.**
+
+================================================================================
+NOTAS DE MORRIS QUE AFECTAN AL RECUENTO (Preliminary Remarks)
+================================================================================
+
+- **Los títulos de vagga de la segunda mitad NO son sinhaleses**:
+  > «In the Sinhalese manuscripts of the Aṅguttara there are **no titles of vaggas
+  > nor uddānas after the tenth vagga** (dutiya paññāsaka). The omission has been
+  > supplied by the Burmese copies.»
+  Es decir: a partir del vagga 11 los nombres vienen de los MSS birmanos, y el
+  Comentario concuerda con ellos salvo en los dos casos anotados arriba.
+
+- **El «tag» final se repite en todos los nipātas siguientes**:
+  > «We again get a tag at the end of the last vagga, as in the third nipāta
+  > (Aṅguttara pt. 1. p. 163), which is repeated at the end of the final vagga in all
+  > the remaining nipātas (v-xi).»
+  Ese «tag» es el vagga extra sin título que ya vimos en AN I (Duka XVII, p. 100).
+
+- Morris prefiere en general las lecturas **sinhalesas** a las birmanas.
+- MSS nuevos de este volumen: B. K. 122, B. K. 123 (birmanos, King's Library) y S. M.
+  (sinhalés, en su propia colección).
