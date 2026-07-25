@@ -39,15 +39,32 @@ CONFIRMADO individualmente. `10.156-166` casa exacto con el `subhead` de rango d
 que declara el Excel. `10.199-210` casa con los `<p>` `199-210` del CST bajo
 `Nasevitabbādisuttāni`, y su marcador `CXCIX` abre en A v 281, también la del Excel.
 
-⚠️ **Dos filas se quedan fuera a propósito, y las cazó `check_integrity.py`.** En la primera
-pasada firmé `11.502-981` y `11.982-1151` con su `VRI Ref` aritmética, y el invariante
-`vri_ref_bien_formada_y_existente` saltó: **el paranum 982 no existe en `s0404m4`**. La cola del
-Ekādasaka la numera el Excel hasta 1151 y el CST **acaba en 671**, así que esos dos rangos no
-tienen contraparte VRI y no se pueden anclar. Se revirtieron a PENDIENTE con el motivo escrito en
-`Detail`. Es exactamente el punto ciego del validador —un par coherente consigo mismo pero ajeno al
-dato— y lo cazó una comprobación mecánica, no el cotejo.
+### La cola del Ekādasaka: por qué el Excel cuenta 1151 y el CST 671
 
-A v queda en **243/245**.
+En la primera pasada firmé `11.502-981` y `11.982-1151` con su `VRI Ref` aritmética y
+`check_integrity` saltó: **el paranum 982 no existe en `s0404m4`**. Mirando el impreso se entiende
+la aritmética entera, y no es un error de nadie:
+
+- **PTS imprime el símil del gopālaka DOS veces**: `abhabbo` (incapaz, A v 359) y `bhabbo` (capaz,
+  A v 360 §§4-6), cada uno con los mismos 60 objetos × 8 *anupassanā*.
+- **El CST sólo numera la mitad negativa**: su `<p n="22-29">` dice `abhabbo` diez veces y `bhabbo`
+  ninguna, y sus paranums del *sāmañña-vagga* son `22-501` = **480**.
+- El Excel cuenta `22-981` = **960** = 480 × 2: numera **las dos mitades**.
+
+De ahí que a partir de ahí vaya +480, y las cuentas cuadran al dígito:
+
+| fila del Excel | unidades | contraparte del CST | unidades |
+|---|--:|---|--:|
+| `11.982-1151` (*Rāgādi peyyāla*) | **170** | `502` + `503-511` + `512-671` | **170** ✓ |
+| `11.502-981` (*Aniccānupassanādi*) | 480 | — *el CST no numera la mitad positiva* | — |
+
+Así que **`11.982-1151` se cierra** con la `VRI Ref` corregida a `s0404m4:502-671` (mismo recuento,
+mismo contenido, misma página). Y **`11.502-981` se queda PENDIENTE**, pero ya no por
+desconocimiento: es una fila que PTS imprime (A v 360 §§4-6) y que **el CST no numera**. Anclarla a
+`22-501` sería darle la clave de su mitad gemela; borrarla sería negar lo que el impreso tiene
+delante. Es decisión editorial de Jorge, del mismo tipo que la de `12.74` en S ii.
+
+A v queda en **244/245**.
 
 Uso: python3 reconcile_an5_cierre.py [--dry]
 """
@@ -66,8 +83,11 @@ CIERRE = {
     **{f'11.{n}': 'peyyāla: la anupassanā aparece literal y en orden en PTS (A v 359) y en el CST'
        for n in range(22, 30)},
     '11.30-501': 'rango = unión exacta de los `<p>` del CST (30-69 … 454-501); locus en A v 359',
-    # ⚠️ `11.502-981` y `11.982-1151` NO se cierran: ver la nota de abajo. La numeración del Excel
-    # para la cola del Ekādasaka llega a 1151 y la del CST **acaba en 671**.
+    # `11.982-1151` SÍ se cierra, con la `VRI Ref` corregida: son los **170** paranums del
+    # rāgapeyyāla del CST (`502` + `503-511` + `512-671`), exactamente los 170 que cuenta la fila.
+    '11.982-1151': 'rāgapeyyāla = `502`+`503-511`+`512-671` del CST: 170 paranums, los mismos 170 '
+                   'que cuenta la fila; texto en A v 360-361 tras la raya',
+    # ⚠️ `11.502-981` NO se cierra: el CST no numera la mitad positiva. Ver la nota de abajo.
     # (2) ruta numérica — Sāmañña-vagga del Dasaka
     '10.221': 'ruta numérica: paranum 221 + DPR 10.210 = marcador CCX en A v 303',
     '10.222': 'ruta numérica: paranum 222 + DPR 10.211 = marcador 211 en A v 304',
@@ -116,7 +136,10 @@ def main():
             continue
         nip = num.split('.')[0]
         lo, _, hi = num.split('.')[1].partition('-')
-        ws.cell(r, ci['VRI Ref']).value = f'{STEM[nip]}:{lo}' + (f'-{hi}' if hi else '')
+        vri = f'{STEM[nip]}:{lo}' + (f'-{hi}' if hi else '')
+        # el rāgapeyyāla del Ekādasaka lleva OTRA numeración en el Excel: 982-1151 son los
+        # paranums 502-671 del CST (mismo recuento, 170)
+        ws.cell(r, ci['VRI Ref']).value = ('s0404m4:502-671' if num == '11.982-1151' else vri)
         ws.cell(r, ci['Validation']).value = 'VALIDADOR_HUMANO'
         ws.cell(r, ci['Estado']).value = 'CONFIRMADO'
         ws.cell(r, ci['Detail']).value = motivo

@@ -221,14 +221,14 @@ Use this terminology consistently across the project:
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
-| AN | 1738 | 1447 | 291 | 83.3% |
+| AN | 1738 | 1453 | 285 | 83.6% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6098** | **3447** | **2651** | **56.5%** |
+| **TOTAL** | **6098** | **3453** | **2645** | **56.6%** |
 
-> Desglose de AN (2026-07-25): **A ii 303/303 y A iv 298/298 CERRADOS 🔒**, A iii 452/457,
-> A v 243/245, A i 151/435 (sólo el Tika). Las 7 pendientes de A iii y A v tienen motivo escrito
-> en `Detail` y son de dato, no de método: PTS no imprime esos miembros, o el Excel numera más
-> unidades de las que el CST tiene. **Todo lo demás que falta en AN es A i: Eka y Duka (284
+> Desglose de AN (2026-07-25): **A ii 303/303, A iii 457/457 y A iv 298/298 CERRADOS 🔒**,
+> A v 244/245, A i 151/435 (sólo el Tika). **Queda UNA fila** en A v —`11.502-981`— y es decisión
+> editorial, no falta de evidencia: PTS imprime la mitad *bhabbo* del símil del gopālaka (A v 360
+> §§4-6) y **el CST no la numera**. **Todo lo demás que falta en AN es A i: Eka y Duka (284
 > filas), sin abordar a propósito.**
 
 > Cifras al **2026-07-25**. **SN entero pasado por el validador: 1810/1815.** Desglose:
