@@ -591,7 +591,7 @@
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): The passages feature entirely different interlocutors and distinct core teachings."
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages are completely distinct suttas involving different interlocutors and teachings."
  },
  {
   "num": "3.34",
@@ -843,7 +843,7 @@
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS includes asaṅkhata section which is completely missing in CST."
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS includes the asankhata passage while CST omits it entirely."
  },
  {
   "num": "3.48",
@@ -1664,14 +1664,14 @@
   "pts_page": 240,
   "pts_line": 24,
   "legacy": "OK+RTE",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
   "gate": {
-   "cov": 0.06,
+   "cov": 0.69,
    "thr": 0.55
   },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely distinct suttas about different topics"
+  "gemini": "APPROVE",
+  "reason": "Minor orthographic and recensional variants of the same discourse."
  },
  {
   "num": "3.95",
@@ -1808,14 +1808,14 @@
   "pts_page": 253,
   "pts_line": 17,
   "legacy": "OK+RTE",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
   "gate": {
-   "cov": 0.17,
+   "cov": 0.69,
    "thr": 0.55
   },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): The passages discuss entirely different topics and are distinct suttas."
+  "gemini": "APPROVE",
+  "reason": "Identical mental development and goldsmith simile sutta with minor orthographic and commentarial insertions."
  },
  {
   "num": "3.103",
@@ -1887,7 +1887,7 @@
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages contain significantly different structural segments and lack core narrative alignment."
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages represent different sections of the text with significant textual divergence."
  },
  {
   "num": "3.107",
@@ -1916,14 +1916,14 @@
   "pts_page": 261,
   "pts_line": 8,
   "legacy": "RTE_ONLY",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
   "gate": {
    "cov": 0.57,
    "thr": 0.55
   },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Direct contradiction regarding satisfaction: PTS says atthi titti, CST says natthi titti."
+  "gemini": "APPROVE",
+  "reason": "Editions invert atthi and natthi regarding the indulgence in sleep, drink, and sex."
  },
  {
   "num": "3.109",
@@ -2445,7 +2445,7 @@
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Direct contradiction on core doctrine regarding Makkhali's view of kamma."
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Opposing philosophical doctrines on Makkhali: PTS asserts atthi while CST asserts natthi."
  },
  {
   "num": "3.138",
@@ -2463,7 +2463,7 @@
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS includes an extra vuddhi section absent in CST."
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): CST omits the vuddhi section entirely, unlike PTS."
  },
  {
   "num": "3.139",

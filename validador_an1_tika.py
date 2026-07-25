@@ -115,7 +115,11 @@ def pts_markers(cur):
         i1 = pos[(marks[k + 1]['page'], marks[k + 1]['line'])] if k + 1 < len(marks) else len(flat)
         out.append({'num': m['num'], 'page': m['page'], 'line': m['line'], 'ord': k,
                     'vagga': (m['num'] - 1) // 10 + 1,
-                    'text': ' '.join(sh.tokens(' '.join(t for _p, _l, t in flat[i0:i1]))[:350])})
+                    # el texto va SIN recortar: cuando el CST parte en varios lo que PTS numera
+                    # como uno, el párrafo homólogo puede caer muy por dentro del sutta (el
+                    # `Sarada` es el §4 del nº92, dos páginas más allá) y un tope de 350 tokens lo
+                    # dejaba fuera del alcance de `pts_window`
+                    'text': ' '.join(sh.tokens(' '.join(t for _p, _l, t in flat[i0:i1])))})
     return out
 
 
@@ -195,6 +199,35 @@ def align_pts(entries, marks, cst):
     return {entries[i]['num']: (marks[j] if j is not None else None) for i, j in enumerate(idx)}
 
 
+def pts_window(pts_text, cst_text, width=350):
+    """Acota el texto de PTS al **párrafo** que corresponde al sutta del CST.
+
+    En el Tika, PTS numera como UN sutta lo que el CST parte en varios: el `Saradasuttaṃ` del CST
+    es el **§4 del nº92** de PTS (A i 242,17), el `Nimittasuttaṃ` vive dentro del nº100 y el
+    `Samaṇabrāhmaṇasuttaṃ` dentro del nº102. La alineación al sutta contenedor es correcta, pero
+    cotejar el sutta breve del CST contra el contenedor entero hunde la cobertura (0.06) y produce
+    un REJECT que no dice nada de la fila.
+
+    Se localiza el incipit del CST dentro del texto de PTS y se devuelve una ventana desde ahí. Si
+    no se encuentra, se deja el texto tal cual: nunca se inventa un locus.
+    """
+    pt, ct = pts_text.split(), cst_text.split()
+    if len(pt) <= width or len(ct) < 6:
+        return pts_text
+    probe = ct[:6]
+    for i in range(len(pt) - len(probe)):
+        if pt[i:i + len(probe)] == probe:
+            return ' '.join(pt[i:i + width])
+    # sin coincidencia exacta: se busca la mejor ventana por solapamiento léxico
+    head = set(ct[:60])
+    best, bi = -1, None
+    for i in range(0, max(1, len(pt) - 60), 20):
+        ov = len(head & set(pt[i:i + 60]))
+        if ov > best:
+            best, bi = ov, i
+    return ' '.join(pt[bi:bi + width]) if bi is not None and best >= 12 else pts_text
+
+
 def main():
     dry = '--dry' in sys.argv
     do_all = '--all' in sys.argv
@@ -252,7 +285,8 @@ def main():
     rows = []
     for k, (e, m, u) in enumerate(run, 1):
         cstx = ' '.join(sh.tokens(u['text'])[:350])
-        res = validate_pair(m['text'], cstx, e['name'], u['title'], 'AN', concordant=True)
+        ptsx = pts_window(m['text'], cstx)
+        res = validate_pair(ptsx, cstx, e['name'], u['title'], 'AN', concordant=True)
         rows.append({'num': e['num'], 'name': e['name'], 'cst_title': u['title'],
                      'vri_ref': f"{VRI_STEM}:{min(u['pn'])}" if u['pn'] else None,
                      'pts_num': m['num'], 'pts_page': m['page'], 'pts_line': m['line'],
