@@ -625,11 +625,46 @@ Es la generalización de lo que ya funciona en S i (posicional) y en el Diṭṭ
 Re-validar **solo** las filas cuyo par cambie (≈40 en S iii, ≈36 en S v), descartando su veredicto
 previo — nunca heredarlo. Recalibrar líneas. Cierre esperado: S iii 333/333 y S v revalidado.
 
-### Fase 3 — S iv (completa SN)
+### Fase 3 — S iv (completa SN) — alineador HECHO, validación en curso (2026-07-25)
 
-Con el resolvedor ya corregido. El front matter (`samyutta-vol-IV-info.txt`) **ya está**. Ojo: sus
-94 `HELMER_APPROVED` son del pase DeepSeek retirado — hay que re-validarlos, no heredarlos. ~344
-llamadas. Al terminar, **SN entero cerrado con el validador** (1815 filas).
+Los 94 `HELMER_APPROVED` son del pase DeepSeek retirado: se re-validan las 344, no se hereda nada.
+
+**Estructura (`samyutta-vol-IV-info.txt`, front matter de Feer).** 10 saṃyuttas XXXV-XLIV, 33
+vaggos, 391 suttas. Las **10 cabeceras de libro caen en la página exacta** que declara Feer y **9
+de los 10 recuentos son exactos**, con numeración contigua 1..N. El único desajuste, SN 39
+Sāmaṇḍaka (PTS 2, Feer 16), lo explica él: *«All the MSS give only the beginning and the end»* —
+se imprimen el nº1 y el nº16. (La tabla resumen de Feer suma 394, pero sus columnas dan 391 y la
+prosa confirma 29 y 34: la tabla se equivoca.)
+
+**Lo que cazó la auditoría previa a gastar API** — sin ella, ~120 filas se habrían cotejado contra
+otro sutta:
+
+1. **El `Sutta #` NO es la numeración del CST en SN 35.** Es la cuenta **reducida de Feer** (207)
+   mientras `massive.tsv` usa la del CST. Los desfases (+17 en p29; +27/+37/+47 en pp. 151-155)
+   caen donde Feer explica que comprimió: los 19 suttas de `Jātidhammādi…`+`Aniccādi…` que el Excel
+   lleva como **2 filas**, y el **`satthi peyyala`**, donde «reduce» 60 suttantas a 20.
+   → El lado CST se resuelve por **POSICIÓN**: los bloques de subhead del XML y las filas del Excel
+   se corresponden **1:1 en los 10 saṃyuttas** (344=344) y la comprobación por nombre da **344/344**.
+   `massive.tsv` queda sólo para la página de cotejo. Es la regla de siempre: la identidad de una
+   fila la dan `Sutta Name` + `PTS Page`, no el `Sutta #`.
+2. **Una gāthā tomada por sutta.** `13 Pittaṃ semhaṃ ca vāto ca` (S iv 231) es un verso numerado
+   como párrafo; el alineador lo tomaba por marcador y desplazaba `36.22` en adelante. Lo descarta
+   la **continuidad de la secuencia** (un nº de párrafo queda POR DEBAJO del esperado; una elisión
+   salta hacia delante), que además preserva el `5 Daṭṭhabbena` (p207, marcador legítimo sin
+   posición) y el `16 Dukkaram` (p262, salto de elisión de Sāmaṇḍaka).
+3. **El `saṭṭhi-peyyāla` es un tercer régimen de marcador**: `(2) Chandena2`, con el **nº corrido
+   elidido**. Exigir dígito inicial dejaba 12 filas sin marcador.
+4. **Las capacidades se MIDEN en el texto, no se adivinan por el nombre.** Feer junta a veces dos
+   suttas del CST bajo un marcador y el título no siempre lo dice: «Agayha» (S iv 126) imprime los
+   dos Rūpārāma sin nombrar ninguno, mientras «Devadahakhaṇo» *parece* doble y no lo es — el Khaṇa
+   del CST es el marcador siguiente (su texto es el del nº135 «Saṅgayha»). Contar raíces del nombre
+   acertaba en tres casos y fallaba en dos; el solapamiento léxico acierta en los cinco.
+
+**Estado del alineador:** 344/344 alineadas, **hueco de inyectividad 0**, página del marcador ≡
+`cst_p_page` 343/344 (100 %), ordinal `paṭhama`/`dutiya` 52/53 (98 %), solapamiento léxico mediano
+0.70 (sólo 6 filas < 0.30, y 5 de ellas con el nombre casado: la cobertura baja porque un lado
+elide). Módulos nuevos: `sn4_markers.py` (gramática pyparsing, 3 regímenes), `sn4_names.py`
+(Feer nombra con el término en instrumental y el ordinal como dígito volado), `validador_sn4.py`.
 
 ### Fase 4 — deuda de DN/MN — ✅ **HECHA** (verificado 2026-07-25)
 
