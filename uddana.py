@@ -103,7 +103,7 @@ def _cabecera(t):
     return t[m:] if m is not None else t
 
 
-def analiza(texto_plegado):
+def analiza(texto_plegado, exige_marca=True):
     """Estrofa plegada → `(nombres, comprobaciones, coherente)`.
 
     `nombres` va **expandido** por los multiplicadores: `dve khatā` aporta dos entradas con el
@@ -114,7 +114,11 @@ def analiza(texto_plegado):
     # Sin la palabra `uddāna` no hay estrofa: hay vaggas que cierran sólo con su colofón (todo el
     # Eka, varios del Dasaka). Analizar el colofón como si fuera la lista daba un nombre suelto y
     # el detector lo tomaba por una fusión masiva.
-    if not any(k in texto_plegado for k in ('udanam', 'udanan')):
+    # ⚠️ En el Eka y el Duka la estrofa **no lleva cabecera**: va pegada al colofón, sin la palabra
+    # `uddānaṃ` («Kammakaraṇa-vaggo paṭhamo. Vajjaṃ padhānaṃ…»). Con `exige_marca=False` el
+    # llamador declara que ahí no hay que buscarla; en el resto de nipātas sí, porque hay vaggas
+    # que cierran sólo con colofón y analizar el colofón como si fuera la lista inventa nombres.
+    if exige_marca and not any(k in texto_plegado for k in ('udanam', 'udanan')):
         return [], [], False
     cuerpo = _corta_cierre(_cabecera(texto_plegado))
     nombres, checks = [], []
