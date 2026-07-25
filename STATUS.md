@@ -87,11 +87,21 @@ conjunto **aparte**: es pali válido, pero no normalizado, y son dos preguntas d
 
 Piloto sobre A ii con verdad-terreno (263 pares ya CONFIRMADO):
 
-| capa | acierto |
-|---|--:|
-| **1. bloqueo por vagga** (colofón PTS ↔ `<div>` CST) | 262/263 (**99,6 %**) |
-| 2. firma de contenido, argmax independiente | 84,4 % |
-| **2. + asignación MONÓTONA dentro del vagga** | 261/263 (**99,2 %**) |
+| capa | acierto | empates en cabeza |
+|---|--:|--:|
+| **1. bloqueo por vagga** (colofón PTS ↔ `<div>` CST) | 262/263 (**99,6 %**) | — |
+| 2. firma de contenido, argmax independiente | 84,4 % | — |
+| **2. + asignación MONÓTONA dentro del vagga** | 261/263 (**99,2 %**) | 36/270 |
+| …y con el **texto completo** del CST (74 % que se descartaba) | 261/263 (99,2 %) | **0/270** |
+
+> **Los empates eran un artefacto del texto truncado.** `an_peyyala.cst_unidades` sólo leía los
+> `<p>` con atributo `n`, y el CST lo pone únicamente en el primero de cada sutta: se perdía el
+> 74 % del cuerpo. Con el texto entero el vocabulario del Catukka pasa de 2.356 a 6.973 palabras y
+> **los 36 empates desaparecen**, incluido el Kamma-vagga, que parecía indistinguible. El acierto
+> no sube porque los dos fallos que quedan no son de firma: en `173` el contenido ahora acierta con
+> holgura (0,80 contra 0,39) y es la **asignación** la que falla, porque PTS parte en dos marcadores
+> (171 y 172) lo que el CST numera de una pieza. Dar **capacidad 2** a cada sutta del CST se probó
+> y es peor —de 2 fallos a 4—: la asimetría real es rara y la holgura, cara.
 
 La firma usa lo que la elisión no altera: cobertura de vocabulario **ponderada por idf** (0,60),
 **progresión** —correlación de rangos del orden de primera aparición— (0,25) y **razón de cantidad

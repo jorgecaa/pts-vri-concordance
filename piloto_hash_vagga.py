@@ -300,6 +300,11 @@ def main():
         if firme:
             cuadra.append(v)
 
+        # ⚠️ Capacidad **1**, y probado que 2 es peor. Se probó dar capacidad 2 a cada sutta del
+        # CST —PTS puede imprimir con dos números lo que el CST numera de una pieza: sus nº 171 y
+        # 172 son el `Cetanā` y el `cattāro attabhāvapaṭilābhā`, juntos en el 171 del CST— y los
+        # fallos suben de 2 a 4: la holgura permite emparejamientos dobles donde no los hay y
+        # descoloca vaggas que estaban bien. La asimetría real es rara; la holgura, cara.
         idx = ar_assign(len(ps), len(cs), lambda i, j: max(M[i][j], 0.001), lambda j: 1,
                         skip_penalty=0.5)
         for i, j in enumerate(idx):
