@@ -299,8 +299,14 @@ def serie_monotona(plano, filas, desde=0):
         # las siguientes (en el *rāga-peyyāla* del Catukka tumbaba seis de veinticinco); y sin
         # preferir la larga, una sonda corta y ubicua —`raga`, que encabeza los nueve términos—
         # casa siempre donde ya estamos y la serie «avanza» sin probar nada.
+        # De entre las sondas CERCANAS manda la más RARA (y a igual rareza, la más larga). La
+        # rareza es la que discrimina: en el Navaka, `9.75 Nīvaraṇa sammappadhāna` y sus ocho
+        # hermanas comparten `sammappadhāna`, así que preferir la sonda larga hacía casar a las
+        # nueve con la MISMA palabra en posiciones sucesivas — monótono y vacío, que es justo el
+        # modo de fallo contra el que existe esta prueba. `nīvaraṇa` aparece una vez y decide.
         cerca = min(c[2] for c in cand) + VENTANA
-        elegida = min([c for c in cand if c[2] <= cerca])
+        elegida = min([(c[1], c[0], c[2], c[3]) for c in cand if c[2] <= cerca])
+        elegida = (0, 0, elegida[2], elegida[3])
         pos[clave] = (elegida[2], elegida[3])
         cur = elegida[2] + 1
     return pos, sin
