@@ -94,12 +94,13 @@ def build_markers(cur):
     cur.execute('SELECT page_no,unitext FROM pages WHERE book_no=? AND edition="mula"', (SN5_BOOK,))
     for r in cur.fetchall():
         for i, line in enumerate((r['unitext'] or '').split('\n')):
-            # marcador simple "48. (8) Nombre" o de rango "103--108. (1--6) Pācīna"
-            m = re.match(r'^(\d+)(?:\s*-+\s*(\d+))?\.?\s*\((\d+)(?:\s*-+\s*(\d+))?\)\s+(\S.*)', line.strip())
+            # marcador "48. (8) Nombre", rango "103--108. (1--6) Pācīna", o grupo
+            # profundo sin nombre "63--72. (1--10)." (uddāna a continuación)
+            m = re.match(r'^(\d+)(?:\s*-+\s*(\d+))?\.?\s*\((\d+)(?:\s*-+\s*(\d+))?\)\.?\s*(\S.*)?$', line.strip())
             if m:
                 a = int(m.group(1)); b = int(m.group(2)) if m.group(2) else a
                 for run in range(a, b + 1):        # registra cada nº corrido del rango
-                    mm[r['page_no']].append((i + 1, run, int(m.group(3)), m.group(5)[:60]))
+                    mm[r['page_no']].append((i + 1, run, int(m.group(3)), (m.group(5) or '')[:60]))
     return mm
 
 
@@ -118,6 +119,45 @@ def pts_for(cur, page, target, mm):
                     end = j
                     break
             return ' '.join(sh.tokens(' '.join(lines[start:end]))[:350])
+    return None
+
+
+_FOLD_N = str.maketrans({'ā': 'a', 'ī': 'i', 'ū': 'u', 'ṅ': 'n', 'ñ': 'n', 'ṇ': 'n',
+                         'ṭ': 't', 'ḍ': 'd', 'ḷ': 'l', 'ṃ': 'm', 'ṁ': 'm'})
+def _norm_name(t):
+    t = re.sub(r'^[\d\-\s]*\.?\s*', '', (t or '').lower()).translate(_FOLD_N)
+    return re.sub(r'(.)\1+', r'\1', re.sub(r'[^a-z]', '', t))
+
+def _stem(t):
+    # raíz del nombre: quita sufijo sutta/vagga y la terminación de caso (PTS "Ogho" vs CST "Oghasuttaṃ")
+    n = re.sub(r'(suttantam|suttam|suttani|vaggo).*$', '', _norm_name(t))
+    return re.sub(r'[aiueom]+$', '', n)
+
+
+def pts_by_name(cur, page, cst_title, mm, span=1):
+    """Resuelve el texto PTS casando el NOMBRE del título CST contra el nombre del
+    marcador PTS (robusto al off-by-one de numeración de las vaggas peyyāla)."""
+    tgt = _stem(cst_title)
+    if not tgt or len(tgt) < 3:
+        return None
+    pages = [page] + [page + d for d in range(1, span + 1)] + [page - d for d in range(1, span + 1)]
+    for pg in pages:
+        seen = set()
+        for line, gid, vpos, name in mm.get(pg, []):
+            if line in seen:
+                continue
+            seen.add(line)
+            ns = _stem(name)
+            if ns and len(ns) >= 3 and (tgt == ns or tgt.startswith(ns) or ns.startswith(tgt)):
+                cur.execute('SELECT unitext FROM pages WHERE book_no=? AND page_no=? AND edition="mula"', (SN5_BOOK, pg))
+                r = cur.fetchone()
+                lines = (r['unitext'] or '').split('\n')
+                start, end = line - 1, len(lines)
+                for j in range(start + 1, len(lines)):
+                    if re.match(r'^\d+(?:\s*-+\s*\d+)?\.?\s*\(', lines[j].strip()):
+                        end = j
+                        break
+                return ' '.join(sh.tokens(' '.join(lines[start:end]))[:350])
     return None
 
 

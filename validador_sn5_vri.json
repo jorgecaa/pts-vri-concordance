@@ -12,7 +12,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share identical core narrative and framing text, with minor textual variants."
+  "reason": "Both passages share the exact same core narrative and doctrinal teaching."
  },
  {
   "num": "45.2",
@@ -27,7 +27,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share identical narrative structure with minor orthographic and elision differences."
+  "reason": "Both passages contain identical Upaddha Sutta core narrative with minor orthographic variations."
  },
  {
   "num": "45.3",
@@ -42,7 +42,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narratives match identically; CST includes expanded peyyāla sections."
+  "reason": "Core narratives match; PTS features standard peyyāla expansion."
  },
  {
   "num": "45.4",
@@ -57,7 +57,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages describe the Jāṇussoṇi brāhmaṇa white chariot narrative."
+  "reason": "Both editions represent the same Jāṇussoṇi Sutta with minor expansions."
  },
  {
   "num": "45.5",
@@ -72,7 +72,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS has peyyāla while CST has the full expanded text."
+  "reason": "Core narrative matches; PTS contains peyyāla abbreviations while CST is expanded."
  },
  {
   "num": "45.6",
@@ -87,7 +87,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core dialogue matches, CST expands the peyyāla with the full conclusion."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core dialogue on brahmacariya matches, CST merely expands peyyāla."
  },
  {
   "num": "45.7",
@@ -102,7 +102,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share identical core narrative regarding Nibbana and the deathless."
+  "reason": "Core narrative, questions on nibbānadhātu and amata, and answers match in both."
  },
  {
   "num": "45.8",
@@ -117,7 +117,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS text is an abbreviated version of the CST text."
+  "reason": "Core narrative matches; CST expands the peyyāla from PTS."
  },
  {
   "num": "45.9",
@@ -132,7 +132,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard edition expansions in CST."
+  "reason": "Both passages contain identical Suka-sutta content with standard editorial expansion differences."
  },
  {
   "num": "45.10",
@@ -147,7 +147,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative of Nandiya sutta matches; CST includes uddāna and refuge formula."
+  "reason": "Same Nandiya sutta; minor orthographic and expansion differences."
  },
  {
   "num": "45.11",
@@ -162,7 +162,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share the exact same core narrative and dialogue."
+  "reason": "Both passages share the exact same core narrative with minor editorial variations."
  },
  {
   "num": "45.12",
@@ -177,7 +177,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical core discourse on vedana and retreat with minor textual expansions."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages share identical core narrative and doctrinal formulation, with minor textual variants."
  },
  {
   "num": "45.13",
@@ -192,7 +192,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical sutta with minor orthographic and peyyāla differences."
+  "reason": "Minor orthographic and peyyala differences, core sekha sutta narrative matches."
  },
  {
   "num": "45.14",
@@ -207,7 +207,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the identical Noble Eightfold Path arising text with standard editorial differences."
+  "reason": "Identical core text regarding the eight dhammas and the Tathagata's arising."
  },
  {
   "num": "45.15",
@@ -222,7 +222,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core aṭṭhammaṅgika-magga teaching is identical; CST expands peyyāla."
+  "reason": "PTS uses peyyala 'la', CST expands it fully; same sutta."
  },
  {
   "num": "45.16",
@@ -237,7 +237,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages detail the eight purified dhammas appearing with the Tathagata's arising."
+  "reason": "Core eightfold path factors and formulaic structure match identically despite orthographic variations and peyyāla."
  },
  {
   "num": "45.17",
@@ -252,7 +252,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages detail the eight purified dhammas arising only in the Sugata's discipline."
+  "reason": "Both passages share the identical teaching on the eight purified dhammas with peyyala elisions."
  },
  {
   "num": "45.18",
@@ -267,7 +267,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core narrative, CST includes expected peyyala and structural expansions."
+  "reason": "Identical discourse between Ānanda and Bhadda at Pāṭaliputta, with CST providing expanded text."
  },
  {
   "num": "45.19",
@@ -282,7 +282,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core dialogue, narrative, and doctrinal content are identical across editions."
+  "reason": "Identical core dialogue between Venerable Ananda and Bhadda concerning brahmacariya."
  },
  {
   "num": "45.20",
@@ -297,7 +297,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands the abbreviated PTS text with identical core narrative."
+  "reason": "CST expands the abbreviated PTS text with identical core dialogue."
  },
  {
   "num": "45.21",
@@ -312,7 +312,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands the peyyala passage missing in PTS."
+  "reason": "CST expands the peyyala elision present in the PTS edition of the same sutta."
  },
  {
   "num": "45.22",
@@ -327,7 +327,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages teach akusala and kusala dhammas with matching peyyāla elisions."
+  "reason": "Both passages present the identical teaching on wholesome and unwholesome states with minor textual variants."
  },
  {
   "num": "45.23",
@@ -342,7 +342,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages describe the wrong and right path with matching doctrinal content."
+  "reason": "Identical teachings on wrong and right practice with minor orthographic variants."
  },
  {
   "num": "45.24",
@@ -357,7 +357,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST edition contains expanded text of the same patipada sutta."
+  "reason": "CST expands peyyala from PTS fragment; core sutta is identical."
  },
  {
   "num": "45.25",
@@ -372,7 +372,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST expands the abbreviated sappurisa section."
+  "reason": "Identical text with minor orthographic variations and standard PTS text expansion."
  },
  {
   "num": "45.26",
@@ -387,7 +387,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages represent the same asappurisa sutta with minor orthographic and elision variations."
+  "reason": "Both passages describe the asappurisa and sappurisa suttas with minor orthographic variants."
  },
  {
   "num": "45.27",
@@ -402,7 +402,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands peyyāla from PTS kumbha sutta."
+  "reason": "CST expands the core kumbha simile with the Noble Eightfold Path peyyāla."
  },
  {
   "num": "45.28",
@@ -417,7 +417,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages discuss the ariyo sammāsamādhi with minor textual variants and peyyāla."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches; minor orthographic differences and peyyala expansion."
  },
  {
   "num": "45.29",
@@ -432,7 +432,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core text matches, CST expands the peyyala abbreviation."
+  "reason": "Editions match in core narrative despite minor orthography and peyyāla expansion."
  },
  {
   "num": "45.30",
@@ -447,7 +447,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share identical core narrative content regarding Uttiya sutta."
+  "reason": "Both passages share identical core narrative and dialogue with minor orthographic and peyyāla differences."
  },
  {
   "num": "45.31",
@@ -462,7 +462,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core text on the noble and ignoble paths with minor orthographical variants"
+  "reason": "Both passages describe the samma-patipatti and miccha-patipatti with identical doctrinal content."
  },
  {
   "num": "45.32",
@@ -477,7 +477,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic differences and standard peyyala expansions."
+  "reason": "Both passages describe micchāpaṭipada and sammāpaṭipada with identical core structure."
  },
  {
   "num": "45.33",
@@ -492,7 +492,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST includes standard peyyāla expansion."
+  "reason": "Core narrative matches, CST edition expands peyyāla passages."
  },
  {
   "num": "45.34",
@@ -507,7 +507,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages are the same sutta, with minor orthographic and expansion differences."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches, editions differ only in orthography and elisions."
  },
  {
   "num": "45.35",
@@ -522,7 +522,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical teachings on sāmañña with minor orthographic and elision differences."
+  "reason": "Identical sutta content with minor orthographic and elision differences."
  },
  {
   "num": "45.36",
@@ -537,7 +537,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core text defining sāmañña and sāmaññattha with minor orthographic variants."
+  "reason": "Identical discourse on sāmañña with minor orthographic and peyyāla variations."
  },
  {
   "num": "45.37",
@@ -552,7 +552,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Same sutta; CST expands elided fruit passages."
+  "reason": "Core discourse on brahmañña matches, CST expands the phala list elided in PTS."
  },
  {
   "num": "45.38",
@@ -567,7 +567,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard peyyala expansion in CST."
+  "reason": "Editions share identical doctrinal content with expected minor peyyāla expansion differences."
  },
  {
   "num": "45.39",
@@ -582,7 +582,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical teachings on brahmacariya and its fruits with minor orthographic differences."
+  "reason": "Identical teachings on brahmacariya and its fruits with minor orthographic variants."
  },
  {
   "num": "45.40",
@@ -597,7 +597,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Same sutta with minor variant readings and an expanded elaboration in CST."
+  "reason": "Core narrative matches; CST expands with the goal (atthassa) of brahmacariya."
  },
  {
   "num": "45.41",
@@ -612,7 +612,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative and doctrinal exposition match; CST contains standard peyyāla expansions."
+  "reason": "Core narrative matches with standard editorial expansions in the CST text."
  },
  {
   "num": "45.42",
@@ -627,14 +627,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST expands the peyyāla passage found in PTS."
+  "reason": "Core narrative matches; CST expands the peyyāla passages found in PTS."
  },
  {
   "num": "45.43",
   "canon": "45.48",
   "name": "Anupādāparinibbāna",
   "cst_title": "8. Anupādāparinibbānasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -642,14 +642,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages present the same sutta with minor editorial and elision differences."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages represent the same sutta with minor text expansion and variant peyyālas."
  },
  {
   "num": "45.44",
   "canon": "45.49",
   "name": "Kalyāṇamitta",
   "cst_title": "1. Kalyāṇamittasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -657,14 +657,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS is an abbreviated version of the CST sutta containing identical core text."
+  "reason": "PTS is an abbreviated version with peyyāla matching the full CST text."
  },
  {
   "num": "45.45",
   "canon": "45.50",
   "name": "Sīlasampadādisuttapañcakaṃ",
   "cst_title": "2-6. Sīlasampadādisuttapañcakaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -672,14 +672,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches; CST includes standard peyyāla expansion."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches; CST includes standard peyyāla expansions of qualities."
  },
  {
   "num": "45.46",
   "canon": "45.55",
   "name": "Yonisomanasikārasampadā",
   "cst_title": "7. Yonisomanasikārasampadāsuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -687,14 +687,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic differences and standard peyyāla expansions."
+  "reason": "Core narrative and doctrinal teaching match despite minor orthographic and expansion differences."
  },
  {
   "num": "45.47",
   "canon": "45.56",
   "name": "Kalyāṇamitta",
   "cst_title": "1. Kalyāṇamittasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -702,14 +702,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the identical sutta on spiritual friendship with standard peyyāla expansion."
+  "reason": "Both passages share the identical sutta content on spiritual friendship and the noble eightfold path."
  },
  {
   "num": "45.48",
   "canon": "45.57",
   "name": "Sīlasampadādisuttapañcakaṃ",
   "cst_title": "2-6. Sīlasampadādisuttapañcakaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -717,14 +717,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both editions represent the same Sūriyasutta dealing with sīlasampadā and peyyāla."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both editions represent the same sutta on sīlasampadā, with CST expanding the peyyāla."
  },
  {
   "num": "45.49",
   "canon": "45.62",
   "name": "Yonisomanasikārasampadā",
   "cst_title": "7. Yonisomanasikārasampadāsuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -732,14 +732,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches with expected peyyāla expansions and orthographic differences."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches with expected peyyāla elisions and minor orthographic variants."
  },
  {
   "num": "45.50",
   "canon": "45.63",
   "name": "Kalyāṇamitta",
   "cst_title": "1. Kalyāṇamittasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -747,14 +747,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS is abbreviated while CST contains the fully expanded text of the same sutta."
+  "reason": "PTS is an abridged version of the same sutta expanded in CST."
  },
  {
   "num": "45.51",
   "canon": "45.64",
   "name": "Sīlasampadādisuttapañcakaṃ",
   "cst_title": "2-6. Sīlasampadādisuttapañcakaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -762,14 +762,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core teaching on sīlasampadā matches despite editorial expansion of peyyāla."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches with standard text expansions and minor peyyāla differences."
  },
  {
   "num": "45.52",
   "canon": "45.69",
   "name": "Yonisomanasikārasampadā",
   "cst_title": "7. Yonisomanasikārasampadāsuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -777,14 +777,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS is the truncated opening of the expanded CST text."
+  "reason": "PTS text is an abbreviated version expanded in CST edition."
  },
  {
   "num": "45.53",
   "canon": "45.70",
   "name": "Dutiyakalyāṇamitta",
   "cst_title": "1. Kalyāṇamittasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -792,14 +792,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share the exact same sutta on kalyāṇamittatā with minor textual variations."
+  "reason": "Both passages represent the same sutta on kalyanamittata with minor textual variants."
  },
  {
   "num": "45.54",
   "canon": "45.71",
   "name": "Dutiyasīlasampadādisuttapañcaka",
   "cst_title": "2-6. Sīlasampadādisuttapañcakaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -807,14 +807,14 @@
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Passages are too fragmentary and structurally divergent to confirm identity."
+  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Passages diverge significantly in content and structural elisions."
  },
  {
   "num": "45.55",
   "canon": "45.76",
   "name": "Yonisomanasikārasampadā",
   "cst_title": "7. Yonisomanasikārasampadāsuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -822,14 +822,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages are parallel versions of the same sutta with minor peyyāla variations."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages are the same sutta with minor variant expansions and peyyāla conventions."
  },
  {
   "num": "45.56",
   "canon": "45.77",
   "name": "Kalyāṇamitta",
   "cst_title": "1. Kalyāṇamittasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -837,14 +837,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS has elisions where CST expands the noble eightfold path details."
+  "reason": "PTS has elisions where CST expands the noble eightfold path and ending."
  },
  {
   "num": "45.57",
   "canon": "45.78",
   "name": "Sīlasampadādisuttapañcakaṃ",
   "cst_title": "2-6. Sīlasampadādisuttapañcakaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -852,14 +852,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): CST expands PTS peyyāla on sīlasampadā, core text matches."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages represent the same text with expected peyyala expansion in CST."
  },
  {
   "num": "45.58",
   "canon": "45.83",
   "name": "Yonisomanasikārasampadā",
   "cst_title": "7. Yonisomanasikārasampadāsuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -867,14 +867,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative and doctrinal teaching match despite minor orthographic and expansion differences."
+  "reason": "Core narrative and doctrinal content match completely between editions."
  },
  {
   "num": "45.59",
   "canon": "45.84",
   "name": "Dutiyakalyāṇamittasutta",
   "cst_title": "1. Kalyāṇamittasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -882,14 +882,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Editions differ in peyyala expansion; core narrative on spiritual friendship is identical."
+  "reason": "Editions share core narrative on kalyāṇamittatā, PTS uses peyyāla while CST expands fully."
  },
  {
   "num": "45.60",
   "canon": "45.85",
   "name": "Dutiyasīlasampadādisuttapañcaka",
   "cst_title": "2-6. Sīlasampadādisuttapañcakaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -897,14 +897,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): CST expands the peyyāla from PTS regarding sīlasampadā, core text matches."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): CST expands the peyyāla of the PTS sīlasampadā text with related sampadā passages."
  },
  {
   "num": "45.61",
   "canon": "45.90",
   "name": "Yonisomanasikārasampadā",
   "cst_title": "7. Yonisomanasikārasampadāsuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -912,14 +912,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands the peyyala abbreviation found in the PTS edition."
+  "reason": "PTS text uses peyyāla abbreviation while CST expands the noble eightfold path."
  },
  {
   "num": "45.62",
   "canon": "45.91",
   "name": "Paṭhamapācīnaninna",
   "cst_title": "1. Paṭhamapācīnaninnasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -927,14 +927,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches with minor elision and spelling differences."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches with minor orthographic differences and standard elisions."
  },
  {
   "num": "45.63",
   "canon": "45.92",
   "name": "Dutiyādipācīnaninnasuttacatukkaṃ",
   "cst_title": "2-5. Dutiyādipācīnaninnasuttacatukkaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -942,14 +942,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Editions match with standard textual elisions and expanded river similes."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core simile matches with standard textual expansions and peyyāla differences."
  },
  {
   "num": "45.64",
   "canon": "45.96",
   "name": "Chaṭṭhapācīnaninna",
   "cst_title": "6. Chaṭṭhapācīnaninnasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -964,7 +964,7 @@
   "canon": "45.97",
   "name": "Paṭhamasamuddaninna",
   "cst_title": "1. Paṭhamasamuddaninnasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -972,14 +972,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses elision while CST expands the noble eightfold path."
+  "reason": "PTS uses peyyala while CST expands the noble eightfold path."
  },
  {
   "num": "45.66",
   "canon": "45.98",
   "name": "Dutiyādisamuddaninnasuttapañcakaṃ",
   "cst_title": "2-6. Dutiyādisamuddaninnasuttapañcakaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -987,14 +987,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands the peyyala abbreviation present in the PTS text."
+  "reason": "CST contains expanded peyyala passages of the same sutta."
  },
  {
   "num": "45.67",
   "canon": "45.103",
   "name": "Paṭhamapācīnaninna",
   "cst_title": "1. Paṭhamapācīnaninnasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -1002,14 +1002,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS uses an elision where CST provides the full expansion."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS uses an elision while CST gives the full expanded text of the sutta."
  },
  {
   "num": "45.68",
   "canon": "45.104",
   "name": "Dutiyādipācīnaninnasuttapañcakaṃ",
   "cst_title": "2-6. Dutiyādipācīnaninnasuttapañcakaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -1017,14 +1017,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS gives abbreviated header for CST expanded rivers simile."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS uses abbreviation peyyāla for the expanded text present in CST."
  },
  {
   "num": "45.69",
   "canon": "45.109",
   "name": "Paṭhamasamuddaninna",
   "cst_title": "1. Paṭhamasamuddaninnasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -1032,14 +1032,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS is an abbreviated version (peyyāla) of the CST samuddapariyāya sutta."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS heavily abbreviated text matches CST expanded version of Samudda Sutta."
  },
  {
   "num": "45.70",
   "canon": "45.110",
   "name": "Dutiyādisamuddaninnasuttapañcakaṃ",
   "cst_title": "2-6. Dutiyādisamuddaninnasuttapañcakaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1047,59 +1047,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala while CST expands the river similes; core text matches."
- },
- {
-  "num": "45.71",
-  "canon": "45.115",
-  "name": "Paṭhamapācīnaninna",
-  "cst_title": "1. Paṭhamapācīnaninnasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.38,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Core narratives and similes are entirely different suttas."
- },
- {
-  "num": "45.72",
-  "canon": "45.116",
-  "name": "Dutiyādipācīnaninnasuttapañcakaṃ",
-  "cst_title": "2-6. Dutiyādipācīnaninnasuttapañcakaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.0,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS uses peyyāla abbreviation for CST expanded river similes."
- },
- {
-  "num": "45.73",
-  "canon": "45.121",
-  "name": "Paṭhamasamuddaninna",
-  "cst_title": "1. Paṭhamasamuddaninnasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.67,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "PTS is an abbreviated peyyāla text of the CST version."
+  "reason": "PTS is an abbreviated version of the CST river simile text containing identical core doctrine."
  },
  {
   "num": "45.74",
   "canon": "45.122",
   "name": "Dutiyādisamuddaninnasuttapañcakaṃ",
   "cst_title": "2-6. Dutiyādisamuddaninnasuttapañcakaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1107,14 +1062,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS contains an abbreviated version with peyyāla matching the expanded CST text."
+  "reason": "PTS contains an abbreviated peyyāla version of the full CST text."
  },
  {
   "num": "45.75",
   "canon": "45.127",
   "name": "Paṭhamapācīnaninna",
   "cst_title": "1. Paṭhamapācīnaninnasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -1122,14 +1077,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS uses word abbreviation for full expanded text found in CST."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS uses elision while CST expands the standard ganga sutta."
  },
  {
   "num": "45.76",
   "canon": "45.128",
   "name": "Dutiyādipācīnaninnasuttapañcakaṃ",
   "cst_title": "2-6. Dutiyādipācīnaninnasuttapañcakaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -1137,14 +1092,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS uses abbreviation while CST gives full expansion of the same text"
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS uses shorthand peyyāla while CST expands the river simile fully."
  },
  {
   "num": "45.77",
   "canon": "45.133",
   "name": "Paṭhamasamuddaninna",
   "cst_title": "1. Paṭhamasamuddaninnasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -1152,14 +1107,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS uses peyyāla while CST expands the text fully."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS has peyyala and udana while CST expands fully, core sutta matches."
  },
  {
   "num": "45.78",
   "canon": "45.134",
   "name": "Dutiyādisamuddaninnasuttapañcakaṃ",
   "cst_title": "2-6. Dutiyādisamuddaninnasuttapañcakaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -1167,14 +1122,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS uses peyyala while CST expands identical river similes and path factors."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS uses peyyala while CST expands the river similes."
  },
  {
   "num": "45.79",
   "canon": "45.139",
   "name": "Tathāgata",
   "cst_title": "1. Tathāgatasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1182,14 +1137,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS is a truncated fragment of the complete CST text."
+  "reason": "CST expands PTS excerpt with full text and minor orthographic variants."
  },
  {
   "num": "45.80",
   "canon": "45.140",
   "name": "Pada",
   "cst_title": "2. Padasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1197,29 +1152,29 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core elephant footprint simile and dhamma teachings match; CST expands elision."
+  "reason": "CST expands the peyyāla passage found in PTS."
  },
  {
   "num": "45.81",
   "canon": "45.141",
   "name": "Kūṭādisuttapañcakaṃ",
   "cst_title": "3-7. Kūṭādisuttapañcakaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
+  "legacy": "VALIDADOR",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
   "gate": {
    "cov": 0.61,
    "thr": 0.55
   },
-  "gemini": "APPROVE",
-  "reason": "PTS uses a peyyala referring to the previous suttas, while CST expands them fully."
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): The passages represent completely different suttas with distinct doctrinal content."
  },
  {
   "num": "45.82",
   "canon": "45.146",
   "name": "Candimādisuttatatiyakaṃ",
   "cst_title": "8-10. Candimādisuttatatiyakaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1227,14 +1182,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala while CST expands multiple similes and the magga path fully."
+  "reason": "PTS uses peyyala while CST expands the moon similes and appamada text."
  },
  {
   "num": "45.83",
   "canon": "45.149",
   "name": "Bala",
   "cst_title": "1. Balasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1242,14 +1197,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyāla while CST expands the exact same balakaraṇīya sutta."
+  "reason": "PTS uses peyyāla while CST expands the full text of the same sutta."
  },
  {
   "num": "45.84",
   "canon": "45.150",
   "name": "Bīja",
   "cst_title": "2. Bījasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1257,14 +1212,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share the exact same simile on seeds and the Noble Eightfold Path."
+  "reason": "Identical teachings on growth grounded in morality, with minor textual expansion in CST."
  },
  {
   "num": "45.85",
   "canon": "45.151",
   "name": "Nāga",
   "cst_title": "3. Nāgasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1272,14 +1227,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share the exact same core narrative and doctrinal exposition on the elephant and the path."
+  "reason": "Core narrative and doctrinal simile match with minor orthographic and expansion differences."
  },
  {
   "num": "45.86",
   "canon": "45.152",
   "name": "Rukkha",
   "cst_title": "4. Rukkhasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1287,14 +1242,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS contains an ellipsis while CST provides the full expanded text of the same sutta."
+  "reason": "PTS has an elision while CST expands the same tree simile sutta."
  },
  {
   "num": "45.87",
   "canon": "45.153",
   "name": "Kumbha",
   "cst_title": "5. Kumbhasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1302,14 +1257,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with expected elision differences between editions."
+  "reason": "Both passages present identical simile and path formula with minor textual expansion."
  },
  {
   "num": "45.88",
   "canon": "45.154",
   "name": "Sūka",
   "cst_title": "6. Sūkasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1317,14 +1272,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands upon the core simile presented in the PTS fragment."
+  "reason": "CST edition contains expanded development of the same core simile."
  },
  {
   "num": "45.89",
   "canon": "45.155",
   "name": "Ākāsa",
   "cst_title": "7. Ākāsasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1332,14 +1287,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic differences and expansion of elisions."
+  "reason": "Core narrative matches with minor orthographic differences and expansion of peyyāla."
  },
  {
   "num": "45.90",
   "canon": "45.156",
   "name": "Paṭhamamegha",
   "cst_title": "8. Paṭhamameghasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1347,14 +1302,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor textual variants and standard peyyāla expansions."
+  "reason": "Core narrative and doctrinal teaching match despite minor textual expansions and orthographic variants."
  },
  {
   "num": "45.91",
   "canon": "45.157",
   "name": "Dutiyamegha",
   "cst_title": "9. Dutiyameghasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1362,14 +1317,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages describe the cloud simile and the eightfold path dispersing evil states."
+  "reason": "Identical cloud simile and noble eightfold path teaching with minor expansions."
  },
  {
   "num": "45.92",
   "canon": "45.158",
   "name": "Nāvā",
   "cst_title": "10. Nāvāsuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1377,14 +1332,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic variants and standard peyyāla expansions."
+  "reason": "Core simile of ship bonds and noble path cultivation match identically."
  },
  {
   "num": "45.93",
   "canon": "45.159",
   "name": "Āgantuka",
   "cst_title": "11. Āgantukasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -1392,14 +1347,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages are versions of the guest-house (āgantukāgāra) simile with expected editorial expansions."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS text is an abbreviated fragment; CST is the fully expanded version of the same sutta."
  },
  {
   "num": "45.94",
   "canon": "45.160",
   "name": "Nadī",
   "cst_title": "12. Nadīsuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1407,14 +1362,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages contain identical core narrative with only minor orthographic and stylistic variants."
+  "reason": "Identical Ganges simile and path development discourse with only minor orthographic variations."
  },
  {
   "num": "45.95",
   "canon": "45.161",
   "name": "Esanā",
   "cst_title": "1. Esanāsuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1422,14 +1377,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share the core text regarding the three esanā and the noble eightfold path."
+  "reason": "Both passages discuss the three esanā and the noble eightfold path as the antidote."
  },
  {
   "num": "45.96",
   "canon": "45.162",
   "name": "Vidhā",
   "cst_title": "2. Vidhāsuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1437,14 +1392,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Exact textual match with minor orthographic and peyyala differences."
+  "reason": "Identical sutta on the three vidhā with minor orthographic and peyyāla differences."
  },
  {
   "num": "45.97",
   "canon": "45.163",
   "name": "Āsava",
   "cst_title": "3. Āsavasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1452,14 +1407,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Minor orthographic variants and standard peyyala expansion in CST."
+  "reason": "Minor orthographic and elision differences; core text is identical."
  },
  {
   "num": "45.98",
   "canon": "45.164",
   "name": "Bhava",
   "cst_title": "4. Bhavasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1467,14 +1422,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core text on the three bhavas and the noble eightfold path with minor orthographic differences."
+  "reason": "Both passages describe the three bhavas with minor orthographic and elision variations."
  },
  {
   "num": "45.99",
   "canon": "45.165",
   "name": "Dukkhatā",
   "cst_title": "5. Dukkhatāsuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1482,14 +1437,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages discuss the three dukkhatās and the path for their abandonment."
+  "reason": "Core teaching on the three dukkhatās matches with minor orthographic and peyyāla variations."
  },
  {
   "num": "45.100",
   "canon": "45.166",
   "name": "Khila",
   "cst_title": "6. Khilasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1497,14 +1452,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages describe the three khila with minor orthographic and peyyala differences."
+  "reason": "Identical core text on the three khilas with minor peyyala and spelling variants."
  },
  {
   "num": "45.101",
   "canon": "45.167",
   "name": "Mala",
   "cst_title": "7. Malasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1512,14 +1467,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical teachings on the three stains with minor orthographic and peyyala differences."
+  "reason": "Core narrative matches with minor orthographic and peyyala expansion differences."
  },
  {
   "num": "45.102",
   "canon": "45.168",
   "name": "Nīgha",
   "cst_title": "8. Nīghasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1527,14 +1482,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present identical teaching on the three nīghās with minor orthographic and peyyāla variations."
+  "reason": "Both passages share identical doctrinal content regarding the three nīghās and the noble eightfold path."
  },
  {
   "num": "45.103",
   "canon": "45.169",
   "name": "Vedanā",
   "cst_title": "9. Vedanāsuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1542,14 +1497,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Minor orthographic and elision differences; core text is identical."
+  "reason": "Identical teachings on the three feelings with minor orthographic variants."
  },
  {
   "num": "45.104",
   "canon": "45.170",
   "name": "Taṇhā",
   "cst_title": "10. Taṇhāsuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -1557,22 +1512,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages treat the three taṇhā and the noble eightfold path with different peyyāla expansions."
- },
- {
-  "num": "45.105",
-  "canon": "45.171",
-  "name": "Tasinā",
-  "cst_title": "11. Tasināsuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.42,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages treat the three taṇhā/tasinā with matching structural elisions and doctrinal terminology."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages discuss the three taṇhās and the noble eightfold path despite textual elisions."
  },
  {
   "num": "45.106",
@@ -1580,14 +1520,14 @@
   "name": "Ogha",
   "cst_title": "1. Oghasuttaṃ",
   "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
   "gate": {
-   "cov": 0.57,
+   "cov": 0.84,
    "thr": 0.55
   },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS discusses yoga, CST discusses ogha; distinct teachings."
+  "gemini": "APPROVE",
+  "reason": "Same sutta; CST includes introductory framing and standard peyyala expansion."
  },
  {
   "num": "45.107",
@@ -1624,7 +1564,7 @@
   "canon": "45.175",
   "name": "Gantha",
   "cst_title": "4. Ganthasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1632,7 +1572,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical lists of four bonds with minor expansion in CST edition."
+  "reason": "Identical lists of four bonds with minor expansion in CST."
  },
  {
   "num": "45.110",
@@ -1647,7 +1587,7 @@
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): PTS discusses pañca kāmaguṇā while CST discusses satta anusayā."
+  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): PTS discusses pañca kāmaguṇā, CST discusses satta anusayā. Different suttas."
  },
  {
   "num": "45.111",
@@ -1662,7 +1602,7 @@
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): PTS discusses nīvaraṇa while CST discusses kāmaguṇa, completely distinct topics."
+  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): PTS discusses nīvaraṇa (hindrances) while CST discusses kāmaguṇā (strands of sensual pleasure)."
  },
  {
   "num": "45.112",
@@ -1677,22 +1617,22 @@
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Completely distinct suttas: one discusses khandhas, the other nīvaraṇas."
+  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): PTS discusses khandha while CST discusses nīvaraṇa, completely distinct suttas."
  },
  {
   "num": "45.113",
   "canon": "45.179",
   "name": "Upādānakkhandha",
   "cst_title": "8. Upādānakkhandhasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
+  "legacy": "VALIDADOR",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
   "gate": {
-   "cov": 0.67,
+   "cov": 0.44,
    "thr": 0.55
   },
-  "gemini": "APPROVE",
-  "reason": "PTS is an elided fragment of the same five aggregates sutta in CST."
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): PTS discusses four upādāna while CST discusses five upādānakkhandha."
  },
  {
   "num": "45.114",
@@ -1707,14 +1647,14 @@
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): PTS discusses uddhambhāgiya fetters while CST discusses orambhāgiya fetters."
+  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): PTS is on upper fetters while CST is on lower fetters."
  },
  {
   "num": "45.115",
   "canon": "45.181",
   "name": "Uddhambhāgiya",
   "cst_title": "10. Uddhambhāgiyasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -1722,7 +1662,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic differences and peyyala expansions."
+  "reason": "Both passages share identical core narrative regarding uddhambhāgiyasaṃyojana and the noble eightfold path."
  },
  {
   "num": "46.1",
@@ -1737,7 +1677,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative and bojjhaṅga simile match; CST expands peyyāla."
+  "reason": "Same core narrative and simile of the Nagas in the Himalayas."
  },
  {
   "num": "46.2",
@@ -1752,7 +1692,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages are the same sutta on nīvaraṇa āhāra with minor textual variants."
+  "reason": "Both passages are editions of the same Āhārasutta on nutriment for the hindrances."
  },
  {
   "num": "46.3",
@@ -1767,7 +1707,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches, CST has expanded bojjhaṅga peyyāla passages."
+  "reason": "Core narrative matches with standard editorial expansions and orthographic differences."
  },
  {
   "num": "46.4",
@@ -1782,7 +1722,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS is an abbreviated version; CST expands the peyyāla into full text."
+  "reason": "PTS is an abbreviated version; CST expands the peyyāla and matches the same core discourse."
  },
  {
   "num": "46.6",
@@ -1797,7 +1737,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core dialogue and structure match despite minor orthographic and expansion differences."
+  "reason": "Both passages represent the same Kuṇḍaliya Sutta with minor orthographic and expansive textual differences."
  },
  {
   "num": "46.8",
@@ -1812,7 +1752,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages contain identical dialogue between Sāriputta and Upavāna on bojjhaṅgas."
+  "reason": "Both passages share the exact same core narrative featuring Sariputta and Upavana."
  },
  {
   "num": "46.9",
@@ -1827,7 +1767,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical bojjhaṅga text with minor orthographic and elision differences."
+  "reason": "Identical bojjhaṅga awakening factors discourse, minor orthographic and peyyāla variations."
  },
  {
   "num": "46.10",
@@ -1842,7 +1782,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages treat the seven bojjhaṅgas arising in the sugatavinaya with minor textual variant endings."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages present the seven bojjhaṅgas with minor textual variations in peyyāla and uddāna."
  },
  {
   "num": "46.11",
@@ -1857,7 +1797,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical texts with minor orthographic differences and standard peyyāla expansion."
+  "reason": "Both passages present the identical sutta on bojjhaṅgas with minor orthographic and peyyāla variations."
  },
  {
   "num": "46.12",
@@ -1872,7 +1812,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Orthographic and expansion differences; core text on bojjhaṅga and kalyāṇamittatā is identical."
+  "reason": "Orthographic and minor lexical variants of the same bojjhaṅga sutta."
  },
  {
   "num": "46.13",
@@ -1887,7 +1827,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical suttas with minor orthographic differences and standard peyyāla expansions."
+  "reason": "Orthographic and minor peyyala expansion differences between editions."
  },
  {
   "num": "46.14",
@@ -1902,7 +1842,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative of Kassapa Gilana Sutta matches, CST has expanded bojjhanga text."
+  "reason": "Both passages refer to Kassapa's illness at Pipphalīguhā, with CST being fuller."
  },
  {
   "num": "46.15",
@@ -1917,7 +1857,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS has an elision while CST expands the Moggallānagilānasutta."
+  "reason": "PTS uses peyyala while CST expands the bojjhangas fully."
  },
  {
   "num": "46.16",
@@ -1932,7 +1872,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages represent the Mahācunda Sutta with minor orthographic differences."
+  "reason": "Both passages represent the Mahācunda Sutta with minor orthographic and peyyāla differences."
  },
  {
   "num": "46.17",
@@ -1947,7 +1887,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; minor orthographic differences and elisions."
+  "reason": "Identical bojjhaṅga text with minor orthographic and elision variations."
  },
  {
   "num": "46.18",
@@ -1962,7 +1902,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor orthographic differences and peyyala expansion in identical bojjhanga texts."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical core narrative on bojjhaṅga with minor orthographic and peyyāla differences."
  },
  {
   "num": "46.19",
@@ -1977,7 +1917,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages describe the seven bojjhaṅgas leading to the destruction of suffering."
+  "reason": "Identical bojjhaṅga texts with minor orthographic variants and standard peyyāla differences."
  },
  {
   "num": "46.20",
@@ -1985,14 +1925,14 @@
   "name": "Nibbidā",
   "cst_title": "10. Nibbidāsuttaṃ",
   "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
   "gate": {
-   "cov": 0.1,
+   "cov": 0.71,
    "thr": 0.55
   },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Completely different narrative structures and doctrinal formulations of bojjhaṅga."
+  "gemini": "APPROVE",
+  "reason": "Identical bojjhaṅga texts; CST includes standard uddāna."
  },
  {
   "num": "46.21",
@@ -2007,7 +1947,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic differences and peyyala expansion."
+  "reason": "Both passages share the exact same core dialogue concerning bojjhaṅgā with minor orthographic and peyyāla differences."
  },
  {
   "num": "46.22",
@@ -2022,7 +1962,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core text on the seven bojjhaṅgas with minor spelling and peyyāla variations."
+  "reason": "Minor orthographic and peyyala differences, core text of the seven bojjhangas is identical."
  },
  {
   "num": "46.23",
@@ -2037,7 +1977,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages contain identical doctrinal content on the five hindrances and bojjhaṅgas with minor orthographic variations."
+  "reason": "Both passages share identical doctrinal content and structural progression with minor orthographic variants."
  },
  {
   "num": "46.24",
@@ -2052,7 +1992,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses elisions while CST expands the full text of mental obstructions."
+  "reason": "PTS uses elisions while CST expands the standard formula completely."
  },
  {
   "num": "46.25",
@@ -2067,7 +2007,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Orthographic variant and expanded peyyāla of the same sutta."
+  "reason": "CST expands the introductory PTS fragment with full seven bojjhaṅga text."
  },
  {
   "num": "46.26",
@@ -2082,7 +2022,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the same discourse on bojjhaṅgā and taṇhakkhayāya."
+  "reason": "Both passages share the identical narrative concerning the seven bojjhaṅgas and taṇhakkhaya."
  },
  {
   "num": "46.27",
@@ -2097,7 +2037,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Orthographic variants and standard peyyala expansions of the same bojjhanga text."
+  "reason": "Identical bojjhaṅga teaching with minor orthographic and expansion differences."
  },
  {
   "num": "46.28",
@@ -2112,7 +2052,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches, CST contains expanded peyyāla passage."
+  "reason": "Core narrative matches with standard peyyāla expansions in CST."
  },
  {
   "num": "46.29",
@@ -2127,7 +2067,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands the standard bojjhaṅga text with saṃyojanīya dhammā section."
+  "reason": "Core narrative matches, CST edition has minor structural expansions."
  },
  {
   "num": "46.30",
@@ -2142,7 +2082,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages represent the same Udāyi Sutta with standard textual expansion differences."
+  "reason": "Same discourse with standard textual expansion and peyyāla differences."
  },
  {
   "num": "46.31",
@@ -2157,7 +2097,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share identical doctrinal content regarding appamāda and bojjhaṅgas with minor orthographic differences."
+  "reason": "Both passages present the same discourse on diligence and the seven bojjhaṅgas with minor orthographic differences."
  },
  {
   "num": "46.32",
@@ -2172,7 +2112,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages are identical texts with minor orthographic and peyyala differences."
+  "reason": "Orthographic differences and minor peyyala expansions, core bojjhanga text matches."
  },
  {
   "num": "46.33",
@@ -2187,7 +2127,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narratives match identically, minor orthographic and peyyāla differences."
+  "reason": "Both passages are identical editions of the Upakkilesa Sutta with minor orthographic differences."
  },
  {
   "num": "46.34",
@@ -2202,7 +2142,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic variants and standard peyyāla expansion."
+  "reason": "Identical bojjhaṅga text with minor orthographic variants and peyyāla expansion."
  },
  {
   "num": "46.35",
@@ -2217,22 +2157,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Minor orthographic differences and expansion of standard items in one edition."
- },
- {
-  "num": "46.36",
-  "canon": "46.35",
-  "name": "Yonisomanasikāra",
-  "cst_title": "5. Ayonisomanasikārasuttaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.33,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): PTS discusses bojjhaṅgas while CST discusses nīvaraṇas."
+  "reason": "Core narrative matches with minor orthographic differences and standard textual expansion."
  },
  {
   "num": "46.37",
@@ -2247,7 +2172,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Editions match; minor orthographic differences and peyyala expansion."
+  "reason": "Identical content on bojjhaṅgas with minor orthographic and peyyāla differences."
  },
  {
   "num": "46.38",
@@ -2262,7 +2187,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages represent the same sutta on nīvaraṇa and bojjhaṅgā, differing only in textual truncation."
+  "reason": "PTS text is an incomplete fragment matching the fuller CST passage."
  },
  {
   "num": "46.39",
@@ -2292,7 +2217,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages cover the five nīvaraṇā and seven bojjhaṅgā with minor orthographic variants."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical teachings on nīvaraṇa and bojjhaṅga with minor orthographic variants."
  },
  {
   "num": "46.41",
@@ -2307,7 +2232,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core text; editions differ only in orthography and peyyāla expansions."
+  "reason": "Identical text with minor orthographic differences and standard peyyala expansions."
  },
  {
   "num": "46.42",
@@ -2322,7 +2247,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narratives match identically; CST expands elisions found in PTS."
+  "reason": "Core narrative matches; CST expands elisions and orthography differs slightly."
  },
  {
   "num": "46.43",
@@ -2337,7 +2262,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical discourse on the path to destroy Mara, minor orthographic and peyyala variations."
+  "reason": "Orthographic variants and standard peyyala expansion of the exact same sutta."
  },
  {
   "num": "46.44",
@@ -2352,7 +2277,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST expands the abbreviated bojjhaṅga list."
+  "reason": "Core narrative matches; CST expands peyyala for bojjhangas."
  },
  {
   "num": "46.45",
@@ -2367,7 +2292,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical teachings on bojjhaṅgā and wisdom with minor orthographic and peyyāla differences."
+  "reason": "Identical bojjhaṅga definitions with minor orthographic and peyyāla elision differences."
  },
  {
   "num": "46.46",
@@ -2382,7 +2307,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages discuss the definition of being poor regarding the seven bojjhaṅgas."
+  "reason": "Both editions discuss the poor person regarding the seven bojjhaṅgas with minor spelling differences."
  },
  {
   "num": "46.47",
@@ -2397,7 +2322,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narratives and bojjhaṅga teachings match completely despite minor orthographic and elision differences."
+  "reason": "Core narrative matches with minor orthographic differences and peyyala expansion."
  },
  {
   "num": "46.48",
@@ -2412,7 +2337,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core narrative with minor orthographic differences and expanded peyyāla."
+  "reason": "Identical teachings on kalyāṇamittatā and bojjhaṅgas with minor orthographic and peyyāla differences."
  },
  {
   "num": "46.49",
@@ -2427,7 +2352,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Orthographic and minor lexical variants of the exact same bojjhaṅga text."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical core narrative on bojjhaṅga and yonisomanasikāra with minor orthographic and peyyāla differences."
  },
  {
   "num": "46.50",
@@ -2442,7 +2367,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages share the identical core teaching on kalyāṇamittatā and bojjhaṅgas."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches with expected edition-specific abbreviations and expansions."
  },
  {
   "num": "46.51",
@@ -2457,7 +2382,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both editions share the same core discourse on the nutriment of hindrances and bojjhaṅgas."
+  "reason": "Both passages treat the nutriment of the five hindrances and bojjhaṅgas."
  },
  {
   "num": "46.52",
@@ -2472,7 +2397,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages contain identical narrative content and dialogue with minor orthographic differences."
+  "reason": "Identical core narrative with minor orthographic and sandhi variants."
  },
  {
   "num": "46.53",
@@ -2502,7 +2427,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic differences and standard expansions."
+  "reason": "Core narrative and settings match; minor orthographic and expansion differences."
  },
  {
   "num": "46.55",
@@ -2517,7 +2442,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share the exact same Sangarava sutta narrative and dialogue."
+  "reason": "Both passages are the Sangārava Sutta with minor orthographic and expansion differences."
  },
  {
   "num": "46.56",
@@ -2532,7 +2457,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core dialogue between the Buddha and Prince Abhaya matches despite CST expansion."
+  "reason": "Core narrative matches; CST contains standard expanded elaboration on Abhayarājakumāra Sutta."
  },
  {
   "num": "46.57",
@@ -2547,44 +2472,29 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches, CST lacks the secondary fruit expansion section present in PTS."
- },
- {
-  "num": "46.58",
-  "canon": "46.58",
-  "name": "Aññataraphala",
-  "cst_title": "2. Puḷavakasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.05,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): PTS discusses aṭṭhikasaññā while CST discusses puḷavakasaññā, making them different suttas."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages discuss aṭṭhikasaññā and bojjhaṅgas; PTS contains additional expansions."
  },
  {
   "num": "46.59",
   "canon": "46.59",
   "name": "Mahattha",
   "cst_title": "3. Vinīlakasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
    "cov": 0.4,
    "thr": 0.55
   },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Textual variants and peyyala differ significantly between editions."
+  "gemini": "APPROVE",
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages refer to the meditation on a corpse of a bluish-black color."
  },
  {
   "num": "46.60",
   "canon": "46.60",
   "name": "Yogakkhema",
   "cst_title": "4. Vicchiddakasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -2592,14 +2502,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages refer to the vicchiddakasaññā; editions differ only in elision."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages refer to vicchiddakasaññā; minor formulaic expansion in CST."
  },
  {
   "num": "46.61",
   "canon": "46.61",
   "name": "Saṃvega",
   "cst_title": "5. Uddhumātakasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -2607,7 +2517,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages refer to the same uddhumātakasaññā with minor edition variations."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Orthographic variation and standard textual elision peyyala marker."
  },
  {
   "num": "46.62",
@@ -2622,7 +2532,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages refer to the cultivation of mettā with minor textual variants."
+  "reason": "Identical metta bhavana discourse with standard textual abbreviations."
  },
  {
   "num": "46.63",
@@ -2637,7 +2547,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages discuss the development of puḷavakasaññā, differing only in peyyāla and spelling."
+  "reason": "Both passages treat the same puḷavakasaññā with standard peyyāla variants."
  },
  {
   "num": "46.64",
@@ -2652,7 +2562,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages refer to the meditation on a bloated corpse (vinīlakasaññā)."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages refer to the meditation on a corpse (vinīlakasaññā)."
  },
  {
   "num": "46.65",
@@ -2667,7 +2577,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical meditation subject with standard edition elision difference."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages refer to vicchiddakasaññā; editions differ only in peyyāla expansion."
  },
  {
   "num": "46.66",
@@ -2682,7 +2592,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages refer to the same uddhumātakasaññā text with minor editorial additions."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical core saññā text with minor scribal elisions."
  },
  {
   "num": "46.67",
@@ -2697,7 +2607,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical metta bhavana discourse with standard textual abbreviations."
+  "reason": "Editions match in core narrative despite elision and orthographic variant."
  },
  {
   "num": "46.68",
@@ -2712,7 +2622,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Minor orthographic and peyyala differences in the same standard text."
+  "reason": "Identical core text; CST includes standard peyyala abbreviation."
  },
  {
   "num": "46.69",
@@ -2727,7 +2637,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages concern the development of mudita with minor textual abbreviations."
+  "reason": "Both passages concern the cultivation of mudita with minor textual expansion."
  },
  {
   "num": "46.70",
@@ -2735,14 +2645,14 @@
   "name": "Upekkhā",
   "cst_title": "9. Upekkhāsuttaṃ",
   "legacy": "VALIDADOR_HUMANO",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
   "gate": {
-   "cov": 0.12,
+   "cov": 0.75,
    "thr": 0.55
   },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Passages refer to completely different uddāna and text sections."
+  "gemini": "APPROVE",
+  "reason": "Minor orthographic differences and editorial additions of repetition markers."
  },
  {
   "num": "46.71",
@@ -2757,7 +2667,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages refer to the ānāpānasati vagga in the bojjhaṅgasaṃyutta with minor textual differences."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages refer to the ānāpānasati vagga in the bojjhaṅgasaṃyutta with textual abbreviation."
  },
  {
   "num": "46.72",
@@ -2772,14 +2682,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core asubhasaññā teaching matches despite standard textual elision."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Editions match despite minor textual elisions."
  },
  {
   "num": "46.73",
   "canon": "46.68",
   "name": "Maraṇa",
   "cst_title": "2. Maraṇasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -2787,14 +2697,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core subject maraṇasaññā matches, CST includes standard elision and numbering."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Textual variants with standard peyyala expansion."
  },
  {
   "num": "46.74",
   "canon": "46.69",
   "name": "Āhārepaṭikūla",
   "cst_title": "3. Āhārepaṭikūlasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -2802,14 +2712,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages concern ahare patikulasanna with expected textual elisions."
+  "reason": "Both passages refer to the same mindfulness of food meditation text."
  },
  {
   "num": "46.75",
   "canon": "46.70",
   "name": "Anabhirati",
   "cst_title": "4. Anabhiratisuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -2817,7 +2727,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core saññā formula matches; differences are minor editorial expansions."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core formula matches with minor textual expansion in CST."
  },
  {
   "num": "46.76",
@@ -2832,7 +2742,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Editions share identical core title with minor abbreviation differences."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core aniccasaññā text matches, differing only by peyyāla elision."
  },
  {
   "num": "46.77",
@@ -2840,21 +2750,6 @@
   "name": "Dukkha",
   "cst_title": "6. Dukkhasuttaṃ",
   "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.2,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Core subjects differ significantly between anatta and anicca formulations."
- },
- {
-  "num": "46.78",
-  "canon": "46.73",
-  "name": "Anatta",
-  "cst_title": "7. Anattasuttaṃ",
-  "legacy": "DB_VERIFIED",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -2862,14 +2757,29 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages contain identical doctrinal fragments with minor editorial variation."
+  "reason": "Core formula matches with expected peyyala abbreviation in CST."
+ },
+ {
+  "num": "46.78",
+  "canon": "46.73",
+  "name": "Anatta",
+  "cst_title": "7. Anattasuttaṃ",
+  "legacy": "VALIDADOR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.6,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Minor variant with standard peyyala omission in CST."
  },
  {
   "num": "46.79",
   "canon": "46.74",
   "name": "Pahāna",
   "cst_title": "8. Pahānasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -2877,14 +2787,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Editions match with standard textual abbreviation (peyyāla)."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core title and structure match; variant involves peyyāla and index."
  },
  {
   "num": "46.80",
   "canon": "46.75",
   "name": "Virāga",
   "cst_title": "9. Virāgasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -2892,14 +2802,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both are fragmentary peyyala passages of the viragasañña sutta."
+  "reason": "Both are fragmentary peyyala passages of the viragasañña text."
  },
  {
   "num": "46.81",
   "canon": "46.76",
   "name": "Nirodha",
   "cst_title": "10. Nirodhasuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
@@ -2907,37 +2817,37 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the nirodhasaññā-sutta with minor abbreviations and textual variations."
+  "reason": "Both passages present the nirodhasaññā-sutta with minor textual expansion and peyyāla differences."
  },
  {
   "num": "46.82",
   "canon": "46.77",
   "name": "Gaṅgānadīādi",
   "cst_title": "1-12. Gaṅgānadīādisuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
-   "cov": 0.33,
+   "cov": 0.53,
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS uses an elision pointing to CST's fully expanded text."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Editions match in core bojjhaṅga teaching with standard peyyāla expansions in CST."
  },
  {
-  "num": "46.86",
-  "canon": "46.121",
-  "name": "Oghādi",
-  "cst_title": "1-8. Oghādisuttaṃ",
+  "num": "46.85",
+  "canon": "46.111",
+  "name": "Esanādi",
+  "cst_title": "1-10. Esanādisuttaṃ",
   "legacy": "DB_VERIFIED",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
-   "cov": 0.1,
+   "cov": 0.17,
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Completely different suttas: five higher fetters versus four floods."
+  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): PTS has four floods while CST has three searches. Completely distinct suttas."
  },
  {
   "num": "47.1",
@@ -2952,7 +2862,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages represent the Satipaṭṭhāna Sutta with only minor orthographic differences."
+  "reason": "Both passages present the identical Satipaṭṭhāna Sutta with minor orthographic variants."
  },
  {
   "num": "47.2",
@@ -2967,7 +2877,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the same mindfulness sutta, with minor orthographic and peyyāla differences."
+  "reason": "Both passages present the same mindfulness sutta with minor editorial and peyyāla variations."
  },
  {
   "num": "47.3",
@@ -2982,7 +2892,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS has peyyala expansion where CST is fully written out."
+  "reason": "PTS uses peyyāla while CST expands the identical core sutta text."
  },
  {
   "num": "47.4",
@@ -2997,7 +2907,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard textual expansions in the CST edition."
+  "reason": "Core narrative matches with standard textual expansion in CST."
  },
  {
   "num": "47.5",
@@ -3012,7 +2922,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS has an elision while CST expands the same text."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Editions share identical core narrative; CST expands the abbreviated passages."
  },
  {
   "num": "47.6",
@@ -3027,7 +2937,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS is an abbreviated version of the CST Sakuṇagghi Sutta."
+  "reason": "Core narrative matches; CST contains expanded text."
  },
  {
   "num": "47.7",
@@ -3042,7 +2952,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core monkey-trap narrative matches; CST includes extended conclusion."
+  "reason": "Core monkey-trap narrative matches identically, CST has standard expanded conclusion."
  },
  {
   "num": "47.8",
@@ -3057,7 +2967,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): CST features standard textual expansions of the same simile sutta."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): CST contains an expanded version of the same foolish cook simile sutta."
  },
  {
   "num": "47.9",
@@ -3087,7 +2997,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard CST text expansion of PTS peyyāla."
+  "reason": "Core narrative matches with standard editorial expansions and orthographic differences."
  },
  {
   "num": "47.11",
@@ -3102,7 +3012,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with expected edition differences in elisions and orthography."
+  "reason": "Core narrative matches with minor orthographic differences and editorial elision variations."
  },
  {
   "num": "47.12",
@@ -3117,7 +3027,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical Sampāpasādaniya sutta text with minor orthographic variations."
+  "reason": "Identical core narrative matching the Sampādaniya Sutta, with expected orthographic variations."
  },
  {
   "num": "47.13",
@@ -3132,7 +3042,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; PTS text is simply truncated compared to CST."
+  "reason": "Core narrative matches, PTS text is simply an incomplete/truncated version of the CST sutta."
  },
  {
   "num": "47.14",
@@ -3147,7 +3057,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST text includes expanded peyyāla sections."
+  "reason": "Core narrative matches; CST includes expanded text typical of peyyāla."
  },
  {
   "num": "47.15",
@@ -3162,7 +3072,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST expands with standard arahantship conclusion and elisions."
+  "reason": "Both passages share the core Bāhiya narrative, with CST having minor expansions."
  },
  {
   "num": "47.16",
@@ -3177,7 +3087,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala elisions while CST expands the same Uttiya Sutta."
+  "reason": "Core narrative matches with standard peyyala expansions in PTS edition."
  },
  {
   "num": "47.17",
@@ -3222,7 +3132,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core narrative, CST includes expected expanded peyyāla and orthographic variants."
+  "reason": "Same sutta; CST contains expanded text and fuller exposition of the same narrative."
  },
  {
   "num": "47.20",
@@ -3237,7 +3147,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands the text while PTS abbreviates with peyyāla."
+  "reason": "PTS is an abbreviated excerpt of the fuller CST text sharing identical context."
  },
  {
   "num": "47.21",
@@ -3252,7 +3162,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core dialogue between Venerable Bhadda and Ānanda on morality and satipaṭṭhāna matches."
+  "reason": "Core dialogue and narrative match identically despite minor orthographic and expansion differences."
  },
  {
   "num": "47.22",
@@ -3267,7 +3177,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share identical core dialogue regarding the duration of the true Dhamma."
+  "reason": "Core narrative and satipaṭṭhāna discourse match across editions despite minor orthographic variants."
  },
  {
   "num": "47.23",
@@ -3282,7 +3192,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share identical core narrative and doctrinal dialogue on satipaṭṭhāna."
+  "reason": "Identical discourse between Ananda and Bhadda on satipatthana, with minor orthographic and elision differences."
  },
  {
   "num": "47.24",
@@ -3297,7 +3207,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core satipaṭṭhāna teaching matches with minor elision differences."
+  "reason": "Editions represent the same Satipatthana sutta with expected expansion in CST."
  },
  {
   "num": "47.25",
@@ -3312,7 +3222,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Same sutta; PTS uses peyyala while CST expands the satipatthana text."
+  "reason": "Identical core sutta on satipatthana; PTS uses peyyala where CST expands."
  },
  {
   "num": "47.26",
@@ -3327,7 +3237,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Editions share core narrative with CST having an expanded passage."
+  "reason": "PTS is an abbreviated version of the same sutta with expanded passages in CST."
  },
  {
   "num": "47.27",
@@ -3342,7 +3252,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core dialogue on asekha and satipaṭṭhāna matches despite minor orthographic and elision differences."
+  "reason": "Core narrative matches with expected edition differences in elisions and phrasing."
  },
  {
   "num": "47.28",
@@ -3357,7 +3267,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses elision while CST expands the satipatthana exposition."
+  "reason": "PTS has an elision while CST expands the satipaṭṭhāna answer fully."
  },
  {
   "num": "47.29",
@@ -3372,7 +3282,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST includes standard expansion and orthographic variants."
+  "reason": "Both passages share identical core narrative about Sirivaḍḍha, CST contains minor expansions."
  },
  {
   "num": "47.30",
@@ -3387,7 +3297,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages share identical narrative content about Mānadinna with minor textual variants."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages are the Mānadinna-sutta featuring identical core narrative and doctrine."
  },
  {
   "num": "47.31",
@@ -3402,7 +3312,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands the satipaṭṭhāna formulae via peyyāla while PTS provides the incipit."
+  "reason": "CST expands the satipaṭṭhāna anupassanā formula with standard peyyāla while PTS is abbreviated."
  },
  {
   "num": "47.32",
@@ -3417,7 +3327,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core satipaṭṭhāna text matches despite minor editorial peyyāla differences."
+  "reason": "Identical satipaṭṭhāna core text, CST uses peyyāla elisions."
  },
  {
   "num": "47.33",
@@ -3432,7 +3342,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative of satipaṭṭhāna teaching matches despite CST expansions."
+  "reason": "Both passages address the same teaching on satipaṭṭhāna with standard canonical expansions."
  },
  {
   "num": "47.34",
@@ -3447,7 +3357,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages detail the four satipaṭṭhānas leading to the further shore; differences are due to peyyāla expansion."
+  "reason": "Core four satipatthana teachings match despite standard expansion and orthographic variants."
  },
  {
   "num": "47.35",
@@ -3462,7 +3372,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Editions match; CST expands peyyala sections while PTS abbreviates."
+  "reason": "Same core mindfulness instruction with standard textual expansion and elision differences."
  },
  {
   "num": "47.36",
@@ -3477,7 +3387,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages describe the four satipaṭṭhānā and their two fruits with minor orthographic and expansion differences."
+  "reason": "Both passages describe the four satipaṭṭhānas with identical fruit outcomes."
  },
  {
   "num": "47.37",
@@ -3492,7 +3402,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core satipaṭṭhāna teaching matches despite editorial expansions and orthographic differences."
+  "reason": "Identical core teachings with minor orthographic differences and standard expansions."
  },
  {
   "num": "47.38",
@@ -3507,7 +3417,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical satipatthana core narrative despite minor elision differences."
+  "reason": "Core satipatthana narrative matches despite minor textual expansion in CST."
  },
  {
   "num": "47.39",
@@ -3522,7 +3432,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core satipaṭṭhāna bhāvanā text matches, CST includes standard peyyāla expansions."
+  "reason": "Core satipatthana bhavana narrative matches despite minor textual expansions and orthographic differences."
  },
  {
   "num": "47.40",
@@ -3537,7 +3447,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share identical core narrative regarding satipatthana bhavana and patipada"
+  "reason": "Both passages discuss satipatthana, bhavana, and the path with minor textual variations."
  },
  {
   "num": "47.41",
@@ -3552,7 +3462,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages describe the exact same Satipaṭṭhāna teaching with minor textual variations."
+  "reason": "Both passages are identical satipatthana suttas with minor textual expansion in CST."
  },
  {
   "num": "47.42",
@@ -3567,7 +3477,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present identical foundational teachings on the satipaṭṭhāna samudaya."
+  "reason": "Identical core narrative on satipaṭṭhāna arising and ceasing with minor orthographic variants."
  },
  {
   "num": "47.43",
@@ -3582,7 +3492,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narratives match identically with minor orthographic and peyyāla differences."
+  "reason": "Identical satipatthana discourse, differing only in orthography and peyyala elisions"
  },
  {
   "num": "47.44",
@@ -3597,7 +3507,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both editions share the same satipatthana teaching, differing only in peyyala elisions."
+  "reason": "Both editions share the same satipatthana discourse; CST uses peyyala abbreviations."
  },
  {
   "num": "47.45",
@@ -3612,7 +3522,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands the standard satipatthana formula while core text remains identical."
+  "reason": "Core narrative matches; CST includes standard expanded satipaṭṭhāna formula omitted in PTS."
  },
  {
   "num": "47.46",
@@ -3627,7 +3537,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic and elision differences."
+  "reason": "Core narrative matches with minor orthographic differences and elisions."
  },
  {
   "num": "47.47",
@@ -3642,7 +3552,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical bhikkhu-ovāda sutta with minor orthographic and expansion differences."
+  "reason": "Identical discourse on brief instruction leading to arahantship."
  },
  {
   "num": "47.48",
@@ -3657,7 +3567,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the same satipaṭṭhāna instigation discourse with standard editorial peyyāla differences."
+  "reason": "Core narrative matches with expected orthographic and peyyala differences."
  },
  {
   "num": "47.49",
@@ -3672,7 +3582,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core teaching on vedana and satipatthana with minor edition variations and peyyala."
+  "reason": "Core narrative matches; CST uses standard peyyala abbreviations for satipatthana."
  },
  {
   "num": "47.50",
@@ -3690,6 +3600,51 @@
   "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): CST contains substantial satipatthana expansion absent in PTS."
  },
  {
+  "num": "47.51",
+  "canon": "47.51",
+  "name": "Gaṅgānadīādisuttadvādasakaṃ",
+  "cst_title": "1-12. Gaṅgānadīādisuttadvādasakaṃ",
+  "legacy": "VALIDADOR",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.53,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Same gaṅgā-peyyāla text applied to satipaṭṭhāna, differing only in elision expansion."
+ },
+ {
+  "num": "47.53",
+  "canon": "47.73",
+  "name": "Balādisuttadvādasakaṃ",
+  "cst_title": "1-12. Balādisuttadvādasakaṃ",
+  "legacy": "DB_VERIFIED",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.06,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): The two passages represent completely different texts and uddānas."
+ },
+ {
+  "num": "47.54",
+  "canon": "47.85",
+  "name": "Esanādisuttadasakaṃ",
+  "cst_title": "1-10. Esanādisuttadasakaṃ",
+  "legacy": "DB_VERIFIED",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.06,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Completely different textual content and structural summaries."
+ },
+ {
   "num": "48.1",
   "canon": "48.1",
   "name": "Suddhika",
@@ -3702,7 +3657,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the identical five spiritual faculties sutta with minor orthographic and formulaic variants."
+  "reason": "Both passages present the identical five spiritual faculties sutta with minor editorial abbreviations."
  },
  {
   "num": "48.2",
@@ -3717,7 +3672,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the five spiritual faculties and the stream-enterer definition."
+  "reason": "Both passages describe the five spiritual faculties and the stream-enterer, with minor variant expansions."
  },
  {
   "num": "48.3",
@@ -3732,7 +3687,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS contains peyyala while CST expands the exact same indriya sutta."
+  "reason": "PTS uses peyyala while CST expands the five faculties sutta fully."
  },
  {
   "num": "48.4",
@@ -3747,7 +3702,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard peyyala expansion in CST."
+  "reason": "Core narrative matches with expected peyyala expansion in the CST edition."
  },
  {
   "num": "48.5",
@@ -3762,7 +3717,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard peyyala expansion in CST."
+  "reason": "PTS expands the five faculties with peyyala, while CST writes them fully."
  },
  {
   "num": "48.6",
@@ -3777,7 +3732,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST expands abbreviated peyyāla sections."
+  "reason": "PTS is an abbreviated version of the same indriya sutta expanded in CST."
  },
  {
   "num": "48.7",
@@ -3792,7 +3747,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical teachings on the indriyas, differing only in editorial peyyala expansions."
+  "reason": "Identical core teaching on the five spiritual faculties with minor peyyāla differences."
  },
  {
   "num": "48.8",
@@ -3807,7 +3762,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core text regarding the five faculties with minor orthographic and expansion differences."
+  "reason": "Both passages present the identical discourse on the five spiritual faculties with minor orthographic differences."
  },
  {
   "num": "48.9",
@@ -3822,7 +3777,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala abbreviation while CST expands the full text of the indriyas."
+  "reason": "PTS contains elision peyyala for CST expanded text of the same sutta."
  },
  {
   "num": "48.10",
@@ -3837,7 +3792,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches, CST expands peyyala elisions found in PTS."
+  "reason": "PTS uses peyyala while CST expands the indriya definitions fully."
  },
  {
   "num": "48.11",
@@ -3852,7 +3807,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS has peyyāla while CST is fully written out."
+  "reason": "Core narrative matches with CST being an expanded version with fewer peyyālas."
  },
  {
   "num": "48.12",
@@ -3882,7 +3837,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages discuss the five spiritual faculties and varying attainments based on them."
+  "reason": "Both passages discuss the five faculties and resulting persons with minor text expansion."
  },
  {
   "num": "48.14",
@@ -3897,7 +3852,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative of five faculties matches; CST has expanded fruit grades."
+  "reason": "Editions of the same sutta on the five spiritual faculties with minor expansions."
  },
  {
   "num": "48.15",
@@ -3927,7 +3882,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with expected peyyāla expansions in the CST edition."
+  "reason": "Core narrative of the five faculties matches, with CST providing expanded peyyāla."
  },
  {
   "num": "48.17",
@@ -3942,7 +3897,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST edition expands the peyyala section for the five faculties."
+  "reason": "Same sutta; CST expands standard meditative fruition categories with peyyāla completion."
  },
  {
   "num": "48.18",
@@ -3957,7 +3912,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical teachings on the five spiritual faculties and fruits, with minor orthographic differences."
+  "reason": "Both passages describe the five spiritual faculties and their fruits identically with minor orthographic differences."
  },
  {
   "num": "48.19",
@@ -3972,7 +3927,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala while CST expands the standard indriyasampanna sutta fully."
+  "reason": "PTS uses peyyala while CST expands the answer on indriyasampanna."
  },
  {
   "num": "48.20",
@@ -3987,7 +3942,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core text of the indriya passage matches despite minor sectional differences."
+  "reason": "Core text matches identically; differences are structural markers and orthography."
  },
  {
   "num": "48.21",
@@ -4002,7 +3957,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard editorial expansions and peyyāla."
+  "reason": "PTS uses peyyāla while CST expands the standard awakening formula."
  },
  {
   "num": "48.22",
@@ -4017,7 +3972,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Minor orthographic differences and an extra number suffix in CST."
+  "reason": "Identical text on the three faculties with minor orthographic variants."
  },
  {
   "num": "48.23",
@@ -4032,7 +3987,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the identical three indriyas with minor orthographic variations."
+  "reason": "Both passages describe the three indriyas with minor orthographic differences."
  },
  {
   "num": "48.24",
@@ -4047,7 +4002,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narratives match, CST expands the peyyala passage found in PTS."
+  "reason": "Core narrative matches, CST expands peyyāla while PTS uses abbreviations."
  },
  {
   "num": "48.25",
@@ -4062,7 +4017,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Orthographic differences and minor textual additions do not change the core narrative."
+  "reason": "Orthographic variants and a minor structural addition do not alter the core text identity."
  },
  {
   "num": "48.26",
@@ -4077,7 +4032,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages describe the six faculties defining a stream-enterer with minor orthographic differences."
+  "reason": "Minor orthographic and elision differences; core text is identical."
  },
  {
   "num": "48.27",
@@ -4092,7 +4047,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala abbreviation while CST expands the six faculties."
+  "reason": "PTS uses peyyala abbreviation while CST expands the six faculties completely."
  },
  {
   "num": "48.28",
@@ -4107,7 +4062,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala for the six indriyas fully expanded in CST."
+  "reason": "PTS uses peyyala abbreviation while CST expands the standard six indriyas text fully."
  },
  {
   "num": "48.29",
@@ -4122,7 +4077,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard peyyāla expansion in CST edition."
+  "reason": "PTS uses peyyala for the six indriyas, CST expands them fully."
  },
  {
   "num": "48.30",
@@ -4137,7 +4092,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages represent the same indriya-sutta, with CST including spelled out peyyālas."
+  "reason": "CST provides full expansion of PTS peyyala passages with identical core narrative."
  },
  {
   "num": "48.31",
@@ -4152,7 +4107,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical lists of the five spiritual faculties with minor orthographic differences."
+  "reason": "Both passages present the identical five spiritual faculties with minor orthographic differences."
  },
  {
   "num": "48.32",
@@ -4167,7 +4122,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical sutta content with minor orthographic variants."
+  "reason": "Identical core text on the five faculties and sotāpatti, differing only in orthography."
  },
  {
   "num": "48.33",
@@ -4182,7 +4137,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical doctrinal content on the five faculties for an Arahant with minor orthographic differences."
+  "reason": "Identical doctrinal content regarding the five faculties and arahantship despite minor orthographic variants."
  },
  {
   "num": "48.34",
@@ -4197,7 +4152,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS has peyyala expanding the same five indriyas sutta fully in CST."
+  "reason": "PTS uses peyyala for the five faculties while CST expands them fully."
  },
  {
   "num": "48.35",
@@ -4212,7 +4167,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala, CST expands the five indriyas fully."
+  "reason": "PTS is an abbreviated peyyāla version of the full CST indriya sutta."
  },
  {
   "num": "48.36",
@@ -4227,7 +4182,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the identical Indriyavibhaṅga text with minor orthographic and peyyāla variations."
+  "reason": "Both passages define the five spiritual faculties identically despite minor orthographic variants."
  },
  {
   "num": "48.37",
@@ -4242,7 +4197,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala while CST expands the full text of the indriya-vibhaṅga."
+  "reason": "PTS uses peyyala while CST fully expands the same indriya definitions."
  },
  {
   "num": "48.38",
@@ -4257,7 +4212,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS text has a peyyala representing fully expanded items present in CST."
+  "reason": "PTS text has peyyāla abbreviation while CST edition expands the full passage."
  },
  {
   "num": "48.39",
@@ -4272,7 +4227,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Same sutta on the five faculties with minor orthographic and expansion differences."
+  "reason": "Core five faculties teaching matches despite edition orthographic and expansion differences."
  },
  {
   "num": "48.40",
@@ -4287,7 +4242,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST includes standard expansions of parallel indriyas."
+  "reason": "Core narrative matches with minor orthographic differences and expansion in CST."
  },
  {
   "num": "48.41",
@@ -4302,7 +4257,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard editorial expansions in CST."
+  "reason": "Same sutta; CST includes expanded text while PTS has minor omissions."
  },
  {
   "num": "48.42",
@@ -4317,7 +4272,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala for CST expanded text of Unnabha Sutta."
+  "reason": "PTS uses peyyāla while CST expands fully, representing the exact same sutta."
  },
  {
   "num": "48.43",
@@ -4332,7 +4287,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor editorial differences and peyyāla expansion."
+  "reason": "Core narrative matches with minor textual expansion and orthographic differences."
  },
  {
   "num": "48.44",
@@ -4347,7 +4302,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core narrative; CST expands the peyyāla passage missing in PTS."
+  "reason": "Same sutta; CST expands peyyala and includes Sariputta's full reply."
  },
  {
   "num": "48.45",
@@ -4362,7 +4317,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative and teachings on indriya match completely across editions."
+  "reason": "Core narrative, setting, and teachings match perfectly despite minor orthographic and expansion differences."
  },
  {
   "num": "48.46",
@@ -4377,7 +4332,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS elides with peyyāla while CST fully expands the same indriya text"
+  "reason": "PTS uses peyyala while CST expands the full text of the same sutta."
  },
  {
   "num": "48.47",
@@ -4392,7 +4347,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative and four spiritual faculties match despite textual expansions."
+  "reason": "Core narrative matches with minor formulaic expansion of the arahant declaration."
  },
  {
   "num": "48.48",
@@ -4407,7 +4362,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard peyyāla expansions in CST edition."
+  "reason": "Editions match; PTS uses peyyala while CST expands the five indriyas completely."
  },
  {
   "num": "48.49",
@@ -4422,7 +4377,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share the identical core narrative regarding Piṇḍolabhāradvāja's enlightenment."
+  "reason": "Core narrative matches with minor orthographic and spacing differences between editions."
  },
  {
   "num": "48.50",
@@ -4437,7 +4392,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages are the same Āpaṇa-sutta regarding faculties."
+  "reason": "Both passages are the same Āpaṇasutta with minor orthographic and lectal variants."
  },
  {
   "num": "48.51",
@@ -4452,7 +4407,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share the exact same core narrative on the five spiritual faculties."
+  "reason": "Both passages share identical core narrative and faculties teaching despite orthographic and minor expansion differences."
  },
  {
   "num": "48.52",
@@ -4467,7 +4422,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages represent the same Uruvelakappa sutta with minor editorial expansions."
+  "reason": "Both passages are the same sutta with minor variant readings and expansions."
  },
  {
   "num": "48.53",
@@ -4482,7 +4437,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches, editions differ primarily in orthography and expanded peyyāla sections."
+  "reason": "Both passages share identical core narrative and sutta structure with minor orthographic variants."
  },
  {
   "num": "48.54",
@@ -4497,7 +4452,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the elephant footprint simile regarding the faculties leading to awakening."
+  "reason": "Both passages present identical elephant-footprint simile for the faculties leading to awakening."
  },
  {
   "num": "48.55",
@@ -4512,7 +4467,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core narrative with minor orthographic differences and expanded peyyāla."
+  "reason": "Identical core text with minor orthographic differences and resolved peyyala expansions."
  },
  {
   "num": "48.56",
@@ -4527,7 +4482,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core text; PTS uses peyyala while CST expands fully."
+  "reason": "Core narrative matches with standard peyyala expansion in CST."
  },
  {
   "num": "48.57",
@@ -4542,7 +4497,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Same core narrative on the five faculties with minor editorial expansions."
+  "reason": "Core narrative matches with standard peyyala expansion differences."
  },
  {
   "num": "48.58",
@@ -4557,7 +4512,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with CST containing standard expanded textual expansions."
+  "reason": "Both passages represent the same Sūkarakhatā Sutta with minor textual expansion."
  },
  {
   "num": "48.59",
@@ -4572,7 +4527,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages describe the five spiritual faculties with minor orthographic variations."
+  "reason": "Identical core text regarding the five faculties with minor orthographic and expansion differences."
  },
  {
   "num": "48.60",
@@ -4587,7 +4542,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical core text on the five spiritual faculties with minor orthographic variants."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches with minor orthographic variants and uddāna differences."
  },
  {
   "num": "48.61",
@@ -4602,7 +4557,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST expands the peyyāla and provides full text."
+  "reason": "Core text matches on the five faculties overcoming fetters."
  },
  {
   "num": "48.62",
@@ -4617,7 +4572,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS is an abbreviated fragment of the CST indriya text."
+  "reason": "PTS is an elliptical reference to the fuller CST text on indriyas."
  },
  {
   "num": "48.63",
@@ -4662,7 +4617,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Minor orthographic and expansion differences, same core text on the five indriyas."
+  "reason": "Orthographic and minor lexical expansions; core sutta narrative matches identically."
  },
  {
   "num": "48.66",
@@ -4677,7 +4632,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages describe the seven fruits and benefits of the five spiritual faculties."
+  "reason": "Identical teachings on the five faculties and seven fruits, differing only in orthography."
  },
  {
   "num": "48.67",
@@ -4692,7 +4647,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core text matches with standard orthographic variations and minor peyyāla expansion."
+  "reason": "Core narrative matches with minor orthographic differences and peyyala expansion."
  },
  {
   "num": "48.68",
@@ -4707,7 +4662,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core simile and teaching with minor spelling and peyyāla expansion differences."
+  "reason": "Editions match completely in core narrative, differing only in minor orthography and peyyāla expansion."
  },
  {
   "num": "48.69",
@@ -4722,7 +4677,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic and peyyala differences."
+  "reason": "Core narrative matches with minor orthographic and expansion differences."
  },
  {
   "num": "48.70",
@@ -4737,7 +4692,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core simile of simbali tree and paññindriya matches, CST has peyyāla expansion."
+  "reason": "Core simile of Kūṭasimbali and paññindriya matches, CST contains standard expansions."
  },
  {
   "num": "48.71",
@@ -4752,7 +4707,67 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative and doctrinal content regarding the five faculties match perfectly."
+  "reason": "Core narratives match with minor textual expansion in CST edition."
+ },
+ {
+  "num": "49.1",
+  "canon": "49.1",
+  "name": "Pācīnādisuttadvādasakaṃ",
+  "cst_title": "1-12. Pācīnādisuttadvādasakaṃ",
+  "legacy": "VALIDADOR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.69,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical sutta on the four sammappadhānas with minor spelling and expansion differences."
+ },
+ {
+  "num": "49.3",
+  "canon": "49.23",
+  "name": "Balakaraṇīyādisuttadvādasakaṃ",
+  "cst_title": "1-12. Balakaraṇīyādisuttadvādasakaṃ",
+  "legacy": "VALIDADOR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.58,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative on sammappadhāna."
+ },
+ {
+  "num": "49.4",
+  "canon": "49.35",
+  "name": "Esanādisuttadasakaṃ",
+  "cst_title": "1-10. Esanādisuttadasakaṃ",
+  "legacy": "VALIDADOR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 1.0,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "CST expands the core PTS text with sammappadhāna teachings."
+ },
+ {
+  "num": "50.1",
+  "canon": "50.1",
+  "name": "Balādisuttadvādasakaṃ",
+  "cst_title": "1-12. Balādisuttadvādasakaṃ",
+  "legacy": "VALIDADOR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.59,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative and doctrinal content match exactly, differing only in minor orthography and peyyāla."
  },
  {
   "num": "51.1",
@@ -4767,7 +4782,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Minor orthographic variants and slight phrasing differences in the four bases of success."
+  "reason": "Minor orthographic and sandhi variants in the iddhipāda formula between editions."
  },
  {
   "num": "51.2",
@@ -4782,7 +4797,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages discuss the four iddhipādas and the noble path with minor orthographic differences."
+  "reason": "Both passages present the identical discourse on the four iddhipādas with minor orthographic differences."
  },
  {
   "num": "51.3",
@@ -4797,7 +4812,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical idhipada text, CST contains standard peyyala elisions."
+  "reason": "Core narrative matches with expected peyyala expansion in CST."
  },
  {
   "num": "51.4",
@@ -4812,7 +4827,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical discourse on the four iddhipādas, differing only in orthography and peyyāla elisions."
+  "reason": "Both passages describe the four iddhipādas with minor orthographic differences and peyyāla elision."
  },
  {
   "num": "51.5",
@@ -4827,7 +4842,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS has elisions, CST is expanded, but both belong to the same iddhipāda sutta."
+  "reason": "PTS has peyyāla abbreviation while CST expands it; core content matches."
  },
  {
   "num": "51.6",
@@ -4842,7 +4857,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical discourse on the four bases of psychic power with minor peyyāla expansion."
+  "reason": "Editions match in core narrative despite minor orthographic and peyyala expansions."
  },
  {
   "num": "51.7",
@@ -4857,7 +4872,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share identical core narrative regarding the four iddhipādas."
+  "reason": "Both passages share identical narrative content concerning the iddhipāda with minor orthographic and peyyāla variations."
  },
  {
   "num": "51.8",
@@ -4872,7 +4887,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical discourse on the four iddhipādas, differing only in orthography and peyyāla expansion."
+  "reason": "Both passages describe the four iddhipādas with minor orthographic and peyyāla differences."
  },
  {
   "num": "51.9",
@@ -4887,7 +4902,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages contain the identical iddhipāda teachings with minor orthographic differences and peyyāla."
+  "reason": "Both passages present the same iddhipāda teachings with minor orthographic variants and peyyāla differences."
  },
  {
   "num": "51.10",
@@ -4902,7 +4917,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS is an abbreviated fragment, CST is the full expanded text of the same sutta."
+  "reason": "CST version expands upon the abbreviated PTS text with the same core narrative."
  },
  {
   "num": "51.11",
@@ -4917,7 +4932,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches, CST has expanded peyyāla sections compared to PTS."
+  "reason": "Same iddhipada discourse; CST expands via peyyala while PTS contracts."
  },
  {
   "num": "51.12",
@@ -4932,7 +4947,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic differences and standard peyyāla expansions."
+  "reason": "Both passages share the exact same discourse on the four iddhipādas with minor orthographic variations."
  },
  {
   "num": "51.13",
@@ -4947,7 +4962,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches identically with minor spelling and peyyala differences."
+  "reason": "Core iddhipāda exposition matches with minor orthographic and peyyāla differences."
  },
  {
   "num": "51.14",
@@ -4962,7 +4977,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages are versions of the Moggallāna Sutta with minor variant readings."
+  "reason": "Identical core narrative, editions differ only in expansion and orthography."
  },
  {
   "num": "51.15",
@@ -4977,7 +4992,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands the opening peyyāla text present in the PTS fragment."
+  "reason": "CST expands the opening peyyāla text of the PTS passage."
  },
  {
   "num": "51.16",
@@ -5007,7 +5022,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narratives match identically, with minor orthographic and variant additions."
+  "reason": "Core narrative matches with minor orthographic variants and standard textual expansions."
  },
  {
   "num": "51.18",
@@ -5022,22 +5037,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative and four iddhipada match perfectly despite orthography and peyyala differences."
- },
- {
-  "num": "51.19",
-  "canon": "51.19",
-  "name": "Iddhādidesanā",
-  "cst_title": "9. Iddhādidesanāsuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.22,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): The passages discuss different aspects of iddhipada with distinct textual content."
+  "reason": "Core narrative and four iddhipada teachings match identically despite minor peyyala differences."
  },
  {
   "num": "51.20",
@@ -5052,7 +5052,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS has peyyala while CST is fully expanded."
+  "reason": "PTS has elisions whereas CST is expanded; same iddhipāda vibhaṅga sutta."
  },
  {
   "num": "51.21",
@@ -5067,7 +5067,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Editions of the same iddhipāda sutta with standard textual expansions."
+  "reason": "Core narratives match identically, differences are due to peyyāla expansions and orthography."
  },
  {
   "num": "51.22",
@@ -5082,7 +5082,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core dialogue between Ananda and the Buddha is identical; minor expansions and orthographic variations."
+  "reason": "Identical core narrative regarding Ānanda and the Buddha with minor orthographic and expansion differences."
  },
  {
   "num": "51.23",
@@ -5097,7 +5097,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical sutta content with minor orthographic differences and standard peyyāla elision."
+  "reason": "Editions match completely, with minor orthographic differences and standard peyyala elisions."
  },
  {
   "num": "51.24",
@@ -5112,7 +5112,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala for the four iddhipadas fully expanded in CST."
+  "reason": "PTS uses peyyala abbreviation while CST expands the four iddhipadas."
  },
  {
   "num": "51.25",
@@ -5127,7 +5127,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages discuss the four iddhipādā and their fruits."
+  "reason": "Both passages discuss the four iddhipādas and their two fruits."
  },
  {
   "num": "51.26",
@@ -5142,7 +5142,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages detail the same four iddhipādas and their seven fruits."
+  "reason": "Core narrative of the iddhipada fruits and anisamasa matches across editions."
  },
  {
   "num": "51.27",
@@ -5157,7 +5157,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala while CST expands the full text of the same sutta."
+  "reason": "PTS uses peyyala elisions while CST expands the identical discourse."
  },
  {
   "num": "51.28",
@@ -5172,7 +5172,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST expands peyyāla abbreviations found in PTS."
+  "reason": "Core narrative matches with CST expanding PTS peyyala abbreviations."
  },
  {
   "num": "51.29",
@@ -5187,7 +5187,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS has peyyāla while CST expands them fully; core text matches."
+  "reason": "PTS uses peyyāla while CST expands the text; core narrative matches."
  },
  {
   "num": "51.30",
@@ -5202,7 +5202,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST expands the final path section."
+  "reason": "Core narrative matches; CST includes standard peyyala expansion for path."
  },
  {
   "num": "51.31",
@@ -5217,7 +5217,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches despite minor orthographic variants and peyyala expansions."
+  "reason": "Both passages share the identical narrative concerning Moggallāna and the four iddhipādas."
  },
  {
   "num": "51.32",
@@ -5232,7 +5232,22 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages discuss the four iddhipādas with identical core narrative and peyyāla elisions."
+  "reason": "Both passages discuss the four iddhipādas of the Tathāgata with standard peyyāla expansion."
+ },
+ {
+  "num": "51.33",
+  "canon": "51.33",
+  "name": "Gaṅgānadīādisuttadvādasakaṃ",
+  "cst_title": "1-12. Gaṅgānadīādisuttadvādasakaṃ",
+  "legacy": "VALIDADOR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.66,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Editions share identical doctrinal core on the four basis of success."
  },
  {
   "num": "52.1",
@@ -5247,7 +5262,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; minor orthographic differences and standard peyyāla expansions."
+  "reason": "Core narrative matches; minor orthography and peyyāla elisions in PTS."
  },
  {
   "num": "52.2",
@@ -5262,7 +5277,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS is truncated, CST is the full identical sutta."
+  "reason": "PTS cuts off with peyyāla while CST expands the exact same Anuruddha sutta."
  },
  {
   "num": "52.3",
@@ -5277,7 +5292,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST contains the full expanded text while PTS is heavily elided."
+  "reason": "CST expands the abbreviated PTS text with identical core narrative."
  },
  {
   "num": "52.4",
@@ -5292,7 +5307,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST expands with standard peyyāla ellisons."
+  "reason": "Core narrative matches; CST expands the satipaṭṭhāna peyyāla."
  },
  {
   "num": "52.5",
@@ -5307,7 +5322,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative and dialogue between Sariputta and Anuruddha on satipatthana match perfectly."
+  "reason": "Both editions share the core dialogue between Anuruddha and Sariputta about satipatthana."
  },
  {
   "num": "52.6",
@@ -5322,7 +5337,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative and satipaṭṭhāna teaching match; minor elisions and orthography differ."
+  "reason": "Core dialogue and satipaṭṭhāna teaching match despite minor editorial variations."
  },
  {
   "num": "52.7",
@@ -5337,7 +5352,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical discourse by Anuruddha on satipatthana leading to tanhakkhaya; minor editorial differences."
+  "reason": "Identical discourse by Anuruddha on four satipaṭṭhānas leading to taṇhakkhaya, with minor textual expansion."
  },
  {
   "num": "52.8",
@@ -5352,7 +5367,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Same Anuruddha sutta on satipatthana with standard textual expansion in CST."
+  "reason": "Core narrative matches; CST expands with standard peyyāla passages."
  },
  {
   "num": "52.9",
@@ -5367,7 +5382,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST expands peyyāla passages present in PTS."
+  "reason": "Same sutta with minor orthographic differences and standard peyyāla expansions."
  },
  {
   "num": "52.10",
@@ -5382,7 +5397,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages describe Anuruddha dealing with illness using satipatthana."
+  "reason": "Core narrative matches with minor orthographic differences and peyyāla expansion."
  },
  {
   "num": "52.11",
@@ -5397,7 +5412,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share the exact same core narrative regarding Anuruddha and satipaṭṭhāna."
+  "reason": "Both passages share the identical core narrative regarding Anuruddha and the satipaṭṭhānas."
  },
  {
   "num": "52.12",
@@ -5412,7 +5427,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical content with standard textual variants and elisions."
+  "reason": "Editions share identical content regarding satipaṭṭhāna iddhi with minor textual variants."
  },
  {
   "num": "52.13",
@@ -5427,7 +5442,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Minor orthographic variants and standard expansion of peyyāla for satipaṭṭhāna."
+  "reason": "Orthographic variants and standard peyyala expansion of satipatthana."
  },
  {
   "num": "52.14",
@@ -5442,7 +5457,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Editions match despite minor textual abbreviations and orthographic variants."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches with expected peyyala expansion in CST."
  },
  {
   "num": "52.15",
@@ -5457,7 +5472,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor orthographic and elision differences; core doctrinal phrasing matches."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor orthographic and elision differences; core satipaṭṭhāna text matches."
  },
  {
   "num": "52.16",
@@ -5472,22 +5487,22 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Orthographic variants and elisions of the same satipaṭṭhāna passage."
+  "reason": "Core narrative matches with editorial expansion of satipaṭṭhāna in CST."
  },
  {
   "num": "52.17",
   "canon": "52.17",
   "name": "Sabbatthagāmini",
   "cst_title": "7. Sabbatthagāminisuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
-   "cov": 0.31,
+   "cov": 0.5,
    "thr": 0.55
   },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Passages discuss completely different doctrinal topics and cannot be reconciled."
+  "gemini": "APPROVE",
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS is an abbreviated version of the CST satipaṭṭhāna passage."
  },
  {
   "num": "52.18",
@@ -5501,8 +5516,8 @@
    "cov": 0.27,
    "thr": 0.55
   },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS has severe elision while CST expands satipaṭṭhāna formula identically."
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Severe textual divergence regarding satipaṭṭhāna."
  },
  {
   "num": "52.19",
@@ -5517,7 +5532,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS is an elided (peyyāla) version of the CST passage."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Orthographic variants and standard peyyāla expansion of satipaṭṭhāna."
  },
  {
   "num": "52.20",
@@ -5532,7 +5547,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS exhibits peyyala elision of the satipatthana formula found expanded in CST."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS exhibits an expanded peyyāla abbreviation for satipaṭṭhāna."
  },
  {
   "num": "52.21",
@@ -5547,7 +5562,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core doctrinal exposition and terminology match despite minor textual expansion."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core doctrinal context matches despite textual expansion in CST."
  },
  {
   "num": "52.22",
@@ -5562,7 +5577,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages describe recalling past lives with minor text expansion and abbreviation differences."
+  "reason": "Core narrative matches with expected orthography and expansion differences."
  },
  {
   "num": "52.23",
@@ -5577,7 +5592,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative and technical terminology align despite minor textual expansions."
+  "reason": "Both passages share identical core narrative regarding divine eye and kamma."
  },
  {
   "num": "52.24",
@@ -5592,7 +5607,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS contains an ellipsis (peyyāla) of the satipaṭṭhāna formula fully expanded in CST."
+  "reason": "PTS is an extreme elision (peyyāla) of the CST text regarding satipaṭṭhāna."
  },
  {
   "num": "53.1",
@@ -5607,7 +5622,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core four jhānas teaching matches; CST includes standard expansion."
+  "reason": "Both passages teach the four jhānas with minor orthographic and expansion differences."
  },
  {
   "num": "54.1",
@@ -5622,7 +5637,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Same ekadhamma ānāpānasati discourse; CST includes fuller peyyāla and text expansion."
+  "reason": "Both editions share the same core discourse on ānāpānasati with minor textual expansions."
  },
  {
   "num": "54.2",
@@ -5637,7 +5652,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages treat ānāpānassati linked with bojjhaṅgas; CST expands via peyyāla."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages describe the development of bojjhaṅgas through ānāpānassati with minor textual expansions."
  },
  {
   "num": "54.3",
@@ -5652,7 +5667,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core narrative on ānāpānassati; PTS has expansion where CST uses peyyāla."
+  "reason": "Both passages are identical in core narrative, differing only in elision and orthography."
  },
  {
   "num": "54.4",
@@ -5667,7 +5682,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative of ānāpānasati meditation matches despite editorial expansion in CST."
+  "reason": "Both passages are versions of the ānāpānassati sutta with minor editorial expansions."
  },
  {
   "num": "54.5",
@@ -5682,7 +5697,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the same discourse on ānāpānassati with minor orthographic and expansion differences."
+  "reason": "Both are versions of Ānāpānassati sutta discussing seven fruits."
  },
  {
   "num": "54.6",
@@ -5697,7 +5712,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyāla while CST expands the full text of Ariṭṭha Sutta."
+  "reason": "PTS uses elisions while CST expands the Ariṭṭha sutta fully."
  },
  {
   "num": "54.7",
@@ -5712,7 +5727,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Same sutta; PTS uses a peyyala whereas CST is fully expanded."
+  "reason": "Core narrative matches; PTS has minor omissions compared to CST edition."
  },
  {
   "num": "54.8",
@@ -5727,7 +5742,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS text uses peyyala while CST is fully expanded"
+  "reason": "PTS uses peyyāla abbreviation while CST provides full expanded text."
  },
  {
   "num": "54.9",
@@ -5742,7 +5757,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core narrative on monks seeking death after asubhabhāvanā."
+  "reason": "Identical core narrative regarding monks practicing asubhabhāvanā and committing suicide."
  },
  {
   "num": "54.10",
@@ -5757,7 +5772,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches, CST expands text abbreviated in PTS via peyyāla."
+  "reason": "Same sutta; CST expands peyyāla while PTS leaves it abbreviated."
  },
  {
   "num": "54.11",
@@ -5772,7 +5787,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS is an excerpt; CST contains the expanded continuation of the same text."
+  "reason": "PTS is an abbreviated version; CST contains the full expanded text."
  },
  {
   "num": "54.12",
@@ -5787,7 +5802,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core dialogue between Mahānāma and the Elder about sekha and tathāgata vihāra matches."
+  "reason": "Core narrative and teachings match; editions differ mainly in orthography and peyyāla."
  },
  {
   "num": "54.13",
@@ -5798,11 +5813,11 @@
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
-   "cov": 0.62,
+   "cov": 0.67,
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS has peyyāla while CST expands the full ānāpānassati text."
+  "reason": "PTS contains an excerpt from CST with standard peyyāla omission."
  },
  {
   "num": "54.14",
@@ -5817,7 +5832,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala while CST expands the ānāpānassati sutta."
+  "reason": "PTS uses peyyāla while CST expands the ānāpānassati text fully."
  },
  {
   "num": "54.15",
@@ -5832,22 +5847,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyāla while CST expands the exact same discourse on ānāpānassati."
- },
- {
-  "num": "54.16",
-  "canon": "54.16",
-  "name": "Dutiyabhikkhu",
-  "cst_title": "6. Dutiyabhikkhusuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.67,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Identical sutta on ānāpānassati, PTS uses extensive peyyāla while CST expands fully."
+  "reason": "PTS uses peyyala while CST expands identical discourse on ānāpānassati."
  },
  {
   "num": "54.17",
@@ -5862,7 +5862,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages discuss the same meditation on mindfulness of breathing for abandoning fetters."
+  "reason": "Identical core teaching on ānāpānasatisamādhi for abandoning fetters, minor orthographic variants."
  },
  {
   "num": "54.18",
@@ -5877,7 +5877,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Minor textual addition in CST, core passage is identical."
+  "reason": "Minor edition numbering and phrase variation, core meaning and context match."
  },
  {
   "num": "54.19",
@@ -5892,7 +5892,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor textual variation in concluding markers, core narrative matches."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Textual variants in minor concluding phrases; core narrative matches."
  },
  {
   "num": "54.20",
@@ -5907,7 +5907,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST expands the peyyala text found in PTS."
+  "reason": "Core narrative matches; CST expands peyyāla elisions found in PTS."
  },
  {
   "num": "55.2",
@@ -5922,7 +5922,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core sotāpatti-saṃyutta text matches despite orthographic variations and expansion."
+  "reason": "Core sotāpatti-saṃyutta text; CST includes standard expanded peyyāla and concluding verse."
  },
  {
   "num": "55.3",
@@ -5937,7 +5937,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative of Dīghāvu and Jotika matches; CST includes expected textual expansions."
+  "reason": "Core narrative matches with standard edition expansions in CST."
  },
  {
   "num": "55.4",
@@ -5952,7 +5952,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches, CST expands peyyāla omitted in PTS."
+  "reason": "Identical core sutta; CST expands peyyāla while PTS abbreviates."
  },
  {
   "num": "55.5",
@@ -5967,7 +5967,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core narrative on sotāpattiyaṅga and soto with minor textual expansions."
+  "reason": "Core narrative matches with minor textual expansion in CST."
  },
  {
   "num": "55.6",
@@ -5982,7 +5982,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches identically, minor orthographic and expansion differences between editions."
+  "reason": "Identical introductory narrative with minor orthographic variants and standard text expansion."
  },
  {
   "num": "55.7",
@@ -5997,7 +5997,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages are from the Veḷudvāreyya Sutta; CST contains an expanded text."
+  "reason": "Same sutta; CST includes expanded text not present in PTS excerpt."
  },
  {
   "num": "55.8",
@@ -6027,7 +6027,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages describe Ānanda asking about deceased followers with minor orthographic and peyyāla differences."
+  "reason": "Both passages share identical narrative structure with minor orthographic and peyyāla variations."
  },
  {
   "num": "55.10",
@@ -6042,7 +6042,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Same sutta with standard CST peyyala expansions and orthographic variations."
+  "reason": "Same sutta; CST expands peyyāla passages present in PTS."
  },
  {
   "num": "55.11",
@@ -6057,7 +6057,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core sotāpanna discourse with minor orthographic differences and peyyāla expansions."
+  "reason": "Identical core sutta on stream-entry for bhikkhunis; CST expands peyyāla."
  },
  {
   "num": "55.12",
@@ -6072,7 +6072,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative and doctrinal content match, CST contains minor expansions."
+  "reason": "Both passages share the identical core narrative with minor orthographic and expansion variations."
  },
  {
   "num": "55.13",
@@ -6087,7 +6087,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core dialogue between Sariputta and Ananda is identical."
+  "reason": "Core narrative matches, standard edition orthography and textual expansion differences."
  },
  {
   "num": "55.14",
@@ -6102,7 +6102,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic and peyyala differences."
+  "reason": "Both passages share identical content regarding the four factors overcoming fear, with minor orthographic differences."
  },
  {
   "num": "55.15",
@@ -6117,7 +6117,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages discuss overcoming all bad destinies through the four faith attributes."
+  "reason": "PTS is an abbreviated version of the CST text containing peyyala."
  },
  {
   "num": "55.16",
@@ -6132,7 +6132,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala while CST expands the four sotapattiangas."
+  "reason": "Core narrative matches; CST expands the peyyala ellision with identical contextual meaning."
  },
  {
   "num": "55.17",
@@ -6147,7 +6147,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical sotāpattiyaṅga discourse with minor orthographic and peyyāla differences."
+  "reason": "Core narrative matches, standard edition orthography and peyyāla differences."
  },
  {
   "num": "55.18",
@@ -6162,7 +6162,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share identical core narrative and dialogue with minor orthographic and peyyāla differences."
+  "reason": "Both passages share the exact same core narrative and dialogue."
  },
  {
   "num": "55.19",
@@ -6177,7 +6177,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages represent the same Devacārika Sutta with minor textual expansion."
+  "reason": "Both passages represent the Devacārika Sutta with minor textual expansion."
  },
  {
   "num": "55.20",
@@ -6192,7 +6192,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala where CST expands the identical narrative text."
+  "reason": "PTS uses peyyala while CST expands identical text content."
  },
  {
   "num": "55.21",
@@ -6207,7 +6207,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share the identical narrative with minor orthographic and reading variations."
+  "reason": "Both editions represent the same Mahānāma sutta with minor orthographic and lectal variants."
  },
  {
   "num": "55.22",
@@ -6222,7 +6222,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches, CST has introductory framing and expanded peyyālas."
+  "reason": "Both passages represent the same Mahānāma sutta with minor redactions and orthographic variants."
  },
  {
   "num": "55.23",
@@ -6237,7 +6237,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages refer to the same Mahānāma and Godhā sutta dialogue."
+  "reason": "Both passages share identical characters and narrative about Mahānāma and Godhā."
  },
  {
   "num": "55.24",
@@ -6252,7 +6252,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share the exact same core narrative concerning Sarakāni the Sakyan."
+  "reason": "Both passages refer to the Sarakāni Sutta with minor orthographic and spelling variations."
  },
  {
   "num": "55.25",
@@ -6267,7 +6267,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages refer to the Sarakāni/Saraṇāni Sutta concerning the Sakyan."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages correspond to the Sarakānīsutta of the Samyutta Nikāya."
  },
  {
   "num": "55.26",
@@ -6282,7 +6282,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both are Anāthapiṇḍikovāda Sutta; CST contains standard narrative expansions."
+  "reason": "Both are Anāthapiṇḍikovāda Sutta; CST contains expanded text."
  },
  {
   "num": "55.27",
@@ -6297,7 +6297,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages represent the Anāthapiṇḍikovāda-sutta with minor elision differences."
+  "reason": "Both passages share the same Anāthapiṇḍika illness narrative with minor text expansion."
  },
  {
   "num": "55.28",
@@ -6312,7 +6312,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches with expected orthographic differences and editorial peyyāla expansion."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches with expected edition elisions and expansions"
  },
  {
   "num": "55.29",
@@ -6327,7 +6327,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches with minor orthographic differences and peyyāla expansion."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical core sutta on the five fears and stream-entry, with standard orthographic variations."
  },
  {
   "num": "55.30",
@@ -6342,7 +6342,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS is an abbreviated version of the same Nandaka Sutta in CST."
+  "reason": "PTS cuts off with peyyāla while CST provides the full text."
  },
  {
   "num": "55.31",
@@ -6357,7 +6357,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share the identical four puññābhisanda text with minor orthographic differences."
+  "reason": "Identical teachings on the four streams of merit with minor orthographic differences."
  },
  {
   "num": "55.32",
@@ -6372,7 +6372,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands the peyyāla of the PTS text."
+  "reason": "PTS uses peyyala while CST expands fully, core text matches."
  },
  {
   "num": "55.33",
@@ -6387,7 +6387,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; PTS uses peyyala while CST expands fully."
+  "reason": "Identical discourse on the four streams of merit with minor orthographic and elision differences."
  },
  {
   "num": "55.34",
@@ -6402,7 +6402,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Same sutta; CST expands peyyala abbreviations found in PTS."
+  "reason": "Core narrative matches; CST expands the peyyāla abbreviations of PTS."
  },
  {
   "num": "55.35",
@@ -6417,7 +6417,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative and doctrinal content match despite minor orthographic and peyyala differences."
+  "reason": "Core narratives match identically; differences are purely orthographic and in peyyāla expansion."
  },
  {
   "num": "55.36",
@@ -6432,7 +6432,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative and four factors match; minor orthographic and peyyala differences."
+  "reason": "Identical core narrative with minor orthographic and peyyala differences"
  },
  {
   "num": "55.37",
@@ -6447,7 +6447,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages are identical editions of the Mahānāma Sutta concerning lay follower qualities."
+  "reason": "Both passages share identical Mahānāma sutta content with minor orthographic variants."
  },
  {
   "num": "55.38",
@@ -6462,7 +6462,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Minor orthographic and phraseological variants, core narrative matches completely."
+  "reason": "Identical water runoff simile and faith formula with minor orthographic variants."
  },
  {
   "num": "55.39",
@@ -6477,7 +6477,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches, CST has expansions and minor orthographic variants."
+  "reason": "Both passages represent the Kāḷigodhā Sutta with minor orthographic and expansion differences."
  },
  {
   "num": "55.41",
@@ -6492,7 +6492,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST contains expanded text and peyyāla resolutions of PTS."
+  "reason": "Core narrative matches; CST expands peyyāla and concludes with verses."
  },
  {
   "num": "55.42",
@@ -6507,7 +6507,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the identical catukka of puññābhisanda suttas with minor textual expansion."
+  "reason": "Both passages present the cattāro puññābhisandā sutta with standard textual variations."
  },
  {
   "num": "55.43",
@@ -6522,7 +6522,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard peyyala expansions in CST."
+  "reason": "Both passages refer to the cattāro puññābhisandā with identical core narrative."
  },
  {
   "num": "55.44",
@@ -6552,7 +6552,7 @@
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Textual content and doctrinal phrasing differ significantly between editions."
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): CST contains extensive expansions on the four qualities absent in PTS."
  },
  {
   "num": "55.46",
@@ -6567,7 +6567,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical sotāpatti-sutta text with minor orthographic and expansion differences."
+  "reason": "Both passages describe the four factors of stream-entry with minor orthographic and expansion differences."
  },
  {
   "num": "55.47",
@@ -6582,7 +6582,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches; CST expands with standard peyyāla abbreviations present in PTS."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches; CST expands with standard peyyāla abbreviations."
  },
  {
   "num": "55.48",
@@ -6597,7 +6597,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyala for the expanded four factors present in CST."
+  "reason": "PTS uses peyyala while CST expands the identical Bhaddiya sutta text."
  },
  {
   "num": "55.49",
@@ -6612,7 +6612,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyāla while CST expands the standard four factors of stream-entry for Mahānāma."
+  "reason": "PTS uses peyyāla while CST expands the standard four factors of stream-entry."
  },
  {
   "num": "55.50",
@@ -6627,7 +6627,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages present the four factors of stream-entry with minor orthographic variants."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both editions present the four factors of stream-entry with minor orthographic differences."
  },
  {
   "num": "55.51",
@@ -6642,7 +6642,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses elision while CST expands the four sotāpatti-favored factors."
+  "reason": "PTS uses elision while CST expands the four stream-entry factors."
  },
  {
   "num": "55.52",
@@ -6657,7 +6657,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST edition contains minor textual expansions."
+  "reason": "Core narrative matches; CST edition contains standard expanded expansions."
  },
  {
   "num": "55.53",
@@ -6672,7 +6672,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS has an incipit elision while CST gives the full text of Dhammadinna Sutta."
+  "reason": "PTS is a fragment; CST provides the full expanded text of the same sutta."
  },
  {
   "num": "55.54",
@@ -6687,7 +6687,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; minor orthographic differences and standard peyyāla expansions."
+  "reason": "Both passages represent the Mahānāma Sutta with minor orthographic and peyyāla variations."
  },
  {
   "num": "55.55",
@@ -6702,22 +6702,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS uses peyyāla for the four factors leading to sotāpattiphala which CST expands."
- },
- {
-  "num": "55.56",
-  "canon": "55.56",
-  "name": "Sakadāgāmiphala",
-  "cst_title": "6. Sakadāgāmiphalasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.64,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Different fruit attainment goals (sotāpatti vs sakadāgāmi)."
+  "reason": "PTS uses peyyāla expansion; CST provides full text of the same sutta."
  },
  {
   "num": "55.57",
@@ -6732,7 +6717,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Elisions match core anāgāmiphala text; minor orthographic/peyyāla difference."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Elisions and numbering differences in parallel editions."
  },
  {
   "num": "55.58",
@@ -6747,7 +6732,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Elisions and numbering differences in CST do not change core sutta."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Editions match despite textual elisions (peyyāla)."
  },
  {
   "num": "55.59",
@@ -6762,7 +6747,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Elisions and numbering differences; core text is identical."
+  "reason": "CST uses an elliptical peyyala for the standard PTS phrasing."
  },
  {
   "num": "55.60",
@@ -6777,7 +6762,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Orthographic variation and standard elision differences in identical context."
+  "reason": "Elisions and numbering differences; core narrative matches."
  },
  {
   "num": "55.61",
@@ -6792,7 +6777,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Uddāna summary match indicating the same vagga conclusion."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Uddāna summary matches the same vagga structure."
  },
  {
   "num": "55.62",
@@ -6800,14 +6785,14 @@
   "name": "Mahāpaññā",
   "cst_title": "1. Mahāpaññāsuttaṃ",
   "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
   "gate": {
-   "cov": 0.07,
+   "cov": 0.67,
    "thr": 0.55
   },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): PTS is a colophon summary verse, CST is a complete sutta text."
+  "gemini": "APPROVE",
+  "reason": "PTS has peyyala elision of the full text present in CST."
  },
  {
   "num": "55.63",
@@ -6822,7 +6807,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Editional variation in peyyala expansion and numbering."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Textual variants in peyyala expansion markers between editions."
  },
  {
   "num": "55.64",
@@ -6837,7 +6822,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor orthographic variant and numerical suffix difference in same sutta context."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Textual variants in phrasing and numbering do not alter the core passage."
  },
  {
   "num": "55.65",
@@ -6852,7 +6837,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Textual variants in phrasing and numbering do not alter the core sutta identity."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor orthographic and numbering variants in the same passage."
  },
  {
   "num": "55.66",
@@ -6867,7 +6852,7 @@
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Textual variants and fragments indicate different or incomplete text segments."
+  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Textual fragments are too brief and orthographically divergent to confirm identity."
  },
  {
   "num": "55.67",
@@ -6882,7 +6867,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor orthographic and numbering variants of the same text."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Orthographic variation and numbering difference in the same text passage."
  },
  {
   "num": "55.68",
@@ -6897,7 +6882,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor orthographic and numbering variants in the same text."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor orthographic differences and numbering variation; core text is identical."
  },
  {
   "num": "55.69",
@@ -6911,8 +6896,8 @@
    "cov": 0.0,
    "thr": 0.55
   },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Textual variants of the same passage with minor numbering differences."
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Textual variants and structural differences indicate distinct contexts."
  },
  {
   "num": "55.70",
@@ -6927,7 +6912,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor variant in formulation of minor rule passage; core context identical."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Orthographic variation and minor structural additions do not alter the core text."
  },
  {
   "num": "55.71",
@@ -6942,7 +6927,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor textual variants and numbering differences in the same passage."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Textual variants in minor suffix and numbering do not alter the core narrative."
  },
  {
   "num": "55.72",
@@ -6957,7 +6942,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor stylistic and numbering variation in identical context."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor terminological and structural variant within the same text."
  },
  {
   "num": "55.73",
@@ -6972,7 +6957,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor orthographic variants and standard chapter conclusion marker."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor variant in compound phrasing, same fundamental sutta text."
  },
  {
   "num": "55.74",
@@ -6987,7 +6972,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Minor variant phrasing in udana and closing, core sutta content matches"
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core teachings on nibbedhika dhammas match despite editorial and uddāna differences."
  },
  {
   "num": "56.1",
@@ -7002,7 +6987,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages are the same sutta with minor orthographic and expansion differences."
+  "reason": "Core narrative and teachings match despite orthographic and abbreviation differences."
  },
  {
   "num": "56.2",
@@ -7017,7 +7002,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core message on seclusion and the four noble truths matches despite expansions."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core message on seclusion and the Four Noble Truths is identical."
  },
  {
   "num": "56.3",
@@ -7032,7 +7017,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative of past, future, and present ascetics realizing the four noble truths matches."
+  "reason": "Both passages share the exact same core narrative on the four noble truths."
  },
  {
   "num": "56.4",
@@ -7047,7 +7032,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS is an abbreviated version of the same sutta expanded in CST."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS is an abbreviated version; CST has the full expanded text."
  },
  {
   "num": "56.5",
@@ -7062,7 +7047,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages treat the four noble truths across past, present, and future ascetics."
+  "reason": "Core narrative matches identical four noble truths teaching with minor orthographic and peyyāla variations."
  },
  {
   "num": "56.6",
@@ -7077,7 +7062,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present identical teachings on the four noble truths with minor orthographic variations."
+  "reason": "Both passages contain identical discourse on past, future, and present ascetics."
  },
  {
   "num": "56.7",
@@ -7107,7 +7092,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard text expansions."
+  "reason": "Core narratives match with standard text expansion variations."
  },
  {
   "num": "56.9",
@@ -7122,7 +7107,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narratives match with standard orthographic and minor textual variants."
+  "reason": "Minor orthographic differences and standard textual expansion in the peyyala."
  },
  {
   "num": "56.10",
@@ -7137,7 +7122,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS is abbreviated while CST contains the full expanded text of the same sutta."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): PTS is an abbreviated version; CST has the full expanded text."
  },
  {
   "num": "56.11",
@@ -7152,7 +7137,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages represent the Dhammacakkappavattana Sutta with orthographic and expansion variations."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages represent the Dhammacakkappavattana Sutta with minor textual variations."
  },
  {
   "num": "56.12",
@@ -7167,7 +7152,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages describe the Four Noble Truths with identical doctrinal narrative despite minor peyyāla differences."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core four noble truths narrative matches despite minor textual elision and orthographic differences."
  },
  {
   "num": "56.13",
@@ -7182,7 +7167,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the Cariyasacca Sutta detailing the four noble truths with minor textual variants."
+  "reason": "Both passages present the four noble truths with minor orthographic and elision variations."
  },
  {
   "num": "56.14",
@@ -7197,7 +7182,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the four noble truths related to the six internal bases."
+  "reason": "Both passages share identical core narrative on the four noble truths applied to the six internal ayatana."
  },
  {
   "num": "56.15",
@@ -7212,7 +7197,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS has an elision while CST expands the four noble truths dialogue."
+  "reason": "PTS has an elision while CST expands the dialogue fully."
  },
  {
   "num": "56.16",
@@ -7227,7 +7212,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST contains expanded text and peyyāla compared to PTS."
+  "reason": "Core narrative matches with standard textual expansions and elisions in CST."
  },
  {
   "num": "56.17",
@@ -7242,7 +7227,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share identical narrative content defining avijjā, with minor orthographic differences."
+  "reason": "Orthographic and minor textual variants of the same avijjā sutta."
  },
  {
   "num": "56.18",
@@ -7257,7 +7242,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands the standard PTS peyyala with the full Noble Truths teaching."
+  "reason": "Core narrative matches; CST expands the abbreviated answer with Four Noble Truths."
  },
  {
   "num": "56.19",
@@ -7272,7 +7257,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical core text on the four noble truths with minor orthographic and peyyāla differences."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical four noble truths teachings with standard orthographic and peyyāla variations."
  },
  {
   "num": "56.20",
@@ -7287,7 +7272,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST includes standard peyyala expansions of the same sutta."
+  "reason": "Editions share the core narrative; CST expands with peyyāla and full formula."
  },
  {
   "num": "56.21",
@@ -7302,22 +7287,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical foundational narrative on the four noble truths with minor expansion in CST."
- },
- {
-  "num": "56.22",
-  "canon": "56.22",
-  "name": "Dutiyakoṭigāma",
-  "cst_title": "2. Dutiyakoṭigāmasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.12,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): The passages belong to completely distinct suttas dealing with different topics."
+  "reason": "Core narrative and Four Noble Truths discourse match; CST has expected peyyāla expansions."
  },
  {
   "num": "56.23",
@@ -7332,7 +7302,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages present the Four Noble Truths with identical core narrative and minor orthographic variations."
+  "reason": "Identical core text on the Four Noble Truths with minor orthographic variations."
  },
  {
   "num": "56.24",
@@ -7347,7 +7317,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands PTS with standard peyyala and elaboration on the four noble truths"
+  "reason": "CST expands PTS via peyyala, core narrative and four truths match."
  },
  {
   "num": "56.25",
@@ -7362,7 +7332,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narratives and teachings match identically despite minor orthographic and expansion differences."
+  "reason": "Core narrative matches with minor orthographic variants and elisions."
  },
  {
   "num": "56.26",
@@ -7370,14 +7340,14 @@
   "name": "Mitta",
   "cst_title": "6. Mittasuttaṃ",
   "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
   "gate": {
-   "cov": 0.28,
+   "cov": 0.86,
    "thr": 0.55
   },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Passages concern different aspects of the four noble truths with distinct narrative focus."
+  "gemini": "APPROVE",
+  "reason": "PTS contains an abbreviated passage expanded fully expanded in CST."
  },
  {
   "num": "56.27",
@@ -7392,7 +7362,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core four noble truths narrative matches with standard peyyala expansions."
+  "reason": "Core four noble truths narrative matches despite orthographic variations and peyyāla expansions."
  },
  {
   "num": "56.28",
@@ -7407,7 +7377,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core four noble truths narrative matches despite orthography and standard peyyāla expansion."
+  "reason": "Core four noble truths narrative matches despite minor textual expansions."
  },
  {
   "num": "56.29",
@@ -7422,7 +7392,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages contain identical Four Noble Truths teachings with minor orthographic differences."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages present the identical discourse on the four noble truths with minor orthographic variations."
  },
  {
   "num": "56.30",
@@ -7437,7 +7407,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches despite minor textual expansions and variant readings."
+  "reason": "Same core narrative with minor textual expansion in CST edition."
  },
  {
   "num": "56.31",
@@ -7452,7 +7422,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages represent the Siṃsapā Sutta, with CST containing the full text and PTS abbreviated."
+  "reason": "Both are the Siṃsapā Sutta, CST is expanded with peyyāla."
  },
  {
   "num": "56.32",
@@ -7467,7 +7437,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages contain the identical core simile regarding the four noble truths."
+  "reason": "Both passages contain the identical four noble truths simile regarding water vessels."
  },
  {
   "num": "56.33",
@@ -7482,7 +7452,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core simile of the thrown stick and Four Noble Truths match identically."
+  "reason": "Both passages share the stick in the air simile regarding the four noble truths."
  },
  {
   "num": "56.34",
@@ -7497,7 +7467,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative and four noble truths match despite minor orthographic and peyyala differences."
+  "reason": "Both passages contain identical core text regarding the burning cloth simile and noble truths."
  },
  {
   "num": "56.35",
@@ -7512,7 +7482,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS is an abbreviated version; CST contains the fully expanded canonical text."
+  "reason": "PTS is an excerpt of CST, sharing the identical core simile."
  },
  {
   "num": "56.36",
@@ -7527,7 +7497,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core simile of impaling sea creatures matches; CST includes standard peyyāla expansion."
+  "reason": "Editions share core simile narrative; CST includes standard peyyāla expansion."
  },
  {
   "num": "56.37",
@@ -7542,7 +7512,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical Sūriyūpama Sutta text with minor orthographic and elision variations."
+  "reason": "Editions share identical Sūriyūpama sutta content with minor orthographic and elision variations."
  },
  {
   "num": "56.38",
@@ -7557,7 +7527,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS is an excerpt of the CST edition; core text is identical."
+  "reason": "PTS is an excerpt of the CST text with minor spelling variants."
  },
  {
   "num": "56.39",
@@ -7572,7 +7542,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST includes standard peyyāla expansions of the PTS text."
+  "reason": "Core narratives match; CST expands peyyāla while PTS abbreviates."
  },
  {
   "num": "56.40",
@@ -7587,7 +7557,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Texts share identical core narrative; differences are orthography and peyyāla elisions."
+  "reason": "Both passages contain identical doctrinal content with only minor orthographic and peyyāla variations."
  },
  {
   "num": "56.41",
@@ -7602,7 +7572,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS is an abbreviated version with peyyāla containing the same core narrative."
+  "reason": "PTS cuts off with peyyāla while CST gives the full text."
  },
  {
   "num": "56.42",
@@ -7617,7 +7587,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST contains expanded text while PTS uses peyyāla for the same sutta."
+  "reason": "CST expands peyyāla and text omitted in PTS abbreviation."
  },
  {
   "num": "56.43",
@@ -7632,7 +7602,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "PTS text is an abbreviated version containing the same core sutta expanded in CST."
+  "reason": "PTS text is an abbreviated excerpt of the CST sutta expansion."
  },
  {
   "num": "56.44",
@@ -7647,7 +7617,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share identical core narrative about the peaked house and noble truths."
+  "reason": "Both passages share identical core narrative regarding the kūṭāgāra simile and the four noble truths."
  },
  {
   "num": "56.45",
@@ -7662,7 +7632,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share the same core narrative regarding the Licchavi youths."
+  "reason": "Both passages represent the same sutta with only minor orthographic and stylistic variants."
  },
  {
   "num": "56.46",
@@ -7677,7 +7647,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches; CST expands the peyyāla passage omitted in PTS."
+  "reason": "Core narrative matches with standard peyyala expansion in CST."
  },
  {
   "num": "56.47",
@@ -7692,7 +7662,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST edition is an expanded version of the same blind turtle simile sutta."
+  "reason": "Core blind turtle narrative matches; CST includes standard expansions and text."
  },
  {
   "num": "56.48",
@@ -7707,7 +7677,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core blind turtle simile matches; CST includes standard peyyāla expansions."
+  "reason": "Core turtle and yoke simile matches; CST includes standard peyyāla expansion."
  },
  {
   "num": "56.49",
@@ -7722,7 +7692,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands PTS with standard peyyāla expansion; core simile matches exactly."
+  "reason": "CST expands the standard Sineru simile with the expected doctrinal application."
  },
  {
   "num": "56.50",
@@ -7737,7 +7707,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST contains expanded peyyala and conclusion typical of canonical edition variations."
+  "reason": "CST contains expanded peyyāla and conclusion matching PTS core narrative."
  },
  {
   "num": "56.51",
@@ -7752,7 +7722,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST extends the Nakhasikha sutta with standard peyyala while core narrative matches."
+  "reason": "Same core narrative; CST includes expanded text and peyyāla."
  },
  {
   "num": "56.52",
@@ -7767,7 +7737,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical simile of the great lake and grass-tip water with minor orthographic variants."
+  "reason": "Identical simile of the great lake and grass-tip water with minor orthographic differences."
  },
  {
   "num": "56.53",
@@ -7782,7 +7752,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands PTS text with standard simile continuation."
+  "reason": "CST expands the standard simile passage with the expected rhetorical questions."
  },
  {
   "num": "56.54",
@@ -7797,7 +7767,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical river simile with minor orthographic and elision differences."
+  "reason": "Core river simile and water droplet comparison narrative match completely."
  },
  {
   "num": "56.55",
@@ -7812,7 +7782,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core simile of earth and jujube-seed pellets matches with expected textual elisions."
+  "reason": "Editions share core narrative about earth and clay pellets, with minor orthographic and peyyala differences."
  },
  {
   "num": "56.56",
@@ -7827,7 +7797,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages contain identical core simile regarding earth and jujube-seed sized pellets."
+  "reason": "Identical core simile of the great earth and seven jujube-seed pellets with minor peyyāla differences."
  },
  {
   "num": "56.57",
@@ -7842,7 +7812,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages contain identical simile of ocean water drops with minor orthographic and peyyala differences."
+  "reason": "Both passages share identical core narrative comparing ocean water to remaining suffering via peyyāla."
  },
  {
   "num": "56.58",
@@ -7857,7 +7827,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core simile of ocean water drying up matches despite minor variant readings and peyyāla."
+  "reason": "Core simile of ocean water droplets matches despite minor orthographic variants."
  },
  {
   "num": "56.59",
@@ -7872,7 +7842,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical pabbata-upama simile with minor orthographic variants and standard peyyala."
+  "reason": "Identical pabbata-upama simile texts with minor orthographic and peyyala differences."
  },
  {
   "num": "56.60",
@@ -7887,7 +7857,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages represent the same Pabbatopama Sutta; CST includes standard peyyāla expansions."
+  "reason": "CST expands with standard peyyala of the Pabbatupama sutta, core narrative matches."
  },
  {
   "num": "56.61",
@@ -7902,7 +7872,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "CST expands the peyyala present in PTS; core simile and text match."
+  "reason": "CST expands the peyyāla found in the PTS edition with identical core narrative."
  },
  {
   "num": "56.62",
@@ -7917,7 +7887,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core narrative of the fingernail dust simile with minor orthographic and elision variations."
+  "reason": "Identical text with minor orthographic variations and expected peyyala differences."
  },
  {
   "num": "56.63",
@@ -7932,7 +7902,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages are identical in core content with minor orthographic and peyyala differences."
+  "reason": "Both passages contain identical core text with minor orthographic and peyyāla variations."
  },
  {
   "num": "56.64",
@@ -7947,7 +7917,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages share the identical narrative concerning abstinence from intoxicants with minor orthographic variants."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical core narrative on abstinence from intoxicants with minor orthographic and peyyala differences."
  },
  {
   "num": "56.65",
@@ -7962,7 +7932,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core water-land beings simile matches despite textual elision differences."
+  "reason": "Core water-land creature simile narrative matches; differences are due to peyyala expansion."
  },
  {
   "num": "56.66",
@@ -7977,7 +7947,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core text matches despite minor variants in sattā and peyyāla."
+  "reason": "Minor variant in text and peyyala expansion, but same core passage."
  },
  {
   "num": "56.67",
@@ -7992,7 +7962,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical canonical text with standard edition variations in elisions."
+  "reason": "Identical canonical text with standard edition orthography and peyyāla differences."
  },
  {
   "num": "56.68",
@@ -8007,7 +7977,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Minor orthographic variants and standard peyyala expansion."
+  "reason": "Identical text with minor orthographic differences and standard peyyala expansion."
  },
  {
   "num": "56.69",
@@ -8022,7 +7992,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core text with expected edition-specific abbreviations."
+  "reason": "Core text matches with standard orthographic and peyyāla variations."
  },
  {
   "num": "56.70",
@@ -8037,7 +8007,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages share the core narrative concerning kule jeṭṭhāpacāyinī."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages share identical core narrative regarding respect for elders."
  },
  {
   "num": "56.71",
@@ -8052,7 +8022,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages contain identical discourse on beings abstaining from killing with orthographic variants."
+  "reason": "Identical passage with minor orthographic differences and peyyāla expansion."
  },
  {
   "num": "56.72",
@@ -8067,7 +8037,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narratives and phrasing match, differing only in peyyala and compound orthography."
+  "reason": "Identical core narrative on refraining from taking what is not given with orthographic variants."
  },
  {
   "num": "56.73",
@@ -8082,7 +8052,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narratives match with standard peyyala elision differences."
+  "reason": "Core narrative matches with standard textual elisions and orthographic variations."
  },
  {
   "num": "56.74",
@@ -8097,7 +8067,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narratives match with minor elision and orthographic differences."
+  "reason": "Core narrative and wording regarding musāvāda match despite editorial abbreviations."
  },
  {
   "num": "56.75",
@@ -8112,7 +8082,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Orthographic variants and standard peyyala abbreviations of the same text"
+  "reason": "Orthographic variants and elisions of the exact same slanderous speech text."
  },
  {
   "num": "56.76",
@@ -8127,7 +8097,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narratives match identically with minor orthographic and peyyala differences."
+  "reason": "Core narratives match with standard editorial variants and peyyala elisions."
  },
  {
   "num": "56.77",
@@ -8142,7 +8112,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core passage on frivolous talk with standard peyyāla variation."
+  "reason": "Identical core narrative on abstaining from frivolous talk, differing only in peyyāla."
  },
  {
   "num": "56.78",
@@ -8157,7 +8127,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core simile and phrasing with standard textual abbreviations."
+  "reason": "Both passages share identical core narrative regarding seed and plant restraint, with minor orthographic and peyyāla variations."
  },
  {
   "num": "56.79",
@@ -8172,7 +8142,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches with standard textual elisions."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages contain identical text with minor orthographic and peyyala differences."
  },
  {
   "num": "56.80",
@@ -8187,7 +8157,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages represent the same text with minor orthographic and peyyala differences."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages address garland and perfume abstinence with minor textual and peyyāla differences."
  },
  {
   "num": "56.81",
@@ -8202,7 +8172,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages share identical content regarding abstaining from dancing and singing, with standard peyyāla expansion."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches, CST contains standard peyyala expansion."
  },
  {
   "num": "56.82",
@@ -8217,7 +8187,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical core narrative with standard textual elision and orthographic variants."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical core text with minor orthographic variations and peyyāla elisions."
  },
  {
   "num": "56.83",
@@ -8232,7 +8202,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard textual elisions and minor orthographic variants."
+  "reason": "Core narrative on gold and silver abstinence matches despite peyyāla differences."
  },
  {
   "num": "56.84",
@@ -8247,7 +8217,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical text with standard peyyala expansion differences."
+  "reason": "Identical core passage regarding abstaining from uncooked grain despite textual peyyāla differences."
  },
  {
   "num": "56.85",
@@ -8262,7 +8232,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages share identical core narrative regarding abstinence from raw meat, differing only in peyyāla."
+  "reason": "Identical core passage regarding raw meat abstention, differing only in editorial peyyala abbreviations."
  },
  {
   "num": "56.86",
@@ -8277,7 +8247,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages address the same text on abstaining from accepting young females."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages share identical core narrative regarding abstinence from taking young girls."
  },
  {
   "num": "56.87",
@@ -8292,7 +8262,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages address the abstention from accepting female and male slaves."
+  "reason": "Editions match in core narrative regarding dāsidāsapaṭiggahaṇā with orthographic and peyyāla differences."
  },
  {
   "num": "56.88",
@@ -8307,7 +8277,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Textual variants with standard peyyala expansion for the same sutta."
+  "reason": "Textual variants with standard peyyala expansion."
  },
  {
   "num": "56.89",
@@ -8322,7 +8292,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical passages with minor orthographic differences and standard peyyala expansions."
+  "reason": "Identical passages with minor orthographic differences and peyyala abbreviations."
  },
  {
   "num": "56.90",
@@ -8337,7 +8307,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches with standard editorial elisions and minor variant spellings."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches with standard textual variant abbreviations and peyyala expansions."
  },
  {
   "num": "56.91",
@@ -8352,7 +8322,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical passages with minor orthographic differences and standard peyyāla expansion."
+  "reason": "Identical text with standard orthographic and peyyāla variations."
  },
  {
   "num": "56.92",
@@ -8367,7 +8337,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages address refraining from trading with minor variant elisions."
+  "reason": "Identical teachings on refraining from trading, differing only in elision style."
  },
  {
   "num": "56.93",
@@ -8382,7 +8352,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical core narrative with standard textual elision and orthographic variants."
+  "reason": "Identical passages with minor orthographic differences and peyyāla expansions."
  },
  {
   "num": "56.94",
@@ -8397,7 +8367,7 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical core text on dishonest scales with orthographic and peyyāla variations."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical core narrative on dishonest scales with orthographic and peyyāla variations."
  },
  {
   "num": "56.95",
@@ -8412,14 +8382,14 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Editions share identical core narrative and terminology with minor peyyāla variations."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Editions share core vocabulary regarding ukkoṭana with variant elisions and manuscript variants."
  },
  {
   "num": "56.96",
   "canon": "56.96",
   "name": "Chedanādi",
   "cst_title": "6-11. Chedanādisuttaṃ",
-  "legacy": "DB_VERIFIED",
+  "legacy": "VALIDADOR",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
@@ -8427,141 +8397,6 @@
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): CST expands peyyala from PTS fragment"
- },
- {
-  "num": "56.97",
-  "canon": "56.97",
-  "name": "Manussacutiniraya",
-  "cst_title": "6-11. Chedanādisuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.41,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Editions share the same core narrative with expansion and peyyāla differences."
- },
- {
-  "num": "56.98",
-  "canon": "56.98",
-  "name": "Manussacutitiracchāna",
-  "cst_title": "6-11. Chedanādisuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.41,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core text matches with standard peyyala expansions in CST edition."
- },
- {
-  "num": "56.102",
-  "canon": "56.102",
-  "name": "Devamanussanirayādi",
-  "cst_title": "1. Manussacutinirayasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.7,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages describe the nakhasikhā-paṃsu simile comparing human rebirth to earth."
- },
- {
-  "num": "56.103",
-  "canon": "56.103",
-  "name": "Nirayamanussanirayādi",
-  "cst_title": "2. Manussacutitiracchānasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.67,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Destinations differ between petas and animals."
- },
- {
-  "num": "56.104",
-  "canon": "56.104",
-  "name": "Nirayadevanirayādi",
-  "cst_title": "3. Manussacutipettivisayasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.67,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic and peyyāla differences."
- },
- {
-  "num": "56.105",
-  "canon": "56.105",
-  "name": "Tiracchānamanussanirayādi",
-  "cst_title": "4-5-6. Manussacutidevanirayādisuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.7,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core narrative and destination teachings match despite minor orthographic and peyyala differences."
- },
- {
-  "num": "56.106",
-  "canon": "56.106",
-  "name": "Tiracchānadevanirayādi",
-  "cst_title": "4-5-6. Manussacutidevanirayādisuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.7,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core narrative matches with expected orthographic variations and peyyala expansions."
- },
- {
-  "num": "56.107",
-  "canon": "56.107",
-  "name": "Pettimanussanirayādi",
-  "cst_title": "4-5-6. Manussacutidevanirayādisuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.7,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core narratives match identically despite minor orthographic and peyyala elision differences."
- },
- {
-  "num": "56.108",
-  "canon": "56.108",
-  "name": "Pettidevanirayādi",
-  "cst_title": "7-9. Devacutinirayādisuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.74,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard textual elisions and orthographic variants."
+  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core vocabulary matches; CST contains standard peyyala expansions of the same text."
  }
 ]

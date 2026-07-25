@@ -118,7 +118,10 @@ que Jorge arbitró a mano (misma fuerza, provenance humana). Los valores
 `HELMER_*` son verdictos legados del pase DeepSeek — se mantienen como CONFIRMADO histórico pero
 son **provisionales**: re-validar con el validador al revisitar cada nikāya (DeepSeek resultó no
 fiable). `REF_ERROR_DPR` es un valor **PENDIENTE** (no CONFIRMADO): la referencia DPR del Excel
-apunta a nada (error de DPR), no cotejable.
+apunta a nada (error de DPR), no cotejable. `REVISAR_DIFUSO` es **PENDIENTE**: se confirmó vía una
+resolución PTS difusa (±1) que resultó poco fiable y no re-verifica con el match por nombre — a
+revisar (evidencia PTS incierta). El lado PTS del pipeline VRI casa el texto por **nombre**
+(`pts_by_name`, robusto al off-by-one PTS), NO por número corrido difuso.
 
 **Alineación SN/AN/KN por CONCORDANCIA (VRI):** en SN/AN/KN la numeración diverge entre notaciones;
 el `Sutta #` del Excel usa **notación DPR**. El aligner definitivo (`validador_sn5_vri.py`) NO adivina

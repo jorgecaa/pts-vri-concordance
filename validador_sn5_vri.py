@@ -14,7 +14,7 @@ from collections import Counter
 import sutta_hash as sh
 from openpyxl import load_workbook
 from validador import validate_pair
-from validador_sn5 import build_markers, pts_for
+from validador_sn5 import build_markers, pts_for, pts_by_name
 
 VRI = '/tmp/tipitaka-xml/romn/s0305m.mul.xml'
 DB = 'src/data/tipitaka.sqlite'
@@ -109,13 +109,9 @@ def main():
         cst = ' '.join(sh.tokens(s['text'])[:350])
         pts = None
         if isinstance(e['page'], int) and e['inner']:
-            # exacto, luego difuso (irregularidades PTS: nº corrido ≠ canónico ±1, página ±1)
-            for pg, inr in [(e['page'], e['inner']), (e['page'], e['inner'] - 1),
-                            (e['page'] + 1, e['inner']), (e['page'], e['inner'] + 1),
-                            (e['page'] - 1, e['inner'])]:
-                pts = pts_for(cur, pg, inr, mm)
-                if pts:
-                    break
+            pts = pts_for(cur, e['page'], e['inner'], mm)          # exacto por nº corrido
+            if not pts:
+                pts = pts_by_name(cur, e['page'], s['title'], mm)  # por nombre (off-by-one)
         if not pts:
             no_pts.append(e); continue
         tasks.append((e, pts, cst, s['title']))
