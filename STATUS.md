@@ -467,6 +467,25 @@ Alcance medido (marcadores compartidos / filas implicadas):
 | **S v** | nombre → nº → nombre laxo, con fallbacks | **16 marcadores / 36 filas** |
 | **S iv** | — | sin hacer; heredaría el defecto |
 
+### Estado de ejecución (2026-07-25)
+
+- **Fase 0 — HECHA.** `audit_injectivity.py` en el repo; línea base medida:
+  **S i 0, S ii 0, S iii 12, S v 12 → hueco total 24.**
+- **Fase 1 — EN CURSO, no aplicada.** `align_rows.py` (el DP monótono con capacidad) está escrito y
+  probado en aislamiento (1:1, colisión, rango de capacidad 3, prohibición de inversiones). Al
+  enchufarlo a S iii **no converge todavía**, y al depurarlo apareció un defecto más profundo que
+  hay que arreglar ANTES:
+  > **`build_pts_suttas` pierde marcadores.** Indexa por `(saṃyutta, nº)` y en el Jhāna-saṃyutta las
+  > claves de *gamana* (`(27)1-4`) machacan los números 1–4 reales: los marcadores
+  > `1 Samādhi-samāpatti` (S iii 263), `2 Ṭhiti` (264), `3 Vuṭṭhāna` (265) y `4 Kallavā` (265)
+  > **no llegan al resolvedor**, y por eso `34.1` apuntaba a S iii 273 desde el primer pase. La
+  > lista de marcadores de SN 34 empieza en el nº 5.
+  Con marcadores ausentes, cualquier asignación global desplaza el tramo entero: **hay que corregir
+  `collect_suttas`/`build_pts_suttas` primero** (clave por posición de lectura, no por nº), volver a
+  medir la fase 0 y solo entonces enchufar el DP.
+- **Fase 2 — no aplicada.** El driver de S iii sigue en el estado validado anterior (332/333); no se
+  ha tocado el Excel ni los veredictos.
+
 ### Fase 0 — prueba de aceptación común (sin API)
 
 `audit_injectivity.py`: para un volumen dado, lista los marcadores compartidos y calcula el
