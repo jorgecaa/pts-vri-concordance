@@ -1,5 +1,5 @@
 # PTS Reference Concordance — Status Report
-## Date: 2026-07-21 (updated 2026-07-24)
+## Date: 2026-07-21 (updated 2026-07-25 — SN V CERRADO 610/610)
 
 ---
 
@@ -46,10 +46,14 @@ Use this terminology consistently across the project:
 |--------|--------:|-----------:|----------:|-------:|
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
-| SN | 1806 | 95 | 1711 | 5.3% |
+| SN | 1806 | 705 | 1101 | 39.0% |
 | AN | 1738 | 1 | 1737 | 0.1% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6090** | **282** | **5808** | **4.6%** |
+| **TOTAL** | **6090** | **892** | **5198** | **14.6%** |
+
+> Cifras al **2026-07-25**, tras cerrar SN V (610/610). La hoja `Summary` del Excel está alineada.
+> El desglose de SN: SN V 610 ✅ (validador Modelo B) + SN IV 94 (Helmer legado) + 1 `HELMER_FIXED`;
+> SN I–III siguen `DB_VERIFIED` → PENDIENTE.
 
 > MN 14/38/64 (antes `OK+RTE`/PENDIENTE por errores de API transitorios) fueron re-corridos por
 > Helmer DeepSeek el 2026-07-24 → **3/3 APPROVE** → `HELMER_APPROVED`/CONFIRMADO (cacheados).
@@ -110,12 +114,11 @@ Use this terminology consistently across the project:
 - Method: exact gid match on stated page → sutta-bounded text → DeepSeek
 - Source files: `helmer_sn4_pilot20.py`, `helmer_sn4_v3.py`, cached in `helmer_ptscst_cache.json`
 
----
-
-## PENDING
-
-### SN V — Samyutta Nikaya vol 5 (S v) — 610 suttas ⏳ 589/610 (pendiente cerrar)
-- **Estado 2026-07-25 (2ª pasada): 589 CONFIRMADO / 21 PENDIENTE.** 571 VALIDADOR + 18 VALIDADOR_HUMANO.
+### SN V — Samyutta Nikaya vol 5 (S v) — 610 suttas — CERRADO 🔒 610/610
+- **Estado 2026-07-25 (3ª pasada): 610/610 CONFIRMADO.** 571 `VALIDADOR` (concordancia VRI ∧
+  Gemini APPROVE) + 39 `VALIDADOR_HUMANO` (18 desacuerdos arbitrados antes + las 21 peyyāla
+  elididas, dispuestas en bloque por Jorge el 2026-07-25 vía
+  `reconcile_sn5.py --humano firmas_sn5_peyyala.json`).
 - Alineado por el **pipeline VRI por concordancia** (definitivo): Excel(DPR) → `massive.tsv`
   (`cst_paranum`) → XML VRI (`/tmp/tipitaka-xml/romn/s0305m.mul.xml`) → texto CST exacto; lado
   PTS por marcadores DB (libro 16). Validador Modelo B con `concordant=True` (concordancia
@@ -161,12 +164,30 @@ Use this terminology consistently across the project:
   se apoyaba en el texto de página entera); 52.18/55.67/55.69/55.71 ya rechazaban antes. Decisión
   de Jorge: degradar a PENDIENTE (→ 583/610 real) o arbitrar a mano.
 
-**TODO SN V (antes de cerrar):**
-1. **Decidir la disposición de las 21 peyyāla** (VALIDADOR_PEYYALA / VALIDADOR_HUMANO) y de las
-   **6 filas con evidencia superada** (degradar vs arbitrar) → 610/610.
-2. **Afinar los offsets de nº de línea por página**: los `PTS Line` del Excel no son fiables
-   (calibrar contra el texto real de cada página en la BD, libro 16, como se hizo con la serie
-   asubha / Hetunā). Es el trabajo fino restante para dejar las referencias exactas a nivel de línea.
+- **Líneas calibradas (2026-07-25)** — `calibrate_sn5_lines.py`. La línea de `PTS Ref`
+  (`S v <pág>,<línea>`) es la del **marcador centrado** del sutta, y el dato del Excel venía
+  MEZCLADO: solo 75/546 coincidían; el resto se agolpaba en 2–8 sobre páginas de ~29 líneas
+  (distribución imposible para posiciones reales — no eran líneas, y 144 filas no traían ninguna).
+  Recalculadas contra el texto de la BD (libro 16) reusando la cadena de resolución del pipeline
+  VRI: **471 corregidas → 546/546 exactas**. Auditoría independiente antes de escribir: el nombre
+  del *Excel* contra el nombre del *marcador* (señal que el resolvedor no usó, pues casa por título
+  CST) → 441/546 casan; las 105 que no son variantes abreviadas de Feer (`Araham1.` =
+  `Paṭhamārahanta`, `Bodhanā.` = `Bodhāya`) donde el marcador sí concuerda con el título CST.
+- **2 residuos deliberados en las líneas** (no se tocan, a arbitraje contra el impreso):
+  - **45 filas con la página en disputa** — el marcador está en la página vecina, no en la que
+    declara el Excel. Reescribir la *página* es una afirmación mayor que la línea y queda fuera del
+    alcance de la calibración; `calibrate_sn5_lines.py` las lista.
+  - **19 sin marcador resoluble** (45.75/76, 46.58, 46.87–92, 48.74, 49.2/5, 50.2/5/6,
+    56.99–101, 56.109): grupos peyyāla sin marcador propio → línea intacta.
+- ⚠️ **6 filas CONFIRMADO con evidencia superada** (`VALIDADOR` en el Excel pero el veredicto
+  vigente en `validador_sn5_vri.json` es REJECT): **45.71, 50.3, 52.18, 55.67, 55.69, 55.71**.
+  `reconcile_sn5.py` no degrada por diseño (protege la procedencia). Jorge decidió (2026-07-25)
+  **dejarlas y revisarlas a mano** contra el impreso/CST — cola de arbitraje abierta, no un
+  pendiente del pipeline. Nótese que 45.71 y 50.3 también aparecen en las 45 con página en disputa.
+
+---
+
+## PENDING
 
 ### AN — Anguttara Nikaya — 1,738 entries ⏳
 - Pages restored from blog, lines added via sequential matching
@@ -182,55 +203,64 @@ Use this terminology consistently across the project:
 
 ---
 
-## METHOD: How to run Helmer for remaining SN/AN/KN
+## METHOD: cómo validar lo que queda (AN/KN) — pipeline VRI + validador
 
-### For SN V (saṃyutta-aware CST mapping):
-```python
-# CST saṃyutta boundaries (from s5m.xml titles):
-# SN 45 starts at CST index 0
-# SN 46 starts at CST index 10
-# ... (find by scanning titles for "1. name" pattern)
+> **Histórico:** lo que había aquí describía el pase **DeepSeek "Helmer"** (RETIRADO: no
+> determinista a `temperature=0`) y un mapeo CST `frontera[saṃyutta] + (inner-1)` que se demostró
+> **roto** (dio 8% de APPROVE en SN V). No usar ninguno de los dos. El método vigente es el que
+> cerró SN V 610/610.
 
-# For each entry with exact gid match:
-cst_idx = cst_boundaries[e['sn']] + (e['sn_inner'] - 1)
-cst_text = segs[cst_idx]['text']
+### Flujo (probado en SN V, directamente portable a AN/KN)
+1. **Alinear por CONCORDANCIA, no por contenido ni por número.** El `Sutta #` del Excel está en
+   notación **DPR**; `massive.tsv` (raíz del repo) enlaza `dpr_code` → `cst_paranum` + `cst_sutta`.
+2. **Texto CST** desde el **XML VRI** (`/tmp/tipitaka-xml/romn/*.mul.xml`), por `<p rend="bodytext"
+   n="N">` con `N = cst_paranum` (los `n` pueden ser rangos, `"42-47"`).
+3. **Texto PTS** desde la BD (`pages`, `edition='mula'`) localizando el **marcador centrado** del
+   sutta. Prioridad que funciona: **nombre fuerte** (idéntico/prefijo del título CST) → **nº
+   corrido** (el único que separa los pares paṭhama/dutiya de las series peyyāla) → **nombre laxo
+   inequívoco** → contenido → página. Buscar siempre la página declarada **±1**.
+4. **Validar** con `validador.validate_pair(..., concordant=True)`: con alineación exacta,
+   CONFIRMADO = concordancia ∧ Gemini APPROVE (el gate de cobertura sobra).
+5. **Volcar** con un reconciliador que NO degrade la procedencia humana y haga backup del Excel.
 
-# Compare PTS sutta-bounded text vs CST text with DeepSeek
-```
+### Antes de gastar API: auditar el resolvedor con un diff de texto
+Cualquier cambio en el resolvedor PTS se audita **sin llamadas a la API** comparando el texto que
+devuelve el resolvedor viejo contra el nuevo, entrada por entrada. Así se ve de inmediato si una
+"mejora" degrada filas ya CONFIRMADO — así se encontraron los 5 fallos que subieron SN V de 580 a
+610. Umbrales: cuidado con los mínimos de longitud, los peyyāla PTS legítimos tienen 4 tokens.
 
-### General flow:
-1. Build marker map from DB: `SELECT unitext FROM pages WHERE book_no=X`
-2. Extract markers: `re.match(r'^(\d+)\.?\s*\((\d+)\)\s+(\S.*)', line)`
-3. Match Excel entries to markers by EXACT gid on stated page
-4. Extract sutta-bounded text (from marker to next marker or page end)
-5. Compare with CST via DeepSeek v4-flash (3 retries on JSON error)
-6. Cache results in `helmer_ptscst_cache.json`
+### Líneas de `PTS Ref`
+La línea es la del **marcador centrado** del sutta en la página. Los valores del Excel vienen
+mezclados y en su mayoría no son líneas (ver SN V): recalcular con el mismo resolvedor
+(`calibrate_sn5_lines.py` como plantilla) y **no reescribir la página**, solo la línea.
 
 ### Key files:
-- `PTS_Reference_Complete_Canon.xlsx` — master output (3 sheets)
-- `helmer_ptscst_cache.json` — DeepSeek verdict cache
-- `src/data/tipitaka.sqlite` — PTS edition (edition='mula')
-- `/home/jorge/Code/digitalpalireader/tipitaka/my/` — CST DPR XML files
-- `/home/jorge/Code/tipitaka.rte/` — Royal Thai edition + sutta_hash tools
-- `/dev/shm/dpd.db` — DPD lookup database
-
-### DeepSeek API:
-```python
-from openai import OpenAI
-cli = OpenAI(api_key=os.environ['DEEPSEEK_API_KEY'], base_url='https://api.deepseek.com')
-# Model: deepseek-v4-flash, temperature=0, response_format={'type':'json_object'}
-```
+- `PTS_Reference_Complete_Canon.xlsx` — master output (3 hojas; `Estado` = rollup binario)
+- `validador.py` — el juez (Modelo B), nikāya-agnóstico
+- `validador_sn5.py` / `validador_sn5_vri.py` / `reconcile_sn5.py` / `calibrate_sn5_lines.py`
+  — driver SN V completo, la plantilla a copiar para AN/KN
+- `massive.tsv` — concordancia dpd/cst/dpr/sc/bjt con `cst_paranum` y páginas VRI
+- `/tmp/tipitaka-xml/romn/*.mul.xml` — texto CST (VRI)
+- `src/data/tipitaka.sqlite` — edición PTS (`edition='mula'`)
+- `/dev/shm/dpd.db` — DPD
+- `helmer_*.py`, `helmer_ptscst_cache.json` — **legado del pase DeepSeek retirado**
 
 ### Pitfalls:
-- SN numbering resets per saṃyutta — use global ID (gid), not vagga position (vpos)
-- Peyyāla gaps in PTS: suttas without individual markers — mark as PEYYALA
-- CST files may have more saṃyuttas than Excel (e.g., s5m.xml has SN 45-112)
-- SN I uses `§ N.` markers, SN II-V use `N (M) Name`
-- Feer edition is more abbreviated than CST — expect ~10% false REJECTs
+- La numeración SN resetea por saṃyutta — usar el nº corrido (gid), no la posición en la vagga
+- Peyyāla: suttas sin marcador propio, con el texto ELIDIDO en PTS y/o CST. El REJECT del LLM ahí
+  es un falso negativo por elisión, no una desalineación → arbitraje, no PENDIENTE automático
+- Los ficheros CST traen más saṃyuttas que el Excel (s5m.xml llega a SN 112)
+- SN I usa marcadores `§ N.`; SN II–V, `N (M) Nombre` (y rangos, y centrados sin paréntesis)
+- Feer abrevia más que el CST — contar con ~10% de REJECT falsos
+- **El OCR de la BD mete letras por dígitos en los marcadores** (`4O. (10)` en S v 397): un
+  marcador "ausente" puede ser esto, no una laguna del texto
+- El nombre del marcador PTS puede ser una variante de Feer (`Araham1.` = `Paṭhamārahanta`): casar
+  por nombre contra el título CST, y usar el nombre del Excel solo como señal de auditoría
 
 ---
 
 ## RULES (from README)
-- ⚠️ NADA se cierra sin Helmer (DeepSeek PTS↔CST validation)
+- ⚠️ NADA se cierra sin el **validador** (Modelo B: gate local ∧ Gemini, PTS↔CST). El pase
+  DeepSeek "Helmer" está RETIRADO (no fiable); sus marcas `HELMER_*` son CONFIRMADO provisional
 - ⚠️ La única fuente de verdad es `tipitaka.sqlite` (edición 'mula')
 - ⚠️ NO HAY HOMOGENEIDAD entre Nikayas — cada uno requiere su propio parser

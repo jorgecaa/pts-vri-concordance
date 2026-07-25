@@ -156,16 +156,21 @@ def _sutta_text(cur, page, line):
     return ' '.join(toks[:350]) if len(toks) >= MIN_PTS_TOKENS else None
 
 
-def pts_for(cur, page, target, mm, span=1):
-    """Texto PTS del nº corrido `target`. Busca en la página declarada y, si no está,
-    en las adyacentes (el off-by-one de página documentado en PTS vol. V)."""
+def locate_for(cur, page, target, mm, span=1):
+    """Posición `(página, línea)` del marcador del nº corrido `target`. Busca en la
+    página declarada y, si no está, en las adyacentes (el off-by-one de página
+    documentado en PTS vol. V)."""
     for pg in [page] + [page + d for d in range(1, span + 1)] + [page - d for d in range(1, span + 1)]:
         for line, gid, vpos, name in mm.get(pg, []):
-            if gid == target:
-                t = _sutta_text(cur, pg, line)
-                if t:
-                    return t
+            if gid == target and _sutta_text(cur, pg, line):
+                return pg, line
     return None
+
+
+def pts_for(cur, page, target, mm, span=1):
+    """Texto PTS del nº corrido `target` (ver `locate_for`)."""
+    at = locate_for(cur, page, target, mm, span)
+    return _sutta_text(cur, *at) if at else None
 
 
 _FOLD_N = str.maketrans({'ā': 'a', 'ī': 'i', 'ū': 'u', 'ṅ': 'n', 'ñ': 'n', 'ṇ': 'n',
@@ -203,8 +208,8 @@ def _name_score(tgt, ns):
     return 1 if lcp >= 7 and lcp >= 0.7 * min(len(tgt), len(ns)) else 0
 
 
-def pts_by_name(cur, page, cst_title, mm, span=1, min_score=1, require_unique=False):
-    """Resuelve el texto PTS casando el NOMBRE del título CST contra el nombre del
+def locate_by_name(cur, page, cst_title, mm, span=1, min_score=1, require_unique=False):
+    """Posición `(página, línea)` del marcador PTS casando el NOMBRE del título
     marcador PTS (robusto al off-by-one de numeración de las vaggas peyyāla).
     Elige el MEJOR candidato, no el primero: la página declarada gana a las vecinas
     y la coincidencia más fuerte gana a la más laxa.
@@ -235,10 +240,15 @@ def pts_by_name(cur, page, cst_title, mm, span=1, min_score=1, require_unique=Fa
     # dentro de la página, el marcador de MÁS ARRIBA (los homónimos de una serie
     # peyyāla van en orden: "Duggatibhaya" antes que "Duggativinipātabhaya").
     for sc, _d, pg, line in sorted(cands, key=lambda c: (-c[0], c[1], c[3])):
-        t = _sutta_text(cur, pg, line)
-        if t:
-            return t
+        if _sutta_text(cur, pg, line):
+            return pg, line
     return None
+
+
+def pts_by_name(cur, page, cst_title, mm, span=1, min_score=1, require_unique=False):
+    """Texto PTS del marcador localizado por nombre (ver `locate_by_name`)."""
+    at = locate_by_name(cur, page, cst_title, mm, span, min_score, require_unique)
+    return _sutta_text(cur, *at) if at else None
 
 
 def pts_page(cur, page, span=0):
