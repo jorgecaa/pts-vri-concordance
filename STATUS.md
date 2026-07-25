@@ -168,10 +168,41 @@ dos ediciones—, o el **tramo hallado tiene tantos paranums como suttas declara
 (`1.431-438` son ocho y el contenido da `419-426`, ocho: una coincidencia numérica que el contenido
 no puede fabricar).
 
-Las **16 que no cierran** quedan anotadas en `Detail` con su motivo. Son de dos clases: filas de
-rango cuyo tramo el contenido no puede delimitar porque los suttas no son de fórmula (el
-`1.333-377`, 45 suttas, da un tramo de 7), y un puñado del vagga 20 donde dos filas compiten por el
-mismo paranum (`1.394` y `1.395-401` apuntan las dos al 382: una de las dos sobra).
+#### La cola del Eka se cierra entera con la PARTICIÓN FORZADA — y con ella salen dos errores míos
+
+La pasada por contenido resuelve cada fila **por separado**, y donde varias comparten marcador eso
+no puede funcionar: **falla en silencio**. Tres filas del bloque del marcador 63 se escribieron con
+**la misma `VRI Ref`** (`483-492`), y la comprobación de cardinalidad no lo vio porque es *por
+fila* — cada tramo tenía los diez paranums que su fila declara; lo que nadie miraba es que eran
+**los mismos diez** tres veces. Y `1.378-393` se cerró con `378-393` solapando a `1.402-405`
+(`390-393`), porque la regla «el ganador cae dentro del propio rango» se cumple por casualidad
+cuando el rango es ancho y el desfase de doce.
+
+Es el punto ciego en su forma más pura: **pares coherentes cada uno consigo mismo y mutuamente
+incompatibles**. Lo que los caza no es el cotejo sino una comprobación global — **que ningún tramo
+solape a otro**, que ahora se corre siempre.
+
+El argumento que sí decide es la **partición forzada** (`an1_eka_particion.py`): cuando un bloque de
+filas consecutivas cae entre dos anclas resueltas y lo que declaran suma **exactamente** los
+paranums libres, sólo hay un reparto posible. En el bloque del marcador 63:
+
+    `1.447-454` ocupa hasta el 442  →  el bloque empieza en 443
+    las seis filas declaran 10+10+10+10+40+40 = 120
+    443 + 120 − 1 = 562 = **el último paranum del `div` 18 del CST**
+
+Que termine **al dígito** donde acaba el `div` no se puede ajustar: o cuadra o no. Cuatro bloques
+cuadran así (443-562, 312-319, 402-418, 584-611) y un quinto (321-389) lo fijan los anclajes de
+contenido, absorbiendo la diferencia el *Jambudīpapeyyāla*, que es justo la fila donde el CST
+subdivide más fino que el Excel.
+
+Tres filas más son **many-to-one** y el hueco entre sus vecinas lo dice sin ambigüedad: `1.296-305`
+son diez suttas del Excel para **dos** paranums (296-297), y `1.586-590` son cinco para **uno**
+(574). No es error de nadie: es la compresión de Morris otra vez.
+
+⚠️ Y un tercer error de la misma familia en el Duka: `2.27`/`2.28`/`2.29` —cuyo `DPR Ref` lleva los
+sufijos `8a`/`8b`/`8c`— habían recibido las tres el paranum 29. El marcador 8 (A i 60,25) cubre
+**28, 29 y 30** (cobertura 0,99 · 1,00 · 0,89) y los sufijos describen exactamente ese reparto.
+Corregidas. **Ya no queda ninguna `VRI Ref` repetida ni ningún tramo solapado en A i.**
 
 **Fase D — el Tika.** ✅ **10 de 18** (2026-07-25), `reconcile_an1_tika_restos.py`. A i → **409/435**.
 
@@ -420,15 +451,16 @@ Use this terminology consistently across the project:
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
-| AN | 1738 | 1712 | 26 | 98.5% |
+| AN | 1738 | 1728 | 10 | 99.4% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6098** | **3712** | **2386** | **60.9%** |
+| **TOTAL** | **6098** | **3728** | **2370** | **61.1%** |
 
 > Desglose de AN (2026-07-25): **A ii 303/303, A iii 457/457, A iv 298/298 y A v 245/245 —
-> los cuatro CERRADOS 🔒**, y **A i 409/435** tras las fases B, C y D. Las 26 que quedan en AN
-> están todas anotadas fila a fila en `Detail`: 16 de la cola del Eka, 8 de numeración que excede
-> a la del CST, la conjetura declarada de Morris sobre el Acelaka-vagga, y la clave duplicada
-> `2.19`. Eka y Duka
+> los cuatro CERRADOS 🔒**, y **A i 425/435**. **El Eka y el Duka quedan completos**; las 10 que
+> faltan son 7 filas cuya numeración **excede a la del CST** (el Tika del Excel llega a 352 y
+> `s0402m2` acaba en 184; su Duka llega a 479 y `s0402m1` en 246), la **conjetura declarada de
+> Morris** sobre el Acelaka-vagga (`3.156`), y la clave duplicada `2.19` (×2). Ninguna es deuda de
+> método: las tres clases piden una decisión editorial de Jorge. Eka y Duka
 > (284 filas) siguen sin abordar a propósito.
 >
 > ⚠️ **`11.502-981` cierra por decisión editorial de Jorge**: PTS imprime el símil del gopālaka
