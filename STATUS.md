@@ -125,12 +125,27 @@ no existía porque allí el marcador lleva el nº corrido y basta con él.
 *Consecuencia*: **A i no está bloqueado por el lado de PTS.** Lo que queda por resolver es el lado
 CST, y sólo en la cola.
 
-**Fase B — el Duka entero y los doce primeros vaggas del Eka.**
-Es la mitad limpia: vaggas emparejados por nombre, cuentas coincidentes, y el `DPR Ref` dando el
-marcador. Cada fila se resuelve por **doble clave independiente** —`(vagga, sutta)` del DPR contra
-el marcador del impreso, y posición dentro del `div` contra el paranum del CST— más la página.
-Esto es prueba mecánica del tipo que ya cerró A ii–A v, y **no necesita nombres de sutta**, que era
-la objeción que tenía A i parado. *Alcance estimado*: ~111 filas del Duka + ~110 del Eka.
+**Fase B — el Duka entero y los doce primeros vaggas del Eka.** ✅ **HECHA** (2026-07-25).
+**197 filas cerradas** (Eka 91/91, Duka 106/106) con `an1_eka_duka.py` + `reconcile_an1_ekaduka.py`,
+y **cero llamadas a API**. A i pasa de 151/435 a **347/435**.
+
+Tres comprobaciones independientes, ninguna usando lo que usan las otras: el marcador impreso por
+la regla de la fase A; el paranum por posición en el `div` (y por **contenido** en los vaggas 2 y 3
+del Duka, donde los recuentos no coinciden — ahí el marcador 10 se lleva el paranum 21 y el **20 se
+queda sin marcador**, porque PTS imprime bajo un solo número el par `saddhammassa sammosāya` /
+`ṭhitiyā` que el CST numera aparte); y la cobertura de contenido. Más la página.
+
+⚠️ **La cobertura se mide sobre n-gramas de caracteres, no sobre palabras.** En pali la composición
+es libre en la ortografía: PTS escribe `kodha vinayo ca upanaha vinayo` y el CST `kodhavinayo ca
+upanahavinayo`. Es el mismo texto y por conjuntos de palabras daba **0,22** — bastaba para tirar
+cuatro filas correctas. Sobre 4-gramas da 0,9.
+
+**El umbral está medido, no elegido**: la cobertura real de las 197 va de **0,64 a 1,00** (mediana
+0,97-0,99) y un control con pares de vaggas distintos da media **0,26** y máximo **0,48**. El
+umbral (0,55) cae en el hueco.
+
+Y una errata más del OCR reparada por continuidad: `210.` en A i 91,14 va entre el `9.` y el `11.`
+y es el **`10.`** con un dígito de más — misma clase que el `2O` por `20` de S iv.
 
 **Fase C — la cola del Eka (vaggas 13-21) y la del Duka.**
 Aquí no hay nombres ni cuentas que casen, y el emparejamiento por nombre falla. Herramientas, por
@@ -370,12 +385,12 @@ Use this terminology consistently across the project:
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
-| AN | 1738 | 1454 | 284 | 83.7% |
+| AN | 1738 | 1650 | 88 | 94.9% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6098** | **3454** | **2644** | **56.6%** |
+| **TOTAL** | **6098** | **3650** | **2448** | **59.9%** |
 
 > Desglose de AN (2026-07-25): **A ii 303/303, A iii 457/457, A iv 298/298 y A v 245/245 —
-> los cuatro CERRADOS 🔒**. **Todo lo que falta en AN es A i**: 151/435, sólo el Tika. Eka y Duka
+> los cuatro CERRADOS 🔒**, y **A i 347/435** tras la fase B (Eka 1-12 y Duka entero). Eka y Duka
 > (284 filas) siguen sin abordar a propósito.
 >
 > ⚠️ **`11.502-981` cierra por decisión editorial de Jorge**: PTS imprime el símil del gopālaka

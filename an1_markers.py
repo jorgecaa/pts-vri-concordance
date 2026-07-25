@@ -213,6 +213,7 @@ def collect_an1(pages):
             if kind == 'nipata':
                 nip, vag, last_sutta, bloque = val, None, 0, None
             elif kind == 'vagga':
+                last_sutta = 0
                 a, b = (val if isinstance(val, tuple) else (val, None))
                 # en el régimen «sutta_romano» el numeral centrado ES el sutta, no el vagga
                 if REGIMEN.get(nip) == 'sutta_romano':
@@ -262,6 +263,17 @@ def collect_an1(pages):
                     continue          # aquí los arábigos a sangría 5 son PÁRRAFOS, no suttas
                 if reg == 'vagga_romano' and ind not in SUTTA_INDENT:
                     continue
+                # Errata del OCR: un dígito pegado DELANTE del numeral. `210.` en A i 91,14 va
+                # entre el `9.` y el `11.` y es el `10.` con un `2` de más — misma clase que el
+                # `2O` por `20` de S iv y el `CCIX` por `CCXIX` de A iv. Se repara por
+                # CONTINUIDAD, y sólo si los últimos dígitos SON el número esperado: nunca se
+                # inventa un valor, se descarta un dígito que sobra.
+                if reg == 'vagga_romano' and val > last_sutta + 1:
+                    esperado = last_sutta + 1
+                    if str(val).endswith(str(esperado)) and len(str(val)) > len(str(esperado)):
+                        val = esperado
+                if reg == 'vagga_romano':
+                    last_sutta = val
                 if reg == 'vagga_romano' and abre_vagga is not None:
                     if val == 2 and abre_vagga[2] == vag:
                         out.append({'nipata': nip, 'vagga': vag, 'num': 1,
