@@ -96,6 +96,25 @@ def volume_iii():
              for e in entries}, cap, len(cap))
 
 
+def volume_iv():
+    """S iv: el lado CST va por POSICIÓN (bloques del XML ≡ filas, 344=344) y el PTS por
+    `assign_volume`, con capacidades **medidas en el texto** (hay marcadores que cubren dos
+    suttas del CST: «Agayha», «Pubbeñāṇam», «Suddhikaṃ nirāmisam»)."""
+    from validador_sn4 import (build_cst_blocks, cst_for, excel_entries, build_pts_suttas,
+                               assign_volume, measured_caps_for)
+    conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row
+    bysam = build_cst_blocks(); entries = excel_entries()
+    cstmap = cst_for(entries, bysam)
+    recs = build_pts_suttas(conn.cursor())
+    key = lambda q: (q['sam'], q['page'], q['line'])
+    cap = _capacity(recs, key)
+    for k, v in measured_caps_for(entries, recs, cstmap).items():
+        cap[k] = max(cap[k], v)
+    assigned = assign_volume(entries, recs, cstmap)
+    return ({e['num']: (key(assigned[e['num']]) if assigned.get(e['num']) else None)
+             for e in entries}, cap, len(cap))
+
+
 def volume_v():
     """S v usa ahora la asignación global de `validador_sn5_vri.assign_volume`."""
     from validador_sn5_vri import build_vri_index, build_massive, excel_entries, assign_volume
@@ -110,7 +129,8 @@ def volume_v():
     return assign_volume(excel_entries(), cur, mm, c2p, vri), cap, len(cap)
 
 
-VOLUMES = {'i': volume_i, 'ii': volume_ii, 'iii': volume_iii, 'v': volume_v}
+VOLUMES = {'i': volume_i, 'ii': volume_ii, 'iii': volume_iii, 'iv': volume_iv,
+           'v': volume_v}
 
 
 def main():

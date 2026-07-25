@@ -11,6 +11,12 @@ por separado (regla (5) de `CLAUDE.md`).
 |---|---|---|---|
 | **A — con posición** | XXXV, XXXVI, XXXVII, XLIII | `N (M) Nombre` | `53 (1) Avijjā` |
 | **B — escueta** | XXXVIII, XXXIX, XL, XLI, XLII, XLIV | `N Nombre` | `16 Dukkaram` |
+| **C — `saṭṭhi-peyyāla`** | XXXV, pp. 148-156 | `(M) Nombre`, **sin nº corrido** | `(2) Chandena2` |
+
+El régimen C es el que Feer explica en su introducción: imprime **20 números corridos (167-186)**
+para las **60** suttantas del peyyāla («Peyyālo saṭṭhiko vutto / Suttantāni saṭṭhi», dice su uddāna),
+y en las líneas intermedias **elide el nº corrido** y deja sólo la posición. Exigir dígito inicial
+dejaba 12 filas del Excel sin marcador.
 
 En los dos, `N` es el **nº corrido dentro del saṃyutta**; en el régimen A, `M` es además la posición
 dentro del vagga. La diferencia no es sólo de forma: en el régimen B **el número desnudo colisiona
@@ -52,6 +58,9 @@ _name = pp.Regex(r"[^(\n]+")("name")
 _lead = _numrange.set_name("lead")
 _item = (_group | _remark | _pname | _name).set_name("item")
 _marker = (_lead("lead") + pp.Group(pp.ZeroOrMore(_item))("items")).set_name("marker")
+# régimen C: la línea abre con la POSICIÓN entre paréntesis y sin nº corrido — «(2) Chandena2»
+_lead_pos = (pp.Suppress("(") + _numrange("leadpos") + pp.Suppress(")"))
+_marker_pos = (_lead_pos + pp.Group(pp.ZeroOrMore(_item))("items")).set_name("marker_pos")
 _cont = pp.Group(pp.OneOrMore(_item))("items").set_name("cont")
 
 _LETTER = ("ABCDEFGHIJKLMNOPQRSTUVWXYZĀĪŪṄÑṆṬḌḶŚ"
@@ -142,6 +151,17 @@ def find_markers_sn4(text):
             continue
         s = _repair_leading(s)
         if not s[0].isdigit():
+            if s[0] != '(':
+                continue
+            r = _parse(_marker_pos, s)
+            if r is None or r.get("leadpos") is None or indent < MIN_INDENT_BARE:
+                continue
+            names = _pairs(r["items"])
+            if not any(n for _p, n, _rw in names):
+                continue
+            pos = _expand(r["leadpos"])[0]
+            # sin nº corrido: hereda el del marcador anterior (es una posición suya)
+            out.append((i, [], [(pos, n, rw) for _p, n, rw in names], 'marker'))
             continue
         # La sangría exigida depende de la FORMA: «N (M)» se identifica sola; «N Nombre» sólo vale
         # centrado, porque compite con los números de párrafo del cuerpo.
