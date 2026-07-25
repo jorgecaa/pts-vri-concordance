@@ -33,6 +33,7 @@ from validador import validate_pair
 from massive_reader import build_massive as _mr_build
 from validador_sn1 import _pts_page, _TEXT_RENDS, build_vri_index as _build_vri
 from sn3_markers import find_markers_sn3, collect_suttas
+from align_rows import assign as ar_assign
 
 VRI = '/tmp/tipitaka-xml/romn/s0303m.mul.xml'
 OUT = 'validador_sn3.json'
@@ -139,7 +140,7 @@ def build_pts_suttas(cur):
 
     # el texto de cada sutta va de su marcador al del siguiente (en orden de lectura)
     ordered = sorted(suttas, key=lambda s: (pos[(s['page'], s['line'])], s['num']))
-    out = {}
+    allrecs = []
     for k, s in enumerate(ordered):
         i0 = pos[(s['page'], s['line'])]
         i1 = len(flat)
@@ -148,12 +149,29 @@ def build_pts_suttas(cur):
             if j > i0:
                 i1 = j
                 break
-        sam = FEER[s['sam_idx'] - 1][0]
         rec = dict(s)
-        rec['sam'] = sam
+        rec['sam'] = FEER[s['sam_idx'] - 1][0]
+        rec['ord'] = k                       # posición de lectura: identidad ÚNICA del registro
         rec['text'] = ' '.join(sh.tokens(' '.join(t for _p, _l, t in flat[i0:i1]))[:350])
-        out[(sam, s['num'])] = rec
+        allrecs.append(rec)
+
+    # Índice por `(saṃyutta, nº)`. OJO: la clave NO es única — en el Jhāna-saṃyutta los registros de
+    # *gamana* («(27)1-4») llevan nº 1–4 y machacaban a los reales, con lo que los marcadores
+    # `1 Samādhi-samāpatti` (S iii 263), `2 Ṭhiti`, `3 Vuṭṭhāna` y `4 Kallavā` no llegaban al
+    # resolvedor (de ahí que 34.1 apuntara a S iii 273). Gana el registro SIN gamana.
+    out = {}
+    for rec in allrecs:
+        key = (rec['sam'], rec['num'])
+        prev = out.get(key)
+        if prev is None or (prev.get('gamana') is not None and rec.get('gamana') is None):
+            out[key] = rec
+    out['__all__'] = allrecs             # inventario completo: nada se pierde
     return out
+
+
+def pts_records(pts):
+    """Todos los registros de marcador, en orden de lectura (sin las pérdidas del índice)."""
+    return pts.get('__all__', [v for k, v in pts.items() if k != '__all__'])
 
 
 _ORDINAL = {'pathama': 1, 'paṭhama': 1, 'dutiya': 2, 'tatiya': 3, 'catuttha': 4, 'pancama': 5,
@@ -247,9 +265,78 @@ def ditthi_pairs(pts, path=VRI):
             if 206 <= p0 <= 301:
                 cst.append((p0, title))
     # lado PTS: los marcadores del saṃyutta que NO son de rango, en orden de lectura
-    pt = sorted((q for (sam, _n), q in pts.items() if sam == DITTHI and not q['from_range']),
+    pt = sorted((q for q in pts_records(pts) if q['sam'] == DITTHI and not q['from_range']),
                 key=lambda q: (q['page'], q['line']))
     return list(zip(cst, pt))
+
+
+def assign_volume(entries, pts, massive, offsets, ditthi):
+    """Asigna TODAS las filas de un saṃyutta a sus marcadores **de una vez**, con
+    `align_rows.assign` (inyectivo y monótono), en lugar de resolver fila a fila.
+
+    Resolver cada fila por separado no impide que dos acaben en el mismo marcador, y entonces una
+    queda validada contra el locus de su vecino sin que el validador pueda notarlo. Como las dos
+    secuencias están ordenadas —filas en orden canónico, marcadores en orden de lectura—, la
+    asignación correcta es un alineamiento monótono con capacidad (un marcador de rango admite
+    tantas filas como suttas cubre).
+
+    El Diṭṭhi (SN 24) se pre-asigna con `ditthi_pairs`, que ya es exacta (32/32).
+    """
+    out = {}
+    by_sam = {}
+    for e in entries:
+        by_sam.setdefault(e['sam'], []).append(e)
+    marks_by_sam = {}
+    for q in pts_records(pts):
+        marks_by_sam.setdefault(q['sam'], {}).setdefault((q['page'], q['line']), q)
+    caps = Counter((q['sam'], q['page'], q['line']) for q in pts_records(pts))
+
+    for sam, rows in by_sam.items():
+        rows.sort(key=lambda e: e['inner'] if isinstance(e['inner'], int) else 0)
+        if sam == DITTHI:
+            for e in rows:
+                if 1 <= e['inner'] <= len(ditthi):
+                    out[e['num']] = ditthi[e['inner'] - 1][1]
+            continue
+        mk = marks_by_sam.get(sam, {})
+        marks = [mk[k] for k in sorted(mk, key=lambda k: mk[k]['ord'])]
+        if not marks:
+            continue
+
+        def score(i, j, rows=rows, marks=marks, sam=sam):
+            e, q = rows[i], marks[j]
+            h = massive.get((sam, e['inner']))
+            # base = PÁGINA DEL EXCEL (ya calibrada contra el marcador real); el ancla del
+            # concordance solo refuerza, porque se desvía en tramos enteros
+            base = e['page'] if isinstance(e['page'], int) else (h[2] if h else None)
+            if not isinstance(base, int):
+                base = q['page']
+            d = abs(q['page'] - base)
+            if d > 2:
+                return None                        # fuera de la vecindad: par prohibido
+            s = _name_score(e['name'], q['name']) + (30 if d == 0 else 15 if d == 1 else 0)
+            if h and h[2] is not None and abs(q['page'] - h[2]) <= 1:
+                s += 10
+            if offsets.get((sam, e['inner'])) == q['num']:
+                s += 80                            # tramo con offset calibrado: evidencia verificada
+            if q['num'] == e['inner']:
+                s += 20                            # coincide con el nº que declara el Excel
+            mm_ = _MULAKA.match(e['name'] or '')
+            if mm_:                                # nombres `X-mūlaka-Y` del Jhāna-saṃyutta
+                pa, pb = _stem(mm_.group(1)), _stem(mm_.group(2))
+                st = _stem(q['name'])
+                if len(pa) >= 4 and len(pb) >= 4 and pa[:5] in st and pb[:5] in st:
+                    s += 120                       # el marcador es el compuesto «X-Y»
+                elif len(pb) >= 4 and pb[:5] in st and pa[:5] not in st:
+                    s += 100                       # …o solo «Y» (serie Samādhimūlaka-)
+            return s
+
+        idx = ar_assign(len(rows), len(marks), score,
+                        lambda j, marks=marks, sam=sam: caps[(sam, marks[j]['page'], marks[j]['line'])],
+                        skip_penalty=1000.0)
+        for e, j in zip(rows, idx):
+            out[e['num']] = marks[j] if j is not None else None
+    return out
 
 
 def calibrate_offsets(pts, massive, cst_titles):
@@ -266,8 +353,9 @@ def calibrate_offsets(pts, massive, cst_titles):
     Devuelve `{(sam, nº CST): nº PTS}` solo para las claves donde el offset no es 0.
     """
     fix = {}
-    for sam in sorted({s for s, _n in pts}):
-        nums = sorted(n for s, n in pts if s == sam)
+    keys = [k for k in pts if isinstance(k, tuple)]
+    for sam in sorted({s for s, _n in keys}):
+        nums = sorted(n for s, n in keys if s == sam)
         if not nums:
             continue
         for off in (-1, -2, -3):
@@ -426,10 +514,10 @@ def main():
     groups = build_cst_group_items()
     by_title = build_cst_by_title()
     by_page = {}
-    for (sam, num), q in pts.items():
-        by_page.setdefault((sam, q['page']), []).append(q)
+    for q in pts_records(pts):
+        by_page.setdefault((q['sam'], q['page']), []).append(q)
     cst_titles = {k: v[1] for k, v in massive.items()}
-    blocks = Counter((sam, q['page'], q['line']) for (sam, _n), q in pts.items())
+    blocks = Counter((q['sam'], q['page'], q['line']) for q in pts_records(pts))
     ditthi = ditthi_pairs(pts)
     offsets = calibrate_offsets(pts, massive, cst_titles)
     if offsets:

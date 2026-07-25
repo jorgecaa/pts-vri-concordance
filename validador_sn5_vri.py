@@ -15,9 +15,10 @@ from collections import Counter
 import sutta_hash as sh
 from openpyxl import load_workbook
 from validador import validate_pair
+from align_rows import assign as ar_assign
 from massive_reader import build_massive as _mr_build
 from validador_sn5 import (build_markers, pts_for, pts_by_name, pts_by_content, pts_page,
-                           ordinal_of)
+                           ordinal_of, _sutta_text as v5_text)
 
 VRI = '/tmp/tipitaka-xml/romn/s0305m.mul.xml'
 OUT = 'validador_sn5_vri.json'
@@ -85,6 +86,87 @@ def excel_entries():
     return out
 
 
+def assign_volume(entries, cur, mm, canon2para, vri):
+    """Asignación **inyectiva y monótona** de las filas de S v a sus marcadores, por saṃyutta.
+
+    Igual que en S iii: resolver fila a fila permitía que dos filas cayeran en el mismo marcador
+    (16 marcadores compartidos por 36 filas), con lo que una quedaba validada contra el locus de su
+    vecino. Aquí las filas van en orden canónico y los marcadores en orden de lectura, y la
+    asignación se resuelve globalmente con `align_rows.assign`.
+
+    Devuelve `{Sutta # → (página, línea)}`.
+    """
+    marks, caps = [], Counter()
+    for pg in sorted(mm):
+        seen = set()
+        for line, gid, _vpos, name in sorted(mm[pg]):
+            caps[(pg, line)] += 1
+            if line in seen:
+                continue
+            seen.add(line)
+            marks.append({'page': pg, 'line': line, 'gid': gid, 'name': name})
+    # La asignación va sobre TODO el volumen, no por saṃyutta: si se hace por partes, dos filas de
+    # saṃyuttas contiguos pueden reclamar el mismo marcador en la frontera (S v 305: 52.21 y 53.1).
+    rows = []
+    for e in entries:
+        m = re.match(r'(\d+)\.(\d+)', e['canon'])
+        if m:
+            rows.append((int(m.group(1)), int(m.group(2)), e))
+    rows.sort(key=lambda t: (t[0], t[1]))
+    rows = [(inner, e) for _sam, inner, e in rows]
+    sub = marks
+
+    if True:
+        def score(i, j, rows=rows, sub=sub):
+            inner, e = rows[i]
+            q = sub[j]
+            if not isinstance(e['page'], int):
+                return None
+            d = abs(q['page'] - e['page'])
+            if d > 2:
+                return None
+            hit = canon2para.get(e['canon'])
+            s = (30 if d == 0 else 15 if d == 1 else 0)
+            if hit:
+                t = vri.get(hit[0])
+                if t:
+                    s += _stem_score(t['title'], q['name'])
+            s += _stem_score(e['name'], q['name'])
+            if q['gid'] == inner:
+                s += 25                              # el nº corrido que declara el canónico
+            return s
+
+        idx = ar_assign(len(rows), len(sub), score,
+                        lambda j, sub=sub: caps[(sub[j]['page'], sub[j]['line'])],
+                        skip_penalty=1000.0)
+        out = {}
+        for (_inner, e), j in zip(rows, idx):
+            out[e['num']] = (sub[j]['page'], sub[j]['line']) if j is not None else None
+    return out
+
+
+_FOLD5 = str.maketrans({'ā': 'a', 'ī': 'i', 'ū': 'u', 'ṅ': 'n', 'ñ': 'n', 'ṇ': 'n',
+                        'ṭ': 't', 'ḍ': 'd', 'ḷ': 'l', 'ṃ': 'm', 'ṁ': 'm'})
+
+
+def _stem_score(a, b):
+    """Afinidad de nombres, con la misma normalización que el resto del pipeline de S v."""
+    def st(t):
+        t = re.sub(r'[^a-z]', '', re.sub(r'^[\d\s.,()-]*', '', (t or '').lower()).translate(_FOLD5))
+        t = re.sub(r'(suttantam|suttam|suttani|vaggo).*$', '', t)
+        return re.sub(r'[aiueom]+$', '', re.sub(r'(.)\1+', r'\1', t))
+    x, y = st(a), st(b)
+    if not x or not y or min(len(x), len(y)) < 3:
+        return 0
+    if x == y:
+        return 100
+    if x.startswith(y) or y.startswith(x):
+        return 60
+    if min(len(x), len(y)) >= 4 and (x in y or y in x):
+        return 40
+    return 0
+
+
 def main():
     dry = '--dry' in sys.argv
     do_all = '--all' in sys.argv
@@ -95,6 +177,7 @@ def main():
     entries = excel_entries()
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row; cur = conn.cursor()
     mm = build_markers(cur)
+    assigned = assign_volume(entries, cur, mm, canon2para, vri)
 
     tasks, no_dpr, no_para, no_pts = [], [], [], []
     for e in entries:
@@ -108,31 +191,19 @@ def main():
         if not s:
             no_para.append(e); continue
         cst = ' '.join(sh.tokens(s['text'])[:350])
+        # La localización del marcador la da ahora la ASIGNACIÓN GLOBAL (inyectiva y monótona):
+        # la cadena anterior de heurísticas por fila permitía que dos filas cayeran en el mismo
+        # marcador (16 marcadores compartidos por 36 filas).
         pts, src = None, None
-        if isinstance(e['page'], int) and e['inner']:
-            # NOMBRE FUERTE primero (idéntico o prefijo: fiable y robusto al
-            # off-by-one PTS) → nº corrido (único que distingue paṭhama/dutiya en las
-            # series peyyāla) → nombre LAXO (contención/flexión divergente).
-            pts = pts_by_name(cur, e['page'], s['title'], mm, min_score=3)
-            if pts: src = 'name'
-            if not pts and ordinal_of(s['title']) is None:
-                # nombre laxo pero INEQUÍVOCO y sin ordinal en el título CST: es la
-                # única evidencia buena donde la numeración PTS va desfasada respecto
-                # a la DPR (S v 60: "Nivaraṇāni." es el 177 en PTS, el 178 en DPR).
-                pts = pts_by_name(cur, e['page'], s['title'], mm, min_score=1, require_unique=True)
-                if pts: src = 'name!'
-            if not pts:
-                pts = pts_for(cur, e['page'], e['inner'], mm)
-                if pts: src = 'num'
-            if not pts:
-                pts = pts_by_name(cur, e['page'], s['title'], mm, min_score=1)
-                if pts: src = 'name~'
-            if not pts:
-                pts = pts_by_content(cur, e['page'], s['text'], mm)  # nombres divergentes
-                if pts: src = 'content'
-            if not pts:
-                pts = pts_page(cur, e['page'])                       # grupos peyyāla
-                if pts: src = 'page'
+        loc = assigned.get(e['num'])
+        if loc:
+            pts = v5_text(cur, loc[0], loc[1])
+            src = 'dp'
+        if not pts and isinstance(e['page'], int):
+            # el marcador no aísla texto cotejable (grupos peyyāla): página completa, como antes
+            pts = pts_page(cur, e['page'])
+            if pts:
+                src = 'page'
         if not pts:
             no_pts.append(e); continue
         tasks.append((e, pts, cst, s['title'], src))

@@ -736,22 +736,6 @@
   "reason": "Both passages share identical narrative structure on yonisomanasikāra and the noble eightfold path."
  },
  {
-  "num": "45.47",
-  "canon": "45.56",
-  "name": "Kalyāṇamitta",
-  "cst_title": "1. Kalyāṇamittasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.38,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages discuss kalyanamittata as the sole factor for the noble path."
- },
- {
   "num": "45.48",
   "canon": "45.57",
   "name": "Sīlasampadādisuttapañcakaṃ",
@@ -830,22 +814,6 @@
   },
   "gemini": "APPROVE",
   "reason": "PTS is an abbreviated version of the same sutta expanded in CST."
- },
- {
-  "num": "45.53",
-  "canon": "45.70",
-  "name": "Dutiyakalyāṇamitta",
-  "cst_title": "1. Kalyāṇamittasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.29,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages treat the single factor of good friendship developing the noble path."
  },
  {
   "num": "45.54",
@@ -1056,38 +1024,6 @@
   "reason": "CST expands the peyyāla omitted in PTS."
  },
  {
-  "num": "45.67",
-  "canon": "45.103",
-  "name": "Paṭhamapācīnaninna",
-  "cst_title": "1. Paṭhamapācīnaninnasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name~",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.67,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "PTS uses peyyala while CST expands the river simile text."
- },
- {
-  "num": "45.68",
-  "canon": "45.104",
-  "name": "Dutiyādipācīnaninnasuttapañcakaṃ",
-  "cst_title": "2-6. Dutiyādipācīnaninnasuttapañcakaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name~",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.67,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core river simile and monastic training peyyāla match despite textual expansion."
- },
- {
   "num": "45.69",
   "canon": "45.109",
   "name": "Paṭhamasamuddaninna",
@@ -1120,38 +1056,6 @@
   "reason": "PTS is an abbreviated version of the same samuddaninna text in CST."
  },
  {
-  "num": "45.71",
-  "canon": "45.115",
-  "name": "Paṭhamapācīnaninna",
-  "cst_title": "1. Paṭhamapācīnaninnasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name~",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.67,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Editions use different river similes and distinct doctrinal elaborations."
- },
- {
-  "num": "45.72",
-  "canon": "45.116",
-  "name": "Dutiyādipācīnaninnasuttapañcakaṃ",
-  "cst_title": "2-6. Dutiyādipācīnaninnasuttapañcakaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name~",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.67,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core river simile and monastic training peyyala match despite expansion."
- },
- {
   "num": "45.73",
   "canon": "45.121",
   "name": "Paṭhamasamuddaninna",
@@ -1182,38 +1086,6 @@
   },
   "gemini": "APPROVE",
   "reason": "PTS text is an abbreviated peyyala version of the full CST text."
- },
- {
-  "num": "45.75",
-  "canon": "45.127",
-  "name": "Paṭhamapācīnaninna",
-  "cst_title": "1. Paṭhamapācīnaninnasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "page",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.28,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages belong to the same Gaṅgā-peyyāla section with standard elisions."
- },
- {
-  "num": "45.76",
-  "canon": "45.128",
-  "name": "Dutiyādipācīnaninnasuttapañcakaṃ",
-  "cst_title": "2-6. Dutiyādipācīnaninnasuttapañcakaṃ",
-  "legacy": "VALIDADOR",
-  "src": "page",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.28,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages represent the Gangāpeyyāla section of the Magga-saṃyutta."
  },
  {
   "num": "45.77",
@@ -1790,22 +1662,6 @@
   },
   "gemini": "APPROVE",
   "reason": "Identical teachings on the five hindrances with minor orthographic and expansion differences."
- },
- {
-  "num": "45.113",
-  "canon": "45.179",
-  "name": "Upādānakkhandha",
-  "cst_title": "8. Upādānakkhandhasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "src": "name",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.44,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): PTS discusses four upādāna whereas CST discusses five upādānakkhandhā."
  },
  {
   "num": "45.114",
@@ -2400,38 +2256,6 @@
   "reason": "Core narrative matches with minor orthographic differences and expected expansion in CST."
  },
  {
-  "num": "46.36",
-  "canon": "46.35",
-  "name": "Yonisomanasikāra",
-  "cst_title": "5. Ayonisomanasikārasuttaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.68,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core narratives match with minor orthographic differences and standard textual expansion."
- },
- {
-  "num": "46.37",
-  "canon": "46.36",
-  "name": "Buddhi",
-  "cst_title": "6. Yonisomanasikārasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.67,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Editions match; minor orthographic and peyyāla variations only."
- },
- {
   "num": "46.38",
   "canon": "46.38",
   "name": "Āvaraṇanīvaraṇa",
@@ -2752,406 +2576,6 @@
   "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core narrative matches; CST omits the secondary fruit expansion found in PTS."
  },
  {
-  "num": "46.58",
-  "canon": "46.58",
-  "name": "Aññataraphala",
-  "cst_title": "2. Puḷavakasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "src": "page",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.05,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=REJECT / gemini=REJECT): Texts refer to completely different meditation subjects: aṭṭhikasaññā versus puḷavakasaññā."
- },
- {
-  "num": "46.59",
-  "canon": "46.59",
-  "name": "Mahattha",
-  "cst_title": "3. Vinīlakasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "src": "name",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.4,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Textual variants with standard peyyala expansion in CST."
- },
- {
-  "num": "46.60",
-  "canon": "46.60",
-  "name": "Yogakkhema",
-  "cst_title": "4. Vicchiddakasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.5,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical meditation subject with minor elision differences."
- },
- {
-  "num": "46.61",
-  "canon": "46.61",
-  "name": "Saṃvega",
-  "cst_title": "5. Uddhumātakasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.5,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Identical meditation subjects with minor editorial elision differences."
- },
- {
-  "num": "46.62",
-  "canon": "46.62",
-  "name": "Phāsuvihāra",
-  "cst_title": "6. Mettāsuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.75,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages refer to the cultivation of mettā with minor textual variants."
- },
- {
-  "num": "46.63",
-  "canon": "46.58",
-  "name": "Puḷavaka",
-  "cst_title": "2. Puḷavakasuttaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "src": "name",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.57,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages refer to the puḷavakasaññā with peyyāla elisions."
- },
- {
-  "num": "46.64",
-  "canon": "46.59",
-  "name": "Vinīlaka",
-  "cst_title": "3. Vinīlakasuttaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "src": "name",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.4,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages refer to the meditation on a corpse of a bluish-black colour (vinīlakasaññā)."
- },
- {
-  "num": "46.65",
-  "canon": "46.60",
-  "name": "Vicchiddaka",
-  "cst_title": "4. Vicchiddakasuttaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "src": "name",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.5,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages refer to vicchiddakasaññā; CST includes a peyyāla abbreviation."
- },
- {
-  "num": "46.66",
-  "canon": "46.61",
-  "name": "Uddhumātaka",
-  "cst_title": "5. Uddhumātakasuttaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "src": "name",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.5,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core meditation subject matches; differences are due to elisions and numbering."
- },
- {
-  "num": "46.67",
-  "canon": "46.62",
-  "name": "Mettā",
-  "cst_title": "6. Mettāsuttaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "src": "name",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.75,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Identical metta meditation formula with minor orthographic elision differences."
- },
- {
-  "num": "46.68",
-  "canon": "46.63",
-  "name": "Karuṇā",
-  "cst_title": "7. Karuṇāsuttaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "src": "name",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.75,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages refer to the development of compassion."
- },
- {
-  "num": "46.69",
-  "canon": "46.64",
-  "name": "Muditā",
-  "cst_title": "8. Muditāsuttaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "src": "name",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.75,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages refer to the cultivation of mudita with minor textual abbreviations."
- },
- {
-  "num": "46.70",
-  "canon": "46.65",
-  "name": "Upekkhā",
-  "cst_title": "9. Upekkhāsuttaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "src": "name",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.75,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Orthographic variation and standard elision differences in editions."
- },
- {
-  "num": "46.71",
-  "canon": "46.66",
-  "name": "Ānāpāna",
-  "cst_title": "10. Ānāpānasuttaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "src": "name",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.12,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Uddāna summary indicates the same chapter and text with standard peyyāla expansion."
- },
- {
-  "num": "46.72",
-  "canon": "46.67",
-  "name": "Asubha",
-  "cst_title": "1. Asubhasuttaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "src": "name",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.5,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core asubhasaññā teaching matches despite standard textual elision."
- },
- {
-  "num": "46.73",
-  "canon": "46.68",
-  "name": "Maraṇa",
-  "cst_title": "2. Maraṇasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.5,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core subject maraṇasaññā matches; CST contains standard peyyāla expansion."
- },
- {
-  "num": "46.74",
-  "canon": "46.69",
-  "name": "Āhārepaṭikūla",
-  "cst_title": "3. Āhārepaṭikūlasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.6,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core subject food perception matches despite editorial abbreviations and orthographic variants."
- },
- {
-  "num": "46.75",
-  "canon": "46.70",
-  "name": "Anabhirati",
-  "cst_title": "4. Anabhiratisuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "num",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.5,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core formula matches with minor abbreviation differences."
- },
- {
-  "num": "46.76",
-  "canon": "46.71",
-  "name": "Anicca",
-  "cst_title": "5. Aniccasuttaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "src": "name",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.5,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Editions match; minor orthographic differences and textual elisions."
- },
- {
-  "num": "46.77",
-  "canon": "46.72",
-  "name": "Dukkha",
-  "cst_title": "6. Dukkhasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.6,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages refer to the anicce dukkhasaññā discourse with minor textual variation."
- },
- {
-  "num": "46.78",
-  "canon": "46.73",
-  "name": "Anatta",
-  "cst_title": "7. Anattasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.6,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Textual variants with minor elisions; core narrative and teaching are identical."
- },
- {
-  "num": "46.79",
-  "canon": "46.74",
-  "name": "Pahāna",
-  "cst_title": "8. Pahānasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.5,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Editions match with standard textual abbreviation."
- },
- {
-  "num": "46.80",
-  "canon": "46.75",
-  "name": "Virāga",
-  "cst_title": "9. Virāgasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.6,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages contain identical peyyala structure for viragasañña."
- },
- {
-  "num": "46.81",
-  "canon": "46.76",
-  "name": "Nirodha",
-  "cst_title": "10. Nirodhasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.61,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages present the nirodhasaññā-sutta with minor abbreviations and textual expansions."
- },
- {
-  "num": "46.82",
-  "canon": "46.77",
-  "name": "Gaṅgānadīādi",
-  "cst_title": "1-12. Gaṅgānadīādisuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "num",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.53,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core bojjhaṅga teaching matches, CST has standard peyyāla expansions."
- },
- {
   "num": "46.83",
   "canon": "46.89",
   "name": "Tathāgatādi",
@@ -3198,22 +2622,6 @@
   },
   "gemini": "REJECT",
   "reason": "desacuerdo (gate=REJECT / gemini=REJECT): PTS has four oghas while CST has three esanas, different suttas."
- },
- {
-  "num": "46.86",
-  "canon": "46.121",
-  "name": "Oghādi",
-  "cst_title": "1-8. Oghādisuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "src": "num",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.04,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages discuss completely different topics: bojjhaṅga versus ogha."
  },
  {
   "num": "47.1",
@@ -4062,38 +3470,6 @@
   },
   "gemini": "REJECT",
   "reason": "desacuerdo (gate=REJECT / gemini=REJECT): The passages refer to completely different uddāna and expansion contexts."
- },
- {
-  "num": "47.54",
-  "canon": "47.85",
-  "name": "Esanādisuttadasakaṃ",
-  "cst_title": "1-10. Esanādisuttadasakaṃ",
-  "legacy": "DB_VERIFIED",
-  "src": "num",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.06,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Both passages refer to the esana-vaggo and require expansion."
- },
- {
-  "num": "47.55",
-  "canon": "47.95",
-  "name": "Uddhambhāgiyādisuttadasakaṃ",
-  "cst_title": "1-10. Uddhambhāgiyādisuttadasakaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name!",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 1.0,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "PTS abruptly ends while CST expands with the expected peyyāla."
  },
  {
   "num": "48.1",
@@ -6384,22 +5760,6 @@
   "reason": "Both passages share identical core narrative involving Lomasavaṅgīsa and Mahānāma discussing dwellings."
  },
  {
-  "num": "54.13",
-  "canon": "54.13",
-  "name": "Paṭhamāananda",
-  "cst_title": "3. Paṭhamaānandasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.67,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "PTS contains a brief excerpt while CST has the full expanded sutta."
- },
- {
   "num": "54.14",
   "canon": "54.14",
   "name": "Dutiyāananda",
@@ -6734,22 +6094,6 @@
   },
   "gemini": "APPROVE",
   "reason": "Identical core text; variations limited to orthography and peyyāla expansions."
- },
- {
-  "num": "55.15",
-  "canon": "55.15",
-  "name": "Duggativinipātabhaya",
-  "cst_title": "5. Duggativinipātabhayasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "name",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.65,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages share identical doctrinal content regarding the four factors overcoming fear."
  },
  {
   "num": "55.16",
@@ -9232,134 +8576,6 @@
   "reason": "desacuerdo (gate=REJECT / gemini=APPROVE): Core vocabulary and context align; CST expands with standard peyyāla."
  },
  {
-  "num": "56.102",
-  "canon": "56.102",
-  "name": "Devamanussanirayādi",
-  "cst_title": "1. Manussacutinirayasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.7,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core narrative of the nail-dust simile matches across editions."
- },
- {
-  "num": "56.103",
-  "canon": "56.103",
-  "name": "Nirayamanussanirayādi",
-  "cst_title": "2. Manussacutitiracchānasuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.72,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic differences and editorial peyyāla expansions."
- },
- {
-  "num": "56.104",
-  "canon": "56.104",
-  "name": "Nirayadevanirayādi",
-  "cst_title": "3. Manussacutipettivisayasuttaṃ",
-  "legacy": "DB_VERIFIED",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.67,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Identical core narrative with minor orthographic variants and standard elisions."
- },
- {
-  "num": "56.105",
-  "canon": "56.105",
-  "name": "Tiracchānamanussanirayādi",
-  "cst_title": "4-5-6. Manussacutidevanirayādisuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.7,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core narrative matches with expected orthographic differences and editorial peyyāla expansions."
- },
- {
-  "num": "56.108",
-  "canon": "56.108",
-  "name": "Pettidevanirayādi",
-  "cst_title": "7-9. Devacutinirayādisuttaṃ",
-  "legacy": "VALIDADOR",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.74,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard textual elisions and minor spelling variants."
- },
- {
-  "num": "48.72",
-  "canon": "48.73",
-  "name": "Oghādisuttadasakaṃ",
-  "cst_title": "1-12. Pācīnādisuttadvādasakaṃ",
-  "legacy": "VALIDADOR",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.08,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "PTS gives peyyala referencing the full text expanded in CST."
- },
- {
-  "num": "48.73",
-  "canon": "48.74",
-  "name": "Pācīnādisuttadvādasakaṃ",
-  "cst_title": "1-12. Pācīnādisuttadvādasakaṃ",
-  "legacy": "VALIDADOR",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.08,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "PTS gives peyyāla instruction expanding the core indriya-gaṅgā text fully present in CST."
- },
- {
-  "num": "48.74",
-  "canon": "48.75",
-  "name": "Oghādisuttadasakaṃ",
-  "cst_title": "1-12. Pācīnādisuttadvādasakaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "src": "page",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.13,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely distinct suttas from the Indriyasaṃyutta with mismatched content."
- },
- {
   "num": "49.3",
   "canon": "49.23",
   "name": "Balakaraṇīyādisuttadvādasakaṃ",
@@ -9390,22 +8606,6 @@
   },
   "gemini": "APPROVE",
   "reason": "Core narrative matches; CST expands with peyyāla and sammappadhānā."
- },
- {
-  "num": "49.5",
-  "canon": "49.45",
-  "name": "Oghādisuttadasakaṃ",
-  "cst_title": "1-10. Oghādisuttadasakaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "src": "page",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.6,
-   "thr": 0.55
-  },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages concern entirely different subjects, one on esanā and the other on uddhambhāgiyasamyojana."
  },
  {
   "num": "50.3",
@@ -9440,54 +8640,6 @@
   "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS is a brief udāna summary, CST is a full sutta text."
  },
  {
-  "num": "50.5",
-  "canon": "50.45",
-  "name": "Esanādisuttadvādasakaṃ",
-  "cst_title": "1-12. Esanādisuttadvādasakaṃ",
-  "legacy": "VALIDADOR",
-  "src": "page",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.02,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages correspond to peyyala and uddana sections of the Balasamyutta."
- },
- {
-  "num": "50.6",
-  "canon": "50.55",
-  "name": "Oghādisuttadasakaṃ",
-  "cst_title": "1-10. Oghādisuttadasakaṃ",
-  "legacy": "VALIDADOR",
-  "src": "page",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.45,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Core narrative matches with minor orthographic and peyyala differences."
- },
- {
-  "num": "51.34",
-  "canon": "51.34",
-  "name": "Oghādisuttadasakaṃ",
-  "cst_title": "1-12. Gaṅgānadīādisuttadvādasakaṃ",
-  "legacy": "VALIDADOR",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.06,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "PTS gives peyyāla instruction expanding CST's abbreviated gaṅgā-simile text on iddhipāda."
- },
- {
   "num": "53.2",
   "canon": "53.2",
   "name": "Oghādi",
@@ -9504,20 +8656,788 @@
   "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS is a condensed peyyāla summary, CST contains fully expanded suttas."
  },
  {
+  "num": "45.47",
+  "canon": "45.56",
+  "name": "Kalyāṇamitta",
+  "cst_title": "1. Kalyāṇamittasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.57,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages are editions of the same kalyāṇamittatā sutta with standard peyyāla expansions."
+ },
+ {
+  "num": "45.53",
+  "canon": "45.70",
+  "name": "Dutiyakalyāṇamitta",
+  "cst_title": "1. Kalyāṇamittasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.57,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same sutta on kalyāṇamittatā and the noble eightfold path."
+ },
+ {
+  "num": "45.67",
+  "canon": "45.103",
+  "name": "Paṭhamapācīnaninna",
+  "cst_title": "1. Paṭhamapācīnaninnasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "page",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.3,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same river-slope simile and path to Nibbāna."
+ },
+ {
+  "num": "45.68",
+  "canon": "45.104",
+  "name": "Dutiyādipācīnaninnasuttapañcakaṃ",
+  "cst_title": "2-6. Dutiyādipācīnaninnasuttapañcakaṃ",
+  "legacy": "VALIDADOR",
+  "src": "page",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.23,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same river-sea/nibbana peyyala sutta with edition differences."
+ },
+ {
+  "num": "45.71",
+  "canon": "45.115",
+  "name": "Paṭhamapācīnaninna",
+  "cst_title": "1. Paṭhamapācīnaninnasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "page",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.28,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same river-sea Nibbana simile and path development."
+ },
+ {
+  "num": "45.72",
+  "canon": "45.116",
+  "name": "Dutiyādipācīnaninnasuttapañcakaṃ",
+  "cst_title": "2-6. Dutiyādipācīnaninnasuttapañcakaṃ",
+  "legacy": "VALIDADOR",
+  "src": "page",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.23,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Editions match in core river-ocean peyyāla structural framework."
+ },
+ {
+  "num": "45.75",
+  "canon": "45.127",
+  "name": "Paṭhamapācīnaninna",
+  "cst_title": "1. Paṭhamapācīnaninnasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "page",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.28,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the Gangapeyyala sutta text on the eightfold path."
+ },
+ {
+  "num": "45.76",
+  "canon": "45.128",
+  "name": "Dutiyādipācīnaninnasuttapañcakaṃ",
+  "cst_title": "2-6. Dutiyādipācīnaninnasuttapañcakaṃ",
+  "legacy": "VALIDADOR",
+  "src": "page",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.28,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both are versions of the Gaṅgāpeyyāla within the Magga-saṃyutta."
+ },
+ {
+  "num": "45.113",
+  "canon": "45.179",
+  "name": "Upādānakkhandha",
+  "cst_title": "8. Upādānakkhandhasuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.67,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "PTS is an elided version of the exact same five aggregates sutta."
+ },
+ {
+  "num": "46.36",
+  "canon": "46.35",
+  "name": "Yonisomanasikāra",
+  "cst_title": "5. Ayonisomanasikārasuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.33,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS discusses bojjhaṅgas while CST discusses nīvaraṇas."
+ },
+ {
+  "num": "46.37",
+  "canon": "46.36",
+  "name": "Buddhi",
+  "cst_title": "6. Yonisomanasikārasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.21,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages address the seven bojjhaṅgā with textual expansion differences."
+ },
+ {
+  "num": "46.58",
+  "canon": "46.58",
+  "name": "Aññataraphala",
+  "cst_title": "2. Puḷavakasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.57,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages discuss the cultivation of puḷavakasaññā with standard expansion markers."
+ },
+ {
+  "num": "46.59",
+  "canon": "46.59",
+  "name": "Mahattha",
+  "cst_title": "3. Vinīlakasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.25,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Different meditation subjects mentioned"
+ },
+ {
+  "num": "46.60",
+  "canon": "46.60",
+  "name": "Yogakkhema",
+  "cst_title": "4. Vicchiddakasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.25,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely different suttas, texts do not match."
+ },
+ {
+  "num": "46.61",
+  "canon": "46.61",
+  "name": "Saṃvega",
+  "cst_title": "5. Uddhumātakasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.25,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely different suttas, one on mudita and the other on asubha."
+ },
+ {
+  "num": "46.62",
+  "canon": "46.62",
+  "name": "Phāsuvihāra",
+  "cst_title": "6. Mettāsuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.12,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely different text segments and subjects discussed."
+ },
+ {
+  "num": "46.63",
+  "canon": "46.58",
+  "name": "Puḷavaka",
+  "cst_title": "2. Puḷavakasuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.4,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely different meditation subjects: viniḷaka versus puḷavaka."
+ },
+ {
+  "num": "46.64",
+  "canon": "46.59",
+  "name": "Vinīlaka",
+  "cst_title": "3. Vinīlakasuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.25,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Different saññā meditation subjects"
+ },
+ {
+  "num": "46.65",
+  "canon": "46.60",
+  "name": "Vicchiddaka",
+  "cst_title": "4. Vicchiddakasuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.25,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Core narratives and texts are completely different suttas."
+ },
+ {
+  "num": "46.66",
+  "canon": "46.61",
+  "name": "Uddhumātaka",
+  "cst_title": "5. Uddhumātakasuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.25,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): The passages discuss entirely different subjects and do not match."
+ },
+ {
+  "num": "46.67",
+  "canon": "46.62",
+  "name": "Mettā",
+  "cst_title": "6. Mettāsuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.25,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Different suttas with incompatible core subjects"
+ },
+ {
+  "num": "46.68",
+  "canon": "46.63",
+  "name": "Karuṇā",
+  "cst_title": "7. Karuṇāsuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.25,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely distinct texts with different subjects and phrases."
+ },
+ {
+  "num": "46.69",
+  "canon": "46.64",
+  "name": "Muditā",
+  "cst_title": "8. Muditāsuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.2,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely different suttas, one on food perception and the other on muditā."
+ },
+ {
+  "num": "46.70",
+  "canon": "46.65",
+  "name": "Upekkhā",
+  "cst_title": "9. Upekkhāsuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.17,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Texts belong to different suttas with completely distinct core narratives."
+ },
+ {
+  "num": "46.71",
+  "canon": "46.66",
+  "name": "Ānāpāna",
+  "cst_title": "10. Ānāpānasuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.25,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): The passages discuss completely different topics: aniccasaññā versus ānāpānassati."
+ },
+ {
+  "num": "46.72",
+  "canon": "46.67",
+  "name": "Asubha",
+  "cst_title": "1. Asubhasuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.2,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Core narratives and key terms differ completely between editions."
+ },
+ {
+  "num": "46.73",
+  "canon": "46.68",
+  "name": "Maraṇa",
+  "cst_title": "2. Maraṇasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.2,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): The passages discuss entirely different subjects: anattasaññā versus maraṇasaññā."
+ },
+ {
+  "num": "46.74",
+  "canon": "46.69",
+  "name": "Āhārepaṭikūla",
+  "cst_title": "3. Āhārepaṭikūlasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.25,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely distinct suttas with different subjects."
+ },
+ {
+  "num": "46.75",
+  "canon": "46.70",
+  "name": "Anabhirati",
+  "cst_title": "4. Anabhiratisuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.4,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Core narratives and saññā topics differ completely between editions."
+ },
+ {
+  "num": "46.76",
+  "canon": "46.71",
+  "name": "Anicca",
+  "cst_title": "5. Aniccasuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.02,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS is about nirodhasaññā while CST is about aniccasaññā, completely different suttas."
+ },
+ {
+  "num": "46.77",
+  "canon": "46.72",
+  "name": "Dukkha",
+  "cst_title": "6. Dukkhasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.03,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely different texts; one is bojjhaṅga and the other is anicca-saññā."
+ },
+ {
+  "num": "46.78",
+  "canon": "46.73",
+  "name": "Anatta",
+  "cst_title": "7. Anattasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.0,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): The passages represent completely different texts and peyyala expansions."
+ },
+ {
+  "num": "46.79",
+  "canon": "46.74",
+  "name": "Pahāna",
+  "cst_title": "8. Pahānasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.0,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely different text segments with conflicting content markers."
+ },
+ {
+  "num": "46.80",
+  "canon": "46.75",
+  "name": "Virāga",
+  "cst_title": "9. Virāgasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.0,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): The passages represent completely different texts and elisions."
+ },
+ {
+  "num": "46.81",
+  "canon": "46.76",
+  "name": "Nirodha",
+  "cst_title": "10. Nirodhasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.0,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "PTS uses an explicit peyyāla to expand the standard text present in CST."
+ },
+ {
+  "num": "46.82",
+  "canon": "46.77",
+  "name": "Gaṅgānadīādi",
+  "cst_title": "1-12. Gaṅgānadīādisuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.33,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "PTS uses an elision pointing to CST's fully expanded bojjhaṅga text."
+ },
+ {
+  "num": "46.86",
+  "canon": "46.121",
+  "name": "Oghādi",
+  "cst_title": "1-8. Oghādisuttaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.75,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Numerical discrepancy between satta and cattāro in ogha lists."
+ },
+ {
+  "num": "47.54",
+  "canon": "47.85",
+  "name": "Esanādisuttadasakaṃ",
+  "cst_title": "1-10. Esanādisuttadasakaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.06,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely different text content between editions."
+ },
+ {
+  "num": "47.55",
+  "canon": "47.95",
+  "name": "Uddhambhāgiyādisuttadasakaṃ",
+  "cst_title": "1-10. Uddhambhāgiyādisuttadasakaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.0,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS is an uddāna while CST is a full doctrinal text."
+ },
+ {
+  "num": "48.72",
+  "canon": "48.73",
+  "name": "Oghādisuttadasakaṃ",
+  "cst_title": "1-12. Pācīnādisuttadvādasakaṃ",
+  "legacy": "VALIDADOR",
+  "src": "page",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.21,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Texts belong to different sections; PTS contains Uddhambhāgiya and CST has Gaṅgāpeyyāla."
+ },
+ {
+  "num": "48.73",
+  "canon": "48.74",
+  "name": "Pācīnādisuttadvādasakaṃ",
+  "cst_title": "1-12. Pācīnādisuttadvādasakaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.15,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Texts discuss completely different topics: higher fetters versus Ganges simile for faculties."
+ },
+ {
+  "num": "48.74",
+  "canon": "48.75",
+  "name": "Oghādisuttadasakaṃ",
+  "cst_title": "1-12. Pācīnādisuttadvādasakaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.05,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS is a chapter uddāna while CST is the full text of a sutta."
+ },
+ {
+  "num": "49.5",
+  "canon": "49.45",
+  "name": "Oghādisuttadasakaṃ",
+  "cst_title": "1-10. Oghādisuttadasakaṃ",
+  "legacy": "VALIDADOR_HUMANO",
+  "src": "page",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.6,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages focus on completely different doctrinal topics and groupings."
+ },
+ {
+  "num": "50.5",
+  "canon": "50.45",
+  "name": "Esanādisuttadvādasakaṃ",
+  "cst_title": "1-12. Esanādisuttadvādasakaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.0,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages represent completely different textual contents and summaries."
+ },
+ {
+  "num": "50.6",
+  "canon": "50.55",
+  "name": "Oghādisuttadasakaṃ",
+  "cst_title": "1-10. Oghādisuttadasakaṃ",
+  "legacy": "VALIDADOR",
+  "src": "page",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.45,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages discuss the five upper fetters and the five powers identically."
+ },
+ {
+  "num": "51.34",
+  "canon": "51.34",
+  "name": "Oghādisuttadasakaṃ",
+  "cst_title": "1-12. Gaṅgānadīādisuttadvādasakaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.18,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS discusses four floods while CST discusses four bases of success."
+ },
+ {
+  "num": "54.13",
+  "canon": "54.13",
+  "name": "Paṭhamāananda",
+  "cst_title": "3. Paṭhamaānandasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.62,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "PTS uses peyyala while CST expands the full text of the sutta."
+ },
+ {
+  "num": "55.15",
+  "canon": "55.15",
+  "name": "Duggativinipātabhaya",
+  "cst_title": "5. Duggativinipātabhayasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.77,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "PTS is an abbreviated version of the CST text containing identical core doctrine."
+ },
+ {
   "num": "56.97",
   "canon": "56.97",
   "name": "Manussacutiniraya",
   "cst_title": "6-11. Chedanādisuttaṃ",
   "legacy": "VALIDADOR",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
   "gate": {
-   "cov": 0.41,
+   "cov": 0.2,
    "thr": 0.55
   },
-  "gemini": "APPROVE",
-  "reason": "Core vocabulary and subject matter match despite text expansion and elisions."
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely distinct suttas with entirely different similes and subject matter."
  },
  {
   "num": "56.98",
@@ -9525,15 +9445,15 @@
   "name": "Manussacutitiracchāna",
   "cst_title": "6-11. Chedanādisuttaṃ",
   "legacy": "VALIDADOR",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
   "gate": {
-   "cov": 0.41,
+   "cov": 0.44,
    "thr": 0.55
   },
-  "gemini": "APPROVE",
-  "reason": "Core narrative matches with standard textual expansions and peyyāla differences."
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages belong to entirely different suttas with incompatible core narratives."
  },
  {
   "num": "56.99",
@@ -9541,15 +9461,15 @@
   "name": "Manussacutipettivisaya",
   "cst_title": "6-11. Chedanādisuttaṃ",
   "legacy": "VALIDADOR_HUMANO",
-  "src": "page",
+  "src": "dp",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
-   "cov": 0.35,
+   "cov": 0.44,
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages belong to completely different texts and doctrinal contexts."
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely distinct suttas with incompatible core narratives."
  },
  {
   "num": "56.100",
@@ -9557,15 +9477,15 @@
   "name": "Manussacutidevanirayādi",
   "cst_title": "6-11. Chedanādisuttaṃ",
   "legacy": "VALIDADOR_HUMANO",
-  "src": "page",
+  "src": "dp",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
-   "cov": 0.35,
+   "cov": 0.4,
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages discuss completely different topics: one about gati, the other about ariyasacca."
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely different narrative content between the two passages."
  },
  {
   "num": "56.101",
@@ -9573,15 +9493,79 @@
   "name": "Devacutinirayādi",
   "cst_title": "6-11. Chedanādisuttaṃ",
   "legacy": "VALIDADOR_HUMANO",
-  "src": "page",
+  "src": "dp",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
-   "cov": 0.35,
+   "cov": 0.4,
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely distinct suttas with entirely different doctrinal content and narratives."
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages describe completely different topics and suttas."
+ },
+ {
+  "num": "56.102",
+  "canon": "56.102",
+  "name": "Devamanussanirayādi",
+  "cst_title": "1. Manussacutinirayasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.65,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely distinct suttas with different core similes and destinations."
+ },
+ {
+  "num": "56.103",
+  "canon": "56.103",
+  "name": "Nirayamanussanirayādi",
+  "cst_title": "2. Manussacutitiracchānasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.58,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Different departure states; PTS gods versus CST humans."
+ },
+ {
+  "num": "56.104",
+  "canon": "56.104",
+  "name": "Nirayadevanirayādi",
+  "cst_title": "3. Manussacutipettivisayasuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.5,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages refer to different migration destinations from different starting realms."
+ },
+ {
+  "num": "56.105",
+  "canon": "56.105",
+  "name": "Tiracchānamanussanirayādi",
+  "cst_title": "4-5-6. Manussacutidevanirayādisuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.65,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS compares beings from hell to devas, CST from humans."
  },
  {
   "num": "56.106",
@@ -9589,15 +9573,15 @@
   "name": "Tiracchānadevanirayādi",
   "cst_title": "4-5-6. Manussacutidevanirayādisuttaṃ",
   "legacy": "VALIDADOR",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
   "gate": {
-   "cov": 0.7,
+   "cov": 0.65,
    "thr": 0.55
   },
-  "gemini": "APPROVE",
-  "reason": "Core narratives match identically despite orthographic and peyyala differences."
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS discusses beings from hell while CST discusses beings from humanity."
  },
  {
   "num": "56.107",
@@ -9605,15 +9589,31 @@
   "name": "Pettimanussanirayādi",
   "cst_title": "4-5-6. Manussacutidevanirayādisuttaṃ",
   "legacy": "VALIDADOR",
-  "src": "num",
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
   "gate": {
-   "cov": 0.7,
+   "cov": 0.52,
    "thr": 0.55
   },
-  "gemini": "APPROVE",
-  "reason": "Core narrative matches with expected orthographic differences and editorial peyyala expansions."
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Core subjects differ: one discusses animal rebirth, the other human rebirth."
+ },
+ {
+  "num": "56.108",
+  "canon": "56.108",
+  "name": "Pettidevanirayādi",
+  "cst_title": "7-9. Devacutinirayādisuttaṃ",
+  "legacy": "VALIDADOR",
+  "src": "dp",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.52,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): The passages describe completely different destinies and groups of beings."
  },
  {
   "num": "56.109",
@@ -9621,14 +9621,14 @@
   "name": "Pettidevapettivisaya",
   "cst_title": "7-9. Devacutinirayādisuttaṃ",
   "legacy": "VALIDADOR_HUMANO",
-  "src": "page",
+  "src": "dp",
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
-   "cov": 0.16,
+   "cov": 0.6,
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Editions represent completely different texts with extensive divergent peyyāla expansions."
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS discusses pretas while CST discusses devas transmigrating."
  }
 ]

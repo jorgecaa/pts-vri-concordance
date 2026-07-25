@@ -82,33 +82,24 @@ def volume_ii():
 
 
 def volume_iii():
-    from validador_sn3 import (build_pts_suttas, build_massive, excel_entries, resolve_pts,
-                               calibrate_offsets, ditthi_pairs, DITTHI)
+    from validador_sn3 import (build_pts_suttas, pts_records, build_massive, excel_entries,
+                               calibrate_offsets, ditthi_pairs, assign_volume)
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row
     pts = build_pts_suttas(conn.cursor()); mv = build_massive()
-    by_page = {}
-    for (sam, _n), q in pts.items():
-        by_page.setdefault((sam, q['page']), []).append(q)
     off = calibrate_offsets(pts, mv, {k: v[1] for k, v in mv.items()})
     dit = ditthi_pairs(pts)
     key = lambda s: (s['sam'], s['page'], s['line'])
-    cap = _capacity(pts, key)
-    out = {}
-    for e in excel_entries():
-        h = mv.get((e['sam'], e['inner']))
-        p = resolve_pts(e, h, pts, by_page, off)
-        if e['sam'] == DITTHI and 1 <= e['inner'] <= len(dit):
-            p = dit[e['inner'] - 1][1]
-        out[e['num']] = key(p) if p else None
-    return out, cap, len(cap)
+    cap = _capacity(pts_records(pts), key)
+    entries = excel_entries()
+    assigned = assign_volume(entries, pts, mv, off, dit)      # el MISMO camino que el driver
+    return ({e['num']: (key(assigned[e['num']]) if assigned.get(e['num']) else None)
+             for e in entries}, cap, len(cap))
 
 
 def volume_v():
-    """S v resuelve con la cadena de `validador_sn5`; se instrumenta `_sutta_text` para saber
-    qué (página, línea) acabó usando cada fila."""
-    import validador_sn5 as v5
-    from validador_sn5_vri import build_vri_index, build_massive, excel_entries
-    from validador_sn5 import build_markers, ordinal_of
+    """S v usa ahora la asignación global de `validador_sn5_vri.assign_volume`."""
+    from validador_sn5_vri import build_vri_index, build_massive, excel_entries, assign_volume
+    from validador_sn5 import build_markers
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     mm = build_markers(cur); vri = build_vri_index(); c2p = build_massive()
@@ -116,34 +107,7 @@ def volume_v():
     for pg, items in mm.items():
         for line, _gid, _vpos, _nm in items:
             cap[(pg, line)] += 1
-
-    orig = v5._sutta_text
-    def spy(c, page, line):
-        r = orig(c, page, line)
-        if r:
-            spy.last = (page, line)
-        return r
-    v5._sutta_text = spy
-    out = {}
-    try:
-        for e in excel_entries():
-            hit = c2p.get(e['canon'])
-            s = vri.get(hit[0]) if hit else None
-            if not s or not (isinstance(e['page'], int) and e['inner']):
-                out[e['num']] = None
-                continue
-            spy.last = None
-            p = v5.pts_by_name(cur, e['page'], s['title'], mm, min_score=3)
-            if not p and ordinal_of(s['title']) is None:
-                p = v5.pts_by_name(cur, e['page'], s['title'], mm, min_score=1, require_unique=True)
-            if not p:
-                p = v5.pts_for(cur, e['page'], e['inner'], mm)
-            if not p:
-                p = v5.pts_by_name(cur, e['page'], s['title'], mm, min_score=1)
-            out[e['num']] = spy.last if p else None
-    finally:
-        v5._sutta_text = orig
-    return out, cap, len(cap)
+    return assign_volume(excel_entries(), cur, mm, c2p, vri), cap, len(cap)
 
 
 VOLUMES = {'i': volume_i, 'ii': volume_ii, 'iii': volume_iii, 'v': volume_v}

@@ -23,7 +23,7 @@ from collections import Counter
 
 from openpyxl import load_workbook
 
-from validador_sn3 import (DB, XLSX, FEER, build_massive, build_pts_suttas, excel_entries,
+from validador_sn3 import (DB, XLSX, FEER, build_massive, build_pts_suttas, pts_records, excel_entries,
                            _stem)
 
 # Nombres de GRUPO al estilo CST: «Pitusuttādichakkaṃ» = «los seis, Pitu-sutta etc.» (el rango
@@ -75,8 +75,8 @@ def reidentify():
     entries = excel_entries()
 
     by_page = {}
-    for (sam, num), p in pts.items():
-        by_page.setdefault((sam, p['page']), []).append((num, p))
+    for p in pts_records(pts):
+        by_page.setdefault((p['sam'], p['page']), []).append((p['num'], p))
     # índice del concordance por página PTS: los `Sutta Name` del Excel son de estilo CST
     # ("Ekaputtaka" ↔ "Ekaputtakasuttaṃ"), así que el título CST resuelve lo que el nombre
     # abreviado de Feer no alcanza.

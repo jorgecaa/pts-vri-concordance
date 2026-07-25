@@ -469,22 +469,43 @@ Alcance medido (marcadores compartidos / filas implicadas):
 
 ### Estado de ejecución (2026-07-25)
 
-- **Fase 0 — HECHA.** `audit_injectivity.py` en el repo; línea base medida:
-  **S i 0, S ii 0, S iii 12, S v 12 → hueco total 24.**
-- **Fase 1 — EN CURSO, no aplicada.** `align_rows.py` (el DP monótono con capacidad) está escrito y
-  probado en aislamiento (1:1, colisión, rango de capacidad 3, prohibición de inversiones). Al
-  enchufarlo a S iii **no converge todavía**, y al depurarlo apareció un defecto más profundo que
-  hay que arreglar ANTES:
-  > **`build_pts_suttas` pierde marcadores.** Indexa por `(saṃyutta, nº)` y en el Jhāna-saṃyutta las
-  > claves de *gamana* (`(27)1-4`) machacan los números 1–4 reales: los marcadores
-  > `1 Samādhi-samāpatti` (S iii 263), `2 Ṭhiti` (264), `3 Vuṭṭhāna` (265) y `4 Kallavā` (265)
-  > **no llegan al resolvedor**, y por eso `34.1` apuntaba a S iii 273 desde el primer pase. La
-  > lista de marcadores de SN 34 empieza en el nº 5.
-  Con marcadores ausentes, cualquier asignación global desplaza el tramo entero: **hay que corregir
-  `collect_suttas`/`build_pts_suttas` primero** (clave por posición de lectura, no por nº), volver a
-  medir la fase 0 y solo entonces enchufar el DP.
-- **Fase 2 — no aplicada.** El driver de S iii sigue en el estado validado anterior (332/333); no se
-  ha tocado el Excel ni los veredictos.
+- **Fase 0 — HECHA.** `audit_injectivity.py`. Línea base: S i 0, S ii 0, S iii 12, S v 12 (total 24).
+  **Tras la fase 1: 0 en los cuatro volúmenes.**
+- **Fase 1 — HECHA.** `align_rows.py` (alineamiento monótono con capacidad por DP, probado en
+  aislamiento) enchufado a S iii y S v. Antes hubo que arreglar un defecto anterior que lo impedía:
+  > **`build_pts_suttas` perdía 4 marcadores.** Indexaba por `(saṃyutta, nº)` y en el Jhāna-saṃyutta
+  > las claves de *gamana* (`(27)1-4`) machacaban los números 1–4 reales, así que
+  > `1 Samādhi-samāpatti` (S iii 263), `2 Ṭhiti`, `3 Vuṭṭhāna` y `4 Kallavā` nunca llegaban al
+  > resolvedor — la razón de fondo de que `34.1` apuntara a S iii 273 desde el primer pase. Ahora
+  > cada registro lleva su posición de lectura (`ord`) como identidad única, el índice por
+  > `(saṃyutta, nº)` da preferencia al registro sin gamana y `pts_records()` expone el inventario
+  > completo. SN 34 pasa a mapear 1:1 (34.1→`Samādhi-samāpatti` … 34.10→`Sappāyam`).
+  En S v la asignación va sobre **todo el volumen**, no por saṃyutta: por partes, dos filas de
+  saṃyuttas contiguos reclamaban el mismo marcador en la frontera (S v 305: 52.21 y 53.1).
+- **Fase 2 — PARCIAL. El Excel NO se ha tocado.**
+  - **S iii**: 33 pares cambiaron y se re-validaron → 30 APPROVE, 3 a revisar.
+  - **S v**: 69 pares cambiaron. Las asignaciones nuevas son **mejores** (los nombres de marcador
+    casan: `45.12 Dutiyavihāra`→`Vihāra2.`, `45.28 Samādhi`→`Samādhi.`, y los textos coinciden),
+    pero al ser el texto ahora más ceñido al marcador **cae la cobertura del gate local**: de los
+    131 desacuerdos del JSON, **72 son `gate=REJECT / gemini=APPROVE`** con cobertura mediana 0.40
+    frente al umbral 0.55, que se calibró sobre textos más laxos.
+    > **Decisión pendiente de Jorge**: recalibrar el umbral del gate para el régimen nuevo (texto
+    > ceñido) o mantener «ambos deben aprobar» y arbitrar. No se toca el Excel hasta decidirlo,
+    > porque afectaría a un volumen cerrado.
+
+### Hallazgo: S v nunca se contrastó con su front matter
+
+El layout de S v **sí existe**: `pts_samyutta_v_layout.txt` (12 saṃyuttas XLV–LVI, **103 vaggas,
+1208 suttas**, con recuento por saṃyutta). Nunca se había usado. Al cotejarlo ahora:
+
+- los **12 saṃyuttas** y **todas sus páginas de arranque** salen correctos;
+- el total de marcadores da **1203 frente a 1208** (−5), pero **por saṃyutta hay desvíos que se
+  compensan**: XLV +1, XLVI −10, XLVII +1, XLVIII −9, LI −1, **LIV +13** (33 vs 20) y
+  **LVI −50** (131 vs 181).
+
+Es decir: **el cierre de S v en 610/610 descansa en la concordancia VRI, no en la estructura del
+impreso.** Los dos desvíos grandes (Ānāpāna y Sacca) hay que investigarlos antes de dar el volumen
+por bueno con el mismo estándar que S i–S iii.
 
 ### Fase 0 — prueba de aceptación común (sin API)
 
