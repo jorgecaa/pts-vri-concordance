@@ -757,6 +757,31 @@ Las 186 filas que venían del pase DeepSeek retirado **ya se re-validaron con el
 desacuerdos que Jorge arbitró a mano → `VALIDADOR_HUMANO` (5 en DN, 5 en MN). En el Excel no queda
 **ningún** `HELMER_*` en DN/MN. DN 34/34 y MN 152/152 descansan por tanto en la fuente vigente.
 
+### AN I — Tika-nipāta — ✅ **151/154** con el validador (2026-07-25)
+
+Primer trozo de AN que pasa por el validador. `an1_markers.py` + `an_names.py` +
+`validador_an1_tika.py` + `reconcile_an1_tika.py`.
+
+- **Estructura 16/16** contra el índice de Morris (`anguttara-vol-I-info.txt`): el marcador nº 10k+1
+  cae siempre en la página de arranque de vagga que él declara, y los nº corridos van **1..163 sin
+  un solo hueco**. El lado PTS más limpio del proyecto.
+- **El lado PTS no va por posición**: 163 marcadores para 156 filas. El ancla es la **`DPR Ref`**
+  recuperada del `Raw ID`, que describe los desdoblamientos (`3.32 Ānanda` → `AN 3.32a`,
+  `3.33 Sāriputta` → `AN 3.32b`) y las fusiones (`3.39` → `AN 3.38-9`); los sufijos `a`/`b` exigen
+  capacidad 2. Sin el re-parseo previo, este volumen no se alineaba.
+- **Primeras filas de AN con `VRI Ref`** (`s0402m2:N`), la clave canónica — y **no** vía
+  `massive.tsv`, que en AN no sirve de puente.
+- Los valores legados (`OK+RTE`, `RTE_ONLY`, `UNVERIFIED`) son del pase RTE/BUDSIR, fuera de
+  alcance: se sobrescribieron, no se heredaron.
+- **3 a arbitraje**: `3.33 Sāriputta` (comparte el nº32 con `3.32`), `3.138 Sampadā` y
+  `3.139 Vuddhi` (comparten el nº136). Más las **9 filas de rango**, redundantes con individuales
+  que ya existen.
+
+⚠️ **Eka y Duka NO se abordan todavía**, y no por dificultad: allí el CST **no da nombre por sutta**
+(sólo párrafos numerados bajo el vagga), así que no hay cotejo por nombre que sirva de red, y las
+tres ediciones cuentan unidades distintas (Eka: PTS 272 / Excel 159 / CST 323). Montar un alineador
+ahí produciría emparejamientos que ni el validador ni nadie podría desmentir.
+
 ### Fase 5 — AN y KN (4.098 filas, el 67% de lo que queda)
 
 Los XML VRI existen (`s04*`, `s05*`) y `massive.tsv` cubre 1.508 de AN y 2.054 de KN. **Falta la
