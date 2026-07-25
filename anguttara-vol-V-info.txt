@@ -82,3 +82,26 @@ found».
 
 Apéndices del volumen (útiles como referencia externa): I. tabla analítica de toda la
 obra; II. lista de suttas que aparecen **dos o más veces** en el Aṅguttara.
+
+================================================================================
+ESTRUCTURA VERIFICADA Y ALINEADOR (2026-07-25)
+================================================================================
+
+Mismo régimen que A iii y A iv: **numeral romano centrado = nº de SUTTA**, arábigos a
+sangría 5 = párrafos.
+
+**Marcadores: Dasaka 218, Ekādasaka 22.** El único hueco es el `XXXVII` del Dasaka, que
+**se perdió en el OCR**: A v 75 abre sutta nuevo (`1. Atha kho āyasmā Ānando…`) sin
+numeral encima, entre `XXXVI` (p74,12) y `XXXVIII` (p75,20). Misma clase que el nº64
+ausente de A ii.
+
+**Contraste con el índice de Hardy: 23/25** arranques de vagga exactos.
+
+| comprobación (sobre las 217 plenamente alineadas) | resultado |
+|---|---|
+| nombre PTS ≡ título CST | **217/217 (100 %)** |
+| página del marcador ≡ Excel (±1) | **217/217 (100 %)** |
+
+**16 sin alinear**, por diferencia estructural: el Excel lista más de lo que el CST
+nombra (Dasaka 204 filas frente a 199 subheads; Ekādasaka 29 frente a 21). Es la cola de
+peyyāla de siempre, no un defecto del alineador.
