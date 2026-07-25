@@ -180,13 +180,18 @@ todas. Recuento del daño:
 (`1.1` + `-5` → `1.1-5`) y el nombre quedó sin él. Esto disuelve 33 de las 36 claves
 duplicadas que impedían emparejar por `Sutta #`. Ninguna fila se borró ni se añadió.
 
-**3 NO se tocaron, por sufijo numéricamente incoherente** (el final del rango es menor
-que el inicio, señal de que al propio sufijo le falta un dígito):
-  - f2333 `3.58` «-9: Tikaṇṇa, Jāṇussoṇi» → debería ser `3.58-59`, pero **duplica** dos
-    filas individuales que ya existen: f2332 `3.58` «: Tikaṇṇa» y f2334 `3.59`
-    «: Jāṇussoṇi». Decidir si la fila de rango sobra.
-  - f2387 `3.111` «-08: Nidāna 1» y f2388 `3.112` «-10: Nidāna 2» — `-08`/`-10` no
-    encajan como final de rango desde 111/112. Origen del fragmento sin identificar.
+**Las 3 restantes se resolvieron con la columna `Raw ID`**, que conserva la cadena
+original íntegra y es la autoridad:
+  - f2333: `Raw ID = «AN 3.58-9: Tikaṇṇa, Jāṇussoṇi»`. El `-9` **no es un dígito
+    perdido**: es la abreviatura inglesa de rango (`58-9` = 58–59, como «pp. 158-9»).
+    → `Sutta #` = `3.58-9`. Sigue **duplicando** dos filas individuales que ya existen
+    (f2332 `3.58` «Tikaṇṇa», f2334 `3.59` «Jāṇussoṇi»): decidir si la de rango sobra.
+  - f2387/f2388: `Raw ID = «AN 3.111 [AN 3.107]-08: Nidāna 1»`. El `-08` pertenece a la
+    **referencia**, no al `Sutta #` — el corchete cerró antes de tiempo y la ref real es
+    `[AN 3.107-108]`. → el `Sutta #` se queda en `3.111`/`3.112` y sólo se limpió el
+    nombre.
+
+**Verificación: `Sutta #` ≡ el número del `Raw ID` en 1737/1737 filas de AN.**
 
 **3 claves duplicadas que quedan** (pre-existentes, NO causadas por la reparación):
   - AN i `2.19`: f2179 «Adhikaraṇa 9» y f2180 «(*) + AN 3.29(*): Adhikaraṇa 9 + Andha»
@@ -194,7 +199,28 @@ que el inicio, señal de que al propio sufijo le falta un dígito):
   - AN ii `4.257`: f2694 «Māluṅkyāputta» (A ii 251,5) y f2698 «Ājānīya 2» (A ii 251,15)
     — dos suttas distintos con el mismo número; uno está mal.
 
-**PENDIENTE DE DECISIÓN**: normalizar las 1126 que empiezan por `: ` y los 9 corchetes
-sin cerrar. Es cosmético y no pierde información (la referencia entre corchetes es
-redundante con `massive.tsv`), pero un `: ` inicial estorba a cualquier cotejo por
-nombre.
+================================================================================
+¿DE QUIÉN ES LA CULPA? — NI DEL OCR NI DE LA EDICIÓN
+================================================================================
+
+La columna **`Raw ID` conserva la cadena original íntegra**, con la forma
+`AN <nº> [<referencia>]: <nombre>`, así que el origen de cada patrón es comprobable:
+
+| patrón | `Raw ID` | culpable |
+|---|---|---|
+| `-N` al frente (166) | `AN 1.1-5 [AN 1.1.1-5]: Cittapariyādāna…` | **nuestro parser**: partió por `AN 1.1` y volcó el resto al nombre |
+| `: ` al frente (1126) | `AN 3.1: Bhaya` — **sin corchete alguno** | **nuestro parser**: dejó el separador. La fuente está intacta; no falta nada |
+| corchete sin cerrar (9) | `AN 1.31 [AN 1.4.1: Adanta 1` | **la fuente** (datos del blog) ya viene así |
+| `-9`, `-08`, `-10` | `AN 3.58-9`, `AN 3.111 [AN 3.107]-08` | **ninguno**: abreviatura inglesa de rango |
+
+Los nombres **nunca salieron del OCR del impreso**: PTS no imprime nombres de sutta en
+AN I (sólo números). Vinieron de `PTS_Reference_Full_Canon_CORRECTED.xlsx` («the
+original blog data», ver `rebuild_an.py`), fichero que ya no está en el repo — pero
+`Raw ID` lo preserva fila a fila.
+
+**CONSECUENCIA**: el arreglo correcto no es parchear síntomas sino **re-parsear las
+1738 filas de AN desde `Raw ID`** con una gramática del formato `AN <nº> [<ref>]:
+<nombre>` (con `pyparsing`, regla (2) del proyecto), lo que además recupera la
+referencia DPR entre corchetes como dato aprovechable en vez de dejarla incrustada en
+el nombre. Las 9 de corchete sin cerrar hay que tratarlas como caso tolerado de la
+gramática, no como error.
