@@ -66,9 +66,13 @@ REGIONES = [
 # orden y los dos terminan `…mānassa atimānassa **madassa pamādassa**`. El Excel se saltó `mada` y
 # repitió `macchariya` al final, de modo que sus dos últimas filas van corridas una posición.
 # La aritmética confirma cuál es cuál: 30 paranums por kilesa desde 304 ⇒ 724-753 = el 15º = mada.
+# El mismo error está en A iii, con la misma forma: el Pañcaka reparte 50 paranums por kilesa
+# desde 353, así que `1053-1102` es el 15º (= mada) y `1103-1152` el 16º (= pamāda).
 NOMBRES_CORREGIDOS = {
     ('ii', '4.724-753'): ('Pamāda peyyāla', 'Mada peyyāla'),
     ('ii', '4.754-783'): ('Macchariya peyyāla', 'Pamāda peyyāla'),
+    ('iii', '5.1053-1102'): ('Pamāda peyyāla', 'Mada peyyāla'),
+    ('iii', '5.1103-1152'): ('Macchariya peyyāla', 'Pamāda peyyāla'),
 }
 
 MIN_PROSA = 60          # tokens: por debajo de esto el texto está elidido y no hay qué cotejar
