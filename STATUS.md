@@ -173,7 +173,24 @@ rango cuyo tramo el contenido no puede delimitar porque los suttas no son de fó
 `1.333-377`, 45 suttas, da un tramo de 7), y un puñado del vagga 20 donde dos filas compiten por el
 mismo paranum (`1.394` y `1.395-401` apuntan las dos al 382: una de las dos sobra).
 
-**Fase D — el Tika.** 151/154 ya cerradas; quedan 3 arbitrajes y las 9 filas de rango redundantes.
+**Fase D — el Tika.** ✅ **10 de 18** (2026-07-25), `reconcile_an1_tika_restos.py`. A i → **409/435**.
+
+Se cierran seis filas de rango por **redundancia probada** (todos sus miembros ya CONFIRMADO con su
+`VRI Ref`; ojo a que **no** coinciden con el `Sutta #`: el Tika va +1 desde el paranum 49, así que
+`3.51-52` es `52-53` y `3.58-9` es `59-60`), los **tres `REVISAR`** —los tres rechazaban por lo
+mismo, que **PTS imprime dos suttas del CST bajo un solo número** (el marcador 32 cubre el paranum
+33; el 136 cubre el 139 y el 140), y el cotejo da **0,90** en los tres: es A ii 174 otra vez— y
+`3.62 Bhaya`, que el alineador había dejado fuera y el contenido resuelve con 0,96 contra 0,60.
+
+Las **8 anotadas** no son deuda de método:
+
+- **`3.156`** empata entre los paranums 162 y 163 (0,97 los dos) y cae exactamente donde **Morris
+  declara que conjetura**: «The Acelaka-vagga **probably** included only suttas 151, 152; so that
+  the ten suttas 153-162 made a second vagga…». Con el editor diciendo que no lo sabe, resolverlo
+  por cobertura sería inventar precisión que la fuente no tiene.
+- **Siete filas cuya numeración excede a la del CST**: el Tika del Excel llega a 352 y `s0402m2`
+  acaba en **184**; su Duka llega a 479 y `s0402m1` acaba en **246**. Mismo caso que `11.502-981` en
+  A v, y misma salida: decisión editorial, no aritmética.
 
 **Lo que NO se hará**: forzar una correspondencia 1:1 donde las ediciones no la tienen. El Eka
 tardío es un caso en el que **PTS y el CST no editan la misma unidad de texto**, y la salida
@@ -403,12 +420,15 @@ Use this terminology consistently across the project:
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
-| AN | 1738 | 1702 | 36 | 97.9% |
+| AN | 1738 | 1712 | 26 | 98.5% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6098** | **3702** | **2396** | **60.7%** |
+| **TOTAL** | **6098** | **3712** | **2386** | **60.9%** |
 
 > Desglose de AN (2026-07-25): **A ii 303/303, A iii 457/457, A iv 298/298 y A v 245/245 —
-> los cuatro CERRADOS 🔒**, y **A i 399/435** tras las fases B y C. Eka y Duka
+> los cuatro CERRADOS 🔒**, y **A i 409/435** tras las fases B, C y D. Las 26 que quedan en AN
+> están todas anotadas fila a fila en `Detail`: 16 de la cola del Eka, 8 de numeración que excede
+> a la del CST, la conjetura declarada de Morris sobre el Acelaka-vagga, y la clave duplicada
+> `2.19`. Eka y Duka
 > (284 filas) siguen sin abordar a propósito.
 >
 > ⚠️ **`11.502-981` cierra por decisión editorial de Jorge**: PTS imprime el símil del gopālaka
