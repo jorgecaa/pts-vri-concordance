@@ -159,3 +159,42 @@ EL LADO CST TAMPOCO TIENE LA FORMA DE SN
   su campo `cst_sutta` va **vacío** para an1/an2.
 - ⚠️ **El `Sutta #` del Excel NO es la numeración DPR** (otra vez): la fila
   `3.155 Pubbaṇha` (A i 294) es el `AN3.140` de `massive` — desfase **+15**.
+
+================================================================================
+SANEAMIENTO DEL EXCEL — columna «Sutta Name» de AN (2026-07-25)
+================================================================================
+
+La columna `Sutta Name` de AN tiene la forma `<referencia>: <nombre>` y la
+**referencia está dañada en 1302 de las 1738 filas**. El *nombre* sí está intacto en
+todas. Recuento del daño:
+
+| patrón | filas |
+|---|---|
+| empieza por `: ` — la referencia se perdió entera | **1126** |
+| empieza por `-N` — el nº del sutta **partido entre dos columnas** | 166 |
+| corchete sin cerrar (`[AN 1.4.1: Adanta 1`) | 9 |
+| empieza por `(*)` | 1 |
+| limpias | 436 |
+
+**HECHO: reparadas las 166 del número partido → 163.** El `-N` se movió a `Sutta #`
+(`1.1` + `-5` → `1.1-5`) y el nombre quedó sin él. Esto disuelve 33 de las 36 claves
+duplicadas que impedían emparejar por `Sutta #`. Ninguna fila se borró ni se añadió.
+
+**3 NO se tocaron, por sufijo numéricamente incoherente** (el final del rango es menor
+que el inicio, señal de que al propio sufijo le falta un dígito):
+  - f2333 `3.58` «-9: Tikaṇṇa, Jāṇussoṇi» → debería ser `3.58-59`, pero **duplica** dos
+    filas individuales que ya existen: f2332 `3.58` «: Tikaṇṇa» y f2334 `3.59`
+    «: Jāṇussoṇi». Decidir si la fila de rango sobra.
+  - f2387 `3.111` «-08: Nidāna 1» y f2388 `3.112` «-10: Nidāna 2» — `-08`/`-10` no
+    encajan como final de rango desde 111/112. Origen del fragmento sin identificar.
+
+**3 claves duplicadas que quedan** (pre-existentes, NO causadas por la reparación):
+  - AN i `2.19`: f2179 «Adhikaraṇa 9» y f2180 «(*) + AN 3.29(*): Adhikaraṇa 9 + Andha»
+  - AN i `3.58`: la de arriba
+  - AN ii `4.257`: f2694 «Māluṅkyāputta» (A ii 251,5) y f2698 «Ājānīya 2» (A ii 251,15)
+    — dos suttas distintos con el mismo número; uno está mal.
+
+**PENDIENTE DE DECISIÓN**: normalizar las 1126 que empiezan por `: ` y los 9 corchetes
+sin cerrar. Es cosmético y no pierde información (la referencia entre corchetes es
+redundante con `massive.tsv`), pero un `: ` inicial estorba a cualquier cotejo por
+nombre.
