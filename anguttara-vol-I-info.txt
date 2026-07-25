@@ -224,3 +224,55 @@ original blog data», ver `rebuild_an.py`), fichero que ya no está en el repo �
 referencia DPR entre corchetes como dato aprovechable en vez de dejarla incrustada en
 el nombre. Las 9 de corchete sin cerrar hay que tratarlas como caso tolerado de la
 gramática, no como error.
+
+================================================================================
+RE-PARSEO DESDE `Raw ID` — HECHO (2026-07-25)
+================================================================================
+
+`an_rawid.py` (gramática **pyparsing** del formato `AN <nº> [<ref>]: <nombre>`).
+Aplicado a las **1738 filas de AN**:
+
+- **1738/1738 parsean**, y el número extraído **coincide con el `Sutta #` actual en
+  las 1738** (confirma que las reparaciones previas eran correctas).
+- **1287 nombres limpiados** (se les quitó el `-N`, el `: ` residual o la referencia
+  incrustada). Ninguno queda vacío.
+- **Columna nueva `DPR Ref`** con **557 referencias** recuperadas, que antes estaban
+  sepultadas dentro del nombre.
+- Quedan **5 nombres con el corchete sin cerrar** (`Saññojanīya [Saññojana`): son
+  **nombres variantes truncados EN LA FUENTE**, no daño nuestro. Se dejan como están.
+
+**Lo que la `DPR Ref` revela**: el desfase Excel↔DPR no es un offset ciego sino
+**desdoblamientos de fila**, y ahora se leen uno a uno:
+
+    Sutta# 3.32 → «AN 3.32a»     el Excel PARTE en dos el 3.32 del DPR
+    Sutta# 3.33 → «AN 3.32b»
+    Sutta# 3.34 → «AN 3.33»      …y desde ahí todo corre +1
+
+El +15 observado en `3.155 Pubbaṇha` es la acumulación de esos desdoblamientos.
+
+================================================================================
+⚠️ AVISO PARA LA FASE DE ALINEACIÓN: `massive.tsv` NO SIRVE DE PUENTE EN AN
+================================================================================
+
+Se auditó el enlace Excel→`massive` **por nombre**, no por existencia de clave (la
+lección de `regla-verificar-clave-emparejamiento`). Resultado sobre 1738 filas:
+
+    nombre OK ...............     66
+    nombre DISCREPA ......... 1 143
+    sin clave ...............    187
+    ref de 3 niveles ........    270   (formato incompatible)
+
+Las causas, comprobadas:
+- El `dpr_code` de AN en `massive` tiene **138 códigos duplicados** — filas de cabecera
+  con `cst_code` vacío (`AN3.1` aparece dos veces: una con `cst=an3` sin paranum).
+- Y asignaciones **incoherentes entre sí**: `AN3.2` → `an3.1.2.8` («8. Devalokasuttaṃ»,
+  paranum 18) mientras `AN3.11` → `an3.1.2.11` («1. Ñātasuttaṃ», paranum 11). No es un
+  offset constante: es que el código no identifica el sutta de forma unívoca.
+- La `DPR Ref` del Excel usa **dos notaciones**: 3 niveles (`AN 1.1.1`,
+  nipāta.vagga.sutta) en Eka y Duka, y 2 niveles (`AN 3.33`) en el Tika. `massive` sólo
+  usa 2 niveles.
+
+**Conclusión: AN no puede usar la receta de S iv.** Allí el puente fue
+Excel→`massive`→paranum→XML; aquí ese primer tramo no es de fiar. El lado CST habrá que
+resolverlo **contra el XML VRI directamente**, por nombre y estructura (vaggas de diez),
+usando el índice de Morris como verdad-terreno del lado PTS.
