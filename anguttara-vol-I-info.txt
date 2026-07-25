@@ -276,3 +276,42 @@ Las causas, comprobadas:
 Excel→`massive`→paranum→XML; aquí ese primer tramo no es de fiar. El lado CST habrá que
 resolverlo **contra el XML VRI directamente**, por nombre y estructura (vaggas de diez),
 usando el índice de Morris como verdad-terreno del lado PTS.
+
+================================================================================
+ALINEADOR DE AN I — PRIMERA ETAPA (2026-07-25): gramática de marcadores
+================================================================================
+
+`an1_markers.py` (**pyparsing**). Formas que reconoce, una por régimen:
+
+- **vagga**: numeral romano centrado, con la **llamada de nota pegada** (`XIV.3`) — sin admitirla
+  se pierden 4 de los 21 del Eka.
+- **sutta (Eka/Duka)**: `N.` a sangría 5-6, **incluidos los PARES** `4, 5. Kosajjaṃ … viriyārambho.`
+  y `3,4. …` — una línea que cubre dos suttas.
+- **sutta (Tika)**: `N.` **centrado** y **corrido**; el vagga no se imprime.
+- **colofón de vagga**: `Kalyāṇamittādi-vaggo aṭṭhamo.` → nombre + ordinal. **Es mejor señal que el
+  romano** y su nombre casa con el del CST (`Rūpādi` ↔ «1. Rūpādivaggo», `Paṇihita-acchanna` ↔
+  «5. Paṇihitaacchavaggo»). Hallados **42**: Eka 12/21, Duka 16/17, Tika 14/16.
+
+**Correspondencia de vaggas PTS↔CST** (por nombre): **Eka 16 de 21**, **Duka 14 de 17**. Diverge a
+partir de Eka XVII: PTS lee `Bīja`/`Makkhali`/`Appamattaka`/`Jhāna` donde el CST lee
+`Pasādakaradhamma`/`Aparaaccharāsaṅghāta`/`Kāyagatāsati`/`Amata`. Son divisiones distintas, no
+variantes de nombre.
+
+⚠️ **LO QUE FALTA POR CONCILIAR — y no es menor:**
+
+| nipāta | marcadores PTS | filas Excel | paranums CST |
+|---|---:|---:|---:|
+| Eka | 272 | 159 | 323 |
+| Duka | 212 | 111 | 195 |
+| **Tika** | **163** | **165** | **159** |
+
+Las tres cuentas divergen en Eka y Duka porque **cada edición comprime de forma distinta**: el
+propio PTS cierra el Eka con «**Ekanipātassa suttasahassaṃ samattaṃ**» (p46) — *mil* suttas
+nominales repartidos en 272 marcadores impresos. No es un desfase que se corrija con un offset: es
+que la unidad «sutta» no significa lo mismo en las tres.
+
+**El Tika es el único de los tres donde las cuentas casi coinciden** (163/165/159) **y el único
+donde el CST trae nombre por sutta** (10 subheads por vagga). Es por donde hay que empezar: allí
+sirve la receta conocida (alinear filas↔subheads por nombre, `align_rows` monótono, `VRI Ref`),
+mientras que Eka y Duka necesitan una alineación **estructural** (vagga N, sutta M ↔ M-ésimo
+paranum del vagga N) y una decisión previa sobre qué cuenta como fila.
