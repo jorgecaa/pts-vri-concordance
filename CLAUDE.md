@@ -34,6 +34,12 @@ destructive edits; there is no undo.
 > `rte_pts_refs.json`, `/home/jorge/Code/tipitaka.rte/`, and the `OK+RTE`/`RTE_ONLY` marks) — out of
 > scope, do not use to validate. Sinhalese *manuscript sigla* inside the PTS apparatus are fine (that
 > is the Canon, not the tipitaka.lk edition). **Net: the only valid sources are PTS (DB) and CST (Helmer).**
+> **(5) Ante casos complejos de divergencia estructural, incluso dentro de un mismo archivo, se debe
+> separar la lógica algorítmica.** Un analizador por régimen, no uno parametrizado que intente
+> servir a todos: una regla única ajustada a la mayoría **se equivoca en silencio** en la minoría, y
+> el validador no puede detectarlo porque el par PTS↔CST que recibe es coherente consigo mismo. Ver
+> `sn34_series.py` (SN 34: dos convenciones opuestas en un mismo saṃyutta, cuatro filas mal
+> emparejadas y tres ya CONFIRMADO).
 
 ## Running & testing the app
 
@@ -89,6 +95,16 @@ touching any concordance script. Non-negotiable principles baked into this proje
 - **NO HAY HOMOGENEIDAD** — every Nikāya (sometimes every volume) has its own marker/numbering
   convention. There is *no universal parser*. Each has a dedicated script (`add_*_lines.py`,
   `parse_sn_grammar.py`, `rebuild_an.py`, `integrate_khuddaka.py`, …).
+  - **Y tampoco dentro de un mismo archivo o saṃyutta.** Ante divergencia estructural compleja,
+    **separa la lógica algorítmica**: un analizador por régimen, seleccionado por un rasgo
+    intrínseco del dato (no por un rango codificado a mano). SN 34 imprime sus 55 suttas bajo dos
+    convenciones **opuestas** — en 1-19 la abreviatura del marcador nombra el *segundo* elemento del
+    compuesto, en los grupos 20-55 nombra el *par* o, truncada con `--`, la *raíz* — y la regla
+    única, ajustada al primer tramo, desplazaba cada fila del segundo al grupo siguiente. Tres de
+    las cuatro filas afectadas ya estaban CONFIRMADO. Antes de generalizar una regla de nombres,
+    comprueba que la convención no cambia a mitad del volumen, y **conserva el dato en bruto**: el
+    `--` que distinguía los dos regímenes lo estaba borrando el `_clean` de la gramática.
+    Ver `sn34_series.py`.
 - **CST numbering ≠ PTS numbering**, especially in SN and AN (per-saṃyutta/per-vagga resets).
   Match by content/name and global ID, never by assuming sequential numeric correspondence.
 - **"NADA se cierra sin el validador"** — a nikāya/volume is only marked CERRADO 🔒 after the
