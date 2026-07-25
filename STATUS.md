@@ -734,6 +734,24 @@ elide). Módulos nuevos: `sn4_markers.py` (gramática pyparsing, 3 regímenes), 
 
 ### Fase 4 — deuda de DN/MN — ✅ **HECHA** (verificado 2026-07-25)
 
+**Revisión de los 10 arbitrajes humanos (2026-07-25).** Se revisaron a raíz del defecto del
+apóstrofo, sospechando que fueran falsos negativos suyos. **No lo eran** — la hipótesis se
+descartó. Sus causas reales, leídas del `gate` guardado en `validador_dnmn.json`:
+
+| causa | nº | detalle |
+|---|---|---|
+| **el sutta tiene DOS nombres aceptados** | **7** | `MN 26` Ariyapariyesana ≡ **Pāsarāsi**; `MN 10` Satipaṭṭhāna ≡ **Mahā**satipaṭṭhāna; `DN 8` Kassapasīhanāda ≡ **Mahā**sīhanāda; y variantes ortográficas: `MN 69` Gulissāni/Goliyāni, `MN 83` Makhādeva/Maghadeva, `MN 124` Bakkula/Bākula, `DN 24` Pāṭika/Pāthika |
+| Jaccard del incipit al borde | 2 | `DN 18` 0.28 y `DN 31` 0.29 contra un umbral de **0.30** |
+| objeción real de Gemini | 1 | `DN 19` Mahāgovinda: «texts diverge into different suttas (Mahāgovinda vs. **Sakka-pañha**)» |
+
+O sea: **9 de los 10 fueron arbitrajes casi triviales** —el gate de DN/MN comprobaba la igualdad
+del título y no sabe de nombres alternativos, que en el Majjhima están documentados desde siempre—
+y sólo `DN 19` exigió criterio de verdad. El arbitraje de Jorge se sostiene en los 10.
+
+⚠️ Nota de método: el gate de DN/MN **no es el de SN/AN**. Usa `título ∧ Jaccard-de-incipit ≥ 0.30`,
+no la cobertura léxica ≥ 0.55. Comparar los números de un volumen con los de otro es un error.
+Un analizador de variantes como `an_names` habría resuelto automáticamente 7 de los 10.
+
 Las 186 filas que venían del pase DeepSeek retirado **ya se re-validaron con el validador**:
 `validador_dnmn.json` = 186 filas, **176 CONFIRMADO** (174 `VALIDADOR` + 2 `PTS_CROSSREF_SN`) y 10
 desacuerdos que Jorge arbitró a mano → `VALIDADOR_HUMANO` (5 en DN, 5 en MN). En el Excel no queda
