@@ -175,3 +175,27 @@ ALINEADOR DEL CATUKKA — auditoría previa a la API (2026-07-25)
   la *otra* numeración, la del vagga Bālapaṇḍita.
 - **No todo lo que parece un ordinal lo es**: `Dasamaggasuttaṃ` empieza por `dasama` (el ordinal de
   10) pero es el nombre *Dasamagga*. Se prueban las dos lecturas del título.
+
+================================================================================
+VALIDACIÓN DEL CATUKKA: 268/272 CONFIRMADO (2026-07-25)
+================================================================================
+
+**4 a arbitraje**, y las cuatro comparten una misma causa: **PTS imprime bajo un solo
+número lo que el CST separa**.
+
+- `4.74 Agga 1` y `4.75 Agga 2` — están **las dos en A ii 79** (líneas 2 y 5) y el
+  marcador nº75 está en **p79,1**: el nº75 de PTS imprime los **dos** suttas «agga»
+  seguidos (`sīlagga…` y luego otro `cattārimāni bhikkhave…`), que el CST numera 74 y
+  75. El nº74 de PTS es otra cosa: el símil de la *vadhukā*, la recién casada.
+- `4.249 Bahukāra` comparte el nº246 con `4.248 Paññāvuddhi` (las dos declaran
+  `DPR AN 4.246`).
+- `4.63 Sabrahma [Brahma]` — cobertura 0.59, con secciones finales divergentes.
+
+⚠️ **Intento fallido, anotado para no repetirlo.** Se probó a resolver `4.74` por
+**contención** (el marcador que precede a la posición que declara el Excel) y a derivar
+de ahí la capacidad. La contención por sí sola no bastaba, y al quitar la restricción
+dura sobre el `Sutta #` para dejarla actuar, **el alineamiento empeoró**: 98 pares
+cambiados y el cruce de página cayendo del 99 % al 96 %, con `4.76` yéndose al marcador
+del vecino. **La restricción por `Sutta #` es load-bearing en AN**, aunque en `4.74` dé
+un resultado equivocado. Revertido. `4.74`/`4.75` son un caso de arbitraje —marcador
+compartido—, no un defecto que se arregle aflojando el ancla.
