@@ -211,12 +211,15 @@ Use this terminology consistently across the project:
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
-| AN | 1738 | 1286 | 452 | 74.0% |
+| AN | 1738 | 1447 | 291 | 83.3% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6098** | **3286** | **2812** | **53.9%** |
+| **TOTAL** | **6098** | **3447** | **2651** | **56.5%** |
 
-> Desglose de AN (2026-07-25): **A ii 303/303 CERRADO 🔒**, A iii 369/457, A iv 248/298,
-> A v 215/245, A i 151/435 (sólo el Tika). Eka y Duka siguen sin abordar a propósito.
+> Desglose de AN (2026-07-25): **A ii 303/303 y A iv 298/298 CERRADOS 🔒**, A iii 452/457,
+> A v 243/245, A i 151/435 (sólo el Tika). Las 7 pendientes de A iii y A v tienen motivo escrito
+> en `Detail` y son de dato, no de método: PTS no imprime esos miembros, o el Excel numera más
+> unidades de las que el CST tiene. **Todo lo demás que falta en AN es A i: Eka y Duka (284
+> filas), sin abordar a propósito.**
 
 > Cifras al **2026-07-25**. **SN entero pasado por el validador: 1810/1815.** Desglose:
 > **S i 271/271, S ii 257/257, S iii 332/332, S iv 344/344, S v 610/610 — los cinco CERRADOS 🔒**. Ya no queda ningún
@@ -538,13 +541,38 @@ Los detectó revisar «¿está terminado?» fila a fila, no el LLM:
 - Fuentes: `sn3_markers.py`, `validador_sn3.py`, `reid_sn3.py`, `reconcile_sn3.py`,
   `calibrate_sn3_lines.py`, `samyutta-vol-III-info.txt`. `parse_sn_grammar.py` queda SUPERADO.
 
-### AN — Anguttara Nikaya — 1,738 filas — **1286/1738 (74,0 %)** ⏳
-- **A ii (Catukka) 303/303 — CERRADO 🔒** (2026-07-25): 268 `VALIDADOR` + 35 `VALIDADOR_HUMANO`.
-- A iii 369/457 · A iv 248/298 · A v 215/245 — les falta el barrido de sus colas peyyāla y de sus
-  filas de rango, que ya tienen herramienta (`validador_an_peyyala.py --vol iii,iv,v`, en seco).
+### AN — Anguttara Nikaya — 1,738 filas — **1447/1738 (83,3 %)** ⏳
+- **A ii (Catukka) 303/303 — CERRADO 🔒** · **A iv 298/298 — CERRADO 🔒** (2026-07-25).
+- **A iii 452/457** y **A v 243/245**: las 7 que faltan tienen el motivo en `Detail` y son de dato:
+  `5.270`/`5.271` (PTS abrevia la segunda tanda de jhānas), `5.282` (el impreso escribe
+  `Sāṭiyagāhāpako` y el Excel `Sāṭikagāhāpaka`), **`5.291`** (PTS **no imprime** ese miembro: su
+  lista salta de `sāmaṇerā` a `upāsikā`), `5.300`, y `11.502-981`/`11.982-1151` (el Excel numera la
+  cola del Ekādasaka hasta 1151 y el CST acaba en 671).
 - A i 151/435: sólo el Tika. **Eka y Duka siguen sin abordar a propósito** — allí el CST no da
   nombre por sutta y las tres ediciones cuentan unidades distintas; antes hay que tener el mapa de
   divisiones y fusiones (`detector_uddana.py`), y el suyo aún no es fiable (ver aviso arriba).
+
+#### Lo que enseñaron los cuatro barridos (A ii → A v)
+
+- **La premisa «`Sutta #` ≡ paranum del VRI» NO es universal.** Se cumple sin excepción en las
+  1099 filas CONFIRMADO del cuerpo de A ii–A v, y **se rompe en las colas**: la del Aṭṭhaka va
+  **+1** desde el grupo *Upāsikā* (`<p n="91-116">` del CST contra `8.91-117` del Excel), y las del
+  Ekādasaka y el Pañcaka **sobrepasan** el último paranum del CST (1151 contra 671; 1152 contra
+  1151). Antes de escribir una `VRI Ref` aritmética en una cola, **comprobar los límites del grupo
+  del CST**.
+- **La prueba mecánica es asimétrica a propósito**: el lado CST no necesita prueba léxica (su ancla
+  es el paranum, la clave canónica), el lado PTS sí (el impreso no numera esos suttas).
+- **La sonda tiene que ser la RARA, no la larga.** En el Navaka las nueve filas casaban con el
+  mismo `sammappadhāna` en posiciones sucesivas: monótono y vacío. Y hace falta un **tope de salto**
+  (`MAX_SALTO`), porque una fila cuyo término no está en el impreso casa lejos y se lleva por
+  delante a todas las siguientes.
+- **Hay elisión SIMÉTRICA**: en el Navaka (`9.74-81`, `9.84-91`) ninguna de las dos ediciones
+  imprime los suttas — las dos remiten al vagga anterior. Lo único que identifica la fila es que
+  los límites del rango coincidan en las tres fuentes.
+- **Tres defectos de nombre desmentidos por la estructura**, todos del mismo tipo (una serie
+  canónica que el Excel altera): `Mada`/`Pamāda` en A ii y en A iii, y `Nīvaraṇa`/`Kāmaguṇa`
+  invertidos en `9.74`/`9.75` (el vagga de referencia y la serie paralela del *iddhipāda* los dan
+  en el orden contrario).
 
 ### KN — Khuddaka Nikaya — 2,360 entries ⏳
 - 254 off-by-one corrections applied

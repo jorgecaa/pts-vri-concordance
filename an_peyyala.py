@@ -52,6 +52,13 @@ _FOLD = str.maketrans({'ā': 'a', 'ī': 'i', 'ū': 'u', 'ṅ': 'n', 'ñ': 'n', '
 
 # ornamento (A iii) y raya (A iv/A v): las dos formas del mismo separador de suttas del impreso
 VENTANA = 400      # caracteres plegados (~60 palabras): radio en el que se busca el término
+# Salto máximo respecto a la fila anterior. Sin este tope, una fila cuyo término NO está en el
+# impreso —PTS elide a veces miembros que el CST sí enumera: su lista del *sikkhāpada-peyyāla* pasa
+# de `sāmaṇerā` a `upāsikā` sin nombrar `upāsaka` ni `sāmaṇerī`— casa con una aparición lejana y
+# **se lleva por delante a todas las siguientes**, porque la monotonía ya no puede retroceder. Con
+# el tope, esa fila se declara no situada y la serie continúa. En el Pañcaka de A iii recuperaba
+# medio tramo.
+MAX_SALTO = 1200
 
 _SEPARADOR = re.compile(r'^(?:{3,}|-{8,})$')
 
@@ -229,6 +236,12 @@ def sondas(nombre):
             # `Dosādi peyyāla` es el peyyāla de *dosa*, y `Bhallikādi` el grupo que abre
             # *Bhallika*. Sin quitarlo, la sonda `dosadi` no existe en ningún impreso.
             w = re.sub(r'adi$', '', w) if len(w) > 5 else w
+            # `apara-` («otro, ulterior») es prefijo SERIAL, no parte del nombre: marca la segunda
+            # vuelta de una serie que ya se ha impreso (`Aparapaṭhamajjhāna` es el `Paṭhamajjhāna`
+            # de la segunda tanda), y el impreso no lo escribe. Se emite también la forma sin él y
+            # la monotonía se encarga de coger la aparición que toca — la SEGUNDA.
+            if w.startswith('apara') and len(w) > 9:
+                out.append(w[5:])
             r = re.sub(r'[aiueom]+$', '', w)
             if len(w) >= 3:
                 out.append(w)
@@ -288,7 +301,7 @@ def serie_monotona(plano, filas, desde=0):
         cand = []
         for s in ss:
             ap = _apariciones(plano, s)
-            sig = [k for k in ap if k >= cur]
+            sig = [k for k in ap if cur <= k <= cur + MAX_SALTO]
             if sig:
                 cand.append((-len(s), len(ap), sig[0], s))
         if not cand:
