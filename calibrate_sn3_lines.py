@@ -23,8 +23,8 @@ from collections import Counter
 
 from openpyxl import load_workbook
 
-from validador_sn3 import (DB, XLSX, DITTHI, build_massive, build_pts_suttas,
-                           calibrate_offsets, ditthi_pairs, excel_entries, resolve_pts)
+from validador_sn3 import (DB, XLSX, DITTHI, build_massive, build_pts_suttas, pts_records,
+                           calibrate_offsets, ditthi_pairs, excel_entries, assign_volume)
 
 REF_RE = re.compile(r'^(S\s+iii\s+)(\d+)(?:\s*,\s*(\d+))?\s*$')
 
@@ -35,19 +35,18 @@ def main():
     pts_by_key = build_pts_suttas(conn.cursor())
     canon2para0 = build_massive()
     by_page = {}
-    for (sam, num), q in pts_by_key.items():
-        by_page.setdefault((sam, q['page']), []).append(q)
+    for q in pts_records(pts_by_key):
+        by_page.setdefault((q['sam'], q['page']), []).append(q)
     # misma resolución que el validador: por nombre sobre la página del ancla (la clave no sirve)
     # misma resolución que el validador, incluidos los offsets calibrados y el Diṭṭhi por posición
     offsets = calibrate_offsets(pts_by_key, canon2para0,
                                 {k: v[1] for k, v in canon2para0.items()})
     ditthi = ditthi_pairs(pts_by_key)
+    # MISMA asignación que el validador (inyectiva y monótona), no la resolución fila a fila
+    assigned = assign_volume(excel_entries(), pts_by_key, canon2para0, offsets, ditthi)
     entries, pts = [], []
     for e in excel_entries():
-        if e['sam'] == DITTHI and 1 <= e['inner'] <= len(ditthi):
-            q = ditthi[e['inner'] - 1][1]
-        else:
-            q = resolve_pts(e, canon2para0.get((e['sam'], e['inner'])), pts_by_key, by_page, offsets)
+        q = assigned.get(e['num'])
         if q:
             entries.append(e); pts.append(q)
     print(f'PTS: {len(pts_by_key)} suttas | filas del Excel resueltas: {len(entries)}')

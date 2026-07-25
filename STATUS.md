@@ -482,16 +482,18 @@ Alcance medido (marcadores compartidos / filas implicadas):
   > completo. SN 34 pasa a mapear 1:1 (34.1→`Samādhi-samāpatti` … 34.10→`Sappāyam`).
   En S v la asignación va sobre **todo el volumen**, no por saṃyutta: por partes, dos filas de
   saṃyuttas contiguos reclamaban el mismo marcador en la frontera (S v 305: 52.21 y 53.1).
-- **Fase 2 — PARCIAL. El Excel NO se ha tocado.**
-  - **S iii**: 33 pares cambiaron y se re-validaron → 30 APPROVE, 3 a revisar.
-  - **S v**: 69 pares cambiaron. Las asignaciones nuevas son **mejores** (los nombres de marcador
-    casan: `45.12 Dutiyavihāra`→`Vihāra2.`, `45.28 Samādhi`→`Samādhi.`, y los textos coinciden),
-    pero al ser el texto ahora más ceñido al marcador **cae la cobertura del gate local**: de los
-    131 desacuerdos del JSON, **72 son `gate=REJECT / gemini=APPROVE`** con cobertura mediana 0.40
-    frente al umbral 0.55, que se calibró sobre textos más laxos.
-    > **Decisión pendiente de Jorge**: recalibrar el umbral del gate para el régimen nuevo (texto
-    > ceñido) o mantener «ambos deben aprobar» y arbitrar. No se toca el Excel hasta decidirlo,
-    > porque afectaría a un volumen cerrado.
+- **Fase 2 — HECHA en S iii; S v se deja como está (decisión de Jorge).**
+  - **S iii**: 33 pares cambiaron, se re-validaron (30 APPROVE) y se volcaron; líneas recalibradas
+    con la misma asignación → **316/316 exactas**. Sigue en **332/333**.
+  - **S v**: 69 pares cambiaron y las asignaciones nuevas son **mejores** (`45.12 Dutiyavihāra`→
+    `Vihāra2.`, `45.28 Samādhi`→`Samādhi.`, con los textos coincidiendo), pero al ceñirse el texto
+    al marcador **cae la cobertura del gate local**: 72 desacuerdos son `gate=REJECT /
+    gemini=APPROVE` con cobertura mediana 0.40 frente al umbral 0.55, calibrado sobre textos laxos.
+    > **Decisión (Jorge, 2026-07-25): no reabrir.** Si el par ya está verificado y Gemini aprueba,
+    > no tiene sentido re-revisarlo para llegar al mismo resultado. S v se queda en 610/610 y el
+    > Excel no se toca; `reconcile_sn5.py --dry` confirma que no habría degradación (538 filas
+    > reescribirían el mismo valor, 40 protegidas). El umbral del gate **no se recalibra**: se deja
+    > documentado que en régimen de texto ceñido su cobertura baja, para no volver a tropezar.
 
 ### Hallazgo: S v nunca se contrastó con su front matter
 
