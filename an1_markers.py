@@ -84,6 +84,9 @@ _FOLD = str.maketrans({'ā': 'a', 'ī': 'i', 'ū': 'u', 'ṅ': 'n', 'ñ': 'n', '
 # los separa una fila de ornamentos que el OCR guardó en el área de uso privado (U+E0E0). Es la
 # única parte del Aṅguttara que marca así — 21 separadores, o sea 22 suttas.
 _ORNAMENTO = re.compile('\ue0e0{3,}')
+# cabecera de paṇṇāsaka: abre el bloque y, en el peyyāla, el PRIMER sutta —que no lleva ornamento
+# delante, porque el ornamento SEPARA, no abre
+_PANNASAKA = re.compile(r'PA[ṆN][ṆN][ĀA]SAK', re.I)
 
 _NIPATA = re.compile(r'(EKA|DUKA|TIKA|CATUKKA|PA[ÑN]CAKA|CHAKKA|SATTAKA|A[ṬT][ṬT]HAKA|'
                      r'NAVAKA|DASAKA|EK[ĀA]DASAKA)-NIP[ĀA]TA', re.I)
@@ -114,6 +117,9 @@ def find_markers_an1(text):
         m = _NIPATA.search(s)
         if m:
             out.append((i, 'nipata', m.group(1).upper(), indent))
+            continue
+        if _PANNASAKA.search(s) and indent >= 10:
+            out.append((i, 'bloque', None, indent))
             continue
         if _ORNAMENTO.search(s):
             out.append((i, 'separador', None, indent))
@@ -170,11 +176,11 @@ def collect_an1(pages):
     En Eka y Duka el `num` es la posición **dentro del vagga** (reinicia); en el Tika es el nº
     **corrido** del nipāta y el vagga se deja a `None` (lo fija después el índice de Morris).
     """
-    out, nip, vag, last_sutta = [], None, None, 0
+    out, nip, vag, last_sutta, bloque = [], None, None, 0, None
     for pg in sorted(pages):
         for ln, kind, val, ind in find_markers_an1('\n'.join(pages[pg])):
             if kind == 'nipata':
-                nip, vag, last_sutta = val, None, 0
+                nip, vag, last_sutta, bloque = val, None, 0, None
             elif kind == 'vagga':
                 a, b = (val if isinstance(val, tuple) else (val, None))
                 # en el régimen «sutta_romano» el numeral centrado ES el sutta, no el vagga
@@ -193,8 +199,17 @@ def collect_an1(pages):
                                         'line': ln, 'from_range': n1 is not None})
                 else:
                     vag = roman_to_int(a)
+            elif kind == 'bloque':
+                bloque = (pg, ln)
             elif kind == 'separador':
-                # sutta sin número: sólo lo delimita el ornamento
+                # El ornamento SEPARA dos suttas: abre el siguiente, no el que termina. El primero
+                # del bloque no lleva ninguno delante y arranca en la cabecera del paṇṇāsaka, así
+                # que hay que emitirlo aparte o toda la serie queda corrida uno.
+                if bloque is not None:
+                    last_sutta += 1
+                    out.append({'nipata': nip, 'vagga': vag, 'num': last_sutta,
+                                'page': bloque[0], 'line': bloque[1], 'sin_numero': True})
+                    bloque = None
                 last_sutta += 1
                 out.append({'nipata': nip, 'vagga': vag, 'num': last_sutta, 'page': pg,
                             'line': ln, 'sin_numero': True})

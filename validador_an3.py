@@ -289,7 +289,7 @@ def main():
     STEM = {e['num']: SEC[nip]['stem'] for nip, _s, _p in SECCIONES for e in SEC[nip]['ind']}
 
     print('=' * 92)
-    print('AN II — CATUKKA-NIPĀTA: pipeline VRI + estructura por colofones (anguttara-vol-II-info.txt)')
+    print('AN III — PAÑCAKA y CHAKKA: pipeline VRI + estructura por colofones (anguttara-vol-III-info.txt)')
     print('=' * 92)
     # Los arranques de vagga se derivan de los COLOFONES, no de la aritmética `10k+1`: en el
     # Chakka los vaggas son de 10, 12, 12, 11 y 11 suttas —lo que Hardy mismo documenta («from one
