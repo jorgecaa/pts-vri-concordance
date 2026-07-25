@@ -1,4 +1,128 @@
 # PTS Reference Concordance — Status Report
+## A i — ANÁLISIS CRÍTICO de la práctica editorial, y plan (2026-07-25)
+
+A i lleva todo el proyecto declarado «sin abordar a propósito». La razón que se daba —«el CST no da
+nombre por sutta y las tres ediciones cuentan unidades distintas»— es cierta pero **incompleta**, y
+al medirla resulta que el problema no está donde se creía.
+
+### 1. Lo que Morris hace, dicho por él mismo
+
+La PTS publicó en 1883 una edición de los dos primeros nipātas que **retiró** «on account of the
+numerous contractions used in the text»; la de 1885 es la buena y en ella «**only a few pe's or
+.... have been employed**». Es decir: Morris **sabe** que el problema editorial de A i es la
+compresión, y su edición es una reacción deliberada contra una compresión anterior excesiva. Aun
+así, el Eka que imprime numera **272** suttas donde el CST numera **611**.
+
+Esa proporción no es error de nadie. Es la política: **donde el canon repite una serie, Morris
+imprime el patrón y numera el grupo**; el CST numera cada miembro. Las dos son decisiones
+editoriales legítimas y el desfase es su consecuencia aritmética.
+
+Morris además declara lo que no sabe. Sobre el Acelaka-vagga del Tika: «The Acelaka-vagga
+**probably** included only suttas 151, 152…». Y sobre los uddāna: «The text of these Uddānas is
+**corrupt in many places**, and though it has been compared with the vaggas themselves, it is still
+not free from error», y el del Tika «does not go beyond the Maṅgala-vagga». Un editor que marca sus
+propias conjeturas es un editor fiable; lo que no se puede es tratar sus conjeturas como datos.
+
+### 2. Las tres coordenadas, medidas
+
+| | Eka | Duka | Tika |
+|---|--:|--:|--:|
+| **PTS** — suttas numerados / vaggas | 272 / 21 | 212 / 17 | 163 / 16 |
+| **CST** — paranums / `div` | 611 / 20 | 246 / 19 | 184 / 18 |
+| **Excel** — filas | 159 | 111 | 165 |
+
+Ni una sola de las tres cifras coincide con otra en ningún nipāta. Pero el desacuerdo **no está
+repartido**:
+
+**El Eka casa EXACTAMENTE en sus doce primeros vaggas** — `10, 10, 10, 10, 10, 10, 10, 10, 17, 42,
+10, 20` en las dos ediciones, incluidos los dos números raros (17 y 42). Toda la divergencia del
+Eka está de su vagga 13 en adelante: PTS `7, 7, 25, 1, 10, 17, 2, 12, 22` contra CST `18, 80, 28,
+—, 70, 16, 181, 37, 12`.
+
+**El Duka casa en sus quince primeros vaggas**, emparejados por nombre uno a uno
+(`Kammakaraṇa ↔ Kammakaraṇavaggo`, …), con las cuentas idénticas salvo en los tres primeros. Toda
+su divergencia está en la cola de peyyāla, donde PTS agrupa en dos vaggas lo que el CST reparte en
+cuatro `-peyyālaṃ`.
+
+Conclusión: **A i no es un volumen difuso, es un volumen con una mitad limpia y una cola dura.**
+Tratarlo como un bloque homogéneo —que es lo que se venía haciendo al aplazarlo entero— es el
+mismo error que la regla (6) prohíbe.
+
+### 3. En la segunda mitad del Eka las dos ediciones ni siquiera nombran igual
+
+| Morris | CST |
+|---|---|
+| XVII **Bīja** | 16. **Ekadhamma**pāḷi |
+| XVIII **Makkhali** | 17. **Pasādakaradhamma**vaggo |
+| XIX **Appamattaka** | 18. **Aparaaccharāsaṅghāta**vaggo |
+| XX–XXI **Jhāna** | 19. Kāyagatāsativaggo · 20. Amatavaggo |
+
+Y el CST marca dos de esas unidades como **`-pāḷi`, no `-vagga`** (`Aṭṭhānapāḷi`, `Ekadhammapāḷi`):
+la propia edición está diciendo que ahí no tiene vaggas sino tiradas de texto. El emparejamiento
+por nombre, que resuelve el Duka entero, **no sirve** en este tramo: hay que ir por contenido.
+
+### 4. Lo que NO es divergencia editorial y hay que descontar antes de contar nada
+
+- **Duka, vagga 1**: sus marcadores son `2, 3, …, 10` — **falta el `1.`**. No es que PTS funda dos
+  suttas: es un marcador perdido, de la misma clase que el `64.` de A ii y el `XXXVII` de A v. El
+  detector lo daba como «PTS funde 1» y es un defecto de lectura, no del impreso.
+- **Marcadores no contiguos** en el Eka tardío: el vagga 15 salta del 13 al 17, el 20 va
+  `1, 2, 10, 14, 18, 22, 32, 39, 47, 55, 63, 192`. Son **marcadores de rango**: PTS numera «10-13»
+  con un solo `10.`. Contarlos como suttas sueltos falsea las dos columnas a la vez.
+
+### 5. El hallazgo: la coordenada de PTS ya está en el Excel, sin usar
+
+El `Sutta #` de A i es un número corrido (1..627) que **no** es el paranum del CST. Pero la columna
+**`DPR Ref`** de A i tiene **tres niveles** —`AN 1.1.1`, `AN 2.14.1-12`— y esos tres niveles son
+`nipāta.vagga.sutta`, que es **exactamente el sistema de coordenadas que PTS imprime**: numeral
+romano de vagga + arábigo que reinicia dentro de él.
+
+Contrastado contra los marcadores reales de la BD:
+
+| | filas | el `(vagga, sutta)` del `DPR Ref` **existe** como marcador de PTS |
+|---|--:|--:|
+| Eka | 159 | **152** |
+| Duka | 111 | **107** |
+
+**259 de 270 filas de Eka y Duka traen ya escrita su referencia al impreso**, y nadie la había
+usado porque el pipeline entero está construido sobre el paranum del CST. Las 11 que fallan son
+identificables: 7 son del vagga 20 del Eka (el Jhāna, donde el DPR cuenta hasta 182 y PTS imprime
+12 marcadores), 3 de la cola peyyāla del Duka, y `2.1` es el marcador perdido del punto 4.
+
+⚠️ Esto **no** contradice la regla (5) —la clave canónica del lado CST sigue siendo el paranum del
+VRI—. Lo que dice es que en A i hay **una segunda clave, del lado PTS**, que en los otros volúmenes
+no existía porque allí el marcador lleva el nº corrido y basta con él.
+
+### 6. Plan
+
+**Fase A — descontar los defectos de lectura (sin API, sin tocar el Excel).**
+Marcadores perdidos (`2.1`) y marcadores de rango del Eka tardío. Hasta que el lado PTS no cuente
+lo que el impreso imprime, cualquier comparación con el CST mide mi parser, no las ediciones.
+*Criterio de salida*: los 21 vaggas del Eka y los 17 del Duka con su recuento estable y explicado.
+
+**Fase B — el Duka entero y los doce primeros vaggas del Eka.**
+Es la mitad limpia: vaggas emparejados por nombre, cuentas coincidentes, y el `DPR Ref` dando el
+marcador. Cada fila se resuelve por **doble clave independiente** —`(vagga, sutta)` del DPR contra
+el marcador del impreso, y posición dentro del `div` contra el paranum del CST— más la página.
+Esto es prueba mecánica del tipo que ya cerró A ii–A v, y **no necesita nombres de sutta**, que era
+la objeción que tenía A i parado. *Alcance estimado*: ~111 filas del Duka + ~110 del Eka.
+
+**Fase C — la cola del Eka (vaggas 13-21) y la del Duka.**
+Aquí no hay nombres ni cuentas que casen, y el emparejamiento por nombre falla. Herramientas, por
+orden: (1) el `subhead` del CST donde lo haya —178 de los 611 paranums del Eka lo tienen—;
+(2) la firma de contenido con bloqueo por vagga, que el piloto de A ii deja en 99,2 % y que aquí
+tiene el trabajo más fácil de lo que parece, porque la serie de Etadagga nombra personas;
+(3) el aparato crítico, que en A iii resolvió lo que el cuerpo elidía.
+*Criterio de salida honesto*: no todas cerrarán. Las que no, con el motivo escrito.
+
+**Fase D — el Tika.** 151/154 ya cerradas; quedan 3 arbitrajes y las 9 filas de rango redundantes.
+
+**Lo que NO se hará**: forzar una correspondencia 1:1 donde las ediciones no la tienen. El Eka
+tardío es un caso en el que **PTS y el CST no editan la misma unidad de texto**, y la salida
+correcta puede ser una fila con `VRI Ref` de rango, no una fila por paranum.
+
+---
+
 ## 2026-07-25 — **A ii CERRADO 🔒 303/303**: el quinto régimen y el uddāna como detector
 
 Cierra el Catukka entero. Las 35 filas que `validador_an2_catukka.py` dejaba fuera **por diseño**
