@@ -495,19 +495,42 @@ Alcance medido (marcadores compartidos / filas implicadas):
     > reescribirían el mismo valor, 40 protegidas). El umbral del gate **no se recalibra**: se deja
     > documentado que en régimen de texto ceñido su cobertura baja, para no volver a tropezar.
 
-### Hallazgo: S v nunca se contrastó con su front matter
+### S v contrastado con su front matter (2026-07-25) — CERRADO
 
-El layout de S v **sí existe**: `pts_samyutta_v_layout.txt` (12 saṃyuttas XLV–LVI, **103 vaggas,
-1208 suttas**, con recuento por saṃyutta). Nunca se había usado. Al cotejarlo ahora:
+`pts_samyutta_v_layout.txt` (12 saṃyuttas XLV–LVI, 103 vaggas, 1208 suttas) nunca se había usado.
+Contrastado ahora, **todo queda explicado**; el volumen no tenía ningún defecto de datos.
 
-- los **12 saṃyuttas** y **todas sus páginas de arranque** salen correctos;
-- el total de marcadores da **1203 frente a 1208** (−5), pero **por saṃyutta hay desvíos que se
-  compensan**: XLV +1, XLVI −10, XLVII +1, XLVIII −9, LI −1, **LIV +13** (33 vs 20) y
-  **LVI −50** (131 vs 181).
+> ⚠️ El layout **no trae páginas de arranque**, solo vaggas y suttas. Una nota anterior decía que
+> «las páginas de arranque salen correctas»: era circular, porque esas páginas las había tomado de
+> mi propia segmentación. Las reales, leídas de los encabezados del texto, son
+> 1, 63, 141, 193, 244, 249, 254, 294, 307, 311, 342, 414.
 
-Es decir: **el cierre de S v en 610/610 descansa en la concordancia VRI, no en la estructura del
-impreso.** Los dos desvíos grandes (Ānāpāna y Sacca) hay que investigarlos antes de dar el volumen
-por bueno con el mismo estándar que S i–S iii.
+- **Vaggas: 103/103 exactos**, saṃyutta por saṃyutta (contados por las líneas `CHAPTER`).
+- **`LVI Sacca = 181` es un error de OCR del fichero; son 131.** Lo prueba la aritmética de la
+  propia tabla: 180+187+103+185+54+110+86+24+54+20+74+**131** = **1208**, el total impreso (con 181
+  daría 1258). Y el texto numera hasta `131. (30) Pañcagati` (S v 477). El «3» se leyó como «8».
+- **`LIV Ānāpāna` daba 33 en vez de 20 por un defecto de mi parser**, ya corregido
+  (`_drop_paragraph_runs`): en S v 328, dentro del sutta 54.12 Kaṅkheyya, hay párrafos numerados con
+  la misma forma que un marcador (`7 (1). Ekam idāham āvuso Mahānāma…`). En todo el volumen solo 9
+  marcadores caen en la banda del margen (sangría 4–7) y **uno solo es genuino** — el rango peyyāla
+  de S v 134, que lleva la fórmula de elisión `vitthāretabba` —, así que en esa banda se exige la
+  fórmula. **Ninguna fila del Excel estaba asignada a los marcadores espurios**, así que el dato
+  nunca estuvo contaminado; SN 54 mapea 1:1 (54.1→p311 L4 … 54.20→p340 L19).
+
+Los cinco desvíos restantes son **irregularidades del propio impreso**, no del pipeline, y suman
+exactamente la diferencia (1190 frente a 1208 = −18):
+
+| saṃyutta | dif | causa |
+|---|---:|---|
+| XLV Magga | +1 | el nº **170 se imprime dos veces**: S v 57 `170. (10) Taṇhā (vivekaº)` y S v 58 `170. (11) Tasinā (Rāgavinayaº)` |
+| XLVI Bojjhaṅga | −10 | **errata que Feer documenta** en su propia nota: S v 135 imprime `99--100` donde debía decir `99--110`, y por eso el saṃyutta cierra en `175` (S v 139) en vez de 185 |
+| XLVII Satipaṭṭhāna | +1 | **rangos solapados** en S v 191: `83--93. (1--11)` y `93--102. (1--9)` comparten el 93 |
+| XLVIII Indriya | −9 | los números **119–127 no llevan marcador** (elididos) |
+| LI Iddhipāda | −1 | el número **78 no lleva marcador** |
+
+**Conclusión: S v queda contrastado con el impreso** — vaggas exactos, recuento explicado hasta el
+último número, y el inventario de marcadores corregido sin que cambie ninguna asignación (610/610
+asignadas, hueco de inyectividad 0).
 
 ### Fase 0 — prueba de aceptación común (sin API)
 

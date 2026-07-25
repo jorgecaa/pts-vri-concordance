@@ -130,7 +130,38 @@ def build_markers(cur):
                     nm = m2.group(3).strip()
                     for run in range(a, b + 1):
                         mm[r['page_no']].append((i + 1, run, a, nm[:60]))
-    return mm
+    return _drop_paragraph_runs(cur, mm)
+
+
+def _drop_paragraph_runs(cur, mm):
+    """Quita los **números de párrafo** que se colaron como marcadores.
+
+    En S v 328 (dentro del sutta 54.12 Kaṅkheyya) hay un bloque de párrafos numerados con la misma
+    forma que un marcador — `7 (1). Ekam idāham āvuso Mahānāma…`, `11--16 (5--10). Dīghaṃ vā
+    assasanto°` — que inflaba el inventario de LIV en 13 puestos (33 frente a los 20 de Feer).
+
+    En todo el volumen solo **9** marcadores caen en la banda del margen de párrafo (sangría 4–7), y
+    de ellos uno solo es genuino: el rango peyyāla de S v 134, que se reconoce porque lleva la
+    **fórmula de elisión** (`vitthāretabba`). Así que en esa banda se exige la fórmula; fuera de ella
+    —títulos a plena caja (S v 58, sangría 1) y marcadores centrados (≥ 8)— no se toca nada.
+    Verificado: descarta exactamente el bloque de p328 y ningún marcador legítimo.
+    """
+    pages = {r['page_no']: (r['unitext'] or '').split('\n')
+             for r in cur.execute('SELECT page_no,unitext FROM pages '
+                                  'WHERE book_no=? AND edition="mula"', (SN5_BOOK,))}
+    out = {}
+    for pg in sorted(mm):
+        keep = []
+        for item in sorted(mm[pg]):
+            line = item[0]
+            raw = pages.get(pg, [''])[line - 1] if line <= len(pages.get(pg, [])) else ''
+            lead = len(raw) - len(raw.rstrip('\r').lstrip())
+            if 4 <= lead <= 7 and not re.search(r'vitth[āa]retabb|peyy[āa]l', raw, re.I):
+                continue                          # margen de párrafo sin fórmula de elisión
+            keep.append(item)
+        if keep:
+            out[pg] = keep
+    return out
 
 
 # Los suttas peyyāla de PTS son legítimamente cortísimos ("virāgasaññā bhikkhave pe"),
