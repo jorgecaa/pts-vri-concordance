@@ -161,6 +161,18 @@ _ORDINAL = {'pathama': 1, 'paṭhama': 1, 'dutiya': 2, 'tatiya': 3, 'catuttha': 
 _ORD_RE = re.compile(r'^(pa[ṭt]hama|dutiya|tatiya|catuttha|pa[ñn]cama)', re.I)
 # nombre compuesto del Jhāna-saṃyutta: «Gocara-mūlaka-abhinīhāra-suttādi-catukkaṃ»
 _MULAKA = re.compile(r'^(.+?)m[ūu]lak[aā](.+?)(?:sutt|$)', re.I)
+# los nombres colectivos declaran su tamaño: «…dasakaṃ» = diez, «…tiṃsakaṃ» = treinta
+_CARD = {'ekādasaka': 11, 'dvādasaka': 12, 'paññāsaka': 50, 'cālīsaka': 40, 'tiṃsaka': 30,
+         'vīsatika': 20, 'navutika': 90, 'dasaka': 10, 'navaka': 9, 'aṭṭhaka': 8, 'sattaka': 7,
+         'chakka': 6, 'pañcaka': 5, 'catukka': 4, 'tika': 3, 'duka': 2}
+
+
+def _cardinal(name):
+    n = (name or '').lower()
+    for k in sorted(_CARD, key=len, reverse=True):
+        if k in n:
+            return _CARD[k]
+    return None
 
 
 def _ordinal_prefix(name):
@@ -278,7 +290,7 @@ def calibrate_offsets(pts, massive, cst_titles):
     return fix
 
 
-def resolve_pts(e, h, pts, by_page, offsets=None):
+def resolve_pts(e, h, pts, by_page, offsets=None, blocks=None):
     """Localiza el sutta PTS de una fila de S iii.
 
     **No se puede usar la clave `(saṃyutta, nº)`**: PTS imprime 158 suttas en el Khandha-saṃyutta
@@ -299,6 +311,11 @@ def resolve_pts(e, h, pts, by_page, offsets=None):
     # CST («Rūpasaññā», «Rūpataṇhā») donde Feer imprime solo la cola («Saññā», «Taṇhā»), y buscar
     # por nombre premia el PREFIJO: «Rūpasaññā» casaba con «Rūpa» de la página vecina en vez de con
     # «Saññā», que es el sutta correcto (S iii 25.6).
+    # NOTA: se probó una vía por CARDINALIDAD del nombre («…dasakaṃ» = 10 → el bloque PTS de 10
+    # miembros) y se DESCARTÓ: en las series repetidas del Vacchagotta y el Jhāna hay varios bloques
+    # del mismo tamaño y cada fila se llevaba el de la serie anterior (11 filas mal resueltas). La
+    # cardinalidad sirve para AUDITAR, no para resolver.
+
     # VÍA -1 — nombre COMPUESTO `X-mūlaka-Y` (Jhāna-saṃyutta): el marcador es el compuesto de PTS
     # («Kallita -- ārammaṇa», «Gocara-Abhinīhāra»), no el simple. Buscar por afinidad suelta elige
     # «Kallita» o «Ārammaṇa», que son otros suttas.
@@ -412,6 +429,7 @@ def main():
     for (sam, num), q in pts.items():
         by_page.setdefault((sam, q['page']), []).append(q)
     cst_titles = {k: v[1] for k, v in massive.items()}
+    blocks = Counter((sam, q['page'], q['line']) for (sam, _n), q in pts.items())
     ditthi = ditthi_pairs(pts)
     offsets = calibrate_offsets(pts, massive, cst_titles)
     if offsets:
@@ -421,7 +439,7 @@ def main():
     tasks, no_cst, name_ok, page_ok = [], [], 0, 0
     for e in entries:
         h = massive.get((e['sam'], e['inner']))
-        p = resolve_pts(e, h, pts, by_page, offsets)
+        p = resolve_pts(e, h, pts, by_page, offsets, blocks)
         ditthi_hit = None
         if e['sam'] == DITTHI and 1 <= e['inner'] <= len(ditthi):
             # el Diṭṭhi va por POSICIÓN sobre los suttas explícitos (ver `ditthi_pairs`)
