@@ -96,20 +96,31 @@ def volume_iii():
              for e in entries}, cap, len(cap))
 
 
+# Los ÚNICOS marcadores de S iv que cubren legítimamente dos suttas del CST. Van declarados uno a
+# uno, con su verificación, en vez de dejarlos salir de una heurística de capacidad: son
+# afirmaciones filológicas y deben poder auditarse a mano.
+SN4_DOBLES = {
+    (35, 126, 28): '«Agayha» imprime los DOS Rūpārāma (S iv 126,29 y 128,8) sin nombrarlos',
+    (36, 233, 12): '«Pubbeñāṇam» = Pubba + Ñāṇa',
+    (36, 235, 17): '«Suddhikaṃ nirāmisam» = Suddhika + Nirāmisa; Feer: «a Suddhika sutta is not '
+                   'to be found… this chapter has only 9 texts»',
+}
+
+
 def volume_iv():
     """S iv: el lado CST va por POSICIÓN (bloques del XML ≡ filas, 344=344) y el PTS por
-    `assign_volume`, con capacidades **medidas en el texto** (hay marcadores que cubren dos
-    suttas del CST: «Agayha», «Pubbeñāṇam», «Suddhikaṃ nirāmisam»)."""
+    `assign_volume`. La capacidad de referencia es la NATURAL (marcadores de rango); los tres
+    encabezados dobles de Feer se declaran en `SN4_DOBLES`."""
     from validador_sn4 import (build_cst_blocks, cst_for, excel_entries, build_pts_suttas,
-                               assign_volume, measured_caps_for)
+                               assign_volume)
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row
     bysam = build_cst_blocks(); entries = excel_entries()
     cstmap = cst_for(entries, bysam)
     recs = build_pts_suttas(conn.cursor())
     key = lambda q: (q['sam'], q['page'], q['line'])
     cap = _capacity(recs, key)
-    for k, v in measured_caps_for(entries, recs, cstmap).items():
-        cap[k] = max(cap[k], v)
+    for k in SN4_DOBLES:
+        cap[k] = max(cap[k], 2)
     assigned = assign_volume(entries, recs, cstmap)
     return ({e['num']: (key(assigned[e['num']]) if assigned.get(e['num']) else None)
              for e in entries}, cap, len(cap))

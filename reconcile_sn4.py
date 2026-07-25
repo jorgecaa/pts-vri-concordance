@@ -65,7 +65,11 @@ def main():
             plan['VALIDADOR(auto)'] += 1
             writes.append((ridx, 'VALIDADOR', 'CONFIRMADO'))
         else:
+            # El REJECT se ESCRIBE como PENDIENTE/REVISAR: si sólo se listara, las filas con
+            # `HELMER_APPROVED` del pase DeepSeek retirado seguirían figurando como CONFIRMADO
+            # justo donde el validador vigente discrepa — que es la herencia que hay que evitar.
             plan['arbitraje(gemini REJECT)'] += 1
+            writes.append((ridx, 'REVISAR', 'PENDIENTE'))
             pend.append(r)
 
     print('Plan de escritura:', dict(plan))

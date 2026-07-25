@@ -279,53 +279,14 @@ def assign_volume(entries, recs, cstmap):
         b = cstmap.get(e['num'])
         if not b:
             return 0.0
-        key = (id(b), q['ord'])
+        key = (e['num'], q['ord'])
         if key not in cov:
             a_ = set(sh.tokens(b['text'])[:350])
             cov[key] = len(a_ & set(q['text'].split())) / max(1, len(a_))
         return cov[key]
 
-    def measured_caps(marks, rows):
-        """Capacidad de cada marcador **medida en el texto**, no adivinada por el nombre.
-
-        Feer junta a veces dos suttas del CST bajo un solo marcador, y el título no siempre lo
-        dice: «Suddhikaṃ nirāmisam» y «Pubbeñāṇam» nombran los dos, pero «Agayha» (S iv 126)
-        imprime los dos Rūpārāma sin nombrar ninguno. Y al revés, «Devadahakhaṇo» **parece** doble
-        y no lo es: el Khaṇa del CST es el marcador siguiente. Contar raíces en el nombre acertaba
-        en tres casos y fallaba en dos.
-
-        Lo que sí decide es el contenido: la capacidad de un marcador es el número de filas que lo
-        eligen a ÉL como el de mayor solapamiento léxico. Es autoconsistente y no depende de cómo
-        titule Feer.
-        """
-        cap = Counter()
-        for e in rows:
-            cs = []
-            for q in marks:
-                base = e['page'] if isinstance(e['page'], int) else q['page']
-                if abs(q['page'] - base) <= 2:
-                    cs.append((content(e, q), (q['page'], q['line'])))
-            if not cs:
-                continue
-            cs.sort(reverse=True)
-            # Cuenta si el marcador es el MÁXIMO de la fila **y** la cobertura es alta. El umbral
-            # alto es lo que filtra el ruido: este corpus es muy formulario (mediana 0.70) y un
-            # argmax por 0.04 sobre coberturas mediocres no es evidencia — sin él, el nº27 de
-            # SN 36 se llevaba dos filas y arrastraba 36.29-36.31 un puesto. Un margen sobre el
-            # segundo mejor no sirve: dejaba fuera la PRIMERA mitad de los marcadores dobles
-            # (36.24 de «Pubbeñāṇam»), y entonces la segunda se quedaba sin sitio.
-            if cs[0][0] >= 0.60:
-                cap[cs[0][1]] += 1
-        return cap
-
-    for sam, rows in by_sam.items():
-        rows.sort(key=lambda e: e['inner'])
-        mk = marks_by_sam.get(sam, {})
-        marks = [mk[k] for k in sorted(mk, key=lambda k: mk[k]['ord'])]
-        if not marks:
-            continue
-
-        def score(i, j, rows=rows, marks=marks):
+    def make_score(rows, marks):
+        def score(i, j):
             e, q = rows[i], marks[j]
             b = cstmap.get(e['num'])
             base = e['page'] if isinstance(e['page'], int) else (b['page'] if b else None)
@@ -349,47 +310,67 @@ def assign_volume(entries, recs, cstmap):
                 if b['page'] is not None and abs(q['page'] - b['page']) <= 1:
                     s += 10
             return s
+        return score
 
-        mc = measured_caps(marks, rows)
-        cc = [max(caps[(sam, q['page'], q['line'])], min(3, mc.get((q['page'], q['line']), 1)))
-              for q in marks]
-        idx = ar_assign(len(rows), len(marks), score, lambda j, cc=cc: cc[j],
-                        skip_penalty=1000.0)
+    def solve(rows, marks, base_cap):
+        """Resuelve subiendo la capacidad **sólo donde el alineamiento demuestre que hace falta**.
+
+        Feer imprime a veces dos suttas del CST bajo un solo encabezado («Agayha» = los dos
+        Rūpārāma; «Pubbeñāṇam»; «Suddhikaṃ nirāmisam»), y hay que permitirlo. Pero estimar la
+        capacidad *a priori* falla en las dos direcciones: contar raíces del nombre daba doble a
+        «Devadahakhaṇo», que no lo es (el Khaṇa del CST es el marcador siguiente), y contar filas
+        cuyo máximo de solapamiento cae en el marcador inflaba el nº160 de S iv 144, donde dos
+        suttas casi idénticas del Jīvakambavana empatan por 0.02 (0.65 frente a 0.63): eso dejaba
+        el nº159 sin usar y corría todo el tramo Koṭṭhika un puesto — el desfase que Gemini cazó
+        («PTS habla de dukkha donde el CST habla de anattā»).
+
+        Aquí se resuelve primero con la capacidad natural. Sólo las filas que quedan **huérfanas**
+        prueban que algún encabezado cubre más de uno, y entonces se sube la capacidad del que
+        mejor las explica por contenido.
+        """
+        score = make_score(rows, marks)
+        cap = list(base_cap)
+        idx = ar_assign(len(rows), len(marks), score, lambda j: cap[j], skip_penalty=1000.0)
+        for _ in range(3):
+            orphans = [i for i, j in enumerate(idx) if j is None]
+            if not orphans:
+                break
+            bumped = False
+            for i in orphans:
+                e = rows[i]
+                bs = e['page'] if isinstance(e['page'], int) else None
+                cs = sorted(((content(e, q), j) for j, q in enumerate(marks)
+                             if bs is None or abs(q['page'] - bs) <= 2), reverse=True)
+                if cs and cap[cs[0][1]] < 3:
+                    cap[cs[0][1]] += 1
+                    bumped = True
+            if not bumped:
+                break
+            idx = ar_assign(len(rows), len(marks), score, lambda j: cap[j], skip_penalty=1000.0)
+        return idx, cap
+
+    for sam, rows in by_sam.items():
+        rows.sort(key=lambda e: e['inner'])
+        mk = marks_by_sam.get(sam, {})
+        marks = [mk[k] for k in sorted(mk, key=lambda k: mk[k]['ord'])]
+        if not marks:
+            continue
+        base = [caps[(sam, q['page'], q['line'])] for q in marks]
+        idx, _cap = solve(rows, marks, base)
         for e, j in zip(rows, idx):
             out[e['num']] = marks[j] if j is not None else None
     return out
 
 
-def measured_caps_for(entries, recs, cstmap):
-    """Las capacidades medidas, expuestas para `audit_injectivity` (mismo camino que el driver)."""
-    out = {}
-    marks_by_sam = {}
-    for q in recs:
-        marks_by_sam.setdefault(q['sam'], {}).setdefault((q['page'], q['line']), q)
-    for sam in {e['sam'] for e in entries}:
-        rows = sorted([e for e in entries if e['sam'] == sam], key=lambda e: e['inner'])
-        mk = marks_by_sam.get(sam, {})
-        marks = [mk[k] for k in sorted(mk, key=lambda k: mk[k]['ord'])]
-        cov = {}
-
-        def content(e, q):
-            b = cstmap.get(e['num'])
-            if not b:
-                return 0.0
-            k = (e['num'], q['ord'])
-            if k not in cov:
-                a_ = set(sh.tokens(b['text'])[:350])
-                cov[k] = len(a_ & set(q['text'].split())) / max(1, len(a_))
-            return cov[k]
-
-        for e in rows:
-            cs = sorted(((content(e, q), (q['page'], q['line'])) for q in marks
-                         if abs(q['page'] - (e['page'] if isinstance(e['page'], int) else q['page'])) <= 2),
-                        reverse=True)
-            if cs and cs[0][0] >= 0.60:
-                k = (sam,) + cs[0][1]
-                out[k] = min(3, out.get(k, 0) + 1)
-    return out
+def caps_used(entries, recs, cstmap):
+    """Las capacidades efectivas por marcador, para `audit_injectivity` (mismo camino)."""
+    from collections import Counter as _C
+    used = _C()
+    a = assign_volume(entries, recs, cstmap)
+    for q in a.values():
+        if q:
+            used[(q['sam'], q['page'], q['line'])] += 1
+    return used
 
 
 def main():
