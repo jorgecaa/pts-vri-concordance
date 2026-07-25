@@ -34,7 +34,17 @@ destructive edits; there is no undo.
 > `rte_pts_refs.json`, `/home/jorge/Code/tipitaka.rte/`, and the `OK+RTE`/`RTE_ONLY` marks) — out of
 > scope, do not use to validate. Sinhalese *manuscript sigla* inside the PTS apparatus are fine (that
 > is the Canon, not the tipitaka.lk edition). **Net: the only valid sources are PTS (DB) and CST (Helmer).**
-> **(5) Ante casos complejos de divergencia estructural, incluso dentro de un mismo archivo, se debe
+> **(5) La clave canónica del lado CST es el paranum del XML VRI, NO la notación DPR.** La columna
+> **`VRI Ref`** (`«<fichero>:<paranum>»`, p.ej. `s0303m:146`; rangos `s0304m:33-42`) es la que une
+> una fila con el texto cotejado. **`Sutta #` es una etiqueta legible, no una clave**, y `DPR Ref`
+> (en AN) es sólo informativa. Motivo: el DPR no identifica el sutta de forma unívoca y lo ha
+> demostrado una y otra vez — S ii desplazado +7, S iv (SN 35) +17 y +47, AN +15 por desdoblamientos
+> de fila; y el `dpr_code` de AN en `massive.tsv` tiene **138 códigos duplicados** y asignaciones
+> incoherentes entre sí (`AN3.2` → `an3.1.2.8` mientras `AN3.11` → `an3.1.2.11`). Cada vez, el
+> validador aprobaba un par correcto **ajeno a la fila**. Backfill hecho con
+> `backfill_vri_ref.py` (1795/1814 filas de SN), y el criterio de aceptación fue que **el título CST
+> recomputado coincidiera con el que se validó**. Todo alineador nuevo debe emitir `VRI Ref`.
+> **(6) Ante casos complejos de divergencia estructural, incluso dentro de un mismo archivo, se debe
 > separar la lógica algorítmica.** Un analizador por régimen, no uno parametrizado que intente
 > servir a todos: una regla única ajustada a la mayoría **se equivoca en silencio** en la minoría, y
 > el validador no puede detectarlo porque el par PTS↔CST que recibe es coherente consigo mismo. Ver
