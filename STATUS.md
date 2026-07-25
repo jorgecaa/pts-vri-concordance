@@ -1,5 +1,5 @@
 # PTS Reference Concordance — Status Report
-## Date: 2026-07-21 (updated 2026-07-25 — SN I/II/V cerrados y SN III 332/333 con el validador)
+## Date: 2026-07-21 (updated 2026-07-25 — SN I/II/V cerrados y SN III 331/333 con el validador)
 
 ---
 
@@ -52,7 +52,7 @@ Use this terminology consistently across the project:
 | **TOTAL** | **6099** | **1751** | **4348** | **28.7%** |
 
 > Cifras al **2026-07-25**. Desglose de SN por el validador: **S i 271/271, S ii 257/257,
-> S iii 332/333, S v 610/610**; **S iv** sigue con los 94 del Helmer legado (250 PENDIENTE) y es
+> S iii 331/333, S v 610/610**; **S iv** sigue con los 94 del Helmer legado (250 PENDIENTE) y es
 > el único volumen de SN sin pasar por el validador.
 > El total pasó de 6090 a **6099 filas**: −1 (`12.74`, división solo-CST borrada) y +10 (la
 > expansión de `12.75` en los 11 suttas que PTS numera). La columna `#` se renumeró.
@@ -280,8 +280,8 @@ Dos filas venían con la forma del **CST**, no la de PTS. Se resolvió leyendo l
 
 ## PENDING
 
-### SN III — Samyutta Nikaya vol 3 (S iii) — 333 filas ⏳ 332/333
-- **Estado 2026-07-25 (4ª pasada): 332 CONFIRMADO** (315 `VALIDADOR` + 17 `VALIDADOR_HUMANO`) **+ 1 PENDIENTE.** Antes: 326 filas
+### SN III — Samyutta Nikaya vol 3 (S iii) — 333 filas ⏳ 331/333
+- **Estado 2026-07-25 (5ª pasada): 331 CONFIRMADO** (316 `VALIDADOR` + 15 `VALIDADOR_HUMANO`) **+ 2 PENDIENTE** (`22.148`, `34.24` — ver Fase 2bis). Antes: 326 filas
   `DB_VERIFIED` (+7 que llegaron de S ii al corregir su volumen) → todo PENDIENTE.
 - **Front matter de Feer (`samyutta-vol-III-info.txt`)**: 13 saṃyuttas **XXII–XXXIV**, y la página
   de arranque de cada uno **cuadra al 100%**. Feer distingue **títulos** de **suttantas** (Nāga son
@@ -485,6 +485,33 @@ Alcance medido (marcadores compartidos / filas implicadas):
 - **Fase 2 — HECHA en S iii; S v se deja como está (decisión de Jorge).**
   - **S iii**: 33 pares cambiaron, se re-validaron (30 APPROVE) y se volcaron; líneas recalibradas
     con la misma asignación → **316/316 exactas**. Sigue en **332/333**.
+- **Fase 2bis (2026-07-25) — el alineador no devolvía el óptimo.** Al mirar S iii 30.5 salió a la luz
+  que `main()` de `validador_sn3.py` seguía llamando al resolvedor fila a fila (la conexión de
+  `assign_volume` se había perdido en un `git checkout`), y al reconectarlo aparecieron **24 pares
+  distintos**, 21 APPROVE. Pero el tramo 22.146-149 seguía mal, y la causa era un **defecto de
+  `align_rows.assign`**: el estado «fila saltada» era un escalar sin memoria de la posición del
+  marcador, así que sólo se admitía cuando superaba el máximo global — y se perdía el óptimo justo
+  donde importa, en una fila del CST que PTS **no imprime** en mitad de una serie. Reescrito: el
+  salto conserva el estado `(marcador, racha)`, que además es lo correcto filológicamente (si a un
+  marcador de rango le falta uno de los suttas del CST, sus vecinos siguen cayendo en él). Ahora es
+  **óptimo demostrado**: 400/400 casos aleatorios contra fuerza bruta, con monotonía y capacidad.
+  Se añadió también al score el **solapamiento léxico CST↔marcador**, única evidencia que discrimina
+  cuando PTS numera una serie `(1)(2)(3)` bajo un título común.
+  - **Efecto**: en S v, **ninguna** asignación cambia; en S iii cambian sólo `22.148` y `22.149`.
+  - **Hallazgo**: PTS **no imprime** `22.148 Dukkhānupassī`. Los tres marcadores «Kulaputtena dukkhā
+    (1)(2)(3)» de S iii 179-180 rezan *nibbidā-bahulaṃ* (146), *aniccānupassī* (147) y
+    *anattānupassī* (148); el dukkhānupassī del CST cae dentro del «pa» de elisión al final del
+    nº 147. Es la fusión 4→3 que ya detectaba `calibrate_offsets` (de ahí `PTS = CST − 1` a partir
+    de 150), pero hasta ahora se le quitaba el marcador al sutta equivocado (149 en vez de 148).
+  - **Dos filas degradadas a PENDIENTE, a arbitraje de Jorge**:
+    - `22.148` — sin texto PTS que cotejar. Su firma `VALIDADOR_HUMANO` anterior (`S iii 179,5`, que
+      no es ningún marcador) **queda anulada**: se dio contra un emparejamiento que la alineación
+      corregida descarta.
+    - `34.24` — la alineación cambia (p276,9 → p276,29) y el cotejo discrepa (gate APPROVE / Gemini
+      REJECT): el CST agrupa «46-49. Gocaramūlakaabhinīhārasuttādicatukkaṃ» frente al marcador PTS
+      individual «Abhinīhāra».
+  - Líneas recalibradas: **318/324 exactas (98%)**, 6 corregidas. Auditoría de inyectividad: **hueco
+    0** en los cuatro volúmenes contrastados.
   - **S v**: 69 pares cambiaron y las asignaciones nuevas son **mejores** (`45.12 Dutiyavihāra`→
     `Vihāra2.`, `45.28 Samādhi`→`Samādhi.`, con los textos coincidiendo), pero al ceñirse el texto
     al marcador **cae la cobertura del gate local**: 72 desacuerdos son `gate=REJECT /

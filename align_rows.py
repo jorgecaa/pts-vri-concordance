@@ -39,28 +39,34 @@ def assign(n_rows, n_marks, score, capacity, skip_penalty=0.0):
         return []
     caps = [max(1, capacity(j)) for j in range(n_marks)]
 
-    # dp[j][r] = mejor puntuación de las filas 0..i con la fila i asignada a j, siendo r la
-    # longitud de la racha de filas consecutivas que han caído en j (1 ≤ r ≤ caps[j]).
+    # Estado tras procesar la fila *i*: `(j, r)` = el último marcador ASIGNADO es j y ya lleva r
+    # filas (1 ≤ r ≤ caps[j]); más el estado inicial `START`, sin marcador aún. Saltar una fila
+    # **conserva el estado** y sólo resta `skip_penalty`.
+    #
+    # Que el salto conserve la posición es lo que hace correcto el alineamiento. Antes el estado de
+    # salto era un escalar sin memoria del marcador, así que para no romper la monotonía sólo se
+    # admitía cuando superaba el máximo global: se perdía el óptimo justo en el caso que importa
+    # —una fila del CST que PTS no imprime en mitad de una serie— porque el camino bueno pasa por
+    # un salto que NO es el máximo global (S iii 22.148 «Dukkhānupassī», ausente de PTS: la ruta
+    # correcta puntúa 292.8 y se devolvía la de 292.1).
+    #
+    # Y conservar la racha es además lo correcto filológicamente: si a un marcador de rango
+    # («140-142 (5-7) Dukkhena») le falta uno de los suttas del CST, sus vecinos siguen cayendo en
+    # ese mismo marcador; la capacidad cuenta filas asignadas, no filas consecutivas del Excel.
     dp = [[NEG] * (c + 1) for c in caps]
-    back = [[None] * (c + 1) for c in caps]
-    skip = NEG                                     # mejor puntuación con la fila i sin asignar
-    skip_back = None
+    start = 0.0                                    # aún no se ha asignado ningún marcador
     hist = []
 
     for i in range(n_rows):
-        # mejor valor alcanzable habiendo terminado en un marcador < j (prefijo acumulado)
-        best_before, arg_before = [NEG] * (n_marks + 1), [None] * (n_marks + 1)
-        run, arg = NEG, None
+        # prefijo: mejor estado anterior cuyo último marcador es ESTRICTAMENTE menor que j
+        before, arg = [NEG] * (n_marks + 1), [None] * (n_marks + 1)
+        run, run_arg = start, (None if start > NEG else None)
         for j in range(n_marks):
-            if i:
-                cur = max(dp[j])
-                if cur > run:
-                    run, arg = cur, ('m', j, dp[j].index(cur))
-            best_before[j + 1], arg_before[j + 1] = run, arg
-        if i and skip > run:                       # también se puede venir de una fila saltada
-            for j in range(n_marks + 1):
-                if skip > best_before[j]:
-                    best_before[j], arg_before[j] = skip, ('s',)
+            before[j], arg[j] = run, run_arg
+            cur = max(dp[j])
+            if cur > run:
+                run, run_arg = cur, (j, dp[j].index(cur))
+        before[n_marks], arg[n_marks] = run, run_arg
 
         ndp = [[NEG] * (c + 1) for c in caps]
         nback = [[None] * (c + 1) for c in caps]
@@ -68,49 +74,39 @@ def assign(n_rows, n_marks, score, capacity, skip_penalty=0.0):
             s = score(i, j)
             if s is None or s == NEG:
                 continue
-            base = best_before[j] if i else 0.0
-            if base > NEG:
-                ndp[j][1] = base + s
-                nback[j][1] = arg_before[j] if i else None
-            if i:                                   # continuar la racha en el mismo marcador
-                for r in range(2, caps[j] + 1):
-                    if dp[j][r - 1] > NEG and dp[j][r - 1] + s > ndp[j][r]:
-                        ndp[j][r] = dp[j][r - 1] + s
-                        nback[j][r] = ('m', j, r - 1)
-        prev_best = max([max(x) for x in dp] + [skip]) if i else 0.0
-        nskip = (prev_best - skip_penalty) if i else -skip_penalty
-        nskip_back = None
-        if i:
-            cand = [(max(dp[j]), ('m', j, dp[j].index(max(dp[j])))) for j in range(n_marks)
-                    if max(dp[j]) > NEG]
-            if skip > NEG:
-                cand.append((skip, ('s',)))
-            if cand:
-                v, b = max(cand, key=lambda x: x[0])
-                nskip, nskip_back = v - skip_penalty, b
-            else:
-                nskip = NEG
-        hist.append((nback, nskip_back))
-        dp, skip, skip_back = ndp, nskip, nskip_back
+            if before[j] > NEG:
+                ndp[j][1] = before[j] + s
+                nback[j][1] = arg[j]
+            for r in range(2, caps[j] + 1):        # una fila más sobre el mismo marcador
+                if dp[j][r - 1] > NEG and dp[j][r - 1] + s > ndp[j][r]:
+                    ndp[j][r] = dp[j][r - 1] + s
+                    nback[j][r] = (j, r - 1)
+        # saltar la fila i: el estado se conserva tal cual
+        for j in range(n_marks):
+            for r in range(1, caps[j] + 1):
+                if dp[j][r] - skip_penalty > ndp[j][r]:
+                    ndp[j][r], nback[j][r] = dp[j][r] - skip_penalty, ('skip', (j, r))
+        nstart = start - skip_penalty
+
+        hist.append((nback, ndp, dp, start))
+        dp, start = ndp, nstart
 
     # reconstrucción hacia atrás
-    cand = [(max(dp[j]), ('m', j, dp[j].index(max(dp[j])))) for j in range(n_marks)
+    cand = [(max(dp[j]), (j, dp[j].index(max(dp[j])))) for j in range(n_marks)
             if max(dp[j]) > NEG]
-    if skip > NEG:
-        cand.append((skip, ('s',)))
-    if not cand:
-        return [None] * n_rows
+    cand.append((start, None))
     _v, state = max(cand, key=lambda x: x[0])
     out = [None] * n_rows
     for i in range(n_rows - 1, -1, -1):
-        nback, nskip_back = hist[i]
-        if state[0] == 'm':
-            _t, j, r = state
-            out[i] = j
-            state = nback[j][r]
-        else:
+        nback, _ndp, _pdp, _ps = hist[i]
+        if state is None:                          # veníamos de START: esta fila y las previas van sin marcador
+            continue
+        j, r = state
+        b = nback[j][r]
+        if isinstance(b, tuple) and b and b[0] == 'skip':
             out[i] = None
-            state = nskip_back
-        if state is None and i:
-            break
+            state = b[1]
+        else:
+            out[i] = j
+            state = b
     return out

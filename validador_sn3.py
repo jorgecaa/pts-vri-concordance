@@ -179,6 +179,31 @@ _ORDINAL = {'pathama': 1, 'paṭhama': 1, 'dutiya': 2, 'tatiya': 3, 'catuttha': 
 _ORD_RE = re.compile(r'^(pa[ṭt]hama|dutiya|tatiya|catuttha|pa[ñn]cama)', re.I)
 # nombre compuesto del Jhāna-saṃyutta: «Gocara-mūlaka-abhinīhāra-suttādi-catukkaṃ»
 _MULAKA = re.compile(r'^(.+?)m[ūu]lak[aā](.+?)(?:sutt|$)', re.I)
+_TITLE_RANGE = re.compile(r'^\s*(\d+)(?:\s*-+\s*(\d+))?\.')
+
+
+_CARD = {'ekādasaka': 11, 'dvādasaka': 12, 'paññāsaka': 50, 'cālīsaka': 40, 'tiṃsaka': 30,
+         'vīsatika': 20, 'navutika': 90, 'dasaka': 10, 'navaka': 9, 'aṭṭhaka': 8, 'sattaka': 7,
+         'chakka': 6, 'pañcaka': 5, 'catukka': 4, 'tika': 3, 'duka': 2}
+
+
+def _cardinal(name):
+    """Tamaño declarado en el nombre de un grupo: «…dasakaṃ» → 10."""
+    n = (name or '').lower()
+    for k in sorted(_CARD, key=len, reverse=True):
+        if k in n:
+            return _CARD[k]
+    return None
+
+
+def _title_range(t):
+    """`«7-16. Aṇḍaja…»` → `(7, 16)`. Sirve para desempatar títulos homónimos de saṃyuttas
+    distintos: el rango del CST y el del marcador PTS son los mismos números."""
+    m = _TITLE_RANGE.match(t or '')
+    if not m:
+        return None
+    a = int(m.group(1)); b = int(m.group(2)) if m.group(2) else a
+    return (a, b)
 # los nombres colectivos declaran su tamaño: «…dasakaṃ» = diez, «…tiṃsakaṃ» = treinta
 _CARD = {'ekādasaka': 11, 'dvādasaka': 12, 'paññāsaka': 50, 'cālīsaka': 40, 'tiṃsaka': 30,
          'vīsatika': 20, 'navutika': 90, 'dasaka': 10, 'navaka': 9, 'aṭṭhaka': 8, 'sattaka': 7,
@@ -270,7 +295,7 @@ def ditthi_pairs(pts, path=VRI):
     return list(zip(cst, pt))
 
 
-def assign_volume(entries, pts, massive, offsets, ditthi):
+def assign_volume(entries, pts, massive, offsets, ditthi, vri=None):
     """Asigna TODAS las filas de un saṃyutta a sus marcadores **de una vez**, con
     `align_rows.assign` (inyectivo y monótono), en lugar de resolver fila a fila.
 
@@ -282,7 +307,33 @@ def assign_volume(entries, pts, massive, offsets, ditthi):
 
     El Diṭṭhi (SN 24) se pre-asigna con `ditthi_pairs`, que ya es exacta (32/32).
     """
+    if vri is None:
+        vri = build_vri_index()
     out = {}
+    _cov = {}
+
+    def content(e, q):
+        """Solapamiento léxico CST↔marcador PTS: la ÚNICA evidencia que discrimina cuando
+        PTS numera una serie `(1)(2)(3)` bajo un título común.
+
+        En S iii 179-180 los tres marcadores se llaman igual («Kulaputtena dukkhā»), así que el
+        nombre no informa: por él, «Dukkhānupassī» puntúa lo mismo contra los tres y el DP dejaba
+        sin marcador a 22.149 en vez de a 22.148. El cuerpo sí lo dice — PTS 146 reza `nibbidā
+        bahulaṃ`, 147 `aniccānupassī` y 148 `anattānupassī`, y **no imprime el dukkhānupassī**.
+        """
+        h = massive.get((e['sam'], e['inner']))
+        if not h:
+            return 0.0
+        key = (h[0], q['ord'])
+        if key not in _cov:
+            cs = vri.get(h[0])
+            if not cs:
+                _cov[key] = 0.0
+            else:
+                a = set(sh.tokens(cs['text'])[:350])
+                _cov[key] = len(a & set(q['text'].split())) / max(1, len(a))
+        return _cov[key]
+
     by_sam = {}
     for e in entries:
         by_sam.setdefault(e['sam'], []).append(e)
@@ -302,9 +353,19 @@ def assign_volume(entries, pts, massive, offsets, ditthi):
         marks = [mk[k] for k in sorted(mk, key=lambda k: mk[k]['ord'])]
         if not marks:
             continue
+        reserved = {v for (s_, _i), v in offsets.items() if s_ == sam}
 
         def score(i, j, rows=rows, marks=marks, sam=sam):
             e, q = rows[i], marks[j]
+            # Los tramos con offset calibrado son EVIDENCIA VERIFICADA (se aceptaron solo si
+            # casaban TODOS los nombres del tramo), así que van como restricción dura: si no,
+            # el DP los arrastra un puesto al toparse con una fusión de PTS —3 marcadores
+            # «Kulaputtena dukkhā» para 4 suttas del CST— y desplaza el vagga entero.
+            want = offsets.get((sam, e['inner']))
+            if want is not None:
+                return 10000.0 if q['num'] == want else None
+            if q['num'] in reserved:
+                return None                       # marcador reservado a una fila con offset
             h = massive.get((sam, e['inner']))
             # base = PÁGINA DEL EXCEL (ya calibrada contra el marcador real); el ancla del
             # concordance solo refuerza, porque se desvía en tramos enteros
@@ -315,12 +376,19 @@ def assign_volume(entries, pts, massive, offsets, ditthi):
             if d > 2:
                 return None                        # fuera de la vecindad: par prohibido
             s = _name_score(e['name'], q['name']) + (30 if d == 0 else 15 if d == 1 else 0)
+            s += 60 * content(e, q)                 # cobertura léxica: evidencia de contenido
             if h and h[2] is not None and abs(q['page'] - h[2]) <= 1:
                 s += 10
             if offsets.get((sam, e['inner'])) == q['num']:
                 s += 80                            # tramo con offset calibrado: evidencia verificada
             if q['num'] == e['inner']:
                 s += 20                            # coincide con el nº que declara el Excel
+            # El nombre de un grupo DICE su tamaño («…dasakaṃ» = 10, «…tiṃsakaṃ» = 30). Como
+            # PREFERENCIA dentro del alineamiento es sólida —la monotonía impide que se lleve el
+            # bloque de la serie vecina—; como regla suelta por fila no lo era y se descartó.
+            card = _cardinal(e['name'])
+            if card and caps[(sam, q['page'], q['line'])] == card:
+                s += 60
             mm_ = _MULAKA.match(e['name'] or '')
             if mm_:                                # nombres `X-mūlaka-Y` del Jhāna-saṃyutta
                 pa, pb = _stem(mm_.group(1)), _stem(mm_.group(2))
@@ -524,15 +592,15 @@ def main():
         byc = Counter(k[0] for k in offsets)
         print(f'offsets calibrados (PTS agrupa/fusiona): {sum(byc.values())} claves '
               f'en saṃyuttas {dict(sorted(byc.items()))}')
+    # asignación GLOBAL, inyectiva y monótona (no fila a fila): ver `assign_volume`
+    assigned = assign_volume(entries, pts, massive, offsets, ditthi)
     tasks, no_cst, name_ok, page_ok = [], [], 0, 0
     for e in entries:
         h = massive.get((e['sam'], e['inner']))
-        p = resolve_pts(e, h, pts, by_page, offsets, blocks)
+        p = assigned.get(e['num'])
         ditthi_hit = None
         if e['sam'] == DITTHI and 1 <= e['inner'] <= len(ditthi):
-            # el Diṭṭhi va por POSICIÓN sobre los suttas explícitos (ver `ditthi_pairs`)
-            (para, title), q = ditthi[e['inner'] - 1]
-            p, ditthi_hit = q, (para, title)
+            ditthi_hit = ditthi[e['inner'] - 1][0]
         s = vri.get(h[0]) if h else None
         if ditthi_hit:
             s = vri.get(ditthi_hit[0])
@@ -540,11 +608,25 @@ def main():
         elif s is not None and _name_score(e['name'], h[1]) == 0:
             # El paranum apunta a un bloque cuyo título NO tiene NADA que ver con el de la fila
             # (Jhāna-saṃyutta: manda varias series a la de «ṭhiti-»). Solo entonces se busca el
-            # subhead que sí la nombra, y se exige coincidencia CASI EXACTA: con un umbral laxo la
-            # regla se dispara en decenas de filas cuyo paranum era correcto.
-            best = max(((t, _name_score(e['name'], t)) for t in by_title), key=lambda x: x[1],
-                       default=(None, 0))
-            if best[1] >= 100:
+            # subhead que sí la nombra, con coincidencia CASI EXACTA (con umbral laxo se dispara en
+            # decenas de filas cuyo paranum era correcto).
+            #
+            # Y se DESEMPATA POR EL RANGO NUMÉRICO: los títulos del Nāga-saṃyutta y del Supaṇṇa son
+            # idénticos («Aṇḍajadānūpakārasuttadasakaṃ» está en los dos) y sin este desempate la
+            # regla se llevaba S iii 30.5 y 30.6 al texto de los nāgas — Gemini lo cazó («supaṇṇa
+            # vs nāga»). El rango del título CST («7-16.») debe coincidir con el del marcador PTS
+            # («7-16 (7) Dānupakārā»), y eso los separa sin ambigüedad.
+            cands = [(t, _name_score(e['name'], t)) for t in by_title]
+            cands = [(t, sc) for t, sc in cands if sc >= 100]
+            if cands and p:
+                rng = _title_range(p['name']) or (p['num'], p['num'])
+                same = [(t, sc) for t, sc in cands if _title_range(t) == rng]
+                if same:
+                    cands = same
+                elif len(cands) > 1:
+                    cands = []                    # homónimos sin desempate: no se elige ninguno
+            if cands:
+                best = max(cands, key=lambda x: x[1])
                 s = {'title': best[0], 'text': by_title[best[0]]}
         if p and not s and (e['sam'], e['inner']) in CST_GROUP:
             # el CST agrupa lo que PTS numera: el ítem (N) del grupo es la posición (M) del
