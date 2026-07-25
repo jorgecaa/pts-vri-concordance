@@ -1,5 +1,5 @@
 # PTS Reference Concordance — Status Report
-## Date: 2026-07-21 (updated 2026-07-25 — SN I, SN II y SN V CERRADOS con el validador)
+## Date: 2026-07-21 (updated 2026-07-25 — SN I/II/V cerrados y SN III al 93% con el validador)
 
 ---
 
@@ -46,14 +46,14 @@ Use this terminology consistently across the project:
 |--------|--------:|-----------:|----------:|-------:|
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
-| SN | 1815 | 1232 | 583 | 67.9% |
+| SN | 1815 | 1541 | 274 | 84.9% |
 | AN | 1738 | 1 | 1737 | 0.1% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6099** | **1419** | **4680** | **23.3%** |
+| **TOTAL** | **6099** | **1728** | **4371** | **28.3%** |
 
-> Cifras al **2026-07-25**, tras cerrar SN I (271/271), SN II (257/257) y SN V (610/610). La hoja
-> `Summary` del Excel está alineada. Desglose de SN: **S i 271 ✅, S ii 257 ✅, S v 610 ✅**
-> (validador Modelo B) + S iv 94/344 (Helmer legado); **S iii** sigue `DB_VERIFIED` → PENDIENTE.
+> Cifras al **2026-07-25**. Desglose de SN por el validador: **S i 271/271, S ii 257/257,
+> S iii 309/333, S v 610/610**; **S iv** sigue con los 94 del Helmer legado (250 PENDIENTE) y es
+> el único volumen de SN sin pasar por el validador.
 > El total pasó de 6090 a **6099 filas**: −1 (`12.74`, división solo-CST borrada) y +10 (la
 > expansión de `12.75` en los 11 suttas que PTS numera). La columna `#` se renumeró.
 
@@ -194,11 +194,6 @@ Dos filas venían con la forma del **CST**, no la de PTS. Se resolvió leyendo l
   título**: hay varios grupos con los mismos nºs de ítem y buscarlo por parecido de texto elige el
   equivocado (se comprobó: daba `Dutiyasatthu…` y `Jāti…`).
 
-### SN III — Samyutta Nikaya vol 3 (S iii) — 326 suttas — CERRADO 🔒
-- Excel: `DB_VERIFIED`
-- Sequential audit: 0 page breaks
-- Source files: `parse_sn_grammar.py`
-
 ### SN IV — Samyutta Nikaya vol 4 (S iv) — 344 suttas — CERRADO 🔒
 - Excel (as of 2026-07-24 reconciliation): `HELMER_APPROVED` (94) + `HELMER_REJECT` (12) +
   `DB_VERIFIED` (238 peyyāla). See "UPDATE 2026-07-24" at top.
@@ -284,6 +279,48 @@ Dos filas venían con la forma del **CST**, no la de PTS. Se resolvió leyendo l
 ---
 
 ## PENDING
+
+### SN III — Samyutta Nikaya vol 3 (S iii) — 333 filas ⏳ 309/333 (24 a resolver)
+- **Estado 2026-07-25: 309 CONFIRMADO (`VALIDADOR`) + 24 PENDIENTE.** Antes: 326 filas
+  `DB_VERIFIED` (+7 que llegaron de S ii al corregir su volumen) → todo PENDIENTE.
+- **Front matter de Feer (`samyutta-vol-III-info.txt`)**: 13 saṃyuttas **XXII–XXXIV**, y la página
+  de arranque de cada uno **cuadra al 100%**. Feer distingue **títulos** de **suttantas** (Nāga son
+  14 títulos = 50 suttantas; Gandhabba 10 = 112), y el nº de suttantas cuadra en **12 de 13**:
+  158/46/·/10/10/10/10/50/46/112/57/55/55.
+  - El 13º, **Diṭṭhi (XXIV)**, lo explica Feer mismo: cuenta 114 (18 + 4 gamana × 26) pero
+    **confiesa haber omitido del texto los primeros 18 de la 2ª gamana**, así que el volumen imprime
+    **96**; y de esos 96 solo **72 llevan marcador**, porque los 72–95 de la 4ª gamana van elididos
+    (PTS salta de `71 (1)` a `96 (26)`). Total impreso del volumen: **691 marcadores / 715 suttantas
+    reckoned**, y el 733 de Feer = 715 + los 18 que él omitió. Todo conciliado.
+- **Gramática nueva `sn3_markers.py` (pyparsing)** — misma familia que S ii (`N (M) Nombre` sin
+  puntos) más tres formas propias: **nombre entre paréntesis** (`11 (Samāpatti-ṭhiti)`), **rango con
+  posición-rango** (`140-142 (5-7) Dukkhena (1-3)`) y **prefijo de subdivisión** (`(3)11-15
+  Anabhisamayā (1-5)`), que es el *gamana* en el Diṭṭhi y el **nº de título** en el Vacchagotta
+  (11 títulos × 5 khandhas = 55 suttantas). Ese prefijo abre saṃyutta solo si vale 1 — `(27)1-4`
+  (SN 34) es una combinación interna. La sangría mínima de la forma sin paréntesis baja a **12**
+  (el `1 Samādhi-samāpatti` que abre SN 34 está a 14; el umbral 20 de S ii se lo comía), a cambio
+  de descartar las cabeceras de uddāna y de *gamana* en versal.
+- ⚠️ **La clave `(saṃyutta, nº)` NO sirve en este volumen** — y aquí el desajuste es al revés que en
+  S ii: **el Excel y el concordance concuerdan entre sí** y es la numeración PTS la que difiere,
+  porque PTS imprime **158** suttas en el Khandha-saṃyutta y el CST/DPR cuenta **159**, con lo que
+  se desfasa +1 en la cola. El lado PTS se resuelve por **nombre del marcador sobre la página que
+  ancla `cst_p_page`** (`resolve_pts`): las 333 filas resolvieron por nombre (234) o por clave con
+  el ancla de acuerdo (99), **sin fallbacks**.
+- **Pares `Dutiya-`**: Feer no escribe el ordinal — imprime dos veces el mismo nombre —, así que hay
+  que tomar el **k-ésimo homónimo en orden de lectura** o se coteja el sutta contiguo. Era la causa
+  de la mayoría de los REJECT del primer pase (22.52, 22.158, 29.4, 29.5…).
+- **Líneas: 75 corregidas → 265/265 exactas**, y **6 páginas** con doble evidencia (22.42, 22.52,
+  22.114, 22.121, 23.25, 28.2). SN 24 se excluye a propósito de la calibración.
+- **24 PENDIENTE, con el motivo anotado en `Detail`:**
+  - **13 de SN 24 (Diṭṭhi)** — el `cst_paranum` del concordance apunta al **primer sutta del
+    saṃyutta** («1. Vātasuttaṃ»), así que no hay texto CST correcto que cotejar; y como las 4 gamana
+    repiten los mismos 26 nombres, el lado PTS tampoco se desambigua por nombre. Hay que resolver
+    antes la estructura de las gamana (Feer ya avisa de que sus encabezados «CHAPTER III/IV» están
+    mal puestos y deberían ser los nºs 3 y 4).
+  - **11 repartidas** (SN 22: 6, SN 23: 2, SN 32: 1, SN 34: 2) — desacuerdo gate/Gemini sobre el par
+    resuelto, casi todas en grupos peyyāla o series `-mūlaka` del Jhāna-saṃyutta.
+- Fuentes: `sn3_markers.py`, `validador_sn3.py`, `reid_sn3.py`, `reconcile_sn3.py`,
+  `calibrate_sn3_lines.py`, `samyutta-vol-III-info.txt`. `parse_sn_grammar.py` queda SUPERADO.
 
 ### AN — Anguttara Nikaya — 1,738 entries ⏳
 - Pages restored from blog, lines added via sequential matching

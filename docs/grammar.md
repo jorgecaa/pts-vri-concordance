@@ -68,6 +68,13 @@ group       ::= "(" numrange [")"]                 # el ")" lo pierde el OCR
 remark      ::= "(" ¬digit … [")"]                 # "(or Miḷhaka? )" — se ignora
 numrange    ::= digits [ "-" digits ]              # "38-43"
 
+# SN III — find_markers_sn3  (sn3_markers.py; misma familia que S ii, + 3 formas)
+sn3_line    ::= [subdiv] lead item*               → "marker" | "gamanaN"
+subdiv      ::= "(" digits ")" &numrange           # gamana (Diṭṭhi) / nº de título (Vacchagotta)
+item        ::= group | remark | pname | name
+pname       ::= "(" ¬digit … [")"]                 # el NOMBRE entre paréntesis: "(Samāpatti-ṭhiti)"
+remark      ::= "(" ("or"|"vā") … [")"]            # variante de lectura — se ignora
+
 # AN — find_markers_an
 an_line     ::= num_dot_txt                        → "num"
 
@@ -166,3 +173,31 @@ porque aquí los miembros peyyāla se reimprimen con números ya vistos y partir
 Con esto la estructura hallada cuadra al 100% con el front matter de Feer
 (`samyutta-vol-II-info.txt`): **10 saṃyuttas (XII–XXI), 27 vaggas, 286 suttas**
 (93/11/39/20/13/43/22/21/12/12) y la página de arranque de cada saṃyutta.
+
+
+## SN III — `sn3_markers.py` (nota aparte)
+
+S iii comparte la familia de S ii (**`N (M) Nombre` sin puntos**) y añade tres formas; sin ellas se
+pierden suttas o se parte mal el volumen:
+
+| Forma | Ejemplo | Nota |
+|---|---|---|
+| nombre entre paréntesis | `11 (Samāpatti-ṭhiti)` | sin posición |
+| rango con posición-rango | `140-142 (5-7) Dukkhena (1-3)` | |
+| prefijo de subdivisión | `(3)11-15 Anabhisamayā (1-5)` | ver abajo |
+| variante de lectura | `24 (3) Parijānaṃ (or Abhijānaṃ)` | el paréntesis se ignora |
+
+**El prefijo `(N)` tiene dos significados** y ninguno es el nº corrido: el *gamana* en el
+Diṭṭhi-saṃyutta y el **nº de título** en el Vacchagotta (11 títulos × 5 khandhas = 55 suttantas,
+dice Feer). Solo abre saṃyutta nuevo **si vale 1** (`(1)1 Aññāṇā` inicia SN 33), porque `(27)1-4`
+en SN 34 es una combinación interna que partiría el saṃyutta en dos.
+
+**La sangría mínima de la forma sin paréntesis baja a 12** (en S ii era 20): el `1 Samādhi-samāpatti`
+que abre SN 34 está a 14. A cambio hay que descartar por contenido las cabeceras de **uddāna**, los
+fragmentos entre `[...]` y los encabezados de *gamana* **en versal** (`2 DUTIYAGAMANAM`), que llevan
+el nº de gamana y se confundirían con un nº corrido.
+
+Con esto la estructura cuadra con el front matter de Feer: **13 saṃyuttas XXII–XXXIV**, todas sus
+páginas de arranque, y el nº de suttantas en **12 de 13** (158/46/·/10/10/10/10/50/46/112/57/55/55).
+El 13º, Diṭṭhi, lo explica Feer mismo (omitió 18 del texto; y los 72–95 de la 4ª gamana van
+elididos, PTS salta de `71 (1)` a `96 (26)`).
