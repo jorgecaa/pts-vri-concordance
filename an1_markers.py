@@ -69,8 +69,10 @@ _SUTTA_P = _numlist + pp.Suppress('.') + pp.Regex(r'.+')('rest')
 #   «Caravaggo [dutiyo.]»             el punto va DENTRO del corchete
 #   «Āhuneyyavaggo2 paṭhamo2.»        llamadas de nota ANTES del punto, en nombre y ordinal
 #   «Sītivaggo14 navamo15.»           idem
+#   «Sativaggo10 navamo11 samatto.»   con «samatto»/«niṭṭhito» detrás del ordinal
 _COLOPHON = re.compile(r'^\[?\s*(.{0,40}?)\s*\]?\d*[- ]?vaggo\d*\.?'
-                       r'(?:\s*\[?\s*([a-zāīūṃṅñṭḍṇḷ]+)[\d\s.]*\]?)?[\d\s.]*$', re.I)
+                       r'(?:\s*\[?\s*([a-zāīūṃṅñṭḍṇḷ]+)[\d\s.]*\]?)?'
+                       r'(?:\s*(?:samatto|niṭṭhito|nitthito)[\d\s.]*)?[\d\s.]*$', re.I)
 _ORD = {'pathamo': 1, 'dutiyo': 2, 'tatiyo': 3, 'catuttho': 4, 'pancamo': 5, 'chattho': 6,
         'sattamo': 7, 'atthamo': 8, 'navamo': 9, 'dasamo': 10, 'ekadasamo': 11,
         'dvadasamo': 12, 'terasamo': 13, 'cuddasamo': 14, 'pannarasamo': 15,
