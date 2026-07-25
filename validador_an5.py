@@ -176,6 +176,18 @@ def align(entries, units):
     return {entries[i]['num']: (units[j] if j is not None else None) for i, j in enumerate(idx)}
 
 
+# ⚠️ CORRECCIÓN DECLARADA POR EL PROPIO EDITOR. Hardy lo escribe en su prefacio:
+#   «In the Dasaka-Nipāta the commentary divides our No. XXXI into two parts, from §4 down to the
+#    end. Our No. XXXII corresponds with No. XXXIII of the commentary… **but our No. XL again
+#    corresponds with its No. XL**.»
+# Es decir: el CST parte el XXXI de PTS en dos y desde ahí corre **+1** hasta reencontrarse en el
+# XL. El Excel sigue la numeración del CST, así que en ese tramo **PTS = Excel − 1**.
+# Verificado en el texto: `10.33 Ubbāhikā` es el nº32 de PTS («ubbāhikāya sammannitabbo»),
+# `10.34 Upasampadā` el 33 y `10.35 Nissaya` el 34. Los 7 rechazos de la primera pasada eran
+# exactamente 10.32-10.39, y cesaban en el 40 como Hardy anuncia.
+OFFSET_PTS = {f'10.{k}': -1 for k in range(32, 40)}
+
+
 def pts_anchor(e):
     """Nº corrido de PTS que declara la fila: la **`DPR Ref` si existe**, si no el `Sutta #`.
 
@@ -186,6 +198,11 @@ def pts_anchor(e):
     156 filas**. Sin ella el alineamiento acumulaba deriva: `3.111 «Nidāna 1»` acababa en el
     marcador 110 cuando su `Raw ID` dice `[AN 3.107]-08`, o sea los marcadores **107-108**.
     """
+    off = OFFSET_PTS.get(e['num'])
+    if off is not None:
+        m0 = re.match(r'\d+\.(\d+)', e['num'])
+        if m0:
+            return int(m0.group(1)) + off
     src = e.get('dpr') or ('AN ' + e['num'])
     m = re.search(r'(\d+)\.(\d+)', src)
     if not m:

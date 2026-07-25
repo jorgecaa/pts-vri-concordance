@@ -1,0 +1,3926 @@
+[
+ {
+  "num": "10.1",
+  "name": "Kimatthiya",
+  "cst_title": "1. Kimatthiyasuttaṃ",
+  "vri_ref": "s0404m3:1",
+  "pts_num": 1,
+  "pts_page": 1,
+  "pts_line": 5,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.61,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same Upasāna Sutta with minor orthographic variants."
+ },
+ {
+  "num": "10.2",
+  "name": "Cetanākaraṇīya [Cetana]",
+  "cst_title": "2. Cetanākaraṇīyasuttaṃ",
+  "vri_ref": "s0404m3:2",
+  "pts_num": 2,
+  "pts_page": 2,
+  "pts_line": 20,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.85,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical sequence of the Cetanākaraṇīya sutta with minor orthographic variants."
+ },
+ {
+  "num": "10.3",
+  "name": "Upanisa 1 [Sīla]",
+  "cst_title": "3. Paṭhamaupanisasuttaṃ",
+  "vri_ref": "s0404m3:3",
+  "pts_num": 3,
+  "pts_page": 4,
+  "pts_line": 3,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.57,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative; differences are limited to orthography and sandhi."
+ },
+ {
+  "num": "10.4",
+  "name": "Upanisa 2 [Upanisa]",
+  "cst_title": "4. Dutiyaupanisasuttaṃ",
+  "vri_ref": "s0404m3:4",
+  "pts_num": 4,
+  "pts_page": 5,
+  "pts_line": 13,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.69,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical in core narrative, differing only in minor orthographic details."
+ },
+ {
+  "num": "10.5",
+  "name": "Upanisa 3 [Ānanda]",
+  "cst_title": "5. Tatiyaupanisasuttaṃ",
+  "vri_ref": "s0404m3:5",
+  "pts_num": 5,
+  "pts_page": 6,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.64,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic variations between editions."
+ },
+ {
+  "num": "10.6",
+  "name": "Samādhi",
+  "cst_title": "6. Samādhisuttaṃ",
+  "vri_ref": "s0404m3:6",
+  "pts_num": 6,
+  "pts_page": 7,
+  "pts_line": 7,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.67,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical dialogue between Ananda and the Buddha regarding samadhi."
+ },
+ {
+  "num": "10.7",
+  "name": "Sāriputta",
+  "cst_title": "7. Sāriputtasuttaṃ",
+  "vri_ref": "s0404m3:7",
+  "pts_num": 7,
+  "pts_page": 8,
+  "pts_line": 19,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.8,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative with minor orthographic differences and standard peyyāla expansions."
+ },
+ {
+  "num": "10.8",
+  "name": "Saddhā [Jhāna]",
+  "cst_title": "8. Jhānasuttaṃ",
+  "vri_ref": "s0404m3:8",
+  "pts_num": 8,
+  "pts_page": 10,
+  "pts_line": 3,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.84,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic and manuscript variations."
+ },
+ {
+  "num": "10.9",
+  "name": "Santavimokkha [Santa]",
+  "cst_title": "9. Santavimokkhasuttaṃ",
+  "vri_ref": "s0404m3:9",
+  "pts_num": 9,
+  "pts_page": 11,
+  "pts_line": 16,
+  "legacy": "RTE_ONLY",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.85,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same Anguttara Nikaya text with minor orthographic variants."
+ },
+ {
+  "num": "10.10",
+  "name": "Vijjā",
+  "cst_title": "10. Vijjāsuttaṃ",
+  "vri_ref": "s0404m3:10",
+  "pts_num": 10,
+  "pts_page": 12,
+  "pts_line": 22,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.76,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narratives and progressive spiritual qualities match between editions."
+ },
+ {
+  "num": "10.11",
+  "name": "Senāsana",
+  "cst_title": "1. Senāsanasuttaṃ",
+  "vri_ref": "s0404m3:11",
+  "pts_num": 11,
+  "pts_page": 15,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.67,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative with minor orthographic differences and standard peyyāla expansion."
+ },
+ {
+  "num": "10.12",
+  "name": "Pañcaṅga",
+  "cst_title": "2. Pañcaṅgasuttaṃ",
+  "vri_ref": "s0404m3:12",
+  "pts_num": 12,
+  "pts_page": 16,
+  "pts_line": 12,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.73,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical in core narrative, differing only in minor orthographic variants."
+ },
+ {
+  "num": "10.13",
+  "name": "Saṁyojana",
+  "cst_title": "3. Saṃyojanasuttaṃ",
+  "vri_ref": "s0404m3:13",
+  "pts_num": 13,
+  "pts_page": 17,
+  "pts_line": 5,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Minor orthographic and numbering variants; core list of ten fetters is identical."
+ },
+ {
+  "num": "10.14",
+  "name": "Cetokhila",
+  "cst_title": "4. Cetokhilasuttaṃ",
+  "vri_ref": "s0404m3:14",
+  "pts_num": 14,
+  "pts_page": 17,
+  "pts_line": 17,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.83,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical suttas with minor orthographic and compound spacing differences."
+ },
+ {
+  "num": "10.15",
+  "name": "Appamāda",
+  "cst_title": "5. Appamādasuttaṃ",
+  "vri_ref": "s0404m3:15",
+  "pts_num": 15,
+  "pts_page": 21,
+  "pts_line": 11,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.7,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical core narrative on appamada with minor orthographic variants."
+ },
+ {
+  "num": "10.16",
+  "name": "Āhuneyya",
+  "cst_title": "6. Āhuneyyasuttaṃ",
+  "vri_ref": "s0404m3:16",
+  "pts_num": 16,
+  "pts_page": 23,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.81,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical lists of ten noble persons with minor orthographic variations."
+ },
+ {
+  "num": "10.17",
+  "name": "Nāthakaraṇa 1 [Nātha 1]",
+  "cst_title": "7. Paṭhamanāthasuttaṃ",
+  "vri_ref": "s0404m3:17",
+  "pts_num": 17,
+  "pts_page": 23,
+  "pts_line": 11,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.72,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain the identical Dasanāthakarāṇasutta with minor orthographic variations."
+ },
+ {
+  "num": "10.18",
+  "name": "Nāthakaraṇa 2 [Nātha 2]",
+  "cst_title": "8. Dutiyanāthasuttaṃ",
+  "vri_ref": "s0404m3:18",
+  "pts_num": 18,
+  "pts_page": 25,
+  "pts_line": 21,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.72,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative, list of ten protector conditions, and wording completely match between editions."
+ },
+ {
+  "num": "10.19",
+  "name": "Ariyavāsa 1 [Ariyāvāsa 1]",
+  "cst_title": "9. Paṭhamaariyāvāsasuttaṃ",
+  "vri_ref": "s0404m3:19",
+  "pts_num": 19,
+  "pts_page": 29,
+  "pts_line": 8,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.65,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages describe the ten ariyāvāsā with identical structural elements and minor orthographic variants."
+ },
+ {
+  "num": "10.20",
+  "name": "Ariyavāsa 2 [Ariyāvāsa 2]",
+  "cst_title": "10. Dutiyaariyāvāsasuttaṃ",
+  "vri_ref": "s0404m3:20",
+  "pts_num": 20,
+  "pts_page": 29,
+  "pts_line": 18,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical narrative structure with minor orthographic and elision differences."
+ },
+ {
+  "num": "10.21",
+  "name": "Sīhanāda [Sīha]",
+  "cst_title": "1. Sīhanādasuttaṃ",
+  "vri_ref": "s0404m3:21",
+  "pts_num": 21,
+  "pts_page": 32,
+  "pts_line": 19,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.64,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical Sīhanāda sutta text with minor orthographic variants."
+ },
+ {
+  "num": "10.22",
+  "name": "Adhivuttipada [Adhivutti]",
+  "cst_title": "2. Adhivuttipadasuttaṃ",
+  "vri_ref": "s0404m3:22",
+  "pts_num": 22,
+  "pts_page": 36,
+  "pts_line": 20,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.75,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative and text with minor orthographic variants."
+ },
+ {
+  "num": "10.23",
+  "name": "Kāya",
+  "cst_title": "3. Kāyasuttaṃ",
+  "vri_ref": "s0404m3:23",
+  "pts_num": 23,
+  "pts_page": 39,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.67,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative and doctrinal categories match despite minor orthographic and variant readings."
+ },
+ {
+  "num": "10.24",
+  "name": "Mahācunda [Cunda]",
+  "cst_title": "4. Mahācundasuttaṃ",
+  "vri_ref": "s0404m3:24",
+  "pts_num": 24,
+  "pts_page": 41,
+  "pts_line": 26,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.76,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical editions of the Mahācunda Sutta with minor orthographic differences."
+ },
+ {
+  "num": "10.25",
+  "name": "Kasiṇa",
+  "cst_title": "5. Kasiṇasuttaṃ",
+  "vri_ref": "s0404m3:25",
+  "pts_num": 25,
+  "pts_page": 46,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.45,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages describe the identical ten kasiṇāyatanāni with minor orthographic and peyyāla differences."
+ },
+ {
+  "num": "10.26",
+  "name": "Kālī [Kāḷī]",
+  "cst_title": "6. Kāḷīsuttaṃ",
+  "vri_ref": "s0404m3:26",
+  "pts_num": 26,
+  "pts_page": 46,
+  "pts_line": 13,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.62,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical editions of the Kālī Sutta from the Aṅguttara Nikāya."
+ },
+ {
+  "num": "10.27",
+  "name": "Mahāpañha 1 [Mahāpañhā 1]",
+  "cst_title": "7. Paṭhamamahāpañhāsuttaṃ",
+  "vri_ref": "s0404m3:27",
+  "pts_num": 27,
+  "pts_page": 48,
+  "pts_line": 5,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.69,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative and text with minor orthographic differences."
+ },
+ {
+  "num": "10.28",
+  "name": "Mahāpañha 2 [Mahāpañhā 2]",
+  "cst_title": "8. Dutiyamahāpañhāsuttaṃ",
+  "vri_ref": "s0404m3:28",
+  "pts_num": 28,
+  "pts_page": 54,
+  "pts_line": 20,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.74,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical in core narrative with minor orthographic differences."
+ },
+ {
+  "num": "10.29",
+  "name": "Kosala 1",
+  "cst_title": "9. Paṭhamakosalasuttaṃ",
+  "vri_ref": "s0404m3:29",
+  "pts_num": 29,
+  "pts_page": 59,
+  "pts_line": 4,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.7,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narratives and cosmological descriptions match between editions."
+ },
+ {
+  "num": "10.30",
+  "name": "Kosala 2",
+  "cst_title": "10. Dutiyakosalasuttaṃ",
+  "vri_ref": "s0404m3:30",
+  "pts_num": 30,
+  "pts_page": 65,
+  "pts_line": 5,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.73,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative and dialog match completely; only orthographic and spacing differences exist."
+ },
+ {
+  "num": "10.31",
+  "name": "Upāli",
+  "cst_title": "1. Upālisuttaṃ",
+  "vri_ref": "s0404m3:31",
+  "pts_num": 31,
+  "pts_page": 70,
+  "pts_line": 3,
+  "legacy": "VALIDADOR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.52,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the identical narrative concerning Upali asking the Buddha about the ten reasons for laying down rules."
+ },
+ {
+  "num": "10.32",
+  "name": "Pātimokkhaṭṭhapana [Ṭhapana]",
+  "cst_title": "2. Pātimokkhaṭṭhapanāsuttaṃ",
+  "vri_ref": "s0404m3:32",
+  "pts_num": 31,
+  "pts_page": 70,
+  "pts_line": 3,
+  "legacy": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.3,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "PTS contains introductory preamble missing in CST; core text matches perfectly."
+ },
+ {
+  "num": "10.33",
+  "name": "Ubbāhikā",
+  "cst_title": "3. Ubbāhikāsuttaṃ",
+  "vri_ref": "s0404m3:33",
+  "pts_num": 32,
+  "pts_page": 71,
+  "pts_line": 8,
+  "legacy": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.76,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic variants and standard editorial expansions."
+ },
+ {
+  "num": "10.34",
+  "name": "Upasampadā",
+  "cst_title": "4. Upasampadāsuttaṃ",
+  "vri_ref": "s0404m3:34",
+  "pts_num": 33,
+  "pts_page": 72,
+  "pts_line": 6,
+  "legacy": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative and rules match; only orthography and spacing differ."
+ },
+ {
+  "num": "10.35",
+  "name": "Nissaya",
+  "cst_title": "5. Nissayasuttaṃ",
+  "vri_ref": "s0404m3:35",
+  "pts_num": 34,
+  "pts_page": 73,
+  "pts_line": 1,
+  "legacy": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.75,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Minor contextual variant in nissaya and sāmaṇera topics within Vinaya."
+ },
+ {
+  "num": "10.36",
+  "name": "Sāmaṇera",
+  "cst_title": "6. Sāmaṇerasuttaṃ",
+  "vri_ref": "s0404m3:36",
+  "pts_num": 35,
+  "pts_page": 73,
+  "pts_line": 20,
+  "legacy": "REVISAR",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.18,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages discuss completely different topics: saṅghabheda vs sāmaṇero upaṭṭhāpetabba."
+ },
+ {
+  "num": "10.38",
+  "name": "Saṅghasāmaggi [Bheda 2]",
+  "cst_title": "8. Saṅghasāmaggīsuttaṃ",
+  "vri_ref": "s0404m3:38",
+  "pts_num": 38,
+  "pts_page": 75,
+  "pts_line": 20,
+  "legacy": "OK+RTE",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.04,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Texts discuss completely different topics: saṅghabheda versus saṅghasāmaggī definition."
+ },
+ {
+  "num": "10.39",
+  "name": "Ānanda 1",
+  "cst_title": "9. Paṭhamaānandasuttaṃ",
+  "vri_ref": "s0404m3:39",
+  "pts_num": 38,
+  "pts_page": 75,
+  "pts_line": 20,
+  "legacy": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.73,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages discuss saṅghabheda and identical consequences, CST has editorial expansions."
+ },
+ {
+  "num": "10.40",
+  "name": "Ānanda 2",
+  "cst_title": "10. Dutiyaānandasuttaṃ",
+  "vri_ref": "s0404m3:40",
+  "pts_num": 40,
+  "pts_page": 76,
+  "pts_line": 20,
+  "legacy": "VALIDADOR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.58,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "PTS is udāna ending of CST text; core narrative matches."
+ },
+ {
+  "num": "10.41",
+  "name": "Vivāda",
+  "cst_title": "1. Vivādasuttaṃ",
+  "vri_ref": "s0404m3:41",
+  "pts_num": 41,
+  "pts_page": 77,
+  "pts_line": 9,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.72,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical in core narrative with minor orthographic differences."
+ },
+ {
+  "num": "10.42",
+  "name": "Vivādamūla 1 [Mūla 1]",
+  "cst_title": "2. Paṭhamavivādamūlasuttaṃ",
+  "vri_ref": "s0404m3:42",
+  "pts_num": 42,
+  "pts_page": 78,
+  "pts_line": 6,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.75,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical lists on the ten roots of disputes with minor orthographic differences."
+ },
+ {
+  "num": "10.43",
+  "name": "Vivādamūla 2 [Mūla 2]",
+  "cst_title": "3. Dutiyavivādamūlasuttaṃ",
+  "vri_ref": "s0404m3:43",
+  "pts_num": 43,
+  "pts_page": 78,
+  "pts_line": 20,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.82,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages present identical ten roots of disputes with minor orthographic differences."
+ },
+ {
+  "num": "10.44",
+  "name": "Kusinārā [Kusināra]",
+  "cst_title": "4. Kusinārasuttaṃ",
+  "vri_ref": "s0404m3:44",
+  "pts_num": 44,
+  "pts_page": 79,
+  "pts_line": 4,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative and text match, differing only in minor orthographic details."
+ },
+ {
+  "num": "10.45",
+  "name": "Rājantepurappavesana [Pavesana]",
+  "cst_title": "5. Rājantepurappavesanasuttaṃ",
+  "vri_ref": "s0404m3:45",
+  "pts_num": 45,
+  "pts_page": 81,
+  "pts_line": 16,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic and word-spacing variations between editions."
+ },
+ {
+  "num": "10.46",
+  "name": "Sakya [Sakka]",
+  "cst_title": "6. Sakkasuttaṃ",
+  "vri_ref": "s0404m3:46",
+  "pts_num": 46,
+  "pts_page": 83,
+  "pts_line": 10,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical Sutta text with only minor orthographic differences."
+ },
+ {
+  "num": "10.47",
+  "name": "Mahāli",
+  "cst_title": "7. Mahālisuttaṃ",
+  "vri_ref": "s0404m3:47",
+  "pts_num": 47,
+  "pts_page": 86,
+  "pts_line": 14,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical Mahāli Sutta passages with only minor orthographic and spacing variations."
+ },
+ {
+  "num": "10.48",
+  "name": "Dasadhamma [Pabbajitaabhiṇha]",
+  "cst_title": "8. Pabbajitaabhiṇhasuttaṃ",
+  "vri_ref": "s0404m3:48",
+  "pts_num": 48,
+  "pts_page": 87,
+  "pts_line": 28,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.69,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages present the Dasa-dhamma Sutta with minor orthographic and lectal variants."
+ },
+ {
+  "num": "10.49",
+  "name": "Sarīraṭṭhadhamma [Sarīraṭṭha]",
+  "cst_title": "9. Sarīraṭṭhadhammasuttaṃ",
+  "vri_ref": "s0404m3:49",
+  "pts_num": 49,
+  "pts_page": 88,
+  "pts_line": 21,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.82,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical content regarding the ten bodily states."
+ },
+ {
+  "num": "10.50",
+  "name": "Bhaṇḍana",
+  "cst_title": "10. Bhaṇḍanasuttaṃ",
+  "vri_ref": "s0404m3:50",
+  "pts_num": 50,
+  "pts_page": 88,
+  "pts_line": 28,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with only minor orthographic and spelling variations between editions."
+ },
+ {
+  "num": "10.51",
+  "name": "Sacitta",
+  "cst_title": "1. Sacittasuttaṃ",
+  "vri_ref": "s0404m3:51",
+  "pts_num": 51,
+  "pts_page": 92,
+  "pts_line": 5,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.74,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain the identical Sacittapariyāyasutta with minor orthographic variants."
+ },
+ {
+  "num": "10.52",
+  "name": "Sāriputta",
+  "cst_title": "2. Sāriputtasuttaṃ",
+  "vri_ref": "s0404m3:52",
+  "pts_num": 52,
+  "pts_page": 94,
+  "pts_line": 11,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical Sāriputta mirror simile discourse with minor orthographic differences."
+ },
+ {
+  "num": "10.53",
+  "name": "Ṭhiti",
+  "cst_title": "3. Ṭhitisuttaṃ",
+  "vri_ref": "s0404m3:53",
+  "pts_num": 53,
+  "pts_page": 96,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.75,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative and doctrinal teaching match across editions with minor orthographic differences."
+ },
+ {
+  "num": "10.54",
+  "name": "Samatha",
+  "cst_title": "4. Samathasuttaṃ",
+  "vri_ref": "s0404m3:54",
+  "pts_num": 54,
+  "pts_page": 98,
+  "pts_line": 20,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.76,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Minor orthographic and sandhi variants, core narrative matches perfectly."
+ },
+ {
+  "num": "10.55",
+  "name": "Parihāna",
+  "cst_title": "5. Parihānasuttaṃ",
+  "vri_ref": "s0404m3:55",
+  "pts_num": 55,
+  "pts_page": 102,
+  "pts_line": 21,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.66,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings by Sāriputta on the declining and non-declining person."
+ },
+ {
+  "num": "10.56",
+  "name": "Saññā 1",
+  "cst_title": "6. Paṭhamasaññāsuttaṃ",
+  "vri_ref": "s0404m3:56",
+  "pts_num": 56,
+  "pts_page": 105,
+  "pts_line": 20,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.69,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical lists of ten saññās with minor orthographic differences."
+ },
+ {
+  "num": "10.57",
+  "name": "Saññā 2",
+  "cst_title": "7. Dutiyasaññāsuttaṃ",
+  "vri_ref": "s0404m3:57",
+  "pts_num": 57,
+  "pts_page": 106,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.69,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical ten perceptions sutta with minor orthographic and expansion differences."
+ },
+ {
+  "num": "10.58",
+  "name": "Mūlaka [Mūlā]",
+  "cst_title": "8. Mūlakasuttaṃ",
+  "vri_ref": "s0404m3:58",
+  "pts_num": 58,
+  "pts_page": 106,
+  "pts_line": 12,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical doctrinal queries on the roots of phenomena."
+ },
+ {
+  "num": "10.59",
+  "name": "Pabbajjā",
+  "cst_title": "9. Pabbajjāsuttaṃ",
+  "vri_ref": "s0404m3:59",
+  "pts_num": 59,
+  "pts_page": 107,
+  "pts_line": 14,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.38,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core text with minor orthographic and compound variations."
+ },
+ {
+  "num": "10.60",
+  "name": "Girimānanda",
+  "cst_title": "10. Girimānandasuttaṃ",
+  "vri_ref": "s0404m3:60",
+  "pts_num": 60,
+  "pts_page": 108,
+  "pts_line": 17,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.86,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Girimānanda Sutta with minor orthographic differences."
+ },
+ {
+  "num": "10.61",
+  "name": "Avijjā",
+  "cst_title": "1. Avijjāsuttaṃ",
+  "vri_ref": "s0404m3:61",
+  "pts_num": 61,
+  "pts_page": 113,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.63,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical textual content on avijjā and its support conditions."
+ },
+ {
+  "num": "10.62",
+  "name": "Taṇhā",
+  "cst_title": "2. Taṇhāsuttaṃ",
+  "vri_ref": "s0404m3:62",
+  "pts_num": 62,
+  "pts_page": 116,
+  "pts_line": 15,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.61,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative on bhavataṇhā with minor orthographic differences."
+ },
+ {
+  "num": "10.63",
+  "name": "Niṭṭhaṅgata [Niṭṭhā]",
+  "cst_title": "3. Niṭṭhaṅgatasuttaṃ",
+  "vri_ref": "s0404m3:63",
+  "pts_num": 63,
+  "pts_page": 119,
+  "pts_line": 23,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.74,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical passages with minor orthographic and space variations between editions."
+ },
+ {
+  "num": "10.64",
+  "name": "Aveccappasanna [Avecca]",
+  "cst_title": "4. Aveccappasannasuttaṃ",
+  "vri_ref": "s0404m3:64",
+  "pts_num": 64,
+  "pts_page": 120,
+  "pts_line": 12,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.76,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative with minor orthographic differences between editions."
+ },
+ {
+  "num": "10.65",
+  "name": "Sukha 1",
+  "cst_title": "5. Paṭhamasukhasuttaṃ",
+  "vri_ref": "s0404m3:65",
+  "pts_num": 65,
+  "pts_page": 120,
+  "pts_line": 28,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.75,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative and dialogue with minor orthographic differences."
+ },
+ {
+  "num": "10.66",
+  "name": "Sukha 2",
+  "cst_title": "6. Dutiyasukhasuttaṃ",
+  "vri_ref": "s0404m3:66",
+  "pts_num": 66,
+  "pts_page": 121,
+  "pts_line": 20,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.62,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with standard editorial expansion of peyyāla."
+ },
+ {
+  "num": "10.67",
+  "name": "Lakapāna 1 [Naḷakapāna 1]",
+  "cst_title": "7. Paṭhamanaḷakapānasuttaṃ",
+  "vri_ref": "s0404m3:67",
+  "pts_num": 67,
+  "pts_page": 122,
+  "pts_line": 19,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.77,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Naḷakapāna Sutta with minor orthographic variants."
+ },
+ {
+  "num": "10.68",
+  "name": "Lakapāna 2 [Naḷakapāna 2]",
+  "cst_title": "8. Dutiyanaḷakapānasuttaṃ",
+  "vri_ref": "s0404m3:68",
+  "pts_num": 68,
+  "pts_page": 125,
+  "pts_line": 23,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.74,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative, setting, and dialogue match perfectly with minor orthographic variants."
+ },
+ {
+  "num": "10.69",
+  "name": "Kathāvatthu 1",
+  "cst_title": "9. Paṭhamakathāvatthusuttaṃ",
+  "vri_ref": "s0404m3:69",
+  "pts_num": 69,
+  "pts_page": 128,
+  "pts_line": 7,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.75,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative, characters, and dialogue are identical with minor edition orthography and list expansions."
+ },
+ {
+  "num": "10.70",
+  "name": "Kathāvatthu 2",
+  "cst_title": "10. Dutiyakathāvatthusuttaṃ",
+  "vri_ref": "s0404m3:70",
+  "pts_num": 70,
+  "pts_page": 129,
+  "pts_line": 21,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.48,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "CST includes introductory narrative framing, but core ten-things list matches PTS."
+ },
+ {
+  "num": "10.71",
+  "name": "Ākaṅkheyya [Ākaṅkha]",
+  "cst_title": "1. Ākaṅkhasuttaṃ",
+  "vri_ref": "s0404m3:71",
+  "pts_num": 71,
+  "pts_page": 131,
+  "pts_line": 4,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same sutta with minor orthographic and variant differences."
+ },
+ {
+  "num": "10.72",
+  "name": "Kaṇṭaka",
+  "cst_title": "2. Kaṇṭakasuttaṃ",
+  "vri_ref": "s0404m3:72",
+  "pts_num": 72,
+  "pts_page": 133,
+  "pts_line": 10,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.7,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Exact textual match with minor orthographic and recensional variants."
+ },
+ {
+  "num": "10.73",
+  "name": "Iṭṭhadhamma [Iṭṭha]",
+  "cst_title": "3. Iṭṭhadhammasuttaṃ",
+  "vri_ref": "s0404m3:73",
+  "pts_num": 73,
+  "pts_page": 135,
+  "pts_line": 10,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.81,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical lists of ten desirable things and their obstacles."
+ },
+ {
+  "num": "10.74",
+  "name": "Vaḍḍha [Vaḍḍhi]",
+  "cst_title": "4. Vaḍḍhisuttaṃ",
+  "vri_ref": "s0404m3:74",
+  "pts_num": 74,
+  "pts_page": 137,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.81,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages present the identical dasa-vaḍḍhi sutta with minor orthographic variations."
+ },
+ {
+  "num": "10.75",
+  "name": "Migasālā",
+  "cst_title": "5. Migasālāsuttaṃ",
+  "vri_ref": "s0404m3:75",
+  "pts_num": 75,
+  "pts_page": 137,
+  "pts_line": 20,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.69,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative and dialogue with minor orthographic variants."
+ },
+ {
+  "num": "10.76",
+  "name": "Tayodhamma [Abhabba]",
+  "cst_title": "6. Tayodhammasuttaṃ",
+  "vri_ref": "s0404m3:76",
+  "pts_num": 76,
+  "pts_page": 144,
+  "pts_line": 5,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.78,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the same core narrative and doctrinal enumeration with minor orthographic variants."
+ },
+ {
+  "num": "10.77",
+  "name": "Kāka",
+  "cst_title": "7. Kākasuttaṃ",
+  "vri_ref": "s0404m3:77",
+  "pts_num": 77,
+  "pts_page": 149,
+  "pts_line": 16,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.74,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor commentarial glosses in CST."
+ },
+ {
+  "num": "10.78",
+  "name": "Nigaṇṭha",
+  "cst_title": "8. Nigaṇṭhasuttaṃ",
+  "vri_ref": "s0404m3:78",
+  "pts_num": 78,
+  "pts_page": 150,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.61,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core list of ten unrighteous qualities of Niganthas matches between editions."
+ },
+ {
+  "num": "10.79",
+  "name": "Āghātavatthu [Vatthu 1]",
+  "cst_title": "9. Āghātavatthusuttaṃ",
+  "vri_ref": "s0404m3:79",
+  "pts_num": 79,
+  "pts_page": 150,
+  "pts_line": 13,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.73,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages present the exact same sutta on the ten grounds of resentment with minor orthographic differences and peyyāla expansion."
+ },
+ {
+  "num": "10.80",
+  "name": "Āghātapaṭivinaya [Vatthu 2]",
+  "cst_title": "10. Āghātapaṭivinayasuttaṃ",
+  "vri_ref": "s0404m3:80",
+  "pts_num": 80,
+  "pts_page": 150,
+  "pts_line": 24,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.53,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages describe the ten ways of removing annoyance (āghātapaṭivinaya)."
+ },
+ {
+  "num": "10.81",
+  "name": "Bāhuna [Vāhana]",
+  "cst_title": "1. Vāhanasuttaṃ",
+  "vri_ref": "s0404m3:81",
+  "pts_num": 81,
+  "pts_page": 151,
+  "pts_line": 15,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.66,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical discourse with minor orthographic and peyyāla differences."
+ },
+ {
+  "num": "10.82",
+  "name": "Ānanda",
+  "cst_title": "2. Ānandasuttaṃ",
+  "vri_ref": "s0404m3:82",
+  "pts_num": 82,
+  "pts_page": 152,
+  "pts_line": 17,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages present the same discourse with only minor orthographic and spacing differences."
+ },
+ {
+  "num": "10.83",
+  "name": "Puṇṇiya",
+  "cst_title": "3. Puṇṇiyasuttaṃ",
+  "vri_ref": "s0404m3:83",
+  "pts_num": 83,
+  "pts_page": 154,
+  "pts_line": 12,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.72,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical dialogue between the Buddha and Venerable Punṇiya."
+ },
+ {
+  "num": "10.84",
+  "name": "Byākaraṇa",
+  "cst_title": "4. Byākaraṇasuttaṃ",
+  "vri_ref": "s0404m3:84",
+  "pts_num": 84,
+  "pts_page": 155,
+  "pts_line": 22,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.59,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches identically with minor orthographic differences."
+ },
+ {
+  "num": "10.85",
+  "name": "Katthī",
+  "cst_title": "5. Katthīsuttaṃ",
+  "vri_ref": "s0404m3:85",
+  "pts_num": 85,
+  "pts_page": 157,
+  "pts_line": 20,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.7,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative with only minor orthographic differences."
+ },
+ {
+  "num": "10.86",
+  "name": "Adhimāna [Aññā]",
+  "cst_title": "6. Adhimānasuttaṃ",
+  "vri_ref": "s0404m3:86",
+  "pts_num": 86,
+  "pts_page": 161,
+  "pts_line": 28,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.68,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical Mahākassapa discourse with minor orthographic variants."
+ },
+ {
+  "num": "10.87",
+  "name": "Adhikaraṇika [Nappiya]",
+  "cst_title": "7. Nappiyasuttaṃ",
+  "vri_ref": "s0404m3:87",
+  "pts_num": 87,
+  "pts_page": 164,
+  "pts_line": 19,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical narrative structure and doctrinal list, with minor orthographic variants."
+ },
+ {
+  "num": "10.88",
+  "name": "Akkosaka",
+  "cst_title": "8. Akkosakasuttaṃ",
+  "vri_ref": "s0404m3:88",
+  "pts_num": 88,
+  "pts_page": 169,
+  "pts_line": 11,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.81,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical discourse on the ten disasters befalling an abusive bhikkhu with minor textual variants."
+ },
+ {
+  "num": "10.89",
+  "name": "Kokālika",
+  "cst_title": "9. Kokālikasuttaṃ",
+  "vri_ref": "s0404m3:89",
+  "pts_num": 89,
+  "pts_page": 170,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.62,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic differences and expansion of peyyāla."
+ },
+ {
+  "num": "10.90",
+  "name": "Khīṇāsavabala [Bala]",
+  "cst_title": "10. Khīṇāsavabalasuttaṃ",
+  "vri_ref": "s0404m3:90",
+  "pts_num": 90,
+  "pts_page": 174,
+  "pts_line": 16,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.75,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative and dialogue about khīṇāsava powers."
+ },
+ {
+  "num": "10.91",
+  "name": "Kāmabhogī",
+  "cst_title": "1. Kāmabhogīsuttaṃ",
+  "vri_ref": "s0404m3:91",
+  "pts_num": 91,
+  "pts_page": 176,
+  "pts_line": 16,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narratives and classifications of kāmabhogī match across editions."
+ },
+ {
+  "num": "10.92",
+  "name": "Bhaya [Vera]",
+  "cst_title": "2. Bhayasuttaṃ",
+  "vri_ref": "s0404m3:92",
+  "pts_num": 92,
+  "pts_page": 182,
+  "pts_line": 16,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.65,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic differences and expansion of peyyāla."
+ },
+ {
+  "num": "10.93",
+  "name": "Kiṁdiṭṭhika [Diṭṭhi]",
+  "cst_title": "3. Kiṃdiṭṭhikasuttaṃ",
+  "vri_ref": "s0404m3:93",
+  "pts_num": 93,
+  "pts_page": 185,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.72,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative and text match closely with only minor orthographic differences."
+ },
+ {
+  "num": "10.94",
+  "name": "Vajjiyamāhita [Vajja]",
+  "cst_title": "4. Vajjiyamāhitasuttaṃ",
+  "vri_ref": "s0404m3:94",
+  "pts_num": 94,
+  "pts_page": 189,
+  "pts_line": 9,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narratives match identically, with only minor orthographic and sandhi variations."
+ },
+ {
+  "num": "10.95",
+  "name": "Uttiya",
+  "cst_title": "5. Uttiyasuttaṃ",
+  "vri_ref": "s0404m3:95",
+  "pts_num": 95,
+  "pts_page": 193,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.76,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical Uttiya Sutta narrative with minor orthographic and peyyāla differences."
+ },
+ {
+  "num": "10.96",
+  "name": "Kokanada [Kokanuda]",
+  "cst_title": "6. Kokanudasuttaṃ",
+  "vri_ref": "s0404m3:96",
+  "pts_num": 96,
+  "pts_page": 196,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.7,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical narrative of Ānanda and Kokanuda at Tapodā."
+ },
+ {
+  "num": "10.97",
+  "name": "Āhuneyya",
+  "cst_title": "7. Āhuneyyasuttaṃ",
+  "vri_ref": "s0404m3:97",
+  "pts_num": 97,
+  "pts_page": 198,
+  "pts_line": 14,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.8,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches identically with minor orthographic and lectal variants between editions."
+ },
+ {
+  "num": "10.98",
+  "name": "Thera",
+  "cst_title": "8. Therasuttaṃ",
+  "vri_ref": "s0404m3:98",
+  "pts_num": 98,
+  "pts_page": 201,
+  "pts_line": 4,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.75,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic differences and editorial peyyāla expansions."
+ },
+ {
+  "num": "10.99",
+  "name": "Upāli",
+  "cst_title": "9. Upālisuttaṃ",
+  "vri_ref": "s0404m3:99",
+  "pts_num": 99,
+  "pts_page": 201,
+  "pts_line": 25,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.7,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical narrative with minor orthographic and commentarial variants."
+ },
+ {
+  "num": "10.100",
+  "name": "Bhabbābhabba [Abhabba]",
+  "cst_title": "10. Abhabbasuttaṃ",
+  "vri_ref": "s0404m3:100",
+  "pts_num": 100,
+  "pts_page": 209,
+  "pts_line": 17,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.51,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages present the same text on abandoning ten dhammas for arahantship."
+ },
+ {
+  "num": "10.101",
+  "name": "Samaṇasaññā [Saññā]",
+  "cst_title": "1. Samaṇasaññāsuttaṃ",
+  "vri_ref": "s0404m3:101",
+  "pts_num": 101,
+  "pts_page": 210,
+  "pts_line": 7,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.7,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages discuss the three samaṇasaññā fulfilling seven dhammas with minor orthographic variants."
+ },
+ {
+  "num": "10.102",
+  "name": "Bojjhaṅga",
+  "cst_title": "2. Bojjhaṅgasuttaṃ",
+  "vri_ref": "s0404m3:102",
+  "pts_num": 102,
+  "pts_page": 211,
+  "pts_line": 5,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.73,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages present the identical discourse on the seven bojjhaṅgas fulfilling the three vijjās."
+ },
+ {
+  "num": "10.103",
+  "name": "Micchatta",
+  "cst_title": "3. Micchattasuttaṃ",
+  "vri_ref": "s0404m3:103",
+  "pts_num": 103,
+  "pts_page": 211,
+  "pts_line": 22,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.75,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative and doctrinal formulation match despite minor orthographic and editorial variants."
+ },
+ {
+  "num": "10.104",
+  "name": "Bīja",
+  "cst_title": "4. Bījasuttaṃ",
+  "vri_ref": "s0404m3:104",
+  "pts_num": 104,
+  "pts_page": 212,
+  "pts_line": 20,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.77,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical core narrative about micchādiṭṭhi with minor orthographic variants."
+ },
+ {
+  "num": "10.105",
+  "name": "Vijjā",
+  "cst_title": "5. Vijjāsuttaṃ",
+  "vri_ref": "s0404m3:105",
+  "pts_num": 105,
+  "pts_page": 214,
+  "pts_line": 9,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.62,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical texts with only minor orthographic and spacing variations."
+ },
+ {
+  "num": "10.106",
+  "name": "Nijjara",
+  "cst_title": "6. Nijjarasuttaṃ",
+  "vri_ref": "s0404m3:106",
+  "pts_num": 106,
+  "pts_page": 215,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.66,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages describe the ten nijjaravatthūni matching in content and structure."
+ },
+ {
+  "num": "10.107",
+  "name": "Dhovana",
+  "cst_title": "7. Dhovanasuttaṃ",
+  "vri_ref": "s0404m3:107",
+  "pts_num": 107,
+  "pts_page": 216,
+  "pts_line": 11,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.65,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic differences between editions."
+ },
+ {
+  "num": "10.108",
+  "name": "Tikicchaka",
+  "cst_title": "8. Tikicchakasuttaṃ",
+  "vri_ref": "s0404m3:108",
+  "pts_num": 108,
+  "pts_page": 218,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages present the same ariya-virecana sutta with minor orthographic variations."
+ },
+ {
+  "num": "10.109",
+  "name": "Vamana",
+  "cst_title": "9. Vamanasuttaṃ",
+  "vri_ref": "s0404m3:109",
+  "pts_num": 109,
+  "pts_page": 219,
+  "pts_line": 14,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical core text regarding the noble emesis."
+ },
+ {
+  "num": "10.110",
+  "name": "Niddhamanīya [Niddhamana]",
+  "cst_title": "10. Niddhamanīyasuttaṃ",
+  "vri_ref": "s0404m3:110",
+  "pts_num": 110,
+  "pts_page": 220,
+  "pts_line": 25,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.72,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic differences and peyyāla expansion."
+ },
+ {
+  "num": "10.111",
+  "name": "Aseka [Asekha 1]",
+  "cst_title": "11. Paṭhamaasekhasuttaṃ",
+  "vri_ref": "s0404m3:111",
+  "pts_num": 111,
+  "pts_page": 221,
+  "pts_line": 15,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.69,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same dialogue defining an asekha monk."
+ },
+ {
+  "num": "10.112",
+  "name": "Asekhiyadhamma [Asekha 2]",
+  "cst_title": "12. Dutiyaasekhasuttaṃ",
+  "vri_ref": "s0404m3:112",
+  "pts_num": 112,
+  "pts_page": 222,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.49,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical lists of ten asekhiya dhammas with minor orthographic differences."
+ },
+ {
+  "num": "10.113",
+  "name": "Adhamma 1",
+  "cst_title": "1. Paṭhamaadhammasuttaṃ",
+  "vri_ref": "s0404m3:113",
+  "pts_num": 113,
+  "pts_page": 222,
+  "pts_line": 14,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.62,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical passages with minor sandhi and orthographic variants between editions."
+ },
+ {
+  "num": "10.114",
+  "name": "Adhamma 2",
+  "cst_title": "2. Dutiyaadhammasuttaṃ",
+  "vri_ref": "s0404m3:114",
+  "pts_num": 114,
+  "pts_page": 223,
+  "pts_line": 12,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical sutta content with minor orthographic sandhi and omission differences."
+ },
+ {
+  "num": "10.115",
+  "name": "Adhamma 3",
+  "cst_title": "3. Tatiyaadhammasuttaṃ",
+  "vri_ref": "s0404m3:115",
+  "pts_num": 115,
+  "pts_page": 224,
+  "pts_line": 33,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.73,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic variants and standard manuscript differences."
+ },
+ {
+  "num": "10.116",
+  "name": "Ajita",
+  "cst_title": "4. Ajitasuttaṃ",
+  "vri_ref": "s0404m3:116",
+  "pts_num": 116,
+  "pts_page": 229,
+  "pts_line": 26,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.83,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical core narrative involving Ajita and Paṇḍitavatthūni."
+ },
+ {
+  "num": "10.117",
+  "name": "Saṅgārava",
+  "cst_title": "5. Saṅgāravasuttaṃ",
+  "vri_ref": "s0404m3:117",
+  "pts_num": 117,
+  "pts_page": 232,
+  "pts_line": 4,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.77,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative, interlocutor, and doctrinal exposition match identically with only minor orthographic differences."
+ },
+ {
+  "num": "10.118",
+  "name": "Orimatīra [Orima]",
+  "cst_title": "6. Orimatīrasuttaṃ",
+  "vri_ref": "s0404m3:118",
+  "pts_num": 118,
+  "pts_page": 233,
+  "pts_line": 4,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative with minor orthographic variations."
+ },
+ {
+  "num": "10.119",
+  "name": "Paccorohaṇī 1",
+  "cst_title": "7. Paṭhamapaccorohaṇīsuttaṃ",
+  "vri_ref": "s0404m3:119",
+  "pts_num": 119,
+  "pts_page": 233,
+  "pts_line": 26,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.67,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the same Jānussoṇi brāhmaṇa narrative with minor orthographic variants."
+ },
+ {
+  "num": "10.120",
+  "name": "Paccorohaṇī 2",
+  "cst_title": "8. Dutiyapaccorohaṇīsuttaṃ",
+  "vri_ref": "s0404m3:120",
+  "pts_num": 120,
+  "pts_page": 236,
+  "pts_line": 4,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.69,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical sutta content with minor orthographic variants and elisions."
+ },
+ {
+  "num": "10.121",
+  "name": "Pubbaṅgama",
+  "cst_title": "9. Pubbaṅgamasuttaṃ",
+  "vri_ref": "s0404m3:121",
+  "pts_num": 121,
+  "pts_page": 236,
+  "pts_line": 20,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.63,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Minor orthographic and inflectional variants within identical solar simile and path structures."
+ },
+ {
+  "num": "10.122",
+  "name": "Āsavakkhaya [Āsava]",
+  "cst_title": "10. Āsavakkhayasuttaṃ",
+  "vri_ref": "s0404m3:122",
+  "pts_num": 122,
+  "pts_page": 237,
+  "pts_line": 3,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.49,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic differences."
+ },
+ {
+  "num": "10.123",
+  "name": "Paṭhama",
+  "cst_title": "1. Paṭhamasuttaṃ",
+  "vri_ref": "s0404m3:123",
+  "pts_num": 123,
+  "pts_page": 237,
+  "pts_line": 16,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.68,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical tenfold dhammas sutta with minor sandhi and structural padding differences."
+ },
+ {
+  "num": "10.124",
+  "name": "Dutiya",
+  "cst_title": "2. Dutiyasuttaṃ",
+  "vri_ref": "s0404m3:124",
+  "pts_num": 124,
+  "pts_page": 237,
+  "pts_line": 24,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.76,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Orthographic differences and minor additions do not change the core sutta."
+ },
+ {
+  "num": "10.125",
+  "name": "Tatiya",
+  "cst_title": "3. Tatiyasuttaṃ",
+  "vri_ref": "s0404m3:125",
+  "pts_num": 125,
+  "pts_page": 238,
+  "pts_line": 4,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.6,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical text with minor sandhi and orthographic variations."
+ },
+ {
+  "num": "10.126",
+  "name": "Catuttha",
+  "cst_title": "4. Catutthasuttaṃ",
+  "vri_ref": "s0404m3:126",
+  "pts_num": 126,
+  "pts_page": 238,
+  "pts_line": 10,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical ten dhammas list with minor sandhi and structural elision differences."
+ },
+ {
+  "num": "10.127",
+  "name": "Pañcama",
+  "cst_title": "5. Pañcamasuttaṃ",
+  "vri_ref": "s0404m3:127",
+  "pts_num": 127,
+  "pts_page": 238,
+  "pts_line": 18,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.63,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical ten-fold path texts, minor orthographic and elision variations only."
+ },
+ {
+  "num": "10.128",
+  "name": "Chaṭṭhama [Chaṭṭha]",
+  "cst_title": "6. Chaṭṭhasuttaṃ",
+  "vri_ref": "s0404m3:128",
+  "pts_num": 128,
+  "pts_page": 238,
+  "pts_line": 26,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical ten-fold path discourses with minor sandhi and numbering variations."
+ },
+ {
+  "num": "10.129",
+  "name": "Sapata [Sattama]",
+  "cst_title": "7. Sattamasuttaṃ",
+  "vri_ref": "s0404m3:129",
+  "pts_num": 129,
+  "pts_page": 239,
+  "pts_line": 4,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical text with minor orthographic sandhi and numbering differences."
+ },
+ {
+  "num": "10.130",
+  "name": "Aṭṭhama",
+  "cst_title": "8. Aṭṭhamasuttaṃ",
+  "vri_ref": "s0404m3:130",
+  "pts_num": 130,
+  "pts_page": 239,
+  "pts_line": 11,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.81,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical tenfold dhamma text with minor orthographic sandhi differences."
+ },
+ {
+  "num": "10.131",
+  "name": "Navama",
+  "cst_title": "9. Navamasuttaṃ",
+  "vri_ref": "s0404m3:131",
+  "pts_num": 131,
+  "pts_page": 239,
+  "pts_line": 20,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.76,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical ten-dhamma discourse on noble path with minor orthographic variations."
+ },
+ {
+  "num": "10.132",
+  "name": "Dasama",
+  "cst_title": "10. Dasamasuttaṃ",
+  "vri_ref": "s0404m3:132",
+  "pts_num": 132,
+  "pts_page": 240,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.7,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical lists of the ten wrong paths with minor sandhi and numbering differences."
+ },
+ {
+  "num": "10.133",
+  "name": "Ekādasama",
+  "cst_title": "11. Ekādasamasuttaṃ",
+  "vri_ref": "s0404m3:133",
+  "pts_num": 133,
+  "pts_page": 240,
+  "pts_line": 7,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.64,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical lists of ten right factors with minor orthographic and structural variations."
+ },
+ {
+  "num": "10.134",
+  "name": "Sādhu",
+  "cst_title": "1. Sādhusuttaṃ",
+  "vri_ref": "s0404m3:134",
+  "pts_num": 134,
+  "pts_page": 240,
+  "pts_line": 15,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.57,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Minor orthographic and sandhi variations between editions of the same text."
+ },
+ {
+  "num": "10.135",
+  "name": "Ariyadhamma",
+  "cst_title": "2. Ariyadhammasuttaṃ",
+  "vri_ref": "s0404m3:135",
+  "pts_num": 135,
+  "pts_page": 241,
+  "pts_line": 5,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core teachings on ariya and anariya dhamma match despite minor orthographic variants."
+ },
+ {
+  "num": "10.136",
+  "name": "Kusala [Akusala]",
+  "cst_title": "3. Akusalasuttaṃ",
+  "vri_ref": "s0404m3:136",
+  "pts_num": 136,
+  "pts_page": 241,
+  "pts_line": 15,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.68,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Inverted order of kusala and akusala with identical peyyala content."
+ },
+ {
+  "num": "10.137",
+  "name": "Attha",
+  "cst_title": "4. Atthasuttaṃ",
+  "vri_ref": "s0404m3:137",
+  "pts_num": 137,
+  "pts_page": 241,
+  "pts_line": 24,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.8,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings with only minor orthographic and enumeration differences."
+ },
+ {
+  "num": "10.138",
+  "name": "Dhamma",
+  "cst_title": "5. Dhammasuttaṃ",
+  "vri_ref": "s0404m3:138",
+  "pts_num": 138,
+  "pts_page": 242,
+  "pts_line": 6,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.8,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical text with minor orthographic variants and standard peyyāla."
+ },
+ {
+  "num": "10.139",
+  "name": "Sāsava",
+  "cst_title": "6. Sāsavasuttaṃ",
+  "vri_ref": "s0404m3:139",
+  "pts_num": 139,
+  "pts_page": 242,
+  "pts_line": 15,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.78,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings on sāsava and anāsava dhammas with minor orthographic variants."
+ },
+ {
+  "num": "10.140",
+  "name": "Sāvajja",
+  "cst_title": "7. Sāvajjasuttaṃ",
+  "vri_ref": "s0404m3:140",
+  "pts_num": 140,
+  "pts_page": 242,
+  "pts_line": 24,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.78,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core text with minor orthographic differences and an extra number."
+ },
+ {
+  "num": "10.141",
+  "name": "Tapanīya",
+  "cst_title": "8. Tapanīyasuttaṃ",
+  "vri_ref": "s0404m3:141",
+  "pts_num": 141,
+  "pts_page": 243,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.78,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings on tapanīya and atapanīya dhammas with minor orthographic differences."
+ },
+ {
+  "num": "10.142",
+  "name": "Ācayagāmī [Ācayagāmi]",
+  "cst_title": "9. Ācayagāmisuttaṃ",
+  "vri_ref": "s0404m3:142",
+  "pts_num": 142,
+  "pts_page": 243,
+  "pts_line": 10,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.82,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings on accumulation and non-accumulation with minor orthographic variations."
+ },
+ {
+  "num": "10.143",
+  "name": "Dukkhudraya",
+  "cst_title": "10. Dukkhudrayasuttaṃ",
+  "vri_ref": "s0404m3:143",
+  "pts_num": 143,
+  "pts_page": 243,
+  "pts_line": 19,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.82,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core text regarding dukkhudraya and sukhudraya dhammas with minor spelling variations."
+ },
+ {
+  "num": "10.144",
+  "name": "Dukkhavipāka",
+  "cst_title": "11. Dukkhavipākasuttaṃ",
+  "vri_ref": "s0404m3:144",
+  "pts_num": 144,
+  "pts_page": 244,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.75,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic variants and elisions."
+ },
+ {
+  "num": "10.145",
+  "name": "Ariyamagga",
+  "cst_title": "1. Ariyamaggasuttaṃ",
+  "vri_ref": "s0404m3:145",
+  "pts_num": 145,
+  "pts_page": 244,
+  "pts_line": 12,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.82,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative and phrasing with minor orthographic and structural additions."
+ },
+ {
+  "num": "10.146",
+  "name": "Sukkamagga [Kaṇhamagga]",
+  "cst_title": "2. Kaṇhamaggasuttaṃ",
+  "vri_ref": "s0404m3:146",
+  "pts_num": 146,
+  "pts_page": 244,
+  "pts_line": 21,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.81,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages teach the dark and bright paths with identical elided components."
+ },
+ {
+  "num": "10.147",
+  "name": "Saddhamma",
+  "cst_title": "3. Saddhammasuttaṃ",
+  "vri_ref": "s0404m3:147",
+  "pts_num": 147,
+  "pts_page": 245,
+  "pts_line": 7,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.76,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core text on saddhamma and asaddhamma matches despite minor orthographic and peyyāla variations."
+ },
+ {
+  "num": "10.148",
+  "name": "Sappurisadhamma",
+  "cst_title": "4. Sappurisadhammasuttaṃ",
+  "vri_ref": "s0404m3:148",
+  "pts_num": 148,
+  "pts_page": 245,
+  "pts_line": 16,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.76,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative with minor orthographic variants and standard peyyala elisions."
+ },
+ {
+  "num": "10.149",
+  "name": "Uppādetabba",
+  "cst_title": "5. Uppādetabbasuttaṃ",
+  "vri_ref": "s0404m3:149",
+  "pts_num": 149,
+  "pts_page": 245,
+  "pts_line": 25,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.86,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings on dhammas to be produced and avoided with minor orthographic variants."
+ },
+ {
+  "num": "10.150",
+  "name": "Āsevitabba",
+  "cst_title": "6. Āsevitabbasuttaṃ",
+  "vri_ref": "s0404m3:150",
+  "pts_num": 150,
+  "pts_page": 246,
+  "pts_line": 4,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.86,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core text with minor orthographic variants and standard numbering addition."
+ },
+ {
+  "num": "10.151",
+  "name": "Bhāvetabba",
+  "cst_title": "7. Bhāvetabbasuttaṃ",
+  "vri_ref": "s0404m3:151",
+  "pts_num": 151,
+  "pts_page": 246,
+  "pts_line": 13,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.86,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings with minor orthographic variants and chapter number suffix."
+ },
+ {
+  "num": "10.152",
+  "name": "Bahulīkattabba [Bahulīkātabba]",
+  "cst_title": "8. Bahulīkātabbasuttaṃ",
+  "vri_ref": "s0404m3:152",
+  "pts_num": 152,
+  "pts_page": 246,
+  "pts_line": 22,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.86,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both editions share identical core narrative on dhammas to be practiced and not practiced."
+ },
+ {
+  "num": "10.153",
+  "name": "Anussaritabba",
+  "cst_title": "9. Anussaritabbasuttaṃ",
+  "vri_ref": "s0404m3:153",
+  "pts_num": 153,
+  "pts_page": 247,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.86,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages present identical teachings on doctrines to be remembered or not."
+ },
+ {
+  "num": "10.154",
+  "name": "Sacchikātabba",
+  "cst_title": "10. Sacchikātabbasuttaṃ",
+  "vri_ref": "s0404m3:154",
+  "pts_num": 154,
+  "pts_page": 247,
+  "pts_line": 10,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.69,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic variants and standard structural differences."
+ },
+ {
+  "num": "10.155",
+  "name": "Sevitabba",
+  "cst_title": "1. Sevitabbasuttaṃ",
+  "vri_ref": "s0404m3:155",
+  "pts_num": 155,
+  "pts_page": 247,
+  "pts_line": 22,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.74,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with minor orthographic differences."
+ },
+ {
+  "num": "10.167",
+  "name": "Brāhmaṇa paccorohaṇī [Brāhmaṇapaccorohaṇī]",
+  "cst_title": "1. Brāhmaṇapaccorohaṇīsuttaṃ",
+  "vri_ref": "s0404m3:167",
+  "pts_num": 167,
+  "pts_page": 249,
+  "pts_line": 12,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.72,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative of Jāṇussoṇi and the Brahminical Paccorohaṇī sutta."
+ },
+ {
+  "num": "10.168",
+  "name": "Ariyapaccorohaṇī",
+  "cst_title": "2. Ariyapaccorohaṇīsuttaṃ",
+  "vri_ref": "s0404m3:168",
+  "pts_num": 168,
+  "pts_page": 251,
+  "pts_line": 26,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.67,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with standard peyyala expansions in CST edition."
+ },
+ {
+  "num": "10.169",
+  "name": "Saṅgārava",
+  "cst_title": "3. Saṅgāravasuttaṃ",
+  "vri_ref": "s0404m3:169",
+  "pts_num": 169,
+  "pts_page": 252,
+  "pts_line": 9,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative and dialog match; differences are standard orthography and expanded peyyāla."
+ },
+ {
+  "num": "10.170",
+  "name": "Orimatīra [Orima]",
+  "cst_title": "4. Orimasuttaṃ",
+  "vri_ref": "s0404m3:170",
+  "pts_num": 170,
+  "pts_page": 253,
+  "pts_line": 12,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.65,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical core text regarding the Orima Sutta."
+ },
+ {
+  "num": "10.171",
+  "name": "Adhamma 1",
+  "cst_title": "5. Paṭhamaadhammasuttaṃ",
+  "vri_ref": "s0404m3:171",
+  "pts_num": 171,
+  "pts_page": 254,
+  "pts_line": 12,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.62,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Minor orthographic differences only, core text and ten unwholesome and wholesome paths are identical."
+ },
+ {
+  "num": "10.172",
+  "name": "Adhamma 2",
+  "cst_title": "6. Dutiyaadhammasuttaṃ",
+  "vri_ref": "s0404m3:172",
+  "pts_num": 172,
+  "pts_page": 255,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.73,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same Mahākaccāna sutta with minor orthographic differences."
+ },
+ {
+  "num": "10.173",
+  "name": "Adhamma 3",
+  "cst_title": "7. Tatiyaadhammasuttaṃ",
+  "vri_ref": "s0404m3:173",
+  "pts_num": 173,
+  "pts_page": 260,
+  "pts_line": 17,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical teaching on dhamma, adhdamma, attha, and anattha."
+ },
+ {
+  "num": "10.174",
+  "name": "Kammanidāna",
+  "cst_title": "8. Kammanidānasuttaṃ",
+  "vri_ref": "s0404m3:174",
+  "pts_num": 174,
+  "pts_page": 261,
+  "pts_line": 19,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.25,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical passages with only minor orthographic and spacing differences."
+ },
+ {
+  "num": "10.175",
+  "name": "Saparikkamana [Parikkamana]",
+  "cst_title": "9. Parikkamanasuttaṃ",
+  "vri_ref": "s0404m3:175",
+  "pts_num": 175,
+  "pts_page": 262,
+  "pts_line": 11,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.54,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative on the path (parikkamana) with minor orthographic variations."
+ },
+ {
+  "num": "10.176",
+  "name": "Cunda",
+  "cst_title": "10. Cundasuttaṃ",
+  "vri_ref": "s0404m3:176",
+  "pts_num": 176,
+  "pts_page": 263,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.7,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the identical narrative setting with Cunda the blacksmith regarding purification."
+ },
+ {
+  "num": "10.177",
+  "name": "Jāṇussoṇī [Jāṇussoṇi]",
+  "cst_title": "11. Jāṇussoṇisuttaṃ",
+  "vri_ref": "s0404m3:177",
+  "pts_num": 177,
+  "pts_page": 269,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.82,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages describe the same T Tirokuṭṭasutta with minor orthographic variants."
+ },
+ {
+  "num": "10.178",
+  "name": "Sādhu",
+  "cst_title": "1. Sādhusuttaṃ",
+  "vri_ref": "s0404m3:178",
+  "pts_num": 178,
+  "pts_page": 273,
+  "pts_line": 18,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.63,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings on good and bad actions with minor orthographic differences."
+ },
+ {
+  "num": "10.179",
+  "name": "Ariyadhamma",
+  "cst_title": "2. Ariyadhammasuttaṃ",
+  "vri_ref": "s0404m3:179",
+  "pts_num": 179,
+  "pts_page": 274,
+  "pts_line": 14,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.78,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core text regarding noble and ignoble dhammas despite orthographic and numbering variants."
+ },
+ {
+  "num": "10.180",
+  "name": "Kusala",
+  "cst_title": "3. Kusalasuttaṃ",
+  "vri_ref": "s0404m3:180",
+  "pts_num": 180,
+  "pts_page": 274,
+  "pts_line": 23,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.67,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical doctrinal exposition on wholesome and unwholesome states."
+ },
+ {
+  "num": "10.181",
+  "name": "Attha",
+  "cst_title": "4. Atthasuttaṃ",
+  "vri_ref": "s0404m3:181",
+  "pts_num": 181,
+  "pts_page": 275,
+  "pts_line": 4,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.81,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical text with minor orthographic variants and standard peyyala."
+ },
+ {
+  "num": "10.182",
+  "name": "Dhamma",
+  "cst_title": "5. Dhammasuttaṃ",
+  "vri_ref": "s0404m3:182",
+  "pts_num": 182,
+  "pts_page": 275,
+  "pts_line": 13,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.81,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical text with only minor orthographic variations and a structural number."
+ },
+ {
+  "num": "10.183",
+  "name": "Sāsavadhamma [Āsava]",
+  "cst_title": "6. Āsavasuttaṃ",
+  "vri_ref": "s0404m3:183",
+  "pts_num": 183,
+  "pts_page": 275,
+  "pts_line": 22,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Minor spelling variations and peyyala elisions in identical suttas."
+ },
+ {
+  "num": "10.184",
+  "name": "Sāvajja [Vajja]",
+  "cst_title": "7. Vajjasuttaṃ",
+  "vri_ref": "s0404m3:184",
+  "pts_num": 184,
+  "pts_page": 276,
+  "pts_line": 4,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings on blameworthy and blameless dhammas with minor orthographic differences."
+ },
+ {
+  "num": "10.185",
+  "name": "Tapanīya",
+  "cst_title": "8. Tapanīyasuttaṃ",
+  "vri_ref": "s0404m3:185",
+  "pts_num": 185,
+  "pts_page": 276,
+  "pts_line": 13,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.83,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings on tapanīya and atapanīya dhammas with minor orthographic variants."
+ },
+ {
+  "num": "10.186",
+  "name": "Ācayagāmī [Ācayagāmi]",
+  "cst_title": "9. Ācayagāmisuttaṃ",
+  "vri_ref": "s0404m3:186",
+  "pts_num": 186,
+  "pts_page": 276,
+  "pts_line": 22,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.83,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings on accumulation and non-accumulation of kamma with minor orthographic variations."
+ },
+ {
+  "num": "10.187",
+  "name": "Dukkhudraya",
+  "cst_title": "10. Dukkhudrayasuttaṃ",
+  "vri_ref": "s0404m3:187",
+  "pts_num": 187,
+  "pts_page": 277,
+  "pts_line": 4,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages present the identical teachings on dukkhudraya and sukhudraya with minor orthographic variants."
+ },
+ {
+  "num": "10.188",
+  "name": "Dukkhavipāka [Vipāka]",
+  "cst_title": "11. Vipākasuttaṃ",
+  "vri_ref": "s0404m3:188",
+  "pts_num": 188,
+  "pts_page": 277,
+  "pts_line": 13,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.76,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings on dukkha and sukha vipāka dhammas with minor structural numeration differences."
+ },
+ {
+  "num": "10.189",
+  "name": "Ariyamagga",
+  "cst_title": "1. Ariyamaggasuttaṃ",
+  "vri_ref": "s0404m3:189",
+  "pts_num": 189,
+  "pts_page": 278,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.78,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings on the noble and ignoble paths with minor orthographic differences."
+ },
+ {
+  "num": "10.190",
+  "name": "Kaṇhamagga",
+  "cst_title": "2. Kaṇhamaggasuttaṃ",
+  "vri_ref": "s0404m3:190",
+  "pts_num": 190,
+  "pts_page": 278,
+  "pts_line": 10,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.78,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical text with minor orthographic variants and standard peyyala elisions."
+ },
+ {
+  "num": "10.191",
+  "name": "Saddhamma",
+  "cst_title": "3. Saddhammasuttaṃ",
+  "vri_ref": "s0404m3:191",
+  "pts_num": 191,
+  "pts_page": 278,
+  "pts_line": 19,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.77,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core text regarding true and false Dhamma with minor orthographic variations."
+ },
+ {
+  "num": "10.192",
+  "name": "Sappurisadhamma",
+  "cst_title": "4. Sappurisadhammasuttaṃ",
+  "vri_ref": "s0404m3:192",
+  "pts_num": 192,
+  "pts_page": 279,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.77,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical discourse on true and false dhamma with minor orthographic variants."
+ },
+ {
+  "num": "10.193",
+  "name": "Uppādetabbadhamma",
+  "cst_title": "5. Uppādetabbadhammasuttaṃ",
+  "vri_ref": "s0404m3:193",
+  "pts_num": 193,
+  "pts_page": 279,
+  "pts_line": 10,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.86,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings on dhammas to be developed and avoided, only minor orthographic and structural variations."
+ },
+ {
+  "num": "10.194",
+  "name": "Āsevitabbadhamma",
+  "cst_title": "6. Āsevitabbadhammasuttaṃ",
+  "vri_ref": "s0404m3:194",
+  "pts_num": 194,
+  "pts_page": 279,
+  "pts_line": 19,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.82,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical teachings on what to practice and avoid, with minor orthographic differences."
+ },
+ {
+  "num": "10.195",
+  "name": "Bhāvetabbadhamma",
+  "cst_title": "7. Bhāvetabbadhammasuttaṃ",
+  "vri_ref": "s0404m3:195",
+  "pts_num": 195,
+  "pts_page": 280,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.83,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical Dhamma teaching with minor orthographic and numbering variants."
+ },
+ {
+  "num": "10.196",
+  "name": "Bahulīkātabbadhamma [Bahulīkātabba]",
+  "cst_title": "8. Bahulīkātabbasuttaṃ",
+  "vri_ref": "s0404m3:196",
+  "pts_num": 196,
+  "pts_page": 280,
+  "pts_line": 10,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.78,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core text with minor orthographic variants and standard peyyala."
+ },
+ {
+  "num": "10.197",
+  "name": "Anussaritabbadhamma [Anussaritabba]",
+  "cst_title": "9. Anussaritabbasuttaṃ",
+  "vri_ref": "s0404m3:197",
+  "pts_num": 197,
+  "pts_page": 280,
+  "pts_line": 19,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.78,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical core text concerning things to be remembered and not remembered."
+ },
+ {
+  "num": "10.198",
+  "name": "Sacchikātabbadhamma [Sacchikātabba]",
+  "cst_title": "10. Sacchikātabbasuttaṃ",
+  "vri_ref": "s0404m3:198",
+  "pts_num": 198,
+  "pts_page": 281,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core text matches with only minor numbering and orthographical differences."
+ },
+ {
+  "num": "10.211",
+  "name": "Niraya 1 [Nirayasagga 1]",
+  "cst_title": "1. Paṭhamanirayasaggasuttaṃ",
+  "vri_ref": "s0404m3:211",
+  "pts_num": 200,
+  "pts_page": 283,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.89,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical core narrative content despite minor orthographic variants."
+ },
+ {
+  "num": "10.212",
+  "name": "Niraya 2 [Nirayasagga 2]",
+  "cst_title": "2. Dutiyanirayasaggasuttaṃ",
+  "vri_ref": "s0404m3:212",
+  "pts_num": 201,
+  "pts_page": 285,
+  "pts_line": 26,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.57,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core text on the ten dhammas of hell and heaven, minor peyyāla differences."
+ },
+ {
+  "num": "10.213",
+  "name": "Mātugāma",
+  "cst_title": "3. Mātugāmasuttaṃ",
+  "vri_ref": "s0404m3:213",
+  "pts_num": 202,
+  "pts_page": 286,
+  "pts_line": 31,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.72,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the same mātugāma sutta with minor orthographic and peyyāla differences."
+ },
+ {
+  "num": "10.214",
+  "name": "Upāsikā",
+  "cst_title": "4. Upāsikāsuttaṃ",
+  "vri_ref": "s0404m3:214",
+  "pts_num": 203,
+  "pts_page": 287,
+  "pts_line": 17,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.83,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages present the identical ten-fold laywoman text with minor reading variations."
+ },
+ {
+  "num": "10.215",
+  "name": "Visārada",
+  "cst_title": "5. Visāradasuttaṃ",
+  "vri_ref": "s0404m3:215",
+  "pts_num": 204,
+  "pts_page": 288,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.76,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical passages with minor orthographic and numbering differences."
+ },
+ {
+  "num": "10.216",
+  "name": "Saṁsappaniya pariyāya [Saṁsappanīya]",
+  "cst_title": "6. Saṃsappanīyasuttaṃ",
+  "vri_ref": "s0404m3:216",
+  "pts_num": 205,
+  "pts_page": 288,
+  "pts_line": 20,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.8,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the Saṃsappanīyapariyāya Sutta with minor orthographic differences."
+ },
+ {
+  "num": "10.217",
+  "name": "Sañcetanika 1",
+  "cst_title": "7. Paṭhamasañcetanikasuttaṃ",
+  "vri_ref": "s0404m3:217",
+  "pts_num": 206,
+  "pts_page": 292,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.57,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative and text match, with minor orthographic and manuscript variations."
+ },
+ {
+  "num": "10.218",
+  "name": "Sañcetanika 2",
+  "cst_title": "8. Dutiyasañcetanikasuttaṃ",
+  "vri_ref": "s0404m3:218",
+  "pts_num": 207,
+  "pts_page": 297,
+  "pts_line": 14,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.52,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical core narrative and doctrinal content with minor orthographic differences."
+ },
+ {
+  "num": "10.219",
+  "name": "Karajakāya",
+  "cst_title": "9. Karajakāyasuttaṃ",
+  "vri_ref": "s0404m3:219",
+  "pts_num": 208,
+  "pts_page": 299,
+  "pts_line": 11,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.76,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative and doctrinal passages match completely despite minor orthographic variants."
+ },
+ {
+  "num": "10.220",
+  "name": "Adhammacariyā",
+  "cst_title": "10. Adhammacariyāsuttaṃ",
+  "vri_ref": "s0404m3:220",
+  "pts_num": 209,
+  "pts_page": 301,
+  "pts_line": 17,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.8,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical narrative content and dialogue, with only minor orthographic differences."
+ },
+ {
+  "num": "11.1",
+  "name": "Kimatthiya",
+  "cst_title": "1. Kimatthiyasuttaṃ",
+  "vri_ref": "s0404m4:1",
+  "pts_num": 1,
+  "pts_page": 311,
+  "pts_line": 4,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.6,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical core narrative, matching the Upaddhasutta of Anguttara Nikaya."
+ },
+ {
+  "num": "11.2",
+  "name": "Cetanākaraṇīya [Cetana]",
+  "cst_title": "2. Cetanākaraṇīyasuttaṃ",
+  "vri_ref": "s0404m4:2",
+  "pts_num": 2,
+  "pts_page": 312,
+  "pts_line": 14,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical core text with minor orthographic and spacing variations."
+ },
+ {
+  "num": "11.3",
+  "name": "Upanisā 1",
+  "cst_title": "3. Paṭhamaupanisāsuttaṃ",
+  "vri_ref": "s0404m4:3",
+  "pts_num": 3,
+  "pts_page": 313,
+  "pts_line": 21,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.66,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narratives match identically with minor orthographic and peyyāla variations."
+ },
+ {
+  "num": "11.4",
+  "name": "Upanisā 2",
+  "cst_title": "4. Dutiyaupanisāsuttaṃ",
+  "vri_ref": "s0404m4:4",
+  "pts_num": 4,
+  "pts_page": 315,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.7,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages represent the identical Upanisa Sutta with minor orthographic differences."
+ },
+ {
+  "num": "11.5",
+  "name": "Upanisā 3",
+  "cst_title": "5. Tatiyaupanisāsuttaṃ",
+  "vri_ref": "s0404m4:5",
+  "pts_num": 5,
+  "pts_page": 316,
+  "pts_line": 10,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.67,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical doctrinal chains onupanisa with orthographic variants."
+ },
+ {
+  "num": "11.6",
+  "name": "Vyasana [Byasana]",
+  "cst_title": "6. Byasanasuttaṃ",
+  "vri_ref": "s0404m4:6",
+  "pts_num": 6,
+  "pts_page": 317,
+  "pts_line": 18,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.75,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages describe the eleven vyasanas of an abusive bhikkhu with minor orthographic variants."
+ },
+ {
+  "num": "11.7",
+  "name": "Saññā 1 [Saññā]",
+  "cst_title": "7. Saññāsuttaṃ",
+  "vri_ref": "s0404m4:7",
+  "pts_num": 7,
+  "pts_page": 318,
+  "pts_line": 10,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.72,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative and dialogue match perfectly with only orthographic differences."
+ },
+ {
+  "num": "11.8",
+  "name": "Manasikāra",
+  "cst_title": "8. Manasikārasuttaṃ",
+  "vri_ref": "s0404m4:8",
+  "pts_num": 9,
+  "pts_page": 321,
+  "pts_line": 7,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical passages with minor orthographic differences in word splitting."
+ },
+ {
+  "num": "11.9",
+  "name": "Sandha [Saddha]",
+  "cst_title": "9. Saddhasuttaṃ",
+  "vri_ref": "s0404m4:9",
+  "pts_num": 10,
+  "pts_page": 322,
+  "pts_line": 32,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.63,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the exact same core narrative of the Sandha Sutta."
+ },
+ {
+  "num": "11.10",
+  "name": "Moranivāpa",
+  "cst_title": "10. Moranivāpasuttaṃ",
+  "vri_ref": "s0404m4:10",
+  "pts_num": 11,
+  "pts_page": 326,
+  "pts_line": 20,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.68,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical text with minor orthographic differences and slight expansion in CST."
+ },
+ {
+  "num": "11.11",
+  "name": "Mahānāma 1",
+  "cst_title": "1. Paṭhamamahānāmasuttaṃ",
+  "vri_ref": "s0404m4:11",
+  "pts_num": 12,
+  "pts_page": 328,
+  "pts_line": 10,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.73,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical core narrative regarding Mahānāma and the Buddha."
+ },
+ {
+  "num": "11.12",
+  "name": "Mahānāma 2",
+  "cst_title": "2. Dutiyamahānāmasuttaṃ",
+  "vri_ref": "s0404m4:12",
+  "pts_num": 13,
+  "pts_page": 332,
+  "pts_line": 24,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.76,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the identical narrative with minor orthographic differences."
+ },
+ {
+  "num": "11.13",
+  "name": "Nandiya",
+  "cst_title": "3. Nandiyasuttaṃ",
+  "vri_ref": "s0404m4:13",
+  "pts_num": 14,
+  "pts_page": 334,
+  "pts_line": 25,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.67,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical narratives with minor orthographic variants across editions."
+ },
+ {
+  "num": "11.14",
+  "name": "Subhūti",
+  "cst_title": "4. Subhūtisuttaṃ",
+  "vri_ref": "s0404m4:14",
+  "pts_num": 15,
+  "pts_page": 337,
+  "pts_line": 12,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.71,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share the same core narrative of Subhūti and the Buddha."
+ },
+ {
+  "num": "11.15",
+  "name": "Mettānisaṁsa [Mettā]",
+  "cst_title": "5. Mettāsuttaṃ",
+  "vri_ref": "s0404m4:15",
+  "pts_num": 16,
+  "pts_page": 342,
+  "pts_line": 1,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.88,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Identical metta-anisamsa sutta text with minor orthographic variants."
+ },
+ {
+  "num": "11.16",
+  "name": "Aṭṭhakanāgara [Dasama]",
+  "cst_title": "6. Aṭṭhakanāgarasuttaṃ",
+  "vri_ref": "s0404m4:16",
+  "pts_num": 17,
+  "pts_page": 342,
+  "pts_line": 15,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.69,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages share identical narrative content with minor orthographic differences."
+ },
+ {
+  "num": "11.17",
+  "name": "Gopālaka [Gopāla]",
+  "cst_title": "7. Gopālasuttaṃ",
+  "vri_ref": "s0404m4:17",
+  "pts_num": 18,
+  "pts_page": 347,
+  "pts_line": 14,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.74,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages are identical editions of the Gopālaka Sutta with minor orthographic variants."
+ },
+ {
+  "num": "11.18",
+  "name": "Samādhi 1",
+  "cst_title": "8. Paṭhamasamādhisuttaṃ",
+  "vri_ref": "s0404m4:18",
+  "pts_num": 19,
+  "pts_page": 353,
+  "pts_line": 16,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.74,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narratives match identically, with only minor orthographic and spacing differences."
+ },
+ {
+  "num": "11.19",
+  "name": "Samādhi 2",
+  "cst_title": "9. Dutiyasamādhisuttaṃ",
+  "vri_ref": "s0404m4:19",
+  "pts_num": 20,
+  "pts_page": 354,
+  "pts_line": 23,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.67,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative, discourse structure, and terminology match; minor differences in elision and spelling."
+ },
+ {
+  "num": "11.20",
+  "name": "Samādhi 3",
+  "cst_title": "10. Tatiyasamādhisuttaṃ",
+  "vri_ref": "s0404m4:20",
+  "pts_num": 21,
+  "pts_page": 356,
+  "pts_line": 7,
+  "legacy": "OK+RTE",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.58,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with standard peyyāla expansions and orthographic variants."
+ },
+ {
+  "num": "11.21",
+  "name": "Samādhi 4",
+  "cst_title": "11. Catutthasamādhisuttaṃ",
+  "vri_ref": "s0404m4:21",
+  "pts_num": 22,
+  "pts_page": 357,
+  "pts_line": 15,
+  "legacy": "OK",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.79,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Both passages contain identical Sāriputta discourse with only minor orthographic differences."
+ },
+ {
+  "num": "10.37",
+  "name": "Saṅghabheda [Bheda 1]",
+  "cst_title": "7. Saṅghabhedasuttaṃ",
+  "vri_ref": "s0404m3:37",
+  "pts_num": 36,
+  "pts_page": 74,
+  "pts_line": 12,
+  "legacy": "OK+RTE",
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.5,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS discusses samagghi and bheda while CST only discusses bheda."
+ }
+]
