@@ -11,6 +11,10 @@ bajo dos regímenes, y ninguno se parece a los de SN:
 | **Duka** | 47-100 | idem (`II.`) | idem |
 | **Tika** | 101-300 | **ninguno** | `N.` **CENTRADO** y **corrido** (`1.` p101, `11.` p106) |
 
+Del Tika en adelante **todo el Aṅguttara usa el régimen «corrido»**: A ii (Catukka) marca igual
+(`21.` en A ii 20, que es el vagga 3 de Morris), así que el módulo vale para los cinco volúmenes.
+El régimen se elige por nipāta en `REGIMEN`, no por volumen.
+
 Tres trampas del dato:
 
 - **La llamada de nota va pegada al numeral**: `XIV.3`, `XVII.4`, `XIX.2`, `XXI.1`. Exigir el
@@ -56,7 +60,12 @@ _ORD = {'pathamo': 1, 'dutiyo': 2, 'tatiyo': 3, 'catuttho': 4, 'pancamo': 5, 'ch
 _FOLD = str.maketrans({'ā': 'a', 'ī': 'i', 'ū': 'u', 'ṅ': 'n', 'ñ': 'n', 'ṇ': 'n',
                        'ṭ': 't', 'ḍ': 'd', 'ḷ': 'l', 'ṃ': 'm', 'ṁ': 'm'})
 
-_NIPATA = re.compile(r'(EKA|DUKA|TIKA)-NIP[ĀA]TA', re.I)
+# Los nipātas de todo el Aṅguttara, para que el módulo valga en los cinco volúmenes: A ii es el
+# Catukka y usa el MISMO régimen que el Tika (nº corrido centrado, vagga implícito cada diez).
+_NIPATA = re.compile(r'(EKA|DUKA|TIKA|CATUKKA|PA[ÑN]CAKA|CHAKKA|SATTAKA|A[ṬT][ṬT]HAKA|'
+                     r'NAVAKA|DASAKA|EK[ĀA]DASAKA)-NIP[ĀA]TA', re.I)
+# régimen por nipāta: 'vagga_romano' (Eka/Duka) o 'corrido' (Tika en adelante)
+REGIMEN = {'EKA': 'vagga_romano', 'DUKA': 'vagga_romano'}
 
 
 def _parse(expr, s):
@@ -125,9 +134,10 @@ def collect_an1(pages):
                             'page': pg, 'line': ln, 'colofon': val[0]})
             elif kind == 'sutta' and nip:
                 # en Eka/Duka sólo cuenta la forma de párrafo; en el Tika, sólo la centrada
-                if nip in ('EKA', 'DUKA') and ind not in SUTTA_INDENT:
+                reg = REGIMEN.get(nip, 'corrido')
+                if reg == 'vagga_romano' and ind not in SUTTA_INDENT:
                     continue
-                if nip == 'TIKA' and ind < MIN_INDENT_CENTRED:
+                if reg == 'corrido' and ind < MIN_INDENT_CENTRED:
                     continue
                 out.append({'nipata': nip, 'vagga': vag, 'num': val, 'page': pg, 'line': ln})
     return out
