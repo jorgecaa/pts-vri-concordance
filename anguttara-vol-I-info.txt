@@ -315,3 +315,37 @@ donde el CST trae nombre por sutta** (10 subheads por vagga). Es por donde hay q
 sirve la receta conocida (alinear filas↔subheads por nombre, `align_rows` monótono, `VRI Ref`),
 mientras que Eka y Duka necesitan una alineación **estructural** (vagga N, sutta M ↔ M-ésimo
 paranum del vagga N) y una decisión previa sobre qué cuenta como fila.
+
+================================================================================
+ALINEADOR DEL TIKA — LISTO (2026-07-25), pendiente de validar
+================================================================================
+
+`validador_an1_tika.py` + `an_names.py`. Auditoría previa a gastar API:
+
+| comprobación | resultado |
+|---|---|
+| estructura vs índice de Morris | **16/16** páginas de arranque de vagga exactas |
+| nº corridos de PTS | **1..163 sin un solo hueco** |
+| filas alineadas con sutta del CST | 154/156 |
+| nombre PTS ≡ título CST | **153/156 (98 %)** |
+| ordinal (dígito PTS ≡ `paṭhama`/`dutiya`) | **30/30** |
+| página del marcador ≡ página del Excel (±1) | **152/156 (97 %)**, 0 sin marcador |
+
+**Lo que costó, y por qué importa:**
+
+1. **El lado PTS no va por posición.** Hay **163 marcadores para 156 filas** y emparejar la fila k
+   con el marcador k+1 acumulaba deriva (desde `3.34` la página se iba +2 y crecía): 104/156.
+2. **El ancla la da la `DPR Ref`** recuperada en el re-parseo de `Raw ID`. Describe exactamente los
+   **desdoblamientos** (`3.32 Ānanda` → `AN 3.32a`, `3.33 Sāriputta` → `AN 3.32b`: una del DPR
+   partida en dos filas) y las **fusiones** (`3.39 Sukhumāla` → `AN 3.38-9`). Con ella como
+   restricción dura: 145/156.
+3. **Los sufijos `a`/`b` exigen capacidad 2**: dos filas del Excel sobre un mismo sutta de PTS. Con
+   eso, y reparando un `«AN 3102b»` al que la fuente le comió el punto: **152/156, 0 huérfanas**.
+
+El caso que lo destapó todo: `3.111 «Nidāna 1»` acababa en el marcador 110, cuando su `Raw ID` dice
+`[AN 3.107]-08` — los marcadores **107-108**. En A i 263 hay dos suttas Nidāna seguidos (lobha- y
+alobha-) que el Excel lleva como una sola fila.
+
+**A arbitraje: las 9 filas de rango** (`3.2-9 «Lakkhaṇa - Khata»`, `3.37-38`, `3.51-52`, `3.58-9`,
+`3.96-98`, `3.143-145`, `3.157-162`, `3.163-182`, `3.183-352`) — redundantes con individuales que
+ya existen, como `12.74` (S ii) y `22.148` (S iii).
