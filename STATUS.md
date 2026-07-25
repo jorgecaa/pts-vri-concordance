@@ -1,4 +1,38 @@
 # PTS Reference Concordance — Status Report
+## MEDIDA 2026-07-25 — la clave canónica del lado CST pasa a ser el **paranum del XML VRI**
+
+Se abandona el **DPR como clave de unión** (no como etiqueta). Motivo acumulado: S ii desplazado
++7, S iv (SN 35) +17 y +47, AN +15 por **desdoblamientos de fila** (`3.32` del DPR se parte en
+`3.32a`/`3.32b`), y en `massive.tsv` el `dpr_code` de AN tiene **138 códigos duplicados** con
+asignaciones incoherentes entre sí (`AN3.2` → `an3.1.2.8` mientras `AN3.11` → `an3.1.2.11`).
+Auditado **por nombre**, `massive` sólo concuerda con **66 de las 1738** filas de AN: allí no sirve
+de puente. En todos esos casos el validador aprobaba un par correcto pero **ajeno a la fila**.
+
+- **Columna nueva `VRI Ref`**, formato `«<fichero>:<paranum>»` (`s0303m:146`; rangos `s0304m:33-42`).
+- **Rellenada en 1982 filas**: DN 34/34, MN 152/152, SN 1796/1814. AN y KN se harán con su alineador.
+- **`Sutta #` NO se reescribe.** Su validación se hizo contra esas filas y `Raw ID` conserva el
+  original de la fuente: se le quita el papel de clave, no se destruye.
+- **Criterio de aceptación**: una fila sólo recibe clave si el **título CST recomputado coincide con
+  el que se validó**. Saltaron 24 discrepancias en S iii — fallo del recomputo, que no reproducía el
+  `ditthi_pairs` ni el fallback por título — y se resolvieron tomando el **título validado** como
+  autoridad.
+- Hallazgos estructurales del camino, útiles para AN/KN:
+  - **La granularidad del `<div>` cambia por nikāya**: en DN un div es **un sutta**, en MN y AN un
+    **vagga**, en SN un **saṃyutta**. DN se resuelve por div; MN por subhead filtrando los que son
+    títulos de sutta (los encabezados de sección internos se llevaban los paranums: 118/152).
+  - **El volumen de PTS no es el fichero del CST**: PTS «M i» abarca MN 1-76 pero `s0201m` es el
+    Mūlapaṇṇāsa (MN 1-50). El fichero se elige por el **número de sutta**.
+  - Normalizar títulos exige **colapsar letras dobles** (`acchariyābbhuta` ≡ `acchariya-abbhuta`) y
+    recortar en el primer `suttaṃ` (las variantes se anotan entre llaves en un lado y sueltas en el
+    otro).
+- **18 filas de SN se quedan sin clave, a propósito**: son firmas humanas en bloque sin veredicto en
+  el JSON (S ii `12.83-93`, peyyāla de S v). Se intentó apuntar `12.83-93` al bloque
+  «1. Satthusuttaṃ» y **la comprobación de contenido lo desmintió** — ese bloque no contiene ninguno
+  de los términos del peyyāla. Sólo `S v 46.87` tenía evidencia positiva (nombre y contenido) y se
+  resolvió a mano.
+
+---
+
 ## Date: 2026-07-21 (updated 2026-07-25 — SN ENTERO CERRADO 🔒 1814/1814)
 
 ---
