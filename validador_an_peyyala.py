@@ -78,15 +78,24 @@ NOMBRES_CORREGIDOS = {
 MIN_PROSA = 60          # tokens: por debajo de esto el texto está elidido y no hay qué cotejar
 
 
-def excel_pendientes():
-    """Filas PENDIENTE de A ii–A v, en orden de lectura, con su paranum de arranque."""
+def excel_pendientes(solo_pendientes=True):
+    """Filas de A ii–A v, en orden de lectura, con su paranum de arranque.
+
+    ⚠️ Con `solo_pendientes=False` devuelve **todas**, y eso importa: la serie monótona necesita
+    las filas ya CONFIRMADO como **anclas**. Corriéndola sólo sobre las pendientes, cada una queda
+    suelta y la monotonía no puede apoyarse en nada — en el Pañcaka de A iii, `5.270` y `5.271` se
+    situaban con el tramo entero y se perdían al quedarse solas. El análisis se hace sobre todas y
+    se informa de las pendientes.
+    """
     wb = load_workbook(XLSX, read_only=True)
     ws = wb['Complete Canon']
     hdr = [c.value for c in next(ws.iter_rows(min_row=1, max_row=1))]
     ci = {n: i for i, n in enumerate(hdr)}
     out = []
     for row in ws.iter_rows(min_row=2, values_only=True):
-        if row[ci['Nikaya']] != 'AN' or row[ci['Estado']] == 'CONFIRMADO':
+        if row[ci['Nikaya']] != 'AN':
+            continue
+        if solo_pendientes and row[ci['Estado']] == 'CONFIRMADO':
             continue
         vol = str(row[ci['PTS Roman']] or '').strip()
         if vol not in ('ii', 'iii', 'iv', 'v'):
@@ -100,7 +109,8 @@ def excel_pendientes():
         out.append({'vol': vol, 'num': num, 'nip': m.group(1),
                     'lo': int(m.group(2)), 'hi': int(m.group(3) or m.group(2)),
                     'name': nombre, 'name_ok': corr[1] if corr else nombre,
-                    'page': row[ci['PTS Page']], 'legacy': str(row[ci['Validation']] or '')})
+                    'page': row[ci['PTS Page']], 'legacy': str(row[ci['Validation']] or ''),
+                    'pendiente': row[ci['Estado']] != 'CONFIRMADO'})
     return out
 
 
@@ -172,7 +182,7 @@ def main():
 
     conn = sqlite3.connect(DB)
     conn.row_factory = sqlite3.Row
-    todas = [f for f in excel_pendientes() if f['vol'] in vols]
+    todas = [f for f in excel_pendientes(solo_pendientes=False) if f['vol'] in vols]
     porregion = defaultdict(list)
     sueltas = []
     for f in todas:
@@ -189,6 +199,11 @@ def main():
         if not filas:
             continue
         filas, fallos, T, porpn = analiza(conn, clave, filas)
+        filas = [f for f in filas if f['pendiente']]
+        fallos = ([n for n in fallos[0] if n in {f['num'] for f in filas}],
+                  [n for n in fallos[1] if n in {f['num'] for f in filas}])
+        if not filas:
+            continue
         vol, nip = region[0], region[1]
         ok_pts = sum(1 for f in filas if f['pos_pts'] is not None)
         ok_cst = sum(1 for f in filas if f['pos_cst'] is not None)

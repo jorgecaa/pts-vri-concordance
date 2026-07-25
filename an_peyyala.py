@@ -199,13 +199,25 @@ def cst_unidades(stem, lo=None, hi=None):
                 continue
             m = re.match(r'(\d+)(?:-(\d+))?$', p.get('n') or '')
             if not m:
+                # ⚠️ Párrafo de CONTINUACIÓN: el CST sólo pone `n` en el PRIMER `<p>` de cada
+                # sutta, y los siguientes van sin atributo. Descartarlos tiraba el **74 % del
+                # texto** de `s0403m1` — y con él, justo la parte que enumera los miembros de los
+                # grupos elididos (`Sāṭiyaggāhāpako na sammannitabbo…` vivía en uno de ellos). Se
+                # agregan a la unidad anterior, que es a quien pertenecen.
+                if out and rend in ('bodytext', 'gatha1', 'gatha2', 'gatha3', 'gathalast'):
+                    grupo = out[-1]['grupo']
+                    for u in out:
+                        if u['grupo'] == grupo:
+                            u['texto'] += ' ' + txt
                 continue
             a, b = int(m.group(1)), int(m.group(2) or m.group(1))
+            unidades = []
             for k, pn in enumerate(range(a, b + 1)):
                 if (lo is not None and pn < lo) or (hi is not None and pn > hi):
                     continue
-                out.append({'pn': pn, 'div': div, 'subhead': sub, 'texto': txt,
-                            'grupo': (a, b), 'k': k, 'n': b - a + 1})
+                unidades.append({'pn': pn, 'div': div, 'subhead': sub, 'texto': txt,
+                                 'grupo': (a, b), 'k': k, 'n': b - a + 1})
+            out.extend(unidades)
     out.sort(key=lambda u: u['pn'])
     return out
 
@@ -242,6 +254,11 @@ def sondas(nombre):
             # la monotonía se encarga de coger la aparición que toca — la SEGUNDA.
             if w.startswith('apara') and len(w) > 9:
                 out.append(w[5:])
+                # …y con la vocal RESTITUIDA. `apara` + `anāgāmi` se escribe `aparānāgāmi`: el
+                # sandhi funde las dos vocales, así que quitar los cinco caracteres deja
+                # `nāgāmi…`, que no existe. Hay que devolver la `a` inicial para volver a
+                # `anāgāmiphala`, que es lo que imprime PTS.
+                out.append('a' + w[5:])
             r = re.sub(r'[aiueom]+$', '', w)
             if len(w) >= 3:
                 out.append(w)

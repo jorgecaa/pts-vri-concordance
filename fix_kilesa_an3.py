@@ -27,6 +27,10 @@ XLSX = 'PTS_Reference_Complete_Canon.xlsx'
 CORRECCIONES = {                      # (Sutta #, nombre actual) → nombre correcto
     ('5.1053-1102', 'Pamāda peyyāla'): 'Mada peyyāla',
     ('5.1103-1152', 'Macchariya peyyāla'): 'Pamāda peyyāla',
+    # Tercer nombre del mismo volumen desmentido por el texto: las DOS ediciones escriben
+    # `Sāṭiya-` —PTS `sāṭiyaggāhāpako` (A iii 275), CST `sāṭiyagāhāpako` (grupo 273-285)— y sólo
+    # el Excel escribe `Sāṭika-`. Con el nombre corregido la fila se sitúa y se cierra.
+    ('5.282', 'Sāṭikagāhāpaka'): 'Sāṭiyagāhāpaka',
 }
 
 

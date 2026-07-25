@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-reconcile_an3_cierre — cierra lo cerrable de **A iii (Pañcaka + Chakka)**: 83 de las 88 pendientes.
+reconcile_an3_cierre — cierra lo cerrable de **A iii (Pañcaka + Chakka)**: 86 de las 88 pendientes.
 
 A diferencia de A ii, A iv y A v, aquí **no se cierra el volumen entero**, y el motivo es del dato,
 no de la herramienta: en el *sikkhāpada-peyyāla* PTS **no enumera todos los miembros que el CST sí
@@ -21,14 +21,30 @@ Con eso, `validador_an_peyyala.analiza` sitúa **71 de las 76** filas del Pañca
 Chakka. El propio análisis se vuelve a correr aquí (no se copian listas de números a mano): lo que
 se cierra es lo que la prueba sostiene en el momento de escribir.
 
-### Las 5 que se quedan fuera, una por una
+### Las 2 que se quedan fuera, y por qué son irreductibles
 
 | fila | por qué |
 |---|---|
-| `5.270` `5.271` | PTS abrevia la segunda tanda de jhānas con `…pe… arahattaphalaṃ` y no llega a nombrar el *anāgāmi-* ni el *arahatta-phala* |
-| `5.282` `Sāṭikagāhāpaka` | el impreso escribe **`Sāṭiyagāhāpako`**: divergencia de grafía que ninguna regla de `pali_norm` cubre (no es `ṭik`/`ṭiy` un cambio regular) |
 | `5.291` `Upāsaka` | **PTS no lo imprime**: su lista salta de `sāmaṇerā` a `upāsikā` |
-| `5.300` `Āruddhaka` | el término no aparece en el tramo del impreso |
+| `5.300` `Āruddhaka` | el nombre **no aparece en ninguna página de A iii**: queda dentro del `…pe…` de la lista de sectarios |
+
+Las dos son el mismo caso —PTS elide ese miembro— y **no hay prueba que darles por este camino**:
+sin término en el impreso no hay nada que situar. Cerrarlas exigiría otra clase de evidencia (el
+uddāna del vagga, o el cotejo contra el impreso en papel).
+
+En la primera pasada quedaban tres más, y las tres eran **defectos míos o del Excel**, no del dato:
+
+- `5.270`/`5.271` — el **sandhi de `apara-`**: `apara` + `anāgāmi` se escribe `aparānāgāmi`, así que
+  quitar el prefijo dejaba `nāgāmi…`, que no existe en ningún texto. Hay que **restituir la vocal**.
+  Y la serie monótona tiene que correrse sobre **todas** las filas del tramo, no sólo las
+  pendientes: las ya cerradas son sus anclas, y sin ellas no hay de dónde agarrarse.
+- `5.282` — no era divergencia de grafía entre ediciones sino un **error del Excel**: PTS escribe
+  `sāṭiyaggāhāpako` (A iii 275) y el CST `sāṭiyagāhāpako`; sólo el Excel decía `Sāṭika-`.
+
+⚠️ Y por el camino salió un defecto de fondo en `an_peyyala.cst_unidades`: el CST sólo pone el
+atributo `n` en el **primer** `<p>` de cada sutta, y los de continuación van sin él. Descartarlos
+tiraba el **74 % del texto** de `s0403m1` — justo la parte que enumera los miembros de los grupos
+elididos. Corregido: se agregan a la unidad a la que pertenecen.
 
 ### Dos ajustes de dato
 
@@ -68,12 +84,19 @@ FUERA = {          # filas del régimen numerado, con su motivo
     '6.82': 'par correcto (marcador 82, A iii 433); el REJECT venía del sutta gemelo',
 }
 VRI_CORREGIDA = {'5.1103-1152': 's0403m1:1103-1151'}
+# Sólo dos filas quedan sin cerrar, y las dos por la misma razón: **PTS elide ese miembro de la
+# lista**. Las otras tres de la primera pasada se recuperaron al arreglar tres defectos propios:
+#   · `5.270`/`5.271` — el sandhi de `apara-`: `apara`+`anāgāmi` se escribe `aparānāgāmi`, así que
+#     quitar el prefijo deja `nāgāmi…`, que no existe; hay que restituir la vocal (`an_peyyala`).
+#     Y la serie tiene que correrse sobre TODAS las filas del tramo, no sólo las pendientes: sin
+#     las ya cerradas como anclas, la monotonía no tiene de dónde agarrarse.
+#   · `5.282` — no era grafía divergente entre ediciones sino un **error del Excel**: PTS escribe
+#     `sāṭiyaggāhāpako` (A iii 275) y el CST `sāṭiyagāhāpako`; sólo el Excel decía `Sāṭika-`.
+#     Corregido en `fix_kilesa_an3.py`.
 NO_CERRAR = {
-    '5.270': 'PTS abrevia la segunda tanda de jhānas y no nombra el anāgāmiphala',
-    '5.271': 'PTS abrevia la segunda tanda de jhānas y no nombra el arahattaphala',
-    '5.282': 'el impreso escribe «Sāṭiyagāhāpako» y el Excel «Sāṭikagāhāpaka»: grafía divergente',
     '5.291': 'PTS NO imprime este miembro: su lista salta de «sāmaṇerā» a «upāsikā»',
-    '5.300': 'el término «Āruddhaka» no aparece en el tramo del impreso',
+    '5.300': 'el nombre «Āruddhaka» no aparece en NINGUNA página de A iii: PTS lo deja dentro del '
+             '«…pe…» de la lista de sectarios',
 }
 
 
@@ -88,13 +111,17 @@ def main():
         if region[0] != 'iii':
             continue
         clave = (region[0], region[1], region[3], region[4], region[5], region[6])
-        filas = [f for f in VP.excel_pendientes()
+        # TODAS las filas del tramo, no sólo las pendientes: las ya cerradas son las anclas de la
+        # serie monótona. Con sólo las pendientes, `5.270` y `5.271` se quedaban sin situar.
+        filas = [f for f in VP.excel_pendientes(solo_pendientes=False)
                  if VP.region_de(f) == clave]
         if not filas:
             continue
         filas, _fallos, _T, _u = VP.analiza(conn, clave, filas)
         for f in filas:
-            if f['pos_pts'] is not None and f['pagina_ok'] and f['num'] not in NO_CERRAR:
+            if not f['pendiente'] or f['num'] in NO_CERRAR:
+                continue
+            if f['pos_pts'] is not None and f['pagina_ok']:
                 probadas[f['num']] = (f['vri'],
                                       f'peyyāla: «{f["sonda_pts"]}» literal y en orden en PTS '
                                       f'(A iii {f["locus"][0]},{f["locus"][1]}); ancla CST = paranum')
