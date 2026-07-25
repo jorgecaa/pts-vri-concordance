@@ -1,0 +1,324 @@
+================================================================================
+                                CONTENTS
+================================================================================
+
+                                                                        PAGE
+INTRODUCTION ........................................................... vii
+
+BOOK I. DEVATA-SAMYUTTA .................................................  1
+   Chapter I.   (Nala-vagga) ............................................  1
+     "     II.  (Nandana-vagga) .........................................  5
+     "     III. (Satti-vagga) ........................................... 13
+     "     IV.  (Satullapakayika-vagga) ................................. 16
+     "     V.   (Aditta-vagga) .......................................... 31
+     "     VI.  (Jara-vagga) ............................................ 36
+     "     VII. (Addha-vagga) ........................................... 39
+     "     VIII.(Chetva-vagga) .......................................... 41
+
+BOOK II. DEVAPUTTA-SAMYUTTA ............................................ 46
+   Chapter I.   ......................................................... 46
+     "     II.  (Anathapindika-vagga) ................................... 51
+     "     III. (Nanatitthiya-vagga) .................................... 56
+
+BOOK III. KOSALA-SAMYUTTA .............................................. 68
+   Chapter I.   ......................................................... 68
+     "     II.  ......................................................... 77
+     "     III. (Pancaka) ............................................... 93
+
+BOOK IV. MARA-SAMYUTTA ................................................. 103
+   Chapter I.   ......................................................... 103
+     "     II.  ......................................................... 109
+     "     III. (Upari-panca) ........................................... 117
+
+BOOK V. BHIKKHUNI-SAMYUTTA ............................................. 128
+
+BOOK VI. BRAHMA-SAMYUTTA ............................................... 136
+   Chapter I.   ......................................................... 136
+     "     II.  (Pancaka) ............................................... 153
+
+BOOK VII. BRAHMANA-SAMYUTTA ............................................ 160
+   Chapter I.   (Arahanta-vagga) ........................................ 160
+     "     II.  (Upasaka-vagga) ......................................... 172
+
+BOOK VIII. VANGISA-SAMYUTTA ............................................ 185
+
+BOOK IX. VANA-SAMYUTTA ................................................. 197
+
+BOOK X. YAKKHA-SAMYUTTA ................................................ 206
+
+BOOK XI. SAKKA-SAMYUTTA ................................................ 216
+   Chapter I.   ......................................................... 216
+     "     II.  ......................................................... 228
+     "     III. (Pancaka) ............................................... 237
+
+APPENDIX ............................................................... 241
+   I. Index of Proper Names ............................................ 241
+  II. Alphabetical Index of the Suttas ................................. 246
+ III. Alphabetical Index of the Gathas ................................. 249
+
+
+================================================================================
+                              INTRODUCTION
+================================================================================
+
+The Samyutta- (or Sannutta-) Nikaya is the third section of the Sutta-pitaka,
+forming a sequel to the Digha-nikaya (compilation of the long suttas), and to
+the Majjhima-nikaya (compilation of the middle suttas). It is the "compilation
+of the joined or connected suttas," because the Pali word Samyutta, which is no
+other than the Sanskrit Sam-yukta, means "collected, united, put together," and
+corresponds literally to the Latin word conjunctus. The Samyutta-nikaya consists
+of fifty-five groups of suttas, which are precisely the Samyuttas.
+
+These Samyuttas vary much in length, some being only of ten suttas, others being
+composed of several chapters (vaggos), more or less, which are sometimes very
+numerous. The suttas, which are the shortest division of the compilation, differ
+also in length, as several of them are very short, and several very much longer.
+But, upon the whole, there are no very long suttas in this compilation.
+
+--------------------------------------------------------------------------------
+1 The spelling Sannutta accords better with the pronunciation, Samyutta with
+the etymology of the word.
+--------------------------------------------------------------------------------
+
+The whole of the collection, that is to say, all the fifty-five Samyuttas, are
+distributed into five great sections, which are also called vaggos, respectively
+styled: Sagatha-vaggo, Nidana, Khandha, Salayatana, Maha-vaggo. The vaggo
+denomination added to each of these titles is of very common and various use.
+It applies to sections of very differing length, to the longest and to the shortest.
+This is the case in our compilation, as the great divisions of the whole
+collection are entitled vaggo, and the divisions of the Samyuttas are also
+styled vaggo. Thus, the suttas form the (little) vaggos, these vaggos the
+Samyuttas, and the Samyuttas the (great) Vaggos. This variety of use is an
+inconvenience which, nevertheless, is not practically seriously troublesome.
+
+Each of the five great vaggos contains from nine to thirteen, on an average
+eleven Samyuttas; their respective length somewhat differs. We can trace the
+following list, which gives the number of the Samyuttas, and that of the leaves
+occupied by each great vaggo, in a Burmese and a Singhalese MS.:-
+
++-------------------+--------------------+--------------------------------------+
+|                   |                    |         Number of the leaves         |
+|   Names of the    |   Number of the    |               in a                   |
+|      Vaggos       |     Samyuttas      +-------------------+------------------+
+|                   |                    |    Burmese MS.    |  Singhalese MS.  |
++-------------------+--------------------+-------------------+------------------+
+| I. Sagatha        |         11         |        82         |        63        |
+| II. Nidana        |          9         |        96         |        71        |
+| III. Khandha      |         13         |       116         |        79        |
+| IV. Salayatana    |         10         |       132         |        97        |
+| V. Maha           |         12         |       160         |       103        |
++-------------------+--------------------+-------------------+------------------+
+| Total             |         55         |       586         |       413        |
++-------------------+--------------------+-------------------+------------------+
+
+The reader can, from these indications, imagine the length of the whole work,
+and the respective extent of the different sections.
+
+The present publication contains only the first of the five great divisions, viz.
+the Sagatha; so called because all the suttas of this section have one stanza
+(gatha) at least; Sagatha means "with gathas." In this section all the suttas
+consist of a narrative in prose, intermixed with verses. Sometimes the prose is
+missing, and the sutta seems to consist only of verses; but it is only by
+abbreviation, the same frame being used for several suttas, even for all the
+suttas of one chapter.
+
+The total number of the Samyuttas in the Sagatha is, as said before, eleven.
+Four of them form each one full chapter (vaggo); the suttas of the others are
+distributed in several chapters, two or three, in one case eight. These chapters
+consist generally of ten suttas, sometimes eleven or twelve suttas, in one case
+fourteen. When the exceeding suttas amount to five, these five form a new
+chapter-generally styled Pancaka or Upari-panca ("the five super-added")-which
+can be considered either as an independent chapter or as the sequel of the
+preceding. It seems fit to give here a list of the Samyuttas of the Sagatha,
+with an indication of the number of the vaggos and of the suttas:-
+
++-------+--------------------+---------------------+-------------------+
+|  No.  | Samyutta Name      | Number of Vaggos    | Number of Suttas  |
++-------+--------------------+---------------------+-------------------+
+|   I.  | Devata-Samyutta    | 8 vaggos            | 81 suttas         |
+|  II.  | Devaputta-Samyutta | 3 vaggos            | 30 suttas         |
+| III.  | Kosala-Samyutta    | 3 (or 2) vaggos     | 25 suttas         |
+|  IV.  | Mara-Samyutta      | 3 (or 2) vaggos     | 25 suttas         |
+|   V.  | Bhikkhuni-Samyutta | 1 vaggo             | 10 suttas         |
+|  VI.  | Brahma-Samyutta    | 2 (or 1) vaggos     | 15 suttas         |
+| VII.  | Brahmana-Samyutta  | 2 vaggos            | 22 suttas         |
+| VIII. | Vangisa-Samyutta   | 1 vaggo             | 12 suttas         |
+|  IX.  | Vana-Samyutta      | 1 vaggo             | 14 suttas         |
+|   X.  | Yakkha-Samyutta    | 1 vaggo             | 12 suttas         |
+|  XI.  | Sakka-Samyutta     | 3 (or 2) vaggos     | 25 suttas         |
++-------+--------------------+---------------------+-------------------+
+| Total |                    | 28 (or 26) vaggos   | 271 suttas        |
++-------+--------------------+---------------------+-------------------+
+
+Some of these Samyuttas are really a sequel or appendix to the immediately
+preceding one; thus, the Bhikkhuni- and Vangisa-Samyuttas are respectively the
+continuation of the Mara- and Brahmana-Samyuttas.
+
+The titles of the suttas are regularly given at the end of each chapter in the
+so-called Uddanas; they refer sometimes to the subject of the suttas; but most
+often they are only such a word of the sutta considered as significant,
+generally the first word of the first gatha. The MSS. do not always agree as
+to the titles; but this is not special to the Samyutta-nikaya, and occurs in
+other Pali and Sanskrit Buddhistic compilations.
+
+The repetitions are very numerous in our text; some suttas occur two, three,
+four times. If not the whole text, at least the gathas, or some of them, are
+repeated. A series of stanzas succeeding without interruption in a sutta recurs
+in another, divided, in the shape of a dialogue, or distributed among several
+interlocutors.
+
+We do not speak of the many parallelisms with the texts of other compilations
+that have been already and will be further discovered.
+
+For preparing my text, I had only in the beginning one single MS., the MS. of
+the Bibliotheque Nationale in Paris, in Burmese characters. I wished very
+much to see the well-known MS. of Copenhagen, when Mr. Fausboll, acquainted
+with my labour, was so good as to put at my disposal unasked for a copy of the
+Sagatha which he had made for himself from the Copenhagen MS. It was a very
+welcome help, although in many cases the sight of the original MS. was
+afterwards found to be desirable. Later, in the summer of 1884, having gone to
+London, I was able to compare my own copy with the Singhalese MS. (Or. 2344)
+of the British Museum.
+
+Unfortunately time failed me for the completion of my task, of which I was not
+able to finish more than half. Neither was I able, when in London, to collate
+the Burmese MS. of the India Office Library; although this was less to be
+regretted, I was sorry not to be enabled to state the extent of the (probably
+very slight) difference which may exist between the Burmese MSS. of London
+and Paris.
+
+I came back from London with a Singhalese MS. belonging to Dr. Morris, who
+very kindly lent to me this precious volume. It is the one Singhalese MS. of
+which I have been able to make continual (though late) use.
+
+Besides all these MSS. of the text, I made use also of the commentary of the
+Samyutta-nikaya, entitled Saratthappakasini. A Siamese MS., in
+Siamese-Cambodgian characters, of this work for the first part (the Sagatha)
+only, exists at the Bibliotheque Nationale. As many words and passages of the
+text recur in the Commentary (not to speak of the help it supplies for the
+interpretation), this MS. was very useful in many cases.
+
+To sum up, in all, I was able to use, more or less, five MSS., one Burmese,
+three Singhalese, one Siamese. I note them by the letters B. (Burmese),
+S. (= Singhalese), C. (Commentary), in the following manner :-
+
+B. is the MS. of the Bibliotheque Nationale in Paris.
+S1 is the MS. of Copenhagen.
+S2 is the MS. of the British Museum.
+S3 is the MS. of Dr. Morris.
+SS. points out the accord of S1, S2, S3.
+C. is the MS. of the Saratthappakasini.
+
+If I had had the opportunity of using the Burmese MS. of the India Office
+Library, it would be B2, the Parisian MS. being B1.
+
+In establishing my text, I adopted as a rule, not to insert any word the
+elements of which did not occur in any of my MSS.; consequently not to make
+any correction myself, except in one or two instances, where I give always the
+reading of the MSS. Although the multitude of the notes has always seemed to
+me troublesome, I should have liked to have given all the readings of the
+MSS. I acknowledge indeed that to give them all without any exception would
+be an abuse, as many varieties of reading are merely orthographical; the
+variations as to the shortness and the length of the vowels a, i, u are in
+particular infinite. A choice from among the various readings must no doubt be
+made, but it ought to be made as large as possible. Some people will perhaps
+find the number of the various readings I have inserted in the notes too
+large, others will find it too small. I am inclined to admit both
+conclusions. I have perhaps admitted several notes which I could have left out;
+but I fear I have omitted several which ought to have been noticed, either by
+carelessness, or through fear of overburdening my pages with notes.
+
+As the B. MS. was at first my only, it remained my chief guide; but, in the
+choice of the readings, I made no preference, and I adopted always the reading
+which seemed the best wherever it might come from, in general paying regard to
+the consensus of the Singhalese MSS. In the abbreviations, I generally complied
+with the shortest system, unless clearness seemed to require the opposite. As to
+the titles of the suttas, I put the one given by B., adding that of SS., if they
+did not agree with it.
+
+The differences between the Singhalese and Burmese MSS. cannot be dealt with
+thoroughly without writing a special treatise; but they cannot even here be
+entirely overlooked. Beyond the varieties of reading in such and such
+passages, there are words which are written always differently in the two
+groups of MSS. Thus, the word brahmana is not once written in B. with n, it is
+always with n. This mistake, however, I have not even mentioned in my notes.
+But a perhaps more astonishing blunder which I carefully noticed is to be
+found in SS. The word chetva 'having cut,' occurs four times in one sutta,
+which itself occurs four times in the Sagatha; and it becomes the title of two
+of these suttas, and of one vaggo. Therefore this word occurs four times four
+or sixteen times and thrice more, viz. nineteen times; and as we have three
+Singhalese MSS., it occurs altogether fifty-seven times in these MSS., where
+it is written jhated with a surprising constancy. I have noted six other times
+the presence of this word; once it is yet written jhatva by the three
+Singhalese MSS. I do not reckon the reading jetva, which occurs thrice,
+because it is easy to explain it. The reading jhatva so often repeated seems
+to me a fact peculiarly deserving attention. This is not the proper occasion for
+discussing it; but it ought to be stated, and attention called to it. This
+case has been specially mentioned for instance as peculiarly interesting;
+other similar cases worthy of note could be introduced.
+
+It is a somewhat amazing peculiarity that the uncertainty of the text is
+greater in the verses than in the prose. One story runs on generally with
+rare and slight differences in the several MSS. As soon as we come to the
+gathas, the number of the differences, and sometimes their seriousness
+increase. It is, however, well known that the metre is specially adapted to the
+preservation of texts; and it is precisely on account of this consideration
+that it is applied to the texts esteemed to be of most importance. But this
+importance itself ought to be the cause of the varieties of reading, these
+texts being rehearsed, discussed, commented upon more than the others, and
+consequently more subject to alteration.
+
+The question of prosody I did not meddle with; in several cases it seems to be
+very entangled. Certainly some varieties of reading have originated from
+metrical difficulties. For instance, this pada which occurs in Devata-S. II.
+10 and IV. 3 in this double form:
+pariyesamana najjhagamum ||
+pariyesamana na ca ajjhagamum ||
+The correct reading might be
+pariyesamana na ajjhagamum ||
+But it is not to be found in any MS. I do not know whether these difficulties
+can be overcome without some alterations of the text not supported by the
+MSS. As I did not intend to make such alterations, I have only endeavoured to
+give the best text I could with the materials afforded by the MSS. The mere
+metrical question is to be treated separately.
+
+I have distinguished the padas of the gathas by the two small lines (||), and
+the gathas themselves by the repetition of the same (||||), as in the Burmese
+MSS. This division is sometimes against the sense, but seldom, and the
+advantage of it seems to surpass the inconvenience. The same mode of division
+has been applied to the prose (as in the Burmese MSS.); but I have not always
+followed the MS., adding sometimes, or omitting, or changing the marks. As to
+the several numbered small paragraphs, they are not in the Burmese MS., but
+they generally correspond to the double mark (|| ||), and much more seldom to
+the divisions of the Singhalese MSS., where the system of division is well
+known to be thoroughly different from that of the Burmese MSS.
+
+The gathas of the Sagatha are the only verses to be found in the
+Samyutta-nikaya, all the verses having been gathered together in this section,
+and the four others being without a verse.
+
+The Sagatha therefore is properly a collection of verses which are supplied
+with their narrative commentary.
+
+I intended at first to number all the verses of this collection. But the task
+seemed to be impossible, on account of the frequent repetitions; the same
+verses would have had several different numbers, or many verses would have
+been without a number. Seeing these difficulties, I thought better to give a
+list of the gathas, each of them being indicated by its first words, with
+references to the several suttas. This list is put at the end of the volume.
+
+Besides this list I have drawn up two others; a list of the proper names, and a
+list of the titles of the suttas. These three indexes, I hope, will make
+easier the study of this collection of Buddhistic sentences.
+
+I end by expressing my warmest thanks to Professor Rieu, Dr. Hoerning and
+their colleagues, for the readiness with which they enabled me to make use of
+the MS. of the British Museum, and chiefly to Professor Fausboll and Dr.
+Morris, to whose liberality and courteousness I am very much indebted for
+having had the use of a book copied by the hand of the former, and a large
+volume belonging to the fine collection of the latter.
+
+My last word will be for the continual kind assistance of Mr. Rhys Davids,
+without which this work might not have been carried out.
+
+                                                                         L. F.

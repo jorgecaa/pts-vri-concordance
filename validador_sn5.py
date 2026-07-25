@@ -25,26 +25,42 @@ ALIGN_MIN = 0.30      # cobertura mínima para aceptar una alineación
 def _nset(s, n=150):
     return {_nfold(x) for x in sh.tokens(s)[:n]}
 
+# ordinales pāli → distinguir paṭhama/dutiya/tatiya… en series repetitivas
+_ORD = {'paṭhama': 1, 'dutiya': 2, 'tatiya': 3, 'catuttha': 4, 'pañcama': 5, 'chaṭṭha': 6,
+        'sattama': 7, 'aṭṭhama': 8, 'navama': 9, 'dasama': 10, 'ekādasama': 11, 'dvādasama': 12}
+def ordinal_of(s):
+    t = re.sub(r'^\s*[\d\-]+\.\s*', '', (s or '').lower())   # quita "4. " / "2-6. "
+    for w, k in _ORD.items():
+        if t.startswith(w):
+            return k
+    return None
+def is_range(title):
+    return bool(re.match(r'^\s*\d+\s*-\s*\d+\.', title or ''))
 
-def align(pts_list, cst_texts):
-    """Alineación monótona por cobertura. pts_list: [(key, pts_text), ...] en orden
-    PTS; cst_texts: [str] en orden CST. Devuelve [(key, cst_idx|None, cov)].
-    Permite que varios suttas PTS mapeen al mismo segmento CST (grupos peyyāla)."""
-    cst_sets = [_nset(t) for t in cst_texts]
+
+def align(pts_items, cst_items):
+    """Alineación monótona por cobertura con consistencia de ordinal y avance
+    rango-aware. pts_items: [(key, pts_text, name)]; cst_items: [(text, title)].
+    Devuelve [(key, cst_idx|None, cov)]."""
+    cst_sets = [_nset(t) for t, _ in cst_items]
+    cst_ord = [ordinal_of(title) for _, title in cst_items]
+    cst_rng = [is_range(title) for _, title in cst_items]
     out, ptr = [], 0
-    for key, pts in pts_list:
+    for key, pts, name in pts_items:
         A = _nset(pts)
+        pord = ordinal_of(name)
         best_cov, best_idx = -1.0, None
-        for j in range(ptr, min(ptr + ALIGN_WINDOW, len(cst_texts))):
+        for j in range(ptr, min(ptr + ALIGN_WINDOW, len(cst_items))):
+            if pord and cst_ord[j] and pord != cst_ord[j]:
+                continue                          # ordinal en conflicto → no es este miembro
             cov = len(A & cst_sets[j]) / max(1, len(A))
             if cov > best_cov:
                 best_cov, best_idx = cov, j
         if best_idx is not None and best_cov >= ALIGN_MIN:
             out.append((key, best_idx, round(best_cov, 2)))
-            ptr = best_idx                       # reuso permitido (grupos); re-ancla aquí
+            ptr = best_idx                        # re-ancla (reuso permitido para grupos)
         else:
-            # fallo (sutta muy elidido / peyyāla): NO mover el puntero; el próximo match re-ancla
-            out.append((key, None, round(max(best_cov, 0), 2)))
+            out.append((key, None, round(max(best_cov, 0), 2)))  # no mover el puntero
     return out
 
 
@@ -78,9 +94,12 @@ def build_markers(cur):
     cur.execute('SELECT page_no,unitext FROM pages WHERE book_no=? AND edition="mula"', (SN5_BOOK,))
     for r in cur.fetchall():
         for i, line in enumerate((r['unitext'] or '').split('\n')):
-            m = re.match(r'^(\d+)\.?\s*\((\d+)\)\s+(\S.*)', line.strip())
+            # marcador simple "48. (8) Nombre" o de rango "103--108. (1--6) Pācīna"
+            m = re.match(r'^(\d+)(?:\s*-+\s*(\d+))?\.?\s*\((\d+)(?:\s*-+\s*(\d+))?\)\s+(\S.*)', line.strip())
             if m:
-                mm[r['page_no']].append((i + 1, int(m.group(1)), int(m.group(2)), m.group(3)[:60]))
+                a = int(m.group(1)); b = int(m.group(2)) if m.group(2) else a
+                for run in range(a, b + 1):        # registra cada nº corrido del rango
+                    mm[r['page_no']].append((i + 1, run, int(m.group(3)), m.group(5)[:60]))
     return mm
 
 
@@ -95,7 +114,7 @@ def pts_for(cur, page, target, mm):
             lines = (r['unitext'] or '').split('\n')
             start, end = line - 1, len(lines)
             for j in range(start + 1, len(lines)):
-                if re.match(r'^\d+\.?\s*\(\d+\)', lines[j].strip()):
+                if re.match(r'^\d+(?:\s*-+\s*\d+)?\.?\s*\(', lines[j].strip()):
                     end = j
                     break
             return ' '.join(sh.tokens(' '.join(lines[start:end]))[:350])
@@ -121,27 +140,38 @@ def main():
     entries = load_entries()
     mm = build_markers(cur)
     segs = sh.load_cha(['s5m.xml'], 'h4n')
-    cst_texts = [' '.join(sh.tokens(s['text'])[:350]) for s in segs]
+    cst_items = [(' '.join(sh.tokens(s['text'])[:350]), s.get('title', '')) for s in segs]
 
-    pts_list, meta = [], {}
+    pts_items, meta = [], {}
     for e in entries:
         pts = pts_for(cur, e['page'], e['sn_inner'], mm)
         if not pts:
             continue
-        pts_list.append((e['num'], pts))
+        pts_items.append((e['num'], pts, e['name']))
         meta[e['num']] = (e, pts)
 
-    aligned = align(pts_list, cst_texts)
+    aligned = align(pts_items, cst_items)
     if not do_all and not dry:
         aligned = aligned[:n]
     na = sum(1 for _, i, _ in aligned if i is None)
-    print(f'SN V: {len(entries)} entradas, {len(pts_list)} PTS resolubles; '
-          f'alineador monótono → {len(aligned) - na}/{len(aligned)} alineadas')
+    print(f'SN V: {len(entries)} entradas, {len(pts_items)} PTS resolubles; '
+          f'alineador → {len(aligned) - na}/{len(aligned)} alineadas')
 
     if dry:
         covs = [c for _, i, c in aligned if i is not None]
+        # consistencia de título: ¿la raíz del nombre PTS aparece en el título CST?
+        ok = tot = 0
+        for num, idx, _c in aligned:
+            if idx is None:
+                continue
+            tot += 1
+            base = _nfold(re.sub(r'^(paṭhama|dutiya|tatiya|catuttha|pañcama|chaṭṭha|sattama|aṭṭhama|navama|dasama)', '',
+                                 meta[num][0]['name'].lower()))[:6]
+            if base and base in _nfold(cst_items[idx][1].lower()):
+                ok += 1
         print(f'[DRY] cobertura alineada: min={min(covs):.2f} mediana={st.median(covs):.2f} '
               f'max={max(covs):.2f} | sin alinear: {na}')
+        print(f'[DRY] consistencia de título (raíz PTS ⊂ título CST): {ok}/{tot} ({100*ok/max(1,tot):.0f}%)')
         for thr in (0.45, 0.55, 0.65):
             print(f'  cov>={thr}: {sum(1 for c in covs if c >= thr)}/{len(aligned)}')
         return
@@ -160,7 +190,7 @@ def main():
                          'estado': 'PENDIENTE', 'validation': 'REVISAR', 'gate': {'cov': cov},
                          'gemini': None, 'reason': f'sin alineación CST confiable (cov={cov})'})
             continue
-        cst, ct = cst_texts[idx], segs[idx].get('title', '')
+        cst, ct = cst_items[idx]
         res = validate_pair(pts, cst, e['name'], ct, 'SN')
         rows.append({'num': num, 'name': e['name'], 'cst_title': ct, 'legacy': e['legacy'],
                      'aligncov': cov, **res})

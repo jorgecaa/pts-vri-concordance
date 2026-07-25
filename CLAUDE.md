@@ -117,7 +117,16 @@ local + `gemini-flash-lite-latest` ambos APPROVE); **`VALIDADOR_HUMANO`** = un d
 que Jorge arbitró a mano (misma fuerza, provenance humana). Los valores
 `HELMER_*` son verdictos legados del pase DeepSeek — se mantienen como CONFIRMADO histórico pero
 son **provisionales**: re-validar con el validador al revisitar cada nikāya (DeepSeek resultó no
-fiable).
+fiable). `REF_ERROR_DPR` es un valor **PENDIENTE** (no CONFIRMADO): la referencia DPR del Excel
+apunta a nada (error de DPR), no cotejable.
+
+**Alineación SN/AN/KN por CONCORDANCIA (VRI):** en SN/AN/KN la numeración diverge entre notaciones;
+el `Sutta #` del Excel usa **notación DPR**. El aligner definitivo (`validador_sn5_vri.py`) NO adivina
+por contenido: Excel(DPR) → `massive.tsv` (`cst_paranum`) → **XML VRI** (`romn/*.mul.xml`, párrafos
+`<p n="N">`) → texto CST exacto; lado PTS por marcadores DB casando contra el **canónico** (=nº
+corrido PTS). Con alineación exacta, CONFIRMADO = concordancia ∧ Gemini (el gate de cobertura sobra).
+SN V: 550/610. Detalle en la memoria `sn-alineacion-estructura`. DN/MN (donde las 3 notaciones
+coinciden) siguen por el validador normal.
 `PTS_CROSSREF_SN` is the one non-LLM route to CONFIRMADO: PTS reenvía el sutta al
 Suttanipāta sin reimprimir el texto (no hay texto PTS que cotejar), y la referencia fue
 verificada a mano contra la edición impresa. Únicas dos paradas: MN 92 Sela (M ii 146 → Sn

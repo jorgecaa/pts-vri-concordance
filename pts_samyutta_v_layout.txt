@@ -1,0 +1,27 @@
+INTRODUCTION.
+
+I.
+
+The following are the names of the 12 Saṃyuttas with the numbers of the Chapters and Suttas:
+
++-------------------------------------+----------+--------+
+| Names                               | Chapters | Suttas |
++-------------------------------------+----------+--------+
+| I. (XLV) Magga-S.                   |    8     |  180   |
+| II. (XLVI) Bojjhaṅga-S.             |   18     |  187 (1)  |
+| III. (XLVII) Satipaṭṭhāna-S.        |   10     |  103   |
+| IV. (XLVIII) Indriya-S.             |   17     |  185   |
+| V. (XLIX) Sammappadhāna-S.          |    5     |   54   |
+| VI. (L) Bala-S.                     |   10     |  110   |
+| VII. (LI) Iddhipāda-S.              |    8     |   86   |
+| VIII. (LII) Anuruddha-S.            |    2     |   24   |
+| IX. (LIII) Jhāna-S.                 |    5     |   54   |
+| X. (LIV) Ānāpāna-S.                 |    2     |   20   |
+| XI. (LV) Sotāpatti-S.               |    7     |   74   |
+| XII. (LVI) Sacca-S.                 |   11 (1)    |  181   |
++-------------------------------------+----------+--------+
+| Total                               |  103     | 1208   |
++-------------------------------------+----------+--------+
+
+_________________________________________________________________
+(1) No 175 (p. 139), because 99—100 has been put (p. 135) instead of 99—110.

@@ -1,0 +1,523 @@
+{
+  "title": "CONTENTS",
+  "sections": [
+    {
+      "title": "INTRODUCTION",
+      "page": "III"
+    },
+    {
+      "book": "BOOK I. MAGGA-SAṂYUTTAṂ (XLV)",
+      "page": 1,
+      "chapters": [
+        {
+          "chapter": "Chapter I",
+          "title": "Avijjā-vaggo",
+          "page": 1
+        },
+        {
+          "chapter": "Chapter II",
+          "title": "Vihāra-vaggo",
+          "page": 12
+        },
+        {
+          "chapter": "Chapter III",
+          "title": "Micchatta-vaggo",
+          "page": 17
+        },
+        {
+          "chapter": "Chapter IV",
+          "title": "Paṭipatti-vaggo",
+          "page": 23
+        },
+        {
+          "title": "Aññatitthiya-peyyālo",
+          "page": 27
+        },
+        {
+          "title": "Suriyassa-peyyālo",
+          "page": 29
+        },
+        {
+          "title": "Ekadhammapeyyālo I",
+          "page": 32
+        },
+        {
+          "title": "Ekadhammapeyyālo II",
+          "page": 35
+        },
+        {
+          "title": "Gaṅgā-peyyālo",
+          "page": 38
+        },
+        {
+          "chapter": "Chapter V",
+          "title": "Appamāda-vaggo",
+          "page": 41
+        },
+        {
+          "chapter": "Chapter VI",
+          "title": "Balakaraṇīya-vaggo",
+          "page": 45
+        },
+        {
+          "chapter": "Chapter VII",
+          "title": "Esanā-vaggo",
+          "page": 54
+        },
+        {
+          "chapter": "Chapter VIII",
+          "title": "Ogha-vaggo",
+          "page": 59
+        }
+      ]
+    },
+    {
+      "book": "BOOK II. BOJJHAṄGA-SAṂYUTTAṂ (XLVI)",
+      "page": 63,
+      "chapters": [
+        {
+          "chapter": "Chapter I",
+          "title": "Pabbata-vaggo",
+          "page": 63
+        },
+        {
+          "chapter": "Chapter II",
+          "title": "Gilāna-vaggo",
+          "page": 78
+        },
+        {
+          "chapter": "Chapter III",
+          "title": "Udāyi-vaggo",
+          "page": 83
+        },
+        {
+          "chapter": "Chapter IV",
+          "title": "Nīvaraṇa-vaggo",
+          "page": 91
+        },
+        {
+          "chapter": "Chapter V",
+          "title": "Cakkavatti-vaggo",
+          "page": 98
+        },
+        {
+          "chapter": "Chapter VI",
+          "title": "Bojjhaṅgasākacchaṃ",
+          "page": 102
+        },
+        {
+          "chapter": "Chapter VII",
+          "title": "Ānāpāna-vaggo",
+          "page": 129
+        },
+        {
+          "chapter": "Chapter VIII",
+          "title": "Nirodha-vaggo",
+          "page": 132
+        },
+        {
+          "chapter": "Chapter IX",
+          "title": "Gaṅgā-peyyālo",
+          "page": 134
+        },
+        {
+          "chapter": "Chapter X-XI",
+          "title": "Appamāda-Balakaraṇīya-vaggo",
+          "page": 135
+        },
+        {
+          "chapter": "Chapter XII-XIII",
+          "title": "Esanā-Ogha-vaggo",
+          "page": 136
+        },
+        {
+          "chapter": "Chapter XIV",
+          "title": "Gaṅgā-peyyālaṃ",
+          "page": 137
+        },
+        {
+          "chapter": "Chapter XV-XVI",
+          "title": "Appamāda-Balakaraṇīya-vaggo",
+          "page": 138
+        },
+        {
+          "chapter": "Chapter XVII-XVIII",
+          "title": "Esanā-Ogha-vaggo",
+          "page": 139
+        }
+      ]
+    },
+    {
+      "book": "BOOK III. SATIPAṬṬHĀNA-SAṂYUTTAṂ (XLVII)",
+      "page": 141,
+      "chapters": [
+        {
+          "chapter": "Chapter I",
+          "title": "Ambapāli-vaggo",
+          "page": 141
+        },
+        {
+          "chapter": "Chapter II",
+          "title": "Nālandā-vaggo",
+          "page": 158
+        },
+        {
+          "chapter": "Chapter III",
+          "title": "Sīlaṭṭhiti-vaggo",
+          "page": 171
+        },
+        {
+          "chapter": "Chapter IV",
+          "title": "Ananussuta-vaggo",
+          "page": 178
+        },
+        {
+          "chapter": "Chapter V",
+          "title": "Amata-vaggo",
+          "page": 184
+        },
+        {
+          "chapter": "Chapter VI",
+          "title": "Gaṅgā-peyyāla",
+          "page": 190
+        },
+        {
+          "chapter": "Chapter VII-X",
+          "title": "Appamāda-Balakaraṇīya-Esanā-Ogha-vaggo",
+          "page": 191
+        }
+      ]
+    },
+    {
+      "book": "BOOK IV. INDRIYA-SAṂYUTTAṂ (XLVIII)",
+      "page": 193,
+      "chapters": [
+        {
+          "chapter": "Chapter I",
+          "title": "Suddhika-vaggo",
+          "page": 193
+        },
+        {
+          "chapter": "Chapter II",
+          "title": "Mudatara-vaggo",
+          "page": 199
+        },
+        {
+          "chapter": "Chapter III",
+          "title": "Chaḷindriya-vaggo",
+          "page": 203
+        },
+        {
+          "chapter": "Chapter IV",
+          "title": "Sukhindriya or Uppaṭi-vaggo",
+          "page": 207
+        },
+        {
+          "chapter": "Chapter V",
+          "title": "Jarā-vaggo",
+          "page": 216
+        },
+        {
+          "chapter": "Chapter VI",
+          "title": "No title",
+          "page": 227
+        },
+        {
+          "chapter": "Chapter VII",
+          "title": "Bodhipakkhiya-vaggo",
+          "page": 236
+        },
+        {
+          "chapter": "Chapter VIII",
+          "title": "Gaṅgā-peyyāli",
+          "page": 239
+        },
+        {
+          "chapter": "Chapter IX-XI",
+          "title": "Appamāda-Balakaraṇīya-Esanā-vaggo",
+          "page": 240
+        },
+        {
+          "chapter": "Chapter XII-XIII",
+          "title": "Ogha-vaggo-Gaṅgā-peyyāli",
+          "page": 241
+        },
+        {
+          "chapter": "Chapter XIV-XVII",
+          "title": "Appamāda-Balakaraṇīya-Esanā-Ogha-vaggo",
+          "page": 242
+        }
+      ]
+    },
+    {
+      "book": "BOOK V. SAMMAPPADHĀNA-SAṂYUTTAṂ (XLIX)",
+      "page": 244,
+      "chapters": [
+        {
+          "chapter": "Chapter I",
+          "title": "Gaṅgā-peyyāli",
+          "page": 244
+        },
+        {
+          "chapter": "Chapter II",
+          "title": "Appamāda-vaggo",
+          "page": 245
+        },
+        {
+          "chapter": "Chapter III-IV",
+          "title": "Balakaraṇīya-Esanā-vaggo",
+          "page": 246
+        },
+        {
+          "chapter": "Chapter V",
+          "title": "Ogha-vaggo",
+          "page": 247
+        }
+      ]
+    },
+    {
+      "book": "BOOK VI. BALA-SAṂYUTTAṂ (L)",
+      "page": 249,
+      "chapters": [
+        {
+          "chapter": "Chapter I",
+          "title": "Gaṅgā-peyyāli",
+          "page": 249
+        },
+        {
+          "chapter": "Chapter II-IV",
+          "title": "Appamāda-Bala-Esanā-vaggo",
+          "page": 250
+        },
+        {
+          "chapter": "Chapter V-VI",
+          "title": "Ogha-vaggo-Gaṅgāpeyyālo",
+          "page": 251
+        },
+        {
+          "chapter": "Chapter VII-IX",
+          "title": "Appamāda-Bala-Esanā-vaggo",
+          "page": 252
+        },
+        {
+          "chapter": "Chapter X",
+          "title": "Ogha-vaggo",
+          "page": 253
+        }
+      ]
+    },
+    {
+      "book": "BOOK VII. IDDHIPĀDA-SAṂYUTTAṂ (LI)",
+      "page": 254,
+      "chapters": [
+        {
+          "chapter": "Chapter I",
+          "title": "Cāpāla-vaggo",
+          "page": 254
+        },
+        {
+          "chapter": "Chapter II",
+          "title": "Pāsādakampana-vaggo",
+          "page": 263
+        },
+        {
+          "chapter": "Chapter III",
+          "title": "No title",
+          "page": 281
+        },
+        {
+          "chapter": "Chapter IV",
+          "title": "Gaṅgā-peyyāli",
+          "page": 290
+        },
+        {
+          "chapter": "Chapter V-VII",
+          "title": "Appamāda-Balakaraṇīya-Esanā-vaggo",
+          "page": 291
+        },
+        {
+          "chapter": "Chapter VIII",
+          "title": "Ogha-vaggo",
+          "page": 292
+        }
+      ]
+    },
+    {
+      "book": "BOOK VIII. ANURUDDHA-SAṂYUTTAṂ (LII)",
+      "page": 294,
+      "chapters": [
+        {
+          "chapter": "Chapter I",
+          "title": "Rahogata-vaggo",
+          "page": 294
+        },
+        {
+          "chapter": "Chapter II",
+          "title": "No title",
+          "page": 303
+        }
+      ]
+    },
+    {
+      "book": "BOOK IX. JHĀNA-SAṂYUTTAṂ (LIII)",
+      "page": 307,
+      "chapters": [
+        {
+          "chapter": "Chapter I",
+          "title": "Gaṅgā-peyyālo",
+          "page": 307
+        },
+        {
+          "chapter": "Chapter II-III",
+          "title": "Appamāda-Balakaraṇīya-vaggo",
+          "page": 308
+        },
+        {
+          "chapter": "Chapter IV-V",
+          "title": "Esanā-Ogha-vaggo",
+          "page": 309
+        }
+      ]
+    },
+    {
+      "book": "BOOK X. ĀNĀPĀNA-SAṂYUTTAṂ (LIV)",
+      "page": 311,
+      "chapters": [
+        {
+          "chapter": "Chapter I",
+          "title": "Ekadhamma-vaggo",
+          "page": 311
+        },
+        {
+          "chapter": "Chapter II",
+          "title": "No title",
+          "page": 325
+        }
+      ]
+    },
+    {
+      "book": "BOOK XI. SOTĀPATTI-SAṂYUTTAṂ (LV)",
+      "page": 342,
+      "chapters": [
+        {
+          "chapter": "Chapter I",
+          "title": "Veḷudvāra-vaggo",
+          "page": 342
+        },
+        {
+          "chapter": "Chapter II",
+          "title": "Sahassaka or Rājakārāma-vaggo",
+          "page": 360
+        },
+        {
+          "chapter": "Chapter III",
+          "title": "Saraṇāni-vaggo",
+          "page": 369
+        },
+        {
+          "chapter": "Chapter IV",
+          "title": "Puññābhisanda-vaggo",
+          "page": 391
+        },
+        {
+          "chapter": "Chapter V",
+          "title": "Sagāthā-puññābhisanda-vaggo",
+          "page": 399
+        },
+        {
+          "chapter": "Chapter VI",
+          "title": "Sappañña-vaggo",
+          "page": 404
+        },
+        {
+          "chapter": "Chapter VII",
+          "title": "Mahāpañña-vaggo",
+          "page": 412
+        }
+      ]
+    },
+    {
+      "book": "BOOK XII. SACCA-SAṂYUTTAṂ (LVI)",
+      "page": 414,
+      "chapters": [
+        {
+          "chapter": "Chapter I",
+          "title": "Samādhi-vaggo",
+          "page": 414
+        },
+        {
+          "chapter": "Chapter II",
+          "title": "Dhammacakkappavattana-vaggo",
+          "page": 420
+        },
+        {
+          "chapter": "Chapter III",
+          "title": "Koṭigāma-vaggo",
+          "page": 431
+        },
+        {
+          "chapter": "Chapter IV",
+          "title": "Siṃsapāvana-vaggo",
+          "page": 437
+        },
+        {
+          "chapter": "Chapter V",
+          "title": "Papāta-vaggo",
+          "page": 446
+        },
+        {
+          "chapter": "Chapter VI",
+          "title": "Abhisamaya-vaggo",
+          "page": 459
+        },
+        {
+          "chapter": "Chapter VII",
+          "title": "Cakkapeyyālo",
+          "page": 465
+        },
+        {
+          "chapter": "Chapter VIII",
+          "title": "Appakā-virataṃ",
+          "page": 468
+        },
+        {
+          "chapter": "Chapter IX",
+          "title": "Āmakadhañña-peyyālaṃ",
+          "page": 470
+        },
+        {
+          "chapter": "Chapter X",
+          "title": "Bahutarā sattā",
+          "page": 473
+        },
+        {
+          "chapter": "Chapter XI",
+          "title": "Gatiyo pañcakā",
+          "page": 474
+        }
+      ]
+    },
+    {
+      "title": "INDICES",
+      "page": 479,
+      "items": [
+        {
+          "title": "INDEX TO THE PROPER NAMES",
+          "page": 480
+        },
+        {
+          "title": "INDEX TO THE TITLES OF THE SUTTAS",
+          "page": 486
+        },
+        {
+          "title": "INDEX TO THE BEGINNING OF THE GĀTHĀS",
+          "page": 496
+        },
+        {
+          "title": "General contents of the five volumes and of the whole compilation",
+          "page": 497
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+================================================================================
+                                CONTENTS
+================================================================================
+
+                                                                        PAGE
+INTRODUCTION .========================================================== vii
+
+BOOK I. KHANDHA-SAMYUTTAM (XXII) ........................................   1
+   1. Mulapannasa .................................=====================   1
+      CHAPTER  I.   (Nakulapita-vagga) .................================   1
+        "      II.  (Anicca-vagga) .....................================  21
+        "      III. (Bhara-vagga) ......................================  25
+        "      IV.  (Natumhaka-vagga) ..................================  33
+        "      V.   (Attadipa-vagga) ...................================  42
+   2. Majjhima-pannasa .................................================  53
+      CHAPTER  I.   (Upaya-vagga) .................====================  53
+        "      II.  (Arahatta-vagga) ...................================  73
+        "      III. (Khajjaniya-vagga) .................================  81
+        "      IV.  (Thera-vagga) ......................================ 105
+        "      V.   (Puppha-vagga) .....................================ 137
+   3. Upari-pannasa ....................................================ 157
+      CHAPTER  I.   (Anta-vagga) .......................================ 157
+        "      II.  (Dhammakathika-vagga) ..............================ 162
+        "      III. (Avijja-vagga) .....................================ 170
+        "      IV.  (Kukkula-vagga) ....................================ 177
+        "      V.   (Ditthi-vagga) .....................================ 186
+
+BOOK II. RADHA-SAMYUTTAM (XXIII) .................................====== 188
+   CHAPTER  I.   ................======================================= 188
+     "      II.  ................======================================= 195
+     "      III. (Ayacana-vagga) .......................================ 198
+     "      IV.  (Upanisinna-vagga) ....................================ 200
+
+BOOK III. DITTHI-SAMYUTTAM (XXIV) .................................===== 202
+   CHAPTER  I.   (Sotapatti-vagga) .....................================ 202
+     "      II.  1 Purimagamanam .......................================ 217
+                 2 Dutiya-gamanam ......................================ 218
+                 3 Tatiya-gamanam ......................================ 221
+                 4 Catuttha-gamanam ....................================ 222
+
+BOOK IV. OKKANTIKA-SAMYUTTAM (XXV) ................................===== 225
+
+BOOK V. UPPADA-SAMYUTTAM (XXVI) ...................................===== 228
+
+BOOK VI. KILESA-SAMYUTTAM (XXVII) .................................===== 232
+
+BOOK VII. SARIPUTTA-SAMYUTTAM (XXVIII) ............................===== 235
+
+BOOK VIII. NAGA-SAMYUTTAM (XXIX) ..................................===== 240
+
+BOOK IX. SUPANNA-SAMYUTTAM (XXX) ..................................===== 246
+
+BOOK X. GANDHABBAKAYA-SAMYUTTAM (XXXI) ............................===== 249
+
+BOOK XI. VALAHA-SAMYUTTAM (XXXII) .................................===== 254
+
+BOOK XII. VACCHAGOTTA-SAMYUTTAM (XXXIII) ...........................===== 257
+
+BOOK XIII. JHANA- (Or SAMADHI-) SAMYUTTAM (XXXIV) ..................===== 263
+
+INDICES-
+   I. Index to the Proper Names ........................................ 283
+  II. Index to the Titles of the Suttas ................................ 286
+ III. Index to the Gathas .============================================= 290
+
+
+================================================================================
+                              INTRODUCTION
+================================================================================
+
+                                     I.
+
+Is the third division of the Samyutta-Nikaya shorter or longer than the second?
+It is by no means easy to answer this question, as this division occupies 91
+leaves against 96 in a Burmese MS., but 79 against 72 in one Simhalese MS.,
+and 61 against 58 in another. The difference may be caused by the different
+ways of abridging; but it seems to be excessive. The number of the lines in a
+leaf, which is not always uniform in the same MS., ought also to be considered.
+Be it as it may, in this edition, the third division is shorter than the
+second by 7 pages. Yet, although I endeavoured not to be long, I intended to
+be complete.
+
+This division is entitled KHANDHA-VAGGO; whence it may be expected that the
+five Khandhas will be enumerated and referred to very often, and indeed they
+are so to satiety, although, in some parts, no mention is made of them, and they
+seem altogether left out.
+
+                                    II.
+
+The reckoning of the Samyuttas in the third division is subject to some
+difficulties (as those we incurred in the second) arising from the fact that
+the first of them is not counted by some as a Samyutta; and yet it is the
+greatest part of the whole. The Burmese MS. states at the end that the
+Samyuttas in this VAGGO are as much as thirteen (terasa), while the Simhalese
+MSS. announce twelve (dvadasa) titles only, but after the enumeration of the
+titles of the first section, which they seem to consider as a distinct work.
+Moreover, they point out as being the fifth (pancama), the sixth (chattha), and
+the eighth (atthama), three Samyuttas which, if the KHANDHA-VAGGO consists of
+thirteen Samyuttas, cannot be respectively but the sixth, the seventh, and the
+ninth. Therefore, what the Burmese MS. considers to be the first Samyutta is
+not for the Simhalese MSS. a Samyutta. But, what might it be? If it be not a
+Samyutta, why is it embodied in the Samyutta-nikaya? and, since it is embodied
+in this Collection; how ought it not to be a Samyutta?
+
+This improper exception is owing to the extent of this first section, which
+comprises no less than 63 sheets out of 91, almost the two-thirds of the whole
+division. It is entitled Khandha (as the first of the second Nidana), and this
+name was imparted to the division itself. But whilst the Nidana-Samyutta
+(which is the half of the second division), is distributed into eight or nine
+chapters, the Khandha-Samyutta of the third division is cut up into three
+pannasa (groups of fifty suttas), as it were a distinct work itself.
+
+The following or second section (Samyutta), entitled Radha, consisting of four
+chapters, is regular.
+
+Some difficulties arise upon the third section entitled Ditthi as to the internal
+division, but not as to its existence as a Samyutta.
+
+The three following sections (4, 5, 6), Okkantika, Uppada, Kilesa, are similar
+and made from one pattern, consisting each of ten suttas, which have similar
+titles and form. The last of them, counted the fifth in the Simhalese MSS.,
+cannot be but the sixth.
+
+The next following Samyutta, entitled Sariputta, consists also of ten suttas;
+it is the seventh, wrongly called the sixth in the aforesaid MSS.
+
+The four following Samyuttas, viz., Naga, Supanna, Gandhabba, Valaha, are of
+one family, especially the two first. In these, the five khandhas are not even
+mentioned. The Supanna is counted the eighth by the Simhalese MSS., but we
+must count it the ninth.
+
+With the Vacchagotta (the twelfth Samyutta) the five Khandhas reappear; but
+they disappear soon, in the next and last Samyutta, the Jhana (or Samadhi)
+which is the thirteenth.
+
+Therefore we can and must count thirteen Samyuttas from the Khandha to the
+Jhana, and, since all the Samyuttas of the whole compilation ought to form
+one series, and the last of the preceding division (the NIDANA-VAGGO) was
+the XXI., these become the XXII.-XXXIV. in due sequence.
+
+                                    III.
+
+The divisions of each Samyutta cannot always be determined without difficulty.
+The Okkantika-Uppada-Kilesa-Sariputta (XXV.-XXVIII.) are of a very plain
+type, consisting of one vaggo, which comprises exactly ten suttas, well
+distinguished in the Uddanas with which they close.
+
+The initial Khandha (XXII.) is very regular, its three pannasa being divided
+each into five vaggos of ten suttas. The sum of the suttas ought to be 150; but,
+it is well known, in such a case, the suttas of some vaggos exceed ten;
+indeed, the total number is 158. In this way, the decimal series of the suttas
+do not agree with the Vaggos; but it is impossible to avoid this inconvenience.
+
+The Radha (XXIII.), consisting of four vaggos, is also very regular; but the
+Ditthi (XXIV.) is somewhat perplexing.
+
+A first chapter, the Sotapattivaggo, comprising eighteen veyyakaranani (or
+Suttanta), and seeming to be itself a work apart, is followed by four
+sections called peyyalo, or varo, or gamana, of which the first is said to
+contain 18 Suttanta-veyyakaranani, each of the others 26. But the 18 are those of
+Sotapattivaggo, and the 26 are these very 18 suttanta to which 8 others are
+superadded. I do not perceive in what manner the three last so-called gamana
+differ from the first, and one from another, unless they might refer to the
+three times, past, present, future, which, however, are not mentioned in each
+gamana, but enumerated together in the fourth. Then the whole Samyutta consists
+of 18 + 18 + 3 x 26 = 114 suttanta or veyyakaranani, viz., 18 in the
+Sotapattivaggo, 96 in the four gamana. The reader will remark that in this
+volume I have summed only 96 of them, because I left out, by mistake, the first
+18 of the second gamana, which are omitted in the Burmese MS., and enumerated
+by the Simhalese MSS. in such a manner that I did not, nor, indeed, do now,
+clearly perceive whether they are the beginning of the second, or a
+recapitulation of the first.* These 18 suttanta ought to be restored in the
+reckoning if not in the text. Let also the reader be reminded that the
+headings (Chapters III. IV.) put before the titles tatiya-catuttha-gamana are
+consequently wrong, and the numbers 3, 4, ought to be substituted to them.
+
+The case of the Ditthi-Samyutta is more or less that of the Naga-S., where, if
+we trust to the Uddana, there are 14 suttas, but each of the four last
+corresponds to ten, so that the whole is 50; -of the Supanna-S., for which the
+Uddana gives 10 titles, but which is said to consist of 46 suttas, because
+each of the four last, having same title, contains in its ample bosom ten
+suttas; -of the Gandhabba-S., for which the obscure and uncertain Uddana gives
+4 titles only, and seems to count hardly 10 suttas, while the number of them
+is said to be 112; of the Valaha-S., which we are told has 57 suttantas,
+although the number of the titles is 8, corresponding to 12 texts.
+
+The two last Samyuttas have each 55 so-called suttantas. The Uddana of the first
+of them, the Vacchagotta-S., exhibits 11 titles, which, being multiplied by the
+number of the khandhas, produce 55 suttantas; but, as each of the 11 titles
+applies to 10 propositions, I do not perceive why the total should not be 550.
+It is to be noticed that one of the titles of this Samyutta, and the
+corresponding suttanta are omitted by the Simhalese MSS., but another title is
+mentioned by them in the Uddana, without being represented in the text, and
+this title (asambodha) differs slightly from anusambodha given in the Burmese
+Uddana as the title of a suttanta which, in the text, is Anubodha. There is
+also a variety of reading on the fifth title. From these changes, we are
+permitted to infer that there was some incertitude as to the reading and the
+number of the terms of the Vacchagotta-Samyutta.
+
+It is not the Khandhas which increase the number of the veyyakaranani in the
+last Samyutta, since no mention is there made of them. The titles of the
+suttas are no more than 10; two of these terms are successively noticed, in
+four propositions, as united to or divided from the Samadhi; and thus the
+number of 55 Veyyakaranani is reached by various modes of combining, with a
+truly Buddhistic subtility, hardly gladdened by a gentle comparison of which
+none of these 55 Veyyakaranani is deprived.
+
+* This enumeration I did not omit, but I put it in the note (p. 218 n. 3).
+  It would be better if I had put it in the text.
+
+                                    IV.
+
+Therefore we can sum up the whole KHANDHA-VAGGO as follows:
+
++-------+-----------------------------+-----------+----------------+
+|  No.  | SAMYUTTA NAME               | VAGGOS /  | SUTTAS /       |
+|       |                             | TITLES    | SUTTANTAS      |
++-------+-----------------------------+-----------+----------------+
+| (I.)  | Khandha-S. XXII.            | 15 vaggos | 158 suttas     |
+|       |                             | (3 Pan.)  |                |
+| (II.) | Radha-S. XXIII.             | 4 vaggos  |  46 suttas     |
+|(III.) | Ditthi-S. XXIV.             | 1 vaggo   |  18 suttantas  |
+|       |                             | 4 gamanas |  96 suttantas  |
+| (IV.) | Okkantika-S. XXV.           | 10 titles |  10 suttas     |
+|  (V.) | Uppada-S. XXVI.             | 10 titles |  10 suttas     |
+| (VI.) | Kilesa-S. XXVII.            | 10 titles |  10 suttas     |
+|(VII.) | Sariputta-S. XXVIII.        | 10 titles |  10 suttas     |
+|(VIII.)| Naga-S. XXIX.               | 14 titles |  50 suttantas  |
+| (IX.) | Supanna-S. XXX.             | 10 titles |  46 suttantas  |
+|  (X.) | Gandhabba-S. XXXI.          | 10 titles | 112 suttantas  |
+| (XI.) | Valaha-S. XXXII.            | 10 titles |  57 suttantas  |
+|(XII.) | Vacchagotta-S. XXXIII.      | 11 titles |  55 suttantas  |
+|(XIII.)| Jhana (or Samadhi) S. XXXIV.| 10 titles |  55 suttantas  |
++-------+-----------------------------+-----------+----------------+
+| Total |                             |           | 733            |
++-------+-----------------------------+-----------+----------------+
+
+If I am not mistaken, the whole consists of 733 distinct texts, Suttas and
+Suttantas (or Veyyakaranani), to which I have adapted, as before, the titles
+supplied by the Uddanas, except in case of exuberant multiplication, and
+including between () those which were not directly borrowed from the Uddanas.
+
+                                     V.
+
+Several texts of this division are mere repetitions of or adaptions to texts
+already met with. Thus 91 and 92 of the Khandha-S. differ only by the title from
+21 and 22 of the Rahula-S. (XVIII.) in the Nidana-vaggo; 115 of the same is to
+be compared with 16 of the Nidana-S. The suttas 59 (Panca) and 61 (Aditta) refer
+to some of the first speeches of the Buddha.
+
+Twenty-three gathas occur in this division, all to be found in the Khandha-S.,
+viz., two alone, in 3 and 79, the others concatenated, two in 22, four in 78,
+seven in 95, eight in 76.
+
+                                    VI.
+
+The MSS. which I used are the same as before: B, the Burmese MS. of Paris; S1,
+the Simhalese MS. of Copenhagen; S3, the Simhalese MS. of Paris. S2, which is
+the Simhalese MS. of London (British Museum), I could not reach. The useful
+help of the commentary, which assisted me much in the preceding volumes, has
+unfortunately failed me for this one. I had no MS. of it at my disposal.
+
+I express once more my thanks to Mr. Bruun, the Director of the Royal Library
+at Copenhagen, for his kindness in allowing me the use of the Simhalese MS. S1.
+
+                                    VII.
+
+I had hoped not to have to refer again to the discrepancies between the MSS.;
+but I cannot avoid making one or two remarks. The repetition and multiplication
+of the texts, or as it is said in Pali, the vittharetabbam, is sometimes a
+cause of perplexity. I hoped to have steered clear of these difficulties,
+except in the case, above referred to, of the Ditthi-S. One difference in the
+arrangement of the text, although pointed out in the notes, ought also to be
+noticed here; 151, 152 (of the Khandha-S.), according to the Burmese MS., are
+155, 156 according to the Simhalese MS. Nos. 155, 156 in that MS. becoming 151,
+152. The blunders of the copyists, when they transpose only lines, deserve a
+little attention, they deserve some more when whole leaves are displaced. A
+strange example of this occurs in S1, the Kilesa- and Naga-S., being sadly
+carved about and intermixed (owing, probably, to the giddiness of the scribe
+who confused two leaves) in such a manner that the text is unintelligible. I
+pointed out the fact to Mr. Fausboll; but I mention it here for the benefit of
+scholars who may venture to refer to this MS.
+
+As before, I have preferred, in most cases, the shortest abbreviation,
+generally indicating where the text is more developed. I remind my readers
+that the symbols ||pa|| ||la||, peculiar to the Burmese MS., point out the
+abridgments as they are in that MS., the text being complete or less
+abbreviated in the Simhalese ones.
+
+At the end of this volume, as of the preceding ones, three indices are
+subjoined: 1. To the proper names. 2. To the titles of the suttas. 3. To the
+beginning of the gathas.
+
+                                   VIII.
+
+In the introduction to the last volume, I had expressed (p. xiii) the purpose
+of drawing up a list of words which are written differently in the Burmese
+and Simhalese MSS., especially as to the letters which are doubled or left
+single. I have occasionally pointed out these differences in the notes to this
+volume, but as the list would include many words which are quoted at the foot
+of the pages, it would, therefore, be of little utility, and I think I may delay
+the publication of it, more especially as Professor Rhys Davids and Mr.
+Carpenter have given such a list at the end of the Introduction to the
+Sumangala.

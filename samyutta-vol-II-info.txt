@@ -1,0 +1,328 @@
+================================================================================
+                                CONTENTS
+================================================================================
+
+                                                                        PAGE
+INTRODUCTION ........................................................... vii
+
+BOOK I. NIDANA-SAMYUTTA (XII) ..........................................   1
+   CHAPTER  I.   (Buddha-vagga) ........................................   1
+     "      II.  (Ahara-vagga) .........................................  11
+     "      III. (Dasabala-vagga) ......................................  27
+     "      IV.  (Kalarakhattiya-vagga) ................................  47
+     "      V.   (Gahapati-vagga) ......................................  68
+     "      VI.  (Rakkha-vagga) ........................................  80
+     "      VII. (Maha-vagga) ..........................................  91
+     "      VIII.(Samana-brahmana-vagga) ............................... 129
+     "      IX.  (Antarapeyvalam) ...................................... 130
+
+BOOK II. ABHISAMAYA-SAMYUTTA (XIII) .................................... 133
+
+BOOK III. DHATU-SAMYUTTA (XIV) ......................................... 140
+   CHAPTER  I.   (Nanatta-vagga) ....................................... 140
+     "      II.  ....................................................... 149
+     "      III. (Kammapatha-vagga) .................................... 166
+     "      IV.  ....................................................... 169
+
+BOOK IV. ANAMATAGGA-SAMYUTTA (XV) ...................................... 178
+   CHAPTER  I.   ....................................................... 178
+     "      II.  ....................................................... 186
+
+BOOK V. KASSAPA-SAMYUTTA (XVI) ......................................... 194
+
+BOOK VI. LABHASAKKARA-SAMYUTTA (XVII) .................................. 225
+   CHAPTER  I.   ....................................................... 225
+     "      II.  ....................................................... 233
+     "      III. ....................................................... 234
+     "      IV.  ....................................................... 239
+
+BOOK VII. RAHULA-SAMYUTTA (XVIII) ...................................... 244
+   CHAPTER  I.   ....................................................... 244
+     "      II.  ....................................................... 249
+
+BOOK VIII. LAKKHANA-SAMYUTTA (XIX) ..................................... 254
+   CHAPTER  I.   ....................................................... 254
+     "      II.  ....................................................... 259
+
+BOOK IX. OPAMMA-SAMYUTTA (XX) .......................................... 262
+
+BOOK X. BHIKKHU-SAMYUTTA (XXI) ......................................... 273
+
+APPENDIX
+   I. Index of Proper Names ............................................ 289
+  II. Alphabetical Index of the Suttas ................................. 293
+ III. Alphabetical Index of the Gathas ................................. 296
+
+
+================================================================================
+                              INTRODUCTION
+================================================================================
+
+I AM at last able to publish the second section of the SAMYUTTA NIKAYA, the first
+of which appeared three years ago. I am sorry for that long delay, and hope the
+following sections will appear at shorter intervals.
+
+This section is longer than the preceding; it fills 95 leaves in the Burmese
+MS., and 58 in the Singhalese; whereas the first occupied respectively 82 and
+48 leaves.
+
+                                     I.
+
+The second section of the Samyutta-Nikaya is entitled NIDANA-VAGGO, because
+its first division, which comprises one half of the whole, deals especially
+(or rather begins by dealing) with the paticca-samuppada, commonly called
+Nidana. The first section is called Sagatha, because one or several verses
+(gathas) are inserted in every sutta; for which reason I said (vol. i. intr.
+p. xv) that "all the verses had been gathered together by the compilers of the
+book into that section, and the four others were without verses." This was a
+mistake that I wish to rectify, as a few verses are to be found in the present
+section; and others also will occur (I know) in the third, and (I think) in the
+following ones. The number of these verses, it is true, is very small; no
+more than 28 occurring in 17 suttas (in this section). Nevertheless, it cannot
+be said that it is "without a verse."
+
+Another assertion is to be corrected. I said in the same volume (p. viii)
+that, in the Section II, or Nidana, there are nine great divisions or
+Samyuttas. Now their real number is ten; but there is some difficulty in the
+counting of these Samyuttas.
+
+The first division contains eight chapters (vagga) the seven first of which are
+very regular, consisting of ten suttas each; but the eighth is less regular, as
+being distributed into eleven suttas. These eight divisions, put together, are
+called nidana vaggo, and should be considered as forming the Nidana-Samyuttam;
+but this designation I did not find in any of the MS. at my disposal. Yet I
+retain it because I cannot conceive why it is missing.
+
+The eight chapters above mentioned are followed by a division entitled
+antara-peyyalam, and styled Suttanton: it consists of twelve divisions. Now
+what Samyutta does it belong to? It is not comprised in the recapitulation at
+the end, and does not seem to be counted among the Samyuttas. What is then to
+be done with it? I consider it as an appendix to, or a ninth chapter of the
+Nidana, the first Samyutta, which therefore has nine chapters and 93 suttas.
+
+These nine chapters, comprising 93 suttas, fill up in the Burmese MS. 48 leaves
+out of 95; but it looks as if this important part of the whole Vagga were
+not even a Samyutta, or rather as if the Buddhists themselves were not able
+to make this enumeration of the Samyuttas.
+
+Observe that the following section, the so-called Abhisamaya Samyuttam,
+consisting of 11 suttas, is counted by the Singhalese MSS. as the "first"
+(pathama), while in the Burmese MS. it is not marked by any number at all.
+
+The following Samyutta, the so-called dhatu, having four chapters and 39
+suttas, is marked down in the Burmese MS. as the "second" (dutiya) Samyutta,
+but is not designated by any number in the Singhalese MS. The number 3
+(tatiya) applied in the same Burmese MS. to the following Samyutta (the
+Anamatagga), which ought to be counted as the fourth, involves likewise the
+exclusion of the Nidana from the series of the Samyuttas. This is confirmed by
+the numbers pancama (fifth) and atthama (eighth) being applied in one of the
+Singhalese MSS. to the Labhasakkara and Opamma Samyuttas. This seems to us a
+remarkable fact; but, as the MSS. do not agree in this matter, and some
+Samyuttas are not accompanied by any number in any MS., we think that little
+regard is to be paid to the aforesaid numbers pathama, dutiya, tatiya, &c.
+Therefore, referring to the succession of the divisions, and to the general
+uddana given at the end, -in the Burmese MSS. exclusively, -we divide the
+Nidana-vaggo as follows:
+
++--------+-----------------------+----------+--------+
+|  No.   | SAMYUTTA NAME         | CHAPTERS | SUTTAS |
++--------+-----------------------+----------+--------+
+|    I.  | Nidana-Samyutta       |    9     |   93   |
+|   II.  | Abhisamaya-Samyutta   |    1     |   11   |
+|  III.  | Dhatu-Samyutta        |    4     |   39   |
+|   IV.  | Anamatagga-Samyutta   |    2     |   20   |
+|    V.  | Kassapa-Samyutta      |    1     |   13   |
+|   VI.  | Labhasakkara-Samyutta |    4     |   43   |
+|  VII.  | Rahula-Samyutta       |    2     |   22   |
+| VIII.  | Lakkhana-Samyutta     |    2     |   21   |
+|   IX.  | Opamma-Samyutta       |    1     |   12   |
+|    X.  | Bhikkhu-Samyutta      |    1     |   12   |
++--------+-----------------------+----------+--------+
+| Total  |                       |   27     |  286   |
++--------+-----------------------+----------+--------+
+
+                                    II.
+
+Therefore the total of the Samyuttas seems to be 56 instead of 55 given in the
+Vol. I. (p. viii) of this publication. But whatsoever the true total may be, we
+have here another way of counting the Samyuttas. What is indeed the SAMYUTTA-
+NIKAYA? a compilation of Samyuttas. The Samyutta is the important and essential
+element of the whole. The distribution of these elements into five great
+divisions is, for us, of secondary importance; and we can number all the
+samyuttas, from the first to the last, without paying regard to the five great
+divisions, as well as the suttas, in each samyutta, without paying regard to
+the different chapters.
+
+Thus, two ways of counting exist-one founded upon the division of the whole
+into five great sections (vagga), of the sections into Samyuttas, of the
+Samyuttas into chapters (vagga), and of the chapters into suttas; the other
+founded upon the division of the whole into Samyuttas, and of the Samyuttas
+into suttas. In consequence, as the first great section (Sagatha) contains
+eleven Samyuttas, the ten Samyuttas of the present second section (Nidana)
+become XII.-XXI. as follows:-
+
++--------+-------------------------+--------+
+|  No.   | SAMYUTTA NAME           | SUTTAS |
++--------+-------------------------+--------+
+|  XII.  | Nidana Samyutta         |   93   |
+| XIII.  | Abhisamaya Samyutta     |   11   |
+|  XIV.  | Dhatu Samyutta          |   39   |
+|   XV.  | Anamatagga Samyutta     |   20   |
+|  XVI.  | Kassapa Samyutta        |   13   |
+| XVII.  | Labhasakkara Samyutta   |   43   |
+|XVIII.  | Rahula Samyutta         |   22   |
+|  XIX.  | Lakkhana Samyutta       |   21   |
+|   XX.  | Opamma Samyutta         |   12   |
+|  XXI.  | Bhikkhu Samyutta        |   12   |
++--------+-------------------------+--------+
+| Total  |                         |  286   |
++--------+-------------------------+--------+
+
+The first Samyutta of the third section (Khandha) will accordingly be numbered
+XXII.
+
+The use of this second method will be found more easy to use for dictionary
+purposes and wherever else references are required. For example, instead of
+quoting a passage, as II. 1. iv. 5. 4, or II. 1. vii. 3. 2 (where the figures
+stand respectively for the Section, Samyutta, Chapter, Sutta, and Paragraph),
+we can now say XII. 25. 4 and XVII. 3. 2, these three numbers designating
+respectively only the Samyutta, the Sutta, the Paragraph, and giving all the
+information required.
+
+Now, is one of these ways to be taken, the other to be rejected? We do not
+think so. The first ought to be preserved because it is indigenous, the second
+to be taken because it is more rational and simple. Therefore we have printed
+in our edition the divisions of the MSS., only adding to each Samyutta its
+number in the whole compilation, and to each Sutta its number in the Samyutta
+to which it belongs.
+
+                                    III.
+
+To prepare this edition, I have made use of three of the MSS. that had been
+previously employed, one Burmese, two Singhalese. The Burmese, which belongs
+to the Bibliotheque Nationale in Paris ("Fonds Pali," No. 71), I designated
+there, and do so here again, by the letter B. The Singhalese MSS. are the
+well-known MS. of Copenhagen (S1) and the MS. lent me by Dr. Morris (S3). To
+prepare the edition of the Sagatha, I had only at my disposal a copy of the
+first made by Mr. Fausboll, who was so kind as to lend it me; for the present
+publication, I have been able to use the MS. itself which the Director of the
+Royal Library in Copenhagen very obligingly sent to the Bibliotheque Nationale
+in Paris, that it might be at my disposal, a favour for which I feel most
+grateful to him. As to the MS. which belonged to Dr. Morris, it is now one of
+the Pali MSS. of the Bibliotheque Nationale, marked 634 in the register of the
+"Fonds Pali." These two Singhalese MSS. are referred to in this volume, as in
+the preceding, by the letters S1, S3. I am sorry I was not able to mention S2,
+which is the MS. of the British Museum (Or. 2344). Unfortunately I had no
+opportunity of going to London to examine it. Although S2 be not mentioned in
+the present volume, this designation is not taken off and can always be
+referred to.
+
+A fourth MS. gave me useful help; it is a Singhalese MS. of the Nidana-vagga
+which belongs to the Bibliotheque Nationale, bearing the number 73, of the
+"Fonds Pali," and which formerly belonged to Eugene Burnouf, bearing in his
+catalogue the number 146.
+
+The title Saratthapakasini the name of the commentary of the Samyutta-Nikaya
+(of which this book is of course the second part) is not to be found in it. It
+has no other title than Nidanavaggassa-atthavannana (commentary on the
+Nidana-vagga). Burnouf was not able, in his time, to identify the work; the
+frequent repetition of the word Samyutta said nothing to him, and he thought
+the work was to be referred to the Abhidharma class, as is stated in a note
+joined to the MS. and printed in his Catalogue. I designate this MS. by the
+letter C, already used for the Commentary of the Sagatha (or first section),
+although the two MSS. are very different from each other, the first being
+Siamese and the second Singhalese.
+
+So then these four MSS. have been examined and are referred to in the present
+edition in the following manner:
+
+B.   Burmese MS. of the Bibliotheque Nationale (No. 71 of the "Fonds Pali").
+S1.  Singhalese MS. of the Royal Library of Copenhagen.
+S3.  Singhalese MS. of the Bibliotheque Nationale (No. 634 of the "Fonds
+     Pali").
+C.   Commentary on the Nidana-vaggo, Singhalese MS. of the Bibliotheque
+     Nationale (No. 73 of the "Fonds Pali," No. 146 of the printed Burnouf's
+     Catalogue).
+
+                                    IV.
+
+In this volume I have acted upon the same rules of criticism as I followed in
+the preceding one. I have adopted no reading which is not supported by at
+least one of the four MSS. just mentioned. On the differences that exist
+between those MSS. I should like to add these few remarks. They are of three
+kinds; namely, as regards the text, the spelling, and the abridgments.
+
+As to the first point, which is by far the most important, there is not much to
+be said. One of the most curious of those differences results from the
+transfer of the succession of negative and affirmative terms, a remarkable
+instance of which is to be found at page 122 in this volume. I have
+endeavoured not to omit any of these various readings. Those that have been
+rejected, not without hesitation, will be found recorded in the notes.
+
+The difference with regard to spelling, though merely external, is perhaps
+more perplexing. Some words that occur very often are spelt in different ways
+(sometimes in the same MS.), either with a double or single letter,
+nappajanati and napajanati, bahusuta and bahussuta, either with a cerebral or a
+dental, pathama and pathama, panita and panita. These diversities seemed to me
+important enough to be pointed out, though the doing so has occasioned a great
+increase in the number of notes. Perhaps it would be better to draw up a list
+of such words specifying the different ways in which they are spelt, and then
+not have to mention them in the notes. This is what I intend to do in the next
+volume as Professors T. W. Rhys Davids and Estlin Carpenter have done in their
+edition of the Sumangala-Vilasini.
+
+But the greatest perplexity arose from these tedious repetitions which even
+the Buddhists themselves thought fit to cut short. Unfortunately the passages
+omitted or preserved are not always the same, nor are the texts uniformly
+abridged in all the MSS. This troublesome disparity was, I must confess, one of
+the causes of the delay in the publication of this volume. I had to choose the
+best abridgments: as the "Great Man"-Si parva licet componere magnis-I was
+appossukko (but little eager) to undertake this task. But upon trial, it
+proved to be less troublesome than it had seemed at first, only at times
+somewhat puzzling. And as a rule I have preferred the shorter arrangement.
+
+Notwithstanding these abridgments, the number of the remaining repetitions is
+still very great. It often seems as if it would have been better suitable to
+lessen it. But I could not take upon myself to venture upon the alteration of
+the text given by the MSS. In some instances, however, but very rarely, I
+suppressed a word which came ever and again. In two occasions only (pp. 28 and
+117), I did not repeat a long development that reproduced (without any change,
+or with a mere change of name) a passage that had preceded. These abridgments of
+mine are signified by the well-known symbol ...
+
+                                     V.
+
+All the above-mentioned discrepancies occur more especially as between the
+Burmese and the Singhalese MSS. So much I may venture to assert, although I had
+at my disposal only one Burmese MS. and two Singhalese MSS. The agreement of
+these latter is very remarkable; while the variations are slight; and often a
+blunder existing in both is corrected in one of them (perhaps by another hand).
+This constant resemblance is the more astonishing as the two MSS. cannot be
+considered as proceeding the one from the other. One of them was only recently
+brought over from Ceylon to London; the other was deposited in the library at
+Copenhagen many years ago. My one Burmese MS. I was not able to compare with any
+other; but I make no doubt that the result of the comparison would be the
+same as for the two Singhalese MSS.
+
+One of these diversities between the Burmese and the Singhalese MSS. seems
+peculiarly fit to be noticed here. The passages omitted in case of abridgment
+are always represented by -pe- in the Singhalese MSS., instead of which the
+Burmese MSS. have "pa" or "la" and sometime gha. I use ordinarily pe, but in
+cases where I follow the Burmese, I put pa or la or gha according to the MS.;
+whence the reader may conclude, without any further advice, that a passage
+noticed "la" or "pa" or "gha" is abridged in the Burmese, but complete in the
+Singhalese MSS. This rule I intend to observe more constantly henceforth, in
+order to diminish the number of the notes.
+
+I have added to the text, as I did in the preceding volume, an appendix
+containing
+   I. The INDEX of proper names.
+  II. The INDEX of the titles of the Suttas.
+ III. The INDEX of Gathas.
+
+I at first hoped to be able to add a fourth index, that of the Upamas
+(comparisons), which are to be found in great numbers throughout all
+Samyuttas, although one of them (the Opamma, Samyutta No. IX.) is especially a
+collection of Upamas. I began to carry out this plan; but I found this task
+more difficult than I had expected. Such a list would be either too long or
+too short; and after some trouble I finally decided to give up the design.
