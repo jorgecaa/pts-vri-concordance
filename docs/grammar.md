@@ -50,6 +50,15 @@ sn_line     ::= sn_id                              → "sn_id"     # "N (M) …"
 sn_id       ::= digits [dot] "(" digits
 sn_section  ::= "§" ws digits
 
+# SN I — find_markers_sn1  (sn1_markers.py; gramática propia, ver abajo)
+sn1_line    ::= sec_marker                         → "section"   # "§ 4. Na santi."
+              | bare_marker                        → "bare"      # "4. Nandano."  (§ perdido)
+sec_marker  ::= section numlist [dot] name
+bare_marker ::= numlist dot name                   # exige sangría ≥8, sin "║", len ≤48,
+                                                   #  nombre con mayúscula y ≥3 letras
+section     ::= "§"{1,2}
+numlist     ::= digits ( ("," | "-"+) digits )*    # "4" | "4,5" | "103--108"
+
 # AN — find_markers_an
 an_line     ::= num_dot_txt                        → "num"
 
@@ -79,3 +88,28 @@ all-caps    ::= Word( A-Z, espacio, tab, "-", ".", "║" [, "|"] )   # línea de
 
 Al cambiar la gramática, **actualiza este documento** y vuelve a correr el test de equivalencia
 (`scratchpad/dev_markers.py`) o un test dedicado antes de regenerar el Excel.
+
+
+## SN I — `sn1_markers.py` (nota aparte)
+
+SN I no comparte la gramática de SN II–V. Sus marcadores son **`§ N. Nombre.`** centrados, con el
+número **reiniciado en cada vagga** — un cuarto sistema de coordenadas, ajeno al `Sutta #` del
+Excel, al canónico y al `cst_paranum`. `find_markers_sn1(text)` devuelve
+`[(nº_línea, [números], nombre, tag)]`.
+
+Dos variantes hay que aceptar o se pierden **6 de los 271** suttas del volumen:
+
+| Variante | Ejemplo | Dónde |
+|---|---|---|
+| Rango con coma (un encabezado, dos suttas) | `§§ 4,5. Saṅgāme dve vuttāni.` | S i 82 |
+| Marcador «desnudo»: el `§` se perdió en el OCR | `4. Nandano.` | S i 23, 52, 56, 73, 124 |
+
+El marcador desnudo se discrimina del **número de párrafo** (margen izquierdo, sangría ~5) y del
+**pada de gāthā** (lleva `║`) por: sangría ≥ 8, ausencia de `║`, longitud ≤ 48 y nombre con
+mayúscula inicial.
+
+**Agrupación en vaggas:** dentro de un vagga el `§` crece estrictamente, así que *un número que no
+crece abre vagga nuevo* (`build_vaggas`). Es la única regla fiable, porque el `§1` de arranque es
+justamente uno de los que el OCR puede haber perdido. Con esto la estructura hallada cuadra al
+100% con el front matter de Feer (`samyutta-vol-I-info.txt`): **28 vaggas, 271 suttas y la página
+de arranque de cada vagga**.

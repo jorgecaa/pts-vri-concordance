@@ -1,5 +1,5 @@
 # PTS Reference Concordance — Status Report
-## Date: 2026-07-21 (updated 2026-07-25 — SN V CERRADO 610/610)
+## Date: 2026-07-21 (updated 2026-07-25 — SN I 271/271 y SN V 610/610 CERRADOS)
 
 ---
 
@@ -46,14 +46,14 @@ Use this terminology consistently across the project:
 |--------|--------:|-----------:|----------:|-------:|
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
-| SN | 1806 | 705 | 1101 | 39.0% |
+| SN | 1806 | 975 | 831 | 54.0% |
 | AN | 1738 | 1 | 1737 | 0.1% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6090** | **892** | **5198** | **14.6%** |
+| **TOTAL** | **6090** | **1162** | **4928** | **19.1%** |
 
-> Cifras al **2026-07-25**, tras cerrar SN V (610/610). La hoja `Summary` del Excel está alineada.
-> El desglose de SN: SN V 610 ✅ (validador Modelo B) + SN IV 94 (Helmer legado) + 1 `HELMER_FIXED`;
-> SN I–III siguen `DB_VERIFIED` → PENDIENTE.
+> Cifras al **2026-07-25**, tras cerrar SN I (271/271) y SN V (610/610). La hoja `Summary` del Excel
+> está alineada. Desglose de SN: SN I 271 ✅ + SN V 610 ✅ (validador Modelo B) + SN IV 94 (Helmer
+> legado); SN II–III siguen `DB_VERIFIED` → PENDIENTE.
 
 > MN 14/38/64 (antes `OK+RTE`/PENDIENTE por errores de API transitorios) fueron re-corridos por
 > Helmer DeepSeek el 2026-07-24 → **3/3 APPROVE** → `HELMER_APPROVED`/CONFIRMADO (cacheados).
@@ -81,14 +81,46 @@ Use this terminology consistently across the project:
 - DB content: 152/152 verified
 - Source files: `audit_mn_final.py`, `add_mn_lines.py`, cached in `helmer_ptscst_cache.json`
 
-### SN I — Samyutta Nikaya vol 1 (S i) — 271 suttas — CERRADO 🔒
-- Excel: `DB_VERIFIED` (270) + `HELMER_FIXED` (1)
-- 1 fix: SN 3.1 page 70→68 (verified manually)
-- DeepSeek pilot: 10/10 APPROVE (sutta-bounded extraction with § markers)
-- Marker format: `§ N. Name`
-- CST file: s1m.xml (271 suttas, perfect match)
-- Note: Full Helmer pending. Pilot confirms method works.
-- Source files: `parse_sn_grammar.py`, `helmer_sn1_pilot.py`
+### SN I — Samyutta Nikaya vol 1 (S i) — 271 suttas — CERRADO 🔒 271/271
+- **Estado 2026-07-25: 271/271 CONFIRMADO** (`VALIDADOR`, concordancia VRI ∧ Gemini APPROVE).
+  Antes eran 270 `DB_VERIFIED` + 1 `HELMER_FIXED` (todo PENDIENTE salvo uno).
+- **El front matter de Feer (`samyutta-vol-I-info.txt`) fija el lado PTS sin LLM.** Su índice y su
+  introducción dan la verdad-terreno estructural: 11 saṃyuttas, **28 vaggas, 271 suttas** y la
+  **página de arranque de cada vagga**. La estructura hallada en la BD cuadra al 100% con ella, y
+  el recuento por saṃyutta del Excel (81/30/25/25/10/15/22/12/14/12/25) coincide exacto.
+- **Marcadores `§ N. Nombre.`, numerados POR VAGGA** (reinician) — un cuarto sistema de
+  coordenadas. Gramática nueva en **`sn1_markers.py` (pyparsing**, documentada en
+  `docs/grammar.md`). Dos variantes, sin las cuales se pierden **6 de los 271**:
+  - **marcador «desnudo»**: el `§` se perdió en el OCR y queda `4. Nandano.` (S i 23, 52, 56, 73,
+    124). Se discrimina del nº de párrafo (margen izquierdo) y del pada de gāthā (lleva `║`) por
+    sangría ≥ 8, ausencia de `║`, longitud ≤ 48 y mayúscula inicial.
+  - **rango con coma**: `§§ 4,5. Saṅgāme dve vuttāni.` (S i 82) — un encabezado, dos suttas. El
+    bloque se parte por los **submarcadores** internos (`4.`/`5.` centrados a solas); sin partirlo
+    ambos suttas comparten todo el texto y Gemini rechaza con razón (son dos batallas con
+    desenlaces opuestos). Era el único REJECT de la tanda: 270/271 → 271/271.
+  - **agrupación en vaggas**: dentro de un vagga el `§` crece estrictamente, así que un número que
+    no crece abre vagga nuevo. Es la única regla fiable, porque el `§1` de arranque es justamente
+    uno de los que el OCR puede haberse comido.
+- **Alineación POSICIONAL** (Excel canónico ↔ marcadores en orden de lectura), no difusa, con dos
+  comprobaciones cruzadas independientes: el nombre del marcador ≡ título CST en **231/271 (85%)**
+  — el resto son los títulos variantes que Feer mismo advierte («los MSS no concuerdan»; imprime
+  el de B) — y la página del marcador ≡ **`cst_p_page`** del concordance en **271/271 (100%)**.
+- **XML VRI del Sagāthāvagga** (`romn/s0301m.mul.xml`): el nº de párrafo lo llevan `bodytext`
+  **y `hangnum`** (223+48=271 — los suttas solo-verso usan `hangnum`) y el texto vive en los
+  `gatha1/2/3/gathalast`. El índice de SN V (solo `bodytext`) se queda en 223.
+- ⚠️ **Ojo con `cst_p_page`**: es `vol.pppp` (`1.0001` = vol I p. 1) pero guardado como DECIMAL, así
+  que los ceros de cola se perdieron — `1.004` es la p. **40** y `1.01` la p. **100**. Hay que
+  rellenar la fracción a 4 dígitos (`_pts_page`); leerla tal cual da 25 falsos desacuerdos.
+- **Líneas calibradas: 201 corregidas → 271/271 exactas** (`calibrate_sn1_lines.py`). 162 filas no
+  traían línea y solo 66 de las 266 con línea acertaban.
+- **4 errores de PÁGINA corregidos** con doble evidencia independiente (marcador `§` en la BD *y*
+  ancla `cst_p_page`, ambos contra el Excel, cuya página además contenía el marcador de otro
+  sutta): **SN 4.3** p105→104, **4.5** p106→105, **6.8** p149→148, **11.10** p226→227.
+- SN 3.1 (el viejo `HELMER_FIXED`, p70→68 corregida a mano) queda **confirmado por partida doble**:
+  el marcador `§1 Daharo.` está en p68 L3 y el título CST casa.
+- Fuentes: `sn1_markers.py`, `validador_sn1.py`, `reconcile_sn1.py`, `calibrate_sn1_lines.py`,
+  `samyutta-vol-I-info.txt`. Los viejos `parse_sn_grammar.py` / `helmer_sn1_pilot.py` quedan
+  SUPERADOS.
 
 ### SN II — Samyutta Nikaya vol 2 (S ii) — 255 suttas — CERRADO 🔒
 - Excel: `DB_VERIFIED`
