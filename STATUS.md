@@ -445,3 +445,70 @@ mezclados y en su mayoría no son líneas (ver SN V): recalcular con el mismo re
   DeepSeek "Helmer" está RETIRADO (no fiable); sus marcas `HELMER_*` son CONFIRMADO provisional
 - ⚠️ La única fuente de verdad es `tipitaka.sqlite` (edición 'mula')
 - ⚠️ NO HAY HOMOGENEIDAD entre Nikayas — cada uno requiere su propio parser
+
+---
+
+## PLAN DE REMEDIACIÓN Y CIERRE (2026-07-25)
+
+### El defecto que lo motiva
+
+La resolución del lado PTS se hace **fila a fila y no es inyectiva**: dos filas del Excel pueden
+acabar en el mismo marcador, con lo que una de ellas se valida contra el locus de su vecino. El
+validador no puede detectarlo — compara un par PTS↔CST correcto *entre sí* pero ajeno a la fila —
+y por eso pasó los controles. Es la misma familia de error que los 21 `Sutta #` desplazados de S ii.
+
+Alcance medido (marcadores compartidos / filas implicadas):
+
+| Volumen | Cómo resuelve el lado PTS | Estado |
+|---|---|---|
+| **S i** | posicional (1:1 por construcción) | **limpio** — 0 |
+| **S ii** | clave exacta `(saṃyutta, nº corrido)` | **limpio** — 0 |
+| **S iii** | por nombre sobre la página del ancla | **16 marcadores / 38 filas**; 22 filas sin marcador propio pudiendo tenerlo |
+| **S v** | nombre → nº → nombre laxo, con fallbacks | **16 marcadores / 36 filas** |
+| **S iv** | — | sin hacer; heredaría el defecto |
+
+### Fase 0 — prueba de aceptación común (sin API)
+
+`audit_injectivity.py`: para un volumen dado, lista los marcadores compartidos y calcula el
+**hueco de inyectividad** (filas − marcadores distintos usados), descontando los miembros legítimos
+de un marcador de rango (su capacidad es el nº de suttas que cubre). **Criterio de cierre de
+cualquier volumen: hueco = 0.** Se corre antes y después de cada fase.
+
+### Fase 1 — resolvedor inyectivo y monótono (sin API)
+
+Sustituir la resolución fila-a-fila por una **asignación por saṃyutta**: filas en orden canónico
+contra marcadores en orden de lectura, maximizando la suma de las puntuaciones que ya existen
+(nombre + proximidad al ancla) con dos restricciones:
+
+- **monotonía** — si la fila *i* va al marcador *j*, la fila *i+1* va a *j* o posterior (las dos
+  secuencias están ordenadas: es alineamiento de secuencias, DP O(m·n), exacto y barato);
+- **capacidad** — un marcador de rango admite tantas filas como suttas cubre; uno individual, una.
+
+Es la generalización de lo que ya funciona en S i (posicional) y en el Diṭṭhi (`ditthi_pairs`).
+
+### Fase 2 — aplicar a S iii y S v, y re-validar
+
+Re-validar **solo** las filas cuyo par cambie (≈40 en S iii, ≈36 en S v), descartando su veredicto
+previo — nunca heredarlo. Recalibrar líneas. Cierre esperado: S iii 333/333 y S v revalidado.
+
+### Fase 3 — S iv (completa SN)
+
+Con el resolvedor ya corregido. El front matter (`samyutta-vol-IV-info.txt`) **ya está**. Ojo: sus
+94 `HELMER_APPROVED` son del pase DeepSeek retirado — hay que re-validarlos, no heredarlos. ~344
+llamadas. Al terminar, **SN entero cerrado con el validador** (1815 filas).
+
+### Fase 4 — deuda de DN/MN
+
+186 filas al 100% CONFIRMADO por el mismo pase DeepSeek retirado. Re-validar con el validador
+(~186 llamadas) para que lo declarado cerrado descanse en la fuente vigente.
+
+### Fase 5 — AN y KN (4.098 filas, el 67% de lo que queda)
+
+Los XML VRI existen (`s04*`, `s05*`) y `massive.tsv` cubre 1.508 de AN y 2.054 de KN. **Falta la
+verdad-terreno estructural**: los front matter por volumen (AN I–V; KN por obra), que en los cuatro
+volúmenes de SN han sido lo que permite fijar el lado PTS sin conjeturas. Sin ellos no se empieza.
+
+### Orden recomendado
+
+**0 → 1 → 2 → 3 → 4 → 5.** Las fases 0–2 no gastan API salvo la re-validación de ~76 filas; la 3 y
+la 4 son el grueso del coste; la 5 depende de que lleguen los OCR.
