@@ -67,3 +67,48 @@ MSS: M (Mandalay 125/130, birmano), Ph (Phayre), T (Turnour, sinhalés), M6/M7/M
 (Morris), S (**edición siamesa**, por orden del rey de Siam) y 3 MSS del comentario
 Manoratha-Pūraṇī. Nota: para Pañcaka y Chakka la edición siamesa **no trae variantes**
 salvo en cinco casos.
+
+================================================================================
+ESTRUCTURA VERIFICADA CONTRA LA BD (libro 19, 452 páginas) — 2026-07-25
+================================================================================
+
+⚠️ **A iii cambia de régimen de marcador.** NO usa el nº corrido centrado del Tika y el
+Catukka: vuelve al **numeral ROMANO centrado**, y ahí el romano es el **SUTTA** (corrido,
+hasta `CCL`), no el vagga; los arábigos a sangría 5 son sus **párrafos**. Es el cuarto
+régimen distinto dentro del Aṅguttara. Comprobarlo por volumen; nunca extrapolarlo.
+
+**Recuentos, sin un solo hueco:** Pañcaka **271** suttas (250 numerados + 21 tras los
+ornamentos del peyyāla) —la cuenta exacta de Hardy— y Chakka **124**.
+
+Cuatro formas que hubo que añadir al lector, cada una descubierta por un hueco:
+- **parser romano completo** (se llega a CCL; el de los vaggas del Eka paraba en XXXIX);
+- **rangos en romano**: `CLXXXII-CLXXXIX.` (A iii 219) cubre ocho suttas de una vez;
+- **errata por continuidad**: `CCIX.` impreso entre `CCXVIII` y `CCXX` es `CCXIX` con una
+  X perdida — misma clase que el `2O` por `20` de S iv;
+- **ornamentos `U+E0E0`**: el vagga 26 (Upasampadā) **no numera sus suttas**, los separa
+  una fila de adornos. 21 separadores = 22 suttas. Único caso en todo el Aṅguttara.
+
+**Los vaggas del Chakka NO son de diez.** Por colofón: 10, 10, 10, **12**, **12**, 10, 10,
+10, **11**, **11**, 10. Es lo que Hardy documenta en AN IV («*the Commentary counts from
+one to ten **or eleven**, if there are more Suttas than ten in a Vagga*»). Suponerlos
+uniformes descuadraba 8 de los 12 arranques; con los colofones, **36/38** exactos.
+
+⚠️ **Los ficheros VRI no se reparten como los volúmenes de PTS**: `s0403m1` es el Pañcaka
+y `s0403m2` el Chakka, pero **`s0403m3` ya es el Sattaka**, o sea AN IV. Elegir el XML por
+volumen impreso es el mismo error que en MN, donde `s0201m` es el Mūlapaṇṇāsa (MN 1-50) y
+no el tomo I (MN 1-76).
+
+================================================================================
+ALINEADOR — auditoría previa a la API
+================================================================================
+
+| comprobación | resultado |
+|---|---|
+| arranques de vagga (por colofón) vs índice de Hardy | **36/38** |
+| filas plenamente alineadas (CST **y** marcador) | 379 de 424 |
+| nombre PTS ≡ título CST, sobre las alineadas | **377/379 (99,5 %)** |
+| página del marcador ≡ Excel (±1), sobre las alineadas | **377/379 (99,5 %)** |
+
+Las **45 sin alinear** son la cola del Pañcaka (`5.258`-`5.302`): el CST tiene 265 subheads
+frente a 302 filas del Excel porque **no nombra individualmente** los suttas del peyyāla.
+No es un defecto del alineador; necesitan el tratamiento de bloque agrupado.
