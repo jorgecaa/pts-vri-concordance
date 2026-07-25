@@ -1,5 +1,5 @@
 # PTS Reference Concordance — Status Report
-## Date: 2026-07-21 (updated 2026-07-25 — SN I-V cerrados con el validador: 1810/1814)
+## Date: 2026-07-21 (updated 2026-07-25 — SN ENTERO CERRADO 🔒 1814/1814)
 
 ---
 
@@ -52,7 +52,7 @@ Use this terminology consistently across the project:
 | **TOTAL** | **6099** | **1751** | **4348** | **28.7%** |
 
 > Cifras al **2026-07-25**. **SN entero pasado por el validador: 1810/1815.** Desglose:
-> **S i 271/271, S ii 257/257, S iii 332/332 🔒, S iv 340/344, S v 610/610**. Ya no queda ningún
+> **S i 271/271, S ii 257/257, S iii 332/332, S iv 344/344, S v 610/610 — los cinco CERRADOS 🔒**. Ya no queda ningún
 > `HELMER_*` en SN: los 94 `HELMER_APPROVED` y 12 `HELMER_REJECT` de S iv se re-validaron y se
 > sobrescribieron. Las 5 PENDIENTE de SN son desacuerdos gate/Gemini a arbitraje humano.
 > El total pasó de 6090 a **6099 filas**: −1 (`12.74`, división solo-CST borrada) y +10 (la
@@ -630,7 +630,7 @@ Es la generalización de lo que ya funciona en S i (posicional) y en el Diṭṭ
 Re-validar **solo** las filas cuyo par cambie (≈40 en S iii, ≈36 en S v), descartando su veredicto
 previo — nunca heredarlo. Recalibrar líneas. Cierre esperado: S iii 333/333 y S v revalidado.
 
-### Fase 3 — S iv — ✅ **HECHA** (2026-07-25): 340/344, SN entero con el validador
+### Fase 3 — S iv — ✅ **CERRADO 🔒 344/344** (2026-07-25). Con él, **SN entero cerrado (1814/1814)**
 
 Los 94 `HELMER_APPROVED` son del pase DeepSeek retirado: se re-validan las 344, no se hereda nada.
 
@@ -665,12 +665,22 @@ otro sutta:
    del CST es el marcador siguiente (su texto es el del nº135 «Saṅgayha»). Contar raíces del nombre
    acertaba en tres casos y fallaba en dos; el solapamiento léxico acierta en los cinco.
 
-**Resultado: 340 `VALIDADOR` + 4 `REVISAR`.** Las 4 a arbitraje son desacuerdos gate/Gemini con el
-**nombre casado** y cobertura baja por elisión de un lado: `35.41 Anusayapahāna` (0.11),
-`36.1 Samādhi` (0.33), `36.30 Suddhika` (0.12) y `37.14 Pañcavera` (0.33). Los `HELMER_*` de
-`36.1` y `37.14` **se degradaron a PENDIENTE**: heredarlos habría dejado como CONFIRMADO justo lo
-que el validador vigente rechaza. Líneas: 260/337 ya exactas, **77 corregidas**; 7 páginas en
-disputa quedan a arbitraje (no se tocan).
+**Resultado: 340 `VALIDADOR` + 4 `VALIDADOR_HUMANO`.** Los `HELMER_*` de `36.1` y `37.14` se
+degradaron primero a PENDIENTE —heredarlos habría dejado como CONFIRMADO justo lo que el validador
+vigente rechazaba— y luego Jorge arbitró las cuatro (2026-07-25) tras cotejar el impreso:
+
+| fila | por qué el REJECT era falso negativo |
+|---|---|
+| `37.14 Pañcavera` | los textos son **idénticos palabra por palabra**; la cobertura 0.33 sale de que el bloque CST arrastra el `Tassuddānaṃ` del vagga, que PTS imprime aparte |
+| `36.1 Samādhi` | la prosa es literal en ambos; PTS **añade una gāthā** que el CST no imprime (es lo que vio Gemini, y es cierto, pero es una adición, no otro sutta) |
+| `36.30 Suddhika` | el marcador `29 (9) Suddhikaṃ nirāmisam` cubre dos suttas y los imprime seguidos: CST 278 → líneas 2-4, CST 279 (`36.31`) → líneas 5-11, ambos literales. **Gemini aprobó `36.31` contra ESE MISMO marcador y rechazó `36.30`** |
+| `35.41 Anusayapahāna` | el marcador es un **rango**, `58-59 (6-7) Anusayā1-2`, y abre con las dos preguntas (`pahiyyanti` / `samugghātam`); el CST 58 es una línea de diez palabras con `…pe…` |
+
+**Patrón común: elisión asimétrica.** Un lado abrevia (`…pe…`, `║ la ║`) y el otro imprime completo,
+y el gate mide `|CST ∩ PTS| / |CST|`, que se hunde cuando el CST es una línea. Es el falso negativo
+característico de este pipeline y conviene reconocerlo de vista.
+
+Líneas: 260/337 ya exactas, **77 corregidas**; 7 páginas en disputa quedan a arbitraje (no se tocan).
 
 **Gemini cazó un desfase real, no un falso negativo.** Rechazó `35.146/35.147` diciendo «PTS habla
 de *dukkha* donde el CST habla de *anattā*»: el tramo Koṭṭhika iba corrido un puesto porque mi
