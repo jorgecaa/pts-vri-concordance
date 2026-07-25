@@ -1,5 +1,5 @@
 # PTS Reference Concordance — Status Report
-## Date: 2026-07-21 (updated 2026-07-25 — SN I/II/V cerrados y SN III al 93% con el validador)
+## Date: 2026-07-21 (updated 2026-07-25 — SN I/II/V cerrados y SN III 332/333 con el validador)
 
 ---
 
@@ -46,13 +46,13 @@ Use this terminology consistently across the project:
 |--------|--------:|-----------:|----------:|-------:|
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
-| SN | 1815 | 1541 | 274 | 84.9% |
+| SN | 1815 | 1564 | 251 | 86.2% |
 | AN | 1738 | 1 | 1737 | 0.1% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6099** | **1728** | **4371** | **28.3%** |
+| **TOTAL** | **6099** | **1751** | **4348** | **28.7%** |
 
 > Cifras al **2026-07-25**. Desglose de SN por el validador: **S i 271/271, S ii 257/257,
-> S iii 309/333, S v 610/610**; **S iv** sigue con los 94 del Helmer legado (250 PENDIENTE) y es
+> S iii 332/333, S v 610/610**; **S iv** sigue con los 94 del Helmer legado (250 PENDIENTE) y es
 > el único volumen de SN sin pasar por el validador.
 > El total pasó de 6090 a **6099 filas**: −1 (`12.74`, división solo-CST borrada) y +10 (la
 > expansión de `12.75` en los 11 suttas que PTS numera). La columna `#` se renumeró.
@@ -280,8 +280,8 @@ Dos filas venían con la forma del **CST**, no la de PTS. Se resolvió leyendo l
 
 ## PENDING
 
-### SN III — Samyutta Nikaya vol 3 (S iii) — 333 filas ⏳ 309/333 (24 a resolver)
-- **Estado 2026-07-25: 309 CONFIRMADO (`VALIDADOR`) + 24 PENDIENTE.** Antes: 326 filas
+### SN III — Samyutta Nikaya vol 3 (S iii) — 333 filas ⏳ 332/333
+- **Estado 2026-07-25 (2ª pasada): 332 CONFIRMADO** (316 `VALIDADOR` + 16 `VALIDADOR_HUMANO`) **+ 1 PENDIENTE.** Antes: 326 filas
   `DB_VERIFIED` (+7 que llegaron de S ii al corregir su volumen) → todo PENDIENTE.
 - **Front matter de Feer (`samyutta-vol-III-info.txt`)**: 13 saṃyuttas **XXII–XXXIV**, y la página
   de arranque de cada uno **cuadra al 100%**. Feer distingue **títulos** de **suttantas** (Nāga son
@@ -309,16 +309,44 @@ Dos filas venían con la forma del **CST**, no la de PTS. Se resolvió leyendo l
 - **Pares `Dutiya-`**: Feer no escribe el ordinal — imprime dos veces el mismo nombre —, así que hay
   que tomar el **k-ésimo homónimo en orden de lectura** o se coteja el sutta contiguo. Era la causa
   de la mayoría de los REJECT del primer pase (22.52, 22.158, 29.4, 29.5…).
-- **Líneas: 75 corregidas → 265/265 exactas**, y **6 páginas** con doble evidencia (22.42, 22.52,
-  22.114, 22.121, 23.25, 28.2). SN 24 se excluye a propósito de la calibración.
-- **24 PENDIENTE, con el motivo anotado en `Detail`:**
-  - **13 de SN 24 (Diṭṭhi)** — el `cst_paranum` del concordance apunta al **primer sutta del
-    saṃyutta** («1. Vātasuttaṃ»), así que no hay texto CST correcto que cotejar; y como las 4 gamana
-    repiten los mismos 26 nombres, el lado PTS tampoco se desambigua por nombre. Hay que resolver
-    antes la estructura de las gamana (Feer ya avisa de que sus encabezados «CHAPTER III/IV» están
-    mal puestos y deberían ser los nºs 3 y 4).
-  - **11 repartidas** (SN 22: 6, SN 23: 2, SN 32: 1, SN 34: 2) — desacuerdo gate/Gemini sobre el par
-    resuelto, casi todas en grupos peyyāla o series `-mūlaka` del Jhāna-saṃyutta.
+- **Líneas**: 75 + 35 corregidas → **316/316 exactas**; **7 páginas** con doble evidencia
+  (22.15, 22.42, 22.52, 22.114, 22.121, 23.25, 28.2).
+#### Cómo se resolvieron las 24 pendientes (2ª pasada)
+
+Tres causas, ninguna resoluble por el LLM; el cruce de nombres subió de **63% a 88%**.
+
+1. **`massive.tsv` colapsa los rangos** — el TSV da un solo `cst_paranum` por grupo (el del primer
+   miembro), así que los 17 miembros de `SN24.19-35` se cotejaban contra el sutta 1 del saṃyutta.
+   **`massive.tsv` NO se modifica**: el arreglo va en el lector, `massive_reader.py`, que expande
+   `para + (k−a)` **con compuerta** — solo si TODOS los paranum resultantes existen en el XML, que
+   es lo que ocurre cuando el destino cae en el bloque elidido del CST (`225-240`, `251-274`,
+   `277-300`). Si algún paranum no existe se deja colapsado: nunca se inventa una referencia.
+2. **El Diṭṭhi-saṃyutta (SN 24) no sigue ninguna numeración** — sus 32 filas van `24.1`…`24.32`, un
+   índice corrido que no es DPR (`24.21 «Rūpīattā»` es DPR `SN24.37`) ni PTS. Pero las tres fuentes
+   listan **los mismos 32 suttas EXPLÍCITOS** (los que no caen en bloque elidido) y en el mismo
+   orden, así que se alinean por posición (`ditthi_pairs`): **32/32 con el nombre coincidiendo**.
+   Los bloques elididos quedan fuera en ambas ediciones y las dos lo dicen — el CST con
+   `(Purimavagge viya aṭṭhārasa veyyākaraṇāni vitthāretabbānī)`, PTS con `20--35 (2--17)` y el salto
+   de `71 (1)` a `96 (26)`.
+3. **PTS agrupa donde el CST numera** — en S iii 179 PTS imprime TRES suttas
+   (`146-148 Kulaputtena dukkhā (1)(2)(3)`) donde el CST tiene CUATRO, y de ahí el último vagga
+   corre con **PTS = CST − 1**. `calibrate_offsets` prueba desplazamientos pequeños y acepta el
+   tramo **solo si con él casan TODOS los nombres** hasta el final del saṃyutta (en el Khandha,
+   10/10). Nada se adivina.
+
+- Efecto colateral controlado: la lectura nueva cambia el texto CST bajo filas ya validadas, así que
+  se **re-validaron** las afectadas en vez de heredar el veredicto (58 + 33 en S iii, 20 en S v).
+  En S v el resultado se sostiene (610/610): 8 de los 9 rechazos nuevos ya eran `VALIDADOR_HUMANO`
+  de la clase peyyāla, y **50.3** se reclasificó a `VALIDADOR_HUMANO` junto a sus hermanas 48.74,
+  49.5, 50.4 y 53.2 (PTS imprime solo el uddāna del grupo).
+- **16 `VALIDADOR_HUMANO`** — peyyāla donde una edición agrupa lo que la otra numera, con el par ya
+  identificado; se firman por **prueba mecánica**, no por LLM: las palabras clave del nombre
+  aparecen literalmente en el texto de su contraparte (16/17 verificado).
+- **1 PENDIENTE — `34.22 «Kallitamūlakāarammaṇa…»`**: el concordance la manda al bloque elidido de la
+  serie **ṭhiti-** (CST `681-688`) cuando el sutta es de la serie **kallita-**. El Jhāna-saṃyutta
+  tiene 10 series colapsadas en el CST y `cst_paranum` señala la equivocada; sin locus CST correcto
+  no hay nada que cotejar.
+- **Líneas: 316/316 exactas** tras la 2ª pasada (SN 24 ya entra en la calibración).
 - Fuentes: `sn3_markers.py`, `validador_sn3.py`, `reid_sn3.py`, `reconcile_sn3.py`,
   `calibrate_sn3_lines.py`, `samyutta-vol-III-info.txt`. `parse_sn_grammar.py` queda SUPERADO.
 

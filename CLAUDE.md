@@ -129,13 +129,19 @@ el `Sutta #` del Excel usa **notación DPR**. El aligner definitivo (`validador_
 por contenido: Excel(DPR) → `massive.tsv` (`cst_paranum`) → **XML VRI** (`romn/*.mul.xml`, párrafos
 `<p n="N">`) → texto CST exacto; lado PTS por marcadores DB casando contra el **canónico** (=nº
 corrido PTS). Con alineación exacta, CONFIRMADO = concordancia ∧ Gemini (el gate de cobertura sobra).
-**SN V 610/610, SN I 271/271 y SN II 257/257 CERRADOS 🔒, SN III 309/333 (2026-07-25)**; las líneas de `PTS Ref` recalibradas
+**SN V 610/610, SN I 271/271 y SN II 257/257 CERRADOS 🔒, SN III 332/333 (2026-07-25)**; las líneas de `PTS Ref` recalibradas
 contra el marcador real de la BD (`calibrate_sn5_lines.py` / `calibrate_sn1_lines.py`, exactas al
 100%). Cada volumen tiene **su propia gramática de marcadores** (`sn1_markers.py`: `§ N.` numerado por
 vagga; `sn2_markers.py` / `sn3_markers.py`: `N (M) Nombre` sin puntos, con S iii añadiendo nombre
 entre paréntesis y prefijo de subdivisión; SN IV–V: `N. (M) Nombre`) y su lado PTS lo fija
 el **front matter del volumen** (`samyutta-vol-<N>-info.txt`: nº de vaggas y suttas, suttas por
 vagga y página de arranque) — verdad-terreno estructural sin LLM.
+⚠️ **`massive.tsv` colapsa los rangos**: da un solo `cst_paranum` por grupo (el del primer miembro),
+así que asignárselo a todos coteja los miembros contra el primer sutta del grupo. **El TSV no se
+toca** — el arreglo va en el lector, `massive_reader.py`, que expande `para + (k−a)` **con compuerta**
+(solo si todos los paranum resultantes existen en el XML, que es lo que pasa cuando el destino cae en
+el bloque elidido del CST). Al cambiar la lectura cambia el texto CST bajo filas ya validadas:
+**re-validar las afectadas, nunca heredar el veredicto**.
 ⚠️ **Distinguir «PTS elide el texto» de «PTS no reconoce esa división».** Si el CST parte en varios
 suttas lo que PTS imprime como uno (S ii 130: PTS escribe `Suttanto eko` y su uddāna cuenta *doce*),
 esa división **no tiene referencia PTS** y su fila no va en la tabla (se borró `12.74`). Al revés, si

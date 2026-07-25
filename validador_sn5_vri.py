@@ -15,6 +15,7 @@ from collections import Counter
 import sutta_hash as sh
 from openpyxl import load_workbook
 from validador import validate_pair
+from massive_reader import build_massive as _mr_build
 from validador_sn5 import (build_markers, pts_for, pts_by_name, pts_by_content, pts_page,
                            ordinal_of)
 
@@ -52,22 +53,16 @@ def build_vri_index():
 
 # ── massive.tsv → cada nº canónico DPR → cst_paranum ────────────────────────
 def build_massive():
-    canon2para = {}
-    for r in csv.DictReader(open('massive.tsv'), delimiter='\t'):
-        if not (r['cst_code'] or '').startswith('sn5.'):
-            continue
-        pm = re.match(r'(\d+)', r['cst_paranum'] or '')     # paranum puede ser rango "42-47"
-        if not pm:
-            continue
-        para = int(pm.group(1))                             # nº de párrafo de inicio
-        m = re.match(r'SN(\d+)\.(\d+)(?:-(\d+))?', r['dpr_code'] or '')
-        if not m:
-            continue
-        sam, a = m.group(1), int(m.group(2))
-        b = int(m.group(3)) if m.group(3) else a
-        for k in range(a, b + 1):                            # expande rangos DPR
-            canon2para.setdefault(f'{sam}.{k}', (para, r['cst_sutta']))
-    return canon2para
+    """Cada nº canónico DPR → `(cst_paranum, título CST)`, con **expansión de rangos**.
+
+    `massive.tsv` (que NO se modifica) da un único `cst_paranum` por grupo, el del primer miembro.
+    Asignárselo a todos hace que los miembros se cotejen contra el primer sutta del grupo en vez de
+    contra su propio párrafo. La expansión va con compuerta (`massive_reader`): solo si TODOS los
+    paranum resultantes existen en el XML — normalmente porque caen en el **bloque elidido** del CST,
+    que es el homólogo exacto del rango de PTS.
+    """
+    m = _mr_build('sn5.', build_vri_index())
+    return {f'{k[0]}.{k[1]}': (v[0], v[1]) for k, v in m.items()}
 
 
 def excel_entries():

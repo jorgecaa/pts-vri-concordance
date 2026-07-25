@@ -23,8 +23,8 @@ from collections import Counter
 
 from openpyxl import load_workbook
 
-from validador_sn3 import (DB, XLSX, build_massive, build_pts_suttas, excel_entries,
-                           resolve_pts)
+from validador_sn3 import (DB, XLSX, DITTHI, build_massive, build_pts_suttas,
+                           calibrate_offsets, ditthi_pairs, excel_entries, resolve_pts)
 
 REF_RE = re.compile(r'^(S\s+iii\s+)(\d+)(?:\s*,\s*(\d+))?\s*$')
 
@@ -38,14 +38,16 @@ def main():
     for (sam, num), q in pts_by_key.items():
         by_page.setdefault((sam, q['page']), []).append(q)
     # misma resolución que el validador: por nombre sobre la página del ancla (la clave no sirve)
-    # SN 24 (Diṭṭhi) queda FUERA: sus 4 gamana repiten los mismos 26 nombres y el ancla del
-    # concordance apunta al primer sutta del saṃyutta, así que la resolución no es fiable y no se
-    # deben tocar sus líneas (ver el Detail de esas filas en el Excel).
+    # misma resolución que el validador, incluidos los offsets calibrados y el Diṭṭhi por posición
+    offsets = calibrate_offsets(pts_by_key, canon2para0,
+                                {k: v[1] for k, v in canon2para0.items()})
+    ditthi = ditthi_pairs(pts_by_key)
     entries, pts = [], []
     for e in excel_entries():
-        if e['sam'] == 24:
-            continue
-        q = resolve_pts(e, canon2para0.get((e['sam'], e['inner'])), pts_by_key, by_page)
+        if e['sam'] == DITTHI and 1 <= e['inner'] <= len(ditthi):
+            q = ditthi[e['inner'] - 1][1]
+        else:
+            q = resolve_pts(e, canon2para0.get((e['sam'], e['inner'])), pts_by_key, by_page, offsets)
         if q:
             entries.append(e); pts.append(q)
     print(f'PTS: {len(pts_by_key)} suttas | filas del Excel resueltas: {len(entries)}')

@@ -30,6 +30,7 @@ import sutta_hash as sh
 from openpyxl import load_workbook
 
 from validador import validate_pair
+from massive_reader import build_massive as _mr_build
 from validador_sn1 import _pts_page, _TEXT_RENDS, build_vri_index as _build_vri
 from sn3_markers import find_markers_sn3, collect_suttas
 
@@ -87,20 +88,15 @@ def build_cst_group_items(path=VRI):
 
 
 def build_massive(prefix='sn3.'):
-    """`(saṃyutta, nº corrido)` → `(cst_paranum, título CST, página PTS del concordance)`."""
-    out = {}
-    for r in csv.DictReader(open('massive.tsv'), delimiter='\t'):
-        if not (r['cst_code'] or '').startswith(prefix):
-            continue
-        pm = re.match(r'(\d+)', r['cst_paranum'] or '')
-        m = re.match(r'SN(\d+)\.(\d+)(?:-(\d+))?', r['dpr_code'] or '')
-        if not (pm and m):
-            continue
-        sam, a = int(m.group(1)), int(m.group(2))
-        b = int(m.group(3)) if m.group(3) else a
-        for k in range(a, b + 1):
-            out.setdefault((sam, k), (int(pm.group(1)), r['cst_sutta'], _pts_page(r['cst_p_page'])))
-    return out
+    """`(saṃyutta, nº DPR)` → `(cst_paranum, título CST, página PTS)` con **expansión de rangos**.
+
+    `massive.tsv` da un solo `cst_paranum` por grupo (el del primer miembro), así que sin expandir
+    los 17 miembros de `SN24.19-35` se cotejaban todos contra el sutta 1 del saṃyutta. La expansión
+    va con compuerta (ver `massive_reader`): solo si TODOS los paranum resultantes existen en el XML
+    — que es lo que ocurre cuando el destino cae en el bloque elidido del CST.
+    """
+    m = _mr_build(prefix, build_vri_index(), pts_page=_pts_page)
+    return {k: (v[0], v[1], v[2]) for k, v in m.items()}
 
 
 def build_pts_suttas(cur):
@@ -163,10 +159,97 @@ def _name_score(a, b):
         return 100
     if x.startswith(y) or y.startswith(x):
         return 50 + lcp
+    # Contención, no solo prefijo: Feer antepone palabras («Eso attā» ⊃ CST «Soattā») y al quitar el
+    # ordinal el sandhi se come la vocal inicial («Dutiyaabhinivesa» → «bhinivesa» ⊂ «Abhinivesa»).
+    if min(len(x), len(y)) >= 4 and (x in y or y in x):
+        return 40 + min(len(x), len(y))
     return lcp if lcp >= 4 else 0
 
 
-def resolve_pts(e, h, pts, by_page):
+DITTHI = 24
+
+
+def ditthi_pairs(pts, path=VRI):
+    """Alineación del **Diṭṭhi-saṃyutta** (SN 24), que no sigue ninguna de las numeraciones.
+
+    Sus 32 filas del Excel están numeradas `24.1`…`24.32`, un índice corrido que **no es DPR**
+    (`24.21 «Rūpīattā»` es DPR `SN24.37`) ni PTS. Pero las tres fuentes listan exactamente los
+    mismos **32 suttas EXPLÍCITOS** — los que no caen en un bloque elidido — y en el mismo orden:
+
+        Excel 24.1–18   ↔ CST 206–223 (Sotāpattivagga)      ↔ PTS 1–18
+        Excel 24.19     ↔ CST 224  (2ª gamana, 1. Vāta)      ↔ PTS `19 (1) Vātā`
+        Excel 24.20     ↔ CST 241  (2ª gamana, 18)           ↔ PTS `36 (18)`
+        Excel 24.21–28  ↔ CST 242–249 (2ª gamana, 19–26)     ↔ PTS `37 (19)`…`44 (26)`
+        Excel 24.29/30  ↔ CST 250 / 275 (3ª gamana, 1 / 26)  ↔ PTS `45 (1)` / `70 (26)`
+        Excel 24.31/32  ↔ CST 276 / 301 (4ª gamana, 1 / 26)  ↔ PTS `71 (1)` / `96 (26)`
+
+    Los bloques elididos quedan fuera **en las dos ediciones** y lo dicen igual: el CST con
+    `(Purimavagge viya aṭṭhārasa veyyākaraṇāni vitthāretabbānī)` / `(Dutiyavagge viya catuvīsati
+    suttāni pūretabbāni)` y PTS con los marcadores de rango `20--35 (2--17)` / `46--69 (2--25)` y el
+    salto de `71 (1)` a `96 (26)`.
+
+    Devuelve `[(paranum CST, título CST, sutta PTS)]` en ese orden, para indexar por `nº − 1`.
+    """
+    body = ET.parse(path).getroot().find('.//body')
+    title, cst = None, []
+    for el in body.iter():
+        if el.tag != 'p':
+            continue
+        rend = el.get('rend')
+        if rend == 'subhead':
+            title = ''.join(el.itertext()).strip()
+        elif rend in _TEXT_RENDS and el.get('n') and title:
+            n = el.get('n')
+            if '-' in n:                     # bloque elidido: no es un sutta explícito
+                continue
+            p0 = int(re.match(r'(\d+)', n).group(1))
+            if 206 <= p0 <= 301:
+                cst.append((p0, title))
+    # lado PTS: los marcadores del saṃyutta que NO son de rango, en orden de lectura
+    pt = sorted((q for (sam, _n), q in pts.items() if sam == DITTHI and not q['from_range']),
+                key=lambda q: (q['page'], q['line']))
+    return list(zip(cst, pt))
+
+
+def calibrate_offsets(pts, massive, cst_titles):
+    """Offset `PTS − CST` por tramos, para los saṃyuttas donde PTS **agrupa o fusiona**.
+
+    En S iii 179 PTS imprime TRES suttas (`146-148 Kulaputtena dukkhā (1)(2)(3)`) donde el CST tiene
+    CUATRO (146 Nibbidābahula, 147 Aniccānupassī, 148 Dukkhānupassī, 149 Anattānupassī), así que a
+    partir de ahí el último vagga corre con **PTS = CST − 1** (PTS 158 «Ānandena» = CST 159 «Ānanda»).
+
+    El offset no se adivina: se prueba cada desplazamiento pequeño y se acepta el tramo solo si con
+    él **casan TODOS los nombres** desde ese punto hasta el final del saṃyutta. Ese acuerdo en bloque
+    es la prueba (en el Khandha son 10/10) y hace innecesario el LLM para estas filas.
+
+    Devuelve `{(sam, nº CST): nº PTS}` solo para las claves donde el offset no es 0.
+    """
+    fix = {}
+    for sam in sorted({s for s, _n in pts}):
+        nums = sorted(n for s, n in pts if s == sam)
+        if not nums:
+            continue
+        for off in (-1, -2, -3):
+            # busca el punto desde el que un offset constante hace casar todos los nombres
+            for start in nums:
+                run = [k for k in nums if k >= start and (sam, k) in cst_titles]
+                if len(run) < 4:
+                    continue
+                if all(_name_score(cst_titles[(sam, k)], (pts.get((sam, k + off)) or {}).get('name'))
+                       >= 40 for k in run):
+                    # y con offset 0 el tramo NO casa (si no, no hay nada que corregir)
+                    if all(_name_score(cst_titles[(sam, k)], (pts.get((sam, k)) or {}).get('name'))
+                           >= 40 for k in run):
+                        break
+                    for k in run:
+                        fix[(sam, k)] = k + off
+                    break
+            if fix:
+                break
+    return fix
+
+
+def resolve_pts(e, h, pts, by_page, offsets=None):
     """Localiza el sutta PTS de una fila de S iii.
 
     **No se puede usar la clave `(saṃyutta, nº)`**: PTS imprime 158 suttas en el Khandha-saṃyutta
@@ -175,6 +258,11 @@ def resolve_pts(e, h, pts, by_page):
     el concordance** (`cst_p_page`, ±1) — el ancla es independiente del Excel y coincidió en el 98%
     de las filas — y solo si eso falla se cae a la clave o al marcador único de la página.
     """
+    # tramo con offset calibrado (PTS agrupa/fusiona): manda el nº, no el nombre
+    if offsets and (e['sam'], e['inner']) in offsets:
+        q = pts.get((e['sam'], offsets[(e['sam'], e['inner'])]))
+        if q:
+            return q
     anchor = h[2] if h else None
     base = anchor if anchor is not None else e['page']
     # Feer no escribe «Dutiya-»: imprime dos veces el mismo nombre (o le añade «(2)»). Si el
@@ -187,6 +275,14 @@ def resolve_pts(e, h, pts, by_page):
             sc = _name_score(e['name'], q['name'])
             if sc:
                 cands.append((abs(d), -sc, q['num'], q))
+    if not cands and isinstance(e['page'], int) and e['page'] != base:
+        # el ancla y el Excel discrepan: si el nombre casa en la página que declara el Excel, esa
+        # manda (S iii 34.3 «Samādhimūlakavuṭṭhāna» está en p265, no en la p273 del ancla)
+        for d in (0, 1, -1):
+            for q in by_page.get((e['sam'], e['page'] + d), []):
+                sc = _name_score(e['name'], q['name'])
+                if sc:
+                    cands.append((abs(d), -sc, q['num'], q))
     if cands:
         cands.sort(key=lambda c: (c[0], c[1], c[2]))
         top = [c for c in cands if (c[0], c[1]) == (cands[0][0], cands[0][1])]
@@ -264,11 +360,26 @@ def main():
     by_page = {}
     for (sam, num), q in pts.items():
         by_page.setdefault((sam, q['page']), []).append(q)
+    cst_titles = {k: v[1] for k, v in massive.items()}
+    ditthi = ditthi_pairs(pts)
+    offsets = calibrate_offsets(pts, massive, cst_titles)
+    if offsets:
+        byc = Counter(k[0] for k in offsets)
+        print(f'offsets calibrados (PTS agrupa/fusiona): {sum(byc.values())} claves '
+              f'en saṃyuttas {dict(sorted(byc.items()))}')
     tasks, no_cst, name_ok, page_ok = [], [], 0, 0
     for e in entries:
         h = massive.get((e['sam'], e['inner']))
-        p = resolve_pts(e, h, pts, by_page)
+        p = resolve_pts(e, h, pts, by_page, offsets)
+        ditthi_hit = None
+        if e['sam'] == DITTHI and 1 <= e['inner'] <= len(ditthi):
+            # el Diṭṭhi va por POSICIÓN sobre los suttas explícitos (ver `ditthi_pairs`)
+            (para, title), q = ditthi[e['inner'] - 1]
+            p, ditthi_hit = q, (para, title)
         s = vri.get(h[0]) if h else None
+        if ditthi_hit:
+            s = vri.get(ditthi_hit[0])
+            h = (ditthi_hit[0], ditthi_hit[1], h[2] if h else None)
         if p and not s and (e['sam'], e['inner']) in CST_GROUP:
             # el CST agrupa lo que PTS numera: el ítem (N) del grupo es la posición (M) del
             # marcador PTS. El grupo se FIJA por título (no se busca): hay varios grupos con los
