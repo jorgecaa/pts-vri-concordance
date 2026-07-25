@@ -631,10 +631,12 @@ Con el resolvedor ya corregido. El front matter (`samyutta-vol-IV-info.txt`) **y
 94 `HELMER_APPROVED` son del pase DeepSeek retirado — hay que re-validarlos, no heredarlos. ~344
 llamadas. Al terminar, **SN entero cerrado con el validador** (1815 filas).
 
-### Fase 4 — deuda de DN/MN
+### Fase 4 — deuda de DN/MN — ✅ **HECHA** (verificado 2026-07-25)
 
-186 filas al 100% CONFIRMADO por el mismo pase DeepSeek retirado. Re-validar con el validador
-(~186 llamadas) para que lo declarado cerrado descanse en la fuente vigente.
+Las 186 filas que venían del pase DeepSeek retirado **ya se re-validaron con el validador**:
+`validador_dnmn.json` = 186 filas, **176 CONFIRMADO** (174 `VALIDADOR` + 2 `PTS_CROSSREF_SN`) y 10
+desacuerdos que Jorge arbitró a mano → `VALIDADOR_HUMANO` (5 en DN, 5 en MN). En el Excel no queda
+**ningún** `HELMER_*` en DN/MN. DN 34/34 y MN 152/152 descansan por tanto en la fuente vigente.
 
 ### Fase 5 — AN y KN (4.098 filas, el 67% de lo que queda)
 
