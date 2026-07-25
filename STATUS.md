@@ -1,4 +1,134 @@
 # PTS Reference Concordance — Status Report
+## 2026-07-25 — **A ii CERRADO 🔒 303/303**: el quinto régimen y el uddāna como detector
+
+Cierra el Catukka entero. Las 35 filas que `validador_an2_catukka.py` dejaba fuera **por diseño**
+se resolvieron **sin una sola llamada a API**, y ése es el punto de método: donde las dos ediciones
+eliden no hay texto que cotejar, el REJECT de Gemini es un falso negativo por elisión, y lo que
+firma la fila es **prueba mecánica o la lectura del impreso**.
+
+### El quinto régimen de AN — `an_peyyala.py`
+
+Los cuatro alineadores numerados suponen «un sutta ↔ un marcador ↔ un `subhead`». Al final de cada
+nipāta ese supuesto **se acaba**, y de maneras distintas en cada volumen:
+
+| tramo | PTS | CST |
+|---|---|---|
+| A ii 256-257 (`4.277-783`) | **un solo sutta numerado** (`271.`) con 4 párrafos | dos `<p>` de rango |
+| A iii 271-278 | bloques separados por **ornamento** (`U+E0E0`), y uno cubre varios | `subhead` de rango |
+| A iv 144-148 / 347-349 | bloques separados por **raya** de guiones | idem |
+| A iv 462-465 | **marcador de RANGO romano** (`LXXIII-LXXXI.`) + uddāna | 73 individual, resto agrupado |
+| A v 303-310 | 7 suttas numerados (`CCX.`…) | `div` **sin `subhead`** |
+| A v 359-360 | **un** bloque para toda la serie | un `<p n="22-29">` |
+
+La prueba que se exige ahí: **el término distintivo de cada fila aparece LITERALMENTE y EN ORDEN en
+las dos ediciones**, y la aritmética del rango cuadra. En el *rāga-peyyāla* del Catukka, 25/25 con
+página ±1 (27 = 9 × 3 para los nueve `-āya`; 480 = 16 × 30 para los dieciséis kilesa).
+
+**Lo que esta prueba caza y el LLM no podía:** la serie de kilesa **falla en el último término**
+porque el Excel escribía `Macchariya` donde el impreso y el CST leen `pamādassa`, y `Pamāda` donde
+los dos leen `madassa`. Corregidos los dos nombres, las dieciséis casan. El mismo error se repite
+en A iii (`5.1053-1102` / `5.1103-1152`), **aún sin corregir**.
+
+### El uddāna: **detector**, no autoridad — `uddana.py` + `detector_uddana.py`
+
+La estrofa que cierra cada vagga es, en el régimen numerado, **el único sitio donde PTS nombra sus
+suttas** (el impreso no titula). Tiene gramática propia y se analiza con **pyparsing**: cabecera,
+multiplicadores (`dve khatā` = *dos* suttas Khata), **ordinales de comprobación** (`anusotaṃ
+pañcamaṃ` — el impreso verificándose a sí mismo), y fórmulas de cierre. Los **dvandvas** del verso
+(`taṇhāyogena` = Taṇhā + Yoga) los deshace el **deconstructor de DPD**, con una regla dura: DPD
+**propone**, el CST **decide** — la partición sólo se acepta si sus partes casan con títulos
+consecutivos del CST, porque `bhattuddesena → bhatto + uddesena` es un compuesto de verdad y sin
+embargo es UN solo sutta.
+
+⚠️ **El uddāna NO es autoridad sobre la numeración de PTS, sólo sobre el contenido del vagga.**
+Verificado contra el impreso en el *Sañcetaniya-vagga* (A ii 157-167): la estrofa se lee perfecta
+—diez nombres, cada uno con un único título del CST, en orden, y el `pañcamaṃ` en su sitio— y aun
+así «nombre k ↔ marcador k» es **falso**, porque PTS **parte** el `Cetanā` del CST en dos
+marcadores (171 y 172, el segundo es el `cattāro attabhāvapaṭilābhā`) y **funde** el Mahākoṭṭhika y
+el Ānanda en uno (174, que imprime los dos seguidos). Una división y una fusión que se compensan y
+resincronizan en 175. Imponer el mapeo empeoraba el alineamiento (de 3 fallos a 10 en el piloto),
+así que el uddāna **anota y no impone**.
+
+**`detector_uddana.py` sobre AN entero**: 186 vaggas → **31 vaggas ordinarios donde PTS y el CST no
+cuentan lo mismo** (A i 13, A ii 6, A iii 4, A iv 4, A v 4), más 24 tramos peyyāla. Cada uno es una
+división o una fusión que el cotejo de contenido **no puede ver**. En 9 de ellos el uddāna además
+declara quién tiene razón. Este mapa es requisito antes de tocar Eka/Duka y KN.
+
+> ⚠️ Las cifras de **A i** en el detector son artefactos: en Eka y Duka el marcador numera *por
+> vagga* y reinicia, así que el recuento por vagga no es comparable. A i necesita su propio
+> tratamiento.
+
+**Dos correcciones de método que salieron de la corrida y están en el código:** (a) quien decide si
+hay asimetría es **PTS contra CST**, no el uddāna —si las dos ediciones coinciden y la estrofa no,
+el sospechoso es la estrofa—; (b) `pp.ZeroOrMore` **se detiene** en el primer token que no entiende,
+así que la `c` suelta de `c' eva` cortaba la estrofa entera (`Sambodhi nissayo c' eva Meghiyaṃ…`
+daba dos nombres en vez de diez, y eso se leía como una fusión inexistente de ocho suttas).
+
+### Normalización interna a la convención VRI — `pali_norm.py`
+
+**Regla nueva: dentro del pipeline todo se compara en una sola ortografía, la del CST/VRI**, que es
+la de las claves de DPD y la del lado que aporta los títulos. Las 7 reglas están **medidas sobre
+los dos corpus completos** del Aṅguttara, no puestas de memoria: `m` final → `ṃ` (PTS 4.500 casos,
+CST **0**), `vy` → `by` (841 vs 972), `viriy` → `vīriy`, `sañño` → `saṃyo`, y nasal homorgánica
+**sólo ante oclusiva** (ante semivocal el CST conserva la niggahīta: `saṃyojana`, `saṃvāsa`).
+
+Va cableada en `an_peyyala.fold()` —**antes** de plegar, porque las reglas necesitan los diacríticos
+que el plegado ya borró— y en las consultas a DPD. Cobertura de DPD sobre el vocabulario de A ii:
+**79 % → 82 %**. Todas las reglas **conservan la longitud en caracteres**, lo que permite
+normalizar sin romper el mapa posición→(página, línea); hay una aserción que lo vigila.
+
+De paso, `pali_morphology.VALID_CLUSTERS` pasa de 75 a 108 grupos, **todos por medición** sobre las
+40.907 palabras distintas de las dos ediciones. `ṃy`, `yh`, `mbh` y `mph` estaban excluidos como
+«no atestiguados» y están en `saṃyojana`, `mayhaṃ`, `ārambha` y `samphassa`. La **vacilación de VRI
+con la niggahīta ante oclusiva** (`saṃkhaṃ` junto a `saṅkhāra`, en las dos ediciones) va en un
+conjunto **aparte**: es pali válido, pero no normalizado, y son dos preguntas distintas.
+
+### Estrategia «vagga primero, contenido después» — `piloto_hash_vagga.py`
+
+Piloto sobre A ii con verdad-terreno (263 pares ya CONFIRMADO):
+
+| capa | acierto |
+|---|--:|
+| **1. bloqueo por vagga** (colofón PTS ↔ `<div>` CST) | 262/263 (**99,6 %**) |
+| 2. firma de contenido, argmax independiente | 84,4 % |
+| **2. + asignación MONÓTONA dentro del vagga** | 261/263 (**99,2 %**) |
+
+La firma usa lo que la elisión no altera: cobertura de vocabulario **ponderada por idf** (0,60),
+**progresión** —correlación de rangos del orden de primera aparición— (0,25) y **razón de cantidad
+de palabras** (0,15). El idf es lo que rompe los empates de las series de repetición; la frecuencia
+(tf) no aportó nada. Y la monotonía no es adorno: sin ella el mismo hash da 84 %.
+
+⚠️ **La verdad-terreno es una RELACIÓN, no una función**: un marcador de PTS puede servir a varios
+suttas del CST (el nº 174 imprime seguidos el Mahākoṭṭhika y el Ānanda, y el Excel los distingue por
+línea). Leerla como diccionario contaba como fallo del piloto lo que era un acierto.
+
+### Presupuesto por operación — `audit_tiempo.py`
+
+Auditor hermano de `check_integrity.py`, pero lo que vigila no es el dato sino **el coste de llegar
+a él**. Toda operación declara su presupuesto (pasos y minutos) **antes** de empezar; al agotarse se
+para, se informa de lo conseguido y de lo que falta, y se pide decisión. Ampliar el presupuesto es
+decisión de Jorge, no del que ejecuta. `estado` devuelve código 1 cuando se agota, para que la
+parada no dependa de que alguien lea la salida.
+
+### Correcciones de dato en el Excel (A ii)
+
+| fila | corrección | evidencia |
+|---|---|---|
+| `4.257 «Ājānīya 2»` | → **`4.260`** | llevaba el nº del DPR y **duplicaba la clave** de Māluṅkyāputta |
+| `4.257 «Māluṅkyāputta»` | página **248**, no 251 | el sutta se imprime en A ii 248-249 |
+| `4.724-753` | **Mada peyyāla** | la serie de kilesa del impreso y del CST |
+| `4.754-783` | **Pamāda peyyāla** | idem; 30 paranums por kilesa desde 304 |
+
+Y tres filas que sólo parecían rotas: `4.64` **no tiene marcador porque el `64.` se perdió en el
+OCR** (A ii 71,1 sigue con el Niraya y la numeración se reanuda en `65.`, misma clase que el
+`XXXVII` perdido de A v); `4.74`/`4.75` van al marcador **75** y **76** porque el nº74 del impreso
+lo ocupa el *Vadhu*.
+
+`check_integrity` pierde las dos incidencias de A ii: la clave duplicada y el salto de página hacia
+atrás. Canon **3286/6098 (53,9 %)**.
+
+---
+
 ## MEDIDA 2026-07-25 — la clave canónica del lado CST pasa a ser el **paranum del XML VRI**
 
 Se abandona el **DPR como clave de unión** (no como etiqueta). Motivo acumulado: S ii desplazado
@@ -80,10 +210,13 @@ Use this terminology consistently across the project:
 |--------|--------:|-----------:|----------:|-------:|
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
-| SN | 1815 | 1564 | 251 | 86.2% |
-| AN | 1738 | 1 | 1737 | 0.1% |
+| SN | 1814 | 1814 | 0 | 100.0% |
+| AN | 1738 | 1286 | 452 | 74.0% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6099** | **1751** | **4348** | **28.7%** |
+| **TOTAL** | **6098** | **3286** | **2812** | **53.9%** |
+
+> Desglose de AN (2026-07-25): **A ii 303/303 CERRADO 🔒**, A iii 369/457, A iv 248/298,
+> A v 215/245, A i 151/435 (sólo el Tika). Eka y Duka siguen sin abordar a propósito.
 
 > Cifras al **2026-07-25**. **SN entero pasado por el validador: 1810/1815.** Desglose:
 > **S i 271/271, S ii 257/257, S iii 332/332, S iv 344/344, S v 610/610 — los cinco CERRADOS 🔒**. Ya no queda ningún
@@ -405,10 +538,13 @@ Los detectó revisar «¿está terminado?» fila a fila, no el LLM:
 - Fuentes: `sn3_markers.py`, `validador_sn3.py`, `reid_sn3.py`, `reconcile_sn3.py`,
   `calibrate_sn3_lines.py`, `samyutta-vol-III-info.txt`. `parse_sn_grammar.py` queda SUPERADO.
 
-### AN — Anguttara Nikaya — 1,738 entries ⏳
-- Pages restored from blog, lines added via sequential matching
-- Spot-check: 11/11 pages verified
-- No Helmer validation yet
+### AN — Anguttara Nikaya — 1,738 filas — **1286/1738 (74,0 %)** ⏳
+- **A ii (Catukka) 303/303 — CERRADO 🔒** (2026-07-25): 268 `VALIDADOR` + 35 `VALIDADOR_HUMANO`.
+- A iii 369/457 · A iv 248/298 · A v 215/245 — les falta el barrido de sus colas peyyāla y de sus
+  filas de rango, que ya tienen herramienta (`validador_an_peyyala.py --vol iii,iv,v`, en seco).
+- A i 151/435: sólo el Tika. **Eka y Duka siguen sin abordar a propósito** — allí el CST no da
+  nombre por sutta y las tres ediciones cuentan unidades distintas; antes hay que tener el mapa de
+  divisiones y fusiones (`detector_uddana.py`), y el suyo aún no es fiable (ver aviso arriba).
 
 ### KN — Khuddaka Nikaya — 2,360 entries ⏳
 - 254 off-by-one corrections applied
@@ -460,6 +596,17 @@ mezclados y en su mayoría no son líneas (ver SN V): recalcular con el mismo re
 - `src/data/tipitaka.sqlite` — edición PTS (`edition='mula'`)
 - `/dev/shm/dpd.db` — DPD
 - `helmer_*.py`, `helmer_ptscst_cache.json` — **legado del pase DeepSeek retirado**
+
+Herramientas nuevas (2026-07-25), todas sin API:
+- `an_peyyala.py` — **quinto régimen**: tramos donde una edición elide lo que la otra numera.
+  Expande los `<p n="a-b">` del CST por paranum y prueba el término distintivo literal y en orden
+- `validador_an_peyyala.py` — barrido de las colas peyyāla de A ii–A v (`--dry` no toca nada)
+- `reconcile_an2_cierre.py` — el volcado de A ii, con el porqué de cada fila en `Detail`
+- `uddana.py` — gramática **pyparsing** de la estrofa + dvandvas con el deconstructor de DPD
+- `detector_uddana.py` — mapa de divisiones y fusiones PTS↔CST, vagga por vagga, en AN entero
+- `pali_norm.py` — normalización interna a la convención VRI (reglas medidas sobre los dos corpus)
+- `piloto_hash_vagga.py` — estrategia de tres capas, con verdad-terreno sobre A ii
+- `audit_tiempo.py` — presupuesto por operación (`abrir` / `paso` / `estado` / `cerrar` / `informe`)
 
 ### Pitfalls:
 - La numeración SN resetea por saṃyutta — usar el nº corrido (gid), no la posición en la vagga

@@ -50,6 +50,15 @@ destructive edits; there is no undo.
 > el validador no puede detectarlo porque el par PTS↔CST que recibe es coherente consigo mismo. Ver
 > `sn34_series.py` (SN 34: dos convenciones opuestas en un mismo saṃyutta, cuatro filas mal
 > emparejadas y tres ya CONFIRMADO).
+> **(7) Toda operación declara su presupuesto ANTES de empezar** (`audit_tiempo.py`: pasos y
+> minutos). Al agotarse se **para**, se informa de lo conseguido y de lo que falta, y se pide
+> decisión; ampliar el presupuesto es decisión de Jorge, no del que ejecuta. Motivo: una
+> exploración que debía acotar un régimen de marcadores se convirtió en un alineador nuevo, tres
+> iteraciones de heurística y decenas de volcados de página sin ningún punto de parada declarado.
+> El trabajo no estaba mal; estaba **sin presupuesto**, y por eso nadie podía decir que se había
+> pasado. **(8) Toda comparación de texto se normaliza antes a la convención VRI**
+> (`pali_norm.py`), y **antes de plegar**: las reglas necesitan los diacríticos que el plegado
+> borra. Ver la memoria `normalizacion-interna-vri`.
 
 ## Running & testing the app
 
