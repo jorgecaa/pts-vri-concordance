@@ -114,8 +114,8 @@ Use this terminology consistently across the project:
 
 ## PENDING
 
-### SN V — Samyutta Nikaya vol 5 (S v) — 610 suttas ⏳ 580/610 (pendiente cerrar)
-- **Estado 2026-07-25: 580 CONFIRMADO / 30 PENDIENTE.** 562 VALIDADOR + 18 VALIDADOR_HUMANO.
+### SN V — Samyutta Nikaya vol 5 (S v) — 610 suttas ⏳ 589/610 (pendiente cerrar)
+- **Estado 2026-07-25 (2ª pasada): 589 CONFIRMADO / 21 PENDIENTE.** 571 VALIDADOR + 18 VALIDADOR_HUMANO.
 - Alineado por el **pipeline VRI por concordancia** (definitivo): Excel(DPR) → `massive.tsv`
   (`cst_paranum`) → XML VRI (`/tmp/tipitaka-xml/romn/s0305m.mul.xml`) → texto CST exacto; lado
   PTS por marcadores DB (libro 16). Validador Modelo B con `concordant=True` (concordancia
@@ -123,17 +123,47 @@ Use this terminology consistently across the project:
   (parser de marcadores: `(M)`, rangos `103--108. (1--6)`, grupo profundo `89--98.1--10.`,
   centrado simple `5. Bhikkhu.`, y fallback a página). Reconciliación: `reconcile_sn5.py`.
   Los viejos `helmer_sn5_*.py` quedan SUPERADOS.
-- **30 PENDIENTE = una sola clase peyyāla** (concordancia VRI exacta, texto ELIDIDO en PTS y/o
-  CST → sin texto que Gemini pueda cotejar; su REJECT es falso-negativo por elisión, no
-  desalineación). Desglose: 22 `DB_VERIFIED` (grupos/individuales `Oghādi/Pācīnādi/Manussacuti=
-  Pañcagati/Chedanādi/-paññā/Nīvaraṇa/Balādi`…) + 8 `REF_ERROR_DPR` **verificados: NO son error
-  de DPR** — son los grupos de repetición "Puna-" (46.130/131/143/153/165/175, 49.13, 50.13),
-  elididos SIMÉTRICAMENTE en ambas ediciones con `...rāgavasena vitthāretabbo` (solo uddāna;
-  análogo inverso del `PTS_CROSSREF_SN`). Disposición PENDIENTE de decisión de Jorge (valor nuevo
+- **580 → 589: 9 de las 30 "peyyāla" NO lo eran** — eran fallos del resolvedor PTS, ahora
+  corregidos en `validador_sn5.py` (auditados con un diff de texto PTS viejo↔nuevo sobre las 602
+  entradas, sin gastar API, para garantizar que ninguna de las ya CONFIRMADO se degradaba):
+  1. **Marcador perdido por OCR** — `4O. (10) Nandiya.` en S v 397 lleva letra `O` por cero, así
+     que el parser no veía la línea y caía al texto de página entera (`_fix_ocr_num`; es el único
+     caso del volumen). SN 55.40 ✅.
+  2. **Off-by-one de PÁGINA** — `pts_for` solo miraba la página declarada; el marcador está a
+     veces en la siguiente (ahora busca ±1). Recupera 55.56, 56.22, 46.36, 51.19, 54.16, 48.72/73,
+     51.34, 56.102/104…
+  3. **`_stem` no quitaba `-suttaṃ`** — colapsaba las consonantes dobles ANTES de recortar el
+     sufijo, así que `suttaṃ`→`sutam` ya no casaba con el patrón. Corregido el orden.
+  4. **Nombre laxo vs nº corrido** — la contención de nombres NO distingue los pares
+     paṭhama/dutiya de las series peyyāla (el marcador PTS los llama igual, `Pathavī1./Pathavī2.`),
+     así que el nombre solo se antepone al nº cuando la coincidencia es fuerte, o cuando es
+     inequívoca y el título CST no lleva ordinal (`name!`: recupera 45.112 `Nivaraṇāni`, que es el
+     177 en PTS y el 178 en DPR). Empate → marcador de más arriba (antes ganaba el de más abajo,
+     que se llevaba el sutta siguiente).
+  5. **Fragmento sin cuerpo** — dos marcadores de rango consecutivos dejaban un "sutta" de 1 token;
+     `MIN_PTS_TOKENS=3` lo descarta y sigue la cadena (ojo: los peyyāla PTS legítimos tienen 4
+     tokens, un umbral alto degrada decenas de filas).
+- **21 PENDIENTE = clase peyyāla** (concordancia VRI exacta, texto ELIDIDO en PTS y/o CST → sin
+  texto que Gemini pueda cotejar; su REJECT es falso-negativo por elisión, no desalineación).
+  Desglose: 13 `DB_VERIFIED` (grupos `Esanādi/Oghādi/Tathāgatādi/Balādi/Pācīnādi/Chedanādi`,
+  donde PTS imprime solo el uddāna) + 8 `REF_ERROR_DPR` **verificados: NO son error de DPR** —
+  son los grupos de repetición "Puna-" (46.130/131/143/153/165/175, 49.13, 50.13), elididos
+  SIMÉTRICAMENTE en ambas ediciones con `...rāgavasena vitthāretabbo` (solo uddāna; análogo
+  inverso del `PTS_CROSSREF_SN`). Disposición PENDIENTE de decisión de Jorge (valor nuevo
   `VALIDADOR_PEYYALA` vs `VALIDADOR_HUMANO` en bloque) — dejado abierto a propósito.
+  Excepción dentro de las 21: **45.113 Upādānakkhandha** no es peyyāla sino ambigüedad de nombre
+  (el marcador PTS `Khandā.` gid 178 es el correcto, pero `Upādānam.` gid 173 es prefijo del
+  título CST `Upādānakkhandhasuttaṃ` y gana; ninguna regla de nombre lo desempata) → arbitraje.
+- ⚠️ **6 filas CONFIRMADO con evidencia superada** (`Validation=VALIDADOR` en el Excel pero el
+  veredicto vigente en `validador_sn5_vri.json` es REJECT): **45.71, 50.3, 52.18, 55.67, 55.69,
+  55.71**. `reconcile_sn5.py` no degrada por diseño (protege la procedencia), así que siguen
+  marcadas. 45.71 y 50.3 rechazan con el texto MEJOR alineado de esta pasada (su APPROVE previo
+  se apoyaba en el texto de página entera); 52.18/55.67/55.69/55.71 ya rechazaban antes. Decisión
+  de Jorge: degradar a PENDIENTE (→ 583/610 real) o arbitrar a mano.
 
 **TODO SN V (antes de cerrar):**
-1. **Decidir la disposición de las 30 peyyāla** (VALIDADOR_PEYYALA / VALIDADOR_HUMANO) → 610/610.
+1. **Decidir la disposición de las 21 peyyāla** (VALIDADOR_PEYYALA / VALIDADOR_HUMANO) y de las
+   **6 filas con evidencia superada** (degradar vs arbitrar) → 610/610.
 2. **Afinar los offsets de nº de línea por página**: los `PTS Line` del Excel no son fiables
    (calibrar contra el texto real de cada página en la BD, libro 16, como se hizo con la serie
    asubha / Hetunā). Es el trabajo fino restante para dejar las referencias exactas a nivel de línea.

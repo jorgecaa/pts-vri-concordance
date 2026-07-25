@@ -89,12 +89,24 @@ def load_entries():
     return out
 
 
+_OCR_D = str.maketrans({'O': '0', 'o': '0', 'l': '1', 'I': '1'})
+def _fix_ocr_num(s):
+    """Repara el nº del marcador cuando el OCR leyó letras por dígitos ("4O. (10)
+    Nandiya." en S v 397). Solo toca el prefijo numérico de una línea que ya tiene
+    forma de marcador `NN. (NN) Nombre`, nunca el texto."""
+    m = re.match(r'^([0-9OolI]{1,4})(\s*-+\s*[0-9OolI]{1,4})?(\.?\s*\()([0-9OolI]{1,3})', s)
+    if not m or (m.group(1).isdigit() and m.group(4).isdigit()):
+        return s
+    head = m.group(0).translate(_OCR_D)
+    return head + s[m.end():]
+
+
 def build_markers(cur):
     mm = defaultdict(list)
     cur.execute('SELECT page_no,unitext FROM pages WHERE book_no=? AND edition="mula"', (SN5_BOOK,))
     for r in cur.fetchall():
         for i, line in enumerate((r['unitext'] or '').split('\n')):
-            s = line.strip()
+            s = _fix_ocr_num(line.strip())
             lead = len(line) - len(line.lstrip())
             # marcador "48. (8) Nombre", rango "103--108. (1--6) Pācīna", grupo sin
             # nombre "63--72. (1--10)."
@@ -121,21 +133,38 @@ def build_markers(cur):
     return mm
 
 
-def pts_for(cur, page, target, mm):
-    for line, gid, vpos, name in mm.get(page, []):
-        if gid == target:
-            cur.execute('SELECT unitext FROM pages WHERE book_no=? AND page_no=? AND edition="mula"',
-                        (SN5_BOOK, page))
-            r = cur.fetchone()
-            if not r:
-                return None
-            lines = (r['unitext'] or '').split('\n')
-            start, end = line - 1, len(lines)
-            for j in range(start + 1, len(lines)):
-                if re.match(r'^\d+(?:\s*-+\s*\d+)?\.?\s*\(', lines[j].strip()):
-                    end = j
-                    break
-            return ' '.join(sh.tokens(' '.join(lines[start:end]))[:350])
+# Los suttas peyyāla de PTS son legítimamente cortísimos ("virāgasaññā bhikkhave pe"),
+# así que el umbral solo descarta el marcador SIN cuerpo (su propio título y nada más).
+MIN_PTS_TOKENS = 3
+
+
+def _sutta_text(cur, page, line):
+    """Texto del sutta que arranca en `line` de `page`, cortado en el marcador
+    siguiente. Devuelve None si sale un fragmento demasiado corto para cotejar
+    (marcadores de rango consecutivos: el "sutta" sale reducido a su propio título)."""
+    r = cur.execute('SELECT unitext FROM pages WHERE book_no=? AND page_no=? AND edition="mula"',
+                    (SN5_BOOK, page)).fetchone()
+    if not r:
+        return None
+    lines = (r['unitext'] or '').split('\n')
+    start, end = line - 1, len(lines)
+    for j in range(start + 1, len(lines)):
+        if re.match(r'^\d+(?:\s*-+\s*\d+)?\.?\s*\(', _fix_ocr_num(lines[j].strip())):
+            end = j
+            break
+    toks = sh.tokens(' '.join(lines[start:end]))
+    return ' '.join(toks[:350]) if len(toks) >= MIN_PTS_TOKENS else None
+
+
+def pts_for(cur, page, target, mm, span=1):
+    """Texto PTS del nº corrido `target`. Busca en la página declarada y, si no está,
+    en las adyacentes (el off-by-one de página documentado en PTS vol. V)."""
+    for pg in [page] + [page + d for d in range(1, span + 1)] + [page - d for d in range(1, span + 1)]:
+        for line, gid, vpos, name in mm.get(pg, []):
+            if gid == target:
+                t = _sutta_text(cur, pg, line)
+                if t:
+                    return t
     return None
 
 
@@ -143,38 +172,72 @@ _FOLD_N = str.maketrans({'ā': 'a', 'ī': 'i', 'ū': 'u', 'ṅ': 'n', 'ñ': 'n',
                          'ṭ': 't', 'ḍ': 'd', 'ḷ': 'l', 'ṃ': 'm', 'ṁ': 'm'})
 def _norm_name(t):
     t = re.sub(r'^[\d\-\s]*\.?\s*', '', (t or '').lower()).translate(_FOLD_N)
-    return re.sub(r'(.)\1+', r'\1', re.sub(r'[^a-z]', '', t))
+    return re.sub(r'[^a-z]', '', t)
 
 def _stem(t):
-    # raíz del nombre: quita sufijo sutta/vagga y la terminación de caso (PTS "Ogho" vs CST "Oghasuttaṃ")
+    """Raíz del nombre: quita el sufijo sutta/vagga y la terminación de caso (PTS
+    "Ogho" vs CST "Oghasuttaṃ"). El sufijo se quita ANTES de colapsar consonantes
+    dobles — al revés, "suttaṃ" ya se ha vuelto "sutam" y no lo reconoce."""
     n = re.sub(r'(suttantam|suttam|suttani|vaggo).*$', '', _norm_name(t))
-    return re.sub(r'[aiueom]+$', '', n)
+    return re.sub(r'[aiueom]+$', '', re.sub(r'(.)\1+', r'\1', n))
 
 
-def pts_by_name(cur, page, cst_title, mm, span=1):
+def _name_score(tgt, ns):
+    """Afinidad entre la raíz del título CST y la del nombre del marcador PTS.
+    4 = idéntico; 3 = uno es prefijo del otro ("Ogho" ⊂ "Oghasuttaṃ"); 2 = uno está
+    contenido en el otro ("Khandā" ⊂ "Upādānakkhandha"); 1 = prefijo común largo
+    (flexión divergente: "Nivaraṇāni" vs "Nīvaraṇasuttaṃ"). 0 = no casan."""
+    if not ns or len(ns) < 3:
+        return 0
+    if tgt == ns:
+        return 4
+    if tgt.startswith(ns) or ns.startswith(tgt):
+        return 3
+    if len(ns) >= 5 and (ns in tgt or tgt in ns):
+        return 2
+    lcp = 0
+    for a, b in zip(tgt, ns):
+        if a != b:
+            break
+        lcp += 1
+    return 1 if lcp >= 7 and lcp >= 0.7 * min(len(tgt), len(ns)) else 0
+
+
+def pts_by_name(cur, page, cst_title, mm, span=1, min_score=1, require_unique=False):
     """Resuelve el texto PTS casando el NOMBRE del título CST contra el nombre del
-    marcador PTS (robusto al off-by-one de numeración de las vaggas peyyāla)."""
+    marcador PTS (robusto al off-by-one de numeración de las vaggas peyyāla).
+    Elige el MEJOR candidato, no el primero: la página declarada gana a las vecinas
+    y la coincidencia más fuerte gana a la más laxa.
+
+    `min_score` fija la fuerza exigida (ver `_name_score`). Los nombres LAXOS (2, 1)
+    no distinguen los pares paṭhama/dutiya de las series peyyāla — el marcador PTS
+    los llama igual ("Pathavī1." / "Pathavī2.") — así que el nombre solo debe
+    anteponerse al nº corrido cuando la coincidencia es fuerte (>=3), o cuando es
+    INEQUÍVOCA: con `require_unique` se exige un único marcador candidato en la
+    ventana, y entonces no hay homónimo que confundir."""
     tgt = _stem(cst_title)
     if not tgt or len(tgt) < 3:
         return None
     pages = [page] + [page + d for d in range(1, span + 1)] + [page - d for d in range(1, span + 1)]
-    for pg in pages:
+    cands = []                                    # (score, dist_pagina, pg, line)
+    for dist, pg in enumerate(pages):
         seen = set()
         for line, gid, vpos, name in mm.get(pg, []):
             if line in seen:
                 continue
             seen.add(line)
-            ns = _stem(name)
-            if ns and len(ns) >= 3 and (tgt == ns or tgt.startswith(ns) or ns.startswith(tgt)):
-                cur.execute('SELECT unitext FROM pages WHERE book_no=? AND page_no=? AND edition="mula"', (SN5_BOOK, pg))
-                r = cur.fetchone()
-                lines = (r['unitext'] or '').split('\n')
-                start, end = line - 1, len(lines)
-                for j in range(start + 1, len(lines)):
-                    if re.match(r'^\d+(?:\s*-+\s*\d+)?\.?\s*\(', lines[j].strip()):
-                        end = j
-                        break
-                return ' '.join(sh.tokens(' '.join(lines[start:end]))[:350])
+            sc = _name_score(tgt, _stem(name))
+            if sc >= min_score:
+                cands.append((sc, dist, pg, line))
+    if require_unique and len(cands) != 1:
+        return None
+    # score fuerte primero; a igual score, la página declarada antes que las vecinas y,
+    # dentro de la página, el marcador de MÁS ARRIBA (los homónimos de una serie
+    # peyyāla van en orden: "Duggatibhaya" antes que "Duggativinipātabhaya").
+    for sc, _d, pg, line in sorted(cands, key=lambda c: (-c[0], c[1], c[3])):
+        t = _sutta_text(cur, pg, line)
+        if t:
+            return t
     return None
 
 
