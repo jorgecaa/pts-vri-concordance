@@ -10,10 +10,12 @@ bajo dos regímenes, y ninguno se parece a los de SN:
 | **Eka** | 1-46 | numeral **romano centrado** (`I.`, `XIV.3`) | `N.` a **sangría 5**, reinicia por vagga |
 | **Duka** | 47-100 | idem (`II.`) | idem |
 | **Tika** | 101-300 | **ninguno** | `N.` **CENTRADO** y **corrido** (`1.` p101, `11.` p106) |
+| **Catukka** (A ii) | — | ninguno; lo cierra el **colofón** | `N.` centrado y corrido |
+| **Pañcaka / Chakka** (A iii) | — | ninguno; lo cierra el **colofón** | **numeral ROMANO centrado y corrido** (`XI.`, `CCL.`); los arábigos a sangría 5 son **párrafos** |
 
-Del Tika en adelante **todo el Aṅguttara usa el régimen «corrido»**: A ii (Catukka) marca igual
-(`21.` en A ii 20, que es el vagga 3 de Morris), así que el módulo vale para los cinco volúmenes.
-El régimen se elige por nipāta en `REGIMEN`, no por volumen.
+El régimen se elige **por nipāta** en `REGIMEN`, y **no es monótono**: Tika y Catukka usan el nº
+corrido centrado (`21.` en A ii 20), pero el Pañcaka y el Chakka de A iii **vuelven** al numeral
+romano de vagga. Comprobarlo por volumen, nunca extrapolarlo.
 
 Tres trampas del dato:
 
@@ -42,9 +44,15 @@ SUTTA_INDENT = (5, 6)       # régimen Eka/Duka: el sutta abre párrafo a esta s
 MAX_LEN_HEAD = 44
 
 _num = pp.Word(pp.nums)
-# numeral romano + posible llamada de nota pegada: «XIV.3»
-_roman = pp.Regex(r'X{0,3}(?:IX|IV|V?I{0,3})')('roman')
-_VAGGA = _roman + pp.Opt(pp.Suppress('.')) + pp.Opt(pp.Suppress(_num)) + pp.StringEnd()
+# Numeral romano COMPLETO + posible llamada de nota pegada: «XIV.3», «CCL.», «CXXIV».
+# En el Pañcaka llegan a CCL (250) y en el Chakka a CXXIV, así que un patrón limitado a 39 —el que
+# bastaba para los vaggas del Eka— pierde casi todo el volumen.
+_roman = pp.Regex(r'M{0,4}(?:CM|CD|D?C{0,3})(?:XC|XL|L?X{0,3})(?:IX|IV|V?I{0,3})')('roman')
+# También hay RANGOS en romanos: «CLXXXII-CLXXXIX.» (A iii 219) cubre los suttas 182-189 de una
+# vez. Sin esto se pierden ocho seguidos y parece que faltan del impreso.
+_roman2 = pp.Regex(r'M{0,4}(?:CM|CD|D?C{0,3})(?:XC|XL|L?X{0,3})(?:IX|IV|V?I{0,3})')('roman2')
+_VAGGA = (_roman + pp.Opt(pp.Suppress(pp.Word('-–—')) + _roman2)
+          + pp.Opt(pp.Suppress('.')) + pp.Opt(pp.Suppress(_num)) + pp.StringEnd())
 # nº de sutta centrado (Tika): «11.» y nada más
 _SUTTA_C = _num('num') + pp.Opt(pp.Suppress('.')) + pp.Opt(pp.Suppress(_num)) + pp.StringEnd()
 # nº de sutta a sangría 5 (Eka/Duka): «1. Evaṃ me sutaṃ…»; admite PARES «4, 5. …», «3,4. …»
@@ -70,10 +78,19 @@ _FOLD = str.maketrans({'ā': 'a', 'ī': 'i', 'ū': 'u', 'ṅ': 'n', 'ñ': 'n', '
 
 # Los nipātas de todo el Aṅguttara, para que el módulo valga en los cinco volúmenes: A ii es el
 # Catukka y usa el MISMO régimen que el Tika (nº corrido centrado, vagga implícito cada diez).
+# El vagga 26 del Pañcaka (Upasampadā, A iii 271-278) es un peyyāla y **no numera sus suttas**:
+# los separa una fila de ornamentos que el OCR guardó en el área de uso privado (U+E0E0). Es la
+# única parte del Aṅguttara que marca así — 21 separadores, o sea 22 suttas.
+_ORNAMENTO = re.compile('\ue0e0{3,}')
+
 _NIPATA = re.compile(r'(EKA|DUKA|TIKA|CATUKKA|PA[ÑN]CAKA|CHAKKA|SATTAKA|A[ṬT][ṬT]HAKA|'
                      r'NAVAKA|DASAKA|EK[ĀA]DASAKA)-NIP[ĀA]TA', re.I)
 # régimen por nipāta: 'vagga_romano' (Eka/Duka) o 'corrido' (Tika en adelante)
-REGIMEN = {'EKA': 'vagga_romano', 'DUKA': 'vagga_romano'}
+# ⚠️ El régimen NO es monótono por nipāta: el Tika y el Catukka marcan el sutta con el nº corrido
+# centrado, pero el **Pañcaka y el Chakka VUELVEN** al numeral romano de vagga con el sutta a
+# sangría 5, como el Eka y el Duka. Suponer que «del Tika en adelante todo es corrido» es falso.
+REGIMEN = {'EKA': 'vagga_romano', 'DUKA': 'vagga_romano',
+           'PAÑCAKA': 'sutta_romano', 'PANCAKA': 'sutta_romano', 'CHAKKA': 'sutta_romano'}
 
 
 def _parse(expr, s):
@@ -96,10 +113,14 @@ def find_markers_an1(text):
         if m:
             out.append((i, 'nipata', m.group(1).upper(), indent))
             continue
+        if _ORNAMENTO.search(s):
+            out.append((i, 'separador', None, indent))
+            continue
         if indent >= MIN_INDENT_CENTRED and len(s) <= MAX_LEN_HEAD:
             r = _parse(_VAGGA, s)
             if r is not None and r['roman']:
-                out.append((i, 'vagga', r['roman'], indent))
+                out.append((i, 'vagga', (r['roman'], r['roman2'] if 'roman2' in r else None),
+                            indent))
                 continue
             r = _parse(_SUTTA_C, s)
             if r is not None:
@@ -123,9 +144,22 @@ def find_markers_an1(text):
     return out
 
 
-ROMAN = {'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5, 'VI': 6, 'VII': 7, 'VIII': 8, 'IX': 9,
-         'X': 10, 'XI': 11, 'XII': 12, 'XIII': 13, 'XIV': 14, 'XV': 15, 'XVI': 16, 'XVII': 17,
-         'XVIII': 18, 'XIX': 19, 'XX': 20, 'XXI': 21}
+_RVAL = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+
+
+def roman_to_int(r):
+    """`«CCXLIX»` → 249. Hace falta el parser completo: en A iii los suttas van numerados en
+    romano hasta CCL, no como los 21 vaggas del Eka."""
+    if not r:
+        return None
+    total, prev = 0, 0
+    for ch in reversed(r.upper()):
+        v = _RVAL.get(ch)
+        if v is None:
+            return None
+        total += -v if v < prev else v
+        prev = max(prev, v)
+    return total or None
 
 
 def collect_an1(pages):
@@ -134,13 +168,34 @@ def collect_an1(pages):
     En Eka y Duka el `num` es la posición **dentro del vagga** (reinicia); en el Tika es el nº
     **corrido** del nipāta y el vagga se deja a `None` (lo fija después el índice de Morris).
     """
-    out, nip, vag = [], None, None
+    out, nip, vag, last_sutta = [], None, None, 0
     for pg in sorted(pages):
         for ln, kind, val, ind in find_markers_an1('\n'.join(pages[pg])):
             if kind == 'nipata':
-                nip, vag = val, None
+                nip, vag, last_sutta = val, None, 0
             elif kind == 'vagga':
-                vag = ROMAN.get(val)
+                a, b = (val if isinstance(val, tuple) else (val, None))
+                # en el régimen «sutta_romano» el numeral centrado ES el sutta, no el vagga
+                if REGIMEN.get(nip) == 'sutta_romano':
+                    n0, n1 = roman_to_int(a), roman_to_int(b)
+                    # Errata del impreso/OCR: «CCIX.» (209) aparece entre «CCXVIII» (218) y
+                    # «CCXX» (220) — le falta una X y debe leerse CCXIX (219). Se repara por
+                    # CONTINUIDAD: si el valor rompe la serie hacia atrás y el esperado encaja,
+                    # manda la secuencia. Es la misma clase de errata que el «2O» por «20» de S iv.
+                    if n0 and last_sutta and n0 <= last_sutta and n1 is None:
+                        n0 = last_sutta + 1
+                    if n0:
+                        last_sutta = (n1 or n0)
+                        for n in range(n0, (n1 or n0) + 1):
+                            out.append({'nipata': nip, 'vagga': vag, 'num': n, 'page': pg,
+                                        'line': ln, 'from_range': n1 is not None})
+                else:
+                    vag = roman_to_int(a)
+            elif kind == 'separador':
+                # sutta sin número: sólo lo delimita el ornamento
+                last_sutta += 1
+                out.append({'nipata': nip, 'vagga': vag, 'num': last_sutta, 'page': pg,
+                            'line': ln, 'sin_numero': True})
             elif kind == 'colofon':
                 out.append({'nipata': nip, 'vagga': val[1], 'num': None,
                             'page': pg, 'line': ln, 'colofon': val[0]})
@@ -148,6 +203,8 @@ def collect_an1(pages):
             elif kind == 'sutta' and nip:
                 # en Eka/Duka sólo cuenta la forma de párrafo; en el Tika, sólo la centrada
                 reg = REGIMEN.get(nip, 'corrido')
+                if reg == 'sutta_romano':
+                    continue          # aquí los arábigos a sangría 5 son PÁRRAFOS, no suttas
                 if reg == 'vagga_romano' and ind not in SUTTA_INDENT:
                     continue
                 if reg == 'corrido' and ind < MIN_INDENT_CENTRED:
