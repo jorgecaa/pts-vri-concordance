@@ -117,6 +117,15 @@ touching any concordance script. Non-negotiable principles baked into this proje
     Ver `sn34_series.py`.
 - **CST numbering ≠ PTS numbering**, especially in SN and AN (per-saṃyutta/per-vagga resets).
   Match by content/name and global ID, never by assuming sequential numeric correspondence.
+- **El validador tiene un PUNTO CIEGO y hay que cubrirlo aparte.** No puede ver (a) que el par que
+  recibe sea el equivocado —si los dos lados son coherentes entre sí, aprueba— ni (b) que el texto
+  que se le entrega esté corrompido, si la corrupción produce prosa legible. El caso canónico:
+  `sutta_hash.tokens` partía `n' atthi` y descartaba la `n` suelta, de modo que **«no hay» llegaba
+  como «hay»** — 12.561 casos en DN/MN/AN, invisibles durante cinco volúmenes cerrados porque SN
+  apenas usa esa elisión. Correr **`check_integrity.py`** (skill `integridad-datos`) y
+  **`audit_injectivity.py`** antes y después de tocar texto, Excel o alineadores, y **siempre antes
+  de gastar API**. Regla derivada: **ninguna transformación de texto puede perder una palabra**; si
+  un paso descarta tokens «cortos» o «ruido», hay que demostrar que no descarta significado.
 - **"NADA se cierra sin el validador"** — a nikāya/volume is only marked CERRADO 🔒 after the
   **validador** pass (**Modelo B**): the local content gate (título-núcleo + Jaccard de incipit +
   divergencias CollateX) **and** `gemini-flash-lite-latest` (salida estructurada, `temperature=0`)
@@ -230,6 +239,7 @@ This file is the entry point. The other live docs, and what each authoritatively
 | **`src/README.md`** | The GUI app: how to run it, module layout, data files. |
 | **`src/docs/PLAN_MEJORA_UX.md`** | GUI UX roadmap (P0 done; P1/P2 pending) — book-naming, search results, commentary view. |
 | **`src/data/DATABASE.md`** | Authoritative `tipitaka.sqlite` schema reference (current rebuilt schema: tables, encodings, editions, FTS, query recipes). |
+| **`.agents/skills/integridad-datos/`** | **Invariantes del dato** (`check_integrity.py`): caza la corrupción silenciosa que el validador no puede ver. Correr antes/después de tocar texto, Excel o alineadores, y **siempre antes de gastar API**. |
 | **`.agents/skills/pts-helmer-smith-validator/`** | The Helmer PTS↔content validation skill (persona + `db_reference.md`). |
 | **`PLAN_MEJORA.md`** | Historical plan for resolving the last low-scoring concordance entries (incipit matching, RTE gaps). |
 
