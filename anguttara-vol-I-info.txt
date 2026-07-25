@@ -1,0 +1,161 @@
+================================================================================
+AN I — PTS, ed. Richard Morris (1885) — front matter
+Transcrito de PTS-Anguttara-Nikaya-part-I-Morris-1885-001.pdf (9 pp., escaneo sin
+capa de texto: transcripción manual).
+VERDAD-TERRENO ESTRUCTURAL para el lado PTS. No es texto del canon.
+================================================================================
+
+                            TABLE OF CONTENTS
+                                                                        PAGE
+    PRELIMINARY REMARKS ................................................ vii
+    CORRECTIONS ......................................................... xv
+
+                        I. EKA-NIPĀTA .............. 1-40
+       I.    Rūpa vagga ..................................................  1
+       II.   Nīvaraṇa vagga ..............................................  3
+       III.  Akammaniya vagga ............................................  5
+       IV.   Adanta vagga ................................................  6
+       V.    Paṇihita vagga ..............................................  8
+       VI.   Accharāsaṅghāta vagga ....................................... 10
+       VII.  Vīriyārambha vagga .......................................... 12
+       VIII. Kalyāṇamitta vagga .......................................... 14
+       IX.   Pamāda vagga ................................................ 15
+       X. XI. Adhamma vagga ............................................... 16
+       XII.  Anāpatti vagga .............................................. 20
+       XIII. Ekapuggala vagga ............................................ 22
+       XIV.  Etadagga vagga .............................................. 23
+       XV.   Aṭṭhāna vagga ............................................... 24
+       XVI.  Ekadhamma vagga ............................................. 30
+       XVII. Bīja vagga .................................................. 30
+       XVIII. Makkhali vagga ............................................. 33
+       XIX.  Appamattaka vagga ........................................... 35
+       XX. XXI. Jhāna vagga ............................................... 38
+
+                        II. DUKA-NIPĀTA ............ 47-100
+       I.    Kammakāraṇa vagga ........................................... 47
+       II.   Adhikaraṇa vagga ............................................ 52
+       III.  Bāla vagga .................................................. 59
+       IV.   Samacitta vagga ............................................. 61
+       V.    Parisā vagga ................................................ 71
+       VI.   Puggala vagga ............................................... 76
+       VII.  Sukha vagga ................................................. 81
+       VIII. Nimitta vagga ............................................... 82
+       IX.   Dhamma vagga ................................................ 83
+       X.    Bāla vagga .................................................. 84
+       XI.   Āsā vagga ................................................... 86
+       XII.  Āyācana vagga ............................................... 89
+       XIII. Dāna vagga .................................................. 91
+       XIV.  Santhāra vagga .............................................. 93
+       XV.   Kodha vagga ................................................. 95
+       XVI.  Atthavasa vagga ............................................. 98
+
+                        III. TIKA-NIPĀTA .......... 101-300
+       I.    Bāla vagga ................................................. 101
+       II.   Rathakāra vagga ............................................ 106
+       III.  Puggala vagga .............................................. 118
+       IV.   Devadūta vagga ............................................. 132
+       V.    Cūla vagga ................................................. 150
+       VI.   Brāhmaṇa vagga ............................................. 155
+       VII.  Mahā vagga ................................................. 173
+       VIII. Ānanda vagga ............................................... 215
+       IX.   Samaṇa vagga ............................................... 229
+       X.    Loṇaphala vagga ............................................ 239
+       XI.   Sambodhi vagga ............................................. 258
+       XII.  Āpāyika vagga .............................................. 265
+       XIII. Kusināra vagga ............................................. 274
+       XIV.  Yodhājīva vagga ............................................ 284
+       XV.   Maṅgala vagga .............................................. 292
+       XVI.  Acelaka vagga .............................................. 295
+             UDDĀNA ..................................................... 300
+             INDEX OF SUBJECTS .......................................... 305
+             INDEX OF PROPER NAMES ...................................... 331
+             INDEX OF GĀTHĀS ............................................ 334
+
+================================================================================
+NOTAS DE MORRIS QUE AFECTAN AL RECUENTO (Preliminary Remarks, pp. vii-xii)
+================================================================================
+
+- **Dos encabezados del índice cubren DOS vaggas cada uno**: «X. XI. Adhamma vagga»
+  (p. 16) y «XX. XXI. Jhāna vagga» (p. 38). El Eka-nipāta tiene por tanto **21 vaggas
+  en 19 entradas de índice**.
+
+- **Los uddāna son testigo estructural, pero corrupto**, y Morris lo advierte:
+  > «The Sinhalese MSS. contain, at the end of the Tika-nipāta, Uddānas for the first
+  > three nipātas. The Phayre MS. has an Uddāna only for the Tika-nipāta.»
+  > «The text of these Uddānas is corrupt in many places, and though it has been
+  > compared with the vaggas themselves, it is still not free from error.»
+  > «The Tika-nipāta Uddāna does not go beyond the Maṅgala-vagga.»
+  Es decir: el uddāna del Tika **no cubre el Acelaka-vagga** (XVI), el último.
+
+- **La composición del Acelaka-vagga es una CONJETURA de Morris**, no un dato:
+  > «The Acelaka-vagga probably included only suttas 151, 152; so that the ten suttas
+  > 153-162 made a second vagga, while No. 163 constituted a third vagga, a mere
+  > "tag," as at the end of the Atthavasa-vagga, II. xvii. 3, 4, 5, p. 100.»
+  ⚠️ Ojo al «probably». Si el CST divide ahí de otro modo, **no se resuelve por el
+  índice**: hace falta cotejo de contenido.
+
+- **El Duka-nipāta tiene un vagga XVII que el índice NO lista**: Morris lo cita como
+  «II. xvii. 3, 4, 5, p. 100» — el «tag» final del Atthavasa-vagga. El índice se queda
+  en XVI (Atthavasa, p. 98) y el nipāta acaba en la p. 100.
+
+- **Numeración de las páginas del Eka-nipāta**: el índice dice «I. EKA-NIPĀTA … 1-40»,
+  pero su último vagga arranca en la p. 38 y el Duka empieza en la **p. 47**. El rango
+  del encabezado no es fiable; las páginas de arranque de cada vagga sí.
+
+- **Edición previa descartada**: Morris advierte que la PTS publicó en 1883 una edición
+  de los dos primeros nipātas «not well received on account of the numerous contractions
+  used in the text». Esta de 1885 es la buena, «only a few pe's or .... have been employed».
+
+- Manuscritos: T. (Turnour, sinh.), Ba. (BM 2276, sinh.), Bb. (BM 2412, sinh.),
+  Ph. (Phayre, birm.), D. (Rhys Davids), Tr. (transcripción de Trenckner del MS de
+  Copenhague), P. (París, sólo para los uddāna) + 3 MSS del comentario de Buddhaghosa.
+  Morris da preferencia a las lecturas **sinhalesas** cuando difieren esencialmente.
+
+================================================================================
+CONTRASTE CONTRA LA BD (libro 17, 304 páginas) — 2026-07-25
+================================================================================
+
+**Eka-nipāta: 21/21 vaggas hallados, 20/21 páginas exactas.**
+  I p1, II p3, III p5, IV p6, V p8, VI p10, VII p12, VIII p14, IX p15, X p16,
+  XI p19, XII p20, XIII p22, XIV p23, XV p26, XVI p30, XVII p30, XVIII p33,
+  XIX p35, XX p38, XXI p43.
+  - Los pares fundidos del índice se separan como anuncia Morris: XI en p19 y
+    XXI en p43.
+  - ⚠️ **Única discrepancia: XV Aṭṭhāna.** El índice dice p24; la BD lo abre en
+    **p26,29**, inmediatamente tras el colofón «Etad-aggo vaggo.» (p26,28), y el
+    contenido de Etadagga corre hasta la p26. Probable errata del índice — del
+    mismo tipo que el 394-por-391 de Feer en S iv. **Verificar contra el impreso.**
+  - El Eka-nipāta acaba en **p46**: «Ekanipātassa suttasahassaṃ samattaṃ» (p46,27).
+    Confirma que el «1-40» del encabezado del índice no es fiable.
+
+**Formato de los encabezados de vagga**: numeral romano centrado (sangría ≥14), a
+menudo con la **llamada de nota pegada** — `XIV.3`, `XVII.4`, `XIX.2`, `XXI.1`. Una
+gramática que exija el numeral limpio pierde cuatro de los 21.
+
+================================================================================
+⚠️ AN I NO ES HOMOGÉNEO: TRES REGÍMENES DE MARCADOR EN UN MISMO VOLUMEN
+================================================================================
+
+| nipāta | vagga | sutta |
+|---|---|---|
+| Eka (pp. 1-46) | numeral romano centrado (`I.`, `XIV.3`) | arábigo a sangría 5, **reinicia por vagga** |
+| Duka (pp. 47-100) | numeral romano centrado | arábigo a sangría 5 |
+| Tika (pp. 101-300) | **sin encabezado propio** | **arábigo CENTRADO y CORRIDO** (`1.` p101, `11.` p106); el vagga cambia cada 10 |
+
+En el Tika el vagga hay que **inferirlo** del nº corrido (1-10 = vagga I, 11-20 =
+vagga II…), y las páginas de arranque del índice de Morris son la comprobación.
+
+================================================================================
+EL LADO CST TAMPOCO TIENE LA FORMA DE SN
+================================================================================
+
+- `s0401m.mul.xml` (Eka): **no hay subheads por sutta**, sólo por vagga
+  («1. Paṭhamavaggo»); los suttas son párrafos `bodytext` numerados — 323 párrafos
+  para **611 paranums**. Así que **NO existe la correspondencia 1:1 bloque↔fila**
+  que resolvió S iv.
+- `s0402m1/m2/m3.mul.xml` (Duka/Tika): sí traen subheads por sutta (10, 155, 278).
+  El último es `31-510. Dosaabhiññādisuttāni` — el Rāga-peyyāla.
+- `massive.tsv` cubre **239** de las 435 filas del Excel (an1 35, an2 30, an3 174) y
+  su campo `cst_sutta` va **vacío** para an1/an2.
+- ⚠️ **El `Sutta #` del Excel NO es la numeración DPR** (otra vez): la fila
+  `3.155 Pubbaṇha` (A i 294) es el `AN3.140` de `massive` — desfase **+15**.
