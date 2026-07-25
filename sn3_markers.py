@@ -90,21 +90,29 @@ def _text(v):
 
 
 def _pairs(items):
-    """Empareja items en `[(pos, nombre)]`. Un grupo `(M)` toma el nombre siguiente; un nombre sin
-    grupo delante va con `pos=None`; un grupo sin nombre aporta solo posición."""
+    """Empareja items en `[(pos, nombre, bruto)]`. Un grupo `(M)` toma el nombre siguiente; un
+    nombre sin grupo delante va con `pos=None`; un grupo sin nombre aporta solo posición.
+
+    `bruto` conserva los guiones de truncamiento que `_clean` quita. En el Jhāna-saṃyutta ese
+    guión **no es adorno: es el que dice qué mitad del compuesto ha escrito Feer**. «Ārammaṇa --»
+    abrevia *Ārammaṇa-mūlaka* (la raíz), mientras que un «Ārammaṇa» a secas, en la serie
+    Samādhimūlaka, nombra el segundo elemento. Sin el guión los dos regímenes son indistinguibles
+    y las series 35-40/41-45/46-49/50-52 se emparejaban con el grupo siguiente.
+    """
     out, pending = [], None
     for it in items:
         if isinstance(it, str):
             nm = _clean(it)
+            raw = (it or '').strip().strip('║').strip(' .{}[]()').strip()
             if not nm or nm[0] not in _LETTER:
                 continue
-            out.append((pending, nm)); pending = None
+            out.append((pending, nm, raw)); pending = None
         else:
             if pending is not None:
-                out.append((pending, ''))
+                out.append((pending, '', ''))
             pending = _expand(it)[0]
     if pending is not None:
-        out.append((pending, ''))
+        out.append((pending, '', ''))
     return out
 
 
@@ -131,14 +139,14 @@ def find_markers_sn3(text):
             # entre corchetes y los encabezados de *gamana* en versal («2 DUTIYAGAMANAM»), que
             # llevan el nº de gamana y se confundirían con un nº corrido.
             if any('uddān' in n.lower() or n.startswith('[') or (n.isupper() and len(n) > 4)
-                   for _p, n in names):
+                   for _p, n, _r in names):
                 continue
             gam = int(_text(r["gamana"])) if r.get("gamana") else None
             out.append((i, _expand(r["lead"]), names, 'marker' if gam is None else f'gamana{gam}'))
             continue
         r = _parse(_cont, s)
         if r is not None:
-            names = [(p, n) for p, n in _pairs(r["items"]) if n]
+            names = [(p, n, rw) for p, n, rw in _pairs(r["items"]) if n]
             if names:
                 out.append((i, [], names, 'cont'))
     return out
@@ -155,10 +163,11 @@ def collect_suttas(rows, restart=1):
     sams, cur, order, prev, gam = [], {}, [], 0, None
     for pg, ln, nums, names, tag in rows:
         if tag == 'cont':
-            for pos, nm in names:
+            for pos, nm, rw in names:
                 for _n, rec in cur.items():
                     if rec['pos'] == pos and not rec['name']:
-                        rec['name'] = nm; rec['page'], rec['line'] = pg, ln
+                        rec['name'] = nm; rec['raw'] = rw
+                        rec['page'], rec['line'] = pg, ln
                         break
             continue
         g = int(tag[6:]) if tag.startswith('gamana') else None
@@ -172,9 +181,9 @@ def collect_suttas(rows, restart=1):
             gam = g
         pairs = list(names)
         for k, n in enumerate(nums):
-            pos, nm = (pairs[k] if k < len(pairs) else (None, ''))
+            pos, nm, rw = (pairs[k] if k < len(pairs) else (None, '', ''))
             key = (gam, n) if gam else n
-            rec = {'page': pg, 'line': ln, 'num': n, 'pos': pos, 'name': nm,
+            rec = {'page': pg, 'line': ln, 'num': n, 'pos': pos, 'name': nm, 'raw': rw,
                    'gamana': gam, 'from_range': len(nums) > 1}
             if key in cur and cur[key]['from_range'] and not rec['from_range']:
                 cur[key] = rec

@@ -5927,6 +5927,24 @@
   "name": "Kallitamūlakāarammaṇasuttādichakkaṃ",
   "cst_title": "35-40. Kallitamūlakaārammaṇasuttādichakkaṃ",
   "legacy": "VALIDADOR",
+  "pts_name": "Kallita -- ārammaṇa",
+  "pts_page": 275,
+  "pts_line": 1,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.7,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with expected edition elisions and expansion notes."
+ },
+ {
+  "num": "34.23",
+  "name": "Ārammaṇamūlakagocarasuttādipañcakaṃ",
+  "cst_title": "41-45. Ārammaṇamūlakagocarasuttādipañcakaṃ",
+  "legacy": "VALIDADOR_HUMANO",
   "pts_name": "Ārammaṇa",
   "pts_page": 275,
   "pts_line": 24,
@@ -5934,64 +5952,46 @@
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
-   "cov": 0.46,
+   "cov": 0.5,
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Identical samadhi-kusala sutta framework with textual variant terminology across editions."
- },
- {
-  "num": "34.23",
-  "name": "Ārammaṇamūlakagocarasuttādipañcakaṃ",
-  "cst_title": "41-45. Ārammaṇamūlakagocarasuttādipañcakaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "pts_name": "Gocara",
-  "pts_page": 276,
-  "pts_line": 22,
-  "from_range": true,
-  "estado": "CONFIRMADO",
-  "validation": "VALIDADOR",
-  "gate": {
-   "cov": 0.56,
-   "thr": 0.55
-  },
-  "gemini": "APPROVE",
-  "reason": "Both passages belong to the same samādhi-sutta grouping with formulaic expansions."
+  "reason": "Identical core sutta content with standard peyyala expansion differences."
  },
  {
   "num": "34.24",
   "name": "Gocaramūlakābhinīhārasuttādicatukkaṃ",
   "cst_title": "46-49. Gocaramūlakaabhinīhārasuttādicatukkaṃ",
-  "legacy": "VALIDADOR",
-  "pts_name": "Abhinīhāra",
+  "legacy": "REVISAR",
+  "pts_name": "Gocara-Abhinīhāra",
   "pts_page": 276,
-  "pts_line": 29,
+  "pts_line": 9,
   "from_range": false,
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
   "gate": {
-   "cov": 0.74,
+   "cov": 0.72,
    "thr": 0.55
   },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely distinct textual units with different doctrinal tetrads."
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches with standard peyyāla expansions in CST."
  },
  {
   "num": "34.25",
   "name": "Abhinīhāramūlakasakkaccasuttāditikaṃ",
   "cst_title": "50-52. Abhinīhāramūlakasakkaccasuttāditikaṃ",
   "legacy": "VALIDADOR",
-  "pts_name": "",
-  "pts_page": 277,
-  "pts_line": 8,
-  "from_range": true,
+  "pts_name": "Abhinīhāra",
+  "pts_page": 276,
+  "pts_line": 29,
+  "from_range": false,
   "estado": "CONFIRMADO",
   "validation": "VALIDADOR",
   "gate": {
-   "cov": 0.78,
+   "cov": 0.74,
    "thr": 0.55
   },
   "gemini": "APPROVE",
-  "reason": "Both passages address the same samādhismim abhinīhārakusalo text with standard peyyāla expansions."
+  "reason": "Identical core text on samādhi abhinīhāra, with CST containing standard peyyāla expansions."
  }
 ]

@@ -69,7 +69,7 @@ def main():
     if pend:
         print(f'\nA arbitraje ({len(pend)}) — alineación segura, discrepa el cotejo de texto:')
         for r in pend:
-            print(f'  SN {r["num"]:>7} PTS "{r.get("pts_name","")[:20]:20}" vs CST '
+            print(f'  SN {r["num"]:>7} PTS "{(r.get("pts_name") or "—")[:20]:20}" vs CST '
                   f'"{r["cst_title"][:26]:26}" p{r.get("pts_page")} | {str(r["reason"])[:64]}')
     if dry:
         print('\n(dry-run, nada escrito)')

@@ -1,5 +1,5 @@
 # PTS Reference Concordance — Status Report
-## Date: 2026-07-21 (updated 2026-07-25 — SN I/II/V cerrados y SN III 331/333 con el validador)
+## Date: 2026-07-21 (updated 2026-07-25 — SN I/II/V cerrados y SN III 332/333 con el validador)
 
 ---
 
@@ -52,7 +52,7 @@ Use this terminology consistently across the project:
 | **TOTAL** | **6099** | **1751** | **4348** | **28.7%** |
 
 > Cifras al **2026-07-25**. Desglose de SN por el validador: **S i 271/271, S ii 257/257,
-> S iii 331/333, S v 610/610**; **S iv** sigue con los 94 del Helmer legado (250 PENDIENTE) y es
+> S iii 332/333, S v 610/610**; **S iv** sigue con los 94 del Helmer legado (250 PENDIENTE) y es
 > el único volumen de SN sin pasar por el validador.
 > El total pasó de 6090 a **6099 filas**: −1 (`12.74`, división solo-CST borrada) y +10 (la
 > expansión de `12.75` en los 11 suttas que PTS numera). La columna `#` se renumeró.
@@ -280,8 +280,8 @@ Dos filas venían con la forma del **CST**, no la de PTS. Se resolvió leyendo l
 
 ## PENDING
 
-### SN III — Samyutta Nikaya vol 3 (S iii) — 333 filas ⏳ 331/333
-- **Estado 2026-07-25 (5ª pasada): 331 CONFIRMADO** (316 `VALIDADOR` + 15 `VALIDADOR_HUMANO`) **+ 2 PENDIENTE** (`22.148`, `34.24` — ver Fase 2bis). Antes: 326 filas
+### SN III — Samyutta Nikaya vol 3 (S iii) — 333 filas ⏳ 332/333
+- **Estado 2026-07-25 (5ª pasada): 332 CONFIRMADO** (316 `VALIDADOR` + 16 `VALIDADOR_HUMANO`) **+ 1 PENDIENTE** (`22.148`, sin texto PTS — ver Fase 2bis). Antes: 326 filas
   `DB_VERIFIED` (+7 que llegaron de S ii al corregir su volumen) → todo PENDIENTE.
 - **Front matter de Feer (`samyutta-vol-III-info.txt`)**: 13 saṃyuttas **XXII–XXXIV**, y la página
   de arranque de cada uno **cuadra al 100%**. Feer distingue **títulos** de **suttantas** (Nāga son
@@ -503,13 +503,41 @@ Alcance medido (marcadores compartidos / filas implicadas):
     *anattānupassī* (148); el dukkhānupassī del CST cae dentro del «pa» de elisión al final del
     nº 147. Es la fusión 4→3 que ya detectaba `calibrate_offsets` (de ahí `PTS = CST − 1` a partir
     de 150), pero hasta ahora se le quitaba el marcador al sutta equivocado (149 en vez de 148).
-  - **Dos filas degradadas a PENDIENTE, a arbitraje de Jorge**:
-    - `22.148` — sin texto PTS que cotejar. Su firma `VALIDADOR_HUMANO` anterior (`S iii 179,5`, que
-      no es ningún marcador) **queda anulada**: se dio contra un emparejamiento que la alineación
-      corregida descarta.
-    - `34.24` — la alineación cambia (p276,9 → p276,29) y el cotejo discrepa (gate APPROVE / Gemini
-      REJECT): el CST agrupa «46-49. Gocaramūlakaabhinīhārasuttādicatukkaṃ» frente al marcador PTS
-      individual «Abhinīhāra».
+  - **Una fila a arbitraje de Jorge**: `22.148`, sin texto PTS que cotejar. Su firma
+    `VALIDADOR_HUMANO` anterior (`S iii 179,5`, que no es ningún marcador) **queda anulada**: se dio
+    contra un emparejamiento que la alineación corregida descarta. El uddāna no lo zanja: **PTS y
+    CST transmiten el MISMO verso** («…kulaputtena **dve** dukāti», dos), Feer anota al pie *«So all
+    the MSS.; it ought to be tayo»* y **imprime tres**, mientras el CST **imprime cuatro**. El número
+    de suttas *Kulaputtena* es inestable en la tradición (2/3/4).
+
+### SN 34 (Jhāna-saṃyutta): NO HAY HOMOGENEIDAD NI DENTRO DE UN SAṂYUTTA
+
+Corregido 2026-07-25 tras la observación de Jorge («deberías crear dos analizadores»). SN 34 se
+imprime bajo **dos convenciones opuestas** y una sola regla se equivocaba en una de ellas:
+
+| parte | CST | marcador PTS | qué nombra la abreviatura |
+|---|---|---|---|
+| **1-19** individuales | `3. Samādhimūlakavuṭṭhānasuttaṃ` | «Vuṭṭhāna» | el **segundo** elemento (la raíz es constante y se da por sabida) |
+| **20-55** grupos | `46-49. Gocaramūlakaabhinīhārasuttādicatukkaṃ` | «Gocara-Abhinīhāra» / «Ārammaṇa **--**» | el **par**, o sólo la **raíz** si va truncado con guiones |
+
+- La regla única premiaba el *segundo* elemento también en el tramo de grupos, así que **cada fila
+  se emparejaba con el grupo siguiente**: 34.22 (`35-40`) caía en el marcador nº41, 34.23 (`41-45`)
+  en el nº47, 34.24 (`46-49`) en el nº50 y 34.25 (`50-52`) en el nº51. **Tres de las cuatro estaban
+  ya CONFIRMADO** y una firmada a mano: el validador no puede verlo, porque el par PTS↔CST que
+  recibe es coherente consigo mismo, y aquí además todo el saṃyutta repite la misma fórmula con los
+  términos permutados, así que Gemini tampoco distingue.
+- **Causa raíz de la invisibilidad**: `sn3_markers._clean` borraba los guiones, y el `--` es
+  justamente lo que separa los dos regímenes. Ahora el registro conserva el nombre en bruto
+  (`rec['raw']`).
+- **Solución**: `sn34_series.py` — gramática `pyparsing` de la forma del nombre
+  (`pair` / `trunc` / `plain`) y **dos analizadores**, `score_individual` y `score_grouped`, cada uno
+  aplicado a su parte. El desempate definitivo del régimen de grupos **no es el nombre sino el
+  número**: el subhead del CST declara su rango («46-49.») y el marcador PTS su nº corrido (46) —
+  misma numeración en ambas ediciones, así que la cabeza del rango *debe* ser el nº del marcador.
+- **Verificación independiente**: de las 16 firmas humanas de S iii, **15 coinciden ahora con la
+  alineación calculada**, incluida `34.23`, que Jorge había firmado bien y el resolvedor tenía mal.
+  La única discrepancia que queda, `23.24` (firma p198,25 vs marcador p199,16), es una **disputa de
+  página**, que la calibración de líneas no toca por diseño.
   - Líneas recalibradas: **318/324 exactas (98%)**, 6 corregidas. Auditoría de inyectividad: **hueco
     0** en los cuatro volúmenes contrastados.
   - **S v**: 69 pares cambiaron y las asignaciones nuevas son **mejores** (`45.12 Dutiyavihāra`→

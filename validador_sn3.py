@@ -34,6 +34,7 @@ from massive_reader import build_massive as _mr_build
 from validador_sn1 import _pts_page, _TEXT_RENDS, build_vri_index as _build_vri
 from sn3_markers import find_markers_sn3, collect_suttas
 from align_rows import assign as ar_assign
+from sn34_series import score_individual, score_grouped, cst_range
 
 VRI = '/tmp/tipitaka-xml/romn/s0303m.mul.xml'
 OUT = 'validador_sn3.json'
@@ -179,6 +180,7 @@ _ORDINAL = {'pathama': 1, 'paṭhama': 1, 'dutiya': 2, 'tatiya': 3, 'catuttha': 
 _ORD_RE = re.compile(r'^(pa[ṭt]hama|dutiya|tatiya|catuttha|pa[ñn]cama)', re.I)
 # nombre compuesto del Jhāna-saṃyutta: «Gocara-mūlaka-abhinīhāra-suttādi-catukkaṃ»
 _MULAKA = re.compile(r'^(.+?)m[ūu]lak[aā](.+?)(?:sutt|$)', re.I)
+JHANA = 34                                 # Jhāna-saṃyutta: dos regímenes, dos analizadores
 _TITLE_RANGE = re.compile(r'^\s*(\d+)(?:\s*-+\s*(\d+))?\.')
 
 
@@ -334,6 +336,17 @@ def assign_volume(entries, pts, massive, offsets, ditthi, vri=None):
                 _cov[key] = len(a & set(q['text'].split())) / max(1, len(a))
         return _cov[key]
 
+    # Rango declarado por el subhead CST de cada fila del Jhāna-saṃyutta: es el desempate
+    # definitivo del régimen de grupos (misma numeración en las dos ediciones).
+    rng34 = {}
+    _titles = [t for t in build_cst_by_title()]
+    for e in entries:
+        if e['sam'] != JHANA or not _cardinal(e['name']):
+            continue
+        cands = [t for t in _titles if _name_score(e['name'], t) >= 100]
+        if len(cands) == 1:
+            rng34[e['num']] = cst_range(cands[0])
+
     by_sam = {}
     for e in entries:
         by_sam.setdefault(e['sam'], []).append(e)
@@ -389,14 +402,14 @@ def assign_volume(entries, pts, massive, offsets, ditthi, vri=None):
             card = _cardinal(e['name'])
             if card and caps[(sam, q['page'], q['line'])] == card:
                 s += 60
-            mm_ = _MULAKA.match(e['name'] or '')
-            if mm_:                                # nombres `X-mūlaka-Y` del Jhāna-saṃyutta
-                pa, pb = _stem(mm_.group(1)), _stem(mm_.group(2))
-                st = _stem(q['name'])
-                if len(pa) >= 4 and len(pb) >= 4 and pa[:5] in st and pb[:5] in st:
-                    s += 120                       # el marcador es el compuesto «X-Y»
-                elif len(pb) >= 4 and pb[:5] in st and pa[:5] not in st:
-                    s += 100                       # …o solo «Y» (serie Samādhimūlaka-)
+            if sam == JHANA:
+                # NO HAY HOMOGENEIDAD ni dentro de un saṃyutta: SN 34 se imprime bajo dos
+                # convenciones opuestas y cada una tiene su analizador (ver `sn34_series`).
+                raw = q.get('raw') or q['name']
+                if _cardinal(e['name']):
+                    s += score_grouped(e['name'], raw, q['num'], rng34.get(e['num']))
+                else:
+                    s += score_individual(e['name'], raw)
             return s
 
         idx = ar_assign(len(rows), len(marks), score,
