@@ -101,6 +101,15 @@ class TextoPTS:
     """Texto continuo de un tramo de páginas de PTS, con posición → (página, línea)."""
 
     def __init__(self, conn, book, p_lo, p_hi):
+        # El APARATO CRÍTICO es parte de la edición y a veces es el único sitio donde PTS escribe
+        # el nombre: en A iii 276 el cuerpo imprime `sāmaṇerā` y `upāsikā`, y las notas al pie dan
+        # `1 M. S. sāmaṇero sāmaṇerī` y `2 M. T. M6. M7 upāsako upāsikā` — o sea los cuatro suttas
+        # que el CST numera por separado. Se guarda por página y se consulta aparte: no entra en
+        # la serie monótona del cuerpo, pero atestigua la lectura.
+        self.aparato = {r['page_no']: fold(r['unitext'] or '')
+                        for r in conn.execute(
+                            'SELECT page_no,unitext FROM footnotes WHERE edition="mula" '
+                            'AND book_no=? AND page_no BETWEEN ? AND ?', (book, p_lo, p_hi))}
         self.crudo, self.pos, self.paginas = [], [], {}
         for r in conn.execute('SELECT page_no,unitext FROM pages WHERE edition="mula" '
                               'AND book_no=? AND page_no BETWEEN ? AND ? ORDER BY page_no',
@@ -281,14 +290,33 @@ def sondas(nombre):
     return res
 
 
+COBERTURA_MIN = 0.6      # la sonda debe SER la palabra, no sólo su principio
+
+
 def _apariciones(plano, sonda):
     """Posiciones de la sonda como PALABRA (con espacio delante), no como subcadena.
 
     Sin el límite, `khayaya` casa dentro de `parikhayaya` y `mada` dentro de `pamada`: los dos
     pares existen, consecutivos, en el mismo peyyāla del Catukka, y sin límite la serie se
     «prueba» a sí misma en el sitio equivocado.
+
+    ⚠️ Y no basta con el límite por la izquierda: la sonda tiene que **cubrir al menos el 60 % de
+    la palabra** que casa. `Sāmaṇerī` se quedaba en la sonda `saman` —porque `samaner` ya no
+    estaba al alcance— y casaba con `samannāgatā`, que aparece **65 veces** en el tramo: una
+    coincidencia vacía que firmaba la fila con nada. Exigir que la sonda sea la palabra, y no su
+    principio, es lo que distingue una prueba de una casualidad.
     """
-    return [m + 1 for m in _posiciones(plano, ' ' + sonda)] + ([0] if plano.startswith(sonda) else [])
+    out = []
+    for m in _posiciones(plano, ' ' + sonda):
+        fin = plano.find(' ', m + 1)
+        largo = (len(plano) if fin < 0 else fin) - (m + 1)
+        if len(sonda) >= COBERTURA_MIN * largo:
+            out.append(m + 1)
+    if plano.startswith(sonda):
+        fin = plano.find(' ')
+        if len(sonda) >= COBERTURA_MIN * (len(plano) if fin < 0 else fin):
+            out.insert(0, 0)
+    return out
 
 
 def _posiciones(plano, s):
@@ -297,6 +325,11 @@ def _posiciones(plano, s):
         out.append(k)
         k = plano.find(s, k + 1)
     return out
+
+
+def buscar_palabra(plano, sonda):
+    """¿Aparece la sonda como palabra (con la misma exigencia de cobertura)? → bool."""
+    return bool(_apariciones(plano, sonda))
 
 
 def serie_monotona(plano, filas, desde=0):

@@ -149,6 +149,9 @@ def analiza(conn, region, filas):
 
     filas = sorted(filas, key=lambda f: f['lo'])
     series = [(f['num'], ap.sondas(f['name_ok'])) for f in filas]
+    # sondas que aparecen en más de una fila del tramo: no distinguen y no pueden firmar sola
+    _cuenta = Counter(s for _n, ss in series for s in set(ss))
+    compartidas = {s for s, c in _cuenta.items() if c > 1}
     pos_pts, sin_pts = ap.serie_monotona(T.plano, series)
     pos_cst, sin_cst = ap.serie_monotona(cst_plano, series)
 
@@ -159,6 +162,25 @@ def analiza(conn, region, filas):
         f['pos_pts'], f['sonda_pts'] = (pos_pts or {}).get(f['num'], (None, None))
         f['pos_cst'], f['sonda_cst'] = (pos_cst or {}).get(f['num'], (None, None))
         f['locus'] = T.locus(f['pos_pts']) if f['pos_pts'] is not None else None
+        # RUTA DEL APARATO: si el cuerpo no lo imprime, puede estar en las notas al pie de su
+        # página, que son parte de la edición. En A iii 276 el cuerpo da `sāmaṇerā` y `upāsikā` y
+        # el aparato `1 M. S. sāmaṇero sāmaṇerī` / `2 M. T. M6. M7 upāsako upāsikā`: los cuatro
+        # suttas que el CST numera aparte. No entra en la serie monótona —una nota no tiene
+        # posición en el texto corrido— pero atestigua la lectura en la página que toca.
+        # ⚠️ La sonda del aparato tiene que ser EXCLUSIVA de la fila: si la comparten otras filas
+        # del tramo no prueba nada. En el Navaka, `sammappadhāna` e `iddhipāda` son de las nueve
+        # hermanas a la vez, y admitirlas habría firmado nueve filas con la misma palabra.
+        f['aparato'] = None
+        if f['pos_pts'] is None and isinstance(f['page'], int):
+            for pg in (f['page'], f['page'] - 1, f['page'] + 1):
+                ap_txt = T.aparato.get(pg, '')
+                for sonda in ap.sondas(f['name_ok']):
+                    if len(sonda) >= 6 and sonda not in compartidas and \
+                            ap.buscar_palabra(ap_txt, sonda):
+                        f['aparato'] = (pg, sonda)
+                        break
+                if f['aparato']:
+                    break
         f['pagina_ok'] = (f['locus'] is not None and isinstance(f['page'], int)
                           and abs(f['locus'][0] - f['page']) <= 1)
         f['elidido'] = u is None or u['n'] > 1 or len(sh.tokens(u['texto'])) < MIN_PROSA

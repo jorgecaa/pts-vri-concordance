@@ -21,16 +21,29 @@ Con eso, `validador_an_peyyala.analiza` sitúa **71 de las 76** filas del Pañca
 Chakka. El propio análisis se vuelve a correr aquí (no se copian listas de números a mano): lo que
 se cierra es lo que la prueba sostiene en el momento de escribir.
 
-### Las 2 que se quedan fuera, y por qué son irreductibles
+### La ruta del APARATO CRÍTICO — lo que cierra el volumen
 
-| fila | por qué |
-|---|---|
-| `5.291` `Upāsaka` | **PTS no lo imprime**: su lista salta de `sāmaṇerā` a `upāsikā` |
-| `5.300` `Āruddhaka` | el nombre **no aparece en ninguna página de A iii**: queda dentro del `…pe…` de la lista de sectarios |
+Di por irreductibles `5.291 Upāsaka` y `5.300 Āruddhaka` porque su nombre no aparece en el cuerpo
+del impreso. **Estaba mirando media edición.** El aparato de A iii 276 dice:
 
-Las dos son el mismo caso —PTS elide ese miembro— y **no hay prueba que darles por este camino**:
-sin término en el impreso no hay nada que situar. Cerrarlas exigiría otra clase de evidencia (el
-uddāna del vagga, o el cotejo contra el impreso en papel).
+```
+1 M. S. sāmaṇero sāmaṇerī.
+2 M. T. M6. M7 upāsako upāsikā.
+5 M. Ph. S. āruddhako.
+```
+
+El cuerpo colapsa `sāmaṇerā` y `upāsikā` donde los manuscritos birmanos, sinhaleses y tailandeses
+leen **los cuatro** suttas que el CST numera por separado, y el `āruddhako` que faltaba está en la
+nota 5 de esa misma página. El aparato es parte de la edición —el repo ya lo trata así en el GUI—
+y en un tramo elidido es a menudo **el único sitio donde PTS escribe el nombre**.
+
+Así que `an_peyyala.TextoPTS` carga ahora las notas al pie por página y el análisis las consulta
+cuando el cuerpo falla. **No entran en la serie monótona** (una nota no tiene posición en el texto
+corrido) y su sonda debe ser **exclusiva de la fila**: en el Navaka de A iv, `sammappadhāna` está
+en el aparato y es de las nueve hermanas a la vez — admitirla habría firmado nueve filas con la
+misma palabra.
+
+Con esa ruta, **A iii cierra 457/457**.
 
 En la primera pasada quedaban tres más, y las tres eran **defectos míos o del Excel**, no del dato:
 
@@ -93,10 +106,14 @@ VRI_CORREGIDA = {'5.1103-1152': 's0403m1:1103-1151'}
 #   · `5.282` — no era grafía divergente entre ediciones sino un **error del Excel**: PTS escribe
 #     `sāṭiyaggāhāpako` (A iii 275) y el CST `sāṭiyagāhāpako`; sólo el Excel decía `Sāṭika-`.
 #     Corregido en `fix_kilesa_an3.py`.
-NO_CERRAR = {
-    '5.291': 'PTS NO imprime este miembro: su lista salta de «sāmaṇerā» a «upāsikā»',
-    '5.300': 'el nombre «Āruddhaka» no aparece en NINGUNA página de A iii: PTS lo deja dentro del '
-             '«…pe…» de la lista de sectarios',
+#   · `5.291` y `5.300` — **no eran irreductibles**: el cuerpo no las imprime, pero el **aparato
+#     crítico de A iii 276 sí**. Ver la nota de abajo.
+NO_CERRAR = {}
+APARATO = {
+    '5.274': 'atestiguado en el aparato de A iii 274 («senāsanagāhāpako»)',
+    '5.290': 'atestiguado en el aparato de A iii 276: «1 M. S. sāmaṇero sāmaṇerī»',
+    '5.291': 'atestiguado en el aparato de A iii 276: «2 M. T. M6. M7 upāsako upāsikā»',
+    '5.300': 'atestiguado en el aparato de A iii 276: «5 M. Ph. S. āruddhako»',
 }
 
 
@@ -121,7 +138,9 @@ def main():
         for f in filas:
             if not f['pendiente'] or f['num'] in NO_CERRAR:
                 continue
-            if f['pos_pts'] is not None and f['pagina_ok']:
+            if f['num'] in APARATO and f.get('aparato'):
+                probadas[f['num']] = (f['vri'], APARATO[f['num']])
+            elif f['pos_pts'] is not None and f['pagina_ok']:
                 probadas[f['num']] = (f['vri'],
                                       f'peyyāla: «{f["sonda_pts"]}» literal y en orden en PTS '
                                       f'(A iii {f["locus"][0]},{f["locus"][1]}); ancla CST = paranum')
