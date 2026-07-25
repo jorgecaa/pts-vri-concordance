@@ -587,11 +587,11 @@
   "estado": "PENDIENTE",
   "validation": "REVISAR",
   "gate": {
-   "cov": 0.3,
+   "cov": 0.31,
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages are completely distinct suttas involving different interlocutors and teachings."
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): The passages discuss completely different dialogues involving different interlocutors, Ananda versus Sariputta."
  },
  {
   "num": "3.34",
@@ -836,14 +836,14 @@
   "pts_page": 152,
   "pts_line": 5,
   "legacy": "RTE_ONLY",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
   "gate": {
-   "cov": 0.57,
+   "cov": 0.62,
    "thr": 0.55
   },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS includes the asankhata passage while CST omits it entirely."
+  "gemini": "APPROVE",
+  "reason": "Core narrative matches; minor edition text divergence in closing."
  },
  {
   "num": "3.48",
@@ -1880,14 +1880,14 @@
   "pts_page": 260,
   "pts_line": 1,
   "legacy": "RTE_ONLY",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
   "gate": {
    "cov": 0.24,
    "thr": 0.55
   },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Passages represent different sections of the text with significant textual divergence."
+  "gemini": "APPROVE",
+  "reason": "Both passages treat the worldly assāda and ādīnava, differing only in editorial peyyāla expansions."
  },
  {
   "num": "3.107",
@@ -2438,14 +2438,14 @@
   "pts_page": 286,
   "pts_line": 26,
   "legacy": "OK+RTE",
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
   "gate": {
-   "cov": 0.67,
+   "cov": 0.7,
    "thr": 0.55
   },
-  "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Opposing philosophical doctrines on Makkhali: PTS asserts atthi while CST asserts natthi."
+  "gemini": "APPROVE",
+  "reason": "Identical core narrative with minor orthographic variants."
  },
  {
   "num": "3.138",
@@ -2463,7 +2463,7 @@
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): CST omits the vuddhi section entirely, unlike PTS."
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): CST omits the second section on vuddhi, making them distinct."
  },
  {
   "num": "3.139",
@@ -2481,7 +2481,7 @@
    "thr": 0.55
   },
   "gemini": "REJECT",
-  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS includes sampadā section while CST only contains vuddhiyo."
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): PTS includes sampada triad while CST only contains vuddhi triad."
  },
  {
   "num": "3.140",

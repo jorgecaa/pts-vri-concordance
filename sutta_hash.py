@@ -114,6 +114,13 @@ ENDINGS = sorted(['ssa', 'smiṃ', 'mhi', 'mhā', 'bhi', 'ehi', 'esu', 'āsu',
 
 
 PTS_REF = re.compile(r'\(pts\.[^)]*(?:\([^)]*\))?[^)]*\)')
+# Elisión con apóstrofo del impreso PTS: `n' atthi`, `c' eva`, `ten' upasaṅkami`. El CST escribe
+# esas formas FUNDIDAS (`natthi`, `ceva`, `tenupasaṅkami`), así que hay que fundirlas también aquí.
+# No es cosmético: al partir por el apóstrofo, la `n` quedaba suelta y se descartaba como ruido de
+# un carácter, de modo que **`n' atthi` («no hay») se convertía en `atthi` («hay»)** — el texto que
+# llegaba al validador afirmaba lo contrario del original. Son 12.561 casos en DN, MN y AN; SN
+# apenas usa la convención (15 en cinco volúmenes), y por eso no salió hasta AN.
+APOSTROPHE = re.compile(r"(\w)['’]\s*(?=\w)")
 
 
 def tokens(text):
@@ -124,6 +131,7 @@ def tokens(text):
     debris, dropped.  PTS references — present only on the Se side, so
     pure asymmetric noise that depressed every score — are stripped."""
     text = PTS_REF.sub(' ', text.lower().replace('ṁ', 'ṃ'))
+    text = APOSTROPHE.sub(r'\1', text)
     ws = TOK.findall(text)
     out = []
     for w in ws:
