@@ -102,8 +102,14 @@ def gemini_judge(pts, cst, tries=4):
             time.sleep(2 ** i)
 
 
-def validate_pair(pts, cst, name, cst_title, nik, gemini_verdict=None, gemini_reason=None):
+def validate_pair(pts, cst, name, cst_title, nik, gemini_verdict=None, gemini_reason=None,
+                  concordant=False):
     """Modelo B. Si se pasa `gemini_verdict` (p.ej. cacheado) no se llama a la API.
+
+    `concordant=True`: la alineación PTS↔CST viene de una CONCORDANCIA EXACTA (pipeline
+    VRI: Excel-DPR → massive.tsv → cst_paranum → XML), así que el gate de cobertura local
+    SOBRA (y perjudica en suttas cortos/elididos). En ese caso CONFIRMADO = concordancia
+    ∧ Gemini APPROVE; el gate se registra pero no decide.
 
     Devuelve dict: estado, validation, gate, gemini, reason.
     """
@@ -115,6 +121,8 @@ def validate_pair(pts, cst, name, cst_title, nik, gemini_verdict=None, gemini_re
         jv, jr, _in, _out = gemini_judge(pts, cst)
     else:
         jv, jr = gemini_verdict, gemini_reason
+    if concordant:
+        gv = 'APPROVE'  # la concordancia exacta reemplaza al gate de cobertura
     if gv == 'APPROVE' and jv == 'APPROVE':
         return {'estado': 'CONFIRMADO', 'validation': 'VALIDADOR',
                 'gate': gd, 'gemini': jv, 'reason': jr}

@@ -94,13 +94,30 @@ def build_markers(cur):
     cur.execute('SELECT page_no,unitext FROM pages WHERE book_no=? AND edition="mula"', (SN5_BOOK,))
     for r in cur.fetchall():
         for i, line in enumerate((r['unitext'] or '').split('\n')):
-            # marcador "48. (8) Nombre", rango "103--108. (1--6) Pācīna", o grupo
-            # profundo sin nombre "63--72. (1--10)." (uddāna a continuación)
-            m = re.match(r'^(\d+)(?:\s*-+\s*(\d+))?\.?\s*\((\d+)(?:\s*-+\s*(\d+))?\)\.?\s*(\S.*)?$', line.strip())
+            s = line.strip()
+            lead = len(line) - len(line.lstrip())
+            # marcador "48. (8) Nombre", rango "103--108. (1--6) Pācīna", grupo sin
+            # nombre "63--72. (1--10)."
+            m = re.match(r'^(\d+)(?:\s*-+\s*(\d+))?\.?\s*\((\d+)(?:\s*-+\s*(\d+))?\)\.?\s*(\S.*)?$', s)
+            if not m:
+                # grupo profundo sin paréntesis: "89--98.1--10."
+                m = re.match(r'^(\d+)\s*-+\s*(\d+)\.\s*(\d+)(?:\s*-+\s*\d+)?\.\s*$', s)
             if m:
                 a = int(m.group(1)); b = int(m.group(2)) if m.group(2) else a
+                nm = (m.group(5) if m.lastindex >= 5 else '') or ''
                 for run in range(a, b + 1):        # registra cada nº corrido del rango
-                    mm[r['page_no']].append((i + 1, run, int(m.group(3)), (m.group(5) or '')[:60]))
+                    mm[r['page_no']].append((i + 1, run, int(m.group(3)), nm[:60]))
+                continue
+            # marcador CENTRADO simple sin paréntesis: "5. Bhikkhu.", "1. Rājā.",
+            # "7. Kūṭāgāra." — discriminado por la sangría (>=8) frente a los nº de
+            # sección del texto (margen izquierdo). El nombre no cruza separadores ║.
+            if lead >= 8:
+                m2 = re.match(r'^(\d+)(?:\s*-+\s*(\d+))?\.\s*([A-ZĀĪŪṄÑṆṬḌḶ][^\d║]*?)\d?\s*\.?\s*$', s)
+                if m2 and m2.group(3) and len(m2.group(3).strip()) >= 3:
+                    a = int(m2.group(1)); b = int(m2.group(2)) if m2.group(2) else a
+                    nm = m2.group(3).strip()
+                    for run in range(a, b + 1):
+                        mm[r['page_no']].append((i + 1, run, a, nm[:60]))
     return mm
 
 
@@ -159,6 +176,51 @@ def pts_by_name(cur, page, cst_title, mm, span=1):
                         break
                 return ' '.join(sh.tokens(' '.join(lines[start:end]))[:350])
     return None
+
+
+def pts_page(cur, page, span=0):
+    """Fallback final: texto de la(s) página(s) PTS completas. Para los grupos
+    peyyāla donde el marcador no aísla el sutta pero la concordancia SÍ garantiza
+    la alineación (la página PTS es la que afirma el propio Excel)."""
+    if not isinstance(page, int):
+        return None
+    parts = []
+    for pg in [page] + [page + d for d in range(1, span + 1)]:
+        r = cur.execute('SELECT unitext FROM pages WHERE book_no=? AND page_no=? AND edition="mula"', (SN5_BOOK, pg)).fetchone()
+        if r and r['unitext']:
+            parts.append(r['unitext'])
+    return ' '.join(sh.tokens(' '.join(parts))[:350]) if parts else None
+
+
+def _ctoks(t, n=40):
+    return {re.sub(r'(.)\1+', r'\1', x.translate(_FOLD_N)) for x in sh.tokens(t)[:n]}
+
+def pts_by_content(cur, page, cst_text, mm, span=1, thr=0.30):
+    """Último fallback: casa por CONTENIDO — el marcador de la página cuyo texto
+    comparte más tokens con la incipit CST (nombres divergentes: manussacuti↔pañcagati)."""
+    A = _ctoks(cst_text)
+    if not A:
+        return None
+    best_ov, best_txt = 0.0, None
+    for pg in [page] + [page + d for d in range(1, span + 1)] + [page - d for d in range(1, span + 1)]:
+        r = cur.execute('SELECT unitext FROM pages WHERE book_no=? AND page_no=? AND edition="mula"', (SN5_BOOK, pg)).fetchone()
+        if not r:
+            continue
+        lines = (r['unitext'] or '').split('\n')
+        seen = set()
+        for line, gid, vpos, name in mm.get(pg, []):
+            if line in seen:
+                continue
+            seen.add(line)
+            start, end = line - 1, len(lines)
+            for j in range(start + 1, len(lines)):
+                if re.match(r'^\d+(?:\s*-+\s*\d+)?\.', lines[j].strip()):
+                    end = j
+                    break
+            ov = len(A & _ctoks(' '.join(lines[start:end]))) / max(1, len(A))
+            if ov > best_ov:
+                best_ov, best_txt = ov, ' '.join(sh.tokens(' '.join(lines[start:end]))[:350])
+    return best_txt if best_ov >= thr else None
 
 
 def cst_boundaries(segs):

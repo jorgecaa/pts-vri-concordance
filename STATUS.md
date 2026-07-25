@@ -114,14 +114,29 @@ Use this terminology consistently across the project:
 
 ## PENDING
 
-### SN V — Samyutta Nikaya vol 5 (S v) — 610 suttas ⏳
-- Excel: not yet marked (cache verdicts exist but are UNRELIABLE — 36/466 APPROVE due to a broken
-  saṃyutta-aware CST mapping in `helmer_sn5_all.py`; do NOT volcar until the mapping is fixed).
-- 466 exact gid matches, 144 peyyāla
-- Pilot: 17/20 APPROVE (85%) with saṃyutta-aware CST mapping
-- CST file: s5m.xml (615 suttas, 112 saṃyuttas — Excel only has 45-56)
-- CRITICAL: Use saṃyutta-aware CST mapping (see METHOD below)
-- Source files: `helmer_sn5_pilot.py`, `helmer_sn5_all.py` (needs fix for JSON errors)
+### SN V — Samyutta Nikaya vol 5 (S v) — 610 suttas ⏳ 580/610 (pendiente cerrar)
+- **Estado 2026-07-25: 580 CONFIRMADO / 30 PENDIENTE.** 562 VALIDADOR + 18 VALIDADOR_HUMANO.
+- Alineado por el **pipeline VRI por concordancia** (definitivo): Excel(DPR) → `massive.tsv`
+  (`cst_paranum`) → XML VRI (`/tmp/tipitaka-xml/romn/s0305m.mul.xml`) → texto CST exacto; lado
+  PTS por marcadores DB (libro 16). Validador Modelo B con `concordant=True` (concordancia
+  exacta ∧ Gemini; el gate de cobertura sobra). Drivers: `validador_sn5_vri.py` + `validador_sn5.py`
+  (parser de marcadores: `(M)`, rangos `103--108. (1--6)`, grupo profundo `89--98.1--10.`,
+  centrado simple `5. Bhikkhu.`, y fallback a página). Reconciliación: `reconcile_sn5.py`.
+  Los viejos `helmer_sn5_*.py` quedan SUPERADOS.
+- **30 PENDIENTE = una sola clase peyyāla** (concordancia VRI exacta, texto ELIDIDO en PTS y/o
+  CST → sin texto que Gemini pueda cotejar; su REJECT es falso-negativo por elisión, no
+  desalineación). Desglose: 22 `DB_VERIFIED` (grupos/individuales `Oghādi/Pācīnādi/Manussacuti=
+  Pañcagati/Chedanādi/-paññā/Nīvaraṇa/Balādi`…) + 8 `REF_ERROR_DPR` **verificados: NO son error
+  de DPR** — son los grupos de repetición "Puna-" (46.130/131/143/153/165/175, 49.13, 50.13),
+  elididos SIMÉTRICAMENTE en ambas ediciones con `...rāgavasena vitthāretabbo` (solo uddāna;
+  análogo inverso del `PTS_CROSSREF_SN`). Disposición PENDIENTE de decisión de Jorge (valor nuevo
+  `VALIDADOR_PEYYALA` vs `VALIDADOR_HUMANO` en bloque) — dejado abierto a propósito.
+
+**TODO SN V (antes de cerrar):**
+1. **Decidir la disposición de las 30 peyyāla** (VALIDADOR_PEYYALA / VALIDADOR_HUMANO) → 610/610.
+2. **Afinar los offsets de nº de línea por página**: los `PTS Line` del Excel no son fiables
+   (calibrar contra el texto real de cada página en la BD, libro 16, como se hizo con la serie
+   asubha / Hetunā). Es el trabajo fino restante para dejar las referencias exactas a nivel de línea.
 
 ### AN — Anguttara Nikaya — 1,738 entries ⏳
 - Pages restored from blog, lines added via sequential matching

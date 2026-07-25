@@ -14,7 +14,7 @@ from collections import Counter
 import sutta_hash as sh
 from openpyxl import load_workbook
 from validador import validate_pair
-from validador_sn5 import build_markers, pts_for, pts_by_name
+from validador_sn5 import build_markers, pts_for, pts_by_name, pts_by_content, pts_page
 
 VRI = '/tmp/tipitaka-xml/romn/s0305m.mul.xml'
 DB = 'src/data/tipitaka.sqlite'
@@ -107,14 +107,24 @@ def main():
         if not s:
             no_para.append(e); continue
         cst = ' '.join(sh.tokens(s['text'])[:350])
-        pts = None
+        pts, src = None, None
         if isinstance(e['page'], int) and e['inner']:
-            pts = pts_for(cur, e['page'], e['inner'], mm)          # exacto por nº corrido
+            # NOMBRE primero (fiable, robusto al off-by-one PTS); nº como fallback
+            # para los grupos de rango sin nombre ("63--72. (1--10).")
+            pts = pts_by_name(cur, e['page'], s['title'], mm)
+            if pts: src = 'name'
             if not pts:
-                pts = pts_by_name(cur, e['page'], s['title'], mm)  # por nombre (off-by-one)
+                pts = pts_for(cur, e['page'], e['inner'], mm)
+                if pts: src = 'num'
+            if not pts:
+                pts = pts_by_content(cur, e['page'], s['text'], mm)  # nombres divergentes
+                if pts: src = 'content'
+            if not pts:
+                pts = pts_page(cur, e['page'])                       # grupos peyyāla
+                if pts: src = 'page'
         if not pts:
             no_pts.append(e); continue
-        tasks.append((e, pts, cst, s['title']))
+        tasks.append((e, pts, cst, s['title'], src))
 
     print('=' * 92)
     print('ALINEADOR VRI (Excel→DPR→massive→cst_paranum→XML VRI) — SN V')
@@ -130,10 +140,10 @@ def main():
     run = tasks if do_all else tasks[:n]
     print(f'\nValidando {len(run)} (Gemini en vivo)...', flush=True)
     rows = []
-    for k, (e, pts, cst, ctitle) in enumerate(run, 1):
-        res = validate_pair(pts, cst, e['name'], ctitle, 'SN')
+    for k, (e, pts, cst, ctitle, src) in enumerate(run, 1):
+        res = validate_pair(pts, cst, e['name'], ctitle, 'SN', concordant=True)
         rows.append({'num': e['num'], 'canon': e['canon'], 'name': e['name'],
-                     'cst_title': ctitle, 'legacy': e['legacy'], **res})
+                     'cst_title': ctitle, 'legacy': e['legacy'], 'src': src, **res})
         if k % 25 == 0:
             print(f'  ...{k}/{len(run)}', flush=True)
     json.dump(rows, open('validador_sn5_vri.json', 'w'), ensure_ascii=False, indent=1)
