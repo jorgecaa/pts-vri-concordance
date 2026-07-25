@@ -50,8 +50,16 @@ _SUTTA_C = _num('num') + pp.Opt(pp.Suppress('.')) + pp.Opt(pp.Suppress(_num)) + 
 # nº de sutta a sangría 5 (Eka/Duka): «1. Evaṃ me sutaṃ…»; admite PARES «4, 5. …», «3,4. …»
 _numlist = pp.Group(pp.delimited_list(_num, delim=','))('nums')
 _SUTTA_P = _numlist + pp.Suppress('.') + pp.Regex(r'.+')('rest')
-# colofón de vagga: «Kalyāṇamittādi-vaggo aṭṭhamo.» — nombra el vagga y da su ordinal
-_COLOPHON = re.compile(r'^(.{3,40}?)[- ]?vaggo\s+(\S+?)\.?\d*$', re.I)
+# Colofón de vagga. Cuatro formas conviven en el impreso, y ceñirse a la canónica pierde 8 de los
+# 26 vaggas de A ii:
+#   «Kalyāṇamittādi-vaggo aṭṭhamo.»   canónica: nombre + ordinal
+#   «VAGGO PAṬHAMO.»                  en VERSALES y SIN nombre (A ii 12)
+#   «Macalavaggo.1» / «Asuravaggo.»   SIN ordinal (A ii 91, 101)
+#   «[Indriya-]1vaggo [paṭhamo] 1»    con corchetes y la llamada de nota PEGADA antes de «vaggo»
+#   «Yodhajīvavaggo1 catuttho.»       llamada pegada al nombre
+#   «Caravaggo [dutiyo.]»             el punto va DENTRO del corchete
+_COLOPHON = re.compile(r'^\[?\s*(.{0,40}?)\s*\]?\d*[- ]?vaggo\d*\.?'
+                       r'(?:\s*\[?\s*([a-zāīūṃṅñṭḍṇḷ]+)\s*\.?\s*\]?)?\s*\.?\d*\s*$', re.I)
 _ORD = {'pathamo': 1, 'dutiyo': 2, 'tatiyo': 3, 'catuttho': 4, 'pancamo': 5, 'chattho': 6,
         'sattamo': 7, 'atthamo': 8, 'navamo': 9, 'dasamo': 10, 'ekadasamo': 11,
         'dvadasamo': 12, 'terasamo': 13, 'cuddasamo': 14, 'pannarasamo': 15,
@@ -98,10 +106,14 @@ def find_markers_an1(text):
                 out.append((i, 'sutta', int(r['num']), indent))
                 continue
         c = _COLOPHON.match(s)
-        if c and indent >= 10:
-            o = _ORD.get(re.sub(r'[^a-z]', '', c.group(2).lower().translate(_FOLD)))
-            if o:
-                out.append((i, 'colofon', (c.group(1).strip(), o), indent))
+        if c and indent >= 8 and 'vagg' in s.lower():
+            ord_txt = c.group(2) or ''
+            o = _ORD.get(re.sub(r'[^a-z]', '', ord_txt.lower().translate(_FOLD)))
+            nombre = re.sub(r'[\[\]\d.-]', '', c.group(1) or '').strip()
+            # el ordinal puede faltar («Macalavaggo.»): el colofón sigue siendo válido y su
+            # posición en la serie la fija el orden de lectura
+            if o or nombre:
+                out.append((i, 'colofon', (nombre, o), indent))
                 continue
         if indent in SUTTA_INDENT:
             r = _parse(_SUTTA_P, s)
@@ -132,6 +144,7 @@ def collect_an1(pages):
             elif kind == 'colofon':
                 out.append({'nipata': nip, 'vagga': val[1], 'num': None,
                             'page': pg, 'line': ln, 'colofon': val[0]})
+                vag = val[1] if val[1] else vag
             elif kind == 'sutta' and nip:
                 # en Eka/Duka sólo cuenta la forma de párrafo; en el Tika, sólo la centrada
                 reg = REGIMEN.get(nip, 'corrido')

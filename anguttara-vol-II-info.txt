@@ -66,15 +66,58 @@ que `an1_markers.py` vale para los cinco volúmenes (`REGIMEN` lo elige por nip�
     p216,32  Mahāpaṇṇāsakaṃ catutthaṃ.
     p257     Vaggo samatto / Paññāsakaṃ pañcamaṃ / Catukkaṃ samattaṃ
 
-⚠️ **Los vaggas NO son uniformemente de diez suttas.** Suponerlo descuadra 6 de los 26
-arranques. La estructura fiable son los **colofones de vagga** (18 hallados de 26), no
-la aritmética `10k+1`.
+✅ **ESTRUCTURA CERRADA: 26/26 colofones de vagga, y los vaggas SÍ son de diez suttas.**
+(Una conclusión intermedia dijo lo contrario; era falsa. Venía de comparar la página
+del marcador `10k+1` con el índice, y lo que falla es el índice, no el tamaño del
+vagga.)
 
-Colofones hallados: Cara p19, Uruvela p31, Cakka p44, Rohitassa p54, Puññābhisandana
-p65, Pattakamma p76, Valāhaka p111, Kesi p121, Bhaya p133, Puggala p139, Ābhā p141,
-Paṭipadā p157, Sañcetaniya p170, Mahā p216, Sappurisa p225, Sucarita p230, Kamma p239,
-Abhiññā p253. (El colofón cierra el vagga; el siguiente abre en esa página o la
-siguiente.)
+    vagga  1: suttas   1-10   colofón p12     vagga 14: suttas 131-140  colofón p139
+    vagga  2: suttas  11-20   colofón p19     vagga 15: suttas 141-150  colofón p141
+    vagga  3: suttas  21-30   colofón p31     vagga 16: suttas 151-160  colofón p149
+    vagga  4: suttas  31-40   colofón p44     vagga 17: suttas 161-170  colofón p157
+    vagga  5: suttas  41-50   colofón p54     vagga 18: suttas 171-180  colofón p170
+    vagga  6: suttas  51-60   colofón p65     vagga 19: suttas 181-190  colofón p184
+    vagga  7: suttas  61-70   colofón p76     vagga 20: suttas 191-200  colofón p216
+    vagga  8: suttas  71-80   colofón p83     vagga 21: suttas 201-210  colofón p225
+    vagga  9: suttas  81-90   colofón p91     vagga 22: suttas 211-220  colofón p228
+    vagga 10: suttas  91-100  colofón p101    vagga 23: suttas 221-230  colofón p230
+    vagga 11: suttas 101-110  colofón p111    vagga 24: suttas 231-240  colofón p239
+    vagga 12: suttas 111-120  colofón p121    vagga 25: suttas 241-250  colofón p246
+    vagga 13: suttas 121-130  colofón p133    vagga 26: suttas 251-260  colofón p253
+
+**259 suttas en 26 vaggas** — el vagga 7 tiene 9 porque el nº **64** falta en la BD.
+(El colofón CIERRA el vagga; el siguiente abre en esa página o la siguiente.)
+
+**Cuatro formas de colofón conviven**, y ceñirse a la canónica pierde 8 de los 26:
+
+    Uruvelavaggo tatiyo.          canónica: nombre + ordinal
+    VAGGO PAṬHAMO.                en VERSALES y SIN nombre (p12)
+    Macalavaggo.1 / Asuravaggo.   SIN ordinal (p91, p101)
+    [Indriya-]1vaggo [paṭhamo] 1  corchetes y llamada de nota PEGADA antes de «vaggo»
+    Yodhajīvavaggo1 catuttho.     llamada pegada al nombre
+    Caravaggo [dutiyo.]           el punto va DENTRO del corchete
+
+================================================================================
+EL ÍNDICE DE MORRIS FRENTE AL TEXTO: 20 de 26 entradas correctas
+================================================================================
+
+Contrastadas las 26 entradas contra la página real del primer sutta de cada vagga:
+
+- **20 son la página correcta.**
+- **2 son el NÚMERO DE SUTTA impreso en la columna de páginas**: `Cara` (11 = su primer
+  sutta; la página es la **13**) y `Sañcetanika` (171 = su primer sutta; la página es la
+  **157**). Este segundo es el que producía la imposibilidad del índice (18 → 171 pero
+  19 → 170).
+- **4 discrepan por poco, y manda el texto** (el colofón está impreso *en* él):
+
+    | vagga | índice | página real |
+    |---|---|---|
+    | 9 Macala | 88 | **83** |
+    | 11 Valāhaka | 103 | **102** |
+    | 12 Kesi | 113 | **112** |
+    | 16 Indriya | 143 | **141** |
+
+  Conviene cotejarlas contra el impreso antes de darlas por erratas del índice.
 
 ================================================================================
 NOTAS DE MORRIS QUE AFECTAN AL RECUENTO (Preliminary Remarks)
