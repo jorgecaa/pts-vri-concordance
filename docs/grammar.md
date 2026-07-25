@@ -59,6 +59,15 @@ bare_marker ::= numlist dot name                   # exige sangría ≥8, sin "�
 section     ::= "§"{1,2}
 numlist     ::= digits ( ("," | "-"+) digits )*    # "4" | "4,5" | "103--108"
 
+# SN II — find_markers_sn2  (sn2_markers.py; gramática propia, ver abajo)
+sn2_line    ::= lead item*                         → "marker"   # "1 (1) Desanā" (sin puntos)
+              | item+                              → "cont"     # "(12) Dhītā (13) Pajāpati"
+lead        ::= "(" numrange ")" &group | numrange  # "(64)" solo si le sigue un grupo
+item        ::= group | remark | name
+group       ::= "(" numrange [")"]                 # el ")" lo pierde el OCR
+remark      ::= "(" ¬digit … [")"]                 # "(or Miḷhaka? )" — se ignora
+numrange    ::= digits [ "-" digits ]              # "38-43"
+
 # AN — find_markers_an
 an_line     ::= num_dot_txt                        → "num"
 
@@ -113,3 +122,47 @@ crece abre vagga nuevo* (`build_vaggas`). Es la única regla fiable, porque el `
 justamente uno de los que el OCR puede haber perdido. Con esto la estructura hallada cuadra al
 100% con el front matter de Feer (`samyutta-vol-I-info.txt`): **28 vaggas, 271 suttas y la página
 de arranque de cada vagga**.
+
+
+## SN II — `sn2_markers.py` (nota aparte)
+
+S ii no comparte gramática ni con S i ni con S iv–v: el marcador es **`N (M) Nombre` sin puntos**,
+con `N` = nº corrido dentro del saṃyutta (reinicia en cada saṃyutta) y `M` = posición en el vagga.
+`find_markers_sn2(text)` devuelve `[(nº_línea, [nº corridos], [(pos, nombre)], tag)]`.
+
+Variantes que hay que aceptar (cada una cuesta suttas si se ignora):
+
+| Forma | Ejemplo | Dónde |
+|---|---|---|
+| estándar | `1 (1) Desanā` | |
+| sin posición | `1 Nakhasikhā` | saṃyuttas de un vagga único (S ii 133) |
+| grupo TRAS el nombre | `8 Ovādo (3)` | S ii 203, 205, 208 |
+| desambiguador de cola | `13 (3) Samaṇa-brāhmaṇā (1)` | |
+| con `║` de cola | `68 (8) Kosambi ║` | S ii 115, 260, 282 |
+| comentario no numérico | `5 (5) Piḷhika (or Miḷhaka? )` | S ii 228 |
+| sin nombre | `71 (1)` | S ii 129 |
+| rango | `72-80 (2-10)` | S ii 129 |
+| rango multi-nombre + continuación | `38-43 (8) Pitā (9) Bhātā …` / `(12) Dhītā (13) Pajāpati` | S ii 243 |
+| nº entre paréntesis | `(64) (4) Atthirāgo` | S ii 101 |
+| paréntesis perdido (OCR) | `40 (10 Cetanā (3)` | S ii 66 |
+
+### Tres reglas que no son evidentes
+
+1. **El recuento lo fija el rango del nº corrido** (`38-43` → 6 suttas), nunca el número de grupos
+   `(M) Nombre`: así el desambiguador de cola no inventa un sutta ni el rango multi-nombre se queda
+   corto.
+2. **La sangría mínima depende de la forma.** `N (M) …` es inequívoco y aparece incluso al margen
+   (son los **miembros peyyāla** de un rango impresos como texto corrido, S ii 234 y 243), mientras
+   `N Nombre` sin paréntesis es ambiguo: **2178 párrafos** empiezan así a sangría 5–8 y los 39
+   marcadores reales están a sangría ≥ 27.
+3. **Un rango puede ser solo el ENCABEZADO de un grupo** cuyos miembros se imprimen después uno a
+   uno (S ii 250: `12-20 (2-10)` y luego `13 (3) Viññānaṃ`…`20 (10) Khandha`). Por eso
+   `collect_suttas` acumula en un dict por nº corrido donde **el marcador individual pisa al del
+   rango**; si no, se duplican 9 suttas.
+
+**Saṃyuttas:** el **nº 1 abre saṃyutta nuevo**. No vale la regla de S i («un nº que no crece»),
+porque aquí los miembros peyyāla se reimprimen con números ya vistos y partirían el saṃyutta.
+
+Con esto la estructura hallada cuadra al 100% con el front matter de Feer
+(`samyutta-vol-II-info.txt`): **10 saṃyuttas (XII–XXI), 27 vaggas, 286 suttas**
+(93/11/39/20/13/43/22/21/12/12) y la página de arranque de cada saṃyutta.

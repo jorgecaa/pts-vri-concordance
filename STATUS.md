@@ -1,5 +1,5 @@
 # PTS Reference Concordance — Status Report
-## Date: 2026-07-21 (updated 2026-07-25 — SN I 271/271 y SN V 610/610 CERRADOS)
+## Date: 2026-07-21 (updated 2026-07-25 — SN I, SN II y SN V CERRADOS con el validador)
 
 ---
 
@@ -46,14 +46,14 @@ Use this terminology consistently across the project:
 |--------|--------:|-----------:|----------:|-------:|
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
-| SN | 1806 | 975 | 831 | 54.0% |
+| SN | 1806 | 1221 | 585 | 67.6% |
 | AN | 1738 | 1 | 1737 | 0.1% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6090** | **1162** | **4928** | **19.1%** |
+| **TOTAL** | **6090** | **1408** | **4682** | **23.1%** |
 
-> Cifras al **2026-07-25**, tras cerrar SN I (271/271) y SN V (610/610). La hoja `Summary` del Excel
-> está alineada. Desglose de SN: SN I 271 ✅ + SN V 610 ✅ (validador Modelo B) + SN IV 94 (Helmer
-> legado); SN II–III siguen `DB_VERIFIED` → PENDIENTE.
+> Cifras al **2026-07-25**, tras cerrar SN I (271/271), SN II (246/248) y SN V (610/610). La hoja
+> `Summary` del Excel está alineada. Desglose de SN: SN I 271 ✅ + SN II 246 ✅ + SN V 610 ✅
+> (validador Modelo B) + SN IV 94 (Helmer legado); **SN III** sigue `DB_VERIFIED` → PENDIENTE.
 
 > MN 14/38/64 (antes `OK+RTE`/PENDIENTE por errores de API transitorios) fueron re-corridos por
 > Helmer DeepSeek el 2026-07-24 → **3/3 APPROVE** → `HELMER_APPROVED`/CONFIRMADO (cacheados).
@@ -122,13 +122,49 @@ Use this terminology consistently across the project:
   `samyutta-vol-I-info.txt`. Los viejos `parse_sn_grammar.py` / `helmer_sn1_pilot.py` quedan
   SUPERADOS.
 
-### SN II — Samyutta Nikaya vol 2 (S ii) — 255 suttas — CERRADO 🔒
-- Excel: `DB_VERIFIED`
-- Sequential audit: 0 page breaks
-- Markers: 75% found (format: `N (M) Name` or `(N) (M) Name`)
-- CST fingerprint sample: 83% accuracy (30 suttas)
-- Note: Per-saṃyutta numbering with peyyāla gaps
-- Source files: `audit_sn2.py`
+### SN II — Samyutta Nikaya vol 2 (S ii) — 248 filas / 286 suttas — CERRADO 🔒 246/248
+- **Estado 2026-07-25: 246 CONFIRMADO (`VALIDADOR`) + 2 PENDIENTE** (a arbitraje, ver abajo).
+  Antes: 255 filas todas `DB_VERIFIED` → PENDIENTE.
+- **El front matter de Feer (`samyutta-vol-II-info.txt`) fija el lado PTS sin LLM**: 10 saṃyuttas
+  (numerados **XII–XXI** en la notación corrida), **27 vaggas, 286 suttas**
+  (93/11/39/20/13/43/22/21/12/12) y la página de arranque de cada uno. La estructura hallada en la
+  BD cuadra al 100%. Feer explica ahí mismo las dos numeraciones (sección/saṃyutta/vagga/sutta vs
+  **saṃyutta/sutta**, «XII. 25. 4») y que prefiere la segunda — que es la del `Sutta #` del Excel.
+- **248 filas cubren los 286 suttas**: los grupos peyyāla van en **una sola fila de nombre
+  colectivo** (`Jātisuttādidasakaṃ` = PTS 72–81, `Suvaṇṇanikkhasuttādiaṭṭhakaṃ` = 17.13–20,
+  `Pitusuttādichakkaṃ` = 17.38–43, `Sikkhāsuttādipeyyālaekādasakaṃ` = 12.83–93), igual convención
+  que en SN V. **No faltan filas** (un primer diagnóstico dijo «faltan 38» y era falso: eran los
+  miembros de esos grupos).
+- **Gramática nueva `sn2_markers.py` (pyparsing)** — marcador `N (M) Nombre` **sin puntos**, ajeno
+  al `§ N.` de S i y al `N. (M)` de S iv–v. Detalle y las tres reglas no evidentes (el recuento lo
+  manda el rango; la sangría mínima depende de la forma; un rango puede ser solo el encabezado de un
+  grupo cuyos miembros se reimprimen) en `docs/grammar.md`.
+- ⚠️ **21 `Sutta #` ERRÓNEOS corregidos** (`reid_sn2.py`). En SN 17 la numeración del Excel iba
+  **desplazada +7** desde 17.14 (la fila que se llamaba `17.21` se titula *Chavi*, está en la p. 237
+  y es el sutta **17.28** en PTS y en DPR/CST), y en SN 18 +8 en las dos últimas. Se detectó por la
+  comprobación cruzada de nombres (82%, con los fallos agrupados en SN 17), **no por el LLM**: al
+  emparejar por el `Sutta #` malo se comparaba un par PTS↔CST correcto entre sí pero ajeno a la
+  fila, y Gemini aprobaba. Los 21 veredictos mal adjudicados se descartaron y se re-validaron con la
+  identidad corregida (22/22 APPROVE); la concordancia de nombres subió a 85%.
+  **Lección: sin una comprobación cruzada independiente de la clave de emparejamiento, un APPROVE
+  no dice nada sobre la fila.** La identidad verdadera de una fila la dan `Sutta Name` + `PTS Page`
+  (concuerdan entre sí y con las dos fuentes); el `Sutta #` es el campo que se corrompió.
+- **7 filas con el VOLUMEN mal puesto** (`fix_sn2_vol_labels.py`): SN 22.153–159 estaban como
+  «S ii» y son **S iii** (SN 22 = Khandha abre el vol. III, como dice Feer). Evidencia:
+  `cst_p_page = 3.0183…3.0187` (vol 3, mismas páginas), los títulos CST casan uno a uno, S ii 183
+  habla de *kappā* (Anamatagga) mientras S iii 183 trata de rūpaṃ/attā, y 152+7 = **159**, el total
+  canónico de SN 22.
+- **Líneas: 39 corregidas → 243/243 exactas**; y **14 páginas** corregidas con doble evidencia
+  (marcador + ancla `cst_p_page` de acuerdo entre sí y contra el Excel): 12.14, 12.24, 12.25, 12.42,
+  12.43, 12.55, 13.5, 13.11, 14.7, 14.8, 14.27, 14.31, 18.3, 21.2 (`calibrate_sn2_lines.py`).
+- **2 PENDIENTE a arbitraje** — `12.74` «Dutiyasatthusuttādidasakaṃ» y `12.75`
+  «Sikkhāsuttādipeyyālaekādasakaṃ»: filas de grupo del **antara-peyyālaṃ**, donde PTS (12 suttas,
+  82–93) y CST/DPR (22: 82, 83–92, 93–103) **no coinciden** — PTS elide el grupo *Dutiyasatthu*
+  entero. Sus `Sutta #` deberían ser 12.83 y 12.93 en notación DPR, pero el concordance no lo
+  corrobora (`cst_paranum` vacío en ambos rangos), así que no se auto-corrigen.
+- Fuentes: `sn2_markers.py`, `validador_sn2.py`, `reid_sn2.py`, `reconcile_sn2.py`,
+  `calibrate_sn2_lines.py`, `fix_sn2_vol_labels.py`, `samyutta-vol-II-info.txt`. `audit_sn2.py`
+  queda SUPERADO.
 
 ### SN III — Samyutta Nikaya vol 3 (S iii) — 326 suttas — CERRADO 🔒
 - Excel: `DB_VERIFIED`

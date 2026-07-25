@@ -100,8 +100,8 @@ touching any concordance script. Non-negotiable principles baked into this proje
   corridas en casos borderline), ya no se confía en él para CONFIRMADO. DB verification (pages,
   markers, sequence) is necessary but *not sufficient*.
 - **DO NOT MODIFY closed sections** (DN, MN, SN I–V — see `STATUS.md`) without re-running full
-  validation. SN I y SN V están cerrados por el **validador**; SN II–IV siguen sin CST (PENDIENTE
-  en el Excel aunque marcados CERRADO 🔒 por auditoría de BD). Pending: SN II–IV, AN, KN.
+  validation. SN I, SN II y SN V están cerrados por el **validador**; SN III–IV siguen sin CST.
+  Pending: SN III–IV, AN, KN.
 - **`fix_mn_pages.py` contains 78 INCORRECT "corrections" — do not use it.**
 
 The legacy Helmer validation persona/workflow is packaged as a repo skill
@@ -129,11 +129,18 @@ el `Sutta #` del Excel usa **notación DPR**. El aligner definitivo (`validador_
 por contenido: Excel(DPR) → `massive.tsv` (`cst_paranum`) → **XML VRI** (`romn/*.mul.xml`, párrafos
 `<p n="N">`) → texto CST exacto; lado PTS por marcadores DB casando contra el **canónico** (=nº
 corrido PTS). Con alineación exacta, CONFIRMADO = concordancia ∧ Gemini (el gate de cobertura sobra).
-**SN V: 610/610 y SN I: 271/271, CERRADOS 🔒 (2026-07-25)**; las líneas de `PTS Ref` recalibradas
+**SN V 610/610, SN I 271/271 y SN II 246/248, CERRADOS 🔒 (2026-07-25)**; las líneas de `PTS Ref` recalibradas
 contra el marcador real de la BD (`calibrate_sn5_lines.py` / `calibrate_sn1_lines.py`, exactas al
-100%). **SN I** tiene su propia gramática de marcadores `§ N.` (`sn1_markers.py`, pyparsing) y su
-lado PTS lo fija el **front matter de Feer** (`samyutta-vol-I-info.txt`: 28 vaggas, 271 suttas y la
-página de arranque de cada vagga) — verdad-terreno estructural sin LLM. Detalle en la memoria
+100%). Cada volumen tiene **su propia gramática de marcadores** (`sn1_markers.py`: `§ N.` numerado por
+vagga; `sn2_markers.py`: `N (M) Nombre` sin puntos; SN IV–V: `N. (M) Nombre`) y su lado PTS lo fija
+el **front matter del volumen** (`samyutta-vol-<N>-info.txt`: nº de vaggas y suttas, suttas por
+vagga y página de arranque) — verdad-terreno estructural sin LLM.
+⚠️ **Un APPROVE del validador no dice nada sobre la FILA si la clave de emparejamiento es falsa.**
+En S ii el `Sutta #` del Excel iba desplazado +7 en SN 17: emparejar por él comparaba un par PTS↔CST
+correcto entre sí pero ajeno a la fila, y Gemini aprobaba. Se detectó por la **comprobación cruzada
+de nombres**, no por el LLM. Exigir siempre ≥1 comprobación cruzada independiente de la clave
+(nombre del marcador ≡ título CST, y página del marcador ≡ `cst_p_page`), y recordar que la
+identidad real de una fila la dan `Sutta Name` + `PTS Page`, no el `Sutta #` (ver `reid_sn2.py`). Detalle en la memoria
 `sn-alineacion-estructura`. DN/MN (donde las 3 notaciones coinciden) siguen por el validador normal.
 El **mismo pipeline es la plantilla para AN/KN** (están en `massive.tsv`, notación DPR, con sus XML
 VRI); el flujo, los pitfalls y la regla de auditar el resolvedor con un diff de texto **antes** de
