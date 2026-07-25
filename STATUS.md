@@ -1,5 +1,5 @@
 # PTS Reference Concordance — Status Report
-## Date: 2026-07-21 (updated 2026-07-25 — SN I-V con el validador: 1810/1815; S iv cerrado)
+## Date: 2026-07-21 (updated 2026-07-25 — SN I-V cerrados con el validador: 1810/1814)
 
 ---
 
@@ -52,7 +52,7 @@ Use this terminology consistently across the project:
 | **TOTAL** | **6099** | **1751** | **4348** | **28.7%** |
 
 > Cifras al **2026-07-25**. **SN entero pasado por el validador: 1810/1815.** Desglose:
-> **S i 271/271, S ii 257/257, S iii 332/333, S iv 340/344, S v 610/610**. Ya no queda ningún
+> **S i 271/271, S ii 257/257, S iii 332/332 🔒, S iv 340/344, S v 610/610**. Ya no queda ningún
 > `HELMER_*` en SN: los 94 `HELMER_APPROVED` y 12 `HELMER_REJECT` de S iv se re-validaron y se
 > sobrescribieron. Las 5 PENDIENTE de SN son desacuerdos gate/Gemini a arbitraje humano.
 > El total pasó de 6090 a **6099 filas**: −1 (`12.74`, división solo-CST borrada) y +10 (la
@@ -281,8 +281,8 @@ Dos filas venían con la forma del **CST**, no la de PTS. Se resolvió leyendo l
 
 ## PENDING
 
-### SN III — Samyutta Nikaya vol 3 (S iii) — 333 filas ⏳ 332/333
-- **Estado 2026-07-25 (5ª pasada): 332 CONFIRMADO** (316 `VALIDADOR` + 16 `VALIDADOR_HUMANO`) **+ 1 PENDIENTE** (`22.148`, sin texto PTS — ver Fase 2bis). Antes: 326 filas
+### SN III — Samyutta Nikaya vol 3 (S iii) — 332 filas — CERRADO 🔒 332/332
+- **Estado 2026-07-25 (5ª pasada): 332/332 CONFIRMADO** (316 `VALIDADOR` + 16 `VALIDADOR_HUMANO`). Antes: 326 filas
   `DB_VERIFIED` (+7 que llegaron de S ii al corregir su volumen) → todo PENDIENTE.
 - **Front matter de Feer (`samyutta-vol-III-info.txt`)**: 13 saṃyuttas **XXII–XXXIV**, y la página
   de arranque de cada uno **cuadra al 100%**. Feer distingue **títulos** de **suttantas** (Nāga son
@@ -504,12 +504,16 @@ Alcance medido (marcadores compartidos / filas implicadas):
     *anattānupassī* (148); el dukkhānupassī del CST cae dentro del «pa» de elisión al final del
     nº 147. Es la fusión 4→3 que ya detectaba `calibrate_offsets` (de ahí `PTS = CST − 1` a partir
     de 150), pero hasta ahora se le quitaba el marcador al sutta equivocado (149 en vez de 148).
-  - **Una fila a arbitraje de Jorge**: `22.148`, sin texto PTS que cotejar. Su firma
-    `VALIDADOR_HUMANO` anterior (`S iii 179,5`, que no es ningún marcador) **queda anulada**: se dio
-    contra un emparejamiento que la alineación corregida descarta. El uddāna no lo zanja: **PTS y
-    CST transmiten el MISMO verso** («…kulaputtena **dve** dukāti», dos), Feer anota al pie *«So all
-    the MSS.; it ought to be tayo»* y **imprime tres**, mientras el CST **imprime cuatro**. El número
-    de suttas *Kulaputtena* es inestable en la tradición (2/3/4).
+  - **`22.148 Dukkhānupassī`: fila BORRADA (arbitraje de Jorge, 2026-07-25).** PTS **no numera**
+    ese sutta —su cuenta corre 146, 147, 148 para tres, cuyos cuerpos rezan *nibbidā-bahulaṃ*,
+    *aniccānupassī* y *anattānupassī*— y **el uddāna nunca cuenta cuatro**: PTS y CST transmiten el
+    MISMO verso, «…kulaputtena **dve** dukāti» (dos), con la nota de Feer *«So all the MSS.; it
+    ought to be tayo»*; él enmienda a tres e imprime tres, y el CST imprime cuatro. La cuenta de
+    suttas *Kulaputtena* es inestable en la tradición (2 transmitido / 3 Feer / 4 CST). Es por tanto
+    una división **sólo del CST**, sin referencia PTS: mismo criterio que zanjó `12.74` («Suttanto
+    eko», S ii 130). En contra jugaba el `║ pa ║` al final del nº147, que cae donde va el
+    *dukkhānupassī* en la serie *anicca→dukkha→anatta*: PTS conoce la continuación y la abrevia,
+    pero no la numera. **Canon: 6098 filas** (la columna `#` se renumeró).
 
 ### SN 34 (Jhāna-saṃyutta): NO HAY HOMOGENEIDAD NI DENTRO DE UN SAṂYUTTA
 

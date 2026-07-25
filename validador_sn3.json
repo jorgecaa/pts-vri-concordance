@@ -5526,25 +5526,6 @@
   "reason": "Core narrative matches with minor orthographic and expansion differences."
  },
  {
-  "num": "22.148",
-  "name": "Dukkhānupassī",
-  "cst_title": "13. Dukkhānupassīsuttaṃ",
-  "legacy": "VALIDADOR_HUMANO",
-  "pts_name": null,
-  "pts_page": null,
-  "pts_line": null,
-  "from_range": false,
-  "estado": "PENDIENTE",
-  "validation": "REVISAR",
-  "gate": {
-   "cov": 0.0,
-   "thr": 0.55
-  },
-  "gemini": "N/A",
-  "reason": "PTS no imprime este sutta: en S iii 179-180 los tres marcadores «Kulaputtena dukkhā (1)(2)(3)» rezan nibbidā-bahulaṃ (146), aniccānupassī (147) y anattānupassī (148); el dukkhānupassī del CST cae dentro del «pa» de elisión al final del nº 147. Sin texto PTS aislable → arbitraje humano.",
-  "src": "sin-par"
- },
- {
   "num": "22.150",
   "name": "Ajjhatta",
   "cst_title": "1. Ajjhattasuttaṃ",
