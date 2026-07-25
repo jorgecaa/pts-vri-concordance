@@ -95,10 +95,35 @@ no existía porque allí el marcador lleva el nº corrido y basta con él.
 
 ### 6. Plan
 
-**Fase A — descontar los defectos de lectura (sin API, sin tocar el Excel).**
-Marcadores perdidos (`2.1`) y marcadores de rango del Eka tardío. Hasta que el lado PTS no cuente
-lo que el impreso imprime, cualquier comparación con el CST mide mi parser, no las ediciones.
-*Criterio de salida*: los 21 vaggas del Eka y los 17 del Duka con su recuento estable y explicado.
+**Fase A — descontar los defectos de lectura.** ✅ **HECHA** (2026-07-25)
+
+- **El marcador perdido era uno solo y está explicado.** El Duka arranca en A i 47 con
+  `DUKA-NIPĀTA.` + `I.` y el texto seguido: PTS **no numera el primer sutta del nipāta** porque lo
+  abre el encabezado, y su primer arábigo es el `2.`. `an1_markers` lo emite ahora en el régimen
+  `vagga_romano` cuando el primer arábigo del vagga es un `2` — el vagga pasa de 9 a **10**, que es
+  lo que cuenta el CST. Es el único caso en los 38 vaggas de Eka y Duka, y los marcadores de
+  A ii–A v no se mueven (270 · 272 · 124 · 80 · 90 · 100 · 218 · 22, idénticos).
+
+- **Los «marcadores de rango» no eran rangos: son CABEZAS DE TIRADA.** El vagga 20 del Eka imprime
+  `1, 2, 10, 14, 18, 22, 32, 39, 47, 55, 63, 192` y entre ellos va `…pe…`: PTS **numera los 192
+  suttas del vagga en su propio sistema** y sólo escribe el número donde empieza cada tirada
+  elidida. Contar los marcadores daba «12 suttas» y era leer mal la página.
+
+- **Con eso, el lado PTS de A i queda resuelto por una regla de dos líneas**: la fila cuyo
+  `DPR Ref` dice `(vagga v, sutta n)` cae en **el último marcador de v con número ≤ n**, que es
+  exactamente como se cita el impreso.
+
+  | | filas | resuelve | y la página coincide con el Excel (±1) |
+  |---|--:|--:|--:|
+  | Eka | 159 | **159** | **158** |
+  | Duka | 111 | **110** | **110** |
+
+  La única que falla es `2.19`, la fila fundida conocida (`Raw ID = «AN 2.19(*) + AN 3.29(*):
+  Adhikaraṇa 9 + Andha»`), que es además una de las claves duplicadas que `check_integrity` lleva
+  señalando desde el principio.
+
+*Consecuencia*: **A i no está bloqueado por el lado de PTS.** Lo que queda por resolver es el lado
+CST, y sólo en la cola.
 
 **Fase B — el Duka entero y los doce primeros vaggas del Eka.**
 Es la mitad limpia: vaggas emparejados por nombre, cuentas coincidentes, y el `DPR Ref` dando el

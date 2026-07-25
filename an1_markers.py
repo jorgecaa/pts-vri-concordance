@@ -207,6 +207,7 @@ def collect_an1(pages):
     **corrido** del nipāta y el vagga se deja a `None` (lo fija después el índice de Morris).
     """
     out, nip, vag, last_sutta, bloque = [], None, None, 0, None
+    abre_vagga = None
     for pg in sorted(pages):
         for ln, kind, val, ind in find_markers_an1('\n'.join(pages[pg])):
             if kind == 'nipata':
@@ -229,6 +230,13 @@ def collect_an1(pages):
                                         'line': ln, 'from_range': n1 is not None})
                 else:
                     vag = roman_to_int(a)
+                    # El encabezado ABRE el primer sutta del vagga, y cuando ese sutta es el
+                    # primero de todo el nipāta PTS **no lo numera**: el Duka arranca en A i 47
+                    # con `DUKA-NIPĀTA.` + `I.` y el texto seguido, y su primer arábigo es el `2.`.
+                    # Sin emitirlo, el vagga cuenta 9 suttas donde tiene 10 y parece una fusión
+                    # editorial que no existe. Se anota el sitio y sólo se emite si el primer
+                    # arábigo que llega es un `2` (falta exactamente uno, que es lo observado).
+                    abre_vagga = (pg, ln, vag)
             elif kind == 'bloque':
                 bloque = (pg, ln)
             elif kind == 'separador':
@@ -254,6 +262,12 @@ def collect_an1(pages):
                     continue          # aquí los arábigos a sangría 5 son PÁRRAFOS, no suttas
                 if reg == 'vagga_romano' and ind not in SUTTA_INDENT:
                     continue
+                if reg == 'vagga_romano' and abre_vagga is not None:
+                    if val == 2 and abre_vagga[2] == vag:
+                        out.append({'nipata': nip, 'vagga': vag, 'num': 1,
+                                    'page': abre_vagga[0], 'line': abre_vagga[1],
+                                    'sin_numero': True})
+                    abre_vagga = None
                 if reg == 'corrido' and ind < MIN_INDENT_CENTRED:
                     continue
                 out.append({'nipata': nip, 'vagga': vag, 'num': val, 'page': pg, 'line': ln})
