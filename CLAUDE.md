@@ -129,7 +129,7 @@ el `Sutta #` del Excel usa **notación DPR**. El aligner definitivo (`validador_
 por contenido: Excel(DPR) → `massive.tsv` (`cst_paranum`) → **XML VRI** (`romn/*.mul.xml`, párrafos
 `<p n="N">`) → texto CST exacto; lado PTS por marcadores DB casando contra el **canónico** (=nº
 corrido PTS). Con alineación exacta, CONFIRMADO = concordancia ∧ Gemini (el gate de cobertura sobra).
-**SN V 610/610, SN I 271/271 y SN II 257/257 CERRADOS 🔒, SN III 331/333 (2026-07-25)**; las líneas de `PTS Ref` recalibradas
+**SN V 610/610, SN I 271/271 y SN II 257/257 CERRADOS 🔒, SN III 332/333 (2026-07-25)**; las líneas de `PTS Ref` recalibradas
 contra el marcador real de la BD (`calibrate_sn5_lines.py` / `calibrate_sn1_lines.py`, exactas al
 100%). Cada volumen tiene **su propia gramática de marcadores** (`sn1_markers.py`: `§ N.` numerado por
 vagga; `sn2_markers.py` / `sn3_markers.py`: `N (M) Nombre` sin puntos, con S iii añadiendo nombre

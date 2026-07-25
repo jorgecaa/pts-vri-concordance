@@ -61,6 +61,30 @@ def build_vri_index():
     return _build_vri(VRI)
 
 
+def build_cst_by_title(path=VRI):
+    """`título del subhead` → texto completo del bloque, para casar por TÍTULO cuando el
+    `cst_paranum` del concordance apunta a otro sitio.
+
+    Hace falta en el Jhāna-saṃyutta: sus 10 series van colapsadas (`n=696-701`
+    «Kallitamūlakaārammaṇasuttādichakkaṃ», `n=707-710` «Gocaramūlakaabhinīhāra…») y el concordance
+    manda varias filas al bloque de la serie **ṭhiti-**. Pero el título del subhead **nombra la
+    serie** y es casi idéntico al `Sutta Name` del Excel, así que el título resuelve lo que el
+    paranum no.
+    """
+    body = ET.parse(path).getroot().find('.//body')
+    out, title = {}, None
+    for el in body.iter():
+        if el.tag != 'p':
+            continue
+        rend = el.get('rend')
+        if rend == 'subhead':
+            title = ''.join(el.itertext()).strip()
+        elif rend in _TEXT_RENDS and title:
+            out.setdefault(title, '')
+            out[title] += ' ' + ''.join(el.itertext())
+    return out
+
+
 def build_cst_group_items(path=VRI):
     """`(título del grupo, nº de ítem)` → texto, para los grupos CST cuyos miembros van como
     ítems `(N)` dentro de un solo `subhead`.
@@ -383,6 +407,7 @@ def main():
         return
 
     groups = build_cst_group_items()
+    by_title = build_cst_by_title()
     by_page = {}
     for (sam, num), q in pts.items():
         by_page.setdefault((sam, q['page']), []).append(q)
@@ -406,6 +431,15 @@ def main():
         if ditthi_hit:
             s = vri.get(ditthi_hit[0])
             h = (ditthi_hit[0], ditthi_hit[1], h[2] if h else None)
+        elif s is not None and _name_score(e['name'], h[1]) == 0:
+            # El paranum apunta a un bloque cuyo título NO tiene NADA que ver con el de la fila
+            # (Jhāna-saṃyutta: manda varias series a la de «ṭhiti-»). Solo entonces se busca el
+            # subhead que sí la nombra, y se exige coincidencia CASI EXACTA: con un umbral laxo la
+            # regla se dispara en decenas de filas cuyo paranum era correcto.
+            best = max(((t, _name_score(e['name'], t)) for t in by_title), key=lambda x: x[1],
+                       default=(None, 0))
+            if best[1] >= 100:
+                s = {'title': best[0], 'text': by_title[best[0]]}
         if p and not s and (e['sam'], e['inner']) in CST_GROUP:
             # el CST agrupa lo que PTS numera: el ítem (N) del grupo es la posición (M) del
             # marcador PTS. El grupo se FIJA por título (no se busca): hay varios grupos con los
