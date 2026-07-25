@@ -154,6 +154,25 @@ def inv_nombre(verbose=False, quick=False):
     return mal
 
 
+@check('sin_mojibake',
+       'Seis filas de AN traían «á¹hāna» donde debe leerse «Ṭhāna»: a la Ṭ (U+1E6C) se le perdió '
+       'el último byte en la fuente. Un nombre así no casa con nada y el fallo se atribuye al '
+       'alineador en vez de al dato.')
+def inv_mojibake(verbose=False, quick=False):
+    rows, _ = _excel()
+    # El segundo carácter debe estar en el rango de un byte de continuación leído como latin-1
+    # (U+0080-U+00BF). Con un rango más amplio se capturaba el español normal: en «Página», la «á»
+    # va seguida de «g», y una comprobación que grita en falso acaba ignorándose.
+    moji = re.compile('[\u00c3\u00c2\u00e1\u00e2][\u0080-\u00bf]')
+    mal = []
+    for r in rows:
+        for col in ('Sutta Name', 'Section', 'Detail'):
+            v = str(r.get(col) or '')
+            if moji.search(v):
+                mal.append(f"{r.get('Nikaya')} {r.get('Sutta #')} [{col}] {v[:38]!r}")
+    return mal
+
+
 @check('clave_sutta_no_duplicada',
        'Tras el defecto del importador quedaron 36 claves «Sutta #» duplicadas dentro de un mismo '
        'volumen, y con ellas es imposible emparejar por clave.')

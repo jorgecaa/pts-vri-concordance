@@ -139,3 +139,39 @@ NOTAS DE MORRIS QUE AFECTAN AL RECUENTO (Preliminary Remarks)
 - Morris prefiere en general las lecturas **sinhalesas** a las birmanas.
 - MSS nuevos de este volumen: B. K. 122, B. K. 123 (birmanos, King's Library) y S. M.
   (sinhalés, en su propia colección).
+
+================================================================================
+ALINEADOR DEL CATUKKA — auditoría previa a la API (2026-07-25)
+================================================================================
+
+`validador_an2_catukka.py`, sobre `an1_markers` + `an_names` (mismo régimen que el Tika).
+
+| comprobación | resultado |
+|---|---|
+| arranques de vagga (índice **corregido**) | **26/26** |
+| filas alineadas con sutta del CST | 273/275 |
+| nombre PTS ≡ título CST | **271/275 (99 %)** |
+| ordinal (dígito PTS ≡ `paṭhama`/`dutiya`) | **54/55** |
+| página del marcador ≡ página del Excel (±1) | **272/275 (99 %)** |
+
+**Tres defectos del dato que salieron por el camino:**
+
+1. **Mojibake**: seis filas de AN traían `á¹hāna` donde debe leerse `Ṭhāna` — a la `Ṭ` (U+1E6C) se
+   le perdió el último byte **en la fuente** (está también en `Raw ID`). Reparado el nombre; el
+   `Raw ID` se deja intacto porque es el registro de procedencia. Añadida la invariante
+   `sin_mojibake` a `check_integrity.py`.
+2. **El marcador nº 64 se perdió en el OCR**: la BD salta de `63.` (p70,12) a `65.` (p71,9). El
+   texto del sutta sí está — p71,7 enumera matar, robar, mentir y adulterio, los cuatro que llevan
+   al *niraya*, que es el nombre que le da el Excel. La fila `4.64` queda sin marcador.
+3. **`4.257` está DUPLICADO** (`Māluṅkyāputta` y `Ājānīya 2`, ambos en p251): dos suttas distintos
+   con el mismo número. Ninguno recibe sutta del CST. Ya lo señalaba `check_integrity`.
+
+**Afinado el analizador de nombres** (`an_names`), con dos reglas que valen para todo AN:
+
+- **Cada variante lleva SU propio ordinal**, y el bueno es el de la que casa con el CST. Tomar el
+  último dígito de la línea se equivoca en las dos direcciones: en `Paṭipadā 4 [Khama 1]` ≡
+  `4. Paṭhamakhamasuttaṃ` manda el **1 del corchete**, pero en `Magga 1 [Bālapaṇḍita 4]` ≡
+  `5. Paṭhamamaggasuttaṃ` manda el **1 del nombre principal** — el número del corchete pertenece a
+  la *otra* numeración, la del vagga Bālapaṇḍita.
+- **No todo lo que parece un ordinal lo es**: `Dasamaggasuttaṃ` empieza por `dasama` (el ordinal de
+  10) pero es el nombre *Dasamagga*. Se prueban las dos lecturas del título.
