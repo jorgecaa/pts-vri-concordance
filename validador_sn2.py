@@ -10,14 +10,17 @@ Diferencias propias de S ii frente a S i / S v:
 2. **La clave de emparejamiento es `(saṃyutta, nº corrido)`** — que es justo la notación que Feer
    propone en su introducción («XII. 25. 4» = saṃyutta, sutta, párrafo) y la que usa el `Sutta #`
    del Excel. No hace falta alineación posicional ni difusa.
-3. **El Excel está INCOMPLETO para S ii**: tiene 248 filas de las 286 de Feer. Faltan tres colas
-   peyyāla contiguas — SN 12.76–93 (incluye el *antara-peyyālaṃ*), 17.32–43 y 18.15–22 — y además
-   7 filas de SN 22.153–159 llevan el volumen mal puesto (`ii` por `iii`; SN 22 es Khandha = S iii).
-   `--faltantes` lista lo que falta con su marcador PTS y su mapeo CST.
+3. **Los grupos peyyāla van en UNA fila de nombre colectivo** (`Jātisuttādidasakaṃ` = PTS 72–81,
+   `Suvaṇṇanikkhasuttādiaṭṭhakaṃ` = 17.13–20, `Pitusuttādichakkaṃ` = 17.38–43), misma convención
+   que en SN V: 257 filas cubren los 286 suttas. Por eso `--faltantes` lista suttas sin fila PROPIA
+   y eso NO es incompletitud — son los miembros de esos grupos.
+4. **Cuando el CST agrupa lo que PTS numera** (antara-peyyālaṃ, SN 12.83–93), el ítem `(N)` del
+   grupo CST se casa con la posición `(M)` del marcador PTS: `build_cst_group_items`.
 
 Uso: python3 validador_sn2.py [--dry] [--all] [--n N] [--only 12.1,17.5] [--faltantes]
 """
 import csv, os, re, sqlite3, sys, json
+import xml.etree.ElementTree as ET
 from collections import Counter
 
 import sutta_hash as sh
@@ -40,8 +43,42 @@ FEER = [(12, 'Nidāna', 93, 1), (13, 'Abhisamaya', 11, 133), (14, 'Dhātu', 39, 
         (21, 'Bhikkhu', 12, 273)]
 
 
+# Correspondencia estructural verificada a mano (S ii 130–133 y el XML VRI): el *antara-peyyālaṃ*
+# de PTS son 12 suttas numerados (82 Satthā, 83 Sikkhā … 93 Appamādo — su propio uddāna dice
+# «Appamādena dvādasāti»), mientras el CST reúne del 83 al 93 en un solo bloque
+# `2-12. Sikkhāsuttādipeyyālaekādasakaṃ` cuyos ítems (2)…(12) son exactamente la posición `(M)`
+# del marcador PTS. Se fija por título porque hay otros grupos con los mismos nºs de ítem.
+CST_GROUP = {(12, k): '2-12. Sikkhāsuttādipeyyālaekādasakaṃ' for k in range(83, 94)}
+
+
 def build_vri_index():
     return _build_vri(VRI)
+
+
+def build_cst_group_items(path=VRI):
+    """`(título del grupo, nº de ítem)` → texto, para los grupos CST cuyos miembros van como
+    ítems `(N)` dentro de un solo `subhead`.
+
+    Hace falta en el *antara-peyyālaṃ*: PTS imprime `83 (2) Sikkhā` … `93 (12) Appamādo` como 11
+    suttas numerados, mientras el CST los mete en `2-12. Sikkhāsuttādipeyyālaekādasakaṃ` con los
+    ítems `(2)`…`(12)`. La **posición `(M)` del marcador PTS es el nº de ítem del CST**, así que el
+    emparejamiento es exacto y mecánico (no hay que adivinar nada).
+    """
+    body = ET.parse(path).getroot().find('.//body')
+    out, title = {}, None
+    for el in body.iter():
+        if el.tag != 'p':
+            continue
+        rend = el.get('rend')
+        if rend == 'subhead':
+            title = ''.join(el.itertext()).strip()
+        elif rend in _TEXT_RENDS and title:
+            t = ''.join(el.itertext()).strip()
+            m = re.match(r'[‘"\(]*\((\d+)\)', t)
+            if m:
+                out.setdefault((title, int(m.group(1))), '')
+                out[(title, int(m.group(1)))] += ' ' + t
+    return out
 
 
 def build_massive(prefix='sn2.'):
@@ -149,14 +186,23 @@ def main():
                   f' CST: {h[1][:34] if h else "(no en massive)"}')
         return
 
+    groups = build_cst_group_items()
     tasks, no_cst, name_ok, page_ok = [], [], 0, 0
     for e in entries:
         p = pts.get((e['sam'], e['inner']))
         h = massive.get((e['sam'], e['inner']))
         s = vri.get(h[0]) if h else None
+        if p and not s and (e['sam'], e['inner']) in CST_GROUP:
+            # el CST agrupa lo que PTS numera: el ítem (N) del grupo es la posición (M) del
+            # marcador PTS. El grupo se FIJA por título (no se busca): hay varios grupos con los
+            # mismos números de ítem y buscar por parecido de texto elige el equivocado.
+            gt = CST_GROUP[(e['sam'], e['inner'])]
+            txt = groups.get((gt, p['pos']))
+            if txt:
+                s = {'title': f'{gt} — ítem ({p["pos"]})', 'text': txt}
         if not (p and s):
             no_cst.append(e); continue
-        if h[2] and abs(h[2] - p['page']) <= 1:
+        if h and h[2] and abs(h[2] - p['page']) <= 1:
             page_ok += 1
         if _stem(p['name']) and _stem(p['name'])[:4] in _stem(s['title']):
             name_ok += 1

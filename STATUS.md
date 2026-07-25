@@ -46,14 +46,16 @@ Use this terminology consistently across the project:
 |--------|--------:|-----------:|----------:|-------:|
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
-| SN | 1806 | 1221 | 585 | 67.6% |
+| SN | 1815 | 1232 | 583 | 67.9% |
 | AN | 1738 | 1 | 1737 | 0.1% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6090** | **1408** | **4682** | **23.1%** |
+| **TOTAL** | **6099** | **1419** | **4680** | **23.3%** |
 
-> Cifras al **2026-07-25**, tras cerrar SN I (271/271), SN II (246/248) y SN V (610/610). La hoja
-> `Summary` del Excel está alineada. Desglose de SN: SN I 271 ✅ + SN II 246 ✅ + SN V 610 ✅
-> (validador Modelo B) + SN IV 94 (Helmer legado); **SN III** sigue `DB_VERIFIED` → PENDIENTE.
+> Cifras al **2026-07-25**, tras cerrar SN I (271/271), SN II (257/257) y SN V (610/610). La hoja
+> `Summary` del Excel está alineada. Desglose de SN: **S i 271 ✅, S ii 257 ✅, S v 610 ✅**
+> (validador Modelo B) + S iv 94/344 (Helmer legado); **S iii** sigue `DB_VERIFIED` → PENDIENTE.
+> El total pasó de 6090 a **6099 filas**: −1 (`12.74`, división solo-CST borrada) y +10 (la
+> expansión de `12.75` en los 11 suttas que PTS numera). La columna `#` se renumeró.
 
 > MN 14/38/64 (antes `OK+RTE`/PENDIENTE por errores de API transitorios) fueron re-corridos por
 > Helmer DeepSeek el 2026-07-24 → **3/3 APPROVE** → `HELMER_APPROVED`/CONFIRMADO (cacheados).
@@ -122,8 +124,9 @@ Use this terminology consistently across the project:
   `samyutta-vol-I-info.txt`. Los viejos `parse_sn_grammar.py` / `helmer_sn1_pilot.py` quedan
   SUPERADOS.
 
-### SN II — Samyutta Nikaya vol 2 (S ii) — 248 filas / 286 suttas — CERRADO 🔒 246/248
-- **Estado 2026-07-25: 246 CONFIRMADO (`VALIDADOR`) + 2 PENDIENTE** (a arbitraje, ver abajo).
+### SN II — Samyutta Nikaya vol 2 (S ii) — 257 filas / 286 suttas — CERRADO 🔒 257/257
+- **Estado 2026-07-25: 257/257 CONFIRMADO** — 246 `VALIDADOR` + 11 `VALIDADOR_HUMANO`
+  (el *antara-peyyālaṃ*, ver abajo).
   Antes: 255 filas todas `DB_VERIFIED` → PENDIENTE.
 - **El front matter de Feer (`samyutta-vol-II-info.txt`) fija el lado PTS sin LLM**: 10 saṃyuttas
   (numerados **XII–XXI** en la notación corrida), **27 vaggas, 286 suttas**
@@ -154,17 +157,42 @@ Use this terminology consistently across the project:
   `cst_p_page = 3.0183…3.0187` (vol 3, mismas páginas), los títulos CST casan uno a uno, S ii 183
   habla de *kappā* (Anamatagga) mientras S iii 183 trata de rūpaṃ/attā, y 152+7 = **159**, el total
   canónico de SN 22.
-- **Líneas: 39 corregidas → 243/243 exactas**; y **14 páginas** corregidas con doble evidencia
+- **Líneas: 39 corregidas → 254/254 exactas**; y **14 páginas** corregidas con doble evidencia
   (marcador + ancla `cst_p_page` de acuerdo entre sí y contra el Excel): 12.14, 12.24, 12.25, 12.42,
   12.43, 12.55, 13.5, 13.11, 14.7, 14.8, 14.27, 14.31, 18.3, 21.2 (`calibrate_sn2_lines.py`).
-- **2 PENDIENTE a arbitraje** — `12.74` «Dutiyasatthusuttādidasakaṃ» y `12.75`
-  «Sikkhāsuttādipeyyālaekādasakaṃ»: filas de grupo del **antara-peyyālaṃ**, donde PTS (12 suttas,
-  82–93) y CST/DPR (22: 82, 83–92, 93–103) **no coinciden** — PTS elide el grupo *Dutiyasatthu*
-  entero. Sus `Sutta #` deberían ser 12.83 y 12.93 en notación DPR, pero el concordance no lo
-  corrobora (`cst_paranum` vacío en ambos rangos), así que no se auto-corrigen.
 - Fuentes: `sn2_markers.py`, `validador_sn2.py`, `reid_sn2.py`, `reconcile_sn2.py`,
-  `calibrate_sn2_lines.py`, `fix_sn2_vol_labels.py`, `samyutta-vol-II-info.txt`. `audit_sn2.py`
-  queda SUPERADO.
+  `calibrate_sn2_lines.py`, `fix_sn2_vol_labels.py`, `fix_sn2_antarapeyyala.py`,
+  `samyutta-vol-II-info.txt`. `audit_sn2.py` queda SUPERADO.
+
+### El *antara-peyyālaṃ* de SN 12 (S ii 130–133) — verificado contra el impreso
+
+Dos filas venían con la forma del **CST**, no la de PTS. Se resolvió leyendo lo que PTS declara
+(`fix_sn2_antarapeyyala.py`, decisión de Jorge 2026-07-25):
+
+- **`12.74 «Dutiyasatthusuttādidasakaṃ»` BORRADA — no es un sutta en PTS.** El CST parte el sutta
+  PTS 82 «Satthā» en `1. Satthusuttaṃ` (ítem jarāmaraṇa) + `2-11. Dutiyasatthusuttādidasakaṃ`
+  (ítems jāti…saṅkhāra). PTS imprime todo como UN sutta y lo dice literalmente: tras el §1 escribe
+  **`Suttanto eko`** («un solo sutta», S ii 130 L28) y sigue con `Sabbesam evam peyyālo` y los
+  §§2–11 (S ii 131 L1–28). Su uddāna remata: «Satthā Sikkhā … **Appamādena dvādasāti**» = **doce**
+  suttas, y «Pare te dvādasa honti, suttā dvattiṃsasatāni» = doce (o 132 contando por ítem). Sin
+  referencia PTS propia, la fila no pertenece a una concordancia de PTS.
+  > ⚠️ **No era una elisión** — el texto SÍ está en PTS; lo que no existe es la división en suttas.
+  > Una nota anterior de este documento decía «PTS elide el grupo Dutiyasatthu entero» y era falsa
+  > en las dos mitades. **Distinto del caso de SN V**, donde PTS sí numera los suttas
+  > (`122--132. (2--12)`, `143--154. (1--12)`) y elide solo el *texto* con `vitthāretabbo`: ahí las
+  > 8 filas siguen bien.
+- **`12.75 «Sikkhāsuttādipeyyālaekādasakaṃ»` EXPANDIDA a 11 filas (12.83–12.93).** Aquí el CST
+  agrupa pero **PTS numera**: `83 (2) Sikkhā`, `84 (3) Yogo`, … `93 (12) Appamādo`, cada uno con su
+  marcador (a diferencia de 12.72, 17.13 o 17.38, donde PTS sí imprime rango). Las 11 llevan su
+  página y línea reales.
+- **Las 11 son `VALIDADOR_HUMANO` por evidencia MECÁNICA, no por LLM**: el nº de ítem del grupo CST
+  **es** la posición `(M)` del marcador PTS, y la palabra clave del marcador aparece **literal** en
+  su ítem (11/11 verificado: sikkhā, yogo, chando, ussoḷhī, appaṭivāni, ātappa, viriya, sātacca,
+  sati, sampajañña, appamāda). El texto PTS son 4 tokens (`ºyogo karaṇīyo ║ (1-11)`), así que
+  Gemini no tiene qué cotejar y sus 7 REJECT son falsos negativos por elisión. El emparejamiento
+  lo hace `build_cst_group_items` + `CST_GROUP` en `validador_sn2.py`, **fijando el grupo por
+  título**: hay varios grupos con los mismos nºs de ítem y buscarlo por parecido de texto elige el
+  equivocado (se comprobó: daba `Dutiyasatthu…` y `Jāti…`).
 
 ### SN III — Samyutta Nikaya vol 3 (S iii) — 326 suttas — CERRADO 🔒
 - Excel: `DB_VERIFIED`

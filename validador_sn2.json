@@ -4426,5 +4426,203 @@
   },
   "gemini": "APPROVE",
   "reason": "Both passages share the exact same Rāhula discourse with minor orthographic and peyyāla differences."
+ },
+ {
+  "num": "12.83",
+  "name": "Sikkhā",
+  "cst_title": "2-12. Sikkhāsuttādipeyyālaekādasakaṃ — ítem (2)",
+  "legacy": "DB_VERIFIED",
+  "pts_name": "Sikkhā",
+  "pts_page": 131,
+  "pts_line": 29,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.69,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Core teaching on knowing aging and death matches, despite edition peyyāla difference."
+ },
+ {
+  "num": "12.84",
+  "name": "Yogo",
+  "cst_title": "2-12. Sikkhāsuttādipeyyālaekādasakaṃ — ítem (3)",
+  "legacy": "DB_VERIFIED",
+  "pts_name": "Yogo",
+  "pts_page": 131,
+  "pts_line": 33,
+  "from_range": false,
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 1.0,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Core narratives and contexts are completely different texts."
+ },
+ {
+  "num": "12.85",
+  "name": "Chando",
+  "cst_title": "2-12. Sikkhāsuttādipeyyālaekādasakaṃ — ítem (4)",
+  "legacy": "DB_VERIFIED",
+  "pts_name": "Chando",
+  "pts_page": 132,
+  "pts_line": 1,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 1.0,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Editions match despite CST including peyyāla expansion."
+ },
+ {
+  "num": "12.86",
+  "name": "Ussoḷhī",
+  "cst_title": "2-12. Sikkhāsuttādipeyyālaekādasakaṃ — ítem (5)",
+  "legacy": "DB_VERIFIED",
+  "pts_name": "Ussoḷhī1",
+  "pts_page": 132,
+  "pts_line": 3,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 0.5,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "Editions match despite CST including standard peyyala elisions."
+ },
+ {
+  "num": "12.87",
+  "name": "Appaṭivāni",
+  "cst_title": "2-12. Sikkhāsuttādipeyyālaekādasakaṃ — ítem (6)",
+  "legacy": "DB_VERIFIED",
+  "pts_name": "Appaṭivāni",
+  "pts_page": 132,
+  "pts_line": 5,
+  "from_range": false,
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 1.0,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely different content and textual context between editions"
+ },
+ {
+  "num": "12.88",
+  "name": "Atappam",
+  "cst_title": "2-12. Sikkhāsuttādipeyyālaekādasakaṃ — ítem (7)",
+  "legacy": "DB_VERIFIED",
+  "pts_name": "Atappam",
+  "pts_page": 132,
+  "pts_line": 7,
+  "from_range": false,
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 1.0,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): The passages are entirely different texts concerning distinct doctrinal topics."
+ },
+ {
+  "num": "12.89",
+  "name": "Viriyam",
+  "cst_title": "2-12. Sikkhāsuttādipeyyālaekādasakaṃ — ítem (8)",
+  "legacy": "DB_VERIFIED",
+  "pts_name": "Viriyam",
+  "pts_page": 132,
+  "pts_line": 9,
+  "from_range": false,
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 1.0,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): The passages refer to entirely different contexts and teachings."
+ },
+ {
+  "num": "12.90",
+  "name": "Sātaccam",
+  "cst_title": "2-12. Sikkhāsuttādipeyyālaekādasakaṃ — ítem (9)",
+  "legacy": "DB_VERIFIED",
+  "pts_name": "Sātaccam",
+  "pts_page": 132,
+  "pts_line": 11,
+  "from_range": false,
+  "estado": "CONFIRMADO",
+  "validation": "VALIDADOR",
+  "gate": {
+   "cov": 1.0,
+   "thr": 0.55
+  },
+  "gemini": "APPROVE",
+  "reason": "CST expands the PTS text with standard peyyāla abbreviations."
+ },
+ {
+  "num": "12.91",
+  "name": "Sati",
+  "cst_title": "2-12. Sikkhāsuttādipeyyālaekādasakaṃ — ítem (10)",
+  "legacy": "DB_VERIFIED",
+  "pts_name": "Sati",
+  "pts_page": 132,
+  "pts_line": 13,
+  "from_range": false,
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 1.0,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Completely distinct texts regarding context and content."
+ },
+ {
+  "num": "12.92",
+  "name": "Sampajaññaṃ",
+  "cst_title": "2-12. Sikkhāsuttādipeyyālaekādasakaṃ — ítem (11)",
+  "legacy": "DB_VERIFIED",
+  "pts_name": "Sampajaññaṃ",
+  "pts_page": 132,
+  "pts_line": 15,
+  "from_range": false,
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 1.0,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): The passages are entirely different suttas with divergent content."
+ },
+ {
+  "num": "12.93",
+  "name": "Appamādo",
+  "cst_title": "2-12. Sikkhāsuttādipeyyālaekādasakaṃ — ítem (12)",
+  "legacy": "DB_VERIFIED",
+  "pts_name": "Appamādo",
+  "pts_page": 132,
+  "pts_line": 17,
+  "from_range": false,
+  "estado": "PENDIENTE",
+  "validation": "REVISAR",
+  "gate": {
+   "cov": 0.05,
+   "thr": 0.55
+  },
+  "gemini": "REJECT",
+  "reason": "desacuerdo (gate=APPROVE / gemini=REJECT): Different texts; one is a summary verse and the other is an expanded passage."
  }
 ]
