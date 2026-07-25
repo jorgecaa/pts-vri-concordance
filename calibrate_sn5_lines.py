@@ -3,8 +3,10 @@
 
 La referencia del Excel es `S v <página>,<línea>`; la línea no es fiable (viene del
 raspado, no del texto). Aquí se recalcula contra el texto real de la BD (libro 16):
-se reusa la MISMA cadena de resolución del pipeline VRI (nombre fuerte → nº corrido →
-nombre laxo), que devuelve la posición exacta del marcador del sutta, y se compara.
+se reusa la MISMA asignación del pipeline VRI —global, inyectiva y monótona
+(`assign_volume`)—, que devuelve la posición exacta del marcador de cada sutta, y se
+compara. Antes se repetía aquí la cadena de heurísticas por fila, que no es inyectiva:
+dos filas podían apuntar al mismo marcador y una recibía la línea de su vecina.
 
 Hallazgo (2026-07-25): las líneas del Excel NO son posiciones de línea reales — se
 agolpan en 2–8 sobre páginas de ~29 líneas (distribución imposible), y donde
@@ -26,10 +28,20 @@ import sutta_hash as sh
 from openpyxl import load_workbook
 
 from validador_sn5 import build_markers, locate_by_name, locate_for, ordinal_of
-from validador_sn5_vri import DB, SN5_BOOK, build_massive, build_vri_index
+from validador_sn5_vri import (DB, SN5_BOOK, build_massive, build_vri_index, assign_volume,
+                               excel_entries as vri_entries)
 
 XLSX = 'PTS_Reference_Complete_Canon.xlsx'
 REF_RE = re.compile(r'^(S\s+v\s+)(\d+)(?:\s*,\s*(\d+))?\s*$')
+
+
+def locate_all(cur, mm, canon2para, vri):
+    """`Sutta # → (página, línea)` con la MISMA asignación global que el validador.
+
+    Antes esto repetía la cadena de heurísticas por fila, que no es inyectiva: dos filas podían
+    apuntar al mismo marcador y una recibía la línea de su vecina.
+    """
+    return assign_volume(vri_entries(), cur, mm, canon2para, vri)
 
 
 def locate(cur, e, ctitle, mm):
@@ -55,6 +67,7 @@ def main():
     vri, canon2para = build_vri_index(), build_massive()
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row; cur = conn.cursor()
     mm = build_markers(cur)
+    assigned = locate_all(cur, mm, canon2para, vri)
 
     wb = load_workbook(XLSX)
     ws = wb['Complete Canon']
@@ -72,10 +85,8 @@ def main():
         inner = int(canon.split('.')[1]) if '.' in canon and canon.split('.')[1].isdigit() else None
         e = {'page': v[ci['PTS Page']], 'inner': inner}
 
-        hit = canon2para.get(canon)
-        s = vri.get(hit[0]) if hit else None
-        at, src = locate(cur, e, s['title'], mm) if s else (None, None)
-        src_c[src or 'sin-marcador'] += 1
+        at, src = assigned.get(str(v[ci['Sutta #']])), 'dp'
+        src_c[src if at else 'sin-marcador'] += 1
         if not at:
             unresolved.append((str(v[ci['Sutta #']]), canon))
             continue

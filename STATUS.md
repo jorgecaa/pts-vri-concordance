@@ -532,6 +532,20 @@ exactamente la diferencia (1190 frente a 1208 = −18):
 último número, y el inventario de marcadores corregido sin que cambie ninguna asignación (610/610
 asignadas, hueco de inyectividad 0).
 
+**Excel actualizado (2026-07-25).** `calibrate_sn5_lines.py` pasa a usar la misma asignación global
+que el validador (antes repetía la cadena de heurísticas por fila, que no es inyectiva): **41 líneas
+corregidas → 577/577 exactas**. Estado de las líneas en los cuatro volúmenes contrastados:
+
+| | S i | S ii | S iii | S v |
+|---|---|---|---|---|
+| líneas exactas | 271/271 | 254/254 | 316/316 | 577/577 |
+| sin nº de línea | 0 | 1 | 0 | 1 |
+
+Las 2 filas sin línea (`S ii 15.18 Putta`, `S v 46.66 Uddhumātaka`) caen en el bucket de **página en
+disputa** que la calibración no toca por diseño: la primera es miembro de un marcador de rango y en
+la segunda el nombre del marcador no casa. No son un residuo del pipeline, sino la política de no
+reescribir una página apoyándose solo en la línea.
+
 ### Fase 0 — prueba de aceptación común (sin API)
 
 `audit_injectivity.py`: para un volumen dado, lista los marcadores compartidos y calcula el
