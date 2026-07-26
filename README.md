@@ -1,227 +1,205 @@
-# PTS Reference Concordance — NOTAS DE DESARROLLO
+# A Concordance of the Pāli Canon: Pali Text Society ↔ Chaṭṭha Saṅgāyana
 
-## ✅ Validaciones Completadas (NO MODIFICAR)
+**Jorge Contreras** · released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) (public domain dedication)
 
-### DN (Digha Nikaya) — 34/34 suttas — CERRADO 🔒
-- **Paginas**: verificadas contra contenido BD (100%)
-- **Lineas**: verificadas contra marcadores PTS (100%)
-- **CST cross-validation**: DeepSeek + CollateX + DPD — 34/34 APPROVE
-- **RTE cross-reference**: 32/34 confirmadas por edicion Royal Thai
-- **Validacion**: HELMER_APPROVED en columna Validation del Excel
-- **NO MODIFICAR** — cualquier cambio requiere re-ejecutar validacion completa
+A row-by-row concordance between two editions of the Pāli Canon. Each entry names one textual unit
+and gives its locus in both witnesses: the roman-script edition of the **Pali Text Society** (`Ee`)
+and the **Chaṭṭha Saṅgāyana** edition published by the Vipassana Research Institute (`Be`, commonly
+"CST").
 
----
+**6,098 entries. 5,232 of them are collatable, and every one has been collated.** The remaining 866
+are accounted for individually rather than left blank — see [Scope](#scope-and-what-is-not-here).
 
-## ⚠️ Fuente de verdad absoluta
+| Nikāya | Entries | Confirmed | Other |
+|---|--:|--:|--:|
+| Dīgha | 34 | 34 | — |
+| Majjhima | 152 | 152 | — |
+| Saṃyutta | 1,814 | 1,814 | — |
+| Aṅguttara | 1,737 | 1,737 | — |
+| Khuddaka | 2,361 | 1,495 | 866 |
+| **Total** | **6,098** | **5,232** | **866** |
 
-**El contenido PTS de la base de datos `tipitaka.sqlite` (edicion 'mula') es la unica
-fuente de verdad.** Cualquier otra fuente — blog, CST, SuttaCentral, referencias
-secundarias — es auxiliar y debe validarse contra el texto PTS real.
+## The file
 
-- El blog (`palistudies.blogspot.com`) es una referencia secundaria util pero
-  puede contener errores de pagina, numeracion o transcripcion.
-- Las referencias CST usan una numeracion diferente a la PTS en muchos casos.
-- El HEAD de las paginas PTS puede estar corrupto, vacio o contener informacion
-  de otra pagina. No es confiable sin verificacion cruzada con el cuerpo.
-- **Siempre validar contra `unitext` (cuerpo de la pagina).**
+`PTS-CST_Concordance_of_the_Pali_Canon.xlsx` — three sheets:
 
----
+- **About** — authorship, licence, sources, method, conventions and caveats, so the file can be read
+  without this document.
+- **Concordance** — the 6,098 entries.
+- **Summary** — counts by Nikāya.
 
-## ⚠️ Principio fundamental: NO HAY HOMOGENEIDAD
+### Columns
 
-Cada Nikaya (y a veces cada libro dentro de un Nikaya) tiene su propia estructura
-de marcadores, numeracion y convenciones editoriales. **No se puede aplicar un
-parser universal.** Cada uno requiere un tratamiento especifico.
+| Column | Meaning |
+|---|---|
+| `Nikāya` | DN, MN, SN, AN, KN |
+| `Work` | siglum of the work, following the *Critical Pāli Dictionary* |
+| `Section` | the work spelled out, where one siglum covers more than one |
+| `Number` | traditional numbering of the entry |
+| `Title` | name of the unit as the source table gives it |
+| `Ee volume`, `Ee page` | PTS volume (roman) and page |
+| `PTS reference` | the citation proper |
+| `CST reference` | the locus in the VRI XML |
+| `Verses` | strophe range, for works in verse |
+| `Type` | `Sutta`, or `Section Header` for a rubric of the printed edition |
+| `Status` | `Confirmed` or `Pending` |
+| `Evidence` | how the entry was established |
+| `Notes` | an editorial fact, where there is one |
 
----
+### `Evidence` values
 
-## Estructura por Nikaya
+| Value | Entries | Meaning |
+|---|--:|---|
+| `Collated (automatic agreement)` | 3,168 | both sides of the pair agreed under the collation gate |
+| `Collated (human arbitration)` | 2,062 | a disagreement resolved by hand against the printed edition |
+| `Out of scope` | 548 | the Jātaka — see below |
+| `No Ee text available` | 294 | no PTS text for that work in the source used |
+| `Deest in Ee` | 14 | the PTS edition does not print the passage |
+| `Section rubric` | 10 | not a citable unit |
+| `Cross-reference in Ee` | 2 | PTS refers the reader elsewhere instead of reprinting |
 
-### DN (Digha Nikaya) — 34 suttas, libros 6-8 — CERRADO 🔒
-- **Marcador**: Titulo del sutta en el HEAD de la pagina donde empieza
-- **Convencion PTS**: El HEAD suele tener el titulo (ej. `1. BRAHMAJALASUTTAM. (1)`)
-- **Linea de inicio**: El contenido empieza varias lineas despues del titulo
-- **Estado**: ✓ 34/34 con numero de linea (100%). Validacion cruzada CST completa.
-- **Parser usado**: `add_dn_lines.py` — busca el marcador `(N)` en HEAD + "Evam me sutam"
+## Sources
 
-### MN (Majjhima Nikaya) — 152 suttas, libros 9-11
-- **Marcador**: Numero centrado en el cuerpo del texto (ej. `82.` solo en una linea)
-- **Convencion PTS**: El numero del sutta aparece centrado en la linea donde
-  realmente empieza el sutta. Puede o no coincidir con el HEAD.
-- **HEAD**: Contiene `(N)` con el numero de sutta, PERO solo cuando el sutta
-  empieza a mitad de pagina (no en linea 1)
-- **Linea de inicio**: La linea donde aparece el numero centrado
-- **Estado**: ✓ 152/152 validados (0 errores de pagina)
-- **Parser usado**: `audit_mn_final.py` + `add_mn_lines.py`
-- **CUIDADO**: `fix_mn_pages.py` tenia 78 "correcciones" INCORRECTAS — el blog
-  tenia las paginas 100% bien. Solo faltaban numeros de linea.
+- **Ee** — the PTS roman-script edition, from a digitised text whose pagination follows the printed
+  volumes.
+- **Be** — the Chaṭṭha Saṅgāyana Tipiṭaka in the VRI XML files (`romn/*.mul.xml`), canonical text
+  only.
 
-### SN (Samyutta Nikaya) — 1,806 entradas, libros 12-16
-- **Marcadores** (varian POR VOLUMEN):
-  - **SN V** (libro 16): `GLOBAL_ID. (VAGGA_POS) Name` — CON punto tras el ID
-  - **SN II-IV** (libros 13-15): `GLOBAL_ID (VAGGA_POS) Name` — SIN punto
-  - **SN I** (libro 12): `§ N. Name` — marcadores de seccion
-  - **Peyyala**: `GLOBAL_ID Name` (sin numero de vagga)
-- **Comparticion de paginas**: ~50% de entradas comparten pagina → matching posicional secuencial
-- **Numeracion CST vs PTS**: En SN 23-34, la numeracion CST NO coincide con el
-  parrafo PTS. No usar el numero de sutta del Excel como ID de parrafo PTS.
-- **HEAD corrupto**: SN III tiene HEADs que mienten (ej. p.99 dice "ANUMANA (16)"
-  pero MN 16 esta realmente en p.101). Verificar SIEMPRE por cuerpo, no por HEAD.
-- **Peyyala abreviados**: `--pe--`, `pa`, `la` — sin marcador individual
-- **Estado**: ✓ 1,806/1,806 con referencia de pagina. ~83.7% con linea.
-- **Parser usado**: `parse_sn_grammar.py` (pyparsing) + matching posicional
+No other edition was used. In particular this concordance does not draw on the Mahāsaṅgīti, Thai
+(BUDSIR) or Sinhalese editions, and does not use the commentaries.
 
-### AN (Anguttara Nikaya) — 1,738 entradas, libros 17-21
-- **Marcador de vagga**: Numeros romanos centrados (`I.`, `II.`, `III.`...)
-- **Marcador de sutta**: `N.` seguido de texto al inicio de parrafo
-- **Numeracion**: Los numeros de sutta se REINICIAN en cada vagga. Esto hace
-  que el matching por numero de sutta sea INVIABLE sin conocer el vagga.
-- **Peyyala**: Abundantes abreviaciones en AN 1 (Ekakanipata). El blog usa
-  numeracion CST que agrupa suttas abreviados.
-- **Numeracion CST**: Los raw IDs incluyen formato `[AN N.V.S]` (nipata.vagga.sutta)
-  pero solo en ~199 de 1,738 entradas.
-- **Convencion de linea**: El sutta empieza donde aparece `N. texto`
-- **Estado**: ✓ Paginas restauradas del blog. Lineas añadidas (~82.6%).
-- **Parser usado**: `rebuild_an.py` + `add_an_lines.py` (matching posicional por pagina)
-- **CUIDADO**: Intentar mapear secuencialmente los suttas del texto PTS a las
-  entradas del Excel NO funciona porque la numeracion CST difiere de la PTS.
+## Citation conventions
 
-### KN (Khuddaka Nikaya) — 2,360 entradas, libros 22-42
-- **Libros individuales**: Khp, Dhp, Ud, It, Sn, Vv, Pv, Thag, Thig, Ja, Nidd, Patis, Ap, Bv, Cp
-- **No homogeneidad entre libros**: Cada libro tiene su propia estructura
-- **Correcciones**: 254 errores off-by-one corregidos con `fix_pts_errors.py`
-- **Validacion**: Hecha con `integrate_khuddaka.py`
-- **Lineas**: Añadidas con `add_kn_lines.py` (93.7% del canon, excluye Nett/Pet)
-- **Theragatha**: Usa fingerprints de verso (metrica/ID) para validacion
+Sigla follow the ***Critical Pāli Dictionary*** and its *Epilegomena* (Copenhagen, 1948), continued
+by Cone's *Dictionary of Pāli*. Three consequences:
 
----
+1. **Edition sigla**: `Ee` (*editio Europaea*, PTS), `Be` (Burmese, the CST), `Ce` (Sinhalese),
+   `Se` (Siamese). This is the vocabulary in which one writes `deest in Ee`.
+2. **The unit of citation follows the genre of the text.** Prose is cited by volume, page and line
+   — `M I 1,5`. Verse works are cited by **strophe or section** — `Dhp 21-32`, `Vv 12`, `Cp 3.15` —
+   because the strophe is stable across editions and the page is not.
+3. **One siglum per work**, with the volume inside the reference rather than in the siglum. This is
+   not cosmetic: a single label covering two works makes any count of that label meaningless.
 
-## Lecciones aprendidas
+### The CST reference
 
-1. **No existe parser universal**. Cada Nikaya necesita su propio pipeline.
-2. **El HEAD no es confiable**. Puede estar corrupto, vacio o apuntar a otra pagina.
-3. **La numeracion CST ≠ numeracion PTS**. Especialmente en SN y AN.
-4. **Validar con contenido, no con numeros**. El matching semantico/nombre es mas
-   robusto que asumir correspondencia numerica.
-5. **Los peyyala rompen el matching secuencial**. El blog agrupa de forma distinta
-   que el texto PTS.
-6. **Las paginas del blog no son perfectas**. Aunque MN y DN resultaron 100% correctas,
-   AN y SN necesitan validacion adicional.
-7. **DeepSeek detecta off-by-one reales**. La validacion cruzada PTS↔CST encontro
-   y corrigio errores de linea que los finders automaticos pasaron por alto.
+The `CST reference` is the paragraph number of the VRI XML, in one of five forms:
 
----
+| Form | Example | When |
+|---|---|---|
+| `file:n` | `s0301m:21` | one paragraph |
+| `file:a-b` | `s0101m:1-149` | a run of paragraphs |
+| `file:n.item` | `s0302m:73.4` | a numbered item **inside** one paragraph |
+| `file:cN` | `s0501m:c5` | a chapter, where the numbering restarts inside it |
+| `file:cN.item` | `s0512m:c3.15` | an item within such a chapter |
 
-## Base de datos
+The last three exist because **the numbered unit is not always the paragraph**. In the Khuddaka the
+paragraph numbering restarts inside each chapter; and some paragraphs contain several numbered units
+— the peyyāla of `s0302m:73` numbers its members `(2)`…`(12)` in its own text, and its uddāna counts
+twelve.
 
-- **Archivo**: `src/data/tipitaka.sqlite`
-- **Tabla `pages`**: `book_no, page_no, head, unitext, edition='mula'`
-- **Tabla `contents`**: `book_no, seq, page_no, section, title` (dispersa para no-DN)
-- **Mapa de libros**: DN=6-8, MN=9-11, SN=12-16, AN=17-21, KN=22-42
-- **UNITEXT**: Texto UTF-8 plano (no base64)
+## Method
 
----
+**There is no universal parser, and none was attempted.** Each Nikāya — often each volume — has its
+own marker conventions, and a rule fitted to the majority fails silently on the minority. Alignment
+rests on the markers the printed edition itself supplies: running numbers, colophons, chapter
+headings, uddānas.
 
-## Excel maestro — columnas de estado
+Two independent checks were required before an entry was accepted:
 
-`PTS_Reference_Complete_Canon.xlsx` (hoja *Complete Canon*) tiene dos columnas de estado, con
-**terminología uniforme** en todo el proyecto:
+- **identity** — the name or printed marker of the unit against the CST title;
+- **location** — the page, or the page and line.
 
-- **`Validation`** — procedencia fina de cada referencia (`HELMER_APPROVED`, `HELMER_REJECT`,
-  `HELMER_PTS_TRUNCATED`, `HELMER_FIXED`, `DB_VERIFIED`, `OK`, `OK+RTE`, `OK_HEAD`, `OK_NEAR`,
-  `OK_CONT`, `RTE_ONLY`, `VERSE_ONLY`, `EXTRA_CANON`, `UNVERIFIED`/`UNVERIF`).
-- **`Estado`** — resumen binario, **solo dos valores**:
-  - **CONFIRMADO**: verificado y resuelto **por Helmer (PTS↔CST) únicamente** (`Validation` ∈
-    HELMER_APPROVED / HELMER_PTS_TRUNCATED / HELMER_FIXED). **Regla: sin Helmer, nada es
-    CONFIRMADO** — verificación por BD/RTE/marcador/incipit NO basta.
-  - **PENDIENTE**: todo lo demás, incluido `DB_VERIFIED` (verificado contra BD pero sin CST). Si no
-    hay evidencia (Helmer) suficiente → PENDIENTE.
+**Content similarity was used as corroboration, never as the sole criterion.** This is the central
+methodological point. In several works an adjacent unit scores as high as the correct one:
 
-> Cifras por Nikāya y criterio detallado: ver `STATUS.md` (fuente única de estado). No dupliques
-> las cifras en otros documentos para evitar divergencias. *(Nota: el campo "**Estado**:" de las
-> fichas por Nikāya más arriba es progreso descriptivo, distinto de la columna `Estado`.)*
+- in the **Udāna** almost every sutta opens with the same formula;
+- in the **Vimānavatthu** the units come in deliberately repeated pairs, and a neighbour scores
+  0.97 against 0.95 for the correct unit;
+- in the **Niddesa**, exegetical prose that repeats itself, an unrelated chapter reaches 0.85.
 
----
+A similarity threshold in those works would confirm the wrong pair with high confidence. What
+decides there is the printed marker, or the name — the only signal that sees the `Paṭhama-`/`Dutiya-`
+ordinal distinguishing two textually identical poems.
 
-## Archivos clave
+## Verification
 
-| Archivo | Proposito |
-|---------|-----------|
-| `PTS_Reference_Complete_Canon.xlsx` | Output maestro (3 hojas). Columnas `Validation` (detalle) y `Estado` (CONFIRMADO/PENDIENTE) |
-| `extract_pts_full_table.py` | Extraccion inicial del blog |
-| `parse_sn_grammar.py` | SN — parser pyparsing + matching posicional |
-| `audit_mn_final.py` | MN — busqueda de marcadores de numero centrado |
-| `add_mn_lines.py` | MN — numeros de linea |
-| `rebuild_an.py` | AN — restauracion + lineas |
-| `fix_pts_errors.py` | KN — correcciones off-by-one |
-| `integrate_khuddaka.py` | KN — integracion + validacion |
-| `build_final_excel.py` | Construccion final del Excel con DB+RTE |
-| `helmer_100_v2.py` | 100 pruebas criticas de contenido |
-| `helmer_ptscst.py` | Validacion cruzada PTS↔CST con DeepSeek |
-| `helmer_dn_all.py` | Validacion completa DN (34 suttas) |
-| `fix_mn_pages.py` | ⚠️ CORRECCIONES INCORRECTAS — NO USAR |
+Two automated batteries cover the whole table. Neither reports a contradiction.
 
----
+| Battery | Entries | Passed | Contradictions | Undecided |
+|---|--:|--:|--:|--:|
+| DN / MN / SN / AN | 3,737 | 3,151 | **0** | 586 |
+| KN | 1,495 | 1,495 | **0** | 0 |
 
-## Pipeline de validacion recomendado
+**DN/MN/SN/AN** — the PTS reference carries page *and line*, so the battery verifies that the CST
+text begins where the entry says. Measured, at the declared line against other lines of the same
+page: median 0.90–1.00 versus 0.12–0.19. It **verifies rather than searches**: searching the page
+finds the formula somewhere else, because in the Aṅguttara the openings repeat.
 
-1. **DN**: CERRADO. No modificar.
-2. **MN**: Marcadores de numero en HEAD o cuerpo → verificar pagina + linea → DeepSeek CST
-3. **SN**: Gramatica pyparsing por volumen → matching por ID → matching posicional
-4. **AN**: Matching posicional por pagina (no secuencial global)
-5. **KN**: Per-book, usando fingerprints especificos (verso, capitulo, etc.)
+**KN** — that reference does not exist here, and content is where it discriminates least. So the
+battery asks a different question: *when you cannot verify the point, verify the order and the
+measure.* Two independent orderings — how PTS prints and how the CST numbers — must agree, and the
+two texts must advance together. A misassigned entry breaks one of them even when its text resembles
+its neighbour's, and both checks are blind to how the alignment was made.
 
----
+### The batteries were themselves tested
 
-## ✅ MN (Majjhima Nikaya) — 152/152 suttas — CERRADO 🔒
-- **Paginas**: verificadas contra contenido BD (100%)
-- **Lineas**: verificadas contra marcadores PTS (100%)
-- **CST cross-validation**: DeepSeek + CollateX + DPD — 135/149 APPROVE, 14 PTS_TRUNCATED
-  - 14 suttas con texto PTS abreviado/truncado (ej: MN 98 = identico a Sn 35)
-  - 3 errores de API (MN 14, 38, 64) — referencias correctas, reintentables
-- **Validacion**: HELMER_APPROVED o HELMER_PTS_TRUNCATED en Excel
-- **NO MODIFICAR** — cualquier cambio requiere re-ejecutar validacion completa
+A battery that approves everything may be a battery that detects nothing. Each was given **ten
+deliberate defects** — swapped neighbours, one-place shifts, seven-place shifts, duplicated
+references, broken references — and **each detected ten of ten**.
 
----
+That test changed the batteries twice. Both had been treating a shared reference as legitimate
+merely because it was a range; since in DN and MN *every* reference is a range, no duplication was
+being detected there at all. The rule that replaced it is the one this project uses throughout:
+**an exception is declared, not inferred.**
 
-## ✅ SN I (Samyutta Nikaya vol 1, S i) — 271 suttas — CERRADO 🔒
-- **Paginas**: verificadas contra contenido BD + restriccion secuencial
-- **1 error corregido**: SN 3.1 (Dahara) — blog decia S i 70, real es S i 68,4
-- **CST cross-validation**: fingerprint no fiable para suttas cortos (Feer muy abreviado)
-- **Metodo**: `parse_sn_grammar.py` + verificacion DB + auditoria secuencial
-- **Validacion**: DB_VERIFIED en Excel. SN 3.1: HELMER_FIXED.
-- **NO MODIFICAR** sin re-ejecutar validacion completa
+### Entries the tests could not decide
 
-## ✅ SN II (Samyutta Nikaya vol 2, S ii) — 255 suttas — CERRADO 🔒
-- **Paginas**: secuencialmente consistentes (0 roturas)
-- **Marcadores**: 75% verificados (formato N (M) Name o (N) (M) Name)
-- **CST fingerprint**: 83% precision en muestra de 30
-- **Errores**: 0
-- **Validacion**: DB_VERIFIED
-- **NO MODIFICAR**
+The 586 undecided entries are **not counted as confirmed**. Most are passages that both editions
+print in abbreviated form — the CST leaving `…pe…` where PTS leaves `║ pe ║` — so there is nothing
+to collate. Those entries were established on structural evidence: an uddāna that counts the
+members, the order of the series. A textual test can neither confirm nor deny that, and it says so
+rather than reporting a pass.
 
----
+## Scope, and what is not here
 
-## ⚠️ REGLA DE ORO: NADA SE CIERRA SIN HELMER
+| | Entries | Why |
+|---|--:|---|
+| **Jātaka** | 547 | The PTS text available is Fausbøll's edition, which is *the Jātaka together with its commentary*; the canonical text is the verses alone. Collating it would mean working on commentary. |
+| **Milindapañha** | 248 | No PTS text in the source used; the CST classes it outside the canon. |
+| **Nettippakaraṇa** | 37 | No PTS text in the source used. |
+| **Peṭakopadesa** | 9 | No PTS text in the source used; outside the canon. |
+| **Not printed in Ee** | 14 | The Therāpadāna's 56th vagga (11) and three of its 34th. |
+| **Section rubrics** | 10 | Rubrics of the printed edition, kept as attested structure but not entries. |
 
-**Ningun Nikaya, volumen, o conjunto de entradas puede marcarse como CERRADO
-sin haber pasado por validacion cruzada PTS↔CST con DeepSeek (Helmer).**
+Entries in the last two groups are *recorded*, not left blank. That an edition does not print a
+passage is a fact about that witness, and the apparatus criticus has a word for it — `deest`. The
+distinction matters: negative evidence is not the absence of evidence.
 
-La verificacion contra la BD (marcadores, paginas, secuencia) es necesaria
-pero NO suficiente. Solo Helmer confirma que el contenido PTS en la pagina
-referenciada corresponde realmente al sutta esperado.
+## Known limitations
 
-- DN: 34/34 DeepSeek APPROVE → CERRADO
-- MN: 152/152 DeepSeek (135 APPROVE + 14 PTS_TRUNCATED) → CERRADO
-- SN I: pilot DeepSeek muestra 10/10 → requiere auditoria completa
-- Resto: PENDIENTE de Helmer
+**What was inspected is a digitised text, not the printed volume.** Where an entry says a passage is
+not printed in a witness, the internal evidence is strong — a vagga uddāna announcing ten items where
+the edition prints seven, a colophon closing the work — but the distinction between *deest in Ee*
+and *absent from the copy used* is one this edition can state and not close.
 
-**NO MARCAR COMO CERRADO SIN DEEPSEEK.**
+**Two works are cited in a pagination that is not the one collated.** The Buddhavaṃsa and the
+Cariyāpiṭaka are cited in the single volume in which PTS printed them together (Bv 1–68, Cp 73–101);
+the copy used for collation is a different setting, and the two series diverge progressively. Their
+page was therefore not verified, and this is stated on every one of those 64 entries.
 
-## ✅ SN IV (Samyutta Nikaya vol 4) — 344 suttas — CERRADO 🔒
-- **Helmer**: 93/106 exact-marker entries APPROVE (88%)
-- **13 REJECT**: falsos positivos CST (6 SN 37 desalineados, 4 erratas PTS, 3 Feer)
-- **238 PEYYALA**: sin marcador individual (abreviados)
-- **Paginas**: 344/344 verificadas (0 errores)
-- **NO MODIFICAR** sin re-ejecutar Helmer
+**The Khuddaka is uneven by nature.** Its works were closed one at a time, each with its own régime;
+where the evidence was weaker than elsewhere, the `Evidence` and `Notes` columns say so.
 
+## How to cite
+
+> Contreras, Jorge. *A Concordance of the Pāli Canon: Pali Text Society ↔ Chaṭṭha Saṅgāyana.* 2026.
+> CC0 1.0 Universal.
+
+## Licence
+
+To the extent possible under law, Jorge Contreras has waived all copyright and related or
+neighbouring rights to this work. See
+[CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
+
+No warranty of any kind is given. The underlying texts are themselves in the public domain.

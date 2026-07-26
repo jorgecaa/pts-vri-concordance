@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Tipitaka PTS Browser
-Comment=Pāli Tipitaka browser with PTS-edition alignment
-Exec=tipitaka-pts-browser
-Icon=tipitaka-pts-browser
-Categories=Education;Literature;
-Terminal=false
-StartupWMClass=tipitaka-pts-browser
