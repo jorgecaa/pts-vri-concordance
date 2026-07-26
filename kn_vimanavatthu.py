@@ -1,12 +1,19 @@
 #!/usr/bin/env python3
 """
-kn_vimanavatthu — el Vimānavatthu: 85 filas, una por vimāna.
+kn_vimanavatthu — el Vimānavatthu (85 filas) y el Petavatthu (51), una fila por vimāna/peta.
+
+Las dos van juntas porque son **la misma obra con el signo cambiado** —el mérito y su reverso— y
+comparten régimen editorial: cuatro/dos `div` de vaggas, título de colofón detrás del poema, ningún
+rango de verso en el Excel y la biyección completa 85 = 85 y 51 = 51.
 
 Va en fichero propio y no como un parámetro más de `kn_theragatha` (regla (6)) porque **el régimen
 de prueba es otro**: aquí el contenido no decide, decide el nombre. Conviene explicar por qué,
 porque la medición dice justo lo contrario de lo que uno esperaría.
 
 ### Por qué el contenido NO puede decidir
+
+Lo que sigue está medido sobre el Vimānavatthu, que es el caso extremo; el Petavatthu se comporta
+igual pero con menos gemelos.
 
 La obra está construida a base de **pares deliberadamente repetidos**: `Paṭhamasuṇisā` /
 `Dutiyasuṇisā`, `Paṭhamakaraṇīya` / `Dutiyakaraṇīya`, `Paṭhamasūci` / `Dutiyasūci`,
@@ -22,6 +29,33 @@ kākatarasadāyakavimānaṃ tathā vitthāretabbaṃ` y remite. Medido sobre la
 - y abrir la ventana hacia atrás, que a primera vista arreglaba las ocho filas flojas (0,39 → 0,95),
   es **vacuo**: con esa ventana los vecinos puntúan igual o más (0,97 contra 0,95). Se descartó.
 
+### El Petavatthu tiene además una evidencia mejor: el colofón impreso
+
+PTS cierra cada peta con su nombre y su **ordinal dentro del vagga** —`nandāpetavatthu tatiyaṃ`,
+`saṭṭhikūṭasahassapetavatthu soḷasamaṃ`— y eso es un **marcador del impreso**, del mismo tipo que
+fija el lado PTS en SN y AN. Se leen **47 de los 51**, y con los vaggas delimitados por sus propios
+encabezados (`URAGAVAGGO PAṬHAMO` p14, `III CŪḶAVAGGA` p47, `IV MAHĀVAGGA` p65 — nunca por inferir
+dónde reinicia el ordinal, que se descuadra en cuanto falta uno) **la lista impresa coincide con la
+del CST vagga por vagga y ordinal por ordinal**: 12, 13, 10 y 16.
+
+Las discrepancias que quedan son legibles una a una y ninguna es de orden:
+
+- el Ubbarivagga trae **dos colofones marcados `tatiyaṃ`** —`mattāpetavatthu` p22 y
+  `nandāpetavatthu` p24— y **ninguno `catutthaṃ``**: el CST numera 3 = Mattā y 4 = Nandā, así que lo
+  mal leído es el ordinal, no el orden;
+- cuatro colofones no se leen en el texto de la BD (`Pañcaputtakhādaka` 1.6, `Kūṭavinicchayika` 3.9,
+  `Seṭṭhiputta` 4.15 y el 1.6), y esas filas quedan **acotadas entre los colofones vecinos**;
+- PTS abrevia el nombre —`Mātu-` por `Sāriputtattheramātu-`, `Maṭakuṇḍalī` por `Maṭṭhakuṇḍalī`,
+  `Sāṇuvāsi` por `Sāṇavāsīthera`, `Amba-` por `Ambavana-`.
+
+⚠️ Y **esto es lo que absolvió a las tres filas de cobertura baja** (`7.2.5` 0,48, `7.4.2` 0,50,
+`7.4.4` 0,35), donde el sutta *siguiente* del CST puntuaba más alto que el propio sobre la ventana
+de la fila — la firma exacta de un desplazamiento +1. No lo había: `revatīpetavatthu` está impreso
+en p85 como **cuarto** del Mahāvagga, justo donde la fila dice. Lo que PTS no reimprime es el
+**texto** (`revatīpetavatthu se vimānavatthu no …`, remite al Vimānavatthu, y Serīsaka **es** `Vv
+84`), y los otros dos comparten página con su vecino. La cobertura no podía distinguir «la fila está
+desplazada» de «PTS remite el texto a otra obra»; el colofón sí.
+
 ### Lo que sí decide
 
 1. **El nombre, 85 de 85.** El `subhead` del CST casa con el nombre del Excel en las ochenta y
@@ -34,26 +68,36 @@ kākatarasadāyakavimānaṃ tathā vitthāretabbaṃ` y remite. Medido sobre la
 
 ### La notación (regla (5-ter))
 
-`Vv <nº>` — el número corrido del vimāna, que el propio nombre de la fila trae (`Vv 84
+`Vv <nº>` / `Pv <nº>` — el número corrido del vimāna o del peta, que el propio nombre de la fila trae (`Vv 84
 Serīsakavimānavatthu`). El Excel no da rango de versos para esta obra (`PTS Alt/Verse` vacío en las
 85), así que el rango del CST queda sólo en la `VRI Ref`.
 
-Uso: python3 kn_vimanavatthu.py [--dry]
+Uso: python3 kn_vimanavatthu.py [--obra vv|pv] [--dry]
 """
 import re
 import shutil
 import sqlite3
 import sys
 from datetime import datetime
+from difflib import SequenceMatcher
 
 import an_peyyala as ap
 import an1_eka_duka as R
 from openpyxl import load_workbook
 
 XLSX = 'PTS_Reference_Complete_Canon.xlsx'
-BOOK, STEM, SIGLA = 27, 's0506m', 'Vv'
-ULTIMA = 135
+# obra → (libro de la BD, fichero VRI, sigla, última página del libro, nº de filas)
+OBRAS = {'vv': (27, 's0506m', 'Vv', 135, 85),
+         'pv': (28, 's0507m', 'Pv', 95, 51)}
+BOOK = STEM = SIGLA = ULTIMA = None
 COV_COTA = 0.55          # sólo para etiquetar la corroboración, NO es condición para firmar
+
+# Los vaggas del Petavatthu, delimitados por SUS PROPIOS ENCABEZADOS del impreso. No se infieren
+# viendo dónde reinicia el ordinal del colofón: faltan cuatro colofones y la inferencia arrastra el
+# desfase un vagga entero (le asignaba a `7.4.3 Nandaka` el colofón de `Rathakāra`).
+VAGGAS_PV = [(1, 14), (15, 46), (47, 64), (65, 95)]
+ORDS = ('pathamam dutiyam tatiyam catutham pancamam chatham satamam athamam navamam dasamam '
+        'ekadasamam dvadasamam terasamam cudasamam pandarasamam solasamam').split()
 
 
 def _limpia(t):
@@ -65,12 +109,13 @@ def _limpia(t):
 def raiz(t):
     """Raíz comparable: sin ordinal de lista, sin `-vimānavatthu`, sin desinencia."""
     t = ap.fold(re.sub(r'^[\d.\s]+', '', t or '')).strip()
-    t = re.sub(r'\s*(vimanavathu|vimanam|vathu|gatha)$', '', t).strip()
+    t = re.sub(r'\s*(vimanavathu|peta(?:vathu|vathi)|petivathu|vimanam|petam|vathu|gatha)$',
+               '', t).strip()
     return re.sub(r'[aiueom]+$', '', t)
 
 
 def casa_nombre(excel, subhead):
-    """¿Mismo vimāna? Se prueban las variantes que el Excel escribe entre paréntesis.
+    """¿Mismo vimāna/peta? Se prueban las variantes que el Excel escribe entre paréntesis.
 
     ⚠️ **El ordinal cuenta.** `raiz` lo conserva —`pathamasunisa` ≠ `dutiyasunisa`— y es lo único
     que distingue a los gemelos, que por texto son indistinguibles.
@@ -83,7 +128,7 @@ def casa_nombre(excel, subhead):
 
 
 def suttas_cst():
-    """`[(subhead, primer verso, último verso, div, texto)]` — los 85, agrupando por `subhead`."""
+    """`[(subhead, primer verso, último verso, div, texto)]`, agrupando por `subhead`."""
     out = []
     for x in ap.cst_unidades(STEM):
         if not out or out[-1][0] != x['subhead']:
@@ -93,8 +138,67 @@ def suttas_cst():
     return [(a, b, c, d, ap.fold(e)) for a, b, c, d, e in out]
 
 
+def casa_colofon(subhead, colofon):
+    """¿El colofón impreso nombra el mismo peta que el `subhead` del CST?
+
+    PTS **abrevia**, y no siempre por el final: se come el primer elemento del compuesto
+    (`Sāriputtattheramātu-` → `Mātu-`), simplifica la aspirada (`Maṭṭhakuṇḍalī` → `Maṭakuṇḍalī`) y
+    usa otra forma del nombre (`Sāṇavāsīthera` → `Sāṇuvāsi`). Se compara sobre la raíz de los dos,
+    sin aspiración, aceptando contención o parecido alto.
+    """
+    def nucleo(x):
+        # sin el ordinal de lista, sin `-peta(vatthu|vatthi)` ni su femenino `-peti(vatthu)`, y sin
+        # aspiración. NO se le quita la vocal final: `mātu` abreviado tiene cuatro letras y
+        # recortarlo a `māt` lo dejaría por debajo del mínimo comparable.
+        x = ap.fold(re.sub(r'^[\d.\s]+', '', x or '')).strip()
+        x = re.sub(r'pet[ai](?:vathu|vathi)$|vathu$', '', x)
+        # y sin la palabra de oficio con que el CST cierra el compuesto y PTS omite:
+        # `sāṇavāsīthera` / `Sāṇuvāsi`, `uttaramātu` / `Uttarā-mātu`
+        x = re.sub(r'(thera|theri|sethi)$', '', x)
+        return re.sub('h', '', x)
+
+    a, b = nucleo(subhead), nucleo(colofon)
+    if len(a) < 4 or len(b) < 4:
+        return a == b
+    return a in b or b in a or SequenceMatcher(None, a, b).ratio() >= 0.8
+
+
+def colofones_pv(conn):
+    """`{(vagga, ordinal): (página, nombre)}` — el colofón que PTS imprime al cerrar cada peta.
+
+    El vagga sale del rango de páginas del encabezado impreso; el ordinal, del propio colofón.
+    """
+    pgs = {r['page_no']: (r['unitext'] or '') for r in conn.execute(
+        'SELECT page_no,unitext FROM pages WHERE edition="mula" AND book_no=28')}
+    num = {o: k + 1 for k, o in enumerate(ORDS)}
+    seq = []
+    for pg in sorted(pgs):
+        v = next((k + 1 for k, (a, b) in enumerate(VAGGAS_PV) if a <= pg <= b), None)
+        for ln in pgs[pg].split('\n'):
+            m = re.search(rf'([a-z\-]+pet[ai](?:vatthu|vathu))\s*({"|".join(ORDS)})', ap.fold(ln))
+            if m and v:
+                seq.append((v, num[m.group(2)], pg, m.group(1)))
+    # ⚠️ El ordinal LEÍDO se corrige con el orden de impresión. El Ubbarivagga trae dos colofones
+    # marcados `tatiyaṃ` —`mattā` p22 y `nandā` p24— y ninguno `catutthaṃ`: la transcripción leyó
+    # mal el segundo. Los colofones aparecen en orden, así que un ordinal que no avanza es un
+    # ordinal mal leído y vale `anterior + 1`. Los huecos SÍ se respetan (faltan cuatro colofones y
+    # sus ordinales no deben reasignarse a nadie), por eso no se renumera de corrido.
+    out, prev, vag = {}, 0, 0
+    for v, o, pg, nm in seq:
+        if v != vag:
+            vag, prev = v, 0
+        o = max(o, prev + 1)
+        out[(v, o)] = (pg, nm)
+        prev = o
+    return out
+
+
 def main():
+    global BOOK, STEM, SIGLA, ULTIMA
     dry = '--dry' in sys.argv
+    obra = sys.argv[sys.argv.index('--obra') + 1] if '--obra' in sys.argv else 'vv'
+    BOOK, STEM, SIGLA, ULTIMA, ESPERADAS = OBRAS[obra]
+    print(f'── {obra}: libro {BOOK} · {STEM} · «{SIGLA}»')
     conn = sqlite3.connect(R.DB)
     conn.row_factory = sqlite3.Row
     cst = suttas_cst()
@@ -107,7 +211,7 @@ def main():
           for r in ws.iter_rows(min_row=2, values_only=True)
           if r[ci['Nikaya']] == 'KN' and str(r[ci['PTS Vol']]) == SIGLA]
     print(f'CST {len(cst)} suttas · Excel {len(fs)} filas')
-    if len(cst) != len(fs):
+    if not (len(cst) == len(fs) == ESPERADAS):
         print('⚠ los recuentos no coinciden: no se escribe nada')
         return
 
@@ -124,6 +228,26 @@ def main():
             if not nombres[k]:
                 print(f"   ⚠ «{_limpia(f['name'])}» vs «{cst[k][0]}»")
         return
+
+    # (3) sólo en el Petavatthu: el colofón impreso, que es la evidencia fuerte
+    col, acuerdo = {}, [None] * len(fs)
+    if obra == 'pv':
+        col = colofones_pv(conn)
+        for k, f in enumerate(fs):
+            v, o = (int(x) for x in f['num'].split('.')[1:])
+            if (v, o) not in col:
+                continue                       # cuatro no se leen; la fila queda acotada por vecinos
+            acuerdo[k] = casa_colofon(cst[k][0], col[(v, o)][1])
+        vistos = sum(x is not None for x in acuerdo)
+        print(f'  colofón impreso: {vistos}/{len(fs)} leídos · '
+              f'nombre ≡ subhead del CST en {sum(1 for x in acuerdo if x)}/{vistos}')
+        if any(x is False for x in acuerdo):
+            print('⚠ un colofón nombra un peta distinto del que el CST pone en ese ordinal: '
+                  'no se escribe nada')
+            for k, f in enumerate(fs):
+                if acuerdo[k] is False:
+                    print(f'   ⚠ {f["num"]} «{cst[k][0]}» vs colofón «{col[tuple(int(x) for x in f["num"].split(".")[1:])][1]}»')
+            return
 
     res, flojas = {}, 0
     for k, f in enumerate(fs):
@@ -144,9 +268,10 @@ def main():
         res[f['num']] = (
             f'{STEM}:{a}-{b}' if b != a else f'{STEM}:{a}',
             f'{SIGLA} {m.group(1)}',
-            f'Vimānavatthu: vimāna {k + 1} de 85 → «{sub}» ({div}), versos {a}-{b} del CST. '
-            f'El nombre casa en las 85 filas y la biyección respeta el orden y la partición en '
-            f'Itthi-/Purisavimāna; corroboración por contenido {cov:.2f}'
+            f'{"Vimānavatthu: vimāna" if obra == "vv" else "Petavatthu: peta"} {k + 1} de '
+            f'{ESPERADAS} → «{sub}» ({div}), versos {a}-{b} del CST. El nombre casa en las '
+            f'{ESPERADAS} filas y la biyección respeta el orden y la partición en vaggas; '
+            f'corroboración por contenido {cov:.2f}'
             + ('' if cov >= COV_COTA else
                ' (baja: el poema arranca en la página anterior o PTS lo elide remitiendo a su '
                'gemelo — en esta obra el contenido corrobora, no discrimina)'))
@@ -154,7 +279,7 @@ def main():
     if dry or not res:
         print('(dry-run: nada escrito)' if dry else '')
         return
-    cp = f'{XLSX}.backup-{datetime.now():%Y%m%d-%H%M%S}-vv.xlsx'
+    cp = f'{XLSX}.backup-{datetime.now():%Y%m%d-%H%M%S}-{obra}.xlsx'
     shutil.copy(XLSX, cp)
     print(f'backup → {cp}')
     wb = load_workbook(XLSX)

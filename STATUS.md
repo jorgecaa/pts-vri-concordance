@@ -518,8 +518,8 @@ Use this terminology consistently across the project:
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
 | **AN** | **1737** | **1737** | **0** | **100.0%** |
-| KN | 2360 | 722 | 1638 | 30.6% |
-| **TOTAL** | **6097** | **4459** | **1638** | **73.1%** |
+| KN | 2360 | 773 | 1587 | 32.8% |
+| **TOTAL** | **6097** | **4510** | **1587** | **74.0%** |
 
 > **KN empezado por el Khuddakapāṭha: 9/9** (`kn_khuddakapatha.py`). Es la obra más pequeña del
 > nikāya y por eso es donde se fija el método. Por una vez **las tres fuentes cuentan lo mismo**:
@@ -621,6 +621,32 @@ Use this terminology consistently across the project:
 > **vecinos** puntuaban igual o más (0,97 contra 0,95). Descartada. Es el punto ciego de siempre: una
 > señal que sube para todos no es evidencia de nada, y sólo se ve con el **control contra el par
 > ajeno**, nunca mirando la propia puntuación.
+>
+> **Petavatthu 51/51** (mismo fichero: es el Vimānavatthu con el signo cambiado y comparte régimen).
+> Aquí apareció **una evidencia mejor que el nombre: el colofón impreso**. PTS cierra cada peta con
+> su nombre y su **ordinal dentro del vagga** —`nandāpetavatthu tatiyaṃ`,
+> `saṭṭhikūṭasahassapetavatthu soḷasamaṃ`—, un marcador del impreso del mismo tipo que fija el lado
+> PTS en SN y AN. Se leen **48 de 51** y **los 48 nombran el peta que el CST pone en ese (vagga,
+> ordinal)**; los tres que faltan quedan acotados entre sus vecinos.
+>
+> ⚠️ **Paré sin firmar y pedí presupuesto**, y con razón: tres filas (`7.2.5` 0,48, `7.4.2` 0,50,
+> `7.4.4` 0,35) tenían el sutta **siguiente** del CST puntuando más alto que el propio sobre su
+> ventana (0,89-0,95 contra 0,32-0,55) — la firma exacta de un desplazamiento +1. El colofón
+> demostró que **no lo había**: `revatīpetavatthu` está impreso en p85 como cuarto del Mahāvagga,
+> justo donde la fila dice. Lo que PTS no reimprime es el **texto** (`revatīpetavatthu se
+> vimānavatthu no …`: lo remite al Vimānavatthu, y Serīsaka **es** `Vv 84`). La cobertura no puede
+> distinguir «la fila está desplazada» de «PTS remite el texto a otra obra»; el marcador impreso sí.
+>
+> ⚠️ Tres defectos propios en el camino, los tres del mismo tipo — **inferir lo que el impreso dice**:
+> (a) segmenté los vaggas por «dónde reinicia el ordinal» y, al faltar cuatro colofones, la
+> inferencia arrastró un vagga entero de desfase (le daba a `7.4.3 Nandaka` el colofón de
+> `Rathakāra`); se arregló leyendo los **encabezados impresos** (`URAGAVAGGO PAṬHAMO` p14,
+> `III CŪḶAVAGGA` p47, `IV MAHĀVAGGA` p65). (b) `raiz` no contemplaba el femenino `-petivatthu`, así
+> que `Sāriputtattheramātupetivatthu` no perdía su sufijo y no casaba con el `Mātu-` abreviado del
+> impreso. (c) El Ubbarivagga trae **dos colofones marcados `tatiyaṃ`** y ninguno `catutthaṃ`: el
+> ordinal está mal leído, no el orden. Como los colofones aparecen en orden de impresión, un ordinal
+> que no avanza vale `anterior + 1` — pero **sin renumerar de corrido**, para que los cuatro huecos
+> sigan siendo huecos.
 
 > Desglose de AN (2026-07-25): **A ii 303/303, A iii 457/457, A iv 298/298 y A v 245/245 —
 > los cinco CERRADOS 🔒**. **AN ENTERO CERRADO: 1737/1737.**
