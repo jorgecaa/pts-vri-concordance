@@ -27,10 +27,19 @@ referencia de estas obras no la necesita — es el capítulo, no la página (reg
 
 **Buddhavaṃsa.** El CST tiene **29 capítulos** (`div`), el Excel **29 filas**, mismos nombres y
 mismo orden. El impreso los encabeza con numeral romano —`II -- DĪPAṄKARABUDDHAVAṂSO`— y su romano
-vale **el índice del CST menos uno**, porque PTS **no numera aparte la Sumedhapatthanākathā** (el
-CST la separa como capítulo 2; el impreso la imprime sin romano propio detrás del
-Ratanacaṅkamanakaṇḍa). Cobertura de contenido entre el tramo impreso y el capítulo del CST:
-**0,92-0,98** en los 27 que llevan romano.
+vale **el índice del CST menos uno**.
+
+⚠️ El motivo es concreto y conviene decirlo bien: **PTS mete la Sumedhapatthanākathā DENTRO del
+capítulo del Dīpaṅkara**, no la imprime suelta. El encabezado `II -- DĪPAṄKARABUDDHAVAṂSO` de la p9
+abre con `Kappe ca satasahasse ca caturo ca asaṅkhiye | Amaraṃ nāma nagaraṃ…`, que es el arranque de
+la **Sumedhapatthanā** del CST (cobertura 0,99); el Dīpaṅkara propiamente dicho no empieza hasta la
+p21. El CST parte en dos lo que PTS imprime como un capítulo — y tiene sentido, porque Sumedha vive
+en tiempos de Dīpaṅkara.
+
+⚠️ Y de ahí sale la regla que gobierna esta tabla: **la posición de cada capítulo en la BD se
+localiza por su INCIPIT, no por su encabezado**. El encabezado dice dónde empieza el capítulo
+*impreso*; el incipit dice dónde empieza el texto *de la fila*. Con 29 capítulos el sondeo acierta
+entre 0,91 y 1,00 y el segundo candidato nunca pasa de 0,60.
 
 **Cariyāpiṭaka.** El impreso subtitula cada cariyā con su número dentro del vagga
 (`5 Soṇapaṇḍitacariyaṃ`) y salen **35** en tres vaggas de **10 + 10 + 15**, exactamente los 35
@@ -142,6 +151,27 @@ def cariyas_cst(stem, top):
     return [(a, b, c, ap.fold(d)) for a, b, c, d in out]
 
 
+def pagina_bd(conn, libro, unidades):
+    """`[(primera página, última página)]` de cada unidad **en la paginación de la BD**.
+
+    Se localiza por el **incipit**: la página cuya cobertura con las primeras palabras de la unidad
+    es máxima. No por el encabezado impreso, que puede abarcar más de una unidad del CST —el
+    `II -- DĪPAṄKARABUDDHAVAṂSO` cubre la Sumedhapatthanā y el Dīpaṅkara— ni por la página del
+    Excel, que en estas dos obras **es de otra composición** y no sirve.
+
+    Sin esto, la tabla obliga a echar cuentas para encontrar el texto, que es tanto como no darlo.
+    """
+    pgs = {r['page_no']: ap.fold(r['unitext'] or '') for r in conn.execute(
+        'SELECT page_no,unitext FROM pages WHERE edition="mula" AND book_no=?', (libro,))}
+    ini = []
+    for tc in unidades:
+        inc = ' '.join(tc.split()[:14])
+        ini.append(max((R.cobertura(pgs[p], inc), p) for p in pgs)[1] if inc else None)
+    ultima = max(pgs)
+    return [(a, (ini[k + 1] - 1 if k + 1 < len(ini) and ini[k + 1] and a and ini[k + 1] > a
+                 else ultima)) for k, a in enumerate(ini)]
+
+
 def plano(conn, libro):
     return [(r['page_no'], ln, l)
             for r in conn.execute('SELECT page_no,unitext FROM pages WHERE edition="mula" '
@@ -205,6 +235,7 @@ def resuelve_bv(conn):
     cst = capitulos_cst('s0511m', 'kn12')
     fs = filas('12.')
     tr = tramos_bv(conn)
+    bd = pagina_bd(conn, 41, [tc for _h, tc in cst])
     print(f'CST {len(cst)} capítulos · Excel {len(fs)} filas · impreso {len(tr)} encabezados')
     res, avisos = {}, []
     for k, f in enumerate(fs):
@@ -221,8 +252,10 @@ def resuelve_bv(conn):
                     f'{cov:.2f}')
         else:
             det += '; el impreso no le pone encabezado romano propio'
-        det += ('. ⚠ La paginación de la BD (libro 41, 102 pp.) no es la que cita el Excel (1-68): '
-                'son dos composiciones PTS distintas, así que la página no se verifica ni se toca')
+        det += (f'. **En la BD el texto está en el libro 41, pp. {bd[k][0]}-{bd[k][1]}** (localizado '
+                f'por incipit). ⚠ Esa paginación NO es la que cita el Excel (1-68): son dos '
+                f'composiciones PTS distintas, así que la página del Excel no se verifica ni se '
+                f'toca — pero la de la BD queda aquí para no tener que buscarla')
         if cov is None or cov >= COV_MIN:
             res[f['num']] = (f's0511m:c{k + 1}', f'Bv {k + 1}', det)
         else:
@@ -234,6 +267,7 @@ def resuelve_cp(conn):
     cst = cariyas_cst('s0512m', 'kn13')
     fs = filas('13.')
     sub = subtitulos_cp(conn)
+    bd = pagina_bd(conn, 42, [x[3] for x in cst])
     print(f'CST {len(cst)} cariyās · Excel {len(fs)} filas · impreso {len(sub)} subtítulos')
     res, avisos = {}, []
     for k, f in enumerate(fs):
@@ -255,8 +289,11 @@ def resuelve_cp(conn):
             f's0512m:c{v}.{n}', f'Cp {v}.{n}',
             f'Cariyāpiṭaka: cariyā {n} del vagga {v} → «{head}», la {k + 1} de 35. El impreso la '
             f'subtitula «{s[0]}» en la p{s[1]} de la BD, cobertura {cov:.2f}'
-            + ('' if nom_ok else ' (el impreso usa otro nombre para la misma cariyā)') + '. ⚠ La paginación de la BD (libro 42, 37 pp.) no es la que cita '
-            f'el Excel (73-101): dos composiciones PTS distintas, la página no se verifica')
+            + ('' if nom_ok else ' (el impreso usa otro nombre para la misma cariyā)')
+            + f'. **En la BD el texto está en el libro 42, pp. {bd[k][0]}-{bd[k][1]}** (localizado '
+              f'por incipit). ⚠ Esa paginación NO es la que cita el Excel (73-101): son dos '
+              f'composiciones PTS distintas, así que la página del Excel no se verifica ni se '
+              f'toca — pero la de la BD queda aquí para no tener que buscarla')
     if len(cst) == len(fs) + 1:
         avisos.append(f'   ⚠ el Excel no tiene fila para «{cst[-1][2]}», que el impreso SÍ trae '
                       f'(p{sub[max(sub)][1]} de la BD) — falta una fila')

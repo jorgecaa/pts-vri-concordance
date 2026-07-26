@@ -44,6 +44,23 @@ aṭṭhakathā**. Por eso se omite (decisión de Jorge, 2026-07-25).
 > tipográficamente distintas de la prosa— y cotejarlas contra los 567 `subhead` del mūla, dejando el
 > relato fuera. Hoy **no** está en alcance.
 
+### El Buddhavaṃsa y el Cariyāpiṭaka: la página de la BD va en la tabla (2026-07-25)
+
+Las 64 filas de `Bv`/`Cp` citan una paginación PTS que **no es la de la BD** (102 y 37 páginas
+contra 1-68 y 73-101), y hasta ahora el `Detail` decía sólo que la página no se verificaba. Eso
+obligaba a **buscar a mano** dónde estaba el texto: pedirle a la p68 el `Dhātubhājanīya` devuelve el
+`Siddhatthabuddhavaṃsa`. Ahora cada fila **lleva escrito su tramo en la BD** —«En la BD el texto
+está en el libro 41, pp. 102-102»—, localizado por **incipit**, y `cotejo_muestra.py` resuelve esas
+filas por capítulo en vez de por página.
+
+⚠️ Se localiza **por el incipit, no por el encabezado impreso**, y el Buddhavaṃsa enseña por qué:
+el `II -- DĪPAṄKARABUDDHAVAṂSO` de la p9 abre con `Kappe ca satasahasse…`, que es el arranque de la
+**Sumedhapatthanā** del CST (0,99); el Dīpaṅkara propiamente dicho no empieza hasta la p21. **PTS
+mete la Sumedhapatthanā dentro del capítulo del Dīpaṅkara** y el CST la separa. El encabezado dice
+dónde empieza el capítulo *impreso*; el incipit, dónde empieza el texto *de la fila*. (La nota
+anterior de este repo decía que PTS «la imprime sin romano propio detrás del Ratanacaṅkamanakaṇḍa»,
+y era falso.)
+
 ### La convención que se ha seguido (2026-07-25)
 
 1. **Una cabecera no es una entrada, y no se borra.** No se destruye estructura atestiguada: se
