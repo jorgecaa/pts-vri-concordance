@@ -173,12 +173,12 @@ rather than reporting a pass.
 
 | | Entries | Why |
 |---|--:|---|
-| **Jātaka** | 547 | The PTS text available is Fausbøll's edition, which is *the Jātaka together with its commentary*; the canonical text is the verses alone. Collating it would mean working on commentary. |
+| **Jātaka** | 548 | The PTS text available is Fausbøll's edition, which is *the Jātaka together with its commentary*; the canonical text is the verses alone. Collating it would mean working on commentary. The figure includes the work's own section rubric. |
 | **Milindapañha** | 248 | No PTS text in the source used; the CST classes it outside the canon. |
 | **Nettippakaraṇa** | 37 | No PTS text in the source used. |
 | **Peṭakopadesa** | 9 | No PTS text in the source used; outside the canon. |
 | **Not printed in Ee** | 14 | The Therāpadāna's 56th vagga (11) and three of its 34th. |
-| **Section rubrics** | 10 | Rubrics of the printed edition, kept as attested structure but not entries. |
+| **Section rubrics** | 10 | Rubrics of the printed edition, kept as attested structure but not entries. An eleventh belongs to the Jātaka and is counted in that row. |
 
 Entries in the last two groups are *recorded*, not left blank. That an edition does not print a
 passage is a fact about that witness, and the apparatus criticus has a word for it — `deest`. The
