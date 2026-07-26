@@ -50,7 +50,7 @@ are accounted for individually rather than left blank — see [Scope](#scope-and
 
 | Value | Entries | Meaning |
 |---|--:|---|
-| `Collated (automatic agreement)` | 3,168 | both sides of the pair agreed under the collation gate |
+| `Collated (automatic agreement)` | 3,168 | two independent judges agreed: a local gate (title stem, Jaccard of the incipit, CollateX divergences) and a language model (`gemini-flash-lite-latest`, structured output, temperature 0). Disagreement sent the entry to human arbitration instead |
 | `Collated (printed markers)` | 2,062 | established from the markers the printed edition itself supplies — colophons, chapter headings, running numbers, uddānas — with structural cross-checks, rather than through the collation gate. A small minority of these (ten entries in DN and MN) were disagreements arbitrated by hand against the printed edition |
 | `Out of scope` | 548 | the Jātaka — see below |
 | `No Ee text available` | 294 | no PTS text for that work in the source used |
@@ -106,7 +106,13 @@ rests on the markers the printed edition itself supplies: running numbers, colop
 headings, uddānas.
 
 The two `Collated` values in the `Evidence` column name two different routes, and the difference is
-worth stating plainly. `automatic agreement` means the pair passed a collation gate. `printed
+worth stating plainly. `automatic agreement` means two independent judges both approved the pair: a
+local gate that compares title stems, the Jaccard similarity of incipits and the divergences
+reported by CollateX, and a language model (`gemini-flash-lite-latest`, structured output,
+temperature 0) shown both texts. Either one alone was not enough, and a disagreement between them
+sent the entry to human arbitration. **A reader is owed that disclosure**: a language model took
+part in establishing 3,168 of these entries, as one of two concurring judges and never as the sole
+one. `printed
 markers` means the entry rests on what the printed edition itself supplies — a colophon naming the
 unit and its ordinal, a chapter heading, a running number, an uddāna that counts the members of a
 group — checked against the CST structure. The second route carries most of the Khuddaka and of the
