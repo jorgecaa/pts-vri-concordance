@@ -24,7 +24,7 @@ la BD no es validable por este camino, por mucho que exista en otras ediciones.
 | Thera-apadāna | 563 | 40 | 1-615 | 3-511 | `s0510m1` |
 | Therī-apadāna | 40 | 40 | *(mismo libro)* | 513-614 | `s0510m2` |
 | Buddhavaṃsa | 29 | 41 | 1-102 | 1-68 | `s0511m` |
-| Cariyāpiṭaka | 34 | 42 | 1-37 | 73-101 | `s0512m` |
+| Cariyāpiṭaka | 34 → **35** | 42 | 1-37 | 73-101 | `s0512m` |
 | Niddesa | 37+2 | 36, 37 | 510 + 73 | 1-445 | `s0515m` `s0516m` |
 | Paṭisambhidāmagga | 22+9 | 38, 39 | 196 + 246 | 1-185 · 205-243 | `s0517m` |
 
@@ -518,8 +518,8 @@ Use this terminology consistently across the project:
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
 | **AN** | **1737** | **1737** | **0** | **100.0%** |
-| KN | 2360 | 773 | 1587 | 32.8% |
-| **TOTAL** | **6097** | **4510** | **1587** | **74.0%** |
+| KN | 2361 | 837 | 1524 | 35.5% |
+| **TOTAL** | **6098** | **4574** | **1524** | **75.0%** |
 
 > **KN empezado por el Khuddakapāṭha: 9/9** (`kn_khuddakapatha.py`). Es la obra más pequeña del
 > nikāya y por eso es donde se fija el método. Por una vez **las tres fuentes cuentan lo mismo**:
@@ -636,6 +636,41 @@ Use this terminology consistently across the project:
 > justo donde la fila dice. Lo que PTS no reimprime es el **texto** (`revatīpetavatthu se
 > vimānavatthu no …`: lo remite al Vimānavatthu, y Serīsaka **es** `Vv 84`). La cobertura no puede
 > distinguir «la fila está desplazada» de «PTS remite el texto a otra obra»; el marcador impreso sí.
+>
+> **Buddhavaṃsa 29/29 y Cariyāpiṭaka 35/35** (`kn_buddhavamsa.py`). El Excel mete las dos obras bajo
+> **una sola etiqueta `Bv`**; se separan por el `Sutta #` (`12.x` y `13.x`), cada una con su libro de
+> la BD y su fichero VRI.
+>
+> ⚠️ **Y aquí la paginación de la BD NO es la que cita el Excel** — verificado antes de emparejar
+> nada, que es justo lo que manda la regla del código de libro. El Buddhavaṃsa ocupa **102** páginas
+> en la BD y el Excel lo cita en 1-68; el Cariyāpiṭaka **37** contra 73-101. **No es un desfase
+> calibrable**: las dos series arrancan juntas y **divergen** (el Dīpaṅkara abre en la p9 de la BD y
+> la fila dice 17; al final del Cariyāpiṭaka el desfase es de seis páginas). Son **dos composiciones
+> PTS distintas del mismo texto** — el Excel pagina el volumen único en que PTS imprimió las dos
+> obras juntas (Bv 1-68, Cp 73-101), la BD guarda otra tirada. Consecuencia: **la columna `PTS Page`
+> de estas 64 filas no se toca ni se usa como evidencia**; ninguna de las dos es errata de la otra.
+> La referencia no la necesita, porque es el capítulo (regla (5-ter)): `Bv <n>`, `Cp <vagga>.<n>`.
+>
+> Lo que decide en el **Buddhavaṃsa**: 29 capítulos del CST ≡ 29 filas, mismo nombre y mismo orden,
+> con el impreso encabezándolos en numeral romano (`II -- DĪPAṄKARABUDDHAVAṂSO`) y cobertura
+> **0,92-0,98**. El romano vale el índice del CST **menos uno** porque PTS no numera aparte la
+> Sumedhapatthanākathā. En el **Cariyāpiṭaka**, el impreso subtitula cada cariyā con su número dentro
+> del vagga (`5 Soṇapaṇḍitacariyaṃ`) y salen **35 en 10 + 10 + 15**, exactamente los del CST.
+>
+> ⚠️ **Al Excel le faltaba una fila.** Tenía 34 cariyās y tanto el CST como el impreso traen **35**:
+> la que falta es la última, `15. Mahālomahaṃsacariyā`, subtitulada en la p35 de la BD y cerrando la
+> obra con `sabbattha samako homi esā me upekkhāpāramī ti`. **Añadida** (`anade_cp35.py`, la
+> operación inversa de los borrados de `12.74` y `2.19`, con la columna `#` renumerada): el total
+> pasa de 6.097 a **6.098** filas.
+>
+> ⚠️ Tres defectos propios, todos en la comparación de nombres y todos silenciosos: (a) el Excel
+> escribe los nombres del Cariyāpiṭaka **con guiones blandos** (U+00AD) —`Mahā\u00adsudas\u00adsa…`—,
+> invisibles al leerlos, y tumbaban **21 de 34** filas; (b) la raíz se recortaba con `[aiueom]+$` y
+> `paduma` quedaba en `pad`, con lo que `Padumuttarabuddhavaṃso` se llevaba el tramo impreso del
+> **Paduma** (cobertura 0,52) y dos filas apuntaban al mismo sitio — se elige por **parecido máximo**,
+> no por el primero que casa; (c) el `n` del CST reinicia en cada vagga (regla (5-bis)) y leer el
+> fichero por paranum devuelve las tres series **entrelazadas**, 337 «subheads» donde hay 35: se lee
+> en orden de documento.
 >
 > ⚠️ Tres defectos propios en el camino, los tres del mismo tipo — **inferir lo que el impreso dice**:
 > (a) segmenté los vaggas por «dónde reinicia el ordinal» y, al faltar cuatro colofones, la
