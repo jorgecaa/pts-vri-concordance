@@ -451,16 +451,27 @@ Use this terminology consistently across the project:
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
-| AN | 1738 | 1728 | 10 | 99.4% |
+| AN | 1738 | 1736 | 2 | 99.9% |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6098** | **3728** | **2370** | **61.1%** |
+| **TOTAL** | **6098** | **3736** | **2362** | **61.3%** |
 
 > Desglose de AN (2026-07-25): **A ii 303/303, A iii 457/457, A iv 298/298 y A v 245/245 —
-> los cuatro CERRADOS 🔒**, y **A i 425/435**. **El Eka y el Duka quedan completos**; las 10 que
-> faltan son 7 filas cuya numeración **excede a la del CST** (el Tika del Excel llega a 352 y
-> `s0402m2` acaba en 184; su Duka llega a 479 y `s0402m1` en 246), la **conjetura declarada de
-> Morris** sobre el Acelaka-vagga (`3.156`), y la clave duplicada `2.19` (×2). Ninguna es deuda de
-> método: las tres clases piden una decisión editorial de Jorge. Eka y Duka
+> los cuatro CERRADOS 🔒**, y **A i 433/435**. **Lo único que queda en todo AN es la clave
+> duplicada `2.19`** (×2): la fila `«Adhikaraṇa 9 + Andha»` tiene `Raw ID = «AN 2.19(*) +
+> AN 3.29(*)»` y **funde un sutta del Duka con uno del Tika**. Viene así de la fuente original, no
+> del pipeline, y o se parte en dos filas o se elimina la fundida — decisión editorial.
+>
+> **Las colas del Duka y del Tika se anclaron al tramo del CST por decisión de Jorge**
+> (`reconcile_an1_colas_cst.py`). Resultó inmediato de verificar porque ahí **el nombre de la fila
+> es el nombre del `div`**: `2.180-229 «Kodha [Kodhapeyyāla]»` ↔ `1. Kodhapeyyālaṃ` (181-190),
+> `2.310-479 «Rāgapeyyāla»` ↔ `4. Rāgapeyyālaṃ` (231-246), `3.163-182 «Kammapathapeyyāla»` ↔
+> `7. Kammapathapeyyālaṃ` (164-183, y la fila declara 20 suttas donde el div tiene 20 paranums).
+> El Excel numera 170 donde el CST tiene 16: es la compresión de Morris llevada al extremo.
+>
+> Y el **Acelaka-vagga se resolvió de paso, sin tocar la conjetura de Morris**: su duda es sobre
+> *cuántos vaggas* forma ese material, no sobre qué texto es cada fila. `3.155` cierra en el
+> paranum 156 (último del Maṅgalavaggo) y el Acelakavaggo es el div 157-163, **siete** paranums
+> para las **siete** filas `3.156` + `3.157-162`: sólo hay un reparto posible. Eka y Duka
 > (284 filas) siguen sin abordar a propósito.
 >
 > ⚠️ **`11.502-981` cierra por decisión editorial de Jorge**: PTS imprime el símil del gopālaka
