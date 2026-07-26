@@ -518,8 +518,8 @@ Use this terminology consistently across the project:
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
 | **AN** | **1737** | **1737** | **0** | **100.0%** |
-| KN | 2360 | 637 | 1723 | 27.0% |
-| **TOTAL** | **6097** | **4374** | **1723** | **71.7%** |
+| KN | 2360 | 722 | 1638 | 30.6% |
+| **TOTAL** | **6097** | **4459** | **1638** | **73.1%** |
 
 > **KN empezado por el Khuddakapāṭha: 9/9** (`kn_khuddakapatha.py`). Es la obra más pequeña del
 > nikāya y por eso es donde se fija el método. Por una vez **las tres fuentes cuentan lo mismo**:
@@ -571,6 +571,56 @@ Use this terminology consistently across the project:
 > vagga impreso y monótona (80/80)** y corroborada por el **uddāna** —`tayo ca bodhi, nigrodho te
 > therā Kassapena ca…`, donde el `tayo ca bodhi` son los paranums 1-3 y el `te dasā` declara la
 > cuenta— y por la cobertura (mediana 0,94 contra un control de 0,41-0,52).
+>
+> **Suttanipāta 73/73** (`kn_suttanipata.py`), con **la transcripción más sucia de KN**: 214 de sus
+> 7.731 palabras distintas (2,8 %) no pasan la fonotáctica y son **truncamientos sin guion**
+> (`adhivāsetv`, `anagāriy`), y **87 de los 1.149 números de verso no están en el texto**. Por eso el
+> número de verso **no puede ser la clave**: el CST numera 1.155 y PTS 1.149, y el desfase se
+> acumula hasta siete páginas en el Mahāvagga. Decide que **el CST tiene exactamente 73 suttas y el
+> Excel 73 filas**, en el mismo orden y con el mismo reparto en cinco vaggas, comprobado por nombre
+> (72/73) y por cobertura de **n-gramas de caracteres**, que resiste los truncamientos. Dos páginas
+> **intercambiadas** en el Excel, corregidas contra el impreso (`5.4.1`→151, `5.4.2`→152: Sn 151
+> abre `IV. AṬṬHAKAVAGGA. / 1. Kāmasutta.`).
+>
+> ⚠️ De aquí salió una regla de `pali_norm` **medida**: PTS escribe la niggahīta final como `ñ` de
+> sandhi —`ahañ ca`, `kiñ ca`— **194 veces** y el CST siempre `ṃ` (0 contra 4.604). Sin la regla,
+> esas 194 palabras eran discrepancias inventadas; con ella el residuo fonotáctico baja del 4,9 % al
+> 2,8 %.
+>
+> ⚠️ Y la comparación de nombres de KN **no puede usar `an_names`**: está afinado para los nombres
+> largos de AN y con los cortos se rompe —`cst_parts('Kāmasuttaṃ')` da `'k'` y
+> `pts_variants('Kāma')` da **lista vacía**—. No se toca (lo usan cinco volúmenes cerrados): KN lleva
+> su propia comparación.
+>
+> **Theragāthā 264/264 y Therīgāthā 73/73** (`kn_theragatha.py`, parametrizado para las dos: comparten
+> el libro 29 de la BD y el mismo régimen). Aquí sí hay **rango de versos** en `PTS Alt/Verse`, así
+> que hay **tres señales independientes** —nombre, rango y cobertura— y se firma con **dos de tres**.
+> Thig invierte el reparto: el rango casa 66/73 y el nombre 73/73, mientras que en Thag el nombre
+> falla 10 veces (erratas del Excel: `Jmbuka`, `Grimānanda`, `Vajaya`) y el rango salva la fila.
+> Dos rangos **intercambiados** en Thig (`9.6.2`/`9.6.3`), corregidos contra el CST.
+>
+> ⚠️ La ventana de cobertura era **de una sola página** y partía los poemas cortos: el vagga de los
+> Chakka mete tres en la 136 y el `Vāseṭṭhī` daba **0,47**; con dos páginas, **0,96**. No era un
+> umbral que aflojar, era la ventana mal puesta — subió también Thag de 259 a 261.
+>
+> **Vimānavatthu 85/85** (`kn_vimanavatthu.py`), **en fichero propio** porque el régimen de prueba es
+> otro (regla (6)): aquí **decide el nombre y el contenido sólo corrobora**. La obra está hecha de
+> **pares repetidos a propósito** —`Paṭhamasuṇisā`/`Dutiyasuṇisā`, `Paṭhamakaraṇīya`/`Dutiya-`,
+> `Paṭhamasūci`/`Dutiya-`— cuyo segundo miembro es el mismo poema con el donante cambiado, y en tres
+> casos PTS **ni lo reimprime** (`anantaraṃ pañcavimānaṃ yathā kākatarasadāyakavimānaṃ tathā
+> vitthāretabbaṃ`). Medido: la cobertura propia tiene mediana 0,94 pero la **ajena** 0,53, y **106 de
+> 239** pares ajenos pasan de 0,55 — un umbral fijo no separa nada. Probando si el sutta propio es el
+> que más puntúa de los 85, gana 75/85 y **las diez que pierden, pierden contra su propio gemelo**
+> (0,95 contra 0,97). Lo que decide es el **nombre, 85/85**, única señal que ve el ordinal
+> `Paṭhama-`/`Dutiya-`, sobre una **biyección completa y ordenada** (85 = 85, misma partición
+> Itthi-/Purisavimāna, páginas monótonas 1→134). `PTS Ref` = `Vv <nº>`; el Excel no da rango de verso
+> para esta obra.
+>
+> ⚠️ **Una ventana ancha que parecía arreglarlo todo y era vacua.** Las ocho filas de cobertura floja
+> subían de 0,39 a 0,95 abriendo la ventana **dos páginas hacia atrás** — y con esa misma ventana los
+> **vecinos** puntuaban igual o más (0,97 contra 0,95). Descartada. Es el punto ciego de siempre: una
+> señal que sube para todos no es evidencia de nada, y sólo se ve con el **control contra el par
+> ajeno**, nunca mirando la propia puntuación.
 
 > Desglose de AN (2026-07-25): **A ii 303/303, A iii 457/457, A iv 298/298 y A v 245/245 —
 > los cinco CERRADOS 🔒**. **AN ENTERO CERRADO: 1737/1737.**
