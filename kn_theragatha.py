@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """
-kn_theragatha — el Theragāthā: 264 filas, una por *thera*.
+kn_theragatha — el **Theragāthā** (264 filas) y el **Therīgāthā** (73), con el mismo método.
+
+Los dos comparten libro en la BD (el 29: PTS los publica en un volumen, Thera 1-109 y Therī
+123-167) y estructura: una fila por *thera*/*therī*, un `subhead` por poema en el CST, y el rango
+de versos de PTS ya escrito en `PTS Alt/Verse`. Cambian sólo el fichero VRI, la etiqueta del Excel
+y el tramo de páginas — así que el mismo analizador sirve para ambos y no se duplica nada.
 
 La primera obra grande de KN, y sale bien porque **tres señales independientes coinciden** y ninguna
 de las tres depende de las otras dos.
@@ -49,9 +54,16 @@ import an1_eka_duka as R
 from openpyxl import load_workbook
 
 XLSX = 'PTS_Reference_Complete_Canon.xlsx'
-BOOK, STEM, VOL = 29, 's0508m', 'Th'
 COV_MIN = 0.55
-ULTIMA = 116
+# obra → (libro BD, fichero VRI, etiqueta `PTS Vol` del Excel, última página del tramo, sigla)
+OBRAS = {'thag': (29, 's0508m', 'Th', 116, 'Th'),
+         'thig': (29, 's0509m', 'Th & Th', 174, 'Thī')}
+
+# ⚠️ Dos rangos de verso INTERCAMBIADOS en el Excel del Therīgāthā, y el CST y el contenido lo
+# dicen a la vez: el `Vāseṭṭhī` es el 133-138 (el Excel le pone 139-144) y el `Khemā` el 139-144
+# (le pone `133-139`, que además cuenta **siete** versos donde sus hermanos tienen seis). Los
+# nombres casan en las dos filas, así que lo cruzado son los rangos, no los poemas.
+VERSOS_CORREGIDOS = {'9.6.2': (133, 138), '9.6.3': (139, 144)}
 
 
 def _limpia(t):
@@ -92,6 +104,9 @@ def suttas_cst(stem):
 
 def main():
     dry = '--dry' in sys.argv
+    obra = sys.argv[sys.argv.index('--obra') + 1] if '--obra' in sys.argv else 'thag'
+    BOOK, STEM, VOL, ULTIMA, SIGLA = OBRAS[obra]
+    print(f'── {obra}: libro {BOOK} · {STEM} · «{VOL}»')
     conn = sqlite3.connect(R.DB)
     conn.row_factory = sqlite3.Row
     cst = suttas_cst(STEM)
@@ -104,10 +119,14 @@ def main():
         if r[ci['Nikaya']] != 'KN' or str(r[ci['PTS Vol']]) != VOL:
             continue
         m = re.search(r'v(\d+)(?:-(\d+))?', str(r[ci['PTS Alt/Verse']] or ''))
-        fs.append({'num': str(r[ci['Sutta #']]), 'name': str(r[ci['Sutta Name']] or ''),
+        num = str(r[ci['Sutta #']])
+        a = int(m.group(1)) if m else None
+        b = int(m.group(2) or m.group(1)) if m else None
+        if num in VERSOS_CORREGIDOS:
+            a, b = VERSOS_CORREGIDOS[num]
+        fs.append({'num': num, 'name': str(r[ci['Sutta Name']] or ''),
                    'page': r[ci['PTS Page']], 'estado': r[ci['Estado']],
-                   'a': int(m.group(1)) if m else None,
-                   'b': int(m.group(2) or m.group(1)) if m else None})
+                   'a': a, 'b': b, 'alt': str(r[ci['PTS Alt/Verse']] or '')})
     print(f'CST {len(cst)} suttas · Excel {len(fs)} filas')
     if len(cst) != len(fs):
         print('⚠ los recuentos no coinciden: no se escribe nada')
@@ -117,7 +136,12 @@ def main():
     for k, f in enumerate(fs):
         sub, ca, cb, tc = cst[k]
         pg = f['page']
-        hasta = fs[k + 1]['page'] if k + 1 < len(fs) and isinstance(fs[k + 1]['page'], int) else ULTIMA
+        # ⚠️ La ventana es de **dos páginas como mínimo**. Cuando varios poemas cortos comparten
+        # página —y en el Therīgāthā el vagga de los Chakka mete tres en la 136— una ventana de una
+        # sola deja el poema partido y la cobertura se hunde: el Vāseṭṭhī daba 0,47 con `136-136` y
+        # **0,96** con `136-137`. No es un umbral que se afloja: es la ventana que estaba mal.
+        sig = fs[k + 1]['page'] if k + 1 < len(fs) and isinstance(fs[k + 1]['page'], int) else ULTIMA
+        hasta = max(sig, (pg + 1) if isinstance(pg, int) else sig)
         txt = ' '.join(ap.fold(x['unitext'] or '') for x in conn.execute(
             'SELECT unitext FROM pages WHERE edition="mula" AND book_no=? AND page_no BETWEEN ? '
             'AND ?', (BOOK, pg, max(pg, hasta))))
@@ -129,25 +153,29 @@ def main():
         n_cov += cov >= COV_MIN
         señales = sum((nom, ver, cov >= COV_MIN))
         if señales >= 2:
-            ref = f'Th {f["a"]}-{f["b"]}' if f['a'] and f['b'] != f['a'] else (
-                f'Th {f["a"]}' if f['a'] else f'Th {ca}-{cb}')
-            det = (f'Theragāthā: sutta {k + 1} de 264 → «{sub}», versos {ca}-{cb} del CST; '
+            ref = f'{SIGLA} {f["a"]}-{f["b"]}' if f['a'] and f['b'] != f['a'] else (
+                f'{SIGLA} {f["a"]}' if f['a'] else f'{SIGLA} {ca}-{cb}')
+            det = (f'{obra}: poema {k + 1} de {len(fs)} → «{sub}», versos {ca}-{cb} del CST; '
                    f'señales: {"nombre " if nom else ""}{"rango " if ver else ""}'
                    f'cobertura {cov:.2f}')
             if not nom:
                 det += f'. ⚠ el nombre del Excel («{_limpia(f["name"])}») no casa con el subhead'
+            if f['num'] in VERSOS_CORREGIDOS:
+                det += (f'. RANGO CORREGIDO: el Excel decía «{f["alt"]}» y el CST y el contenido '
+                        f'dan {f["a"]}-{f["b"]}')
             res[f['num']] = (f'{STEM}:{ca}-{cb}' if cb != ca else f'{STEM}:{ca}', ref, det)
         else:
             malas.append((f['num'], _limpia(f['name'])[:24], sub[:28],
                           f'nom {nom} · rango {ver} · cov {cov:.2f}'))
-    print(f'  señales: nombre {n_nom}/264 · rango de versos {n_ver}/264 · cobertura {n_cov}/264')
+    print(f'  señales: nombre {n_nom}/{len(fs)} · rango de versos {n_ver}/{len(fs)} · '
+          f'cobertura {n_cov}/{len(fs)}')
     print(f'\n{len(res)}/{len(fs)} firmadas (≥2 señales)')
     for x in malas:
         print('   ✗', x)
     if dry or not res:
         print('(dry-run: nada escrito)' if dry else '')
         return
-    cp = f'{XLSX}.backup-{datetime.now():%Y%m%d-%H%M%S}-thag.xlsx'
+    cp = f'{XLSX}.backup-{datetime.now():%Y%m%d-%H%M%S}-{obra}.xlsx'
     shutil.copy(XLSX, cp)
     print(f'backup → {cp}')
     wb = load_workbook(XLSX)
@@ -163,6 +191,9 @@ def main():
         vri, ref, det = res[num]
         ws.cell(r, ci['VRI Ref']).value = vri
         ws.cell(r, ci['PTS Ref']).value = ref
+        if num in VERSOS_CORREGIDOS:
+            a, b = VERSOS_CORREGIDOS[num]
+            ws.cell(r, ci['PTS Alt/Verse']).value = f'{SIGLA} v{a}-{b}'
         ws.cell(r, ci['Validation']).value = 'VALIDADOR_HUMANO'
         ws.cell(r, ci['Estado']).value = 'CONFIRMADO'
         ws.cell(r, ci['Detail']).value = det
