@@ -518,8 +518,8 @@ Use this terminology consistently across the project:
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
 | **AN** | **1737** | **1737** | **0** | **100.0%** |
-| KN | 2360 | 35 | 2325 | 1.5% |
-| **TOTAL** | **6097** | **3772** | **2325** | **61.9%** |
+| KN | 2360 | 227 | 2133 | 9.6% |
+| **TOTAL** | **6097** | **3964** | **2133** | **65.0%** |
 
 > **KN empezado por el Khuddakapāṭha: 9/9** (`kn_khuddakapatha.py`). Es la obra más pequeña del
 > nikāya y por eso es donde se fija el método. Por una vez **las tres fuentes cuentan lo mismo**:
@@ -548,6 +548,29 @@ Use this terminology consistently across the project:
 > ⚠️ Y la forma de la `VRI Ref` **no es la misma en todo KN**: en el Khuddakapāṭha el `n` reinicia
 > por capítulo y hace falta la `c`; en el Dhammapada es corrido y vale la forma normal
 > (`s0502m:1-20`). **Hay que mirar el fichero antes de elegir la forma.**
+>
+> **Itivuttaka 112/112** (`kn_itivuttaka.py`). PTS numera sus suttas de 1 a 112 de corrido y el CST
+> usa **la misma numeración**; el impreso además escribe al lado la referencia relativa al nipāta
+> (`112. (Cat.13)`), que es el `Sutta #` del Excel (`4.4.13`) — las dos referencias se confirman
+> entre sí. **Y con él `check_integrity` pasa entero por primera vez**: las dos incidencias de
+> `paginas_monotonas_por_volumen` que arrastrábamos eran justo dos páginas mal del Itivuttaka
+> —`Iti 6` se imprime en It **3** y el Excel decía 5; `Iti 38` en It **31** y decía 21, donde no hay
+> ningún marcador—, corregidas con la cobertura del par en 0,98 y 0,97.
+>
+> ⚠️ Dos defectos propios en el camino, los dos ya conocidos: **escribí un lector del CST nuevo en
+> vez de usar `ap.cst_unidades`** y reintroduje el fallo de los `<p>` sin `n` — en el Itivuttaka eso
+> deja a cada sutta con la fórmula `Vuttaṃ hetaṃ bhagavatā…`, **idéntica en los 112**, y el cotejo
+> compara la misma frase consigo misma. Y la regex del marcador era demasiado estricta: el impreso
+> escribe `90.* (Tik. V.1)`, `98 (Tik. V.9)` **sin punto** y `110. ** (Cat.11)`.
+>
+> **Udāna 80/80** (`kn_udana.py`), y aquí **el contenido NO es lo que decide**: sus suttas empiezan
+> casi todos por `evaṃ me sutaṃ ekaṃ samayaṃ bhagavā sāvatthiyaṃ…`, así que el incipit —la sonda más
+> discriminante en otras obras— sitúa 58 de 80 y falla justo porque no distingue. PTS tampoco titula
+> los suttas en el cuerpo. Lo que decide es la **estructura, exacta por los dos lados** (8 vaggas de
+> 10 en las dos ediciones ⇒ paranum = `(vagga−1)·10 + sutta`), comprobada con **la página dentro del
+> vagga impreso y monótona (80/80)** y corroborada por el **uddāna** —`tayo ca bodhi, nigrodho te
+> therā Kassapena ca…`, donde el `tayo ca bodhi` son los paranums 1-3 y el `te dasā` declara la
+> cuenta— y por la cobertura (mediana 0,94 contra un control de 0,41-0,52).
 
 > Desglose de AN (2026-07-25): **A ii 303/303, A iii 457/457, A iv 298/298 y A v 245/245 —
 > los cinco CERRADOS 🔒**. **AN ENTERO CERRADO: 1737/1737.**
