@@ -51,7 +51,7 @@ are accounted for individually rather than left blank — see [Scope](#scope-and
 | Value | Entries | Meaning |
 |---|--:|---|
 | `Collated (automatic agreement)` | 3,168 | both sides of the pair agreed under the collation gate |
-| `Collated (human arbitration)` | 2,062 | a disagreement resolved by hand against the printed edition |
+| `Collated (printed markers)` | 2,062 | established from the markers the printed edition itself supplies — colophons, chapter headings, running numbers, uddānas — with structural cross-checks, rather than through the collation gate. A small minority of these (ten entries in DN and MN) were disagreements arbitrated by hand against the printed edition |
 | `Out of scope` | 548 | the Jātaka — see below |
 | `No Ee text available` | 294 | no PTS text for that work in the source used |
 | `Deest in Ee` | 14 | the PTS edition does not print the passage |
@@ -104,6 +104,14 @@ twelve.
 own marker conventions, and a rule fitted to the majority fails silently on the minority. Alignment
 rests on the markers the printed edition itself supplies: running numbers, colophons, chapter
 headings, uddānas.
+
+The two `Collated` values in the `Evidence` column name two different routes, and the difference is
+worth stating plainly. `automatic agreement` means the pair passed a collation gate. `printed
+markers` means the entry rests on what the printed edition itself supplies — a colophon naming the
+unit and its ordinal, a chapter heading, a running number, an uddāna that counts the members of a
+group — checked against the CST structure. The second route carries most of the Khuddaka and of the
+Aṅguttara, and it is not a weaker one: in works where content cannot discriminate, the printed
+marker is the *only* evidence that can.
 
 Two independent checks were required before an entry was accepted:
 
