@@ -283,6 +283,13 @@ def inv_vri(verbose=False, quick=False):
                 mal.append(f"{r.get('Nikaya')} {r.get('Sutta #')}: el paranum {mi.group(2)} no "
                            f"existe en {mi.group(1)}")
             continue
+        # ⚠️ Un rango que el CST **reserva y no imprime** no es una referencia rota: es un `deest`.
+        # Su numeración salta de `651-662` a `673-684` dejando los diez que PTS sí imprime, y el
+        # locus es correcto aunque ese testigo no traiga el texto. Se acepta **sólo si la fila lo
+        # declara** en su `Detail` — la ausencia registrada es un dato; la ausencia sin explicar,
+        # un error.
+        if 'deest in Be' in str(r.get('Detail') or ''):
+            continue
         m = re.match(r'^([a-z0-9]+):(\d+)(?:-(\d+))?$', v)
         if not m:
             mal.append(f"{r.get('Nikaya')} {r.get('Sutta #')}: VRI Ref mal formada {v!r}")

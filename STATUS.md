@@ -175,10 +175,25 @@ de un paranum, se la nombra. De ahí la **tercera extensión de la clave VRI**:
 | `SN 24.28/30/32` (3) | 249, 275, 301: tres filas y **tres** `Adukkhamasukhīsuttaṃ` |
 | `AN 8.32` (1) | `s0404m1:32` (`Dutiyadāna`), entre `:31` y `:33` |
 
-**Quedan PENDIENTE 7** —`SN 46.88`-`46.92`, `49.2`, `50.2`—: bloques agrupados que hay que partir
-contando, y las cuentas no cuadran solas (`50.1`→705 y `50.3`→758 con un bloque de 44 paranums
-entre medias). Eso pide el impreso delante, no aritmética. Señaladas también `49.3` y `50.3`, que
-apuntan dentro de su bloque pero no a su arranque, al revés que sus hermanas.
+**Y las 7 que quedaban, resueltas también** (2026-07-25), con dos hallazgos:
+
+- **`46.88`-`46.92`**, los bloques de repetición del Bojjhaṅga → `s0305m:312-323`, `324-333`,
+  `334-345`, `346-356`, `357-366`. Aquí **la cuenta manda sobre el nombre**: las dos ediciones
+  parten la serie en bloques del mismo tamaño —12-10-12-10-10 contra 12-10-12-11-10— pero **atan el
+  nombre a bloques distintos** (el CST llama `Punagaṅgānadī` al que abre en 324 y el Excel al que
+  abre en 312). En una serie de repeticiones el nombre es resbaladizo —es el mismo sutta repetido
+  con otro término— y el tamaño y la posición no se mueven.
+- **`49.2`** → `s0305m:663-672` y **`50.2`** → `s0305m:717-748`: **el CST reserva esos números y no
+  imprime el texto**. Su numeración salta de `651-662` a `673-684` y de `705-716` a `749-758`,
+  dejando exactamente los que PTS sí imprime. Es el **`deest` del aparato, del lado del CST**: la
+  numeración es común, el texto falta en ese testigo. La referencia es correcta como **locus**; lo
+  que no hay es qué cotejar. `check_integrity` acepta ahora ese caso **sólo si la fila lo declara**
+  (`deest in Be` en su `Detail`) — la ausencia registrada es un dato, la ausencia sin explicar es un
+  error.
+
+Señaladas, sin tocar: **`49.3`-`49.5` y `50.3`-`50.6`** apuntan a **un solo paranum dentro de su
+bloque** en vez de al rango. No están mal —el paranum existe y cae dentro— pero son inconsistentes
+con sus hermanas, que ahora llevan rango.
 
 **Y la batería quedó afinada por los mismos casos**, que es como debe ser: (a) un rango compartido
 **no** es un defecto cuando el CST repite el título en decenas de paranums —`Navātasuttaṃ` ocupa

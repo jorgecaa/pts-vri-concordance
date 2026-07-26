@@ -31,11 +31,10 @@ unidad numerada no siempre es el paranum**.
 - **`SN 24.29` y `24.31`** (y sus pares) comparten `s0303m:250-300` y **está bien**: ahí el CST
   repite el título `Navātasuttaṃ` en **cincuenta** paranums seguidos —los vaggas abreviados—, así
   que el rango *es* el locus. Un rango compartido no es un defecto por sí mismo.
-- **`SN 46.88`-`46.92`, `49.2`, `50.2`** (7): bloques agrupados que hay que partir contando, y las
-  cuentas no cuadran solas —`50.1`→705 y `50.3`→758 con un bloque de 44 paranums entre medias—.
-  Eso pide el impreso delante, no aritmética. Quedan **PENDIENTE**, señaladas.
-- Y quedan señaladas también **`49.3` y `50.3`**, que apuntan dentro de su bloque pero no a su
-  arranque, al revés que sus hermanas.
+- **`SN 24.29` / `24.31`** ya dicho: el rango **es** el locus.
+- Quedan señaladas **`49.3`, `49.4`, `49.5`, `50.3`-`50.6`**, que apuntan a **un solo paranum dentro
+  de su bloque** en vez de al rango. No están mal —el paranum existe y cae dentro—, pero son
+  inconsistentes con sus hermanas, que ahora llevan rango.
 
 Uso: python3 arregla_vri_sn.py [--dry]
 """
@@ -60,6 +59,37 @@ for k, num in enumerate(('46.58', '46.59', '46.60', '46.61', '46.62'), 2):
         f'ítem {k} del sutta que las dos ediciones imprimen entero: PTS lo numera «57. (1) '
         f'Aṭṭhika» y ocupa S v 129-131, y el CST lo cierra con «Paṭhamaṃ». Esta fila es uno de '
         f'sus frutos, no un sutta aparte')
+# ── los cinco bloques de repetición del Bojjhaṅga y los dos huecos reservados ──────────────
+#
+# ⚠️ Aquí **la cuenta manda sobre el nombre**, y hay que decir por qué. Las dos ediciones parten la
+# serie de repeticiones en bloques del mismo tamaño —12, 10, 12, 10, 10 en el Excel contra
+# 12, 10, 12, 11, 10 en el CST— pero **atan el nombre a bloques distintos**: el CST llama
+# `Punagaṅgānadīādisuttaṃ` al que empieza en 324 y el Excel al que empieza en 312. En una serie de
+# repeticiones los nombres son notoriamente resbaladizos —lo dice el propio material, que es el
+# mismo sutta repetido con otro término— mientras que la posición y el tamaño no se mueven.
+for _n, _r in (('46.88', '312-323'), ('46.89', '324-333'), ('46.90', '334-345'),
+               ('46.91', '346-356'), ('46.92', '357-366')):
+    ARREGLOS[('SN', _n)] = (
+        f's0305m:{_r}',
+        f'bloque de repetición del Bojjhaṅga. La secuencia de tamaños casa posición a posición '
+        f'(12-10-12-10-10 en el Excel contra 12-10-12-11-10 en el CST); el nombre NO, porque cada '
+        f'edición se lo ata a un bloque distinto — el CST llama Punagaṅgānadī al que abre en 324 y '
+        f'el Excel al que abre en 312. En una serie de repeticiones el tamaño y la posición son '
+        f'firmes y el nombre no')
+
+# Los dos huecos que el CST **reserva y no imprime**: su numeración salta de `651-662` a `673-684`
+# y de `705-716` a `749-758`, dejando exactamente los diez y los treinta y dos que PTS sí imprime.
+# Es el `deest` del aparato, pero del lado del CST: la numeración es común, el texto falta en ese
+# testigo. La referencia es correcta como **locus**; lo que no hay es texto que cotejar.
+ARREGLOS[('SN', '49.2')] = (
+    's0305m:663-672',
+    'SN 49.13-22 (Appamādavagga). El CST **reserva estos números y no imprime el texto**: sus '
+    'grupos saltan de 651-662 a 673-684. La referencia es el locus; el texto es «deest in Be»')
+ARREGLOS[('SN', '50.2')] = (
+    's0305m:717-748',
+    'SN 50.13-22. El CST **reserva estos números y no imprime el texto**: sus grupos saltan de '
+    '705-716 a 749-758. La referencia es el locus; el texto es «deest in Be»')
+
 ARREGLOS.update({
     ('SN', '46.36'): ('s0305m:217', 'estaba desplazada +1: apuntaba al Ayonisomanasikāra (216) '
                                     'siendo el Yonisomanasikāra, que es el 217'),
