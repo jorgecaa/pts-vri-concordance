@@ -17,6 +17,10 @@ Two loosely-coupled workstreams share one directory (an unpacked AppImage tree, 
 This is **not a git repository** — there is no version control here. Be careful with
 destructive edits; there is no undo.
 
+> **Scope rule — el Jātaka queda FUERA** (decisión de Jorge, 2026-07-25): sus 548 filas no se
+> abordan. El universo real de la concordancia son **5.253 filas** (6.098 menos el Jātaka y menos
+> las 297 sin texto PTS en la BD: Milindapañha 248, Nettippakaraṇa 38, Peṭakopadesa 11).
+>
 > **Scope rule — Canon only.** Work strictly on the **Pāli Canon** (`edition='mula'`). **Never
 > touch the commentary (aṭṭhakathā) or sub-commentary (ṭīkā).** The commentary pipeline
 > (`extract_commentary.py`, `generate_tex.py`, `compile_pdfs.py`, `book_meta.py`,

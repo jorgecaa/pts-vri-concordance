@@ -512,6 +512,11 @@ Use this terminology consistently across the project:
   (discrepancy), `OK` / `OK+RTE` / `OK_CONT`, `OK_HEAD`, `OK_NEAR`, `RTE_ONLY`, `VERSE_ONLY`,
   `EXTRA_CANON`, `UNVERIFIED` / `UNVERIF`. When evidence is insufficient → **PENDIENTE**.
 
+> **ALCANCE (decisión de Jorge, 2026-07-25): el Jātaka queda FUERA.** Sus 548 filas no se abordan.
+> Con eso, y descontando las 297 sin texto PTS en la BD (Milindapañha 248, Nettippakaraṇa 38,
+> Peṭakopadesa 11), el universo de trabajo son **5.253 filas** y están cerradas **5.230: el 99,6 %**.
+> Las 23 que faltan no son deuda de método (ver el desglose al final de esta sección).
+
 | Nikāya | Entries | CONFIRMADO | PENDIENTE | % CONF |
 |--------|--------:|-----------:|----------:|-------:|
 | DN | 34 | 34 | 0 | 100.0% |
@@ -520,6 +525,15 @@ Use this terminology consistently across the project:
 | **AN** | **1737** | **1737** | **0** | **100.0%** |
 | KN | 2361 | 1493 | 868 | 63.2% |
 | **TOTAL** | **6098** | **5230** | **868** | **85.8%** |
+
+**Dentro del alcance** (sin el Jātaka ni las 297 sin texto): **5.230 / 5.253 = 99,6 %.** Las 23
+restantes, una por una:
+
+| motivo | filas | ¿cerrable? |
+|---|--:|---|
+| **cabeceras de sección** — no son suttas (`Therāpadāna`, `Niddesa`, `Paṭisambhidāmagga`…) | 6 | no: no deberían contar como filas |
+| **PTS no lo imprime** — el vagga 56 del Therāpadāna, con las 11 filas apuntando a la p511, la del colofón | 11 | no: no hay texto que cotejar |
+| **sin marcador propio en el impreso** — 3 apadānas que PTS mete dentro del 331, los 2 colectivos de las `Yasodharā-pamukhāni` y el `Cnd 2 Pucchā`, que es un encabezado | 6 | quizá, con trabajo fila a fila |
 
 > **KN empezado por el Khuddakapāṭha: 9/9** (`kn_khuddakapatha.py`). Es la obra más pequeña del
 > nikāya y por eso es donde se fija el método. Por una vez **las tres fuentes cuentan lo mismo**:
