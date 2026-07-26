@@ -276,6 +276,51 @@ las dos ediciones eliden el texto** (`…pe…` contra `║ pe ║`): no hay qu�
 asignaron por evidencia **estructural** —el uddāna que cuenta los miembros, el orden—, que una
 prueba de texto no puede confirmar ni desmentir. Decirlo así distingue «no se puede» de «no se sabe».
 
+### La batería del Khuddaka (`pruebas_kn.py`, 2026-07-25)
+
+**1.495 pruebas · PASA 1.495 · FALLA 0 · INDECISO 0**, y **10 de 10 mutaciones cazadas**.
+
+La batería de los cuatro nikāyas **no sirve aquí**: se apoya en que la `PTS Ref` traiga
+`página,línea`, y en KN la cita es la estrofa o la sección (regla (5-ter)) — lo correcto para estas
+obras y lo inútil para aquel control. Y el contenido es donde menos discrimina de todo el canon.
+Así que la idea es otra:
+
+> **Cuando no puedes verificar el punto, verifica el orden y la medida.**
+
+Dos ordenaciones **independientes** —cómo PTS imprime y cómo el CST numera— tienen que coincidir, y
+el texto de las dos tiene que **avanzar junto**. Las dos cosas son ciegas a cómo se hizo la
+alineación, que es lo que las hace prueba y no tautología.
+
+| control | qué caza |
+|---|---|
+| **orden** | el **desplazamiento**, la familia que más daño ha hecho (S ii +7, `46.36`/`46.37` +1). Un par intercambiado produce una inversión, y se ve sin mirar una letra |
+| **biyección** | el rango colapsado y el hueco |
+| **medida** | lo que el contenido no puede: compara **cuánto** texto hay y **dónde** va, no qué dice |
+| **contenido** | cuando discrimina, que en KN es menos de lo que parece |
+
+⚠️ **La medida se toma acumulada y por tramo, y lo que se mide es el SALTO.** Fila a fila mide ruido
+—muchas unidades cortas comparten página y la última de cada obra no tiene siguiente—; de corrido
+tampoco vale, porque el Paṭisambhidāmagga **reinicia la paginación** en su volumen II y el
+Cūḷaniddesa tiene filas cuyo texto está en el Suttanipāta. Y el nivel no importa: las dos curvas
+pueden separarse **poco a poco** sin que nada esté mal —el Cūḷaniddesa deriva de 0,00 a −0,28 en
+dieciocho filas porque cambia la densidad del impreso—. **Una fila mal asignada desplaza la curva de
+golpe**; una composición distinta la desplaza despacio.
+
+⚠️ **La prueba destapó una arruga de la clave**: `c<capítulo>.<n>` significa **dos cosas**. En el
+Apadāna y el Cariyāpiṭaka el `n` es el **ítem** (la unidad k-ésima del capítulo); en el
+Paṭisambhidāmagga es un **paranum dentro del capítulo**, coherente con su forma de rango
+`c<cap>.<a>-<b>`. Se desambigua así: manda el ítem, y el paranum es el recurso cuando el número
+excede el número de unidades del capítulo.
+
+⚠️ **Y la prueba de mutación corrigió a la propia prueba.** Aprobar 1.495 de 1.495 no dice nada si
+la batería no detecta un defecto puesto a mano, así que se le meten diez: intercambiar vecinas,
+desplazar un puesto, duplicar la referencia de al lado, apuntar lejos, cambiar un rango. Dos se
+escapaban, y las dos por la misma causa: **había dado por legítimo compartir un rango sin más**. La
+regla buena es la misma que ya rige para el `deest`: **la excepción se declara, no se adivina** —
+compartir explicado es un dato, compartir a secas es un defecto. Intenté inferirlo («si el CST
+repite el título a lo largo del rango») y era falso: dentro de **una** unidad que abarca once
+paranums el título tampoco cambia.
+
 ### La convención que se ha seguido (2026-07-25)
 
 1. **Una cabecera no es una entrada, y no se borra.** No se destruye estructura atestiguada: se
