@@ -137,6 +137,30 @@ así que entran por el filtro de `PTS Vol` y los alineadores tienen que descarta
 `Type = Section Header`. Con eso los recuentos quedan además más limpios — el Cūḷaniddesa pasa a
 **22/22** y el Paṭisambhidāmagga a **31/31**, porque la cabecera deja de contar en el denominador.
 
+### Triaje de las 39 filas que destapó la batería (2026-07-25)
+
+`pruebas_concordancia.py` sacó 39 filas de SN/AN cuyo par no se puede demostrar: **20 sin `VRI Ref`**
+y **19 que comparten la suya con otra fila**. Ninguna es ruido de la prueba; todas son la misma
+cosa vista por cuatro caras: **PTS numera lo que el CST agrupa**. Clasificadas:
+
+| forma | filas | qué pasa | arreglo |
+|---|--:|---|---|
+| **A · peyyāla dentro de un paranum** | 11 | `SN 12.83-12.93` (`Sikkhā`…`Appamāda`). El CST mete el peyyāla **entero** en `s0302m:73`, y su propio uddāna cuenta **doce** —`Satthā sikkhā ca yogo ca… appamādena **dvādasā**`—, que son `12.82` + estas once. El texto numera los ítems `(2)`…`(12)` | referencia al **ítem dentro del paranum**, forma nueva `s0302m:73.2` … `:73.12` |
+| **B · bloque agrupado sin abrir** | 7 | `SN 46.88-92`, `49.2`, `50.2`. Sus vecinas sí tienen `VRI Ref` y el bloque del CST las contiene: el `1-12. Pācīnādisuttadvādasakaṃ` ocupa `651-672` = **22** paranums, o sea `49.1` (12) **y** `49.2` (10) | partir el bloque: `49.2` → `s0305m:663-672` |
+| **C · homónimos con rango colapsado** | 9 | `24.28/30/32` reclaman `249-301`, y el CST tiene **tres** `Adukkhamasukhīsuttaṃ`: 249, 275 y 301. Tres filas, tres paranums | **uno a cada una** |
+| **D · repetición legítima del CST** | 4 | `24.29/31` reclaman `250-300`, y ahí el CST repite el título `Navātasuttaṃ` en **cincuenta** paranums seguidos (los vaggas abreviados). El rango es correcto | dejar el rango; documentar que **es** un rango |
+| **E · reenvío del propio Excel** | 7 | `46.36`, `46.63`-`46.67`: su `Sutta Name` **cita a otra fila** —`(SN 46.35) Yonisomanasikāra`— y apunta al mismo paranum. Son la misma unidad bajo dos numeraciones | decidir si son filas o reenvíos |
+| **F · suelta** | 1 | `AN 8.32 Dāna 2` sin `VRI Ref` | resolver |
+
+⚠️ **Y el triaje encontró de paso dos que la batería no había marcado**: `49.3` apunta a
+`s0305m:682` y `50.3` a `s0305m:758`, cuando los bloques del CST empiezan en **673** y **749**. La
+referencia cae dentro del bloque pero no en su arranque, al revés que sus hermanas. Hay que
+revisarlas.
+
+⚠️ La forma **A** pide **notación nueva** —el ítem dentro del paranum— y eso es decisión de Jorge, no
+del que ejecuta: sería la tercera extensión de la clave VRI, tras `:c<cap>` (5-bis) y `:c<cap>.<n>`.
+Nada de esto se ha escrito todavía.
+
 ### La convención que se ha seguido (2026-07-25)
 
 1. **Una cabecera no es una entrada, y no se borra.** No se destruye estructura atestiguada: se
