@@ -518,8 +518,8 @@ Use this terminology consistently across the project:
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
 | **AN** | **1737** | **1737** | **0** | **100.0%** |
-| KN | 2361 | 837 | 1524 | 35.5% |
-| **TOTAL** | **6098** | **4574** | **1524** | **75.0%** |
+| KN | 2361 | 906 | 1455 | 38.4% |
+| **TOTAL** | **6098** | **4643** | **1455** | **76.1%** |
 
 > **KN empezado por el Khuddakapāṭha: 9/9** (`kn_khuddakapatha.py`). Es la obra más pequeña del
 > nikāya y por eso es donde se fija el método. Por una vez **las tres fuentes cuentan lo mismo**:
@@ -671,6 +671,45 @@ Use this terminology consistently across the project:
 > no por el primero que casa; (c) el `n` del CST reinicia en cada vagga (regla (5-bis)) y leer el
 > fichero por paranum devuelve las tres series **entrelazadas**, 337 «subheads» donde hay 35: se lee
 > en orden de documento.
+>
+> **Mahāniddesa 16/16, Cūḷaniddesa 22/23 y Paṭisambhidāmagga 31/31** (`kn_niddesa.py`), tres
+> regímenes en un fichero porque las tres obras comparten el problema y ninguna la solución.
+>
+> Son **comentario canónico**: prosa exegética que glosa palabra por palabra, y eso las hace
+> **formulaicas hasta lo indistinguible**. En el Mahāniddesa la cobertura de un capítulo con su par
+> del CST es 0,93-0,96 y con un capítulo **ajeno** llega a **0,85**. Como en el Udāna, el contenido
+> corrobora y no discrimina. Decide el **marcador impreso**, y cada obra tiene el suyo:
+>
+> - **Mahāniddesa**: PTS pone en cada capítulo un **ordinal en pali con el nombre**, dos veces —de
+>   colofón al cerrar y de encabezado al abrir—: `SOḶASAMO SĀRIPUTTASUTTANIDDESO`. Los **16** casan
+>   con los 16 `div` del CST en número y nombre. Aquí el `n` del CST **sí** es corrido (1-210).
+> - **Paṭisambhidāmagga**: el mejor de los tres. PTS titula cada kathā con **romano, vagga y
+>   nombre** —`IV. MAHĀVAGGE INDRIYAKATHĀ`— y el CST marca las mismas treinta con
+>   `<p rend="title">`; las dos listas coinciden en número, orden y nombre, y **la página impresa es
+>   exactamente la que declara el Excel**. La fila 31 es la `Mātikā` que abre el Mahāvagga, que el
+>   CST marca como `subhead` y no como kathā. El `n` reinicia por vagga (1-240, 1-48, 1-42): regla
+>   (5-bis), `s0517m:c<vagga>.<a>-<b>`.
+> - **Cūḷaniddesa**: no hay marcador por sección — el impreso sólo titula `1. Vatthugāthā`,
+>   `2. Pucchā` y `3. Khaggavisāṇasutta`, y las dieciséis pucchās van dentro de la segunda sin
+>   título. Lo que sí numera son **las estrofas del Suttanipāta** que el niddesa glosa.
+>
+> ⚠️ **Tres filas del Cūḷaniddesa no tienen texto en su propio fichero VRI**, y no es un fallo: el
+> Cūḷaniddesa del CST **no reimprime las gāthās base** —su `div` arranca ya en
+> `1. Ajitamāṇavapucchāniddeso`—, mientras que PTS sí las imprime al frente y dentro. Su texto es el
+> del **Suttanipāta**, y allí va la referencia: `Cnd 1 Vatthugāthā` → `s0505m:976-1037` (cobertura
+> 0,97; el impreso marca los dos extremos, estrofas **976-1031**, con el `2. Pucchā.` abriendo en la
+> **1032**), y las dos filas de `Nidd II` —que **no tenían página**— → `s0505m:1130-1136` y
+> `s0505m:1137-1155`, con la cobertura separándolas sin ambigüedad (0,97 contra 0,47 y 0,86 contra
+> 0,34) y **página asignada**, 46 y 49. Son las gāthās **base**; sus niddesas son `Cnd 21` y `Cnd 22`.
+>
+> ⚠️ Queda **una** fila pendiente en todo el bloque: `Cnd 2 Pucchā`, que **no es una unidad sino un
+> encabezado de sección** —PTS lo imprime en la p6 para abrir las preguntas y su contenido son las
+> filas `Cnd 5-22`—. Es del mismo tipo que las diez cabeceras que el catastro ya había señalado.
+>
+> ⚠️ Y un defecto propio que costó dos vueltas: los sufijos y ordinales de las expresiones regulares
+> hay que escribirlos **en la forma plegada**, que es como llegan tras `ap.fold` — `sutaniddeso`
+> llega como `sutanideso` y `catuttho` como `catutho`. Con la geminada escrita, el marcador impreso
+> no casaba con **nada** (0 de 16) y luego dejaba el capítulo IV sin firmar.
 >
 > ⚠️ Tres defectos propios en el camino, los tres del mismo tipo — **inferir lo que el impreso dice**:
 > (a) segmenté los vaggas por «dónde reinicia el ordinal» y, al faltar cuatro colofones, la
