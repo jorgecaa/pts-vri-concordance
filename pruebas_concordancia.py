@@ -99,17 +99,29 @@ _CACHE = {}
 
 def cst_texto(vri):
     """Texto del CST al que apunta la `VRI Ref`, o `None` si no resuelve."""
-    m = re.match(r'^([a-z0-9]+):(\d+)(?:-(\d+))?$', str(vri or ''))
+    # `stem:N`, `stem:N-M` y `stem:N.item` — la tercera es la subdivisión dentro de un paranum
+    mi = re.match(r'^([a-z0-9]+):(\d+)\.(\d+)$', str(vri or ''))
+    m = mi or re.match(r'^([a-z0-9]+):(\d+)(?:-(\d+))?$', str(vri or ''))
     if not m:
         return None
     stem, a = m.group(1), int(m.group(2))
-    b = int(m.group(3) or a)
+    b = a if mi else int(m.group(3) or a)
     if stem not in _CACHE:
         try:
             _CACHE[stem] = {x['pn']: x['texto'] for x in ap.cst_unidades(stem)}
         except Exception:
             _CACHE[stem] = {}
     t = ' '.join(_CACHE[stem][n] for n in range(a, b + 1) if n in _CACHE[stem])
+    if mi and t.strip():
+        # ⚠️ Para `:<paranum>.<ítem>` se recorta **el ítem**, no el párrafo entero: el CST los
+        # numera `(2)`, `(3)`… dentro de su propio texto, y comparar contra todo el párrafo haría
+        # que el ancla nunca casara —el ítem no empieza donde empieza el párrafo—. Es la diferencia
+        # entre no poder decidir y poder.
+        k = int(mi.group(3))
+        ini = t.find(f'({k})')
+        fin = t.find(f'({k + 1})', ini + 1) if ini >= 0 else -1
+        if ini >= 0:
+            t = t[ini:fin if fin > ini else None]
     return ap.fold(t) if t.strip() else None
 
 
@@ -165,14 +177,21 @@ def prueba_fila(conn, fs, j, dueños):
          'ref': str(f['PTS Ref']), 'vri': str(f['VRI Ref'] or '')}
     tc = cst_texto(f['VRI Ref'])
     d['resuelve'] = tc is not None
-    d['unica'] = dueños[str(f['VRI Ref'])] == 1 if f['VRI Ref'] else False
+    # ⚠️ Compartir la `VRI Ref` **no es un defecto por sí mismo**: cuando el CST repite el mismo
+    # título en decenas de paranums seguidos —`Navātasuttaṃ` ocupa cincuenta en `s0303m:250-300`,
+    # los vaggas abreviados— el rango *es* el locus y varias filas de PTS caen dentro. Lo que sí es
+    # defecto es que compartan un **paranum único**: ahí una de las dos está mal.
+    vri = str(f['VRI Ref'] or '')
+    es_rango = bool(re.match(r'^[a-z0-9]+:(\d+)-(\d+)$', vri))
+    d['unica'] = dueños[vri] == 1 or es_rango if f['VRI Ref'] else False
     if not d['resuelve']:
         d['veredicto'] = 'FALLA'
         d['motivo'] = 'la VRI Ref no apunta a texto del CST'
         return d
     if not d['unica']:
         d['veredicto'] = 'FALLA'
-        d['motivo'] = f"la VRI Ref la reclaman {dueños[str(f['VRI Ref'])]} filas"
+        d['motivo'] = (f"la VRI Ref (paranum único) la reclaman {dueños[vri]} filas: una de "
+                       'ellas apunta a un texto que no es el suyo')
         return d
 
     # ── control 2: el ancla de página,línea
@@ -210,9 +229,15 @@ def prueba_fila(conn, fs, j, dueños):
         # el nombre de la fila puede traer sufijos y corchetes (`Apaccupalakkhaṇā [2]`), y el
         # marcador impreso lo escribe desnudo
         raiz = re.sub(r'[^a-z]', '', ap.fold(re.sub(r'\s*\[.*$|\s*\(.*$|\s*\d+$', '',
-                                                    str(f['Sutta Name'] or ''))))[:8]
+                                                    str(f['Sutta Name'] or ''))))[:12]
         if elide and len(raiz) >= 5:
-            d['ancla_nombre'] = raiz in re.sub(r'[^a-z]', '', cerca)
+            # ⚠️ El marcador impreso **omite el primer elemento del compuesto**: la fila se llama
+            # `Rūpāppaccupalakkhaṇādisutta…` y PTS escribe sólo `Apaccupalakkhaṇā`, porque el
+            # `rūpa-` va sobreentendido en la serie de los khandhas. Comparar la raíz entera dejaba
+            # tres filas correctas marcadas como falsas. Se prueban las dos formas.
+            plano = re.sub(r'[^a-z]', '', cerca)
+            sin_khandha = re.sub(r'^(rupa|vedana|sanna|sankhara|vinana)', '', raiz)
+            d['ancla_nombre'] = any(x in plano for x in (raiz, sin_khandha) if len(x) >= 5)
 
     # ── control 3: contenido contra las vecinas del mismo volumen
     d['cov'] = d['cov_vecina'] = None
@@ -236,10 +261,18 @@ def prueba_fila(conn, fs, j, dueños):
     if d['ancla_nombre'] is True:
         d['veredicto'] = 'PASA'
         d['motivo'] = 'ancla por nombre (PTS elide el texto en ese punto)'
-    elif d['ancla_nombre'] is False:
+    elif d['ancla_nombre'] is False and not cont_ok:
         d['veredicto'] = 'FALLA'
         d['motivo'] = (f"PTS elide el texto en {d['ref']} y el marcador de esa línea NO nombra "
                        'esta unidad')
+    elif d['ancla_nombre'] is False:
+        # ⚠️ Un control que no confirma **no anula a otro que sí**. Las filas de grupo llevan una
+        # etiqueta nuestra (`Rāgādi peyyāla`) que el impreso no escribe, así que el ancla por
+        # nombre no puede casar — pero si el contenido discrimina con margen, la fila está
+        # confirmada. Marcar FALLA ahí era hacer del silencio una contradicción.
+        d['veredicto'] = 'PASA'
+        d['motivo'] = ('contenido (el nombre de la fila es una etiqueta de grupo que el impreso '
+                       'no escribe)')
     elif d['ancla'] is not None and d['ancla'] < ANCLA_MIN and not cont_ok:
         d['veredicto'] = 'INDECISO'
         d['motivo'] = (f"el texto del CST no empieza en {d['ref']} (ancla {d['ancla']}), no se "
@@ -251,6 +284,14 @@ def prueba_fila(conn, fs, j, dueños):
     else:
         d['veredicto'] = 'INDECISO'
         d['motivo'] = 'sin `pág,línea` que anclar y el contenido no discrimina'
+    # ⚠️ Un INDECISO puede serlo por una razón muy concreta: que **las dos ediciones eliden** el
+    # texto. En los peyyāla el CST deja `…pe…` y PTS `║ pe ║`, así que no hay qué cotejar y ninguna
+    # prueba textual puede decidir. Decirlo así distingue «no se puede» de «no se sabe»: esas filas
+    # se asignaron por evidencia **estructural** —el uddāna que cuenta los miembros y el orden—, y
+    # eso una prueba de texto no lo puede confirmar ni desmentir.
+    if d['veredicto'] == 'INDECISO' and len(tc) < 260 and re.search(r'\bpe\b', tc):
+        d['motivo'] = ('las dos ediciones eliden este texto (el CST lo deja en «…pe…»): no hay qué '
+                       'cotejar. La fila se asignó por evidencia estructural, no textual')
     return d
 
 

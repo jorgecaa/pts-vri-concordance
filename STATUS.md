@@ -157,9 +157,41 @@ cosa vista por cuatro caras: **PTS numera lo que el CST agrupa**. Clasificadas:
 referencia cae dentro del bloque pero no en su arranque, al revés que sus hermanas. Hay que
 revisarlas.
 
-⚠️ La forma **A** pide **notación nueva** —el ítem dentro del paranum— y eso es decisión de Jorge, no
-del que ejecuta: sería la tercera extensión de la clave VRI, tras `:c<cap>` (5-bis) y `:c<cap>.<n>`.
-Nada de esto se ha escrito todavía.
+**Resuelto (2026-07-25) según criterio filológico** (`arregla_vri_sn.py`, 24 filas). El principio es
+el del CPD: **cada fila apunta al locus de su texto**, y cuando ese locus es una subdivisión dentro
+de un paranum, se la nombra. De ahí la **tercera extensión de la clave VRI**:
+
+> **`<fichero>:<paranum>.<ítem>`** — y no es invención nuestra: es la numeración que **las dos
+> fuentes ya traen**. El peyyāla de `s0302m:73` numera sus miembros `(2)`…`(12)` dentro del propio
+> párrafo y su uddāna los cuenta. Hermana de las dos de KN (`:c<cap>` y `:c<cap>.<n>`), y por el
+> mismo motivo: **la unidad numerada no siempre es el paranum**. `check_integrity` la valida.
+
+| filas | a qué pasan |
+|---|---|
+| `SN 12.83`-`12.93` (11) | `s0302m:73.2` … `:73.12` |
+| `SN 46.58`-`46.62` (5) | `s0305m:238.2` … `:238.6` — son los **frutos** de la Aṭṭhikasaññā, y las dos ediciones imprimen eso como **un** sutta (PTS lo numera `57. (1) Aṭṭhika` en S v 129-131; el CST lo cierra con `Paṭhamaṃ`) |
+| `SN 46.36`, `46.37` (2) | **iban desplazadas +1**: `Yonisomanasikāra` apuntaba al `Ayoniso` (216) y `Buddhi` al `Yoniso` (217), dejando el 218 sin dueño → 217 y 218 |
+| `SN 23.24`, `23.26` (2) | 193 y 205: el CST tiene **tres** `Nirodhadhammasuttaṃ` y `23.22` ya tenía el primero |
+| `SN 24.28/30/32` (3) | 249, 275, 301: tres filas y **tres** `Adukkhamasukhīsuttaṃ` |
+| `AN 8.32` (1) | `s0404m1:32` (`Dutiyadāna`), entre `:31` y `:33` |
+
+**Quedan PENDIENTE 7** —`SN 46.88`-`46.92`, `49.2`, `50.2`—: bloques agrupados que hay que partir
+contando, y las cuentas no cuadran solas (`50.1`→705 y `50.3`→758 con un bloque de 44 paranums
+entre medias). Eso pide el impreso delante, no aritmética. Señaladas también `49.3` y `50.3`, que
+apuntan dentro de su bloque pero no a su arranque, al revés que sus hermanas.
+
+**Y la batería quedó afinada por los mismos casos**, que es como debe ser: (a) un rango compartido
+**no** es un defecto cuando el CST repite el título en decenas de paranums —`Navātasuttaṃ` ocupa
+cincuenta—, sólo lo es compartir un **paranum único**; (b) para `:<paranum>.<ítem>` el ancla recorta
+**el ítem**, no el párrafo; (c) el marcador impreso **omite el primer elemento del compuesto**
+(`Rūpāppaccupalakkhaṇā` → `Apaccupalakkhaṇā`), así que se prueba también la raíz sin el khandha; y
+(d) **un control que no confirma no anula a otro que sí** — las filas de grupo llevan una etiqueta
+nuestra que el impreso no escribe, y marcarlas FALLA era hacer del silencio una contradicción.
+
+**Resultado: 160 pruebas, 0 FALLA, 130 PASA, 30 INDECISO.** De los 30 indecisos, **16 lo son porque
+las dos ediciones eliden el texto** (`…pe…` contra `║ pe ║`): no hay qué cotejar, y esas filas se
+asignaron por evidencia **estructural** —el uddāna que cuenta los miembros, el orden—, que una
+prueba de texto no puede confirmar ni desmentir. Decirlo así distingue «no se puede» de «no se sabe».
 
 ### La convención que se ha seguido (2026-07-25)
 

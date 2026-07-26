@@ -219,6 +219,18 @@ def inv_estado(verbose=False, quick=False):
 
 
 _CAPS = {}
+_PNS = {}
+
+
+def _pn_existe(stem, pn):
+    """¿Existe ese paranum en el fichero VRI?"""
+    if stem not in _PNS:
+        try:
+            import an_peyyala as ap
+            _PNS[stem] = {x['pn'] for x in ap.cst_unidades(stem)}
+        except Exception:
+            _PNS[stem] = None
+    return _PNS[stem] is None or pn in _PNS[stem]
 
 
 def _cap_existe(stem, cap):
@@ -259,6 +271,17 @@ def inv_vri(verbose=False, quick=False):
             if not _cap_existe(mc.group(1), int(mc.group(2))):
                 mal.append(f"{r.get('Nikaya')} {r.get('Sutta #')}: el capítulo {mc.group(2)} no "
                            f"existe en {mc.group(1)}")
+            continue
+        # ⚠️ FORMA `<fichero>:<paranum>.<ítem>` — cuando el Excel numera más fino que el CST y la
+        # subdivisión va **dentro** de un paranum: el peyyāla que `s0302m:73` mete entero y numera
+        # `(2)`…`(12)` en su propio texto, o los frutos de la Aṭṭhikasaññā dentro de `s0305m:238`.
+        # Es la tercera extensión de la clave, hermana de las dos de KN, y por el mismo motivo: la
+        # unidad numerada no siempre es el paranum.
+        mi = re.match(r'^([a-z0-9]+):(\d+)\.(\d+)$', v)
+        if mi:
+            if not _pn_existe(mi.group(1), int(mi.group(2))):
+                mal.append(f"{r.get('Nikaya')} {r.get('Sutta #')}: el paranum {mi.group(2)} no "
+                           f"existe en {mi.group(1)}")
             continue
         m = re.match(r'^([a-z0-9]+):(\d+)(?:-(\d+))?$', v)
         if not m:
