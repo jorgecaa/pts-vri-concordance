@@ -518,8 +518,8 @@ Use this terminology consistently across the project:
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
 | **AN** | **1737** | **1737** | **0** | **100.0%** |
-| KN | 2360 | 9 | 2351 | 0.4% |
-| **TOTAL** | **6097** | **3746** | **2351** | **61.4%** |
+| KN | 2360 | 35 | 2325 | 1.5% |
+| **TOTAL** | **6097** | **3772** | **2325** | **61.9%** |
 
 > **KN empezado por el Khuddakapāṭha: 9/9** (`kn_khuddakapatha.py`). Es la obra más pequeña del
 > nikāya y por eso es donde se fija el método. Por una vez **las tres fuentes cuentan lo mismo**:
@@ -533,6 +533,21 @@ Use this terminology consistently across the project:
 > `s0501m:1` no identificaría nada. La forma nueva es **`<fichero>:c<capítulo>[.<item>]`**
 > (`s0501m:c5`), y `check_integrity` la valida contra los `<div rend="chapter">` del fichero. Ver la
 > regla (5-bis) de `CLAUDE.md`.
+>
+> **Dhammapada 26/26** (`kn_dhammapada.py`). Las tres fuentes coinciden **estrofa por estrofa**: el
+> impreso numera cada verso al margen (`1.`, `21.`, `383.`), el `n` del CST **es** el número de
+> estrofa —corrido de 1 a 423, aquí sí— y el Excel ya traía el rango en `PTS Alt/Verse`. Las 26
+> cuadran (`1-20, 21-32, … 383-423`) y la página impresa de la estrofa inicial es **exactamente** la
+> que declara el Excel en las 26. Cobertura 0,91-0,96.
+>
+> ⚠️ **Cambio de notación (regla (5-ter))**: en KN la referencia pasa a ser la **estrofa** o la
+> **sección**, no la página — `Dhp 21-32`, `Khp 5`. `Dhp 21-32` identifica el Appamādavagga en
+> cualquier edición; `Dh 7` sólo dice en qué página de PTS empieza. Reescritas las 26 del Dhp y las
+> 9 del Khp; la página se conserva en su columna.
+>
+> ⚠️ Y la forma de la `VRI Ref` **no es la misma en todo KN**: en el Khuddakapāṭha el `n` reinicia
+> por capítulo y hace falta la `c`; en el Dhammapada es corrido y vale la forma normal
+> (`s0502m:1-20`). **Hay que mirar el fichero antes de elegir la forma.**
 
 > Desglose de AN (2026-07-25): **A ii 303/303, A iii 457/457, A iv 298/298 y A v 245/245 —
 > los cinco CERRADOS 🔒**. **AN ENTERO CERRADO: 1737/1737.**

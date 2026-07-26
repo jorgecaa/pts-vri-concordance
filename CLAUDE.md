@@ -56,6 +56,12 @@ destructive edits; there is no undo.
 > es **`<fichero>:c<capítulo>[.<item>]`** — `s0501m:c5` —, y `check_integrity` la valida contra los
 > `<div rend="chapter">`. Es una extensión de la regla (5), no una excepción: la clave sigue siendo
 > el VRI; lo que cambia es cuál es su unidad numerada.
+> **(5-ter) En KN la referencia es la ESTROFA o la sección, no la página.** En DN/MN/SN/AN se cita
+> `<volumen> <página>,<línea>` porque lo que se cita es el impreso. En las obras en verso de KN eso
+> no sirve: lo que las tres ediciones comparten es el **número de estrofa**. `Dhp 21-32` identifica
+> el Appamādavagga en cualquier edición; `Dh 7` sólo dice en qué página de PTS empieza. La `PTS Ref`
+> va como `Dhp <a>-<b>` (verso) o `Khp <n>` (sección); la página se conserva en su columna, cierta y
+> útil, pero deja de ser la referencia.
 > **(7) Toda operación declara su presupuesto ANTES de empezar** (`audit_tiempo.py`: pasos y
 > minutos). Al agotarse se **para**, se informa de lo conseguido y de lo que falta, y se pide
 > decisión; ampliar el presupuesto es decisión de Jorge, no del que ejecuta. Motivo: una
