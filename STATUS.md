@@ -451,15 +451,25 @@ Use this terminology consistently across the project:
 | DN | 34 | 34 | 0 | 100.0% |
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
-| AN | 1738 | 1736 | 2 | 99.9% |
+| **AN** | **1737** | **1737** | **0** | **100.0%** |
 | KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6098** | **3736** | **2362** | **61.3%** |
+| **TOTAL** | **6097** | **3737** | **2360** | **61.3%** |
 
 > Desglose de AN (2026-07-25): **A ii 303/303, A iii 457/457, A iv 298/298 y A v 245/245 —
-> los cuatro CERRADOS 🔒**, y **A i 433/435**. **Lo único que queda en todo AN es la clave
-> duplicada `2.19`** (×2): la fila `«Adhikaraṇa 9 + Andha»` tiene `Raw ID = «AN 2.19(*) +
-> AN 3.29(*)»` y **funde un sutta del Duka con uno del Tika**. Viene así de la fuente original, no
-> del pipeline, y o se parte en dos filas o se elimina la fundida — decisión editorial.
+> los cinco CERRADOS 🔒**. **AN ENTERO CERRADO: 1737/1737.**
+>
+> La última fila era `«Adhikaraṇa 9 + Andha»`, con `Raw ID = «AN 2.19(*) + AN 3.29(*)»`. Se fue a
+> partir en dos, como parecía pedir su nombre, y **el dato dijo que no había nada que partir**: sus
+> dos supuestos componentes ya existían como filas propias —`2.19 «Adhikaraṇa 9»` en A i 58,15
+> (marcador 9, paranum 19, cobertura 0,98) y `3.29 «Andha»` en A i 128 (`s0402m2:29`), ésta
+> CONFIRMADO desde el Tika— y la fila fundida apuntaba a **A i 58,37**, que es el marcador 10 =
+> paranums 20-21, o sea **el mismo sutta que `2.20 «Adhikaraṇa 10»`**. No era una fusión de dos
+> suttas sino un **duplicado de `2.20`** con el nombre concatenado por la fuente. **Borrada**
+> (decisión de Jorge), como se hizo con `12.74` en S ii: el total pasa de 6098 a **6097** filas y la
+> columna `#` se renumeró.
+>
+> Con eso `check_integrity` pierde su última clave duplicada: **`clave_sutta_no_duplicada` pasa**,
+> y lo único que queda en todo el fichero son dos saltos de página en KN.
 >
 > **Las colas del Duka y del Tika se anclaron al tramo del CST por decisión de Jorge**
 > (`reconcile_an1_colas_cst.py`). Resultó inmediato de verificar porque ahí **el nombre de la fila
