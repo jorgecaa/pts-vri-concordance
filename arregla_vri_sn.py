@@ -32,9 +32,11 @@ unidad numerada no siempre es el paranum**.
   repite el título `Navātasuttaṃ` en **cincuenta** paranums seguidos —los vaggas abreviados—, así
   que el rango *es* el locus. Un rango compartido no es un defecto por sí mismo.
 - **`SN 24.29` / `24.31`** ya dicho: el rango **es** el locus.
-- Quedan señaladas **`49.3`, `49.4`, `49.5`, `50.3`-`50.6`**, que apuntan a **un solo paranum dentro
-  de su bloque** en vez de al rango. No están mal —el paranum existe y cae dentro—, pero son
-  inconsistentes con sus hermanas, que ahora llevan rango.
+- **`49.1`, `49.3`-`49.5`, `50.1`, `50.3`-`50.6`** apuntaban a un solo paranum dentro de su bloque
+  —unas al primero, otras al último, `50.5` a uno de en medio—. Igualadas al **rango que el propio
+  CST escribe** en el atributo `n` del bloque.
+- ⚠️ Queda un hueco sin fila: el CST salta de `770` a `792` (veintiún paranums) y ninguna fila del
+  Excel lo reclama. Es anterior a este arreglo y no se ha tocado.
 
 Uso: python3 arregla_vri_sn.py [--dry]
 """
@@ -89,6 +91,22 @@ ARREGLOS[('SN', '50.2')] = (
     's0305m:717-748',
     'SN 50.13-22. El CST **reserva estos números y no imprime el texto**: sus grupos saltan de '
     '705-716 a 749-758. La referencia es el locus; el texto es «deest in Be»')
+
+# ── rangos consistentes en el Sammappadhāna y el Bala ─────────────────────────────────────
+#
+# Estas siete apuntaban a **un solo paranum dentro de su bloque** —unas al primero, otras al
+# último, `50.5` a uno de en medio—. No estaban mal: el paranum existe y cae dentro. Pero sus
+# hermanas llevan rango y **el locus de un grupo es el grupo**, así que se igualan. El rango no se
+# calcula: es el que el propio CST escribe en el atributo `n` de cada bloque (`n="673-684"`), y el
+# nombre del bloque casa con el de la fila uno a uno.
+for _n, _r in (('49.1', '651-662'), ('49.3', '673-684'), ('49.4', '685-694'), ('49.5', '695-704'),
+               ('50.1', '705-716'), ('50.3', '749-758'), ('50.4', '759-770'),
+               ('50.5', '792-802'), ('50.6', '803-812')):
+    ARREGLOS[('SN', _n)] = (
+        f's0305m:{_r}',
+        f'rango del bloque, tal como el CST lo escribe en el atributo `n` de ese grupo; el nombre '
+        f'del bloque casa con el de la fila. Antes apuntaba a un solo paranum de dentro, que no '
+        f'estaba mal pero no era el locus del grupo')
 
 ARREGLOS.update({
     ('SN', '46.36'): ('s0305m:217', 'estaba desplazada +1: apuntaba al Ayonisomanasikāra (216) '

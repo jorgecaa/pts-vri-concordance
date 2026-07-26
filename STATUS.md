@@ -191,9 +191,15 @@ de un paranum, se la nombra. De ahí la **tercera extensión de la clave VRI**:
   (`deest in Be` en su `Detail`) — la ausencia registrada es un dato, la ausencia sin explicar es un
   error.
 
-Señaladas, sin tocar: **`49.3`-`49.5` y `50.3`-`50.6`** apuntan a **un solo paranum dentro de su
-bloque** en vez de al rango. No están mal —el paranum existe y cae dentro— pero son inconsistentes
-con sus hermanas, que ahora llevan rango.
+**Igualadas después** (misma sesión): `49.1`, `49.3`-`49.5`, `50.1`, `50.3`-`50.6` apuntaban a **un
+solo paranum dentro de su bloque** —unas al primero, otras al último, `50.5` a uno de en medio—. No
+estaban mal, pero **el locus de un grupo es el grupo**. El rango no se calcula: **es el que el propio
+CST escribe** en el atributo `n` de cada bloque (`n="673-684"`), y el nombre del bloque casa con el
+de la fila uno a uno. Las once filas de SN 49 y SN 50 llevan ahora rango, sin hueco entre ellas
+salvo uno:
+
+⚠️ El CST salta de **770 a 792** —veintiún paranums— y ninguna fila del Excel los reclama. Es
+anterior a este arreglo y no se ha tocado.
 
 **Y la batería quedó afinada por los mismos casos**, que es como debe ser: (a) un rango compartido
 **no** es un defecto cuando el CST repite el título en decenas de paranums —`Navātasuttaṃ` ocupa
