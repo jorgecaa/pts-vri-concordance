@@ -1,4 +1,38 @@
 # PTS Reference Concordance — Status Report
+
+## ESTADO ACTUAL (2026-07-25)
+
+**En alcance: 5.232 / 5.253 — 99,6 %.** DN, MN, SN y AN **cerrados al 100 %**; de KN queda cerrado
+todo lo abordable menos 21 filas, y ninguna de las 21 es deuda de método.
+
+| Nikāya | en alcance | CONFIRMADO | % |
+|---|--:|--:|--:|
+| DN | 34 | 34 | **100 %** 🔒 |
+| MN | 152 | 152 | **100 %** 🔒 |
+| SN | 1.814 | 1.814 | **100 %** 🔒 |
+| AN | 1.737 | 1.737 | **100 %** 🔒 |
+| KN | 1.516 | 1.495 | 98,6 % |
+| **TOTAL** | **5.253** | **5.232** | **99,6 %** |
+
+**Fuera de alcance — 845 filas de las 6.098 del fichero:**
+
+| | filas | por qué |
+|---|--:|---|
+| **Jātaka** | 548 | **decisión de Jorge (2026-07-25)**: no se aborda |
+| **sin texto PTS en la BD** | 297 | Milindapañha 248, Nettippakaraṇa 38, Peṭakopadesa 11 — sin lado PTS no hay par que cotejar |
+
+**Las 21 que quedan dentro del alcance:** 7 son **cabeceras de sección** (no son suttas), 11 son el
+**vagga 56 del Therāpadāna**, que PTS no imprime (sus filas apuntan a la p511, la del colofón), y 3
+son las del **vagga 34** cuyo texto PTS tampoco imprime aunque su uddāna las nombre. El desglose y
+la evidencia de cada una, al final de la tabla de recuento.
+
+**Estado de las obras de KN** — ✅ = cerrada: Khuddakapāṭha 9, Dhammapada 26, Udāna 80, Itivuttaka
+112, Suttanipāta 73, Vimānavatthu 85, Petavatthu 51, Theragāthā 264, Therīgāthā 73, Buddhavaṃsa 29,
+Cariyāpiṭaka 35, Therīapadāna 40. Con residuo explicado: Mahāniddesa 16/17, Cūḷaniddesa 22/24,
+Paṭisambhidāmagga 31/32, Therāpadāna 549/564.
+
+---
+
 ## KN — CATASTRO (2026-07-25): qué se puede validar y qué no
 
 Antes de tocar nada de KN, la pregunta es de qué hay texto. La regla del proyecto es que las
@@ -6,6 +40,10 @@ Antes de tocar nada de KN, la pregunta es de qué hay texto. La regla del proyec
 la BD no es validable por este camino, por mucho que exista en otras ediciones.
 
 **2.360 filas → 2.066 con texto en la BD (87,5 %) · 294 sin él (12,5 %).**
+
+> Recuento del catastro, tal como se hizo. Hoy las filas de KN son **2.361** —se añadió la 35ª
+> cariyā del Cariyāpiṭaka, que faltaba— y las invalidables **297**, porque las tres cabeceras de
+> sección de esas obras (`Milindapañha`, `Nettippakaraṇa`, `Peṭakopadesa`) cuentan con ellas.
 
 ### Lo que SÍ tiene texto en la BD
 

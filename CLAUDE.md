@@ -160,8 +160,10 @@ touching any concordance script. Non-negotiable principles baked into this proje
   corridas en casos borderline), ya no se confía en él para CONFIRMADO. DB verification (pages,
   markers, sequence) is necessary but *not sufficient*.
 - **DO NOT MODIFY closed sections** (DN, MN, SN I–V — see `STATUS.md`) without re-running full
-  validation. SN I, SN II y SN V están cerrados por el **validador**; SN III–IV siguen sin CST.
-  Pending: SN III–IV, AN, KN.
+  validation. **DN, MN, SN y AN están CERRADOS 🔒 al 100 %**, y de KN sólo quedan 21 filas, ninguna
+  de ellas deuda de método (7 cabeceras de sección, 11 del vagga 56 del Therāpadāna y 3 del vagga 34,
+  que PTS no imprime). Estado vigente y desglose: **`STATUS.md` § ESTADO ACTUAL** — no repetir aquí
+  los recuentos.
 - **`fix_mn_pages.py` contains 78 INCORRECT "corrections" — do not use it.**
 
 The legacy Helmer validation persona/workflow is packaged as a repo skill
