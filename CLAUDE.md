@@ -50,6 +50,12 @@ destructive edits; there is no undo.
 > el validador no puede detectarlo porque el par PTS↔CST que recibe es coherente consigo mismo. Ver
 > `sn34_series.py` (SN 34: dos convenciones opuestas en un mismo saṃyutta, cuatro filas mal
 > emparejadas y tres ya CONFIRMADO).
+> **(5-bis) En KN la clave del VRI es el CAPÍTULO, no el paranum.** El `n` del CST es un paranum
+> corrido por fichero en SN y AN, pero en KN **reinicia dentro de cada capítulo** (el `s0501m` tiene
+> un `n=1` en el capítulo 2, otro en el 4, otro en el 5…) y hay capítulos sin `n` ninguno. La forma
+> es **`<fichero>:c<capítulo>[.<item>]`** — `s0501m:c5` —, y `check_integrity` la valida contra los
+> `<div rend="chapter">`. Es una extensión de la regla (5), no una excepción: la clave sigue siendo
+> el VRI; lo que cambia es cuál es su unidad numerada.
 > **(7) Toda operación declara su presupuesto ANTES de empezar** (`audit_tiempo.py`: pasos y
 > minutos). Al agotarse se **para**, se informa de lo conseguido y de lo que falta, y se pide
 > decisión; ampliar el presupuesto es decisión de Jorge, no del que ejecuta. Motivo: una

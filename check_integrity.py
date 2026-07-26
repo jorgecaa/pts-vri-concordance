@@ -218,6 +218,24 @@ def inv_estado(verbose=False, quick=False):
     return mal
 
 
+_CAPS = {}
+
+
+def _cap_existe(stem, cap):
+    """¿Tiene el fichero VRI ese capítulo (`<div rend="chapter">`)?"""
+    import xml.etree.ElementTree as ET
+    if stem not in _CAPS:
+        try:
+            root = ET.parse(f'/tmp/tipitaka-xml/romn/{stem}.mul.xml').getroot()
+            _CAPS[stem] = sum(1 for d in root.iter('div')
+                              if d.find('head') is not None
+                              and d.find('head').get('rend') == 'chapter')
+        except Exception:
+            _CAPS[stem] = None
+    n = _CAPS[stem]
+    return n is None or 1 <= cap <= n
+
+
 @check('vri_ref_bien_formada_y_existente',
        'La `VRI Ref` es la clave canónica del lado CST (regla (5)). Si apunta a un paranum que no '
        'existe en el XML, la fila está anclada a nada.')
@@ -230,6 +248,17 @@ def inv_vri(verbose=False, quick=False):
     for r in rows:
         v = str(r.get('VRI Ref') or '').strip()
         if not v:
+            continue
+        # ⚠️ FORMA NUEVA para KN: `<fichero>:c<capítulo>[.<item>]`. En SN y AN el `n` del CST es un
+        # paranum **corrido por fichero** y basta con él; en KN **reinicia dentro de cada
+        # capítulo** —el `s0501m` tiene un `n=1` en el capítulo 2, otro en el 4, otro en el 5…— y
+        # además hay capítulos sin `n` ninguno (Saraṇattaya, Dvattiṃsākāra). Un `s0501m:1` no
+        # identificaría nada. La `c` marca que la referencia es al capítulo.
+        mc = re.match(r'^([a-z0-9]+):c(\d+)(?:\.(\d+))?(?:-c?(\d+)(?:\.(\d+))?)?$', v)
+        if mc:
+            if not _cap_existe(mc.group(1), int(mc.group(2))):
+                mal.append(f"{r.get('Nikaya')} {r.get('Sutta #')}: el capítulo {mc.group(2)} no "
+                           f"existe en {mc.group(1)}")
             continue
         m = re.match(r'^([a-z0-9]+):(\d+)(?:-(\d+))?$', v)
         if not m:

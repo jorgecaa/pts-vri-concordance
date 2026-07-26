@@ -518,8 +518,21 @@ Use this terminology consistently across the project:
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
 | **AN** | **1737** | **1737** | **0** | **100.0%** |
-| KN | 2360 | 0 | 2360 | 0.0% |
-| **TOTAL** | **6097** | **3737** | **2360** | **61.3%** |
+| KN | 2360 | 9 | 2351 | 0.4% |
+| **TOTAL** | **6097** | **3746** | **2351** | **61.4%** |
+
+> **KN empezado por el Khuddakapāṭha: 9/9** (`kn_khuddakapatha.py`). Es la obra más pequeña del
+> nikāya y por eso es donde se fija el método. Por una vez **las tres fuentes cuentan lo mismo**:
+> nueve secciones del impreso (numeral romano `I.`…`IX.` y colofón de cierre), nueve
+> `<div rend="chapter">` del CST con los mismos nombres y en el mismo orden, y nueve filas. La
+> cobertura de contenido va de **0,90 a 1,00**.
+>
+> ⚠️ **Pero la clave del lado CST no puede ser la de SN y AN**, y esto vale para todo KN: el `n` del
+> CST **reinicia dentro de cada capítulo** —hay un `n=1` en el capítulo 2, otro en el 4, otro en el
+> 5, 6, 7, 8 y 9— y dos capítulos (`Saraṇattayaṃ`, `Dvattiṃsākāro`) **no tienen `n` ninguno**. Un
+> `s0501m:1` no identificaría nada. La forma nueva es **`<fichero>:c<capítulo>[.<item>]`**
+> (`s0501m:c5`), y `check_integrity` la valida contra los `<div rend="chapter">` del fichero. Ver la
+> regla (5-bis) de `CLAUDE.md`.
 
 > Desglose de AN (2026-07-25): **A ii 303/303, A iii 457/457, A iv 298/298 y A v 245/245 —
 > los cinco CERRADOS 🔒**. **AN ENTERO CERRADO: 1737/1737.**
