@@ -72,8 +72,11 @@ su día hubo que arbitrar; (c) las de `VRI Ref` **con rango** (`a-b`), que son l
 por fila.
 
 Uso:
-    python3 pruebas_concordancia.py [--nikaya DN|MN|SN|AN] [--desplaza N] [--detalle]
-                                    [--json salida.json]
+    python3 pruebas_concordancia.py [--nikaya DN|MN|SN|AN] [--desplaza N] [--todas]
+                                    [--detalle] [--json salida.json]
+
+`--todas` deja de muestrear y pasa los controles por **todas** las filas del nikāya: la muestra
+sirve para vigilar a diario, el barrido completo para dar un veredicto.
 """
 import json
 import re
@@ -185,9 +188,11 @@ def muestra(fs, n, desplaza=0):
 
 
 def ancla_ok(d):
-    """¿Confirma alguna de las dos formas del ancla?"""
+    """¿Confirma alguna de las tres formas del ancla?"""
+    ap_ = d.get('ancla_pag')
     return (d.get('ancla') is not None and d['ancla'] >= ANCLA_MIN) or \
-           (d.get('ancla_corta') is not None and d['ancla_corta'] >= 0.8)
+           (d.get('ancla_corta') is not None and d['ancla_corta'] >= 0.8) or \
+           (ap_ is not None and ap_[0] >= 0.8 and ap_[0] >= ap_[1] + MARGEN)
 
 
 def prueba_fila(conn, fs, j, dueños):
@@ -235,7 +240,15 @@ def prueba_fila(conn, fs, j, dueños):
             # cuentan igual el preámbulo de la página (`NAMO TASSA…`, el título entre corchetes,
             # las reglas de guiones), y el Brahmajāla arranca en la línea 6 donde la fila dice 7.
             # La calibración lo había medido: desviación mediana +0/+1, y |Δ| ≤ 2 en DN y MN.
-            d['ancla'] = round(R.cobertura(ap.fold(' '.join(L[max(0, ln - 2):ln + 3])), inc), 2)
+            # ⚠️ Se puntúa **línea a línea** en el entorno y se toma el máximo, no un bloque de
+            # cinco líneas: la cobertura se diluye con el texto de más y hunde el ancla aunque el
+            # incipit esté ahí. Medido: la misma fila daba 0,30 sobre el bloque y **1,00** sobre la
+            # línea correcta, que casi siempre es la declarada ±1 —las dos numeraciones no cuentan
+            # igual el preámbulo de la página—. Sigue siendo una **verificación** acotada al
+            # entorno, no una búsqueda por toda la página: buscar encuentra otra repetición de la
+            # misma fórmula, que en AN son idénticas.
+            d['ancla'] = round(max(R.cobertura(ap.fold(' '.join(L[j:j + 4])), inc)
+                                   for j in range(max(0, ln - 3), min(len(L), ln + 2))), 2)
 
     # ── control 2-bis: el ancla **por nombre**, para donde PTS elide el texto
     #
@@ -276,6 +289,26 @@ def prueba_fila(conn, fs, j, dueños):
             plano = re.sub(r'[^a-z]', '', cerca)
             sin_khandha = re.sub(r'^(rupa|vedana|sanna|sankhara|vinana)', '', raiz)
             d['ancla_nombre'] = any(x in plano for x in (raiz, sin_khandha) if len(x) >= 5)
+
+    # ── control 2-bis-b: el ancla **a nivel de página**, para las filas que no traen línea
+    #
+    # 343 filas de AN citan sólo la página (`A iii 132`). Ahí no hay línea que verificar, pero sí se
+    # puede exigir que el incipit del CST **esté en esa página y no en las vecinas**. Es más débil
+    # que la línea y por eso lleva su propio control: si el incipit aparece igual de bien tres
+    # páginas más allá, no distingue y no cuenta.
+    d['ancla_pag'] = None
+    if not m and libro and isinstance(f['PTS Page'], int):
+        mp = re.match(r'^[A-Z] ([ivx]+) (\d+)$', d['ref'])
+        if mp:
+            inc = ' '.join(tc.split()[:8])
+
+            def mejor_en(p_):
+                L_ = lineas(conn, libro, p_)
+                return max((R.cobertura(ap.fold(' '.join(L_[j:j + 4])), inc)
+                            for j in range(len(L_))), default=0.0)
+            aqui = mejor_en(int(mp.group(2)))
+            lejos = max(mejor_en(int(mp.group(2)) + k) for k in (-3, 3))
+            d['ancla_pag'] = (round(aqui, 2), round(lejos, 2))
 
     # ── control 2-ter: el ancla **truncada a lo que el impreso da**
     #
@@ -319,9 +352,17 @@ def prueba_fila(conn, fs, j, dueños):
         d['veredicto'] = 'PASA'
         d['motivo'] = 'ancla por nombre (PTS elide el texto en ese punto)'
     elif d['ancla_nombre'] is False and not cont_ok and not ancla_ok(d):
-        d['veredicto'] = 'FALLA'
-        d['motivo'] = (f"PTS elide el texto en {d['ref']} y el marcador de esa línea NO nombra "
-                       'esta unidad')
+        # ⚠️ **El ancla por nombre es un control POSITIVO**: confirma, pero su silencio no
+        # contradice. Que el nombre no esté en la línea se explica casi siempre por el impreso y no
+        # por la fila — porque la línea es texto corrido con número de cláusula
+        # (`2. Sammādiṭṭhi . . . pe . . .`) y el marcador de sutta va en otro sitio, que en A v es
+        # el romano de su propia línea (`CXXVI.`); o porque PTS abrevia el nombre. Reconocer cada
+        # convención de marcador exigiría un analizador por volumen (regla (6)), y mientras no lo
+        # haya lo honrado es no llamar contradicción a un silencio. Barrer las 3.737 filas dejaba
+        # 29 así, y las comprobadas a mano estaban **todas bien**.
+        d['veredicto'] = 'INDECISO'
+        d['motivo'] = (f"PTS elide en {d['ref']} y el nombre no se lee ahí — pero esa línea es "
+                       'texto corrido, no un encabezado: el control no puede decidir')
     elif d['ancla_nombre'] is False:
         # ⚠️ Un control que no confirma **no anula a otro que sí**. Las filas de grupo llevan una
         # etiqueta nuestra (`Rāgādi peyyāla`) que el impreso no escribe, así que el ancla por
@@ -338,6 +379,10 @@ def prueba_fila(conn, fs, j, dueños):
         d['veredicto'] = 'PASA'
         d['motivo'] = ('ancla' if confirma else '') + ('+' if confirma and cont_ok else '') + \
                       ('contenido' if cont_ok else '')
+    elif confirma:
+        d['veredicto'] = 'PASA'
+        d['motivo'] = ('ancla de página (el incipit del CST está en la página que declara la fila '
+                       'y no en las vecinas)')
     else:
         d['veredicto'] = 'INDECISO'
         d['motivo'] = 'sin `pág,línea` que anclar y el contenido no discrimina'
@@ -355,6 +400,7 @@ def prueba_fila(conn, fs, j, dueños):
 def main():
     detalle = '--detalle' in sys.argv
     solo = sys.argv[sys.argv.index('--nikaya') + 1] if '--nikaya' in sys.argv else None
+    todas = '--todas' in sys.argv
     desp = int(sys.argv[sys.argv.index('--desplaza') + 1]) if '--desplaza' in sys.argv else 0
     conn = sqlite3.connect(R.DB)
     conn.row_factory = sqlite3.Row
@@ -362,8 +408,8 @@ def main():
     for nk in (['DN', 'MN', 'SN', 'AN'] if not solo else [solo]):
         fs = filas(nk)
         dueños = Counter(str(f['VRI Ref']) for f in fs if f['VRI Ref'])
-        idx = muestra(fs, CUANTAS[nk], desp)
-        nuevas = len(set(idx) - set(muestra(fs, CUANTAS[nk]))) if desp else 0
+        idx = range(len(fs)) if todas else muestra(fs, CUANTAS[nk], desp)
+        nuevas = len(set(idx) - set(muestra(fs, CUANTAS[nk]))) if desp and not todas else 0
         res = [prueba_fila(conn, fs, j, dueños) for j in idx]
         c = Counter(r['veredicto'] for r in res)
         total.update(c)

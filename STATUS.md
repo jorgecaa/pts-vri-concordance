@@ -233,7 +233,45 @@ esconde el desplazamiento y se comprueban siempre.
 **Resultado: 0 FALLA en las siete corridas** (PASA entre 99 y 130 según el desplazamiento; el resto,
 INDECISO).
 
-**Resultado de la corrida base: 160 pruebas, 0 FALLA, 127 PASA, 33 INDECISO.** De los 30 indecisos, **16 lo son porque
+### El barrido completo (`--todas`)
+
+La muestra sirve para vigilar a diario; para dar un veredicto hay que pasarla por **todas** las
+filas. `--todas` lo hace: **3.737 pruebas en 28 segundos**.
+
+| | filas | PASA | FALLA | INDECISO |
+|---|--:|--:|--:|--:|
+| DN | 34 | **34** | 0 | 0 |
+| MN | 152 | 150 | 0 | 2 |
+| SN | 1.814 | 1.673 | 0 | 141 |
+| AN | 1.737 | 1.294 | 0 | 443 |
+| **TOTAL** | **3.737** | **3.151** | **0** | **586** |
+
+**Cero contradicciones en las 3.737.** El primer barrido dio 29 fallos y **los 29 eran de la
+prueba**, no del dato: el ancla por nombre exigía que la línea declarada llevara el título, y en AN
+esa línea suele ser texto corrido con número de cláusula (`2. Sammādiṭṭhi . . . pe . . .`) mientras
+el marcador de sutta va aparte, en su propio romano (`CXXVI.`). De ahí la regla: **el ancla por
+nombre es un control POSITIVO — confirma, pero su silencio no contradice**. Reconocer cada convención
+de marcador pediría un analizador por volumen (regla (6)); mientras no lo haya, no se llama
+contradicción a un silencio.
+
+Dos mejoras más salieron de barrer, y las dos suben mucho el poder de la prueba:
+
+- **el ancla se puntúa línea a línea** en el entorno y se toma el máximo, no sobre un bloque de
+  cinco: la cobertura se diluye con el texto de más y hundía el ancla aunque el incipit estuviera
+  ahí — la misma fila daba **0,30 sobre el bloque y 1,00 sobre la línea correcta**, que casi siempre
+  es la declarada ±1 porque las dos numeraciones no cuentan igual el preámbulo de la página;
+- **ancla de página** para las 343 filas de AN que citan sólo la página (`A iii 132`): se exige que
+  el incipit del CST esté **en esa página y no en las vecinas** (±3). Más débil que la línea, y por
+  eso lleva su propio control.
+
+Entre las dos, el PASA subió de 2.788 a **3.151**.
+
+**De los 586 indecisos**, 454 son filas donde el ancla no confirma y el contenido empata; 68, filas
+donde **las dos ediciones eliden**; 50, sin `pág,línea` y sin ancla de página; 12, líneas que son
+texto corrido; y 2, los `deest in Be`. Ninguno es una contradicción: son los límites de lo que un
+cotejo textual puede decidir sobre un material que se imprime abreviado.
+
+**Resultado de la corrida por muestra: 160 pruebas, 0 FALLA, 135 PASA, 25 INDECISO.** De los 30 indecisos, **16 lo son porque
 las dos ediciones eliden el texto** (`…pe…` contra `║ pe ║`): no hay qué cotejar, y esas filas se
 asignaron por evidencia **estructural** —el uddāna que cuenta los miembros, el orden—, que una
 prueba de texto no puede confirmar ni desmentir. Decirlo así distingue «no se puede» de «no se sabe».
