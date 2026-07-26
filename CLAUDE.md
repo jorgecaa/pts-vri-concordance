@@ -174,7 +174,12 @@ The legacy Helmer validation persona/workflow is packaged as a repo skill
 Canon*): `Validation` holds the fine-grained provenance; **`Estado`** is the binary rollup with
 exactly two values — **CONFIRMADO** (`Validation` ∈ VALIDADOR / VALIDADOR_HUMANO / HELMER_APPROVED /
 HELMER_PTS_TRUNCATED / HELMER_FIXED / PTS_CROSSREF_SN) and **PENDIENTE** (everything else,
-including `DB_VERIFIED`). **Rule: without the validador, nothing is CONFIRMADO** (BD/RTE/incipit
+including `DB_VERIFIED`). **Tres valores de `Validation` NO son veredictos sino hechos editoriales**,
+y por eso su fila queda fuera de la base cotejable en vez de contar como pendiente:
+**`SECTION_HEADER`** (rótulo del impreso, no una unidad citable; va con `Type = Section Header`),
+**`DEEST_PTS`** (PTS **no imprime** el pasaje — la ausencia en un testimonio se *registra*, como el
+`om.`/`deest` del aparato, no se deja en blanco) y **`EXTRA_CANON`** (sin texto PTS en la BD). Ver
+`STATUS.md` § ESTADO ACTUAL. **Rule: without the validador, nothing is CONFIRMADO** (BD/RTE/incipit
 verification is not sufficient). **`VALIDADOR`** = CONFIRMADO por acuerdo automático (Modelo B: gate
 local + `gemini-flash-lite-latest` ambos APPROVE); **`VALIDADOR_HUMANO`** = un desacuerdo gate/Gemini
 que Jorge arbitró a mano (misma fuerza, provenance humana). Los valores

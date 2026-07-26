@@ -2,29 +2,58 @@
 
 ## ESTADO ACTUAL (2026-07-25)
 
-**En alcance: 5.232 / 5.253 — 99,6 %.** DN, MN, SN y AN **cerrados al 100 %**; de KN queda cerrado
-todo lo abordable menos 21 filas, y ninguna de las 21 es deuda de método.
+**Base cotejable: 5.232 / 5.232 — 100 %.** DN, MN, SN y AN **cerrados**; KN, **1.495 / 1.495**.
+No queda ninguna fila cotejable sin cotejar.
 
-| Nikāya | en alcance | CONFIRMADO | % |
+La cifra se lee así: de las 6.098 filas del fichero, la **base cotejable** son las que (a) son
+unidades citables, (b) están en alcance y (c) tienen texto por los dos lados. Lo que sale de la base
+no sale por dejadez — **sale marcado, con su motivo en `Validation`**, que es lo que pide la
+convención: la ausencia en un testimonio se **registra**, no se deja en blanco.
+
+| | filas | `Validation` | qué es |
+|---|--:|---|---|
+| **base cotejable** | **5.232** | veredicto | 5.232 CONFIRMADO |
+| cabeceras de sección | 11 | `SECTION_HEADER` | rótulos del impreso, no unidades citables (`Type = Section Header`) |
+| ausentes de PTS | 14 | `DEEST_PTS` | vagga 56 (11) y vagga 34 (3) del Therāpadāna: PTS **no los imprime** |
+| sin texto PTS en la BD | 294 | `EXTRA_CANON` | Milindapañha, Nettippakaraṇa, Peṭakopadesa |
+| **Jātaka** | 547 | — | **fuera de alcance** por decisión de Jorge |
+
+### La convención que se ha seguido (2026-07-25)
+
+1. **Una cabecera no es una entrada, y no se borra.** No se destruye estructura atestiguada: se
+   **tipa** (`Type = Section Header`) para que salga del recuento sin salir del fichero. Su
+   `Validation` decía `VERSE_ONLY` —un veredicto de cotejo— y ahora dice `SECTION_HEADER`, que es un
+   hecho estructural: una cabecera no se coteja. ⚠️ `Cnd 2 Pucchā` **tiene página** (la 6, donde PTS
+   imprime el rótulo) y aun así es cabecera: encabeza las preguntas del Cūḷaniddesa y su contenido
+   son las filas `Cnd 5-22`.
+2. **La ausencia en un testimonio es un dato positivo.** En crítica textual se registra con `om.`
+   (*omittit*) o **`deest`**; es la práctica de los aparatos de PTS y del *Critical Pāli Dictionary*.
+   Dejar esas catorce como «no verificadas» confundía **evidencia negativa con falta de evidencia**,
+   que es justo la distinción sobre la que está construida la regla del `Estado`.
+3. **`Estado` sigue siendo binario.** No se inventó un tercer valor: la regla de dos es buena y el
+   fichero ya tenía el precedente (`EXTRA_CANON`, que también es un hecho editorial y no un
+   veredicto). Las catorce siguen en `PENDIENTE` —CONFIRMADO exige un par cotejado y no hay lado
+   PTS—; lo que cambia es que **el motivo está escrito** y el recuento sale del denominador.
+4. **Renvoi donde lo hay.** Dos de las tres del vagga 34 llevan `cf. Ap 106` y `cf. Ap 419`: su
+   texto coincide al 0,96 y al 0,93 con apadānas que PTS **sí** imprime y que ya tienen fila.
+   **La referencia no se comparte** — dos filas sobre un mismo texto es lo que impide
+   `audit_injectivity`.
+5. ⚠️ **Límite anotado en cada fila**: lo verificado es *esta transcripción* de PTS, no el volumen
+   impreso. La evidencia interna es fuerte —el uddāna del vagga 34 anuncia diez y el cuerpo trae
+   siete; el colofón de la p511 cierra la obra— y apunta a la edición misma, pero la convención
+   distingue `deest in Ee` de «no está en nuestra fuente».
+6. ⚠️ **`PTS_CROSSREF_SN` (MN 92 y 98) no es precedente aplicable**: allí PTS *remite
+   explícitamente* al Suttanipāta, y por eso es CONFIRMADO. En el vagga 34 PTS **omite**: es una
+   laguna, no un reenvío.
+
+| Nikāya | base cotejable | CONFIRMADO | % |
 |---|--:|--:|--:|
 | DN | 34 | 34 | **100 %** 🔒 |
 | MN | 152 | 152 | **100 %** 🔒 |
 | SN | 1.814 | 1.814 | **100 %** 🔒 |
 | AN | 1.737 | 1.737 | **100 %** 🔒 |
-| KN | 1.516 | 1.495 | 98,6 % |
-| **TOTAL** | **5.253** | **5.232** | **99,6 %** |
-
-**Fuera de alcance — 845 filas de las 6.098 del fichero:**
-
-| | filas | por qué |
-|---|--:|---|
-| **Jātaka** | 548 | **decisión de Jorge (2026-07-25)**: no se aborda |
-| **sin texto PTS en la BD** | 297 | Milindapañha 248, Nettippakaraṇa 38, Peṭakopadesa 11 — sin lado PTS no hay par que cotejar |
-
-**Las 21 que quedan dentro del alcance:** 7 son **cabeceras de sección** (no son suttas), 11 son el
-**vagga 56 del Therāpadāna**, que PTS no imprime (sus filas apuntan a la p511, la del colofón), y 3
-son las del **vagga 34** cuyo texto PTS tampoco imprime aunque su uddāna las nombre. El desglose y
-la evidencia de cada una, al final de la tabla de recuento.
+| KN | 1.495 | 1.495 | **100 %** 🔒 |
+| **TOTAL** | **5.232** | **5.232** | **100 %** |
 
 **Estado de las obras de KN** — ✅ = cerrada: Khuddakapāṭha 9, Dhammapada 26, Udāna 80, Itivuttaka
 112, Suttanipāta 73, Vimānavatthu 85, Petavatthu 51, Theragāthā 264, Therīgāthā 73, Buddhavaṃsa 29,
