@@ -518,8 +518,8 @@ Use this terminology consistently across the project:
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
 | **AN** | **1737** | **1737** | **0** | **100.0%** |
-| KN | 2360 | 227 | 2133 | 9.6% |
-| **TOTAL** | **6097** | **3964** | **2133** | **65.0%** |
+| KN | 2360 | 300 | 2060 | 12.7% |
+| **TOTAL** | **6097** | **4037** | **2060** | **66.2%** |
 
 > **KN empezado por el Khuddakapāṭha: 9/9** (`kn_khuddakapatha.py`). Es la obra más pequeña del
 > nikāya y por eso es donde se fija el método. Por una vez **las tres fuentes cuentan lo mismo**:

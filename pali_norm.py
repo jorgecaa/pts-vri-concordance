@@ -41,6 +41,11 @@ _REGLAS = [
     # niggahīta: la variante tipográfica y la `m` final del impreso
     (re.compile(r'ṁ'), 'ṃ'),
     (re.compile(r'm(?=[\s.,;:!?\'"\)\]]|$)'), 'ṃ'),
+    # …y la `ñ` final, que es la misma niggahīta escrita con la nasal del sandhi: PTS imprime
+    # `ahañ ca`, `ajjhattañ ca`, `kiñ ca` donde el CST escribe `ahaṃ`, `ajjhattaṃ`, `kiṃ`. Medido
+    # en el Suttanipāta: **194** `ñ` finales en el impreso y **0** en el CST, que lo lleva todo a
+    # `ṃ` (4.604). Sin esta regla, cada una de esas 194 palabras es una discrepancia inventada.
+    (re.compile(r'[ñṅ](?=[\s.,;:!?\'"\)\]]|$)'), 'ṃ'),
     # nasal homorgánica ANTE OCLUSIVA (nunca ante semivocal: `saṃyojana` se queda)
     (re.compile(f'ṃ(?=[{VELARES}])'), 'ṅ'),
     (re.compile(f'ṃ(?=[{PALATALES}])'), 'ñ'),
