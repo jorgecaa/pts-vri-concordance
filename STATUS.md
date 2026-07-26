@@ -1,4 +1,70 @@
 # PTS Reference Concordance — Status Report
+## KN — CATASTRO (2026-07-25): qué se puede validar y qué no
+
+Antes de tocar nada de KN, la pregunta es de qué hay texto. La regla del proyecto es que las
+**únicas fuentes válidas son PTS (la BD) y el CST (los XML de VRI)**, así que una fila sin texto en
+la BD no es validable por este camino, por mucho que exista en otras ediciones.
+
+**2.360 filas → 2.066 con texto en la BD (87,5 %) · 294 sin él (12,5 %).**
+
+### Lo que SÍ tiene texto en la BD
+
+| obra | filas | libro BD | pp. BD | pp. Excel | fichero VRI |
+|---|--:|--:|---|---|---|
+| Khuddakapāṭha | 9 | 22 | 1-9 | 1-8 | `s0501m` |
+| Dhammapada | 26 | 23 | 1-120 | 1-108 | `s0502m` |
+| Udāna | 80 | 24 | 1-94 | 1-93 | `s0503m` |
+| Itivuttaka | 112 | 25 | 1-124 | 1-121 | `s0504m` |
+| Suttanipāta | 73 | 26 | 1-223 | 1-219 | `s0505m` |
+| Vimānavatthu | 85 | 27 | 1-135 | 1-134 | `s0506m` |
+| Petavatthu | 51 | 28 | 1-95 | 1-94 | `s0507m` |
+| Theragāthā | 264 | 29 | 1-174 | 1-109 | `s0508m` |
+| Therīgāthā | 73 | 29 | *(mismo libro)* | 123-167 | `s0509m` |
+| Jātaka | 547 | 30-35 | 6 vols. | 1-537 | `s0513m` `s0514m` |
+| Thera-apadāna | 563 | 40 | 1-615 | 3-511 | `s0510m1` |
+| Therī-apadāna | 40 | 40 | *(mismo libro)* | 513-614 | `s0510m2` |
+| Buddhavaṃsa | 29 | 41 | 1-102 | 1-68 | `s0511m` |
+| Cariyāpiṭaka | 34 | 42 | 1-37 | 73-101 | `s0512m` |
+| Niddesa | 37+2 | 36, 37 | 510 + 73 | 1-445 | `s0515m` `s0516m` |
+| Paṭisambhidāmagga | 22+9 | 38, 39 | 196 + 246 | 1-185 · 205-243 | `s0517m` |
+
+### Lo que NO se puede validar — 294 filas
+
+| obra | filas | por qué |
+|---|--:|---|
+| **Milindapañha** | **248** | **paracanónico**: no está en la BD, y el VRI lo tiene como `s0520m.**nrf**.xml` — *non-reference*, fuera del canon. Ni PTS ni CST lo dan como texto canónico |
+| **Nettippakaraṇa** | 37 | no está en la BD. El CST **sí** lo tiene (`s0519m.mul.xml`), pero sin el lado PTS no hay par que cotejar |
+| **Peṭakopadesa** | 9 | no está en la BD; el VRI lo tiene como `s0518m.**nrf**.xml` |
+
+⚠️ **Las 248 del Milindapañha están escondidas bajo la etiqueta `Pet`** del Excel, junto a las 9 del
+Peṭakopadesa: `PTS Vol = Pet` agrupa **dos obras distintas**, y una de ellas ni siquiera es canónica.
+Cualquier recuento que trate `Pet` como una unidad está mezclando 248 filas invalidables con 9.
+
+### Trabajo previo que el catastro deja a la vista
+
+- **Tres etiquetas del Excel mezclan obras**: `Pet` = Milindapañha (248) + Peṭakopadesa (9);
+  `Bv` = Buddhavaṃsa (29) + Cariyāpiṭaka (34); `Ap` = Thera-apadāna (563) + Therī-apadāna (40).
+  Separarlas es requisito, no adorno: cada obra tiene su fichero VRI y su libro de la BD.
+- **Desfase de paginación entre la BD y el Excel** en al menos una obra: el **Cariyāpiṭaka** va
+  `1-37` en la BD y `73-101` en el Excel — **−72**, porque PTS lo pagina a continuación del
+  Buddhavaṃsa y la BD le reinicia la cuenta. Sondado también en Therī-gāthā (+8) y Apadāna (−2),
+  donde hace falta calibrar antes de emparejar nada.
+- **627 filas sin `Sutta #`** (todo el Jātaka y el Niddesa, entre otras): no hay clave numérica, así
+  que el emparejamiento tendrá que apoyarse en el nombre y el contenido desde el principio.
+- **Ninguna fila de KN tiene `DPR Ref`** — no existe el atajo que resolvió A i.
+- **Ninguna tiene `VRI Ref`**: el lado CST está entero por construir.
+- **10 filas son encabezados de sección** (`Therāpadāna`, `Jātaka`, `Niddesa`, `Milindapañha`…) sin
+  página ni referencia. No son suttas y no deberían contar como filas pendientes.
+
+### Consecuencia para el recuento
+
+El techo real de KN por este camino es **2.066 de 2.360** (87,5 %). Las otras 294 no son deuda de
+método: son filas cuyo texto PTS **no está en la base de datos**, y tres de ellas apuntan a obras
+que el propio CST clasifica fuera del canon. Antes de dar KN por cerrado habrá que decidir qué se
+hace con ellas — igual que con las colas de AN.
+
+---
+
 ## A i — ANÁLISIS CRÍTICO de la práctica editorial, y plan (2026-07-25)
 
 A i lleva todo el proyecto declarado «sin abordar a propósito». La razón que se daba —«el CST no da
