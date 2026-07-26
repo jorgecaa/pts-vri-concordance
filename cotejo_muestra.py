@@ -132,25 +132,45 @@ def recorta(tp, propio, siguiente):
         # vale la ventana entera que un corte inventado.
         return re.sub(r'[^a-z]', '', x)
 
-    plano = ap.fold(tp)
-    r = raiz(propio)
+    r, rs = raiz(propio), raiz(siguiente)
     if len(r) < 5:
         return tp, False
-    # ⚠️ El nombre aparece DOS veces: al abrir (`[329. Pupphacchattiya.]`) y al cerrar
-    # (`Pupphacchattiyattherassa apadānaṃ samattaṃ`). Quedarse con la primera aparición a secas
-    # corta por el colofón del anterior y **empeora** el cotejo: `Tha Ap 331` bajaba de 0,94 a 0,59.
-    # Se saltan las apariciones de cierre.
-    a = -1
-    for m in re.finditer(re.escape(r), plano):
-        cola = plano[m.start():m.start() + len(r) + 46]
-        if re.search(r'apadanam samatam|nithitam|samatam', cola):
-            continue
-        a = m.start()
-        break
-    if a < 0:
+
+    def cabecera(lineas, raiz_):
+        """Índice de la línea que **encabeza** esa unidad, o `None`.
+
+        ⚠️ Sólo vale un encabezado, y por eso se busca **por líneas y al principio de línea**
+        —tras el corchete, el número o el ordinal que el impreso ponga—. Buscar el nombre suelto
+        en el texto plano corta por cualquier mención: al `Buddhaapadāna` lo dejaba en un jirón de
+        seis palabras porque su raíz aparece a mitad de un verso. Se descartan además las
+        apariciones de **cierre** (`… apadānaṃ samattaṃ`), que nombran la unidad que acaba, no la
+        que empieza.
+        """
+        if len(raiz_) < 5:
+            return None
+        for j, l in enumerate(lineas):
+            fl = ap.fold(l).strip()
+            if re.search(r'apadanam samatam|nithitam|samatam', fl):
+                continue
+            # ⚠️ el número se comprueba en la línea **en bruto**: `ap.fold` borra los dígitos, así
+            # que exigirlo sobre el texto plegado no casa nunca y el recorte no salta jamás
+            if not re.match(r'^\s*\[?\s*\d+[.\s]', l):
+                continue
+            # ⚠️ **El encabezado va NUMERADO; el colofón no.** En el Vimānavatthu los dos llevan
+            # el mismo nombre —abre `12 Dutiyapatibbatāvimānavatthu` y cierra
+            # `Dutiyapatibbatāvimānaṃ`— y sin exigir el número el corte prendía en el cierre del
+            # anterior: `Vv 12` se quedaba con el texto del 13 y el control cantaba «gana el
+            # vecino» sobre un par que era bueno.
+            if fl.startswith(raiz_[:max(5, len(raiz_) - 4)]):
+                return j
+        return None
+
+    lineas = tp.split('\n')
+    a = cabecera(lineas, r)
+    if a is None:
         return tp, False
-    b = plano.find(raiz(siguiente), a + 1) if siguiente and len(raiz(siguiente)) >= 5 else -1
-    return tp[a:b if b > a else None], True
+    b = cabecera(lineas[a + 1:], rs)
+    return '\n'.join(lineas[a:a + 1 + b if b is not None else None]), True
 
 
 def coteja(conn, f, fs, ancho=92, lineas=8):
