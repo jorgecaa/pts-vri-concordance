@@ -61,6 +61,32 @@ dónde empieza el capítulo *impreso*; el incipit, dónde empieza el texto *de l
 anterior de este repo decía que PTS «la imprime sin romano propio detrás del Ratanacaṅkamanakaṇḍa»,
 y era falso.)
 
+### El cotejo por gramática de obra, y un `\r` con historia (2026-07-25)
+
+`cotejo_muestra.py` recorta ahora el texto PTS **por el encabezado impreso**, y para saber cuál es
+llama a la **gramática de cada obra** en vez de inventarse una universal: los `[N. Nombre]` del
+Apadāna, los `N Nombrevimānavatthu` del Vimānavatthu, los `N Nombrecariyaṃ` del Cariyāpiṭaka. Es la
+regla (6) aplicada a la herramienta, y llegó después de que el recorte genérico fallara **tres
+veces**, cada fallo destapado por el anterior: cortaba a mitad de verso; luego cortaba por el
+**colofón**, que en el Vimānavatthu lleva el mismo nombre que el encabezado; luego exigía el número
+sobre el texto plegado, donde `ap.fold` ya ha borrado los dígitos.
+
+`junta_corchetes` se movió a `kn_apadana` y la importa el cotejo, para que la herramienta y el
+alineador lean **los mismos** marcadores; `verifica_gramaticas()` comprueba que los recuentos no se
+separen en silencio.
+
+⚠️ **Y apareció un detalle del formato que conviene tener anotado: el texto de la BD usa `\r` suelto
+como separador de línea**, unas 15.529 veces —aproximadamente una por página, en 53 libros—. Donde
+el impreso pone dos rótulos seguidos, partir sólo por `\n` los **fusiona**:
+`Paṭhamapatibbatāvimānaṃ4\r    12 Dutiyapatibbatāvimānavatthu`. El encabezado deja de leerse.
+Comprobado que **los alineadores no han perdido marcadores por esto** —mismos recuentos partiendo
+por `\n` y por `[\r\n]` en Vv, Pv, Ap, Cp y Nd1—, pero cualquier código nuevo que lea líneas de
+`unitext` debe partir por `[\r\n]+`.
+
+Con eso, los nueve cotejos de control quedan: siete limpios y dos con el empate conocido del
+Apadāna, donde dos unidades comparten la p264 y el nombre impreso está abreviado —ahí la resolución
+la da el marcador `[329. Pupphacchattiya]`, no la cobertura.
+
 ### La convención que se ha seguido (2026-07-25)
 
 1. **Una cabecera no es una entrada, y no se borra.** No se destruye estructura atestiguada: se

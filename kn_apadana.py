@@ -89,6 +89,31 @@ def raiz_sin_ordinal(t):
     return re.sub(r'^(dutiya|tatiya|apara|pathama)', '', raiz(t))
 
 
+def junta_corchetes(lineas):
+    """Reúne los marcadores que el impreso **parte en dos líneas** cuando el nombre es largo.
+
+    `[31. Yasavatī-pamukhāni khattiyakaññā bhikkhuniyo aṭṭhāra-` / `sasahassāni.]` no existe si se
+    lee línea a línea, y sin él los dos apadānas colectivos del Therīapadāna se quedan sin pareja.
+
+    Vive aquí y lo importa `cotejo_muestra`, para que la herramienta de cotejo y el alineador lean
+    exactamente los mismos marcadores y no puedan separarse en silencio.
+    """
+    out, pend = [], None
+    for l in lineas:
+        l = l.strip()
+        if pend is not None:
+            pend += l.lstrip('-')
+            if ']' in pend:
+                out.append(pend)
+                pend = None
+            continue
+        if l.startswith('[') and ']' not in l:
+            pend = l.rstrip('-')
+            continue
+        out.append(l)
+    return out
+
+
 def marcadores(conn):
     """`[(página, nº impreso, nombre)]` — los `[N. Nombre.]` que PTS pone al abrir cada apadāna.
 
@@ -100,24 +125,7 @@ def marcadores(conn):
     out = [(1, 0, 'Buddhāpadāna'), (7, 0, 'Paccekabuddhāpadāna')]
     for r in conn.execute('SELECT page_no,unitext FROM pages WHERE edition="mula" AND book_no=? '
                           'ORDER BY page_no', (LIBRO,)):
-        # ⚠️ Un marcador puede **partirse en dos líneas** cuando el nombre es largo:
-        # `[31. Yasavatī-pamukhāni khattiyakaññā bhikkhuniyo aṭṭhāra-` / `sasahassāni.]`. Leyendo
-        # línea a línea no existe, y sin él los dos apadānas colectivos del Therīapadāna se quedaban
-        # sin pareja. Se reúne el corchete antes de buscar.
-        lineas, pend = [], None
-        for l in (r['unitext'] or '').split('\n'):
-            l = l.strip()
-            if pend is not None:
-                pend += l.lstrip('-')
-                if ']' in pend:
-                    lineas.append(pend)
-                    pend = None
-                continue
-            if l.startswith('[') and ']' not in l:
-                pend = l.rstrip('-')
-                continue
-            lineas.append(l)
-        for l in lineas:
+        for l in junta_corchetes((r['unitext'] or '').split('\n')):
             # ⚠️ El corchete de apertura falta a veces (`377. Kāsumāriphaladāyaka.]`) y detrás
             # del de cierre puede ir la llamada de nota (`[372. Sattapaṇṇiya.] 1`). Exigir la forma
             # canónica dejaba sin marcador a varios apadānas y la alineación los daba por

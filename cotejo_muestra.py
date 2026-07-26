@@ -21,8 +21,11 @@ import sqlite3
 import sys
 import xml.etree.ElementTree as ET
 
+from difflib import SequenceMatcher
+
 import an_peyyala as ap
 import an1_eka_duka as R
+from kn_apadana import junta_corchetes
 from openpyxl import load_workbook
 
 XLSX = 'PTS_Reference_Complete_Canon.xlsx'
@@ -108,69 +111,93 @@ def ventana_del_detail(f):
     return (int(m.group(1)), int(m.group(2)), int(m.group(3))) if m else None
 
 
-def recorta(tp, propio, siguiente):
-    """Recorta el texto PTS al tramo de la fila usando **el nombre impreso** como frontera.
+# ── Gramáticas de marcador, UNA POR OBRA (regla (6)) ────────────────────────────────────────
+#
+# ⚠️ El recorte genérico —«busca el nombre y corta»— falló tres veces seguidas, y cada fallo lo
+# destapó el anterior: cortaba a mitad de verso, luego cortaba por el **colofón** (que en el
+# Vimānavatthu lleva el mismo nombre que el encabezado), luego el número no casaba porque `ap.fold`
+# borra los dígitos. La lección es la de siempre en este proyecto: **no hay marcador universal**.
+# Cada obra tiene el suyo y hay que preguntárselo a ella.
+#
+# Estas expresiones son **las mismas** que usan los alineadores; `verifica_gramaticas()` comprueba
+# que siguen dando el mismo número de marcadores que el módulo de origen, para que no se separen en
+# silencio.
+MARCADORES = {
+    # `[329. Pupphacchattiya.]` — de kn_apadana.marcadores
+    'Ap': (r'^\[?\s*\d+\.\s*([^\]\[]+?)\.?\]\s*\d*$', 'kn_apadana'),
+    # `12 Dutiyapatibbatāvimānavatthu` — abre numerado; el colofón (`Dutiyapatibbatāvimānaṃ`) no
+    'Vv': (r'^\s*\d+\s+([A-Za-zĀāĪīŪūṂṃṆṇṬṭḌḍÑñṄṅḶḷ\'\- ]+vimānavatthu)\s*\d*$', 'kn_vimanavatthu'),
+    # `5 Soṇapaṇḍitacariyaṃ` — de kn_buddhavamsa.subtitulos_cp
+    'Bv': (r'^\s*\d+\s+([A-Za-zĀāĪīŪūṂṃṆṇṬṭḌḍÑñṄṅḶḷ\'\- ]+cariya[ṃm])\s*\d*$', 'kn_buddhavamsa'),
+}
 
-    La página es una resolución demasiado gruesa: en el Apadāna, el Vimānavatthu o el Cariyāpiṭaka
-    dos unidades cortas comparten página, y entonces el control marca al vecino como ganador aunque
-    el par sea bueno. El impreso, en cambio, escribe el nombre al abrir cada unidad —`[329.
-    Pupphacchattiya]`, `15 Mahālomahaṃsacariyaṃ`— así que **se corta por el nombre**: desde el
-    propio hasta el del siguiente. Cuando alguno no se encuentra, se deja como estaba y se dice.
+
+def recorta(tp, propio, siguiente, vol):
+    """Recorta el texto PTS al tramo de la fila usando **la gramática de marcador de su obra**.
+
+    Devuelve `(texto, nota)`. La página es una resolución demasiado gruesa —en el Apadāna, el
+    Vimānavatthu o el Cariyāpiṭaka dos unidades cortas comparten página y el control marca al vecino
+    como ganador aunque el par sea bueno—, así que se corta por el **encabezado impreso**: desde el
+    de la fila hasta el de la siguiente.
+
+    Si la obra no tiene gramática registrada, o su encabezado no se lee en la ventana, **no se
+    corta** y se dice. Más vale la ventana entera que un corte inventado: un recorte mal puesto no
+    baja la cobertura, la **falsea**.
     """
-    def raiz(x):
-        # ⚠️ el nombre del Excel viene con prefijo de catálogo —`(KN 15.35) Cp 35 Mahālomahaṃsa…`—
-        # y sin quitarlo la raíz empieza por «kn» y no casa con nada del impreso
-        x = re.sub(r'^\s*\(KN[^)]*\)\s*', '', str(x or '').replace('\u00ad', ''))
-        x = re.sub(r'^\s*(Th[īi]? Ap|Tha Ap|Thi Ap|Cp|Bv|Vv|Pv|Nd ?\d*|Iti|Ud|Snp|Thag|Thig)\s+[\d.]+\s*',
-                   '', x)
-        x = ap.fold(re.sub(r'^[\d.\s\[]+', '', x))
-        x = re.sub(r'(vimanavathu|petavathu|cariyam|cariya|budhavamso|apadanam|nideso)\b.*$', '', x)
-        # ⚠️ **sin truncar**. Con la raíz recortada a doce letras, el `Pupphacchattiya-` del Excel
-        # casaba con trozos que no eran su encabezado y el recorte empeoraba el cotejo (0,94 → 0,59).
-        # Con la raíz entera, si el impreso escribe el nombre de otra forma —lo normal en el
-        # Apadāna, donde PTS abrevia— sencillamente **no se recorta**, y eso es lo correcto: más
-        # vale la ventana entera que un corte inventado.
-        return re.sub(r'[^a-z]', '', x)
+    pat, _origen = MARCADORES.get(vol, (None, None))
+    if not pat:
+        return tp, f'no ({vol} no tiene gramática de marcador registrada)'
+    # ⚠️ Se parte por `[\r\n]`, no por `\n`. El texto de la BD usa **`\r` suelto** como separador
+    # —15.529 veces, aproximadamente uno por página— y ahí donde el impreso pone dos rótulos
+    # seguidos, partir sólo por `\n` los fusiona en una línea: `Paṭhamapatibbatāvimānaṃ4\r    12
+    # Dutiyapatibbatāvimānavatthu`. El encabezado deja de leerse y el recorte no salta. Comprobado
+    # que los alineadores no pierden marcadores por esto (mismos recuentos con `\n` y con
+    # `[\r\n]`), pero aquí sí importaba.
+    lineas = junta_corchetes(re.split(r'[\r\n]+', tp))
+    cabs = [(j, m.group(1)) for j, l in enumerate(lineas)
+            if (m := re.match(pat, l.strip()))]
+    if not cabs:
+        return tp, 'no (ningún encabezado en la ventana)'
 
-    r, rs = raiz(propio), raiz(siguiente)
-    if len(r) < 5:
-        return tp, False
-
-    def cabecera(lineas, raiz_):
-        """Índice de la línea que **encabeza** esa unidad, o `None`.
-
-        ⚠️ Sólo vale un encabezado, y por eso se busca **por líneas y al principio de línea**
-        —tras el corchete, el número o el ordinal que el impreso ponga—. Buscar el nombre suelto
-        en el texto plano corta por cualquier mención: al `Buddhaapadāna` lo dejaba en un jirón de
-        seis palabras porque su raíz aparece a mitad de un verso. Se descartan además las
-        apariciones de **cierre** (`… apadānaṃ samattaṃ`), que nombran la unidad que acaba, no la
-        que empieza.
-        """
-        if len(raiz_) < 5:
+    def elige(nombre, desde):
+        r = raiz_nombre(nombre)
+        if len(r) < 5:
             return None
-        for j, l in enumerate(lineas):
-            fl = ap.fold(l).strip()
-            if re.search(r'apadanam samatam|nithitam|samatam', fl):
-                continue
-            # ⚠️ el número se comprueba en la línea **en bruto**: `ap.fold` borra los dígitos, así
-            # que exigirlo sobre el texto plegado no casa nunca y el recorte no salta jamás
-            if not re.match(r'^\s*\[?\s*\d+[.\s]', l):
-                continue
-            # ⚠️ **El encabezado va NUMERADO; el colofón no.** En el Vimānavatthu los dos llevan
-            # el mismo nombre —abre `12 Dutiyapatibbatāvimānavatthu` y cierra
-            # `Dutiyapatibbatāvimānaṃ`— y sin exigir el número el corte prendía en el cierre del
-            # anterior: `Vv 12` se quedaba con el texto del 13 y el control cantaba «gana el
-            # vecino» sobre un par que era bueno.
-            if fl.startswith(raiz_[:max(5, len(raiz_) - 4)]):
-                return j
-        return None
+        cand = [(SequenceMatcher(None, r, raiz_nombre(nm)).ratio(), j)
+                for j, nm in cabs if j >= desde]
+        mejor = max(cand, default=(0, None))
+        return mejor[1] if mejor[0] >= 0.7 else None
 
-    lineas = tp.split('\n')
-    a = cabecera(lineas, r)
+    a = elige(propio, 0)
     if a is None:
-        return tp, False
-    b = cabecera(lineas[a + 1:], rs)
-    return '\n'.join(lineas[a:a + 1 + b if b is not None else None]), True
+        return tp, 'no (el encabezado de esta unidad no se lee en la ventana)'
+    b = elige(siguiente, a + 1) if siguiente else None
+    return '\n'.join(lineas[a:b]), f'sí, por el encabezado impreso de la línea {a + 1}'
+
+
+def raiz_nombre(t):
+    """Raíz comparable de un nombre, venga del Excel o del impreso."""
+    t = re.sub(r'^\s*\(KN[^)]*\)\s*', '', str(t or '').replace('\u00ad', ''))
+    t = re.sub(r'^\s*(Th[īi]? Ap|Tha Ap|Cp|Bv|Vv|Pv)\s+[\d.]+\s*', '', t)
+    t = ap.fold(re.sub(r'^[\d.\s\[]+', '', t))
+    t = re.sub(r'(vimanavathu|petavathu|cariyam|cariya|apadanam|thera|theri)\b.*$', '', t)
+    return re.sub(r'[^a-z]', '', t)
+
+
+def verifica_gramaticas(conn):
+    """¿Siguen las gramáticas de aquí dando lo mismo que el módulo del que salieron?
+
+    Si un alineador afina su expresión y ésta se queda atrás, el cotejo empieza a no recortar sin
+    que nadie se entere. Esto lo canta.
+    """
+    import kn_apadana
+    n_mod = len([x for x in kn_apadana.marcadores(conn) if x[1]])
+    pat = MARCADORES['Ap'][0]
+    n_aqui = sum(1 for r in conn.execute(
+        'SELECT unitext FROM pages WHERE edition="mula" AND book_no=40')
+        for l in junta_corchetes((r['unitext'] or '').split('\n')) if re.match(pat, l.strip()))
+    return [f'Ap: el módulo lee {n_mod} marcadores y esta gramática {n_aqui}'] if n_mod != n_aqui \
+        else []
 
 
 def coteja(conn, f, fs, ancho=92, lineas=8):
@@ -191,14 +218,13 @@ def coteja(conn, f, fs, ancho=92, lineas=8):
         nota = 'por página'
     tp = texto_pts(conn, libro, a, b) if libro and pg else ''
     sig_nom = hermanas[k + 1]['Sutta Name'] if 0 <= k < len(hermanas) - 1 else None
-    tp, cortado = recorta(tp, f['Sutta Name'], sig_nom)
+    tp, nota_rec = recorta(tp, f['Sutta Name'], sig_nom, vol)
     print('═' * ancho)
     print(f"  {f['Sutta Name']}")
     print(f"  PTS Ref «{f['PTS Ref']}»   ·   VRI Ref «{vri}» → {origen}")
     print(f"  {vol} p{pg} · BD libro {libro}, pp. {a}-{b} — resuelto {nota}"
           f"   ·   {f['Validation']} / {f['Estado']}")
-    print(f"  recorte por nombre impreso: {'sí' if cortado else 'NO — el nombre no se lee en la '
-                                                      'página; la ventana va entera'}")
+    print(f'  recorte: {nota_rec}')
     print('─' * ancho)
     print(f"{'PTS (impreso, BD)':<{(ancho - 3) // 2}} │ CST (VRI)")
     print('─' * ancho)
