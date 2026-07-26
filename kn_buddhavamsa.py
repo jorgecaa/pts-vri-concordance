@@ -227,7 +227,7 @@ def filas(pref):
     return [{'num': str(r[ci['Sutta #']]), 'name': str(r[ci['Sutta Name']] or ''),
              'page': r[ci['PTS Page']], 'estado': r[ci['Estado']]}
             for r in ws.iter_rows(min_row=2, values_only=True)
-            if r[ci['Nikaya']] == 'KN' and str(r[ci['PTS Vol']]) == 'Bv'
+            if r[ci['Nikaya']] == 'KN' and str(r[ci['PTS Vol']]) in {'Bv', 'Cp'}
             and str(r[ci['Sutta #']]).startswith(pref)]
 
 
@@ -320,7 +320,7 @@ def main():
     ci = {c.value: i + 1 for i, c in enumerate(ws[1])}
     n = 0
     for r in range(2, ws.max_row + 1):
-        if ws.cell(r, ci['Nikaya']).value != 'KN' or str(ws.cell(r, ci['PTS Vol']).value) != 'Bv':
+        if ws.cell(r, ci['Nikaya']).value != 'KN' or str(ws.cell(r, ci['PTS Vol']).value) not in {'Bv', 'Cp'}:
             continue
         num = str(ws.cell(r, ci['Sutta #']).value)
         if num not in res or ws.cell(r, ci['Estado']).value == 'CONFIRMADO':

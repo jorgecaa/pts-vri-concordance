@@ -14,7 +14,7 @@ sospechosa aunque su cobertura sea alta — es exactamente el caso que destapó 
 del Petavatthu.
 
 Uso:
-    python3 cotejo_muestra.py --fila «<Sutta Name o Sutta #>» [--ancho 92]
+    python3 cotejo_muestra.py --fila «<Sutta Name, Sutta # o PTS Ref>» [--ancho 92]
 """
 import re
 import sqlite3
@@ -36,10 +36,11 @@ XMLDIR = '/tmp/tipitaka-xml/romn'
 # `Siddhatthabuddhavaṃsa`. Para esas filas la ventana no sale de la página sino de **la posición del
 # capítulo en la BD**, que el `Detail` ya trae escrita («En la BD el texto está en el libro 41,
 # pp. 102-102»). La tabla no debe obligar a echar cuentas.
-POR_CAPITULO = {'Bv'}
-LIBRO = {'Kh': 22, 'Dh': 23, 'Ud': 24, 'It': 25, 'Sn': 26, 'Vv': 27, 'Pv': 28, 'Th': 29,
-         'Th & Th': 29, 'Nidd': 36, 'Nidd II': 37, 'Paṭis I': 38, 'Paṭis II': 39, 'Ap': 40,
-         'Bv': 41}
+POR_CAPITULO = {'Bv', 'Cp'}
+# siglas del CPD (ver `normaliza_siglas_cpd.py`)
+LIBRO = {'Khp': 22, 'Dhp': 23, 'Ud': 24, 'It': 25, 'Sn': 26, 'Vv': 27, 'Pv': 28, 'Th': 29,
+         'Thī': 29, 'Nidd I': 36, 'Nidd II': 37, 'Paṭis': 38, 'Th-ap': 40, 'Thī-ap': 40,
+         'Bv': 41, 'Cp': 42, 'Ja': 30}
 
 
 def filas():
@@ -124,11 +125,11 @@ def ventana_del_detail(f):
 # silencio.
 MARCADORES = {
     # `[329. Pupphacchattiya.]` — de kn_apadana.marcadores
-    'Ap': (r'^\[?\s*\d+\.\s*([^\]\[]+?)\.?\]\s*\d*$', 'kn_apadana'),
+    'Th-ap': (r'^\[?\s*\d+\.\s*([^\]\[]+?)\.?\]\s*\d*$', 'kn_apadana'),
     # `12 Dutiyapatibbatāvimānavatthu` — abre numerado; el colofón (`Dutiyapatibbatāvimānaṃ`) no
     'Vv': (r'^\s*\d+\s+([A-Za-zĀāĪīŪūṂṃṆṇṬṭḌḍÑñṄṅḶḷ\'\- ]+vimānavatthu)\s*\d*$', 'kn_vimanavatthu'),
     # `5 Soṇapaṇḍitacariyaṃ` — de kn_buddhavamsa.subtitulos_cp
-    'Bv': (r'^\s*\d+\s+([A-Za-zĀāĪīŪūṂṃṆṇṬṭḌḍÑñṄṅḶḷ\'\- ]+cariya[ṃm])\s*\d*$', 'kn_buddhavamsa'),
+    'Cp': (r'^\s*\d+\s+([A-Za-zĀāĪīŪūṂṃṆṇṬṭḌḍÑñṄṅḶḷ\'\- ]+cariya[ṃm])\s*\d*$', 'kn_buddhavamsa'),
 }
 
 
@@ -192,11 +193,11 @@ def verifica_gramaticas(conn):
     """
     import kn_apadana
     n_mod = len([x for x in kn_apadana.marcadores(conn) if x[1]])
-    pat = MARCADORES['Ap'][0]
+    pat = MARCADORES['Th-ap'][0]
     n_aqui = sum(1 for r in conn.execute(
         'SELECT unitext FROM pages WHERE edition="mula" AND book_no=40')
         for l in junta_corchetes((r['unitext'] or '').split('\n')) if re.match(pat, l.strip()))
-    return [f'Ap: el módulo lee {n_mod} marcadores y esta gramática {n_aqui}'] if n_mod != n_aqui \
+    return [f'Th-ap: el módulo lee {n_mod} y esta gramática {n_aqui}'] if n_mod != n_aqui \
         else []
 
 
@@ -251,7 +252,8 @@ def main():
     conn = sqlite3.connect(R.DB)
     conn.row_factory = sqlite3.Row
     for clave in claves:
-        hit = [f for f in fs if clave in str(f['Sutta Name']) or clave == str(f['Sutta #'])]
+        hit = [f for f in fs if clave in str(f['Sutta Name']) or clave == str(f['Sutta #'])
+               or clave == str(f['PTS Ref'])]
         if not hit:
             print(f'⚠ sin fila para {clave!r}')
             continue

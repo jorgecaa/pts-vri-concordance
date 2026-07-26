@@ -110,7 +110,7 @@ def main():
         for frag, sec in CABECERAS:
             if frag in nom and tipo != 'Section Header':
                 cab.append((r, nom, sec))
-        if num in AUSENTES and str(ws.cell(r, ci['PTS Vol']).value) == 'Ap':
+        if num in AUSENTES and str(ws.cell(r, ci['PTS Vol']).value) in {'Th-ap', 'Thī-ap'}:
             aus.append((r, num))
     print(f'cabeceras a tipar: {len(cab)} · ya tipadas: {len(val)} · ausentes a marcar: {len(aus)}')
     for _r, nom, sec in cab:

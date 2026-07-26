@@ -87,6 +87,44 @@ Con eso, los nueve cotejos de control quedan: siete limpios y dos con el empate 
 Apadāna, donde dos unidades comparten la p264 y el nombre impreso está abreviado —ahí la resolución
 la da el marcador `[329. Pupphacchattiya]`, no la cobertura.
 
+### Las siglas, normalizadas al CPD (2026-07-25)
+
+La norma lexicográfica del pali la fija el ***Critical Pāli Dictionary*** y sus *Epilegomena*
+(Copenhague, 1948), que el *Dictionary of Pāli* de Cone continúa. De ahí salen tres cosas:
+
+1. **siglas de edición**: `Ee` (*editio Europaea* = PTS), `Be` (birmana = el CST), `Ce` (cingalesa),
+   `Se` (siamesa). Es la nomenclatura en que se escribe `deest in Ee`;
+2. **la unidad de cita depende del género del texto**: prosa por volumen, página y línea
+   (`M I 1,5`); verso por **número de estrofa**, porque la estrofa es estable entre ediciones y la
+   página no. Es la regla (5-ter) de este proyecto — adoptada antes de saber que coincidía;
+3. **una sigla por obra**, con el volumen dentro de la referencia y no en la sigla.
+
+El punto 3 explica un defecto que este repo llevaba documentado como rareza del fichero: **«tres
+etiquetas mezclan obras» no era una rareza, era la consecuencia de no usar siglas de obra.** `Pet`
+rotulaba el Milindapañha (248) *y* el Peṭakopadesa (9); `Bv`, el Buddhavaṃsa y el Cariyāpiṭaka;
+`Ap`, los dos Apadānas; `Nidd`, el Mahā- y el Cūḷaniddesa. Y `Paṭis I`/`Paṭis II` no eran obras sino
+**volúmenes**. Con la sigla del CPD el problema desaparece de raíz (`normaliza_siglas_cpd.py`,
+1.081 filas):
+
+| antes | ahora | | antes | ahora |
+|---|---|---|---|---|
+| `Ap` | `Th-ap` / `Thī-ap` | | `Kh` | `Khp` |
+| `Pet` | `Mil` / `Peṭ` | | `Dh` | `Dhp` |
+| `Bv` | `Bv` / `Cp` | | `Th & Th` | `Thī` |
+| `Nidd` | `Nidd I` / `Nidd II` | | `Paṭis I`, `Paṭis II` | `Paṭis` |
+
+DN, MN, SN y AN ya venían con `D`, `M`, `S`, `A`, que son las del CPD: no se tocaron. Se reescribió
+también el prefijo de 627 `PTS Ref` (`Nd1`/`Nd2` → `Nidd I`/`Nidd II`, `Th Ap` → `Th-ap`).
+
+⚠️ **La columna `Sutta Name` NO se toca**: es la etiqueta de la fuente, no una sigla, y cambiarla
+sería divergir del original sin necesidad. Por eso el nombre sigue diciendo `Tha Ap 331` mientras la
+referencia dice `Th-ap 331`.
+
+⚠️ Y un efecto secundario que hubo que atender: las **cabeceras de sección** ya llevan sigla propia,
+así que entran por el filtro de `PTS Vol` y los alineadores tienen que descartarlas por
+`Type = Section Header`. Con eso los recuentos quedan además más limpios — el Cūḷaniddesa pasa a
+**22/22** y el Paṭisambhidāmagga a **31/31**, porque la cabecera deja de contar en el denominador.
+
 ### La convención que se ha seguido (2026-07-25)
 
 1. **Una cabecera no es una entrada, y no se borra.** No se destruye estructura atestiguada: se

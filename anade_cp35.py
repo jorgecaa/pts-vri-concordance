@@ -33,7 +33,7 @@ XLSX = 'PTS_Reference_Complete_Canon.xlsx'
 ANCLA = '13.34'
 NUEVA = {
     'Nikaya': 'KN', 'Sutta #': '13.35', 'Sutta Name': '(KN 15.35) Cp 35 Mahālomahaṃsacariya',
-    'Section': 'Cariyāpiṭaka (Cp)', 'PTS Vol': 'Bv', 'PTS Page': 101, 'PTS Ref': 'Cp 3.15',
+    'Section': 'Cariyāpiṭaka (Cp)', 'PTS Vol': 'Cp', 'PTS Page': 101, 'PTS Ref': 'Cp 3.15',
     'Type': 'Sutta', 'Validation': 'UNVERIFIED', 'Estado': 'PENDIENTE', 'Raw ID': 'KN 13.35',
     'Detail': 'Fila añadida: el CST y el impreso traen 35 cariyās (10+10+15) y el Excel tenía 34',
 }

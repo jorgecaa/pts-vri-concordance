@@ -57,7 +57,7 @@ XLSX = 'PTS_Reference_Complete_Canon.xlsx'
 COV_MIN = 0.55
 # obra → (libro BD, fichero VRI, etiqueta `PTS Vol` del Excel, última página del tramo, sigla)
 OBRAS = {'thag': (29, 's0508m', 'Th', 116, 'Th'),
-         'thig': (29, 's0509m', 'Th & Th', 174, 'Thī')}
+         'thig': (29, 's0509m', 'Thī', 174, 'Thī')}
 
 # ⚠️ Dos rangos de verso INTERCAMBIADOS en el Excel del Therīgāthā, y el CST y el contenido lo
 # dicen a la vez: el `Vāseṭṭhī` es el 133-138 (el Excel le pone 139-144) y el `Khemā` el 139-144

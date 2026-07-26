@@ -92,6 +92,10 @@ def filas(vols, seccion=None):
             continue
         if seccion and seccion not in str(r[ci['Section']]):
             continue
+        # ⚠️ Las cabeceras de sección ya llevan sigla propia desde la normalización al CPD, así
+        # que entran por el filtro de `PTS Vol` y hay que descartarlas aquí: no son unidades.
+        if str(r[ci['Type']]) == 'Section Header':
+            continue
         out.append({'name': str(r[ci['Sutta Name']] or ''), 'page': r[ci['PTS Page']],
                     'vol': str(r[ci['PTS Vol']]), 'estado': r[ci['Estado']]})
     return out
@@ -158,7 +162,7 @@ def marcadores_mnd(conn):
 
 def resuelve_mnd(conn):
     cst = divs_cst('s0515m', 'kn15')
-    fs = filas({'Nidd'}, 'Mahā')
+    fs = filas({'Nidd I'}, 'Mahā')
     mk = marcadores_mnd(conn)
     print(f'CST {len(cst)} capítulos · Excel {len(fs)} filas · marcadores impresos {len(mk)}/16')
     res, avisos = {}, []
@@ -187,7 +191,7 @@ def resuelve_cnd(conn):
     """Las 21 filas de `Nidd` del Cūḷaniddesa. Las 2 de `Nidd II` no tienen página y quedan fuera."""
     cst = divs_cst('s0516m', 'kn16')
     sub = secciones_cst('s0516m', 'kn16', 'subhead')
-    fs = filas({'Nidd', 'Nidd II'}, 'Cūḷa')
+    fs = filas({'Nidd II'}, 'Cūḷa')
     print(f'CST: {len(cst)} div, {len(sub)} subheads · Excel {len(fs)} filas')
     # Cnd 1-2 son las gāthās y las preguntas base; Cnd 5-20 las 16 pucchās; 21-22 sus dos niddesas
     # de cierre; 23 el Khaggavisāṇa, que en el CST es un `div` propio.
@@ -274,7 +278,7 @@ def marcadores_ps(conn):
 
 def resuelve_ps(conn):
     cst = secciones_cst('s0517m', 'kn17', 'title')
-    fs = filas({'Paṭis I', 'Paṭis II'})
+    fs = filas({'Paṭis'})
     mk = marcadores_ps(conn)
     print(f'CST {len(cst)} kathās · Excel {len(fs)} filas · títulos impresos {len(mk)}')
     res, avisos = {}, []

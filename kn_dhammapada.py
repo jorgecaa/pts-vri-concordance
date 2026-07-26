@@ -92,7 +92,7 @@ def filas():
     ci = {n: i for i, n in enumerate(hdr)}
     out = []
     for r in ws.iter_rows(min_row=2, values_only=True):
-        if r[ci['Nikaya']] != 'KN' or str(r[ci['PTS Vol']]) != 'Dh':
+        if r[ci['Nikaya']] != 'KN' or str(r[ci['PTS Vol']]) != 'Dhp':
             continue
         m = re.search(r'v(\d+)-(\d+)', str(r[ci['PTS Alt/Verse']] or ''))
         out.append({'num': str(r[ci['Sutta #']]), 'name': str(r[ci['Sutta Name']] or ''),
@@ -144,7 +144,7 @@ def main():
     ci = {c.value: i + 1 for i, c in enumerate(ws[1])}
     n = 0
     for r in range(2, ws.max_row + 1):
-        if ws.cell(r, ci['Nikaya']).value != 'KN' or str(ws.cell(r, ci['PTS Vol']).value) != 'Dh':
+        if ws.cell(r, ci['Nikaya']).value != 'KN' or str(ws.cell(r, ci['PTS Vol']).value) != 'Dhp':
             continue
         num = str(ws.cell(r, ci['Sutta #']).value)
         if num not in res or ws.cell(r, ci['Estado']).value == 'CONFIRMADO':
