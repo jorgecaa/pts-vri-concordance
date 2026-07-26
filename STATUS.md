@@ -514,8 +514,8 @@ Use this terminology consistently across the project:
 
 > **ALCANCE (decisión de Jorge, 2026-07-25): el Jātaka queda FUERA.** Sus 548 filas no se abordan.
 > Con eso, y descontando las 297 sin texto PTS en la BD (Milindapañha 248, Nettippakaraṇa 38,
-> Peṭakopadesa 11), el universo de trabajo son **5.253 filas** y están cerradas **5.230: el 99,6 %**.
-> Las 23 que faltan no son deuda de método (ver el desglose al final de esta sección).
+> Peṭakopadesa 11), el universo de trabajo son **5.253 filas** y están cerradas **5.232: el 99,6 %**.
+> Las 21 que faltan no son deuda de método (ver el desglose al final de esta sección).
 
 | Nikāya | Entries | CONFIRMADO | PENDIENTE | % CONF |
 |--------|--------:|-----------:|----------:|-------:|
@@ -523,17 +523,33 @@ Use this terminology consistently across the project:
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
 | **AN** | **1737** | **1737** | **0** | **100.0%** |
-| KN | 2361 | 1493 | 868 | 63.2% |
-| **TOTAL** | **6098** | **5230** | **868** | **85.8%** |
+| KN | 2361 | 1495 | 866 | 63.3% |
+| **TOTAL** | **6098** | **5232** | **866** | **85.8%** |
 
-**Dentro del alcance** (sin el Jātaka ni las 297 sin texto): **5.230 / 5.253 = 99,6 %.** Las 23
+**Dentro del alcance** (sin el Jātaka ni las 297 sin texto): **5.232 / 5.253 = 99,6 %.** Las 21
 restantes, una por una:
 
 | motivo | filas | ¿cerrable? |
 |---|--:|---|
 | **cabeceras de sección** — no son suttas (`Therāpadāna`, `Niddesa`, `Paṭisambhidāmagga`…) | 6 | no: no deberían contar como filas |
 | **PTS no lo imprime** — el vagga 56 del Therāpadāna, con las 11 filas apuntando a la p511, la del colofón | 11 | no: no hay texto que cotejar |
-| **sin marcador propio en el impreso** — 3 apadānas que PTS mete dentro del 331, los 2 colectivos de las `Yasodharā-pamukhāni` y el `Cnd 2 Pucchā`, que es un encabezado | 6 | quizá, con trabajo fila a fila |
+| **PTS no imprime el texto, aunque su uddāna lo nombra** — `Udakapūjaka`, `Punnāgapupphiya` y `Ekadussadāyaka` del vagga 34 | 3 | no: ver abajo |
+| **encabezado de sección** — `Cnd 2 Pucchā`, que abre las preguntas del Cūḷaniddesa y cuyo contenido son las filas `Cnd 5-22` | 1 | no: no es una unidad |
+
+**Cerradas las seis que quedaban abiertas** (2026-07-25), y con dos desenlaces opuestos:
+
+- **Los dos apadānas colectivos del Therīapadāna se firman**: el marcador impreso **sí existía**,
+  sólo que **partido en dos líneas** porque el nombre es largo —`[31. Yasavatī-pamukhāni
+  khattiyakaññā bhikkhuniyo aṭṭhāra-` / `sasahassāni.]`—. Leyendo línea a línea no aparecía. Con el
+  corchete reunido antes de buscar, el Therīapadāna queda **40/40**.
+- **Los tres del vagga 34 no se pueden firmar, y ahora se sabe por qué.** El uddāna impreso del
+  vagga nombra **diez** —`Gandhodaka-Pūjanī ca Punnāga-Ekadussikā | Phusito ca Pabhaṅkāro Kuṭido
+  Uttarīyako | Savanī Ekapadumī`— y la edición imprime **siete**: entre `[331. Gandhathūpiya]`
+  (p267) y `[332. Phussitakammiya]` (p268) no hay nada. Y el motivo es que **son casi duplicados
+  dentro del CST**: el `34.2 Udakapūjaka` coincide al **0,96** con el `11.6 Udakapūjaka` y el
+  `34.4 Ekadussadāyaka` al **0,93** con el `43.2 Ekadussadāyaka`, que PTS **sí** imprime (como el
+  106 y el 419) y que ya tienen su fila. Darles la referencia del homónimo pondría **dos filas sobre
+  un mismo texto** — justo el error contra el que existe `audit_injectivity`. Quedan PENDIENTE.
 
 > **KN empezado por el Khuddakapāṭha: 9/9** (`kn_khuddakapatha.py`). Es la obra más pequeña del
 > nikāya y por eso es donde se fija el método. Por una vez **las tres fuentes cuentan lo mismo**:
