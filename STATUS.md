@@ -16,7 +16,33 @@ convención: la ausencia en un testimonio se **registra**, no se deja en blanco.
 | cabeceras de sección | 11 | `SECTION_HEADER` | rótulos del impreso, no unidades citables (`Type = Section Header`) |
 | ausentes de PTS | 14 | `DEEST_PTS` | vagga 56 (11) y vagga 34 (3) del Therāpadāna: PTS **no los imprime** |
 | sin texto PTS en la BD | 294 | `EXTRA_CANON` | Milindapañha, Nettippakaraṇa, Peṭakopadesa |
-| **Jātaka** | 547 | — | **fuera de alcance** por decisión de Jorge |
+| **Jātaka** | 547 | — | **fuera de alcance**: el lado PTS disponible es el **comentario** (ver abajo) |
+
+### Por qué el Jātaka queda fuera (2026-07-25)
+
+**No es por falta de estructura** — al contrario, es de los bloques mejor formados del fichero. Que
+su columna `Sutta #` esté vacía no significa nada: el número corrido va **en el nombre**
+(`Ja 1 Apaṇṇakajātaka` … `Ja 547 Vessantarajātaka`), que es la citación canónica de la obra y el
+mismo patrón que resolvió el Itivuttaka (`Iti 112 …`) y el Apadāna (`Tha Ap 563 …`). Además trae
+`PTS Vol`, `PTS Roman` y `PTS Page` en 547 de 548 filas y la `PTS Ref` **ya rellena**, con volumen,
+página y hasta línea: `Ja i 96`, `Ja ii 361,14`, `Ja vi 329,22`.
+
+**El motivo es de alcance.** El texto PTS que hay en la BD (libros 30-35) es la edición de Fausbøll,
+que es *The Jātaka **together with its commentary***, y lo que contiene es el relato en prosa —
+aṭṭhakathā:
+
+- libro 30, p2: `Sā panāyaṃ Jātakassa **Atthavaṇṇanā** Dūrenidānaṃ Avidūrenidānaṃ Santikenidānan ti…`
+- libro 31, p2: `Atīte Bārāṇasiyaṃ Brahmadatte rajjaṃ kārente Bodhisatto…`
+
+Lo canónico del Jātaka son **sólo las gāthās**, que es lo que trae el mūla del CST (`s0513m` +
+`s0514m`, 567 `subhead`). Cotejar el Jātaka significaría trabajar sobre un lado PTS que es
+mayoritariamente comentario, y **la regla permanente del proyecto es sólo Canon, nunca la
+aṭṭhakathā**. Por eso se omite (decisión de Jorge, 2026-07-25).
+
+> Si algún día se abordara, el camino sería acotado y tendría su propio régimen (regla (6)): extraer
+> de los libros 30-35 **sólo las estrofas** —que Fausbøll imprime numeradas y en verso,
+> tipográficamente distintas de la prosa— y cotejarlas contra los 567 `subhead` del mūla, dejando el
+> relato fuera. Hoy **no** está en alcance.
 
 ### La convención que se ha seguido (2026-07-25)
 
@@ -118,6 +144,10 @@ Cualquier recuento que trate `Pet` como una unidad está mezclando 248 filas inv
   donde hace falta calibrar antes de emparejar nada.
 - **627 filas sin `Sutta #`** (todo el Jātaka y el Niddesa, entre otras): no hay clave numérica, así
   que el emparejamiento tendrá que apoyarse en el nombre y el contenido desde el principio.
+  > Corregido después: la columna vacía **no** quiere decir que falte identificación. En el Jātaka y
+  > en el Niddesa el número corrido va **en el nombre** (`Ja 1 Apaṇṇakajātaka`, `(Mnd 1) Nd 1 1 …`),
+  > que es como se citan esas obras, y los dos se resolvieron —o se habrían resuelto— por ahí. Ver
+  > § ESTADO ACTUAL.
 - **Ninguna fila de KN tiene `DPR Ref`** — no existe el atajo que resolvió A i.
 - **Ninguna tiene `VRI Ref`**: el lado CST está entero por construir.
 - **10 filas son encabezados de sección** (`Therāpadāna`, `Jātaka`, `Niddesa`, `Milindapañha`…) sin

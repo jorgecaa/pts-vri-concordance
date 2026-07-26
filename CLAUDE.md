@@ -18,7 +18,11 @@ This is **not a git repository** — there is no version control here. Be carefu
 destructive edits; there is no undo.
 
 > **Scope rule — el Jātaka queda FUERA** (decisión de Jorge, 2026-07-25): sus 548 filas no se
-> abordan. El universo real de la concordancia son **5.253 filas** (6.098 menos el Jātaka y menos
+> abordan. **El motivo es de alcance, no de dificultad**: el texto PTS disponible en la BD (libros
+> 30-35) es la edición de Fausbøll, que es *the Jātaka **together with its commentary***, y lo que
+> contiene es el relato en prosa — aṭṭhakathā. Lo canónico son sólo las gāthās. Cotejarlo obligaría
+> a trabajar sobre comentario, contra la regla de «sólo Canon». (Estructura no le falta: el número
+> corrido va en el nombre y la `PTS Ref` ya está rellena.) El universo real de la concordancia son **5.253 filas** (6.098 menos el Jātaka y menos
 > las 297 sin texto PTS en la BD: Milindapañha 248, Nettippakaraṇa 38, Peṭakopadesa 11).
 >
 > **Scope rule — Canon only.** Work strictly on the **Pāli Canon** (`edition='mula'`). **Never
