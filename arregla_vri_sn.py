@@ -120,6 +120,15 @@ ARREGLOS.update({
     ('SN', '24.28'): ('s0303m:249', 'tres filas y tres Adukkhamasukhīsuttaṃ en el CST '
                                     '(249, 275, 301); ésta es la primera'),
     ('SN', '24.30'): ('s0303m:275', 'ídem, la segunda'),
+    # ⚠️ Y con eso los dos `Navāta` se parten solos, sin compartir nada: el Diṭṭhisaṃyutta alterna
+    # `Adukkhamasukhī` (249, 275, 301) con dos tiradas de `Navātasuttaṃ` de veinticinco paranums
+    # cada una, y las cinco filas del Excel van en ese mismo orden impreso — 24.29 en S iii 221,8,
+    # 24.30 en 222,1 y 24.31 en 222,31. Antes las dos filas de `Navāta` reclamaban el rango entero
+    # `250-300`, que además **se solapaba** con el 275 de su hermana.
+    ('SN', '24.29'): ('s0303m:250-274', 'la primera tirada de Navātasuttaṃ, veinticinco paranums '
+                                        'entre los Adukkhamasukhī de 249 y 275'),
+    ('SN', '24.31'): ('s0303m:276-300', 'la segunda tirada de Navātasuttaṃ, entre los '
+                                        'Adukkhamasukhī de 275 y 301'),
     ('SN', '24.32'): ('s0303m:301', 'ídem, la tercera'),
     ('AN', '8.32'): ('s0404m1:32', 'entre 8.31 → :31 (Paṭhamadānasuttaṃ) y 8.33 → :33 '
                                    '(Dānavatthusuttaṃ) está el :32, Dutiyadānasuttaṃ'),

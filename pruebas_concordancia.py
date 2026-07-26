@@ -212,11 +212,16 @@ def prueba_fila(conn, fs, j, dueños):
     d['resuelve'] = tc is not None
     # ⚠️ Compartir la `VRI Ref` **no es un defecto por sí mismo**: cuando el CST repite el mismo
     # título en decenas de paranums seguidos —`Navātasuttaṃ` ocupa cincuenta en `s0303m:250-300`,
-    # los vaggas abreviados— el rango *es* el locus y varias filas de PTS caen dentro. Lo que sí es
-    # defecto es que compartan un **paranum único**: ahí una de las dos está mal.
+    # los vaggas abreviados— el rango *es* el locus y varias filas de PTS caen dentro.
+    #
+    # ⚠️ Pero **la excepción se declara, no se adivina**. Dar por bueno cualquier rango compartido
+    # dejaba pasar duplicaciones de verdad: en DN y MN **todas** las referencias son rangos, así que
+    # ninguna duplicación se detectaba — lo enseñó la prueba de mutación, y es exactamente el mismo
+    # error que ya había cometido en `pruebas_kn`. La fila que comparte a propósito lo dice en su
+    # `Detail`, como el `deest in Be`.
     vri = str(f['VRI Ref'] or '')
-    es_rango = bool(re.match(r'^[a-z0-9]+:(\d+)-(\d+)$', vri))
-    d['unica'] = dueños[vri] == 1 or es_rango if f['VRI Ref'] else False
+    d['unica'] = (dueños[vri] == 1 or 'comparte' in str(f['Detail'] or '').lower()
+                  if f['VRI Ref'] else False)
     if not d['resuelve']:
         d['veredicto'] = 'FALLA'
         d['motivo'] = 'la VRI Ref no apunta a texto del CST'
@@ -397,6 +402,62 @@ def prueba_fila(conn, fs, j, dueños):
     return d
 
 
+# ── Mutaciones: la prueba de la prueba ─────────────────────────────────────────────────────
+#
+# Una batería que aprueba no dice nada si no detecta un defecto puesto a mano. Se le meten los
+# defectos que este proyecto ha sufrido de verdad —el desplazamiento de S ii (+7), el +1 de
+# `46.36`, el rango colapsado de S iii— y se mira si los ve.
+#
+# ⚠️ Y se mide con dos varas, porque esta batería tiene tres veredictos: **cazada** es que la fila
+# pase a FALLA; **degradada**, que deje de ser PASA y caiga a INDECISO. Lo segundo también es
+# detectar —la fila deja de estar confirmada— pero es más débil, y conviene no confundirlos.
+MUTACIONES = [
+    ('DN', 'desplazar una fila un puesto', 10,
+     lambda fs, j: {**fs[j], 'VRI Ref': fs[j + 1]['VRI Ref']}),
+    ('MN', 'desplazar una fila un puesto', 60,
+     lambda fs, j: {**fs[j], 'VRI Ref': fs[j + 1]['VRI Ref']}),
+    ('MN', 'apuntar a un sutta lejano', 100,
+     lambda fs, j: {**fs[j], 'VRI Ref': fs[j + 30]['VRI Ref']}),
+    ('SN', 'desplazar una fila un puesto', 300,
+     lambda fs, j: {**fs[j], 'VRI Ref': fs[j + 1]['VRI Ref']}),
+    ('SN', 'desplazar SIETE puestos (el caso de S ii)', 700,
+     lambda fs, j: {**fs[j], 'VRI Ref': fs[j + 7]['VRI Ref']}),
+    ('SN', 'apuntar a otro volumen', 1200,
+     lambda fs, j: {**fs[j], 'VRI Ref': 's0301m:100'}),
+    ('AN', 'desplazar una fila un puesto', 400,
+     lambda fs, j: {**fs[j], 'VRI Ref': fs[j + 1]['VRI Ref']}),
+    ('AN', 'desplazar una fila un puesto', 900,
+     lambda fs, j: {**fs[j], 'VRI Ref': fs[j + 1]['VRI Ref']}),
+    ('AN', 'apuntar a un sutta lejano', 1400,
+     lambda fs, j: {**fs[j], 'VRI Ref': fs[j - 50]['VRI Ref']}),
+    ('AN', 'romper la referencia', 200,
+     lambda fs, j: {**fs[j], 'VRI Ref': 's0401m:99999'}),
+]
+
+
+def mutar(conn):
+    """¿Ve la batería un defecto puesto a mano? Sin esto, un 100 % no significa nada."""
+    caz = deg = 0
+    for nk, desc, j, mut in MUTACIONES:
+        fs = filas(nk)
+        dueños = Counter(str(f['VRI Ref']) for f in fs if f['VRI Ref'])
+        antes = prueba_fila(conn, fs, j, dueños)
+        fs2 = [dict(x) for x in fs]
+        fs2[j] = mut(fs2, j)
+        d2 = Counter(str(f['VRI Ref']) for f in fs2 if f['VRI Ref'])
+        despues = prueba_fila(conn, fs2, j, d2)
+        pasa_a = despues['veredicto']
+        marca = ('✓ cazada' if pasa_a == 'FALLA' else
+                 ('~ degradada a INDECISO' if antes['veredicto'] == 'PASA'
+                  and pasa_a == 'INDECISO' else '✗ NO LA VE'))
+        caz += pasa_a == 'FALLA'
+        deg += antes['veredicto'] == 'PASA' and pasa_a == 'INDECISO'
+        print(f"   {nk} {desc:42} {antes['fila']:11} {antes['veredicto']:8} → {pasa_a:8} {marca}")
+    print(f'\n   cazadas {caz}/{len(MUTACIONES)} · degradadas {deg} · '
+          f'sin detectar {len(MUTACIONES) - caz - deg}')
+    return 0 if caz + deg == len(MUTACIONES) else 1
+
+
 def main():
     detalle = '--detalle' in sys.argv
     solo = sys.argv[sys.argv.index('--nikaya') + 1] if '--nikaya' in sys.argv else None
@@ -404,6 +465,8 @@ def main():
     desp = int(sys.argv[sys.argv.index('--desplaza') + 1]) if '--desplaza' in sys.argv else 0
     conn = sqlite3.connect(R.DB)
     conn.row_factory = sqlite3.Row
+    if '--mutar' in sys.argv:
+        return mutar(conn)
     salida, total = {}, Counter()
     for nk in (['DN', 'MN', 'SN', 'AN'] if not solo else [solo]):
         fs = filas(nk)

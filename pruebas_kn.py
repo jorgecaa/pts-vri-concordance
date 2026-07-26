@@ -224,7 +224,7 @@ def tramo_bd(f):
     return (lib, pg, pg) if lib and isinstance(pg, int) else (None, None, None)
 
 
-def analiza(obra, fs, conn):
+def analiza(obra, fs, conn, dueños_kn=None):
     """Los cuatro controles sobre una obra entera."""
     res = [{'fila': str(f['Sutta #']), 'ref': str(f['PTS Ref']), 'vri': str(f['VRI Ref']),
             'nombre': str(f['Sutta Name'])[:34]} for f in fs]
@@ -245,7 +245,12 @@ def analiza(obra, fs, conn):
     # Permitirlo sin esa condición deja pasar una duplicación de verdad: una prueba de mutación lo
     # enseñó, duplicando a propósito la referencia de una fila vecina del Petavatthu y viendo que
     # la batería no la cazaba.
-    dueños = Counter(str(f['VRI Ref']) for f in fs)
+    # ⚠️ El recuento es **de todo KN, no de la obra**: dos obras pueden reclamar el mismo texto del
+    # CST, y hay que verlo. Pasa de verdad — `Sn 5.18` y `Cnd 3` apuntan los dos a
+    # `s0505m:1130-1136`, porque PTS imprime esas gāthās en las dos obras y el CST las tiene una
+    # sola vez, en el Suttanipāta. Es legítimo y por eso va declarado; pero contarlo por obra lo
+    # habría dejado invisible.
+    dueños = dueños_kn if dueños_kn is not None else Counter(str(f['VRI Ref']) for f in fs)
     for n, f in enumerate(fs):
         v = str(f['VRI Ref'])
         res[n]['unica'] = dueños[v] == 1 or comparte_declarado(f)
@@ -396,10 +401,11 @@ def main():
     if '--mutar' in sys.argv:
         return mutar(conn)
     todo, total, salida = filas(), Counter(), {}
+    dueños_kn = Counter(str(f['VRI Ref']) for fs in todo.values() for f in fs)
     for obra in sorted(todo, key=lambda o: -len(todo[o])):
         if solo and obra != solo:
             continue
-        res = analiza(obra, todo[obra], conn)
+        res = analiza(obra, todo[obra], conn, dueños_kn)
         c = Counter(r['veredicto'] for r in res)
         total.update(c)
         salida[obra] = res

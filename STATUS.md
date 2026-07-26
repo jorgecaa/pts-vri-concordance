@@ -276,6 +276,37 @@ las dos ediciones eliden el texto** (`…pe…` contra `║ pe ║`): no hay qu�
 asignaron por evidencia **estructural** —el uddāna que cuenta los miembros, el orden—, que una
 prueba de texto no puede confirmar ni desmentir. Decirlo así distingue «no se puede» de «no se sabe».
 
+### Las mutaciones sobre DN/MN/SN/AN, y lo que destaparon (2026-07-25)
+
+`pruebas_concordancia.py --mutar` mete diez defectos a mano —los que este proyecto ha sufrido de
+verdad: el desplazamiento de S ii (+7), el +1 de `46.36`, el rango colapsado, la referencia rota— y
+mira si los ve. **10 de 10 cazadas**, pero sólo después de arreglar dos cosas.
+
+⚠️ **Dos mutaciones no se veían, y por el mismo error que ya había cometido en `pruebas_kn` y no
+traje aquí**: dar por legítimo **cualquier rango compartido**. En DN y MN **todas** las referencias
+son rangos, así que **ninguna duplicación se detectaba en esos dos nikāyas**. La regla buena es la
+del `deest`: **la excepción se declara, no se adivina**.
+
+Y al aplicarla salieron dos fallos reales que la permisividad tapaba, los dos `Navātasuttaṃ` de
+`24.29` y `24.31`, que reclamaban el rango entero `250-300` **solapándose además con el 275 de su
+hermana**. El dato los parte solo: el Diṭṭhisaṃyutta **alterna** `Adukkhamasukhī` (249, 275, 301)
+con dos tiradas de `Navātasuttaṃ` de veinticinco paranums cada una, y las cinco filas del Excel van
+en ese mismo orden impreso. Quedan `250-274` y `276-300`, sin solape y sin compartir nada.
+
+⚠️ Y una comprobación que faltaba en las dos baterías: **la unicidad se cuenta por ámbito, y hay
+casos entre obras**. `Sn 5.18` y `Cnd 3` apuntan los dos a `s0505m:1130-1136` porque **PTS imprime
+esas gāthās en las dos obras** y el CST sólo las trae una vez, en el Suttanipāta. Es legítimo —dos
+loci impresos sobre un solo locus del CST— pero contarlo por obra lo dejaba invisible. Ahora
+`pruebas_kn` cuenta sobre todo KN, y la excepción va **declarada en las dos filas**, que son igual
+de parte.
+
+**Estado final de las dos baterías:**
+
+| | pruebas | PASA | FALLA | INDECISO | mutaciones |
+|---|--:|--:|--:|--:|---|
+| DN/MN/SN/AN | 3.737 | 3.151 | **0** | 586 | **10/10** |
+| KN | 1.495 | 1.495 | **0** | 0 | **10/10** |
+
 ### La batería del Khuddaka (`pruebas_kn.py`, 2026-07-25)
 
 **1.495 pruebas · PASA 1.495 · FALLA 0 · INDECISO 0**, y **10 de 10 mutaciones cazadas**.
