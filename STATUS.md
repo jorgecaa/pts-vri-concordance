@@ -87,6 +87,18 @@ Con eso, los nueve cotejos de control quedan: siete limpios y dos con el empate 
 Apadāna, donde dos unidades comparten la p264 y el nombre impreso está abreviado —ahí la resolución
 la da el marcador `[329. Pupphacchattiya]`, no la cobertura.
 
+⚠️ **Al Cariyāpiṭaka le faltaban sus tres puntos** —sólo se había mirado `Cp 3.15`, de pasada, para
+probar el recorte—, y es el libro donde el nombre falla más. Hechos (2026-07-25), los tres limpios:
+
+| punto | por qué es crítico | propia | control |
+|---|---|--:|---|
+| `Cp 1.3 Kururāja` | el impreso lo llama **`Kurudhammacariyaṃ`**: el nombre no casa y por eso la clave es (vagga, nº) | **0,92** | 0,35 / 0,26 |
+| `Cp 2.6 Rurumigarāja` | el Excel añade `miga` al `Rururāja` del CST y del impreso | **0,99** | 0,26 / 0,22 |
+| `Cp 3.15 Mahālomahaṃsa` | es **la fila que se añadió**: no existía en el Excel | **0,90** | 0,37 |
+
+La tercera es la que más importaba: la fila que se creó por decisión propia queda confirmada contra
+el impreso, que la subtitula `15 Mahālomahaṃsacariyaṃ` en su p35.
+
 ### Las siglas, normalizadas al CPD (2026-07-25)
 
 La norma lexicográfica del pali la fija el ***Critical Pāli Dictionary*** y sus *Epilegomena*
