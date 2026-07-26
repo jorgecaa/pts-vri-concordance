@@ -209,7 +209,31 @@ cincuenta—, sólo lo es compartir un **paranum único**; (b) para `:<paranum>.
 (d) **un control que no confirma no anula a otro que sí** — las filas de grupo llevan una etiqueta
 nuestra que el impreso no escribe, y marcarlas FALLA era hacer del silencio una contradicción.
 
-**Resultado: 160 pruebas, 0 FALLA, 130 PASA, 30 INDECISO.** De los 30 indecisos, **16 lo son porque
+**La muestra se puede desplazar** (`--desplaza N`): rota cada estrato antes de servirlo, así que
+otra corrida prueba **otras filas sin perder la reproducibilidad** —el mismo número da siempre la
+misma muestra—. Un muestreo aleatorio daría filas distintas cada vez y ninguna corrida sería
+discutible fila por fila. El estrato de los **bordes de volumen no rota**: son los puntos donde se
+esconde el desplazamiento y se comprueban siempre.
+
+⚠️ **Y volver a correrla sobre otros puntos valió la pena**: siete corridas (`--desplaza` 0, 7, 25,
+60, 120, 300, 500) sacaron **seis fallos que la primera muestra no tocaba**, y los seis eran de la
+**prueba**, no del dato:
+
+1. `49.2` y `50.2` daban «la VRI Ref no apunta a texto del CST» — son las `deest in Be` que se
+   acababan de crear: `check_integrity` había aprendido el caso y la batería no.
+2. Cuatro filas de AN (`1.419-423`, `1.447-454`, `5.261`, `5.269`) fallaban el ancla por nombre
+   estando bien. Dos arreglos: **el control sólo habla donde le toca** —si la línea declarada es
+   texto corrido y no un encabezado, que no lleve el nombre no dice nada, y un encabezado se
+   reconoce porque es **corto y sólo título** (`68. (2) Maraṇa.`) frente a una cláusula numerada que
+   sigue en prosa—; y **el ancla se trunca a lo que el impreso da**: donde PTS elide
+   (`55. Rūpī rūpāni passati . . . pe . . .`) pedirle ocho palabras es pedirle lo que no imprime, así
+   que se comparan sólo las que da antes de la elisión y se exige que abran el texto del CST. Corto
+   pero decisivo: son las primeras palabras de los dos.
+
+**Resultado: 0 FALLA en las siete corridas** (PASA entre 99 y 130 según el desplazamiento; el resto,
+INDECISO).
+
+**Resultado de la corrida base: 160 pruebas, 0 FALLA, 127 PASA, 33 INDECISO.** De los 30 indecisos, **16 lo son porque
 las dos ediciones eliden el texto** (`…pe…` contra `║ pe ║`): no hay qué cotejar, y esas filas se
 asignaron por evidencia **estructural** —el uddāna que cuenta los miembros, el orden—, que una
 prueba de texto no puede confirmar ni desmentir. Decirlo así distingue «no se puede» de «no se sabe».

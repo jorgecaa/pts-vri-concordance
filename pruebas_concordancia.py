@@ -72,7 +72,8 @@ su día hubo que arbitrar; (c) las de `VRI Ref` **con rango** (`a-b`), que son l
 por fila.
 
 Uso:
-    python3 pruebas_concordancia.py [--nikaya DN|MN|SN|AN] [--detalle] [--json salida.json]
+    python3 pruebas_concordancia.py [--nikaya DN|MN|SN|AN] [--desplaza N] [--detalle]
+                                    [--json salida.json]
 """
 import json
 import re
@@ -148,11 +149,24 @@ def filas(nikaya):
             for r in ws.iter_rows(min_row=2, values_only=True) if r[ci['Nikaya']] == nikaya]
 
 
-def muestra(fs, n):
-    """Muestra **estratificada y determinista**: bordes, arbitradas, agrupadas y paso fijo."""
+def muestra(fs, n, desplaza=0):
+    """Muestra **estratificada y determinista**: bordes, arbitradas, agrupadas y paso fijo.
+
+    `desplaza` **rota** cada estrato antes de servirlo, de modo que una corrida con otro
+    desplazamiento prueba **otras filas** sin perder la reproducibilidad: el mismo número da siempre
+    la misma muestra. Es lo que hace falta para volver a examinar sin repetir — un muestreo
+    aleatorio daría filas distintas cada vez y ninguna corrida sería discutible fila por fila.
+
+    ⚠️ El estrato de los **bordes de volumen** no rota: la primera y la última fila de cada volumen
+    son los puntos donde se esconde el desplazamiento, y se comprueban **siempre**.
+    """
     idx, vistos = [], set()
 
-    def mete(js):
+    def mete(js, rota=True):
+        js = list(js)
+        if rota and js and desplaza:
+            k = desplaza % len(js)
+            js = js[k:] + js[:k]
         for j in js:
             if j not in vistos and len(idx) < n:
                 vistos.add(j)
@@ -161,13 +175,19 @@ def muestra(fs, n):
     porvol = {}
     for j, f in enumerate(fs):
         porvol.setdefault(str(f['PTS Roman']), []).append(j)
-    mete([j for v in sorted(porvol) for j in (porvol[v][0], porvol[v][-1])])
+    mete([j for v in sorted(porvol) for j in (porvol[v][0], porvol[v][-1])], rota=False)
     mete([j for j, f in enumerate(fs) if str(f['Validation']) == 'VALIDADOR_HUMANO'])
     mete([j for j, f in enumerate(fs) if re.match(r'^[a-z0-9]+:\d+-\d+$', str(f['VRI Ref'] or ''))])
     paso = max(1, len(fs) // max(1, n - len(idx) + 1))
-    mete(range(0, len(fs), paso))
+    mete(range(desplaza % max(1, paso), len(fs), paso))
     mete(range(len(fs)))
     return sorted(idx)
+
+
+def ancla_ok(d):
+    """¿Confirma alguna de las dos formas del ancla?"""
+    return (d.get('ancla') is not None and d['ancla'] >= ANCLA_MIN) or \
+           (d.get('ancla_corta') is not None and d['ancla_corta'] >= 0.8)
 
 
 def prueba_fila(conn, fs, j, dueños):
@@ -176,6 +196,14 @@ def prueba_fila(conn, fs, j, dueños):
     d = {'fila': str(f['Sutta #']), 'nombre': str(f['Sutta Name'])[:38],
          'ref': str(f['PTS Ref']), 'vri': str(f['VRI Ref'] or '')}
     tc = cst_texto(f['VRI Ref'])
+    # ⚠️ `deest in Be`: el CST **reserva la numeración y no imprime el texto** (SN 49.13-22,
+    # 50.13-22). La referencia es un locus correcto y la fila lo declara en su `Detail`, así que no
+    # es una referencia rota — pero tampoco hay nada que cotejar. Es INDECISO, no FALLA.
+    if tc is None and 'deest in Be' in str(f['Detail'] or ''):
+        d['veredicto'] = 'INDECISO'
+        d['motivo'] = ('el CST reserva esta numeración y no imprime el texto («deest in Be»): '
+                       'la referencia es el locus, pero no hay qué cotejar')
+        return d
     d['resuelve'] = tc is not None
     # ⚠️ Compartir la `VRI Ref` **no es un defecto por sí mismo**: cuando el CST repite el mismo
     # título en decenas de paranums seguidos —`Navātasuttaṃ` ocupa cincuenta en `s0303m:250-300`,
@@ -226,11 +254,21 @@ def prueba_fila(conn, fs, j, dueños):
         # quedaban sin diagnosticar
         cerca = ap.fold(' '.join(L[max(0, ln - 1):ln + 2]))
         elide = bool(re.search(r'║|\bpe\b|\bpa\b|peyyal', cerca))
+        # ⚠️ Y el control **sólo habla donde le toca**: si la línea declarada es texto corrido y no
+        # un marcador, que no lleve el nombre no dice nada. En AN hay filas que apuntan a media
+        # frase de un sutta que el CST agrupa —`A iii 272,26` es `4. Āvāsamacchariyaṃ,
+        # kulamacchariyaṃ…`— y exigirles el nombre las marcaba falsas siendo correctas.
+        # Un encabezado de sutta es **corto y sólo título** —`68. (2) Maraṇa.`,
+        # `(8)36-40 Apaccupalakkhaṇā (1-5)`—; una cláusula numerada sigue en prosa y llena la línea:
+        # `4. Āvāsamacchariyaṃ, kulamacchariyaṃ, lābhamacchari-`. La longitud las separa.
+        _l = (L[ln - 1] if ln - 1 < len(L) else '').strip()
+        es_marcador = bool(re.match(r'^\(?\d+\)?[.\s]\s*\(?\d*\)?\s*[A-ZĀĪŪṂṆṬḌÑṄḶ]', _l)) \
+            and len(_l) <= 44
         # el nombre de la fila puede traer sufijos y corchetes (`Apaccupalakkhaṇā [2]`), y el
         # marcador impreso lo escribe desnudo
         raiz = re.sub(r'[^a-z]', '', ap.fold(re.sub(r'\s*\[.*$|\s*\(.*$|\s*\d+$', '',
                                                     str(f['Sutta Name'] or ''))))[:12]
-        if elide and len(raiz) >= 5:
+        if elide and es_marcador and len(raiz) >= 5:
             # ⚠️ El marcador impreso **omite el primer elemento del compuesto**: la fila se llama
             # `Rūpāppaccupalakkhaṇādisutta…` y PTS escribe sólo `Apaccupalakkhaṇā`, porque el
             # `rūpa-` va sobreentendido en la serie de los khandhas. Comparar la raíz entera dejaba
@@ -238,6 +276,25 @@ def prueba_fila(conn, fs, j, dueños):
             plano = re.sub(r'[^a-z]', '', cerca)
             sin_khandha = re.sub(r'^(rupa|vedana|sanna|sankhara|vinana)', '', raiz)
             d['ancla_nombre'] = any(x in plano for x in (raiz, sin_khandha) if len(x) >= 5)
+
+    # ── control 2-ter: el ancla **truncada a lo que el impreso da**
+    #
+    # ⚠️ Cuando la línea declarada elide —`55. Rūpī rūpāni passati . . . pe . . .`— pedirle ocho
+    # palabras es pedirle lo que no imprime, y el ancla se hunde aunque el par sea exacto: el CST
+    # abre ahí mismo con `435-442. Rūpī rūpāni passati…`. Se compara entonces **sólo lo que PTS da
+    # antes de la elisión**, y se exige que esas palabras abran el texto del CST. Corto pero
+    # decisivo: son las primeras palabras de los dos.
+    d['ancla_corta'] = None
+    if m and libro and not ancla_ok(d):
+        L = lineas(conn, libro, int(m.group(2)))
+        ln = int(m.group(3))
+        cruda = (L[ln - 1] if ln - 1 < len(L) else '')
+        cabeza = re.split(r'\.\s*\.|…|║', cruda)[0]
+        pal = [w for w in ap.fold(re.sub(r'^\s*\(?\d+[\d\-,]*\)?\.?', '', cabeza)).split()
+               if len(w) > 2]
+        if len(pal) >= 3:
+            d['ancla_corta'] = round(R.cobertura(' '.join(tc.split()[:len(pal) + 4]),
+                                                 ' '.join(pal)), 2)
 
     # ── control 3: contenido contra las vecinas del mismo volumen
     d['cov'] = d['cov_vecina'] = None
@@ -255,13 +312,13 @@ def prueba_fila(conn, fs, j, dueños):
             vec = [R.cobertura(tp, v) for v in vec if v]
             d['cov_vecina'] = round(max(vec), 2) if vec else None
 
-    ancla_ok = d['ancla'] is not None and d['ancla'] >= ANCLA_MIN
+    confirma = ancla_ok(d)
     cont_ok = (d['cov'] is not None and d['cov_vecina'] is not None
                and d['cov'] >= d['cov_vecina'] + MARGEN)
     if d['ancla_nombre'] is True:
         d['veredicto'] = 'PASA'
         d['motivo'] = 'ancla por nombre (PTS elide el texto en ese punto)'
-    elif d['ancla_nombre'] is False and not cont_ok:
+    elif d['ancla_nombre'] is False and not cont_ok and not ancla_ok(d):
         d['veredicto'] = 'FALLA'
         d['motivo'] = (f"PTS elide el texto en {d['ref']} y el marcador de esa línea NO nombra "
                        'esta unidad')
@@ -277,9 +334,9 @@ def prueba_fila(conn, fs, j, dueños):
         d['veredicto'] = 'INDECISO'
         d['motivo'] = (f"el texto del CST no empieza en {d['ref']} (ancla {d['ancla']}), no se "
                        'detecta elisión y el contenido no discrimina')
-    elif ancla_ok or cont_ok:
+    elif confirma or cont_ok:
         d['veredicto'] = 'PASA'
-        d['motivo'] = ('ancla' if ancla_ok else '') + ('+' if ancla_ok and cont_ok else '') + \
+        d['motivo'] = ('ancla' if confirma else '') + ('+' if confirma and cont_ok else '') + \
                       ('contenido' if cont_ok else '')
     else:
         d['veredicto'] = 'INDECISO'
@@ -298,13 +355,15 @@ def prueba_fila(conn, fs, j, dueños):
 def main():
     detalle = '--detalle' in sys.argv
     solo = sys.argv[sys.argv.index('--nikaya') + 1] if '--nikaya' in sys.argv else None
+    desp = int(sys.argv[sys.argv.index('--desplaza') + 1]) if '--desplaza' in sys.argv else 0
     conn = sqlite3.connect(R.DB)
     conn.row_factory = sqlite3.Row
     salida, total = {}, Counter()
     for nk in (['DN', 'MN', 'SN', 'AN'] if not solo else [solo]):
         fs = filas(nk)
         dueños = Counter(str(f['VRI Ref']) for f in fs if f['VRI Ref'])
-        idx = muestra(fs, CUANTAS[nk])
+        idx = muestra(fs, CUANTAS[nk], desp)
+        nuevas = len(set(idx) - set(muestra(fs, CUANTAS[nk]))) if desp else 0
         res = [prueba_fila(conn, fs, j, dueños) for j in idx]
         c = Counter(r['veredicto'] for r in res)
         total.update(c)
@@ -312,7 +371,8 @@ def main():
         marca = '✅' if c['FALLA'] == 0 and c['INDECISO'] == 0 else (
             '❌' if c['FALLA'] else '⚠️')
         print(f"{marca} {nk}: {len(res)} pruebas · PASA {c['PASA']} · FALLA {c['FALLA']} · "
-              f"INDECISO {c['INDECISO']}")
+              f"INDECISO {c['INDECISO']}"
+              + (f' · {nuevas} filas no probadas antes' if desp else ''))
         for r in res:
             if detalle or r['veredicto'] != 'PASA':
                 print(f"     {r['veredicto']:9} {r['fila']:11} {r['ref']:14} {r['vri']:18} "
