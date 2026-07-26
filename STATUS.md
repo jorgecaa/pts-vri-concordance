@@ -518,8 +518,8 @@ Use this terminology consistently across the project:
 | MN | 152 | 152 | 0 | 100.0% |
 | SN | 1814 | 1814 | 0 | 100.0% |
 | **AN** | **1737** | **1737** | **0** | **100.0%** |
-| KN | 2361 | 906 | 1455 | 38.4% |
-| **TOTAL** | **6098** | **4643** | **1455** | **76.1%** |
+| KN | 2361 | 1493 | 868 | 63.2% |
+| **TOTAL** | **6098** | **5230** | **868** | **85.8%** |
 
 > **KN empezado por el Khuddakapāṭha: 9/9** (`kn_khuddakapatha.py`). Es la obra más pequeña del
 > nikāya y por eso es donde se fija el método. Por una vez **las tres fuentes cuentan lo mismo**:
@@ -710,6 +710,47 @@ Use this terminology consistently across the project:
 > hay que escribirlos **en la forma plegada**, que es como llegan tras `ap.fold` — `sutaniddeso`
 > llega como `sutanideso` y `catuttho` como `catutho`. Con la geminada escrita, el marcador impreso
 > no casaba con **nada** (0 de 16) y luego dejaba el capítulo IV sin firmar.
+>
+> **Apadāna 587/603** (`kn_apadana.py`): Therāpadāna 549/563 y Therīapadāna 38/40. El bloque más
+> grande de KN después del Jātaka, y el que peor se deja emparejar por número.
+>
+> ⚠️ **Las dos ediciones no cuentan lo mismo y el desfase CRECE**: el CST tiene 563 apadānas de
+> theras en 56 vaggas y PTS numera **547**. Sāriputta es el 3 para el CST y el **1** para PTS;
+> Lakuṇḍabhaddiya, 543 y **534**; Cūḷasugandha, 552 y **547**. Arranca en 2 —PTS imprime el
+> Buddhāpadāna y el Paccekabuddhāpadāna **sin numerar**, como prefacio, con romano y versales— y
+> llega a 9 porque el CST parte en dos lo que PTS imprime junto. Emparejar por número sería
+> exactamente el error de S ii.
+>
+> Decide la **alineación de las dos listas ordenadas**: PTS marca cada apadāna con `[N. Nombre.]`
+> entre corchetes, y los 549 marcadores impresos se alinean con los 563 `subhead` del CST mediante
+> `SequenceMatcher` sobre los nombres normalizados, que absorbe las variantes ortográficas
+> —`Puḷinapājaka`/`Pulinapūjaka`, `Tīṇisaraṇāgamaniya`/`Tisaraṇagamaniya`,
+> `Sakacittaniya`/`Sakacintaniya`— **sin tabla de excepciones**. Y encima va la comprobación que lo
+> cierra, independiente del nombre: **la página del marcador contra la que declara el Excel — 515
+> exactas y 34 a ±1**.
+>
+> ⚠️ **PTS no imprime el vagga 56** (`Yasa`, `Nadīkassapa`… `Raṭṭhapāla`, 11 apadānas): el impreso
+> cierra en `[547. Cūlasugandha]` (p510) y en la p511 va el colofón de toda la obra. **El propio
+> Excel lo delata: las once filas llevan la misma página, la 511**, la del colofón. Quedan
+> PENDIENTE, como las 294 sin texto. Otras tres (`Udakapūjaka`, `Punnāgapupphiya`,
+> `Ekadussadāyaka`) las imprime PTS **dentro** del 331 sin numerarlas aparte, y dos del
+> Therīapadāna son los apadānas colectivos de las `Yasodharā-pamukhāni`, donde falta el marcador 31.
+>
+> ⚠️ **Y aquí `check_integrity` se ganó el sueldo.** El primer volcado escribió la `VRI Ref` como
+> `s0510m2:c43.<índice corrido>` y el validador cantó **130 filas ancladas a nada**: el capítulo de
+> la referencia es **la posición del `div` dentro de su fichero**, no la etiqueta del vagga —el
+> Therāpadāna se reparte entre `s0510m1` (vaggas 1-42) y `s0510m2` (43-56, con los cuatro del
+> Therīapadāna detrás), así que el «vagga 43» es el **primer** capítulo de `s0510m2`— y el item es
+> el de dentro del vagga, no el corrido. Se reabrieron las 587 filas y se reescribieron. Es
+> exactamente el punto ciego: las filas estaban bien emparejadas y la clave apuntaba a la nada.
+>
+> ⚠️ Dos defectos más en la lectura del marcador, los dos por exigir la forma canónica: al corchete
+> le falta a veces el de apertura (`377. Kāsumāriphaladāyaka.]`) y detrás del de cierre puede ir la
+> llamada de nota (`[372. Sattapaṇṇiya.] 1`). Sin contemplarlo, cinco apadānas se quedaban sin
+> marcador y la alineación los daba por **divergencias de división entre las ediciones**, que es lo
+> contrario de lo que son. Y el CST distingue a los homónimos con `Dutiya-` donde PTS usa una vocal
+> (`Raṃsisaññaka`/`Dutiyaraṃsisaññaka` contra `Raṃsisaññika`/`Raṃsisaññaka`): hay que comparar
+> también la raíz **sin el ordinal**, como ya obligó S iii.
 >
 > ⚠️ Tres defectos propios en el camino, los tres del mismo tipo — **inferir lo que el impreso dice**:
 > (a) segmenté los vaggas por «dónde reinicia el ordinal» y, al faltar cuatro colofones, la
